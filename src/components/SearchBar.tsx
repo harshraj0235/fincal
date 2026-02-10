@@ -52,7 +52,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onClose }) => {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search for calculators..."
+          placeholder="Search EMI, SIP, tax, and finance tools..."
           className="input pl-10 pr-10"
         />
         {searchTerm && (

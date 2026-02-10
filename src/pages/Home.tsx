@@ -17,12 +17,15 @@ export const Home: React.FC = () => {
   
   useEffect(() => {
     const popular = [
-      { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate your loan EMI, total interest, and payment schedule', category: 'Loan Calculators' },
-      { id: 'sip-calculator', name: 'SIP Calculator', description: 'Plan your investments and calculate returns on SIP investments', category: 'Investment Calculators' },
-      { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Calculate your income tax liability under old and new tax regimes', category: 'Tax Calculators' },
-      { id: 'mutual-fund-overlap-checker', name: 'Mutual Fund Overlap Checker', description: 'Check portfolio overlap between mutual funds to optimize diversification', category: 'Investments & Wealth Management' },
-      { id: 'asset-allocation-planner', name: 'Asset Allocation Planner', description: 'Create a balanced portfolio based on your risk profile', category: 'Investments & Wealth Management' },
-      { id: 'credit-card-finder', name: 'Credit Card Finder', description: 'Find the best credit card based on your spending patterns', category: 'Banking & Finance Tools' }
+      { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate EMI, total interest, and repayment schedule for Indian loans.', category: 'Loan Calculators' },
+      { id: 'home-loan-calculator', name: 'Home Loan Calculator', description: 'Plan home loan EMI, total cost, and prepayment impact with ease.', category: 'Loan Calculators' },
+      { id: 'personal-loan-calculator', name: 'Personal Loan Calculator', description: 'Estimate personal loan EMI, tenure, and total interest paid.', category: 'Loan Calculators' },
+      { id: 'sip-calculator', name: 'SIP Calculator', description: 'Estimate SIP returns, future value, and wealth goals in India.', category: 'Investment Calculators' },
+      { id: 'mutual-fund-returns-calculator', name: 'Mutual Fund Returns Calculator', description: 'Track mutual fund returns using CAGR and investment duration.', category: 'Investment Calculators' },
+      { id: 'ppf-calculator', name: 'PPF Calculator', description: 'Project PPF maturity value and annual contribution impact.', category: 'Investment Calculators' },
+      { id: 'retirement-calculator', name: 'Retirement Calculator', description: 'Estimate retirement corpus, monthly savings, and inflation impact.', category: 'Retirement Calculators' },
+      { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Compare old vs new tax regime and compute tax liability.', category: 'Tax Calculators' },
+      { id: 'gst-calculator', name: 'GST Calculator', description: 'Calculate GST inclusive and exclusive amounts with tax breakup.', category: 'Tax Calculators' }
     ];
     setPopularCalculators(popular);
   }, []);
@@ -95,17 +98,123 @@ export const Home: React.FC = () => {
     }
   };
 
+  const pageTitle = 'MoneyCal India - Free EMI, SIP, Tax & Finance Tools';
+  const pageDescription = 'India\'s top financial calculator platform. Calculate EMI, SIP returns, income tax, GST, and more with 200+ free tools and guides. Plan loans, investments, and savings easily.';
+  const searchQuickLinks = [
+    { label: 'EMI Calculator', path: '/calculators/emi-calculator' },
+    { label: 'SIP Calculator', path: '/calculators/sip-calculator' },
+    { label: 'Income Tax Calculator', path: '/calculators/income-tax-calculator' },
+    { label: 'GST Calculator', path: '/calculators/gst-calculator' },
+    { label: 'Home Loan Calculator', path: '/calculators/home-loan-calculator' },
+    { label: 'Personal Loan Calculator', path: '/calculators/personal-loan-calculator' },
+    { label: 'PPF Calculator', path: '/calculators/ppf-calculator' },
+    { label: 'Retirement Calculator', path: '/calculators/retirement-calculator' }
+  ];
+  const resourceLinks = [
+    {
+      title: 'Learn Personal Finance',
+      description: 'Step-by-step lessons on loans, investing, tax planning, and credit in India.',
+      path: '/learn',
+      icon: BookOpen
+    },
+    {
+      title: 'Finance Blog',
+      description: 'Practical guides and explainers on EMI, SIP, tax, and savings strategies.',
+      path: '/blog',
+      icon: TrendingUp
+    },
+    {
+      title: 'Market News',
+      description: 'Daily updates on markets, rates, and policy changes that affect your money.',
+      path: '/news',
+      icon: LineChart
+    },
+    {
+      title: 'Government Schemes',
+      description: 'Eligibility, benefits, and calculators for India\'s savings and welfare schemes.',
+      path: '/government-schemes',
+      icon: Globe
+    },
+    {
+      title: 'Tools Hub',
+      description: 'Explore all finance utilities, calculators, and planning tools in one place.',
+      path: '/tools',
+      icon: Briefcase
+    },
+    {
+      title: 'Help Center',
+      description: 'How-to guides, calculator methodology, and support resources.',
+      path: '/help-center',
+      icon: Shield
+    }
+  ];
+  const faqItems = [
+    {
+      question: 'How is EMI calculated in India?',
+      answer: 'EMI uses the loan principal, interest rate, and tenure. MoneyCal shows monthly EMI, total interest, and a full amortization schedule with optional prepayment impact.'
+    },
+    {
+      question: 'What inputs are needed for the SIP calculator?',
+      answer: 'Enter monthly SIP amount, expected return rate, and investment duration. The SIP calculator estimates future value, total invested, and gains.'
+    },
+    {
+      question: 'How do I choose between old vs new tax regime?',
+      answer: 'Use the income tax calculator to compare both regimes based on your income and deductions. It highlights the lower tax liability for your profile.'
+    },
+    {
+      question: 'Are the results official or guaranteed?',
+      answer: 'MoneyCal calculators provide estimates based on standard formulas. For official tax or investment advice, consult a qualified professional.'
+    },
+    {
+      question: 'Is my data stored?',
+      answer: 'No. Calculations run in your browser and we do not store personal financial inputs.'
+    }
+  ];
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MoneyCal India",
+      "url": "https://moneycal.in",
+      "logo": "https://moneycal.in/android-chrome-512x512.png",
+      "sameAs": ["https://twitter.com/MoneyCalIN"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MoneyCal India",
+      "url": "https://moneycal.in/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://moneycal.in/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": pageTitle,
+      "description": pageDescription,
+      "url": "https://moneycal.in/",
+      "inLanguage": "en-IN",
+      "primaryImageOfPage": "https://moneycal.in/android-chrome-512x512.png"
+    }
+  ];
+
   return (
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
       <SEOHelmet 
-        title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
-        description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users."
-        keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, loan calculator, investment calculator, personal finance tools, financial planning india, free financial calculator"
+        title={pageTitle}
+        description={pageDescription}
+        keywords="EMI calculator, SIP calculator India, income tax calculator, GST calculator, loan calculator, investment planning India, personal finance tools, tax tools India, retirement calculator"
         url="/"
-        structuredData={{}}
-        tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax", "mutual funds", "personal finance", "investment planning"]}
+        section="Home"
+        structuredData={structuredData}
+        breadcrumbs={[{ name: 'Home', url: '/' }]}
+        faqData={faqItems}
+        tags={["EMI calculator", "SIP calculator", "income tax calculator", "GST calculator", "loan tools", "investment planning", "personal finance India"]}
       />
       
       {/* Mobile Navigation Overlay */}
@@ -123,6 +232,8 @@ export const Home: React.FC = () => {
               <button onClick={() => scrollToSection('popular')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Popular Tools</button>
               <button onClick={() => scrollToSection('categories')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">All Categories</button>
               <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Features</button>
+              <button onClick={() => scrollToSection('resources')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Learn & Resources</button>
+              <button onClick={() => scrollToSection('faq')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">FAQ</button>
               <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Blog</Link>
               <Link to="/government-schemes" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Government Schemes</Link>
             </nav>
@@ -163,42 +274,53 @@ export const Home: React.FC = () => {
             <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
                   <Star className="h-4 w-4 mr-2" />
-                  Trusted by 1M+ Users
+                  MoneyCal India · Trusted Finance Tools & Insights
                 </div>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
-                  Smart Financial
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">Decisions</span>
-                  Start Here
-              </h1>
+                  India's trusted platform for
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">EMI, SIP, Tax & Finance Tools</span>
+                </h1>
                 <p className="text-xl sm:text-2xl mb-8 text-white/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                  India's most comprehensive financial calculator platform. Plan loans, investments, taxes, and more with confidence.
-              </p>
+                  Plan loans, investments, taxes, and cash flow with 200+ free tools and guides. Built for India with RBI-aligned assumptions,
+                  income tax slabs, GST rules, and transparent formulas.
+                </p>
                 
                 {/* Quick Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
                 <Link 
                   to="/calculators/emi-calculator" 
                     className="group bg-white text-primary-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl flex items-center justify-center"
                 >
                     <Calculator className="h-5 w-5 mr-2" />
-                  EMI Calculator
+                  Calculate EMI
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link 
+                  to="/calculators/sip-calculator" 
+                    className="group bg-green-500 text-white hover:bg-green-600 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl flex items-center justify-center"
+                >
+                    <TrendingUp className="h-5 w-5 mr-2" />
+                  Start SIP Planning
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link 
                   to="/calculators/income-tax-calculator" 
-                    className="group bg-green-500 text-white hover:bg-green-600 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl flex items-center justify-center"
+                    className="group bg-yellow-400 text-gray-900 hover:bg-yellow-300 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl flex items-center justify-center"
                 >
                     <DollarSign className="h-5 w-5 mr-2" />
-                  Income Tax
+                  Compute Taxes
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
+                <p className="text-sm text-white/80 mb-6">
+                  No sign-up required. Private calculations in your browser. Updated for FY 2025-26.
+                </p>
 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-white">50+</div>
-                    <div className="text-white/80 text-sm">Calculators</div>
+                    <div className="text-2xl font-bold text-white">200+</div>
+                    <div className="text-white/80 text-sm">Finance tools</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-white">1M+</div>
@@ -253,17 +375,21 @@ export const Home: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white shadow-2xl rounded-3xl p-8 border border-gray-100">
           <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-3">Find Your Perfect Calculator</h2>
-                <p className="text-gray-600 text-lg">Search from our collection of 50+ financial calculators</p>
+                <h2 className="text-3xl font-bold text-gray-900 mb-3">Search 200+ finance tools in one place</h2>
+                <p className="text-gray-600 text-lg">Find EMI, SIP, income tax, GST, and investment calculators built for India</p>
           </div>
               <div className="relative">
             <SearchBar />
                 <div className="mt-6 flex flex-wrap gap-2 justify-center">
-                  <span className="text-sm text-gray-500">Popular:</span>
-                  {['EMI', 'SIP', 'Income Tax', 'Mutual Fund'].map((term) => (
-                    <button key={term} className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors">
-                      {term}
-                    </button>
+                  <span className="text-sm text-gray-500">Popular searches:</span>
+                  {searchQuickLinks.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -275,9 +401,9 @@ export const Home: React.FC = () => {
         <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Quick Access Categories</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Finance tool categories built for India</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find the financial tools you need, organized by category
+              Jump to loans, investments, taxes, retirement, insurance, and more with one click.
             </p>
           </div>
           
@@ -310,9 +436,9 @@ export const Home: React.FC = () => {
         <section id="popular" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Most Popular Calculators</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Popular finance calculators for EMI, SIP, tax, and GST</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our most frequently used calculators to help you make informed financial decisions
+              Start with the most used tools for loan EMI, investment planning, and tax calculations in India.
             </p>
           </div>
           
@@ -337,7 +463,7 @@ export const Home: React.FC = () => {
                   <p className="text-gray-600 mb-6 leading-relaxed">{calculator.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-primary-600 group-hover:text-primary-700 font-semibold flex items-center">
-                    Try Calculator
+                    Try Tool
                       <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
                   </span>
                     <div className="text-2xl font-bold text-gray-300">#{index + 1}</div>
@@ -577,9 +703,9 @@ export const Home: React.FC = () => {
         <section id="features" className="py-20 bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Calculators?</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why MoneyCal for personal finance in India?</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Designed specifically for the Indian financial context, our calculators offer precision, ease of use, and comprehensive insights
+                Accurate formulas, India-specific assumptions, and clear explanations that help you take action with confidence.
             </p>
           </div>
           
@@ -588,9 +714,9 @@ export const Home: React.FC = () => {
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-6 shadow-lg">
                   <Globe className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Indian Context</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">India-specific assumptions</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Tailored for Indian tax laws, investment options, and financial products
+                  RBI-aligned rates, current tax slabs, GST rules, and locally relevant financial products.
                 </p>
             </div>
             
@@ -598,9 +724,9 @@ export const Home: React.FC = () => {
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-6 shadow-lg">
                   <TrendingUp className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Accurate Results</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Accurate and updated</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Precise calculations based on the latest financial formulas and regulations
+                  Standard formulas with clear assumptions, updated regularly for policy changes.
                 </p>
             </div>
             
@@ -608,9 +734,9 @@ export const Home: React.FC = () => {
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6 shadow-lg">
                   <PieChart className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Visual Insights</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Visual breakdowns</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Interactive charts and visual breakdowns to understand your finances better
+                  Amortization schedules, charts, and summaries that explain where your money goes.
               </p>
             </div>
             
@@ -618,14 +744,49 @@ export const Home: React.FC = () => {
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 shadow-lg">
                   <Smartphone className="h-8 w-8 text-white" />
                   </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile Friendly</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Fast and private</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Optimized for all devices - use on mobile, tablet, or desktop seamlessly
+                  Mobile-first experience with calculations that run in your browser, not on our servers.
                 </p>
               </div>
             </div>
           </div>
         </section>
+
+      {/* Learning & Resources */}
+      <section id="resources" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Learn, plan, and grow with MoneyCal</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore guided lessons, expert insights, and government schemes alongside the tools you use every day.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {resourceLinks.map((resource) => (
+              <Link
+                key={resource.title}
+                to={resource.path}
+                className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-primary-200 transform hover:-translate-y-2 duration-300"
+              >
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                  <resource.icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {resource.description}
+                </p>
+                <span className="text-primary-600 group-hover:text-primary-700 font-semibold flex items-center">
+                  Explore now
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       
       {/* All Categories Grid */}
         <section id="categories" className="py-20 bg-white">
@@ -671,9 +832,9 @@ export const Home: React.FC = () => {
         <div id="all-calculators" ref={allCalculatorsRef} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">All Calculators</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">All finance calculators and tools</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse our comprehensive collection of financial calculators organized by category
+              Browse every calculator by category, including loans, investments, tax, retirement, and insurance.
             </p>
           </div>
           
@@ -712,6 +873,124 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Editorial Trust & Sources */}
+      <section id="trust" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Editorial standards and trustworthy calculators</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              MoneyCal tools are built with transparent formulas, India-specific assumptions, and a privacy-first approach.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Editorial review</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The MoneyCal Editorial Team validates assumptions and explanations to keep calculators clear, accurate, and user-friendly.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• Transparent methodology and formula explanations</li>
+                <li>• Updates aligned to policy and rate changes</li>
+                <li>• Plain-language guidance for Indian users</li>
+              </ul>
+              <div className="mt-4">
+                <Link to="/editorial-policy" className="text-primary-600 hover:text-primary-700 font-semibold">
+                  Read our editorial policy
+                </Link>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Sources and references</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We monitor official sources for tax slabs, rates, and policy updates.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>
+                  • <a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">Reserve Bank of India (RBI)</a>
+                </li>
+                <li>
+                  • <a href="https://www.incometaxindia.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">Income Tax Department</a>
+                </li>
+                <li>
+                  • <a href="https://www.gstcouncil.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">GST Council</a>
+                </li>
+                <li>
+                  • <a href="https://www.sebi.gov.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">SEBI</a>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Privacy and transparency</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Calculations run in your browser. We do not store your personal financial inputs.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• No sign-up required to use calculators</li>
+                <li>• Clear disclaimers and usage guidance</li>
+                <li>• Easy access to support and help</li>
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-4 text-sm">
+                <Link to="/disclaimer" className="text-primary-600 hover:text-primary-700 font-semibold">Disclaimer</Link>
+                <Link to="/privacy-policy" className="text-primary-600 hover:text-primary-700 font-semibold">Privacy Policy</Link>
+                <Link to="/contact-us" className="text-primary-600 hover:text-primary-700 font-semibold">Contact</Link>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Finance Research Desk</h4>
+              <p className="text-sm text-gray-600">
+                Focuses on loan and investment formulas, RBI updates, and rate changes for India.
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Tax & Compliance</h4>
+              <p className="text-sm text-gray-600">
+                Tracks income tax slabs, deductions, and GST rules to keep calculators current.
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Personal Finance Guides</h4>
+              <p className="text-sm text-gray-600">
+                Creates step-by-step content to help users plan budgets, savings, and goals.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/about-us" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Meet the MoneyCal team
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently asked questions</h2>
+            <p className="text-xl text-gray-600">
+              Quick answers about EMI, SIP, tax calculators, and how MoneyCal works.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqItems.map((faq) => (
+              <details key={faq.question} className="group bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                <summary className="cursor-pointer list-none font-semibold text-gray-900 flex items-center justify-between">
+                  <span>{faq.question}</span>
+                  <span className="text-primary-600 group-open:rotate-180 transition-transform">
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </summary>
+                <p className="mt-4 text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Insurance Tools Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
@@ -923,9 +1202,9 @@ export const Home: React.FC = () => {
             <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl shadow-2xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="p-12 md:p-16">
-                  <h2 className="text-4xl font-bold mb-6 text-white">Stay Updated with Financial Insights</h2>
+                  <h2 className="text-4xl font-bold mb-6 text-white">Ready to plan your finances with confidence?</h2>
                   <p className="text-xl mb-8 text-white/90 leading-relaxed">
-                  Subscribe to our newsletter for the latest updates on financial tools, tax changes, investment strategies, and more.
+                  Join thousands of Indian users who rely on MoneyCal for EMI, SIP, tax, and investment planning. Get weekly insights and updates.
                 </p>
                   <form className="space-y-6">
                   <div>
@@ -937,7 +1216,7 @@ export const Home: React.FC = () => {
                     />
                   </div>
                     <button type="submit" className="w-full bg-white text-primary-700 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl">
-                      Subscribe Now
+                      Get Weekly Updates
                   </button>
                 </form>
                   <p className="text-sm text-white/80 mt-6">
