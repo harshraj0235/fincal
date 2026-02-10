@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight, User } from 'lucide-react';
+import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
@@ -26,6 +26,7 @@ const NewsHomePage: React.FC = () => {
   const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
 
   const featuredArticle = contentRegistry[0];
+  const reviewedDate = '2026-02-10';
   
   // Reset to page 1 when category changes
   const handleCategoryChange = (category: string) => {
@@ -333,6 +334,17 @@ const NewsHomePage: React.FC = () => {
             </div>
           </div>
         )}
+        <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-sm p-6 mt-12">
+          <h2 className="text-lg font-bold text-gray-900 mb-2">Editorial desk</h2>
+          <p className="text-sm text-gray-600">
+            Blog guides reviewed by the MoneyCal editorial team. Last reviewed: {reviewedDate}.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-3 text-sm">
+            <Link to="/editorial-policy" className="text-blue-700 underline">Editorial policy</Link>
+            <Link to="/about-us" className="text-blue-700 underline">About MoneyCal</Link>
+            <Link to="/contact-us" className="text-blue-700 underline">Contact</Link>
+          </div>
+        </div>
         </motion.div>
       </div>
     </div>

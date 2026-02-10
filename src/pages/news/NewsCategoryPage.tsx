@@ -16,6 +16,7 @@ const NewsCategoryPage: React.FC = () => {
 
   const category = newsCategories.find(c => c.slug === categorySlug);
   const allArticles = contentRegistry.filter(article => article.category === categorySlug);
+  const reviewedDate = '2026-02-10';
   
   // Pagination
   const totalPages = Math.ceil(allArticles.length / ARTICLES_PER_PAGE);
@@ -267,6 +268,18 @@ const NewsCategoryPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-sm p-6 mt-12">
+          <h2 className="text-lg font-bold text-gray-900 mb-2">Editorial desk</h2>
+          <p className="text-sm text-gray-600">
+            Blog guides reviewed by the MoneyCal editorial team. Last reviewed: {reviewedDate}.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-3 text-sm">
+            <Link to="/editorial-policy" className="text-blue-700 underline">Editorial policy</Link>
+            <Link to="/about-us" className="text-blue-700 underline">About MoneyCal</Link>
+            <Link to="/contact-us" className="text-blue-700 underline">Contact</Link>
+          </div>
+        </div>
       </div>
     </div>
   );
