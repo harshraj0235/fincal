@@ -108,20 +108,44 @@ console.log('\n📂 STEP 3: Reading master URL list...\n');
 const masterPath = path.join(PUBLIC_DIR, 'all-urls-master.txt');
 const fallbackPath = path.join(PUBLIC_DIR, 'all-urls-complete.txt');
 
-let allUrls = [];
+const loadUrlsFromFile = (filePath) => {
+  if (!fs.existsSync(filePath)) return [];
+  const content = fs.readFileSync(filePath, 'utf-8');
+  return content
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line && line.startsWith('http'));
+};
 
-if (fs.existsSync(masterPath)) {
-  const content = fs.readFileSync(masterPath, 'utf-8');
-  allUrls = content.split('\n').map(line => line.trim()).filter(line => line && line.startsWith('http'));
-  console.log(`✅ Loaded ${allUrls.length} URLs from all-urls-master.txt`);
-} else if (fs.existsSync(fallbackPath)) {
-  const content = fs.readFileSync(fallbackPath, 'utf-8');
-  allUrls = content.split('\n').map(line => line.trim()).filter(line => line && line.startsWith('http'));
-  console.log(`✅ Loaded ${allUrls.length} URLs from all-urls-complete.txt (fallback)`);
-} else {
-  console.log('❌ No URL source found! Exiting...');
+let allUrls = loadUrlsFromFile(masterPath);
+let sourceLabel = 'all-urls-master.txt';
+
+if (allUrls.length === 0) {
+  allUrls = loadUrlsFromFile(fallbackPath);
+  sourceLabel = 'all-urls-complete.txt (fallback)';
+}
+
+if (allUrls.length === 0) {
+  console.log('⚠️  URL list empty. Rebuilding from sources...');
+  try {
+    execSync('node scripts/merge-all-urls.cjs', { cwd: path.join(__dirname, '..'), stdio: 'inherit' });
+  } catch (error) {
+    console.log('⚠️  URL merge failed during rebuild:', error.message);
+  }
+  allUrls = loadUrlsFromFile(masterPath);
+  sourceLabel = 'all-urls-master.txt (rebuilt)';
+  if (allUrls.length === 0) {
+    allUrls = loadUrlsFromFile(fallbackPath);
+    sourceLabel = 'all-urls-complete.txt (fallback)';
+  }
+}
+
+if (allUrls.length === 0) {
+  console.log('❌ No URL source found or all files empty. Exiting...');
   process.exit(1);
 }
+
+console.log(`✅ Loaded ${allUrls.length} URLs from ${sourceLabel}`);
 
 // Categorize
 const categories = {
