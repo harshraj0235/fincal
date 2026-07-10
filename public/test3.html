@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    async function searchWeb(query) {
+      try {
+        const encodedQuery = encodeURIComponent(query);
+        const ddgUrl = `https://html.duckduckgo.com/html/?q=${encodedQuery}`;
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(ddgUrl)}`;
+
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        const htmlString = data.contents;
+        
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, 'text/html');
+
+        const results = [];
+        const resultNodes = doc.querySelectorAll('.result__body');
+
+        resultNodes.forEach((node) => {
+          if (results.length >= 4) return;
+
+          const titleNode = node.querySelector('.result__title .result__a');
+          const snippetNode = node.querySelector('.result__snippet');
+          const urlNode = node.querySelector('.result__url');
+
+          if (titleNode && snippetNode) {
+            let url = titleNode.href;
+            if (url.includes('duckduckgo.com/l/?uddg=')) {
+              const params = new URLSearchParams(url.split('?')[1]);
+              const realUrl = params.get('uddg');
+              if (realUrl) url = decodeURIComponent(realUrl);
+            }
+            results.push({
+              title: titleNode.textContent?.trim() || '',
+              url: url,
+              snippet: snippetNode.textContent?.trim() || '',
+            });
+          }
+        });
+
+        document.body.innerHTML = '<pre>' + JSON.stringify(results, null, 2) + '</pre>';
+      } catch (error) {
+        document.body.innerHTML = 'Error: ' + error;
+      }
+    }
+    searchWeb('what is sip investment');
+  </script>
+</body>
+</html>

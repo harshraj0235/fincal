@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    async function test() {
+      try {
+        const res = await fetch('https://text.pollinations.ai/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: [{ role: 'user', content: 'hello' }],
+            model: 'openai',
+            seed: 1234
+          })
+        });
+        const text = await res.text();
+        console.log('SUCCESS:', text);
+        document.body.innerHTML = 'SUCCESS: ' + text;
+      } catch (err) {
+        console.error('ERROR:', err);
+        document.body.innerHTML = 'ERROR: ' + err.message;
+      }
+    }
+    test();
+  </script>
+</body>
+</html>

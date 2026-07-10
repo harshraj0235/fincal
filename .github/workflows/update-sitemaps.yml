@@ -1,0 +1,46 @@
+name: Auto-Update Sitemaps Every 36 Hours
+
+on:
+  schedule:
+    # Runs every 36 hours (cron doesn't support 36h, so we run every day + manual)
+    - cron: '0 */12 * * *'  # Every 12 hours (3 times daily for 36h coverage)
+  
+  workflow_dispatch:  # Manual trigger
+  
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/calculators/**'
+      - 'src/pages/**'
+      - 'src/data/**'
+      - 'scripts/**'
+
+jobs:
+  update-sitemaps:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Generate and Verify Sitemaps
+        run: |
+          echo "🚀 Generating sitemaps..."
+          node scripts/generate-sitemaps-production.cjs
+          echo "✅ Sitemaps generated successfully!"
+          echo "📊 Verifying sitemap files..."
+          ls -la public/sitemap*.xml
+          echo "📅 Timestamp: $(date)"
+          echo ""
+          echo "ℹ️  Note: Sitemaps are generated but NOT auto-committed."
+          echo "   They will be deployed automatically on next manual push or PR merge."
+          echo "   Build process also generates sitemaps on every deployment."
+          echo "🔄 Next auto-generation: In 12 hours"

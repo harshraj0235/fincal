@@ -1,0 +1,2417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══ PRIMARY SEO ══ -->
+  <title>MoneyCal – India's #1 Free Financial Calculators | EMI, SIP, Tax, Loan, Investment Tools</title>
+  <meta name="description" content="MoneyCal: India's most comprehensive free financial calculator platform. EMI, SIP, FD, Income Tax, GST, PPF, NPS, Salary, Retirement & 500+ more tools. Hindi + English. No login needed." />
+  <meta name="keywords" content="EMI calculator India, SIP calculator, income tax calculator 2025, FD calculator, GST calculator, loan calculator, PPF calculator, NPS calculator, salary calculator, free financial calculators India" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://moneycal.in/" />
+  <meta name="author" content="MoneyCal Team" />
+  <meta name="theme-color" content="#0a3d2e" />
+
+  <!-- ══ OPEN GRAPH ══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moneycal.in/" />
+  <meta property="og:title" content="MoneyCal – India's #1 Free Financial Calculators" />
+  <meta property="og:description" content="500+ free financial calculators for India: EMI, SIP, Tax, FD, GST, PPF, NPS and more. Hindi + English. 1M+ users monthly." />
+  <meta property="og:image" content="https://moneycal.in/og-image.jpg" />
+  <meta property="og:locale" content="en_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MoneyCal – India's #1 Financial Calculators" />
+  <meta name="twitter:description" content="500+ free EMI, SIP, Tax & Investment calculators for India." />
+
+  <!-- ══ SCHEMA.ORG STRUCTURED DATA ══ -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"MoneyCal","url":"https://moneycal.in","description":"India's most comprehensive free financial calculator platform with 500+ tools covering EMI, SIP, taxes, loans, investments and retirement.","potentialAction":{"@type":"SearchAction","target":"https://moneycal.in/search?q={search_term_string}","query-input":"required name=search_term_string"},"inLanguage":["en-IN","hi-IN"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"MoneyCal","url":"https://moneycal.in","foundingDate":"2023","logo":{"@type":"ImageObject","url":"https://moneycal.in/logo.png"},"description":"Free financial calculators for India. 500+ tools. 1M+ monthly users.","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://moneycal.in/contact"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What calculators does MoneyCal offer?","acceptedAnswer":{"@type":"Answer","text":"MoneyCal offers 500+ free financial calculators including EMI, SIP, FD, Income Tax, GST, PPF, NPS, Gratuity, Salary, Retirement and Business calculators."}},{"@type":"Question","name":"Is MoneyCal free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, all calculators on MoneyCal are completely free with no registration required."}},{"@type":"Question","name":"Does MoneyCal support Hindi?","acceptedAnswer":{"@type":"Answer","text":"Yes, MoneyCal supports both Hindi and English, making it accessible to all Indians."}}]}
+  </script>
+
+  <!-- ══ PRELOADS FOR SPEED ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+
+  <!-- ══ ADSENSE (uncomment & add your publisher ID) ══
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  ══ -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --forest:   #0a3d2e;
+      --emerald:  #0d5c42;
+      --jade:     #10b981;
+      --mint:     #d1fae5;
+      --gold:     #f59e0b;
+      --amber:    #fef3c7;
+      --ink:      #0f1f1a;
+      --slate:    #374151;
+      --muted:    #6b7280;
+      --line:     #e5e7eb;
+      --bg:       #f8fafb;
+      --white:    #ffffff;
+      --rad:      14px;
+      --rad-sm:   8px;
+      --shadow:   0 2px 20px rgba(10,61,46,.08);
+      --shadow-h: 0 8px 32px rgba(10,61,46,.16);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ────────── SKIP LINK (accessibility + SEO) ────────── */
+    .skip-link {
+      position: absolute; top: -999px; left: 8px;
+      background: var(--jade); color: #fff;
+      padding: 8px 16px; border-radius: 4px; font-weight: 600; z-index: 9999;
+    }
+    .skip-link:focus { top: 8px; }
+
+    /* ────────── TOP BAR ────────── */
+    .topbar {
+      background: var(--forest);
+      color: rgba(255,255,255,.75);
+      font-size: .78rem;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .topbar a { color: var(--jade); font-weight: 600; }
+    .topbar-right { display: flex; gap: 16px; }
+    .lang-btn {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: .75rem;
+      cursor: pointer;
+      font-family: 'Sora', sans-serif;
+      transition: background .2s;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,.22); }
+
+    /* ────────── NAVBAR ────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 1px 8px rgba(0,0,0,.05);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--forest);
+      flex-shrink: 0;
+      letter-spacing: -.5px;
+    }
+    .logo em { color: var(--jade); font-style: normal; }
+
+    .nav-cats {
+      display: flex;
+      gap: 2px;
+      list-style: none;
+      overflow-x: auto;
+      flex: 1;
+      padding-left: 12px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .nav-cats::-webkit-scrollbar { display: none; }
+    .nav-cats > li { position: relative; flex-shrink: 0; }
+    .nav-cats > li > a {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 11px;
+      border-radius: var(--rad-sm);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--slate);
+      white-space: nowrap;
+      transition: background .15s, color .15s;
+    }
+    .nav-cats > li > a:hover,
+    .nav-cats > li:hover > a { background: var(--mint); color: var(--forest); }
+    .nav-cats > li > a .arr { font-size: .6rem; opacity: .6; }
+
+    /* Mega dropdown */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--rad);
+      box-shadow: var(--shadow-h);
+      min-width: 200px;
+      padding: 8px;
+      z-index: 300;
+    }
+    .nav-cats > li:hover .dropdown { display: block; }
+    .dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: var(--rad-sm);
+      font-size: .82rem;
+      color: var(--slate);
+      transition: background .12s;
+    }
+    .dropdown a:hover { background: var(--mint); color: var(--forest); }
+    .dropdown a .d-icon { font-size: .95rem; width: 20px; text-align: center; }
+
+    .nav-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+    .nav-search-btn {
+      border: 1.5px solid var(--line);
+      background: var(--bg);
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: .8rem;
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Sora', sans-serif;
+      transition: border-color .15s;
+    }
+    .nav-search-btn:hover { border-color: var(--jade); }
+    .hamburger { display: none; font-size: 1.4rem; cursor: pointer; background: none; border: none; color: var(--forest); padding: 4px; }
+
+    /* Mobile nav */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 400;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-close { float: right; font-size: 1.6rem; cursor: pointer; background: none; border: none; color: var(--forest); }
+    .mobile-menu h3 { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
+    .mobile-links { display: flex; flex-direction: column; gap: 2px; }
+    .mobile-links a {
+      padding: 10px 14px;
+      border-radius: var(--rad-sm);
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--slate);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mobile-links a:hover { background: var(--mint); color: var(--forest); }
+
+    /* ────────── HERO ────────── */
+    header.hero {
+      background: linear-gradient(145deg, var(--forest) 0%, #0d5c42 55%, #064e3b 100%);
+      padding: 64px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 10%, rgba(16,185,129,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 10% 90%, rgba(245,158,11,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* grid texture */
+    header.hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 40px),
+                        repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, transparent 1px 40px);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16,185,129,.15);
+      border: 1px solid rgba(16,185,129,.3);
+      color: #6ee7b7;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 22px;
+      animation: fadeUp .5s ease both;
+    }
+    .hero-pill span { width: 6px; height: 6px; background: var(--jade); border-radius: 50%; animation: pulse 1.8s ease infinite; }
+
+    h1.hero-h1 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.18;
+      margin-bottom: 18px;
+      animation: fadeUp .55s .08s ease both;
+    }
+    h1.hero-h1 em { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.72);
+      max-width: 540px;
+      margin: 0 auto 32px;
+      animation: fadeUp .55s .15s ease both;
+    }
+
+    /* Search box */
+    .hero-search {
+      display: flex;
+      max-width: 560px;
+      margin: 0 auto 28px;
+      background: #fff;
+      border-radius: 50px;
+      box-shadow: 0 8px 36px rgba(0,0,0,.22);
+      overflow: hidden;
+      animation: fadeUp .55s .22s ease both;
+    }
+    .hero-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 14px 22px;
+      font-size: .95rem;
+      font-family: 'Sora', sans-serif;
+      color: var(--ink);
+      background: transparent;
+    }
+    .hero-search input::placeholder { color: var(--muted); }
+    .hero-search button {
+      background: var(--jade);
+      color: #fff;
+      border: none;
+      padding: 14px 26px;
+      font-size: .9rem;
+      font-weight: 700;
+      font-family: 'Sora', sans-serif;
+      cursor: pointer;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .hero-search button:hover { background: #059669; }
+
+    .search-results {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 10px);
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-h);
+      overflow: hidden;
+      display: none;
+      z-index: 20;
+    }
+    .search-results.active { display: block; }
+    .search-results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      font-size: .75rem;
+      color: var(--muted);
+      background: var(--bg);
+    }
+    .search-results-list {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .search-result {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--line);
+      font-size: .86rem;
+      color: var(--ink);
+      transition: background .15s;
+    }
+    .search-result:hover { background: var(--mint); }
+    .search-result .sr-path { font-size: .72rem; color: var(--muted); }
+
+    .search-hints {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .search-hints a {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.85);
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: .72rem;
+      font-weight: 600;
+    }
+    .search-hints a:hover { background: rgba(255,255,255,.25); }
+
+    /* Quick calc tabs */
+    .quick-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      animation: fadeUp .55s .28s ease both;
+    }
+    .quick-tabs a {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.85);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 600;
+      transition: background .18s, color .18s;
+    }
+    .quick-tabs a:hover { background: rgba(255,255,255,.22); color: #fff; }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-top: 52px;
+      animation: fadeUp .55s .35s ease both;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 32px;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item strong {
+      display: block;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-item span { font-size: .75rem; color: rgba(255,255,255,.6); font-weight: 500; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.6); }
+    }
+
+    /* ────────── AD SLOTS ────────── */
+    .ad-slot {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--rad-sm);
+      padding: 18px;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--muted);
+      margin: 0 auto;
+    }
+    .ad-slot b { display: block; color: var(--ink); margin-bottom: 2px; font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; }
+    .ad-wrap { padding: 24px 20px; max-width: 1280px; margin: 0 auto; }
+    .ad-wrap-728 .ad-slot { max-width: 750px; }
+    .ad-wrap-300 { display: flex; justify-content: center; }
+    .ad-wrap-300 .ad-slot { width: 336px; }
+
+    /* ────────── SECTION BASE ────────── */
+    .section { padding: 56px 20px; }
+    .container { max-width: 1280px; margin: 0 auto; }
+    .sec-head { text-align: center; margin-bottom: 40px; }
+    .sec-head h2 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--forest);
+    }
+    .sec-head p { color: var(--muted); margin-top: 8px; font-size: .92rem; }
+    .sec-head .view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 14px;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--jade);
+      border: 1.5px solid var(--jade);
+      padding: 6px 16px;
+      border-radius: 50px;
+      transition: background .15s, color .15s;
+    }
+    .sec-head .view-all:hover { background: var(--jade); color: #fff; }
+
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .section-card {
+      background: var(--white);
+      border: 1.5px solid var(--line);
+      border-radius: var(--rad);
+      padding: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+    }
+    .section-card:hover { border-color: var(--jade); box-shadow: var(--shadow); transform: translateY(-3px); }
+    .section-card span { font-size: 1.5rem; }
+    .section-card h3 { font-size: .9rem; font-weight: 700; margin-bottom: 4px; }
+    .section-card p { font-size: .75rem; color: var(--muted); line-height: 1.45; }
+
+    /* ────────── HERO CALCULATORS ────────── */
+    .hero-calcs { background: var(--white); }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .hc-card {
+      border-radius: var(--rad);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 180px;
+    }
+    .hc-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-h); }
+    .hc-card .hc-icon { font-size: 2.4rem; margin-bottom: 4px; }
+    .hc-card h3 { font-size: 1.08rem; font-weight: 700; }
+    .hc-card p { font-size: .82rem; opacity: .8; line-height: 1.5; }
+    .hc-card .hc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+      font-size: .78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.18);
+      padding: 5px 12px;
+      border-radius: 50px;
+      align-self: flex-start;
+      transition: background .15s;
+    }
+    .hc-card .hc-cta:hover { background: rgba(255,255,255,.3); }
+    .hc-card::after {
+      content: '';
+      position: absolute;
+      right: -24px; bottom: -24px;
+      width: 120px; height: 120px;
+      background: rgba(255,255,255,.06);
+      border-radius: 50%;
+    }
+
+    /* ────────── CATEGORY GRID ────────── */
+    .cat-section { background: var(--bg); }
+    .cat-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cat-tab {
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: .82rem;
+      font-weight: 600;
+      border: 1.5px solid var(--line);
+      color: var(--slate);
+      cursor: pointer;
+      background: var(--white);
+      font-family: 'Sora', sans-serif;
+      transition: all .15s;
+    }
+    .cat-tab:hover, .cat-tab.active { background: var(--jade); border-color: var(--jade); color: #fff; }
+
+    .calc-panel { display: none; }
+    .calc-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); gap: 14px; }
+
+    .calc-tile {
+      background: var(--white);
+      border-radius: var(--rad);
+      padding: 20px 16px;
+      border: 1.5px solid var(--line);
+      transition: border-color .15s, transform .15s, box-shadow .15s;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .calc-tile:hover {
+      border-color: var(--jade);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    .ct-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .calc-tile h3 { font-size: .88rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .calc-tile p { font-size: .75rem; color: var(--muted); line-height: 1.5; }
+    .calc-tile .tile-tag {
+      font-size: .68rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+
+    /* ────────── TOOLS SECTION ────────── */
+    .tools-section { background: var(--white); }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .tool-card {
+      border: 1.5px solid var(--line);
+      border-radius: var(--rad);
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .tool-card:hover { border-color: var(--jade); box-shadow: var(--shadow); }
+    .tool-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .tool-card h3 { font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+    .tool-card p { font-size: .75rem; color: var(--muted); line-height: 1.45; }
+
+    /* ────────── LEARN SECTION ────────── */
+    .learn-section { background: var(--forest); }
+    .learn-section .sec-head h2 { color: #fff; }
+    .learn-section .sec-head p { color: rgba(255,255,255,.65); }
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .learn-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--rad);
+      padding: 22px;
+      color: #fff;
+      transition: background .15s, transform .15s;
+    }
+    .learn-card:hover { background: rgba(255,255,255,.13); transform: translateY(-3px); }
+    .learn-card .lc-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .learn-card h3 { font-size: .9rem; font-weight: 700; margin-bottom: 4px; }
+    .learn-card p { font-size: .75rem; color: rgba(255,255,255,.65); line-height: 1.5; }
+    .learn-card .lc-meta { font-size: .72rem; color: var(--jade); font-weight: 600; margin-top: 12px; }
+
+    /* ────────── SIP SIMPLIFIER PROMO ────────── */
+    .promo-section { background: var(--amber); }
+    .promo-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .promo-text { flex: 1; min-width: 260px; }
+    .promo-text h2 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .promo-text p { color: var(--slate); font-size: .92rem; margin-bottom: 20px; }
+    .promo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--forest);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .9rem;
+      transition: background .15s;
+    }
+    .promo-btn:hover { background: var(--emerald); }
+    .promo-img {
+      flex: 0 0 280px;
+      background: var(--forest);
+      border-radius: var(--rad);
+      padding: 28px;
+      color: #fff;
+      text-align: center;
+    }
+    .promo-img .p-big { font-size: 3rem; margin-bottom: 8px; }
+    .promo-img h3 { font-size: 1.1rem; font-weight: 700; }
+    .promo-img p { font-size: .8rem; color: rgba(255,255,255,.65); margin-top: 4px; }
+
+    /* ────────── BLOG ────────── */
+    .blog-section { background: var(--bg); }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: var(--rad);
+      border: 1.5px solid var(--line);
+      overflow: hidden;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .blog-card:hover { border-color: var(--jade); box-shadow: var(--shadow); }
+    .blog-thumb {
+      height: 100px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem;
+    }
+    .blog-body { padding: 18px; }
+    .blog-cat { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--jade); margin-bottom: 6px; }
+    .blog-body h3 { font-size: .9rem; font-weight: 700; line-height: 1.4; color: var(--ink); margin-bottom: 8px; }
+    .blog-body p { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+    .blog-meta { font-size: .72rem; color: var(--muted); margin-top: 10px; display: flex; align-items: center; gap: 8px; }
+    .blog-meta::before { content: '📅'; font-size: .7rem; }
+
+    /* ────────── GOV SCHEMES ────────── */
+    .gov-section { background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%); }
+    .gov-section .sec-head h2 { color: #fff; }
+    .gov-section .sec-head p { color: rgba(255,255,255,.65); }
+    .gov-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .gov-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--rad);
+      padding: 18px;
+      color: #fff;
+      transition: background .15s;
+    }
+    .gov-card:hover { background: rgba(255,255,255,.14); }
+    .gov-card .g-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .gov-card h3 { font-size: .85rem; font-weight: 700; margin-bottom: 4px; }
+    .gov-card p { font-size: .75rem; color: rgba(255,255,255,.6); line-height: 1.45; }
+
+    /* ────────── FAQ ────────── */
+    .faq-section { background: var(--white); }
+    .faq-wrap { max-width: 740px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 18px 0;
+      font-family: 'Sora', sans-serif;
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q .faq-icon { font-size: 1.2rem; color: var(--jade); flex-shrink: 0; transition: transform .2s; }
+    .faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 0 18px; font-size: .88rem; color: var(--muted); line-height: 1.75; }
+    .faq-a.open { display: block; }
+
+    /* ────────── TRUST BAR ────────── */
+    .trust-bar {
+      background: var(--mint);
+      padding: 28px 20px;
+    }
+    .trust-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
+    .trust-item .t-icon { font-size: 1.4rem; }
+
+    /* ────────── FOOTER ────────── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.65);
+      padding: 52px 20px 28px;
+    }
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.8fr repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .logo { color: #fff; font-size: 1.4rem; }
+    .footer-brand p { font-size: .82rem; margin-top: 12px; line-height: 1.7; }
+    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+    .social-btn {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,.08);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem;
+      transition: background .15s;
+    }
+    .social-btn:hover { background: var(--jade); }
+    footer h4 {
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    footer ul li a {
+      font-size: .82rem;
+      color: rgba(255,255,255,.55);
+      transition: color .15s;
+    }
+    footer ul li a:hover { color: var(--jade); }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: .78rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,.4); margin-left: 16px; transition: color .15s; }
+    .footer-bottom a:hover { color: var(--jade); }
+    .disclaimer {
+      max-width: 1280px;
+      margin: 16px auto 0;
+      font-size: .72rem;
+      color: rgba(255,255,255,.3);
+      line-height: 1.6;
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding-top: 16px;
+    }
+
+    /* ────────── SCROLL REVEAL ────────── */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ────────── RESPONSIVE ────────── */
+    @media (max-width: 900px) {
+      .nav-cats { display: none; }
+      .hamburger { display: block; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 600px) {
+      .topbar { font-size: .72rem; }
+      .stats-bar { gap: 16px; }
+      .stat-item { padding: 0 16px; border-right: none; }
+      .promo-img { flex: 0 0 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid > div:first-child { grid-column: span 1; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ ACCESSIBILITY ══ -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══ TOP BAR ══ -->
+<div class="topbar" role="banner">
+  <span>🇮🇳 Built for India · Hindi + English · <a href="/calculators">500+ Free Tools</a></span>
+  <div class="topbar-right">
+    <button class="lang-btn">हिंदी</button>
+    <span>Updated Daily 🔄</span>
+  </div>
+</div>
+
+<!-- ══ NAVBAR ══ -->
+<nav role="navigation" aria-label="Main Navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="MoneyCal – Home">Money<em>Cal</em></a>
+
+    <ul class="nav-cats" role="list">
+      <!-- Loan -->
+      <li>
+        <a href="/calculators#loans">🏦 Loan Calcs <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/emi-calculator"><span class="d-icon">🏠</span>EMI Calculator</a>
+          <a href="/calculators/home-loan-calculator"><span class="d-icon">🏡</span>Home Loan</a>
+          <a href="/calculators/car-loan-calculator"><span class="d-icon">🚗</span>Car Loan</a>
+          <a href="/calculators/personal-loan-calculator"><span class="d-icon">💼</span>Personal Loan</a>
+          <a href="/learn/education-loans/emi-calculator"><span class="d-icon">🎓</span>Education Loan EMI</a>
+          <a href="/calculators/business-loan-calculator"><span class="d-icon">🏭</span>Business Loan</a>
+          <a href="/calculators/loan-eligibility-calculator"><span class="d-icon">✅</span>Loan Eligibility</a>
+          <a href="/calculators/loan-comparison-calculator"><span class="d-icon">⚖️</span>Loan Comparison</a>
+          <a href="/calculators#loans" style="color:var(--jade);font-weight:700;">View all 15 →</a>
+        </div>
+      </li>
+      <!-- Investment -->
+      <li>
+        <a href="/calculators#investment">📈 Investment <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/sip-calculator"><span class="d-icon">📈</span>SIP Calculator</a>
+          <a href="/calculators/fd-calculator"><span class="d-icon">🏦</span>FD Calculator</a>
+          <a href="/calculators/rd-calculator"><span class="d-icon">💰</span>RD Calculator</a>
+          <a href="/calculators/ppf-calculator"><span class="d-icon">🛡️</span>PPF Calculator</a>
+          <a href="/calculators/nps-calculator"><span class="d-icon">🏛️</span>NPS Calculator</a>
+          <a href="/calculators/mutual-fund-returns-calculator"><span class="d-icon">📊</span>Mutual Fund Returns</a>
+          <a href="/calculators/mutual-fund-overlap-checker"><span class="d-icon">🔍</span>MF Overlap Checker</a>
+          <a href="/tools/lumpsum-calculator"><span class="d-icon">💹</span>Lumpsum Calculator</a>
+          <a href="/sip-simplifier"><span class="d-icon">🎯</span>SIP Simplifier Hub</a>
+          <a href="/calculators#investment" style="color:var(--jade);font-weight:700;">View all 20 →</a>
+        </div>
+      </li>
+      <!-- Tax -->
+      <li>
+        <a href="/calculators#tax">🧾 Tax Calcs <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/income-tax-calculator"><span class="d-icon">📋</span>Income Tax</a>
+          <a href="/calculators/gst-calculator"><span class="d-icon">🧮</span>GST Calculator</a>
+          <a href="/tools/gst-hsn-sac-finder"><span class="d-icon">🔎</span>HSN / SAC Finder</a>
+          <a href="/calculators/hra-calculator"><span class="d-icon">🏢</span>HRA Calculator</a>
+          <a href="/calculators/tds-calculator"><span class="d-icon">📑</span>TDS Calculator</a>
+          <a href="/calculators/capital-gains-tax-calculator"><span class="d-icon">💹</span>Capital Gains</a>
+          <a href="/calculators/stamp-duty-calculator"><span class="d-icon">🗂️</span>Stamp Duty</a>
+          <a href="/calculators#tax" style="color:var(--jade);font-weight:700;">View all 12 →</a>
+        </div>
+      </li>
+      <!-- Retirement -->
+      <li>
+        <a href="/calculators#retirement">🌴 Retirement <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/retirement-calculator"><span class="d-icon">🌴</span>Retirement Corpus</a>
+          <a href="/calculators/gratuity-calculator"><span class="d-icon">🎁</span>Gratuity</a>
+          <a href="/calculators/epf-calculator"><span class="d-icon">🔐</span>EPF Calculator</a>
+          <a href="/calculators/pension-calculator"><span class="d-icon">👴</span>Pension Calculator</a>
+          <a href="/calculators#retirement" style="color:var(--jade);font-weight:700;">View all 8 →</a>
+        </div>
+      </li>
+      <!-- Business -->
+      <li>
+        <a href="/calculators#business">🏭 Business <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/business-loan-calculator"><span class="d-icon">🏭</span>Business Loan</a>
+          <a href="/calculators/gst-calculator"><span class="d-icon">🧾</span>GST Calculator</a>
+          <a href="/calculators/salary-calculator"><span class="d-icon">💵</span>Salary Calculator</a>
+          <a href="/calculators/tds-calculator"><span class="d-icon">📑</span>TDS Calculator</a>
+          <a href="/government-schemes"><span class="d-icon">🏛️</span>Govt Schemes</a>
+          <a href="/calculators#business" style="color:var(--jade);font-weight:700;">View all 12 →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/calculators#property">🏘️ Property <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/property-calculator"><span class="d-icon">🏘️</span>Property Calculator</a>
+          <a href="/calculators/stamp-duty-calculator"><span class="d-icon">🗂️</span>Stamp Duty</a>
+          <a href="/calculators/property-registration-calculator"><span class="d-icon">🧾</span>Registration Charges</a>
+          <a href="/calculators/property-investment-calculator"><span class="d-icon">📈</span>Property Investment</a>
+          <a href="/calculators#property" style="color:var(--jade);font-weight:700;">View property tools →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/insurance-tools">🛡️ Insurance <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/insurance-tools/life-insurance-calculator"><span class="d-icon">🛡️</span>Life Insurance</a>
+          <a href="/insurance-tools/health-insurance-estimator"><span class="d-icon">🏥</span>Health Insurance</a>
+          <a href="/insurance-tools/term-insurance-planner"><span class="d-icon">📄</span>Term Insurance</a>
+          <a href="/insurance-tools/car-insurance-calculator"><span class="d-icon">🚗</span>Car Insurance</a>
+          <a href="/insurance-tools" style="color:var(--jade);font-weight:700;">All insurance tools →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/bank-tools">🏦 Banking & Finance <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/bank-tools"><span class="d-icon">🏦</span>Banking Tools</a>
+          <a href="/calculators/bank-locker-finder"><span class="d-icon">🔐</span>Bank Locker Finder</a>
+          <a href="/credit-card-finder"><span class="d-icon">💳</span>Credit Card Finder</a>
+          <a href="/finance-tools/pdf-converters"><span class="d-icon">📄</span>PDF Converters</a>
+          <a href="/bank-tools" style="color:var(--jade);font-weight:700;">All banking tools →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/learn/fintech-digital-payments">💸 FinTech & Payments <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/learn/fintech-digital-payments"><span class="d-icon">💳</span>Digital Payments</a>
+          <a href="/learn/fintech-digital-payments/upi-complete-guide-gpay-phonepe-paytm-limit-charges-india-2025"><span class="d-icon">📲</span>UPI Guide</a>
+          <a href="/learn/fintech-digital-payments/digital-wallets-paytm-phonepe-amazon-pay-google-pay-india-complete-guide"><span class="d-icon">👛</span>Wallets</a>
+          <a href="/crypto"><span class="d-icon">₿</span>Crypto & Blockchain</a>
+          <a href="/learn/fintech-digital-payments" style="color:var(--jade);font-weight:700;">All FinTech lessons →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/finance-tools">💼 Wealth Management <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/finance-tools/asset-allocation-tool"><span class="d-icon">🧭</span>Asset Allocation</a>
+          <a href="/finance-tools/portfolio-diversification-visualizer"><span class="d-icon">📊</span>Diversification</a>
+          <a href="/finance-tools/xirr-calculator"><span class="d-icon">📈</span>XIRR Calculator</a>
+          <a href="/finance-tools/mutual-fund-portfolio-rebalancer"><span class="d-icon">🔁</span>Portfolio Rebalancer</a>
+          <a href="/finance-tools" style="color:var(--jade);font-weight:700;">All wealth tools →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/personal-finance-management">🧠 Personal Finance <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/personal-finance-management"><span class="d-icon">🧠</span>Personal Finance Hub</a>
+          <a href="/tools/personal-finance-dashboard"><span class="d-icon">📋</span>Finance Dashboard</a>
+          <a href="/learn/money-management"><span class="d-icon">💰</span>Money Management</a>
+          <a href="/learn/savings-bank-products"><span class="d-icon">🏦</span>Savings & Banking</a>
+          <a href="/personal-finance-management" style="color:var(--jade);font-weight:700;">All personal finance →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/calculators/lcm-hcf-calculator">🧮 Math & Education <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/lcm-hcf-calculator"><span class="d-icon">➗</span>LCM & HCF</a>
+          <a href="/gk"><span class="d-icon">📚</span>General Knowledge</a>
+          <a href="/learn/education-loans"><span class="d-icon">🎓</span>Education Loans</a>
+          <a href="/calculators" style="color:var(--jade);font-weight:700;">All education tools →</a>
+        </div>
+      </li>
+      <li>
+        <a href="/calculators">🔢 All Tools <span class="arr">▾</span></a>
+        <div class="dropdown">
+          <a href="/calculators/salary-calculator"><span class="d-icon">💵</span>Salary / CTC</a>
+          <a href="/calculators/compound-interest-calculator"><span class="d-icon">♾️</span>Compound Interest</a>
+          <a href="/calculators/inflation-calculator"><span class="d-icon">📉</span>Inflation</a>
+          <a href="/calculators/currency-converter"><span class="d-icon">💱</span>Currency Converter</a>
+          <a href="/calculators" style="color:var(--jade);font-weight:700;">All 500+ Tools →</a>
+        </div>
+      </li>
+      <li><a href="/learn">🎓 Learn</a></li>
+      <li><a href="/blog">📰 Blog</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="nav-search-btn" onclick="document.querySelector('.hero-search input').focus(); document.querySelector('.hero').scrollIntoView({behavior:'smooth'})">
+        🔍 Search tools
+      </button>
+    </div>
+    <button class="hamburger" aria-label="Open menu" onclick="document.getElementById('mobileMenu').classList.add('open')">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="/" class="logo" style="display:inline-block;margin-bottom:8px;">Money<em style="color:var(--jade)">Cal</em></a>
+  <h3>Loan Calculators</h3>
+  <div class="mobile-links">
+    <a href="/calculators/emi-calculator">🏠 EMI Calculator</a>
+    <a href="/calculators/home-loan-calculator">🏡 Home Loan</a>
+    <a href="/calculators/car-loan-calculator">🚗 Car Loan</a>
+    <a href="/calculators/personal-loan-calculator">💼 Personal Loan</a>
+  </div>
+  <h3>Investment Calculators</h3>
+  <div class="mobile-links">
+    <a href="/calculators/sip-calculator">📈 SIP Calculator</a>
+    <a href="/calculators/fd-calculator">🏦 FD Calculator</a>
+    <a href="/calculators/ppf-calculator">🛡️ PPF Calculator</a>
+    <a href="/calculators/nps-calculator">🏛️ NPS Calculator</a>
+    <a href="/sip-simplifier">🎯 SIP Simplifier Hub</a>
+  </div>
+  <h3>Tax Tools</h3>
+  <div class="mobile-links">
+    <a href="/calculators/income-tax-calculator">📋 Income Tax</a>
+    <a href="/calculators/gst-calculator">🧮 GST Calculator</a>
+    <a href="/tools/gst-hsn-sac-finder">🔎 HSN / SAC Finder</a>
+    <a href="/calculators/hra-calculator">🏢 HRA Calculator</a>
+  </div>
+  <h3>FinTech & Payments</h3>
+  <div class="mobile-links">
+    <a href="/learn/fintech-digital-payments">💳 Digital Payments</a>
+    <a href="/learn/fintech-digital-payments/upi-complete-guide-gpay-phonepe-paytm-limit-charges-india-2025">📲 UPI Guide</a>
+    <a href="/learn/fintech-digital-payments/digital-wallets-paytm-phonepe-amazon-pay-google-pay-india-complete-guide">� Wallets</a>
+    <a href="/crypto">₿ Crypto</a>
+  </div>
+  <h3>Wealth Management</h3>
+  <div class="mobile-links">
+    <a href="/finance-tools/asset-allocation-tool">🧭 Asset Allocation</a>
+    <a href="/finance-tools/portfolio-diversification-visualizer">📊 Diversification</a>
+    <a href="/finance-tools/xirr-calculator">📈 XIRR Calculator</a>
+    <a href="/finance-tools/mutual-fund-portfolio-rebalancer">🔁 Portfolio Rebalancer</a>
+  </div>
+  <h3>Personal Finance</h3>
+  <div class="mobile-links">
+    <a href="/personal-finance-management">🧠 Personal Finance Hub</a>
+    <a href="/tools/personal-finance-dashboard">📋 Finance Dashboard</a>
+    <a href="/learn/money-management">💰 Money Management</a>
+    <a href="/learn/savings-bank-products">🏦 Savings & Banking</a>
+  </div>
+  <h3>Math & Education</h3>
+  <div class="mobile-links">
+    <a href="/calculators/lcm-hcf-calculator">➗ LCM & HCF</a>
+    <a href="/gk">📚 GK Hub</a>
+    <a href="/learn/education-loans">🎓 Education Loans</a>
+    <a href="/learn/education-loans/emi-calculator">🧮 Education Loan EMI</a>
+  </div>
+  <h3>Other</h3>
+  <div class="mobile-links">
+    <a href="/learn">🎓 MoneyCal Learn</a>
+    <a href="/blog">📰 Blog & Articles</a>
+    <a href="/government-schemes">🏛️ Govt Schemes</a>
+    <a href="/calculators">🔢 All 500+ Calculators</a>
+    <a href="/about">ℹ️ About Us</a>
+    <a href="/contact">📧 Contact</a>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<header class="hero" role="banner" id="main-content">
+  <div class="hero-inner">
+    <div class="hero-pill"><span></span> India's #1 Financial Calculator Platform</div>
+    <h1 class="hero-h1">500+ Free Calculators for<br><em>Smarter Money Decisions</em></h1>
+    <p class="hero-sub">EMI · SIP · Income Tax · FD · GST · PPF · NPS · Salary · Retirement<br>Hindi + English · No login required · Updated daily</p>
+
+    <div class="hero-search" role="search" aria-label="Search MoneyCal">
+      <input type="text" id="heroSearch" placeholder="Search: EMI calculator, SIP, income tax, GST, mutual fund…" aria-label="Search MoneyCal site" autocomplete="off" aria-expanded="false" aria-controls="searchResults" />
+      <button type="button" onclick="searchCalc()">🔍 Search</button>
+      <div class="search-results" id="searchResults" role="listbox" aria-label="Search results">
+        <div class="search-results-header">
+          <span id="searchCount">0 results</span>
+          <span>Search across all MoneyCal pages</span>
+        </div>
+        <div class="search-results-list" id="searchResultsList"></div>
+      </div>
+    </div>
+
+    <div class="search-hints" aria-label="Suggested searches">
+      <a href="/calculators/emi-calculator">EMI</a>
+      <a href="/calculators/sip-calculator">SIP</a>
+      <a href="/calculators/income-tax-calculator">Income Tax</a>
+      <a href="/calculators/gst-calculator">GST</a>
+      <a href="/finance-tools/xirr-calculator">XIRR</a>
+      <a href="/government-schemes">Govt Schemes</a>
+      <a href="/learn">Learn</a>
+      <a href="/blog">Blog</a>
+    </div>
+
+    <div class="quick-tabs" role="list" aria-label="Quick calculator links">
+      <a href="/calculators/emi-calculator" role="listitem">EMI</a>
+      <a href="/calculators/sip-calculator" role="listitem">SIP</a>
+      <a href="/calculators/income-tax-calculator" role="listitem">Income Tax</a>
+      <a href="/calculators/gst-calculator" role="listitem">GST</a>
+      <a href="/calculators/fd-calculator" role="listitem">FD / RD</a>
+      <a href="/calculators/salary-calculator" role="listitem">Salary</a>
+      <a href="/calculators/ppf-calculator" role="listitem">PPF</a>
+      <a href="/calculators/gratuity-calculator" role="listitem">Gratuity</a>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item"><strong>500+</strong><span>Free Tools</span></div>
+      <div class="stat-item"><strong>1M+</strong><span>Monthly Users</span></div>
+      <div class="stat-item"><strong>12</strong><span>Categories</span></div>
+      <div class="stat-item"><strong>2</strong><span>Languages</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ AD: LEADERBOARD TOP ══ -->
+<div class="ad-wrap ad-wrap-728">
+  <div class="ad-slot">
+    <b>Advertisement</b>
+    728 × 90 — AdSense Leaderboard
+    <!-- LIVE CODE:
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</div>
+
+<section class="section" id="site-sections" aria-labelledby="sections-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="sections-head">Explore the Full MoneyCal Platform</h2>
+      <p>Navigate every major section and discover all pages from one place</p>
+      <a href="/browse-all" class="view-all">Browse All Pages →</a>
+    </div>
+    <div class="sections-grid">
+      <a href="/calculators" class="section-card reveal">
+        <span>🧮</span>
+        <div>
+          <h3>Calculators</h3>
+          <p>All 500+ calculators across 12 categories</p>
+        </div>
+      </a>
+      <a href="/tools" class="section-card reveal">
+        <span>🧰</span>
+        <div>
+          <h3>Tools Hub</h3>
+          <p>Utility tools, trackers, and planners</p>
+        </div>
+      </a>
+      <a href="/learn" class="section-card reveal">
+        <span>🎓</span>
+        <div>
+          <h3>MoneyCal Learn</h3>
+          <p>200+ lessons in Hindi + English</p>
+        </div>
+      </a>
+      <a href="/blog" class="section-card reveal">
+        <span>📰</span>
+        <div>
+          <h3>Blog & Guides</h3>
+          <p>Latest insights, updates, and explainers</p>
+        </div>
+      </a>
+      <a href="/sip-simplifier" class="section-card reveal">
+        <span>📈</span>
+        <div>
+          <h3>SIP Simplifier</h3>
+          <p>SIP calculators, learn, and planner hub</p>
+        </div>
+      </a>
+      <a href="/crypto" class="section-card reveal">
+        <span>₿</span>
+        <div>
+          <h3>Crypto Guides</h3>
+          <p>Crypto tools, ETF guides, and insights</p>
+        </div>
+      </a>
+      <a href="/government-schemes" class="section-card reveal">
+        <span>🏛️</span>
+        <div>
+          <h3>Government Schemes</h3>
+          <p>Eligibility, benefits, and calculators</p>
+        </div>
+      </a>
+      <a href="/browse-all" class="section-card reveal">
+        <span>🧭</span>
+        <div>
+          <h3>Browse All</h3>
+          <p>Complete hub of site routes and pages</p>
+        </div>
+      </a>
+      <a href="/about" class="section-card reveal">
+        <span>ℹ️</span>
+        <div>
+          <h3>About MoneyCal</h3>
+          <p>Our mission, team, and platform story</p>
+        </div>
+      </a>
+      <a href="/contact" class="section-card reveal">
+        <span>📧</span>
+        <div>
+          <h3>Contact</h3>
+          <p>Get support or partner with us</p>
+        </div>
+      </a>
+      <a href="/sitemap.xml" class="section-card reveal">
+        <span>🗺️</span>
+        <div>
+          <h3>XML Sitemap</h3>
+          <p>Search engine sitemap for all pages</p>
+        </div>
+      </a>
+      <a href="/all-urls-from-code.txt" class="section-card reveal">
+        <span>🔗</span>
+        <div>
+          <h3>All URLs</h3>
+          <p>Complete list of internal links</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MOST POPULAR CALCULATORS (Hero Cards) ══ -->
+<section class="section hero-calcs" aria-labelledby="popular-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="popular-head">🔥 Most Popular Calculators</h2>
+      <p>Trusted by over 1 million Indians every month</p>
+    </div>
+    <div class="hero-grid">
+      <a href="/calculators/emi-calculator" class="hc-card reveal" style="background:linear-gradient(135deg,#064e3b,#0d5c42)" aria-label="EMI Calculator">
+        <div class="hc-icon">🏠</div>
+        <h3>EMI Calculator</h3>
+        <p>Calculate monthly instalments for home loan, car loan, personal & business loans instantly.</p>
+        <span class="hc-cta">Calculate Now →</span>
+      </a>
+      <a href="/calculators/sip-calculator" class="hc-card reveal" style="background:linear-gradient(135deg,#1e3a5f,#1e4e8c)" aria-label="SIP Calculator">
+        <div class="hc-icon">📈</div>
+        <h3>SIP Calculator</h3>
+        <p>See how your monthly SIP grows with compounding — plan your mutual fund wealth.</p>
+        <span class="hc-cta">Calculate Now →</span>
+      </a>
+      <a href="/calculators/income-tax-calculator" class="hc-card reveal" style="background:linear-gradient(135deg,#4c1d95,#6d28d9)" aria-label="Income Tax Calculator">
+        <div class="hc-icon">📋</div>
+        <h3>Income Tax Calculator</h3>
+        <p>Old vs New Tax Regime FY 2024-25. Find which saves you more tax in minutes.</p>
+        <span class="hc-cta">Calculate Now →</span>
+      </a>
+      <a href="/calculators/gst-calculator" class="hc-card reveal" style="background:linear-gradient(135deg,#7c2d12,#b45309)" aria-label="GST Calculator">
+        <div class="hc-icon">🧾</div>
+        <h3>GST Calculator</h3>
+        <p>Add or remove GST from any amount. Supports all GST slabs — 5%, 12%, 18%, 28%.</p>
+        <span class="hc-cta">Calculate Now →</span>
+      </a>
+      <a href="/calculators/fd-calculator" class="hc-card reveal" style="background:linear-gradient(135deg,#0c4a6e,#075985)" aria-label="FD Calculator">
+        <div class="hc-icon">🏦</div>
+        <h3>FD Calculator</h3>
+        <p>Fixed deposit maturity amount and interest earned for any bank & tenure.</p>
+        <span class="hc-cta">Calculate Now →</span>
+      </a>
+      <a href="/calculators/salary-calculator" class="hc-card reveal" style="background:linear-gradient(135deg,#1f2937,#374151)" aria-label="Salary Calculator">
+        <div class="hc-icon">💵</div>
+        <h3>Salary / CTC Calculator</h3>
+        <p>Break down your CTC to in-hand salary with PF, TDS, and professional tax deductions.</p>
+        <span class="hc-cta">Calculate Now →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ALL CALCULATORS BY CATEGORY ══ -->
+<section class="section cat-section" id="calculators" aria-labelledby="all-calc-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="all-calc-head">All Financial Calculators</h2>
+      <p>Browse all 500+ free tools across 12 categories</p>
+      <a href="/calculators" class="view-all">View All 500+ Tools →</a>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="cat-tabs" role="tablist" aria-label="Calculator categories">
+      <button class="cat-tab active" role="tab" aria-selected="true" onclick="switchTab(this,'loans')">🏦 Loans (15)</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'investment')">📈 Investment (20)</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'tax')">🧾 Tax (12)</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'retirement')">🌴 Retirement (8)</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'business')">🏭 Business (12)</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'property')">🏘️ Property</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'insurance')">🛡️ Insurance</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'banking')">💳 Banking</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'fintech')">💸 FinTech & Payments</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'wealth')">💼 Wealth Management</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'personal')">🧠 Personal Finance</button>
+      <button class="cat-tab" role="tab" aria-selected="false" onclick="switchTab(this,'education')">🧮 Math & Education</button>
+    </div>
+
+    <!-- Loans Panel -->
+    <div class="calc-panel active" id="panel-loans" role="tabpanel">
+      <a href="/calculators/emi-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🏠</div>
+        <h3>EMI Calculator</h3>
+        <p>Monthly instalment for any loan</p>
+        <span class="tile-tag" style="background:#d1fae5;color:#065f46">⭐ Most Popular</span>
+      </a>
+      <a href="/calculators/home-loan-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🏡</div>
+        <h3>Home Loan Calculator</h3>
+        <p>EMI + amortisation for home loans</p>
+      </a>
+      <a href="/calculators/car-loan-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">🚗</div>
+        <h3>Car Loan Calculator</h3>
+        <p>Vehicle loan EMI & total cost</p>
+      </a>
+      <a href="/calculators/personal-loan-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">💼</div>
+        <h3>Personal Loan EMI</h3>
+        <p>Instant personal loan repayment</p>
+      </a>
+      <a href="/learn/education-loans/emi-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">🎓</div>
+        <h3>Education Loan EMI</h3>
+        <p>Study loan EMI guide & calculator</p>
+      </a>
+      <a href="/calculators/business-loan-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#ecfdf5">🏭</div>
+        <h3>Business Loan EMI</h3>
+        <p>SME & MSME loan calculator</p>
+      </a>
+      <a href="/calculators/loan-eligibility-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fff7ed">✅</div>
+        <h3>Loan Eligibility</h3>
+        <p>Know how much loan you qualify for</p>
+      </a>
+      <a href="/calculators/loan-comparison-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f0fdf4">⚖️</div>
+        <h3>Loan Comparison</h3>
+        <p>Compare multiple bank offers</p>
+      </a>
+      <a href="/calculators/prepayment-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fdf4ff">💸</div>
+        <h3>Prepayment Calculator</h3>
+        <p>How prepayment reduces interest</p>
+      </a>
+      <a href="/learn/home-loans/balance-transfer" class="calc-tile">
+        <div class="ct-icon" style="background:#eff6ff">🔄</div>
+        <h3>Balance Transfer Guide</h3>
+        <p>Reduce EMI with transfer strategy</p>
+      </a>
+      <a href="/learn/home-loans" class="calc-tile">
+        <div class="ct-icon" style="background:#fef9c3">🏛️</div>
+        <h3>Home Loan Guide</h3>
+        <p>Eligibility, rates, and process</p>
+      </a>
+      <a href="/calculators/bike-loan-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🏍️</div>
+        <h3>Bike Loan Calculator</h3>
+        <p>Two-wheeler loan EMI</p>
+      </a>
+    </div>
+
+    <!-- Investment Panel -->
+    <div class="calc-panel" id="panel-investment" role="tabpanel">
+      <a href="/calculators/sip-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">📈</div>
+        <h3>SIP Calculator</h3>
+        <p>Mutual fund SIP returns</p>
+        <span class="tile-tag" style="background:#dbeafe;color:#1e40af">⭐ Top Pick</span>
+      </a>
+      <a href="/tools/lumpsum-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">💹</div>
+        <h3>Lumpsum Calculator</h3>
+        <p>One-time investment returns</p>
+      </a>
+      <a href="/calculators/fd-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🏦</div>
+        <h3>FD Calculator</h3>
+        <p>Fixed deposit maturity amount</p>
+      </a>
+      <a href="/calculators/rd-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">💰</div>
+        <h3>RD Calculator</h3>
+        <p>Recurring deposit returns</p>
+      </a>
+      <a href="/calculators/ppf-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">🛡️</div>
+        <h3>PPF Calculator</h3>
+        <p>Public Provident Fund corpus</p>
+      </a>
+      <a href="/calculators/nps-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fff7ed">🏛️</div>
+        <h3>NPS Calculator</h3>
+        <p>National Pension Scheme corpus</p>
+      </a>
+      <a href="/calculators/mutual-fund-returns-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#ecfdf5">📊</div>
+        <h3>Mutual Fund Returns</h3>
+        <p>MF investment return estimator</p>
+      </a>
+      <a href="/calculators/mutual-fund-overlap-checker" class="calc-tile">
+        <div class="ct-icon" style="background:#eff6ff">🔍</div>
+        <h3>MF Overlap Checker</h3>
+        <p>Check mutual fund portfolio overlap</p>
+      </a>
+      <a href="/calculators/cagr-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef9c3">📐</div>
+        <h3>CAGR Calculator</h3>
+        <p>Compounded annual growth rate</p>
+      </a>
+      <a href="/calculators/sukanya-samriddhi-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">👧</div>
+        <h3>Sukanya Samriddhi</h3>
+        <p>Girl child savings scheme returns</p>
+      </a>
+      <a href="/calculators/section-80c-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">💼</div>
+        <h3>Section 80C</h3>
+        <p>Tax-saving investments planner</p>
+      </a>
+      <a href="/calculators/compound-interest-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">♾️</div>
+        <h3>Compound Interest</h3>
+        <p>Power of compounding calculator</p>
+      </a>
+    </div>
+
+    <!-- Tax Panel -->
+    <div class="calc-panel" id="panel-tax" role="tabpanel">
+      <a href="/calculators/income-tax-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">📋</div>
+        <h3>Income Tax Calculator</h3>
+        <p>Old vs New regime FY 2024-25</p>
+        <span class="tile-tag" style="background:#f3e8ff;color:#6d28d9">⭐ Popular</span>
+      </a>
+      <a href="/calculators/gst-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🧮</div>
+        <h3>GST Calculator</h3>
+        <p>Add or remove GST instantly</p>
+      </a>
+      <a href="/tools/gst-hsn-sac-finder" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">🔎</div>
+        <h3>HSN / SAC Finder</h3>
+        <p>Find GST codes for goods & services</p>
+      </a>
+      <a href="/calculators/hra-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🏢</div>
+        <h3>HRA Calculator</h3>
+        <p>House Rent Allowance exemption</p>
+      </a>
+      <a href="/calculators/tds-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">📑</div>
+        <h3>TDS Calculator</h3>
+        <p>Tax Deducted at Source</p>
+      </a>
+      <a href="/calculators/capital-gains-tax-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#ecfdf5">💹</div>
+        <h3>Capital Gains Tax</h3>
+        <p>STCG & LTCG on investments</p>
+      </a>
+      <a href="/calculators/stamp-duty-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fff7ed">🗂️</div>
+        <h3>Stamp Duty Calculator</h3>
+        <p>Property registration charges</p>
+      </a>
+      <a href="/tax-tools/itr-form-type-helper" class="calc-tile">
+        <div class="ct-icon" style="background:#eff6ff">💼</div>
+        <h3>ITR Form Helper</h3>
+        <p>Choose the right ITR form</p>
+      </a>
+    </div>
+
+    <!-- Retirement Panel -->
+    <div class="calc-panel" id="panel-retirement" role="tabpanel">
+      <a href="/calculators/retirement-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🌴</div>
+        <h3>Retirement Calculator</h3>
+        <p>Plan your retirement corpus</p>
+      </a>
+      <a href="/calculators/gratuity-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🎁</div>
+        <h3>Gratuity Calculator</h3>
+        <p>Payment of Gratuity Act formula</p>
+      </a>
+      <a href="/calculators/epf-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">🔐</div>
+        <h3>EPF Calculator</h3>
+        <p>Employee Provident Fund corpus</p>
+      </a>
+      <a href="/calculators/nps-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">🏛️</div>
+        <h3>NPS Calculator</h3>
+        <p>National Pension Scheme</p>
+      </a>
+      <a href="/calculators/ppf-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fff7ed">🛡️</div>
+        <h3>PPF Calculator</h3>
+        <p>15-year PPF returns</p>
+      </a>
+      <a href="/calculators/pension-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">👴</div>
+        <h3>Pension Calculator</h3>
+        <p>Monthly pension estimation</p>
+      </a>
+    </div>
+
+    <!-- Business Panel -->
+    <div class="calc-panel" id="panel-business" role="tabpanel">
+      <a href="/calculators/business-loan-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🏭</div>
+        <h3>Business Loan EMI</h3>
+        <p>SME / MSME loan repayment</p>
+      </a>
+      <a href="/calculators/gst-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🧾</div>
+        <h3>GST Calculator</h3>
+        <p>Business GST computation</p>
+      </a>
+      <a href="/tools/gst-hsn-sac-finder" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">🔎</div>
+        <h3>HSN / SAC Finder</h3>
+        <p>GST codes for invoices & GSTR-1</p>
+      </a>
+      <a href="/calculators/salary-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">💵</div>
+        <h3>Salary Calculator</h3>
+        <p>CTC to take-home breakdown</p>
+      </a>
+      <a href="/calculators/tds-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">📑</div>
+        <h3>TDS Calculator</h3>
+        <p>Tax Deducted at Source</p>
+      </a>
+      <a href="/government-schemes" class="calc-tile">
+        <div class="ct-icon" style="background:#ecfdf5">🏛️</div>
+        <h3>Government Schemes</h3>
+        <p>PMEGP, Mudra & more</p>
+      </a>
+      <a href="/calculators/gratuity-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fff7ed">🎁</div>
+        <h3>Gratuity Calculator</h3>
+        <p>Employee gratuity obligation</p>
+      </a>
+      <a href="/calculators/break-even-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#eff6ff">📉</div>
+        <h3>Break-Even Calculator</h3>
+        <p>Business break-even analysis</p>
+      </a>
+    </div>
+
+    <!-- Property Panel -->
+    <div class="calc-panel" id="panel-property" role="tabpanel">
+      <a href="/calculators/property-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🏘️</div>
+        <h3>Property Calculator</h3>
+        <p>Property affordability & planning</p>
+      </a>
+      <a href="/calculators/stamp-duty-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🗂️</div>
+        <h3>Stamp Duty Calculator</h3>
+        <p>Registration & stamp duty charges</p>
+      </a>
+      <a href="/calculators/home-loan-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🏡</div>
+        <h3>Home Loan EMI</h3>
+        <p>Home loan repayment planning</p>
+      </a>
+      <a href="/calculators/rent-vs-buy-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">🏠</div>
+        <h3>Rent vs Buy</h3>
+        <p>Should you rent or buy a home?</p>
+      </a>
+      <a href="/calculators/property-registration-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#ecfdf5">🧾</div>
+        <h3>Registration Charges</h3>
+        <p>Property registration cost</p>
+      </a>
+      <a href="/calculators/capital-gains-tax-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">💹</div>
+        <h3>Capital Gains Tax</h3>
+        <p>Property sale tax calculation</p>
+      </a>
+    </div>
+
+    <!-- Insurance Panel -->
+    <div class="calc-panel" id="panel-insurance" role="tabpanel">
+      <a href="/calculators/term-insurance-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🛡️</div>
+        <h3>Term Insurance</h3>
+        <p>Coverage amount you need</p>
+      </a>
+      <a href="/calculators/health-insurance-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">❤️‍🩹</div>
+        <h3>Health Insurance</h3>
+        <p>Premium & coverage estimator</p>
+      </a>
+      <a href="/insurance-tools/life-insurance-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">📄</div>
+        <h3>Life Insurance</h3>
+        <p>Coverage need and premium</p>
+      </a>
+      <a href="/insurance-tools/car-insurance-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#e0f2fe">🚗</div>
+        <h3>Car Insurance</h3>
+        <p>Vehicle insurance IDV calculator</p>
+      </a>
+    </div>
+
+    <!-- Banking Panel -->
+    <div class="calc-panel" id="panel-banking" role="tabpanel">
+      <a href="/calculators/fd-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🏦</div>
+        <h3>FD Calculator</h3>
+        <p>Fixed deposit interest & maturity</p>
+      </a>
+      <a href="/calculators/rd-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">💰</div>
+        <h3>RD Calculator</h3>
+        <p>Recurring deposit returns</p>
+      </a>
+      <a href="/calculators/simple-interest-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">📐</div>
+        <h3>Simple Interest</h3>
+        <p>Basic interest computation</p>
+      </a>
+      <a href="/calculators/compound-interest-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#f3e8ff">♾️</div>
+        <h3>Compound Interest</h3>
+        <p>Power of compounding</p>
+      </a>
+      <a href="/calculators/inflation-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fff7ed">📉</div>
+        <h3>Inflation Calculator</h3>
+        <p>Real value of money over time</p>
+      </a>
+      <a href="/calculators/currency-converter" class="calc-tile">
+        <div class="ct-icon" style="background:#ecfdf5">💱</div>
+        <h3>Currency Converter</h3>
+        <p>Live exchange rate converter</p>
+      </a>
+      <a href="/bank-tools" class="calc-tile">
+        <div class="ct-icon" style="background:#f0fdf4">🏦</div>
+        <h3>Banking Tools</h3>
+        <p>Bank lockers, cards, statements</p>
+      </a>
+      <a href="/credit-card-finder" class="calc-tile">
+        <div class="ct-icon" style="background:#eef2ff">💳</div>
+        <h3>Credit Card Finder</h3>
+        <p>Find the right credit card</p>
+      </a>
+    </div>
+
+    <div class="calc-panel" id="panel-fintech" role="tabpanel">
+      <a href="/learn/fintech-digital-payments" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">💳</div>
+        <h3>Digital Payments</h3>
+        <p>UPI, wallets, and online banking</p>
+      </a>
+      <a href="/learn/fintech-digital-payments/upi-complete-guide-gpay-phonepe-paytm-limit-charges-india-2025" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">📲</div>
+        <h3>UPI Guide</h3>
+        <p>Limits, charges, and safety</p>
+      </a>
+      <a href="/learn/fintech-digital-payments/digital-wallets-paytm-phonepe-amazon-pay-google-pay-india-complete-guide" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">👛</div>
+        <h3>Wallets Guide</h3>
+        <p>Paytm, PhonePe, and more</p>
+      </a>
+      <a href="/crypto" class="calc-tile">
+        <div class="ct-icon" style="background:#ecfdf5">₿</div>
+        <h3>Crypto Hub</h3>
+        <p>Crypto tools, taxes, and guides</p>
+      </a>
+    </div>
+
+    <div class="calc-panel" id="panel-wealth" role="tabpanel">
+      <a href="/finance-tools/asset-allocation-tool" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🧭</div>
+        <h3>Asset Allocation</h3>
+        <p>Balance equity, debt, and gold</p>
+      </a>
+      <a href="/finance-tools/portfolio-diversification-visualizer" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">📊</div>
+        <h3>Diversification</h3>
+        <p>Visualize portfolio risk</p>
+      </a>
+      <a href="/finance-tools/xirr-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">📈</div>
+        <h3>XIRR Calculator</h3>
+        <p>IRR for irregular cashflows</p>
+      </a>
+      <a href="/finance-tools/mutual-fund-portfolio-rebalancer" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">🔁</div>
+        <h3>Portfolio Rebalancer</h3>
+        <p>Keep your allocation on track</p>
+      </a>
+    </div>
+
+    <div class="calc-panel" id="panel-personal" role="tabpanel">
+      <a href="/personal-finance-management" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">🧠</div>
+        <h3>Personal Finance Hub</h3>
+        <p>Track goals and spending</p>
+      </a>
+      <a href="/tools/personal-finance-dashboard" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">📋</div>
+        <h3>Finance Dashboard</h3>
+        <p>Net worth and budget tracker</p>
+      </a>
+      <a href="/learn/money-management" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">💰</div>
+        <h3>Money Management</h3>
+        <p>Budgeting and saving lessons</p>
+      </a>
+      <a href="/learn/savings-bank-products" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">🏦</div>
+        <h3>Savings & Banking</h3>
+        <p>Accounts, FDs, and RDs</p>
+      </a>
+    </div>
+
+    <div class="calc-panel" id="panel-education" role="tabpanel">
+      <a href="/calculators/lcm-hcf-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#d1fae5">➗</div>
+        <h3>LCM & HCF</h3>
+        <p>Math helper calculator</p>
+      </a>
+      <a href="/gk" class="calc-tile">
+        <div class="ct-icon" style="background:#dbeafe">📚</div>
+        <h3>GK Hub</h3>
+        <p>General knowledge in Hindi</p>
+      </a>
+      <a href="/learn/education-loans" class="calc-tile">
+        <div class="ct-icon" style="background:#fef3c7">🎓</div>
+        <h3>Education Loans</h3>
+        <p>Eligibility, rates, and EMI</p>
+      </a>
+      <a href="/learn/education-loans/emi-calculator" class="calc-tile">
+        <div class="ct-icon" style="background:#fce7f3">🧮</div>
+        <h3>Education Loan EMI</h3>
+        <p>Plan your study loan EMI</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AD: MID PAGE RECTANGLE ══ -->
+<div class="ad-wrap ad-wrap-300">
+  <div class="ad-slot">
+    <b>Advertisement</b>
+    336 × 280 — AdSense Rectangle (in-content)
+    <!-- LIVE CODE:
+    <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-XXXXXX" data-ad-slot="XXXXXX"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</div>
+
+<!-- ══ SPECIALISED TOOLS ══ -->
+<section class="section tools-section" aria-labelledby="tools-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="tools-head">⚙️ Specialised Financial Tools</h2>
+      <p>Advanced tools beyond standard calculators</p>
+    </div>
+    <div class="tools-grid">
+      <a href="/tools/gst-hsn-sac-finder" class="tool-card reveal">
+        <div class="tool-icon">🔎</div>
+        <div>
+          <h3>HSN / SAC Code Finder</h3>
+          <p>Find GST codes for goods & services instantly. Perfect for GSTR-1 & invoices.</p>
+        </div>
+      </a>
+      <a href="/calculators/mutual-fund-overlap-checker" class="tool-card reveal">
+        <div class="tool-icon">🔍</div>
+        <div>
+          <h3>Mutual Fund Overlap Checker</h3>
+          <p>Check stock overlap across your mutual fund portfolio to avoid over-diversification.</p>
+        </div>
+      </a>
+      <a href="/sip-simplifier" class="tool-card reveal">
+        <div class="tool-icon">🎯</div>
+        <div>
+          <h3>SIP Simplifier Hub</h3>
+          <p>16+ SIP calculators + lessons + articles in one place. Hindi & English.</p>
+        </div>
+      </a>
+      <a href="/calculators/loan-comparison-calculator" class="tool-card reveal">
+        <div class="tool-icon">⚖️</div>
+        <div>
+          <h3>Loan Comparison Tool</h3>
+          <p>Side-by-side comparison of multiple bank loan offers — find the best deal.</p>
+        </div>
+      </a>
+      <a href="/calculators/rent-vs-buy-calculator" class="tool-card reveal">
+        <div class="tool-icon">🏠</div>
+        <div>
+          <h3>Rent vs Buy Calculator</h3>
+          <p>Is buying a home better than renting? Get a data-driven answer for your city.</p>
+        </div>
+      </a>
+      <a href="/calculators/inflation-calculator" class="tool-card reveal">
+        <div class="tool-icon">📉</div>
+        <div>
+          <h3>Inflation Calculator</h3>
+          <p>Understand how inflation erodes purchasing power over time with Indian CPI data.</p>
+        </div>
+      </a>
+      <a href="/government-schemes" class="tool-card reveal">
+        <div class="tool-icon">🏛️</div>
+        <div>
+          <h3>Government Schemes Guide</h3>
+          <p>PMEGP, Mudra Loan, PM Awas Yojana and more — eligibility & application guides.</p>
+        </div>
+      </a>
+      <a href="/crypto" class="tool-card reveal">
+        <div class="tool-icon">₿</div>
+        <div>
+          <h3>Crypto Tools & Guides</h3>
+          <p>Crypto ETF comparisons, tax implications & investment guides for Indian investors.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SIP SIMPLIFIER PROMO ══ -->
+<section class="section promo-section" aria-labelledby="promo-head">
+  <div class="container">
+    <div class="promo-inner">
+      <div class="promo-text reveal">
+        <h2 id="promo-head">🎯 Try the SIP Simplifier Hub</h2>
+        <p>India's most complete SIP resource — 16+ calculators, 200+ lessons in Hindi & English, expert articles, and interactive tools. Everything a mutual fund investor needs in one place.</p>
+        <a href="/sip-simplifier" class="promo-btn">Explore SIP Simplifier →</a>
+      </div>
+      <div class="promo-img reveal">
+        <div class="p-big">📈</div>
+        <h3>SIP Simplifier</h3>
+        <p>16+ Calculators · 200+ Lessons · Hindi + English</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MONEYCAL LEARN ══ -->
+<section class="section learn-section" aria-labelledby="learn-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="learn-head">🎓 MoneyCal Learn — India's Finance Academy</h2>
+      <p>200+ lessons across 18 categories · Hindi + English · Free forever</p>
+      <a href="/learn" class="view-all" style="border-color:var(--jade);color:var(--jade)">Explore All Lessons →</a>
+    </div>
+    <div class="learn-grid">
+      <a href="/learn/loans" class="learn-card reveal">
+        <div class="lc-icon">🏠</div>
+        <h3>Home Loan Mastery</h3>
+        <p>20 lessons on home loan — tax benefits, PMAY, prepayment strategies</p>
+        <div class="lc-meta">20 Lessons · 10h · Intermediate</div>
+      </a>
+      <a href="/learn/loans/personal-loan" class="learn-card reveal">
+        <div class="lc-icon">💳</div>
+        <h3>Personal Loan Guide</h3>
+        <p>Instant loans, debt consolidation, eligibility & interest rate comparison</p>
+        <div class="lc-meta">20 Lessons · 8h · Beginner</div>
+      </a>
+      <a href="/learn/savings-bank-products" class="learn-card reveal">
+        <div class="lc-icon">🏦</div>
+        <h3>Savings & Banking</h3>
+        <p>FD, RD, sweep-in accounts — make your idle money work harder</p>
+        <div class="lc-meta">9 Lessons · 4h · Beginner</div>
+      </a>
+      <a href="/sip-simplifier" class="learn-card reveal">
+        <div class="lc-icon">📈</div>
+        <h3>SIP & Mutual Funds</h3>
+        <p>Basics to advanced — build wealth systematically with SIP investing</p>
+        <div class="lc-meta">30+ Lessons · Hindi + English</div>
+      </a>
+      <a href="/learn/taxation" class="learn-card reveal">
+        <div class="lc-icon">🧾</div>
+        <h3>Taxation & Compliance</h3>
+        <p>Income tax, GST, TDS filing — everything explained simply</p>
+        <div class="lc-meta">25 Lessons · 12h · All Levels</div>
+      </a>
+      <a href="/learn/retirement" class="learn-card reveal">
+        <div class="lc-icon">🌴</div>
+        <h3>Retirement Planning</h3>
+        <p>NPS, EPF, PPF, pension — build a secure post-retirement life</p>
+        <div class="lc-meta">15 Lessons · 7h · Intermediate</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AD: LEADERBOARD 2 ══ -->
+<div class="ad-wrap ad-wrap-728">
+  <div class="ad-slot">
+    <b>Advertisement</b>
+    728 × 90 — AdSense Leaderboard (below learn section)
+  </div>
+</div>
+
+<!-- ══ GOVERNMENT SCHEMES ══ -->
+<section class="section gov-section" aria-labelledby="gov-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="gov-head">🏛️ Government Schemes & Guides</h2>
+      <p>Eligibility, application process & calculators for top Indian govt schemes</p>
+      <a href="/government-schemes" class="view-all" style="border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.8)">View All Schemes →</a>
+    </div>
+    <div class="gov-grid">
+      <a href="/government-schemes/pmegp" class="gov-card reveal">
+        <div class="g-icon">🏭</div>
+        <h3>PMEGP Loan</h3>
+        <p>Up to ₹25 Lakh business loan with government subsidy</p>
+      </a>
+      <a href="/government-schemes/mudra" class="gov-card reveal">
+        <div class="g-icon">💼</div>
+        <h3>Mudra Loan</h3>
+        <p>Shishu, Kishore & Tarun — micro business financing</p>
+      </a>
+      <a href="/government-schemes/pm-awas-yojana" class="gov-card reveal">
+        <div class="g-icon">🏠</div>
+        <h3>PM Awas Yojana</h3>
+        <p>Affordable housing subsidy for first-time home buyers</p>
+      </a>
+      <a href="/government-schemes/sukanya-samriddhi" class="gov-card reveal">
+        <div class="g-icon">👧</div>
+        <h3>Sukanya Samriddhi</h3>
+        <p>Girl child savings scheme — 8.2% interest, tax-free</p>
+      </a>
+      <a href="/government-schemes/nsc" class="gov-card reveal">
+        <div class="g-icon">📜</div>
+        <h3>National Savings Certificate</h3>
+        <p>Guaranteed returns with Section 80C tax benefit</p>
+      </a>
+      <a href="/government-schemes" class="gov-card reveal" style="display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:8px;">
+        <div class="g-icon">➕</div>
+        <h3>View All Schemes</h3>
+        <p>Explore all government financial schemes</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG ══ -->
+<section class="section blog-section" aria-labelledby="blog-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="blog-head">📰 Latest Articles & Guides</h2>
+      <p>Expert financial content for smarter money decisions</p>
+      <a href="/blog" class="view-all">Read All Articles →</a>
+    </div>
+    <div class="blog-grid">
+      <a href="/blog/home-loan-tips-2025" class="blog-card reveal">
+        <div class="blog-thumb" style="background:#d1fae5">🏠</div>
+        <div class="blog-body">
+          <div class="blog-cat">Home Loan</div>
+          <h3>5 Smart Ways to Reduce Your Home Loan EMI in 2025</h3>
+          <p>Prepayment, balance transfer, and tenure changes can dramatically cut your total interest paid.</p>
+          <div class="blog-meta">Jan 2025 · 5 min read</div>
+        </div>
+      </a>
+      <a href="/blog/sip-vs-lumpsum" class="blog-card reveal">
+        <div class="blog-thumb" style="background:#dbeafe">📊</div>
+        <div class="blog-body">
+          <div class="blog-cat">Investing</div>
+          <h3>SIP vs Lump Sum: Which Strategy Builds More Wealth?</h3>
+          <p>A data-backed comparison with real Indian market scenarios to help you decide.</p>
+          <div class="blog-meta">Dec 2024 · 7 min read</div>
+        </div>
+      </a>
+      <a href="/blog/new-vs-old-tax-regime-2025" class="blog-card reveal">
+        <div class="blog-thumb" style="background:#f3e8ff">💡</div>
+        <div class="blog-body">
+          <div class="blog-cat">Income Tax</div>
+          <h3>New vs Old Tax Regime FY 2024-25: Which Saves You More?</h3>
+          <p>Full comparison with salary examples. Use our calculator to find your best option.</p>
+          <div class="blog-meta">Jan 2025 · 8 min read</div>
+        </div>
+      </a>
+      <a href="/blog/ppf-vs-nps-indian-investors-comparison" class="blog-card reveal">
+        <div class="blog-thumb" style="background:#fef3c7">🏛️</div>
+        <div class="blog-body">
+          <div class="blog-cat">Retirement</div>
+          <h3>PPF vs NPS: Which is Better for Indian Retirement Planning?</h3>
+          <p>Lock-in, returns, tax benefits and liquidity — a complete side-by-side analysis.</p>
+          <div class="blog-meta">Nov 2024 · 6 min read</div>
+        </div>
+      </a>
+      <a href="/blog/small-business-loan-emi-calculator-sme-planning-hindi" class="blog-card reveal">
+        <div class="blog-thumb" style="background:#ecfdf5">🏭</div>
+        <div class="blog-body">
+          <div class="blog-cat">Business · हिंदी</div>
+          <h3>SME Business Loan EMI Calculator — Complete Hindi Guide</h3>
+          <p>छोटे व्यापारियों के लिए बिज़नेस लोन EMI की पूरी जानकारी हिंदी में।</p>
+          <div class="blog-meta">Dec 2024 · 5 min read</div>
+        </div>
+      </a>
+      <a href="/crypto/top-crypto-etfs-india-2025-investment-guide" class="blog-card reveal">
+        <div class="blog-thumb" style="background:#fce7f3">₿</div>
+        <div class="blog-body">
+          <div class="blog-cat">Crypto</div>
+          <h3>Top 5 Crypto ETFs Available in India 2025: Complete Guide</h3>
+          <p>Discover the best cryptocurrency ETFs for Indian investors and how to invest safely.</p>
+          <div class="blog-meta">Jun 2025 · 10 min read</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST BAR ══ -->
+<div class="trust-bar" role="complementary" aria-label="Trust indicators">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="t-icon">✅</span> 100% Free — No Login</div>
+    <div class="trust-item"><span class="t-icon">🔒</span> No Data Stored</div>
+    <div class="trust-item"><span class="t-icon">🇮🇳</span> Built for India</div>
+    <div class="trust-item"><span class="t-icon">🔄</span> Updated Daily</div>
+    <div class="trust-item"><span class="t-icon">🌐</span> Hindi + English</div>
+    <div class="trust-item"><span class="t-icon">👨‍💼</span> CA-Verified Formulas</div>
+  </div>
+</div>
+
+<!-- ══ FAQ (Rich Results eligible) ══ -->
+<section class="section faq-section" aria-labelledby="faq-head">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2 id="faq-head">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">
+          What financial calculators does MoneyCal offer?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a" role="region">MoneyCal offers 500+ free financial calculators across 12 categories: Loan Calculators (15), Investment Calculators (20), Tax Calculators (12), Retirement Calculators (8), Business Calculators (12), Property Calculators, Insurance Calculators, Banking & Finance Tools, FinTech & Payments, Investments & Wealth Management, Personal Finance, and Math & Education Calculators.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">
+          Is MoneyCal completely free to use?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a" role="region">Yes! All 500+ calculators on MoneyCal are completely free. No registration, no login, no hidden charges. Calculations run in your browser and MoneyCal does not store your personal financial data.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">
+          Does MoneyCal support Hindi language?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a" role="region">Yes, MoneyCal supports both Hindi and English. Our MoneyCal Learn platform offers 200+ financial lessons in Hindi and English with real Indian examples, making financial literacy accessible to all Indians.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">
+          How accurate are MoneyCal's calculations?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a" role="region">Every calculator is rigorously tested and verified by Chartered Accountants. Formulas follow standard Indian banking conventions including reducing-balance EMI, CAGR/XIRR, GST breakdown, and latest tax slabs updated for FY 2024-25. For final compliance, always verify with official sources.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">
+          Which is better — old tax regime or new tax regime for FY 2024-25?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a" role="region">It depends on your income level, deductions like 80C, HRA, and home loan interest. Use our <a href="/calculators/income-tax-calculator" style="color:var(--jade);font-weight:600;">Income Tax Calculator</a> to enter your actual numbers and instantly compare both regimes to find which saves you more tax.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFAQ(this)">
+          What is the EMI formula used by MoneyCal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a" role="region">MoneyCal uses the standard reducing-balance EMI formula: EMI = P × r × (1+r)ⁿ / [(1+r)ⁿ - 1], where P = Principal, r = monthly interest rate, n = tenure in months. This is the same formula used by Indian banks including SBI, HDFC, ICICI and others.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AD: BOTTOM LEADERBOARD ══ -->
+<div class="ad-wrap ad-wrap-728">
+  <div class="ad-slot">
+    <b>Advertisement</b>
+    728 × 90 — AdSense Leaderboard (above footer)
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <a href="/" class="logo">Money<em style="color:var(--jade)">Cal</em></a>
+      <p>India's most comprehensive free financial calculator platform. 500+ tools covering EMI, SIP, Income Tax, GST, and more. Built for Indians, by Indians — Hindi + English.</p>
+      <div class="footer-social">
+        <a href="/contact" class="social-btn" aria-label="Contact us">📧</a>
+        <a href="/blog" class="social-btn" aria-label="Blog">📰</a>
+        <a href="/learn" class="social-btn" aria-label="Learn">🎓</a>
+      </div>
+    </div>
+
+    <!-- Loan Calculators -->
+    <div>
+      <h4>Loan Calculators</h4>
+      <ul>
+        <li><a href="/calculators/emi-calculator">EMI Calculator</a></li>
+        <li><a href="/calculators/home-loan-calculator">Home Loan</a></li>
+        <li><a href="/calculators/car-loan-calculator">Car Loan</a></li>
+        <li><a href="/calculators/personal-loan-calculator">Personal Loan</a></li>
+        <li><a href="/learn/education-loans/emi-calculator">Education Loan EMI</a></li>
+        <li><a href="/calculators/business-loan-calculator">Business Loan</a></li>
+        <li><a href="/calculators/loan-eligibility-calculator">Loan Eligibility</a></li>
+        <li><a href="/calculators#loans">All 15 Loan Tools →</a></li>
+      </ul>
+    </div>
+
+    <!-- Investment & Tax -->
+    <div>
+      <h4>Investment & Tax</h4>
+      <ul>
+        <li><a href="/calculators/sip-calculator">SIP Calculator</a></li>
+        <li><a href="/calculators/fd-calculator">FD Calculator</a></li>
+        <li><a href="/calculators/ppf-calculator">PPF Calculator</a></li>
+        <li><a href="/calculators/nps-calculator">NPS Calculator</a></li>
+        <li><a href="/calculators/income-tax-calculator">Income Tax</a></li>
+        <li><a href="/calculators/gst-calculator">GST Calculator</a></li>
+        <li><a href="/tools/gst-hsn-sac-finder">HSN / SAC Finder</a></li>
+        <li><a href="/calculators#investment">All 20 Investment Tools →</a></li>
+      </ul>
+    </div>
+
+    <!-- More Tools -->
+    <div>
+      <h4>More Tools</h4>
+      <ul>
+        <li><a href="/calculators/salary-calculator">Salary Calculator</a></li>
+        <li><a href="/calculators/gratuity-calculator">Gratuity Calculator</a></li>
+        <li><a href="/calculators/retirement-calculator">Retirement Planner</a></li>
+        <li><a href="/calculators/stamp-duty-calculator">Stamp Duty</a></li>
+        <li><a href="/sip-simplifier">SIP Simplifier Hub</a></li>
+        <li><a href="/crypto">Crypto Guides</a></li>
+        <li><a href="/government-schemes">Govt Schemes</a></li>
+        <li><a href="/calculators">All 500+ Tools →</a></li>
+      </ul>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About MoneyCal</a></li>
+        <li><a href="/learn">MoneyCal Learn</a></li>
+        <li><a href="/blog">Blog & Articles</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2024 MoneyCal. All rights reserved. Made with ❤️ in India.</span>
+    <span>
+      <a href="/privacy-policy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/sitemap.xml">Sitemap</a>
+    </span>
+  </div>
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> MoneyCal calculators are for informational and educational purposes only. Results are estimates based on inputs provided. Calculations are not financial advice. Always consult a qualified financial advisor, CA, or your bank before making financial decisions. Interest rates, tax slabs, and regulations are subject to change.
+  </div>
+</footer>
+
+<!-- ══ JAVASCRIPT ══ -->
+<script>
+  // Tab switcher
+  function switchTab(btn, id) {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + id).classList.add('active');
+  }
+
+  // FAQ toggle
+  function toggleFAQ(btn) {
+    const a = btn.nextElementSibling;
+    const open = a.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(x => x.setAttribute('aria-expanded', 'false'));
+    if (!open) {
+      a.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  const searchInput = document.getElementById('heroSearch');
+  const searchResults = document.getElementById('searchResults');
+  const searchResultsList = document.getElementById('searchResultsList');
+  const searchCount = document.getElementById('searchCount');
+  let searchIndex = [];
+  let searchReady = false;
+  let searchLoading = null;
+  let lastMatches = [];
+
+  const titleCase = (value) => value.split(' ').map(w => w ? w[0].toUpperCase() + w.slice(1) : '').join(' ');
+  const normalize = (value) => value.toLowerCase();
+  const buildLabel = (path) => {
+    if (!path || path === '/') return 'Home';
+    const clean = path.replace(/\/+$/, '');
+    const base = clean.split('/').pop() || clean;
+    return titleCase(base.replace(/[-_]/g, ' ').replace(/\.html?$/i, '').trim());
+  };
+
+  const parseLine = (line) => {
+    const value = line.trim();
+    if (!value) return null;
+    try {
+      const url = new URL(value, window.location.origin);
+      return { path: url.pathname, label: buildLabel(url.pathname) };
+    } catch {
+      return null;
+    }
+  };
+
+  const loadSearchIndex = () => {
+    if (searchLoading) return searchLoading;
+    searchLoading = fetch('/all-urls-from-code.txt')
+      .then(res => res.ok ? res.text() : '')
+      .then(text => {
+        const seen = new Set();
+        searchIndex = text.split('\n').map(parseLine).filter(Boolean).filter(item => {
+          if (seen.has(item.path)) return false;
+          seen.add(item.path);
+          return true;
+        });
+        searchReady = true;
+      })
+      .catch(() => {
+        searchIndex = [];
+        searchReady = true;
+      });
+    return searchLoading;
+  };
+
+  const renderResults = (matches, query) => {
+    searchResultsList.innerHTML = '';
+    if (!query) {
+      searchResults.classList.remove('active');
+      searchInput.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    const limited = matches.slice(0, 12);
+    limited.forEach(item => {
+      const link = document.createElement('a');
+      link.className = 'search-result';
+      link.href = item.path;
+      const wrap = document.createElement('div');
+      const title = document.createElement('div');
+      title.textContent = item.label;
+      const path = document.createElement('div');
+      path.className = 'sr-path';
+      path.textContent = item.path;
+      wrap.appendChild(title);
+      wrap.appendChild(path);
+      link.appendChild(wrap);
+      searchResultsList.appendChild(link);
+    });
+    if (!limited.length) {
+      const link = document.createElement('a');
+      link.className = 'search-result';
+      link.href = '/calculators?q=' + encodeURIComponent(query);
+      const wrap = document.createElement('div');
+      const title = document.createElement('div');
+      title.textContent = 'Search in calculators';
+      const path = document.createElement('div');
+      path.className = 'sr-path';
+      path.textContent = '/calculators?q=' + query;
+      wrap.appendChild(title);
+      wrap.appendChild(path);
+      link.appendChild(wrap);
+      searchResultsList.appendChild(link);
+    }
+    searchCount.textContent = `${matches.length} results`;
+    searchResults.classList.add('active');
+    searchInput.setAttribute('aria-expanded', 'true');
+  };
+
+  const runSearch = async () => {
+    const query = searchInput.value.trim();
+    if (!query) {
+      lastMatches = [];
+      renderResults([], '');
+      return;
+    }
+    await loadSearchIndex();
+    const q = normalize(query);
+    lastMatches = searchIndex.filter(item => {
+      const hay = normalize(item.label + ' ' + item.path);
+      return hay.includes(q);
+    });
+    renderResults(lastMatches, query);
+  };
+
+  function searchCalc() {
+    const query = searchInput.value.trim();
+    if (!query) return;
+    if (lastMatches.length) {
+      window.location.href = lastMatches[0].path;
+      return;
+    }
+    window.location.href = '/calculators?q=' + encodeURIComponent(query);
+  }
+
+  searchInput.addEventListener('input', runSearch);
+  searchInput.addEventListener('focus', runSearch);
+  searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') searchCalc();
+    if (e.key === 'Escape') {
+      searchResults.classList.remove('active');
+      searchInput.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('click', e => {
+    if (!searchResults.contains(e.target) && e.target !== searchInput) {
+      searchResults.classList.remove('active');
+      searchInput.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close mobile menu on outside click
+  document.getElementById('mobileMenu').addEventListener('click', e => {
+    if (e.target === document.getElementById('mobileMenu')) {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>

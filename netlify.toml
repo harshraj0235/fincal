@@ -1,0 +1,1707 @@
+# MoneyCal.in Netlify Configuration
+# Optimized for SEO and Performance
+# Last Updated: 2025-01-20
+
+# === REDIRECTS ===
+# CRITICAL: www → non-www (must be first - Google indexes www and non-www separately)
+# Prevents 404 on www.moneycal.in URL Inspection in Google Search Console
+# NOTE: Add www.moneycal.in as domain alias in Netlify Dashboard → Domain management
+[[redirects]]
+  from = "https://www.moneycal.in/"
+  to = "https://moneycal.in/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.moneycal.in/"
+  to = "https://moneycal.in/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.moneycal.in/*"
+  to = "https://moneycal.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.moneycal.in/*"
+  to = "https://moneycal.in/:splat"
+  status = 301
+  force = true
+
+# Fix double-domain Soft 404s reported in Google Search Console.
+# These occur when Google crawled URLs with the domain appearing twice in the path,
+# e.g. moneycal.in/moneycal.in/learn/... -> moneycal.in/learn/...
+[[redirects]]
+  from = "/moneycal.in/*"
+  to = "/:splat"
+  status = 301
+  force = true
+
+# Specific Slug Mismatches
+[[redirects]]
+  from = "/blog/indogulf-cropsciences-ipo"
+  to = "/blog/indogulf-cropsciences-ipo-agricultural-sector-guide"
+  status = 301
+
+[[redirects]]
+  from = "/government-schemes/pm-kisan-manual-registration-guide"
+  to = "/government-schemes/pm-kisan-samman-nidhi-yojana-2025"
+  status = 301
+
+[[redirects]]
+  from = "/hi/*"
+  to = "/404"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/ExcelTool"
+  to = "/exceltool"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ExcelTool/*"
+  to = "/exceltool/:splat"
+  status = 301
+  force = true
+
+# SPA fallback - must be last redirect
+# ===========================================
+# PATH ALIAS REDIRECTS (301 Permanent)
+# Fix old/wrong URL aliases crawled by Google and indexed as Soft 404s
+# ===========================================
+
+# /learn/savings-bank-products/* → /learn/savings-bank/*
+[[redirects]]
+  from = "/learn/savings-bank-products/*"
+  to = "/learn/savings-bank/:splat"
+  status = 301
+  force = true
+
+# /learn/loans/what-is-personal-loan → /learn/personal-loans/what-is-personal-loan
+[[redirects]]
+  from = "/learn/basics"
+  to = "/learn"
+  status = 301
+  force = true
+
+# /learn/savings-bank → /learn/savings-bank (hub page exists, sub-pages might not)
+# /learn/savings-bank/savings-bank-products → /learn/savings-bank
+[[redirects]]
+  from = "/learn/credit-score/improve-cibil-score-fast"
+  to = "/learn/credit-score/improve-score"
+  status = 301
+  force = true
+
+# /learn/credit-score/certificate → /learn/credit-score
+[[redirects]]
+  from = "/learn/credit-score/certificate"
+  to = "/learn/credit-score"
+  status = 301
+  force = true
+
+# /learn/education-loans/certificate and /quiz → hub
+[[redirects]]
+  from = "/learn/education-loans/certificate"
+  to = "/learn/education-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/education-loans/quiz"
+  to = "/learn/education-loans"
+  status = 301
+  force = true
+
+# /learn/personal-loans/loan-expert-insights → /learn/personal-loans
+[[redirects]]
+  from = "/learn/personal-loans/loan-expert-insights"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+# Calculator slug aliases → proper calculator slugs
+[[redirects]]
+  from = "/calculators/income-tax"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/goal-calculator"
+  to = "/calculators/retirement-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/goal-planner"
+  to = "/calculators/retirement-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/swp-calculator"
+  to = "/calculators/sip-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/debt-payoff-calculator"
+  to = "/loan-tools/debt-strategies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/business-loan-emi-calculator"
+  to = "/calculators/business-loan-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/expense-tracker"
+  to = "/tools/expense-tracker"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/liquid-fund-returns"
+  to = "/calculators/mutual-fund-returns-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/loan-emi-calculator"
+  to = "/calculators/emi-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/education-loan-calculator"
+  to = "/calculators/education-loan-calculator"
+  status = 200
+
+[[redirects]]
+  from = "/calculators/savings-goal"
+  to = "/calculators/fd-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/savings-calculator"
+  to = "/calculators/fd-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/working-capital-calculator"
+  to = "/calculators/business-loan-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/hsn-code-finder"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/fire-calculator"
+  to = "/calculators/financial-independence-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/elss-calculator"
+  to = "/calculators/mutual-fund-returns-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/stock-return-calculator"
+  to = "/calculators/mutual-fund-returns-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/credit-score-calculator"
+  to = "/tools/credit-score-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/compound-interest"
+  to = "/calculators/compound-interest-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/emergency-fund"
+  to = "/calculators/fd-calculator"
+  status = 301
+  force = true
+
+# /fixed-deposit-calculator → correct path
+[[redirects]]
+  from = "/fixed-deposit-calculator"
+  to = "/calculators/fd-calculator"
+  status = 301
+  force = true
+
+# /finance-blog/* → /blog/*
+[[redirects]]
+  from = "/tax-tools/nps-calculator"
+  to = "/calculators/nps-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/foreign-income-tax-calculator"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/nri-vs-resident-tax-visualizer"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/lumpsum-vs-sip-analyzer"
+  to = "/calculators/sip-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/nre-vs-nro-tax-tool"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/tax-saving-investment-calculator"
+  to = "/calculators/tax-saving-investment-calculator"
+  status = 301
+  force = true
+
+# /finance-tools/* aliases without routes
+[[redirects]]
+  from = "/finance-tools/reits-vs-fd-roi-visualizer"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/gold-vs-equity-10-year-return-comparator"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/mutual-fund-tracker"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/mutual-fund-comparison-tool"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/investment-goal-countdown-widget"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/expense-ratio-impact-visual-tool"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/mutual-fund-overlap-checker"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+# /stock-market lesson sub-routes (no dynamic lesson pages)
+[[redirects]]
+  from = "/stock-market/tools-practical-application/lesson/*"
+  to = "/stock-market/tools-practical-application"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stock-market/case-studies-market-psychology/lesson/*"
+  to = "/stock-market/case-studies-market-psychology"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stock-market/core-market-concepts/lesson/*"
+  to = "/stock-market/core-market-concepts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stock-market/tools-practical"
+  to = "/stock-market/tools-practical-application"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stock-market/case-studies-psychology"
+  to = "/stock-market/case-studies-market-psychology"
+  status = 301
+  force = true
+
+# Hub pages that render sub-page content (redirect slugs to parent)
+[[redirects]]
+  from = "/design-tools/*"
+  to = "/design-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fun-engagement/*"
+  to = "/fun-engagement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/seo-tools/*"
+  to = "/seo-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/audio-aarti-player"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/vrat-tithi-calendar"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/vrat-duration-calculator"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/bhajan-playlist-generator"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/kundali-festival-compatibility"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/pilgrimage-expense"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/how-to-perform-puja"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/direction-finder-prayer"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/religious-tools/temple-route-planner"
+  to = "/religious-tools"
+  status = 301
+  force = true
+
+# Legacy excel-tools that live under different paths
+[[redirects]]
+  from = "/excel-tools/monthly-budget-tracker"
+  to = "/excel-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/excel-tools/investment-portfolio-tracker"
+  to = "/excel-tools"
+  status = 301
+  force = true
+
+# Completely orphaned paths → redirect to closest existing page
+[[redirects]]
+  from = "/utilities"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fino"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/amp-index"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal-tools"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/loan-tools/debt-strategies"
+  to = "/loan-tools/debt-strategies"
+  status = 200
+
+[[redirects]]
+  from = "/blog/esg-secret-indian-startup-investment-10x"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/fixed-deposit-investment-strategies"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/retirement-planning"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/complete-guide-personal-finance-india-2025"
+  to = "/blog"
+  status = 301
+  force = true
+
+# ===========================================
+# ORPHAN / PLACEHOLDER PAGE REDIRECTS
+# Fix "Crawled - currently not indexed" from Google Search Console
+# ===========================================
+
+# Orphan placeholder pages with no real content
+[[redirects]]
+  from = "/sitemap-blog.xml"
+  to = "/sitemap-blog.xml"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap-pages.xml"
+  to = "/sitemap-pages.xml"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap-excel-tools.xml"
+  to = "/sitemap-excel-tools.xml"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap-news.xml"
+  to = "/sitemap-news.xml"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap-index.xml"
+  to = "/sitemap-index.xml"
+  status = 200
+
+# Calculators that may not exist
+[[redirects]]
+  from = "/calculators/asset-allocation-calculator"
+  to = "/tools/asset-allocation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/vrs-calculator"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/notice-period-calculator"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/corporate-finance/*"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+# /learn/savings-bank (hub - exists, but make sure /savings-bank subpages redirect)
+[[redirects]]
+  from = "/learn/personal-loans/certificate"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/loans/what-is-emi"
+  to = "/learn/loans/what-is-emi"
+  status = 200
+
+# Insurance/retirement
+[[redirects]]
+  from = "/learn/investing-wealth/asset-allocation-equity-debt-gold-diversification-strategy-india"
+  to = "/tools/asset-allocation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/investing-wealth/value-vs-growth-investing-warren-buffett-strategy-india"
+  to = "/learn/investing-wealth"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/investing-wealth/direct-vs-regular-mutual-funds-save-15-lakh-direct-plans-india"
+  to = "/learn/investing-wealth"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stock-market/stock-market-basics/lesson/*"
+  to = "/stock-market/stock-market-basics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/gold-cagr-calculator"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/gold-value-estimator"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/monthly-goal-in-gold"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/gold-weight-converter"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/gold-scrap-resale-value"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/karat-to-purity"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/gold-making-charges-gst"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+# Tools sub-pages that may be placeholders
+[[redirects]]
+  from = "/tools/content-sharing"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/sales-report"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/review-request"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/rcm-compliance-checklist"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/rcm-documentation-guide"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-audit-trail-report"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-late-fee-waiver-checker"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-refund-adjustment-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-refund-documentation-checklist"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-advance-payment-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-credit-utilization-report"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-filing-status-tracker"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-audit-report-generator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/composition-scheme-benefits-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/composition-scheme-compliance-checklist"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/rcm-invoice-generator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/rcm-payment-tracker"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/rcm-due-date-tracker"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-composition-penalty-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/expense-splitter-tool"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/news/author/*"
+  to = "/news"
+  status = 301
+  force = true
+
+# Festival tools - dhanteras with query params
+[[redirects]]
+  from = "/banking/fd-calculator"
+  to = "/calculators/fd-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/banking/bank-account-comparison"
+  to = "/calculators"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/banking/*"
+  to = "/calculators"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/banking"
+  to = "/calculators"
+  status = 301
+  force = true
+
+# --- Deprecated SECTION: /finance-categories/* ---
+[[redirects]]
+  from = "/finance-categories/investment-planning-strategy"
+  to = "/learn/investing-wealth"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-categories/tax-planning-optimization"
+  to = "/learn/taxation-compliance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-categories/*"
+  to = "/learn"
+  status = 301
+  force = true
+
+# --- Deprecated SECTION: /real-estate/* ---
+[[redirects]]
+  from = "/real-estate/property-investment-calculator"
+  to = "/calculators/property-registration-charges-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/real-estate/*"
+  to = "/calculators"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/real-estate-tools"
+  to = "/calculators"
+  status = 301
+  force = true
+
+# --- /festival-info/* → /festival-tools ---
+[[redirects]]
+  from = "/festival-info/*"
+  to = "/festival-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stock-market/lesson/*"
+  to = "/stock-market"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stock-market/advanced-trading"
+  to = "/stock-market"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/*"
+  to = "/blog"
+  status = 301
+  force = true
+
+# --- Orphan standalone pages ---
+[[redirects]]
+  from = "/amp-index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# --- /learn/*/quiz and /learn/*/certificate (thin pages) ---
+[[redirects]]
+  from = "/learn/home-loans/quiz"
+  to = "/learn/home-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/home-loans/certificate"
+  to = "/learn/home-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/vehicle-loans/quiz"
+  to = "/learn/vehicle-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/vehicle-loans/certificate"
+  to = "/learn/vehicle-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/gold-loans/quiz"
+  to = "/learn/gold-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/loans/quiz"
+  to = "/learn/loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/credit-score/quiz"
+  to = "/learn/credit-score"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/credit-cards/quiz"
+  to = "/learn/credit-cards"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/business-loans/machinery-loan"
+  to = "/learn/business-loans"
+  status = 301
+  force = true
+
+# Savings bank products sub-pages
+[[redirects]]
+  from = "/learn/savings-bank-products/*"
+  to = "/learn/savings-bank"
+  status = 301
+  force = true
+
+# Insurance retirement sub-pages
+[[redirects]]
+  from = "/tax-tools/pension-calculator"
+  to = "/calculators/nps-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/*"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+# --- /gst-tools/* sub-pages not yet redirected ---
+[[redirects]]
+  from = "/gst-tools/*"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+# --- /insurance-tools/* ---
+[[redirects]]
+  from = "/insurance-tools/*"
+  to = "/tools/insurance-calculator"
+  status = 301
+  force = true
+
+# --- /loan-tools/* sub-pages ---
+[[redirects]]
+  from = "/loan-tools/debt-consolidation"
+  to = "/loan-tools/debt-strategies"
+  status = 301
+  force = true
+
+# --- /finance-tools/* additional sub-pages ---
+[[redirects]]
+  from = "/finance-tools/5y-cagr-vs-volatility-analyzer"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/elss-vs-ppf-return-visualizer"
+  to = "/calculators/tax-saving-investment-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-tools/stock-split-adjusted-roi-calculator"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/invoice-generator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/refinancing-calculator"
+  to = "/calculators/home-loan-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/debt-consolidation-calculator"
+  to = "/loan-tools/debt-strategies"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/xirr-tracker"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/take-home-salary-calculator"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/bike-loan-calculator"
+  to = "/calculators/emi-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/property-registration-charges-calculator"
+  to = "/calculators/home-loan-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/insurance-calculator"
+  to = "/tools/insurance-calculator"
+  status = 301
+  force = true
+
+# --- /tools/* additional pages ---
+[[redirects]]
+  from = "/tools/staff-roster"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/meeting-cost"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/loyalty-tracker"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/referral-tracker"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/followup-reminder"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/gst-refundable-deposit-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+# --- /astro-finance/* ---
+[[redirects]]
+  from = "/astro-finance/blog/*"
+  to = "/astro-finance"
+  status = 301
+  force = true
+
+# --- Gold tools additional sub-pages ---
+[[redirects]]
+  from = "/gold-tools/gold-etf-vs-physical"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/gold-etf-sip-value"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gold-tools/sovereign-gold-bond-redemption"
+  to = "/gold-tools"
+  status = 301
+  force = true
+
+# --- /corporate-finance/* wildcard catch-all ---
+# (specific ones added earlier, now wildcard for rest)
+
+# --- /religious-tools/* wildcard catch-all ---
+# --- /regional-tools/* wildcard catch-all ---
+# ===========================================
+# BATCH 3: Remaining Soft 404 fixes from GSC report (Feb 2026)
+# ===========================================
+
+# --- Standalone orphan pages ---
+[[redirects]]
+  from = "/loan-calculator"
+  to = "/calculators/emi-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gst"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/credit-cards"
+  to = "/learn/credit-cards"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pradhan-mantri-schemes"
+  to = "/government-schemes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/financial-literacy"
+  to = "/learn"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/business-loans"
+  to = "/learn/business-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cryptocurrency"
+  to = "/crypto"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/digital-payments"
+  to = "/learn/fintech-digital"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/festival-date-calendar"
+  to = "/festival-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/investing-wealth-creation"
+  to = "/learn/investing-wealth"
+  status = 301
+  force = true
+
+# --- /learn/personal-loans/* ---
+[[redirects]]
+  from = "/learn/personal-loans/loan-success-tips"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/personal-loans/loan-resources"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/personal-loans/loan-future-trends"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/personal-loans/loan-case-studies"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/personal-loans/tax-implications"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/personal-loans/quiz"
+  to = "/learn/personal-loans"
+  status = 301
+  force = true
+
+# --- /learn/business-loans/* ---
+[[redirects]]
+  from = "/learn/business-loans/quiz"
+  to = "/learn/business-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/business-loans/collateral-vs-unsecured"
+  to = "/learn/business-loans"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/business-loans/eligibility-criteria"
+  to = "/learn/business-loans"
+  status = 301
+  force = true
+
+# --- /learn/credit-score/* ---
+[[redirects]]
+  from = "/learn/credit-score/cibil-impact"
+  to = "/learn/credit-score"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/learn/what-is-ctc"
+  to = "/learn"
+  status = 301
+  force = true
+
+# --- /learn/* wildcard catch-all for remaining ---
+# --- /calculators/* remaining ---
+[[redirects]]
+  from = "/calculators/post-office-schemes-calculator"
+  to = "/calculators/fd-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/purchasing-power-calculator"
+  to = "/calculators/compound-interest-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/reverse-gst-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/real-return-calculator"
+  to = "/calculators/compound-interest-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/gold-return-calculator"
+  to = "/calculators/mutual-fund-returns-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/gst-slab-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/gst-liability-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/gstr1-deadline-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/gstr3b-deadline-calculator"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/hsn-sac-finder"
+  to = "/gst-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/loan-eligibility-calculator"
+  to = "/calculators/emi-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/cibil-score-calculator"
+  to = "/tools/credit-score-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/credit-score-simulator"
+  to = "/tools/credit-score-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/senior-citizen-calculator"
+  to = "/calculators/fd-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/child-education-calculator"
+  to = "/calculators/sip-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/budget-planner"
+  to = "/tools/expense-tracker"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/portfolio-rebalance"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/study-abroad-cost-calculator"
+  to = "/calculators/sip-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/roi-calculator"
+  to = "/calculators/compound-interest-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/net-worth"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/interest-calculator"
+  to = "/calculators/compound-interest-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/xirr-calculator"
+  to = "/finance-tools"
+  status = 301
+  force = true
+
+# --- /blog/* posts that don't exist ---
+[[redirects]]
+  from = "/blog/mutual-funds-investment-guide-india-2025"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/best-investment-options-india-2025"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/digital-rupee-cbdc-india-2025-complete-guide"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-esg-factors-influence-indian-startup-valuations-2025"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/shocking-truth-india-green-hydrogen-startups"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/kolkata-finance-trends-2025-guide-727"
+  to = "/blog"
+  status = 301
+  force = true
+
+# --- /exceltool/* ---
+[[redirects]]
+  from = "/exceltool/*"
+  to = "/excel-tools"
+  status = 301
+  force = true
+
+# --- /excel-tools/* sub-pages ---
+[[redirects]]
+  from = "/excel-tools/debt-payoff-calculator"
+  to = "/excel-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/excel-tools/vacation-budget-planner"
+  to = "/excel-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/excel-tools/*"
+  to = "/excel-tools"
+  status = 301
+  force = true
+
+# --- /government-schemes/* specific pages ---
+[[redirects]]
+  from = "/government-schemes/pm-kisan"
+  to = "/government-schemes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/government-schemes/pm-svanidhi"
+  to = "/government-schemes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/government-schemes/mudra-loan"
+  to = "/government-schemes"
+  status = 301
+  force = true
+
+# --- /loan-tools/* remaining ---
+[[redirects]]
+  from = "/loan-tools/amortization-schedule"
+  to = "/loan-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/dtaa-calculator"
+  to = "/calculators/income-tax-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/ppf-vs-nps-tax-growth-comparison"
+  to = "/calculators/nps-calculator"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tax-tools/retirement-calculator"
+  to = "/calculators/retirement-calculator"
+  status = 301
+  force = true
+
+# --- /finance-blog/* remaining ---
+[[redirects]]
+  from = "/finance-blog/tax-saving-investments-section-80c-india-2025"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-blog/personal-finance-budgeting-2025"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-blog/sukanya-samriddhi-yojana-guide"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-blog/atal-pension-yojana-guide"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-blog/national-pension-system-guide"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/finance-blog/*"
+  to = "/blog"
+  status = 301
+  force = true
+
+# --- /stock-market/* remaining ---
+[[redirects]]
+  from = "/stock-market/*"
+  to = "/stock-market"
+  status = 301
+  force = true
+
+# SPA catch-all - must be very last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
+
+
+# === HEADERS ===
+# Deprecated Hindi pages - noindex
+[[headers]]
+  for = "/hi/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Global headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+
+# Calculator pages - optimized for indexing
+[[headers]]
+  for = "/calculators/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Blog pages - optimized for indexing
+[[headers]]
+  for = "/blog/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Learn pages - optimized for indexing
+[[headers]]
+  for = "/learn/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Government schemes - optimized for indexing
+[[headers]]
+  for = "/government-schemes/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# News pages - optimized for Google News
+[[headers]]
+  for = "/news/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=1800, must-revalidate"
+
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Content-Type = "application/xml; charset=utf-8"
+
+# Robots.txt - cacheable
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "text/plain; charset=utf-8"
+
+# Static assets - long cache
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# JavaScript files
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS files
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Font files
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ttf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Image files
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML files - no cache for fresh content
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# === BUILD CONFIGURATION ===
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# === PRERENDERING FOR SEO ===
+# Serves fully-rendered HTML to search engine bots (Googlebot, Bingbot, etc.)
+# instead of the empty SPA shell. This ensures ALL content is visible on first crawl.
+[[plugins]]
+  package = "@netlify/plugin-prerender"
+
+  [plugins.inputs]
+    # Bot user agents that should receive prerendered pages
+    bot_user_agents = [
+      "googlebot",
+      "bingbot",
+      "linkedinbot",
+      "whatsapp",
+      "twitterbot",
+      "facebookexternalhit",
+      "rogerbot",
+      "embedly",
+      "quora link preview",
+      "showyoubot",
+      "outbrain",
+      "pinterest/0.",
+      "developers.google.com/+/web/snippet",
+      "slackbot",
+      "vkShare",
+      "W3C_Validator",
+      "redditbot",
+      "applebot",
+      "yandex",
+      "baiduspider",
+      "duckduckbot",
+      "telegrambot"
+    ]

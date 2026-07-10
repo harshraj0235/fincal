@@ -1,0 +1,1836 @@
+[
+  {
+    "id": 10001,
+    "question": "भारत की राजधानी क्या है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10002,
+    "question": "भारत की मुद्रा क्या है?",
+    "options": [
+      "रुपया",
+      "डॉलर",
+      "यूरो",
+      "पाउंड"
+    ],
+    "answer": "रुपया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10003,
+    "question": "भारत का राष्ट्रीय पशु कौन है?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "हाथी",
+      "हिरन"
+    ],
+    "answer": "बाघ",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10004,
+    "question": "भारत का राष्ट्रीय पक्षी कौन है?",
+    "options": [
+      "मोर",
+      "तोता",
+      "कबूतर",
+      "चील"
+    ],
+    "answer": "मोर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10005,
+    "question": "भारत का राष्ट्रीय फूल कौन सा है?",
+    "options": [
+      "कमल",
+      "गुलाब",
+      "गेंदा",
+      "चमेली"
+    ],
+    "answer": "कमल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10006,
+    "question": "भारत का राष्ट्रीय फलों का राजा कौन है?",
+    "options": [
+      "आम",
+      "सेब",
+      "केला",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10007,
+    "question": "भारत का राष्ट्रीय दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10008,
+    "question": "स्वतंत्रता दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "5 जून"
+    ],
+    "answer": "15 अगस्त",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10009,
+    "question": "गणतंत्र दिवस किस दिन मनाया जाता है?",
+    "options": [
+      "15 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर",
+      "5 सितंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10010,
+    "question": "महात्मा गांधी का जन्मदिन कब है?",
+    "options": [
+      "2 अक्टूबर",
+      "15 अगस्त",
+      "14 नवंबर",
+      "5 जून"
+    ],
+    "answer": "2 अक्टूबर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10011,
+    "question": "विश्व पर्यावरण दिवस कब मनाया जाता है?",
+    "options": [
+      "5 जून",
+      "22 मार्च",
+      "29 अगस्त",
+      "11 जुलाई"
+    ],
+    "answer": "5 जून",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10012,
+    "question": "विश्व जल दिवस कब मनाया जाता है?",
+    "options": [
+      "22 मार्च",
+      "5 जून",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "22 मार्च",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10014,
+    "question": "भारत का सबसे बड़ा राज्य (क्षेत्रफल) कौन सा है?",
+    "options": [
+      "राजस्थान",
+      "महाराष्ट्र",
+      "मध्य प्रदेश",
+      "उत्तर प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10015,
+    "question": "भारत का सबसे अधिक आबादी वाला राज्य कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "महाराष्ट्र",
+      "बिहार",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10019,
+    "question": "भारतीय ध्वज में कितने रंग होते हैं?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10020,
+    "question": "भारत का सर्वोच्च न्यायालय कहाँ स्थित है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10021,
+    "question": "भारतीय संसद के कितने सदन होते हैं?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10022,
+    "question": "लोकसभा की अधिकतम अवधि कितने वर्षों की होती है?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10023,
+    "question": "राज्यसभा का स्वरूप क्या है?",
+    "options": [
+      "अस्थायी",
+      "स्थायी",
+      "अर्ध-स्थायी",
+      "कोई नहीं"
+    ],
+    "answer": "स्थायी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10025,
+    "question": "भारत के प्रथम प्रधानमंत्री कौन थे?",
+    "options": [
+      "जवाहरलाल नेहरू",
+      "लाल बहादुर शास्त्री",
+      "इंदिरा गांधी",
+      "मोतीलाल नेहरू"
+    ],
+    "answer": "जवाहरलाल नेहरू",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10026,
+    "question": "भारत का संविधान कब लागू हुआ?",
+    "options": [
+      "15 अगस्त 1947",
+      "26 जनवरी 1950",
+      "2 अक्टूबर 1949",
+      "1 जनवरी 1951"
+    ],
+    "answer": "26 जनवरी 1950",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10027,
+    "question": "भारत का केंद्रीय बैंक कौन सा है?",
+    "options": [
+      "RBI",
+      "SBI",
+      "NABARD",
+      "ICICI"
+    ],
+    "answer": "RBI",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10030,
+    "question": "भारत का बजट कौन प्रस्तुत करता है?",
+    "options": [
+      "वित्त मंत्री",
+      "प्रधानमंत्री",
+      "राष्ट्रपति",
+      "लोकसभा अध्यक्ष"
+    ],
+    "answer": "वित्त मंत्री",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10031,
+    "question": "विश्व का सबसे बड़ा महासागर कौन सा है?",
+    "options": [
+      "प्रशांत",
+      "अटलांटिक",
+      "हिंद",
+      "आर्कटिक"
+    ],
+    "answer": "प्रशांत",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10032,
+    "question": "दुनिया का सबसे बड़ा महाद्वीप कौन सा है?",
+    "options": [
+      "एशिया",
+      "अफ्रीका",
+      "यूरोप",
+      "ऑस्ट्रेलिया"
+    ],
+    "answer": "एशिया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10033,
+    "question": "पृथ्वी का लगभग कितना प्रतिशत भाग जल से ढका है?",
+    "options": [
+      "51%",
+      "61%",
+      "71%",
+      "81%"
+    ],
+    "answer": "71%",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10037,
+    "question": "जल का रासायनिक सूत्र क्या है?",
+    "options": [
+      "H2O",
+      "CO2",
+      "O2",
+      "NaCl"
+    ],
+    "answer": "H2O",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10038,
+    "question": "बल की SI इकाई क्या है?",
+    "options": [
+      "न्यूटन",
+      "जूल",
+      "वाट",
+      "पास्कल"
+    ],
+    "answer": "न्यूटन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10039,
+    "question": "ऊर्जा की SI इकाई क्या है?",
+    "options": [
+      "जूल",
+      "न्यूटन",
+      "वोल्ट",
+      "कैल्विन"
+    ],
+    "answer": "जूल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10040,
+    "question": "विद्युत धारा की SI इकाई क्या है?",
+    "options": [
+      "एम्पीयर",
+      "ओम",
+      "वोल्ट",
+      "वाट"
+    ],
+    "answer": "एम्पीयर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10041,
+    "question": "ध्वनि किस माध्यम में नहीं चल सकती?",
+    "options": [
+      "ठोस",
+      "द्रव",
+      "गैस",
+      "निर्वात"
+    ],
+    "answer": "निर्वात",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10046,
+    "question": "फ्रांस की राजधानी क्या है?",
+    "options": [
+      "पेरिस",
+      "रोम",
+      "लंदन",
+      "मैड्रिड"
+    ],
+    "answer": "पेरिस",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10047,
+    "question": "संयुक्त राज्य अमेरिका की राजधानी क्या है?",
+    "options": [
+      "वाशिंगटन डीसी",
+      "न्यूयॉर्क",
+      "लॉस एंजेलिस",
+      "शिकागो"
+    ],
+    "answer": "वाशिंगटन डीसी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10048,
+    "question": "जापान की मुद्रा क्या है?",
+    "options": [
+      "येन",
+      "युआन",
+      "वॉन",
+      "रुपया"
+    ],
+    "answer": "येन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10049,
+    "question": "संयुक्त राष्ट्र का मुख्यालय कहाँ है?",
+    "options": [
+      "न्यूयॉर्क",
+      "जिनेवा",
+      "पेरिस",
+      "टोक्यो"
+    ],
+    "answer": "न्यूयॉर्क",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10052,
+    "question": "रूस की राजधानी क्या है?",
+    "options": [
+      "मॉस्को",
+      "सेंट पीटर्सबर्ग",
+      "कीव",
+      "मिन्स्क"
+    ],
+    "answer": "मॉस्को",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10055,
+    "question": "चीन की महान दीवार किस देश में है?",
+    "options": [
+      "चीन",
+      "जापान",
+      "कोरिया",
+      "मंगोलिया"
+    ],
+    "answer": "चीन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10056,
+    "question": "सौरमंडल का सबसे बड़ा ग्रह कौन सा है?",
+    "options": [
+      "बृहस्पति",
+      "शनि",
+      "पृथ्वी",
+      "शुक्र"
+    ],
+    "answer": "बृहस्पति",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10057,
+    "question": "लाल ग्रह किसे कहा जाता है?",
+    "options": [
+      "मंगल",
+      "शुक्र",
+      "बुध",
+      "पृथ्वी"
+    ],
+    "answer": "मंगल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10058,
+    "question": "पृथ्वी का प्राकृतिक उपग्रह कौन सा है?",
+    "options": [
+      "चंद्रमा",
+      "मंगल",
+      "टाइटन",
+      "फोबोस"
+    ],
+    "answer": "चंद्रमा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10060,
+    "question": "CPU का पूर्ण रूप क्या है?",
+    "options": [
+      "Central Processing Unit",
+      "Control Processing Unit",
+      "Computer Processing Unit",
+      "Central Program Utility"
+    ],
+    "answer": "Central Processing Unit",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10061,
+    "question": "URL का पूर्ण रूप क्या है?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "United Resource Locator",
+      "Uniform Result Link"
+    ],
+    "answer": "Uniform Resource Locator",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10062,
+    "question": "ओलंपिक खेल कितने वर्षों में होते हैं?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": "4",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10063,
+    "question": "क्रिकेट में एक ओवर में कितनी गेंदें होती हैं?",
+    "options": [
+      "6",
+      "5",
+      "4",
+      "8"
+    ],
+    "answer": "6",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10064,
+    "question": "हॉकी टीम में कुल कितने खिलाड़ी होते हैं?",
+    "options": [
+      "11",
+      "10",
+      "9",
+      "12"
+    ],
+    "answer": "11",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10071,
+    "question": "भारत के राष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10072,
+    "question": "भारत के उपराष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10076,
+    "question": "भारत का पहला उपग्रह कौन सा था?",
+    "options": [
+      "आर्यभट्ट",
+      "रोहिणी",
+      "भास्कर",
+      "इनसैट"
+    ],
+    "answer": "आर्यभट्ट",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10078,
+    "question": "नवीकरणीय ऊर्जा का उदाहरण क्या है?",
+    "options": [
+      "सौर ऊर्जा",
+      "कोयला",
+      "डीजल",
+      "पेट्रोल"
+    ],
+    "answer": "सौर ऊर्जा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10080,
+    "question": "ग्रीनहाउस प्रभाव का प्रमुख गैस कौन सा है?",
+    "options": [
+      "कार्बन डाइऑक्साइड",
+      "ऑक्सीजन",
+      "नाइट्रोजन",
+      "हाइड्रोजन"
+    ],
+    "answer": "कार्बन डाइऑक्साइड",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20005,
+    "question": "भारत का राष्ट्रीय फल क्या कहलाता है?",
+    "options": [
+      "आम",
+      "सेब",
+      "केला",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20010,
+    "question": "भारतीय ध्वज में कौन-कौन से रंग होते हैं?",
+    "options": [
+      "केसरिया, सफेद, हरा",
+      "लाल, सफेद, नीला",
+      "पीला, सफेद, हरा",
+      "हरे, नीले, पीले"
+    ],
+    "answer": "केसरिया, सफेद, हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20020,
+    "question": "भारतीय रुपये के नोट कौन जारी करता है?",
+    "options": [
+      "रिजर्व बैंक ऑफ इंडिया",
+      "वित्त मंत्रालय",
+      "SEBI",
+      "नीति आयोग"
+    ],
+    "answer": "रिजर्व बैंक ऑफ इंडिया",
+    "category": "economy",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20023,
+    "question": "उत्तर प्रदेश की राजधानी क्या है?",
+    "options": [
+      "लखनऊ",
+      "कानपुर",
+      "प्रयागराज",
+      "वाराणसी"
+    ],
+    "answer": "लखनऊ",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20024,
+    "question": "महाराष्ट्र की राजधानी क्या है?",
+    "options": [
+      "मुंबई",
+      "पुणे",
+      "नाशिक",
+      "नागपुर"
+    ],
+    "answer": "मुंबई",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20025,
+    "question": "बिहार की राजधानी क्या है?",
+    "options": [
+      "पटना",
+      "गया",
+      "मुजफ्फरपुर",
+      "दरभंगा"
+    ],
+    "answer": "पटना",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20026,
+    "question": "राजस्थान की राजधानी क्या है?",
+    "options": [
+      "जयपुर",
+      "जोधपुर",
+      "उदयपुर",
+      "भीलवाड़ा"
+    ],
+    "answer": "जयपुर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20027,
+    "question": "कर्नाटक की राजधानी क्या है?",
+    "options": [
+      "बेंगलुरु",
+      "मैसूर",
+      "हुबली",
+      "मंगलुरु"
+    ],
+    "answer": "बेंगलुरु",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20028,
+    "question": "गुजरात की राजधानी क्या है?",
+    "options": [
+      "गांधीनगर",
+      "अहमदाबाद",
+      "सूरत",
+      "वडोदरा"
+    ],
+    "answer": "गांधीनगर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20029,
+    "question": "तमिलनाडु की राजधानी क्या है?",
+    "options": [
+      "चेन्नई",
+      "कोयंबटूर",
+      "मदुरै",
+      "तिरुचिरापल्ली"
+    ],
+    "answer": "चेन्नई",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20030,
+    "question": "केरल की राजधानी क्या है?",
+    "options": [
+      "तिरुवनंतपुरम",
+      "कोची",
+      "कोझिकोड",
+      "कासरगोड"
+    ],
+    "answer": "तिरुवनंतपुरम",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20031,
+    "question": "पश्चिम बंगाल की राजधानी क्या है?",
+    "options": [
+      "कोलकाता",
+      "सिलीगुड़ी",
+      "दुर्गापुर",
+      "हावड़ा"
+    ],
+    "answer": "कोलकाता",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20033,
+    "question": "तेलंगाना की राजधानी क्या है?",
+    "options": [
+      "हैदराबाद",
+      "वारंगल",
+      "निज़ामाबाद",
+      "करीमनगर"
+    ],
+    "answer": "हैदराबाद",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20034,
+    "question": "मध्य प्रदेश की राजधानी क्या है?",
+    "options": [
+      "भोपाल",
+      "इंदौर",
+      "ग्वालियर",
+      "जबलपुर"
+    ],
+    "answer": "भोपाल",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20035,
+    "question": "छत्तीसगढ़ की राजधानी क्या है?",
+    "options": [
+      "रायपुर",
+      "बिलासपुर",
+      "दुर्ग",
+      "जांजगीर"
+    ],
+    "answer": "रायपुर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20036,
+    "question": "झारखंड की राजधानी क्या है?",
+    "options": [
+      "रांची",
+      "जमशेदपुर",
+      "धनबाद",
+      "हजारीबाग"
+    ],
+    "answer": "रांची",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20037,
+    "question": "ओडिशा की राजधानी क्या है?",
+    "options": [
+      "भुवनेश्वर",
+      "कटक",
+      "राउरकेला",
+      "पुरी"
+    ],
+    "answer": "भुवनेश्वर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20038,
+    "question": "असम की राजधानी क्या है?",
+    "options": [
+      "दिसपुर",
+      "गुवाहाटी",
+      "जोरहाट",
+      "तिनसुकिया"
+    ],
+    "answer": "दिसपुर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20039,
+    "question": "अरुणाचल प्रदेश की राजधानी क्या है?",
+    "options": [
+      "ईटानगर",
+      "तवांग",
+      "पासीघाट",
+      "रोइंग"
+    ],
+    "answer": "ईटानगर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20040,
+    "question": "नगालैंड की राजधानी क्या है?",
+    "options": [
+      "कोहिमा",
+      "दीमापुर",
+      "मोन",
+      "तुएनसांग"
+    ],
+    "answer": "कोहिमा",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20041,
+    "question": "मणिपुर की राजधानी क्या है?",
+    "options": [
+      "इंफाल",
+      "चुराचांदपुर",
+      "थौबल",
+      "तामेंगलॉन्ग"
+    ],
+    "answer": "इंफाल",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20042,
+    "question": "मिजोरम की राजधानी क्या है?",
+    "options": [
+      "आइज़ोल",
+      "लुंगलेई",
+      "चम्फाई",
+      "सिरछिप"
+    ],
+    "answer": "आइज़ोल",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20043,
+    "question": "त्रिपुरा की राजधानी क्या है?",
+    "options": [
+      "अगरतला",
+      "धलाई",
+      "कैलाशहर",
+      "उदयपुर"
+    ],
+    "answer": "अगरतला",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20044,
+    "question": "मेघालय की राजधानी क्या है?",
+    "options": [
+      "शिलॉन्ग",
+      "तुरा",
+      "जैना",
+      "नॉन्गपोह"
+    ],
+    "answer": "शिलॉन्ग",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20045,
+    "question": "सिक्किम की राजधानी क्या है?",
+    "options": [
+      "गंगटोक",
+      "नामची",
+      "मंगन",
+      "ग्यालशिंग"
+    ],
+    "answer": "गंगटोक",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20046,
+    "question": "हिमाचल प्रदेश की राजधानी क्या है?",
+    "options": [
+      "शिमला",
+      "धर्मशाला",
+      "कुल्लू",
+      "मानाली"
+    ],
+    "answer": "शिमला",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20047,
+    "question": "उत्तराखंड की राजधानी क्या है?",
+    "options": [
+      "देहरादून",
+      "गढ़वाल",
+      "नैनीताल",
+      "हरिद्वार"
+    ],
+    "answer": "देहरादून",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20048,
+    "question": "पंजाब की राजधानी क्या है?",
+    "options": [
+      "चंडीगढ़",
+      "लुधियाना",
+      "अमृतसर",
+      "जालंधर"
+    ],
+    "answer": "चंडीगढ़",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20049,
+    "question": "हरियाणा की राजधानी क्या है?",
+    "options": [
+      "चंडीगढ़",
+      "फरीदाबाद",
+      "गुरुग्राम",
+      "पंचकूला"
+    ],
+    "answer": "चंडीगढ़",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20051,
+    "question": "लद्दाख का प्रशासनिक मुख्यालय क्या है?",
+    "options": [
+      "लेह",
+      "कारगिल",
+      "नुब्रा",
+      "ज़ांस्कर"
+    ],
+    "answer": "लेह",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20052,
+    "question": "दिल्ली की राजधानी क्या है?",
+    "options": [
+      "नई दिल्ली",
+      "दिल्ली",
+      "सेंट्रल दिल्ली",
+      "कनॉट प्लेस"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20053,
+    "question": "पुदुच्चेरी का मुख्यालय क्या है?",
+    "options": [
+      "पुदुच्चेरी",
+      "कराईकल",
+      "यानम",
+      "महé"
+    ],
+    "answer": "पुदुच्चेरी",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20054,
+    "question": "अंडमान और निकोबार द्वीपसमूह की राजधानी क्या है?",
+    "options": [
+      "पोर्ट ब्लेयर",
+      "हैवलॉक",
+      "निकोबार",
+      "डिगलीपुर"
+    ],
+    "answer": "पोर्ट ब्लेयर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20056,
+    "question": "दमन और दीव की राजधानी क्या है?",
+    "options": [
+      "दमन",
+      "दीव",
+      "सिलवासा",
+      "नवसाड़ी"
+    ],
+    "answer": "दमन",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20057,
+    "question": "दादरा और नगर हवेली की राजधानी क्या है?",
+    "options": [
+      "सिलवासा",
+      "दमन",
+      "वापी",
+      "नाशिक"
+    ],
+    "answer": "सिलवासा",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20058,
+    "question": "गोवा की राजधानी क्या है?",
+    "options": [
+      "पणजी",
+      "मडगांव",
+      "वास्को",
+      "मापुसा"
+    ],
+    "answer": "पणजी",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20059,
+    "question": "भारत की सबसे लंबी नदी कौन सी है?",
+    "options": [
+      "गंगा",
+      "ब्रहमपुत्र",
+      "गोदावरी",
+      "नर्मदा"
+    ],
+    "answer": "गंगा",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20063,
+    "question": "सतलुज नदी किस पर्वत शृंखला से निकलती है?",
+    "options": [
+      "हिमालय",
+      "अरावली",
+      "विंध्य",
+      "सह्याद्री"
+    ],
+    "answer": "हिमालय",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20066,
+    "question": "थार मरुस्थल किस राज्य में है?",
+    "options": [
+      "राजस्थान",
+      "गुजरात",
+      "हरियाणा",
+      "मध्य प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20072,
+    "question": "राष्ट्रपति का कार्यकाल कितने वर्षों का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20073,
+    "question": "उपराष्ट्रपति का कार्यकाल कितने वर्षों का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20074,
+    "question": "भारत में चुनावों का संचालन कौन करता है?",
+    "options": [
+      "निर्वाचन आयोग",
+      "संसद",
+      "राष्ट्रपति",
+      "प्रधानमंत्री"
+    ],
+    "answer": "निर्वाचन आयोग",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20077,
+    "question": "भारतीय संविधान का निर्माण किस सभा ने किया?",
+    "options": [
+      "संविधान सभा",
+      "लोकसभा",
+      "राज्यसभा",
+      "विधान सभा"
+    ],
+    "answer": "संविधान सभा",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20091,
+    "question": "भारत का राष्ट्रीय वृक्ष कौन है?",
+    "options": [
+      "बरगद",
+      "नीम",
+      "पीपल",
+      "देवदार"
+    ],
+    "answer": "बरगद",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20098,
+    "question": "भारत के वर्तमान प्रधानमंत्री कौन हैं (2025 के आसपास)?",
+    "options": [
+      "नरेंद्र मोदी",
+      "मनमोहन सिंह",
+      "अटल बिहारी वाजपेयी",
+      "लाल बहादुर शास्त्री"
+    ],
+    "answer": "नरेंद्र मोदी",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20101,
+    "question": "केंद्रशासित प्रदेशों में से कौन सा राज्य नहीं है?",
+    "options": [
+      "दिल्ली",
+      "चंडीगढ़",
+      "गुजरात",
+      "पुदुच्चेरी"
+    ],
+    "answer": "गुजरात",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20102,
+    "question": "भारत के सर्वोच्च न्यायालय कहाँ स्थित है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "चेन्नई",
+      "कोलकाता"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20110,
+    "question": "थार मरुस्थल किस राज्य में फैला है?",
+    "options": [
+      "राजस्थान",
+      "गुजरात",
+      "हरियाणा",
+      "मध्य प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20113,
+    "question": "भारत का सबसे बड़ा राज्य (जनसंख्या) कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "बिहार",
+      "महाराष्ट्र",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20116,
+    "question": "भारतीय संसद के किस सदन को 'ऊपरी सदन' कहा जाता है?",
+    "options": [
+      "राज्यसभा",
+      "लोकसभा",
+      "विधानसभा",
+      "विधान परिषद"
+    ],
+    "answer": "राज्यसभा",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95001,
+    "question": "भारत का राष्ट्रीय पशु?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "हाथी",
+      "नीलगाय"
+    ],
+    "answer": "बाघ",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95002,
+    "question": "भारत का राष्ट्रीय पक्षी?",
+    "options": [
+      "मोर",
+      "गरुड़",
+      "तोता",
+      "बुलबुल"
+    ],
+    "answer": "मोर",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95003,
+    "question": "भारत का राष्ट्रीय फूल?",
+    "options": [
+      "कमल",
+      "गुलाब",
+      "मोगरा",
+      "गेंदा"
+    ],
+    "answer": "कमल",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95004,
+    "question": "भारत का राष्ट्रीय फल?",
+    "options": [
+      "आम",
+      "केला",
+      "सेब",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95005,
+    "question": "भारत का राष्ट्रीय वृक्ष?",
+    "options": [
+      "बरगद",
+      "नीम",
+      "पीपल",
+      "साल"
+    ],
+    "answer": "बरगद",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95006,
+    "question": "भारत की राष्ट्रीय नदी?",
+    "options": [
+      "गंगा",
+      "यमुना",
+      "नर्मदा",
+      "ब्राह्मपुत्र"
+    ],
+    "answer": "गंगा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95009,
+    "question": "अशोक चक्र में कितने तीलियां होती हैं?",
+    "options": [
+      "24",
+      "32",
+      "16",
+      "12"
+    ],
+    "answer": "24",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95012,
+    "question": "राष्ट्रीय चिह्न पर लिखी उक्ति?",
+    "options": [
+      "सत्यमेव जयते",
+      "वसुधैव कुटुम्बकम",
+      "जन-गण-मन",
+      "जय हिंद"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95014,
+    "question": "भारत का राष्ट्रगान?",
+    "options": [
+      "जन गण मन",
+      "वंदे मातरम्",
+      "सारे जहाँ से अच्छा",
+      "जय हिंद"
+    ],
+    "answer": "जन गण मन",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95015,
+    "question": "भारत का राष्ट्रीय गीत?",
+    "options": [
+      "वंदे मातरम्",
+      "जन गण मन",
+      "सारे जहाँ से अच्छा",
+      "ए मेरे वतन"
+    ],
+    "answer": "वंदे मातरम्",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95019,
+    "question": "राष्ट्रीय ध्वज के रंग?",
+    "options": [
+      "केसरिया/सफेद/हरा",
+      "लाल/सफेद/नीला",
+      "पीला/नीला/हरा",
+      "केसरिया/नीला/हरा"
+    ],
+    "answer": "केसरिया/सफेद/हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95020,
+    "question": "राष्ट्रीय ध्वज के मध्य में क्या?",
+    "options": [
+      "अशोक चक्र",
+      "त्रिशूल",
+      "कमल",
+      "सिंह"
+    ],
+    "answer": "अशोक चक्र",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95024,
+    "question": "राष्ट्रीय मुद्रा?",
+    "options": [
+      "भारतीय रुपया",
+      "डॉलर",
+      "पाउंड",
+      "येन"
+    ],
+    "answer": "भारतीय रुपया",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95025,
+    "question": "राष्ट्रीय दिवस (गणतंत्र) कब?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95026,
+    "question": "राष्ट्रीय दिवस (स्वतंत्रता) कब?",
+    "options": [
+      "15 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर",
+      "1 मई"
+    ],
+    "answer": "15 अगस्त",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95027,
+    "question": "राष्ट्रीय दिवस (गांधी) कब?",
+    "options": [
+      "2 अक्टूबर",
+      "26 जनवरी",
+      "15 अगस्त",
+      "14 नवम्बर"
+    ],
+    "answer": "2 अक्टूबर",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95073,
+    "question": "राष्ट्रीय ध्वज के रंगों का क्रम?",
+    "options": [
+      "ऊपर केसरिया, बीच सफेद, नीचे हरा",
+      "ऊपर सफेद, बीच हरा, नीचे केसरिया",
+      "ऊपर हरा, बीच सफेद, नीचे केसरिया",
+      "ऊपर केसरिया, नीचे सफेद, बीच हरा"
+    ],
+    "answer": "ऊपर केसरिया, बीच सफेद, नीचे हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95077,
+    "question": "राष्ट्रीय गीत की प्रथम पंक्ति?",
+    "options": [
+      "वंदे मातरम्",
+      "जन गण मन",
+      "जय हिंद",
+      "सारे जहाँ"
+    ],
+    "answer": "वंदे मातरम्",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95080,
+    "question": "ध्वज फहराते समय कौन पक्ष ऊपर?",
+    "options": [
+      "केसरिया",
+      "सफेद",
+      "हरा",
+      "अशोक चक्र"
+    ],
+    "answer": "केसरिया",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95091,
+    "question": "राष्ट्रीय फल आम का मौसम?",
+    "options": [
+      "गर्मी",
+      "सर्दी",
+      "बरसात",
+      "वसंत"
+    ],
+    "answer": "गर्मी",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95098,
+    "question": "ध्वज के क्षैतिज पट्टियाँ?",
+    "options": [
+      "केसरिया/सफेद/हरा",
+      "सफेद/केसरिया/हरा",
+      "हरा/सफेद/केसरिया",
+      "नीला/सफेद/हरा"
+    ],
+    "answer": "केसरिया/सफेद/हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95105,
+    "question": "राष्ट्रीय प्रतीक की नीचे लिखावट?",
+    "options": [
+      "सत्यमेव जयते",
+      "जय हिंद",
+      "वंदे मातरम्",
+      "जन-गण-मन"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95109,
+    "question": "राष्ट्रीय ध्वज का स्पर्श नियम?",
+    "options": [
+      "सम्मानपूर्वक",
+      "मनमाना",
+      "कभी भी",
+      "धोना"
+    ],
+    "answer": "सम्मानपूर्वक",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95111,
+    "question": "राष्ट्रगान पंक्ति: ‘अधिनायक जय हे’?",
+    "options": [
+      "जन गण मन",
+      "वंदे मातरम्",
+      "सारे जहाँ से अच्छा",
+      "जय हिंद"
+    ],
+    "answer": "जन गण मन",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95124,
+    "question": "राष्ट्रीय प्रतीक के नीचे क्या लिखा जाए?",
+    "options": [
+      "सत्यमेव जयते",
+      "जय हिंद",
+      "भारत",
+      "India"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95131,
+    "question": "ध्वज की दिशा हवा में?",
+    "options": [
+      "स्वाभाविक",
+      "नियत",
+      "केसरिया हमेशा ऊपर",
+      "हरा हमेशा ऊपर"
+    ],
+    "answer": "स्वाभाविक",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95142,
+    "question": "ध्वज का तिरंगा नाम क्यों?",
+    "options": [
+      "तीन रंग",
+      "तीन देश",
+      "तीन धर्म",
+      "तीन पर्वत"
+    ],
+    "answer": "तीन रंग",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95146,
+    "question": "राष्ट्रीय प्रतीक में आधार पट्टिका पर क्या?",
+    "options": [
+      "सत्यमेव जयते",
+      "भारत",
+      "India",
+      "जय हिंद"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95156,
+    "question": "राष्ट्रगान/गीत स्कूल में?",
+    "options": [
+      "सम्मान सहित",
+      "नहीं",
+      "कभी-कभी",
+      "सिर्फ परीक्षा"
+    ],
+    "answer": "सम्मान सहित",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95177,
+    "question": "ध्वज के लिए पोल की स्थिति?",
+    "options": [
+      "केसरिया ऊपर",
+      "सफेद ऊपर",
+      "हरा ऊपर",
+      "नीला ऊपर"
+    ],
+    "answer": "केसरिया ऊपर",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95184,
+    "question": "राष्ट्रगान/गीत के लिए खड़े होने की आवश्यकता?",
+    "options": [
+      "हाँ",
+      "नहीं",
+      "कभी-कभी",
+      "बैठे रहें"
+    ],
+    "answer": "हाँ",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  }
+]

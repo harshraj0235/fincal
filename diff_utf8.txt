@@ -1,0 +1,84 @@
+﻿diff --git a/src/pages/learn/business-loans/EMICalculator.tsx b/src/pages/learn/business-loans/EMICalculator.tsx
+index 4737f3a4..5587293b 100644
+--- a/src/pages/learn/business-loans/EMICalculator.tsx
++++ b/src/pages/learn/business-loans/EMICalculator.tsx
+@@ -27,7 +27,7 @@ const EMICalculator: React.FC = () => {
+       breadcrumb={['Learn', 'Business Loans', 'Business Loan EMI Calculator']}
+     >
+       <div className="bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl p-8 text-white mb-8">
+-        <h1 className="text-3xl md:text-4xl font-bold mb-2">Business Loan EMI IndianRupee | αñ¼αñ┐αñ£αñ¿αÑçαñ╕ αñ▓αÑïαñ¿ EMI αñòαÑêαñ▓αñòαÑüαñ▓αÑçαñƒαñ░</h1>
++        <h1 className="text-3xl md:text-4xl font-bold mb-2">Business Loan EMI Calculator | αñ¼αñ┐αñ£αñ¿αÑçαñ╕ αñ▓αÑïαñ¿ EMI αñòαÑêαñ▓αñòαÑüαñ▓αÑçαñƒαñ░</h1>
+         <p className="text-red-100 text-lg">Calculate monthly EMI for your business loan | αñàαñ¬αñ¿αñ╛ αñ¼αñ┐αñ£αñ¿αÑçαñ╕ EMI αñòαÑêαñ▓αñòαÑüαñ▓αÑçαñƒ αñòαñ░αÑçαñé</p>
+       </div>
+ 
+diff --git a/src/pages/learn/education-loans/EMICalculator.tsx b/src/pages/learn/education-loans/EMICalculator.tsx
+index a02e8d5c..8b37e43c 100644
+--- a/src/pages/learn/education-loans/EMICalculator.tsx
++++ b/src/pages/learn/education-loans/EMICalculator.tsx
+@@ -41,7 +41,7 @@ const EMICalculator: React.FC = () => {
+       breadcrumb={['Learn', 'Education Loans', 'Education Loan EMI Calculator']}
+     >
+       <div className="bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl p-8 text-white mb-8">
+-        <h1 className="text-3xl md:text-4xl font-bold mb-2">Education Loan EMI IndianRupee | αñÅαñ£αÑüαñòαÑçαñ╢αñ¿ αñ▓αÑïαñ¿ EMI αñòαÑêαñ▓αñòαÑüαñ▓αÑçαñƒαñ░</h1>
++        <h1 className="text-3xl md:text-4xl font-bold mb-2">Education Loan EMI Calculator | αñÅαñ£αÑüαñòαÑçαñ╢αñ¿ αñ▓αÑïαñ¿ EMI αñòαÑêαñ▓αñòαÑüαñ▓αÑçαñƒαñ░</h1>
+         <p className="text-red-100 text-lg">Calculate monthly EMI with moratorium period included | αñ«αÑïαñ╣αñ▓αññ αñàαñ╡αñºαñ┐ αñ╕αñ╣αñ┐αññ</p>
+       </div>
+ 
+diff --git a/src/pages/learn/vehicle-loans/EMICalculator.tsx b/src/pages/learn/vehicle-loans/EMICalculator.tsx
+index bf41a673..495836fc 100644
+--- a/src/pages/learn/vehicle-loans/EMICalculator.tsx
++++ b/src/pages/learn/vehicle-loans/EMICalculator.tsx
+@@ -27,7 +27,7 @@ const EMICalculator: React.FC = () => {
+       breadcrumb={['Learn', 'Vehicle Loans', 'Car Loan EMI Calculator']}
+     >
+       <div className="bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl p-8 text-white mb-8">
+-        <h1 className="text-3xl md:text-4xl font-bold mb-2">Car Loan EMI IndianRupee | αñòαñ╛αñ░ EMI αñòαÑêαñ▓αñòαÑüαñ▓αÑçαñƒαñ░</h1>
++        <h1 className="text-3xl md:text-4xl font-bold mb-2">Car Loan EMI Calculator | αñòαñ╛αñ░ EMI αñòαÑêαñ▓αñòαÑüαñ▓αÑçαñƒαñ░</h1>
+         <p className="text-red-100 text-lg">Calculate monthly EMI, total interest, and payment schedule</p>
+       </div>
+ 
+diff --git a/src/pages/loan-tools/EMICalculator.tsx b/src/pages/loan-tools/EMICalculator.tsx
+index c766525a..cd8207f4 100644
+--- a/src/pages/loan-tools/EMICalculator.tsx
++++ b/src/pages/loan-tools/EMICalculator.tsx
+@@ -32,7 +32,7 @@ const faqData = [
+       'Processing fees are usually paid upfront, so they do not change the EMI. They do increase the effective cost of the loan, which this IndianRupee highlights.',
+   },
+   {
+-    question: 'Can I use this EMI IndianRupee for home loan, car loan, or personal loan?',
++    question: 'Can I use this EMI Calculator for home loan, car loan, or personal loan?',
+     answer:
+       'Yes. The EMI formula is the same for most secured and unsecured loans. You can set the loan amount, rate, and tenure to match your product.',
+   },
+@@ -52,9 +52,9 @@ const EMICalculator: React.FC = () => {
+   const structuredData = {
+     '@context': 'https://schema.org',
+     '@type': 'Article',
+-    headline: 'EMI IndianRupee for Home Loan, Car Loan, and Personal Loan',
++    headline: 'EMI Calculator for Home Loan, Car Loan, and Personal Loan',
+     description:
+-      'Advanced EMI IndianRupee with prepayment planning, rate reset simulation, and amortization schedule for Indian loans.',
++      'Advanced EMI Calculator with prepayment planning, rate reset simulation, and amortization schedule for Indian loans.',
+     author: {
+       '@type': 'Organization',
+       name: 'MoneyCal India',
+@@ -80,8 +80,8 @@ const EMICalculator: React.FC = () => {
+   return (
+     <>
+       <SEOHelmet
+-        title="EMI IndianRupee for Home Loan, Car Loan, and Personal Loan"
+-        description="Fast EMI IndianRupee with advanced prepayment options, rate reset simulation, and amortization schedule. Plan home loan EMI, personal loan EMI, or car loan EMI with accuracy."
++        title="EMI Calculator for Home Loan, Car Loan, and Personal Loan"
++        description="Fast EMI Calculator with advanced prepayment options, rate reset simulation, and amortization schedule. Plan home loan EMI, personal loan EMI, or car loan EMI with accuracy."
+         keywords="emi IndianRupee, loan emi IndianRupee, home loan emi IndianRupee india, personal loan emi IndianRupee, car loan emi IndianRupee, reducing balance emi IndianRupee, emi with prepayment, emi calculation formula, interest rate change emi, amortization schedule"
+         url="/loan-tools/emi-calculator"
+         section="Loan Tools"
+@@ -105,7 +105,7 @@ const EMICalculator: React.FC = () => {
+         calculatorData={{
+           name: 'EMI Calculator',
+           description:
+-            'Advanced EMI IndianRupee with prepayment planning, rate reset simulation, and a detailed amortization schedule for Indian loans.',
++            'Advanced EMI Calculator with prepayment planning, rate reset simulation, and a detailed amortization schedule for Indian loans.',
+           category: 'Loan Tools',
+           features: [
+             'Reducing balance EMI calculation',

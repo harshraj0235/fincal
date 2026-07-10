@@ -1,0 +1,200 @@
+# Netlify Redirects Configuration
+# Redirect old/broken URLs to correct pages
+
+# CRITICAL: www → non-www (Google indexes both; www must 301 to canonical)
+# Prevents "URL is not available to Google" / 404 on www.moneycal.in
+# Add www.moneycal.in in Netlify → Domain management or redirects won't work
+https://www.moneycal.in/     https://moneycal.in/          301!
+http://www.moneycal.in/      https://moneycal.in/          301!
+https://www.moneycal.in/*    https://moneycal.in/:splat    301!
+http://www.moneycal.in/*     https://moneycal.in/:splat    301!
+
+# Help & Feedback redirects
+/feedback                                    /contact-us                              301
+/help                                        /help-center                             301
+/contact                                     /contact-us                              301
+/about                                       /about-us                                301
+/about/                                      /about-us                                301
+/terms                                       /terms-of-service                        301
+/terms/                                      /terms-of-service                        301
+/terms-of-use                                /terms-of-service                        301
+/privacy-policy/                             /privacy-policy                          301
+/disclaimer/                                 /disclaimer                              301
+/cookie-policy/                              /cookie-policy                           301
+/editorial-policy/                           /editorial-policy                        301
+/contact-us/                                 /contact-us                              301
+/about-us/                                   /about-us                                301
+
+# Real Estate Tools redirects
+/real-estate/*                               /finance-tools                           301
+/real-estate-tools                           /finance-tools                           301
+
+# Cryptocurrency redirects
+/cryptocurrency/*                            /crypto                                  301
+
+# Banking redirects
+/banking/*                                   /bank-tools                              301
+/banking/fd-calculator                       /calculators/fd-calculator               301
+/banking/bank-account-comparison             /bank-tools                              301
+/banking/upi-calculator                      /bank-tools                              301
+
+# Hindi language redirects (Redirect to English if no specific Hindi content exists)
+# These are kept for legacy but we should ensure no Hindi URLs are in sitemaps
+/hi/*                                        /                                        301
+
+# Malformed duplicate domain segment in path
+/moneycal.in                                 /                                        301
+/moneycal.in/*                               /:splat                                  301
+/moneycal.in/moneycal.in                     /                                        301
+/moneycal.in/moneycal.in/*                   /:splat                                  301
+/MoneyCal.in                                 /                                        301
+/MoneyCal.in/*                               /:splat                                  301
+
+# Sitemaps and legacy sitemap aliases
+/sitemap-news-economy.xml                    /sitemap-news.xml                        301
+
+# Legacy section aliases
+/finance-blog/*                              /blog/:splat                             301
+/festival-info/*                             /festival-tools                          301
+/regional-tools/*                            /festival-tools                          301
+
+# Broken or renamed tool aliases → closest working pages
+/finance-tools/flexi-sip-planner             /finance-tools/sip-step-up-planner       301
+/finance-tools/long-term-capital-gains-estimator  /calculators/capital-gains-tax-calculator  301
+/religious-tools/*                           /religious-tools                         301
+
+# Finance categories redirects
+/finance-categories/*                        /finance-tools                           301
+
+# Loan tools (Removed conflicting catch-all)
+/loan-tools/loan-affordability-calculator    /calculators/loan-affordability-calculator  301
+
+# Business tools redirects
+/business-tools                              /corporate-finance                       301
+/payroll-tools                               /corporate-finance                       301
+/accounting-tools                            /corporate-finance                       301
+
+# Calculator category redirects
+/calculators/personal-finance                /finance-tools                           301
+/calculators/banking-calculators             /bank-tools                              301
+/calculators/business-calculators            /corporate-finance                       301
+/calculators/finance-banking-tools           /finance-tools                           301
+
+# LCM HCF redirect
+/lcm-hcf-calculator                          /calculators/lcm-hcf-calculator          301
+
+# Lumpsum calculator redirect
+/calculators/lumpsum-calculator              /calculators/sip-calculator              301
+
+# Loan app directory
+/loan-app-directory                          /bank-tools                              301
+/loan-app-directory.html                     /bank-tools                              301
+
+# AMP redirects
+/amp-index.html                              /                                        301
+/amp-*.html                                  /                                        301
+
+# Stock market lesson redirects
+/stock-market/*/lesson/*                     /financial-education                     301
+/stock-market/trading-strategies             /financial-education                     301
+/stock-market/basics                         /financial-education                     301
+/stock-market/risk-management                /financial-education                     301
+
+# Financial education (Removed conflicting catch-all)
+
+# Market analysis redirects
+/market-analysis/*                           /finance-tools                           301
+
+# Astro finance redirects
+/astro-finance-insights                      /astro-finance                           301
+
+# Legacy shortcuts and aliases
+/excel                                       /excel-tools                             301
+/loan-tools                                  /calculators                             301
+/news/nse                                    /news/markets                            301
+/news/bse                                    /news/markets                            301
+/news/nifty                                  /news/markets                            301
+/news/sensex                                 /news/markets                            301
+/news/trading                                /news/markets                            301
+/news/stock-market                           /news/markets                            301
+/news/investment                             /news/markets                            301
+/news/mutual-fund                            /news/markets                            301
+/news/sip                                    /news/markets                            301
+
+# Invoice tools redirects
+/invoicing-receivables                       /corporate-finance                       301
+/invoicing-tools/                            /corporate-finance                       301
+
+# Schemes finder
+/schemes-finder                              /government-schemes                      301
+/schemes-finder/                             /government-schemes                      301
+
+# Excel tool patterns
+/exceltool                                   /excel-tools                             301
+/exceltool/                                  /excel-tools                             301
+/excel-tool                                  /excel-tools                             301
+/excel-tool/                                 /excel-tools                             301
+
+# Finance categories
+/finance-categories                          /finance-tools                           301
+/finance-categories/                         /finance-tools                           301
+
+# Other GSC reported redirects
+/feedback/                                   /contact-us                              301
+/tools/feedback-form/                        /contact-us                              301
+/calculators/banking-calculators/            /bank-tools                              301
+/calculators/business-calculators/           /corporate-finance                       301
+/calculators/finance-banking-tools/          /finance-tools                           301
+/calculators/lumpsum-calculator/             /calculators/sip-calculator              301
+/loan-app-directory/                         /bank-tools                              301
+/astro-finance-insights/                     /astro-finance                           301
+/financial-navigator/                        /tools                                   301
+
+# Specific trailing slash redirects for high-traffic paths
+/news/savings/                               /news/savings                            301
+/learn/investing/                            /learn/investing-wealth                  301
+/learn/compliance/                           /learn/taxation-compliance               301
+/learn/retirement/                           /learn/insurance-retirement              301
+/learn/wealth/                               /learn/investing-wealth                  301
+/learn/money-psychology/                     /learn/behavioural-finance-money-psychology  301
+/learn/digital-payments/                     /learn/fintech-digital-payments          301
+/learn/behavioural-finance/                  /learn/behavioural-finance-money-psychology  301
+/learn/business/                             /learn/business-finance-entrepreneurship  301
+/learn/insurance/                            /learn/insurance-retirement              301
+/learn/tax/                                  /learn/taxation-compliance               301
+/learn/specialised-finance/                  /learn/advanced-specialised-finance      301
+/learn/budgeting/                            /learn/money-management                  301
+/learn/advanced/                             /learn/advanced-specialised-finance      301
+/learn/startup/                              /learn/business-finance-entrepreneurship  301
+/news/insurance/                             /news/insurance                          301
+/news/gold/                                  /news/gold                               301
+/news/tech/                                  /news/tech                               301
+/news/fintech/                               /news/fintech                            301
+/news/regulations/                           /news/regulations                        301
+
+# Excel templates (if not serving actual files)
+/excel-templates/*.xlsx                      /excel-tools                             301
+
+# Insurance redirects
+/insurance-tools/car-insurance-calculator    /insurance-tools                         301
+/insurance-tools/health-insurance-estimator  /insurance-tools                         301
+/insurance-tools/two-wheeler-tracker         /insurance-tools                         301
+
+# Tools redirects
+/tools/sales-tracker                         /corporate-finance                       301
+/tools/feedback-form                         /contact-us                              301
+
+# Financial Navigator
+/financial-navigator                         /tools                                   301
+
+# HTTP to HTTPS redirect
+http://moneycal.in/*                         https://moneycal.in/:splat               301!
+
+# Serve static Discover & Web Stories HTML files directly (for SEO crawlers & Google Discover)
+# These rules MUST come before the SPA catch-all so Netlify serves the pre-rendered HTML.
+/discover/*                                  /discover/:splat                         200
+/web-stories/*                               /web-stories/:splat                      200
+
+# Catch-all for SPA - must be last (Cloudflare Pages handles assets automatically)
+/*                                           /index.html                              404
+

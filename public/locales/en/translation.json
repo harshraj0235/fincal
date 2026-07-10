@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "calculators": "Calculators",
+    "ipo": "IPO Dashboard",
+    "gold": "Gold Rate",
+    "silver": "Silver Rate",
+    "blog": "Finance Blog",
+    "learn": "Learn Finance",
+    "tools": "More Tools",
+    "news": "Finance News",
+    "gst_tools": "GST Tools",
+    "tax_tools": "Tax Tools",
+    "loan_tools": "Loan Tools",
+    "finance_tools": "Finance Tools",
+    "schemes": "Govt Schemes",
+    "home": "Home"
+  },
+  "common": {
+    "search": "Search 200+ calculators...",
+    "popular": "Popular",
+    "all": "All",
+    "loading": "Loading..."
+  }
+}

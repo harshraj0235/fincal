@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    async function test() {
+      let output = '';
+      try {
+        const res1 = await fetch('https://text.pollinations.ai/hello');
+        output += 'GET /hello: ' + await res1.text() + '<br/>';
+      } catch (err) {
+        output += 'GET /hello ERROR: ' + err.message + '<br/>';
+      }
+
+      try {
+        const res2 = await fetch('https://text.pollinations.ai/openai/v1/chat/completions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: [{ role: 'user', content: 'hello' }],
+            model: 'openai'
+          })
+        });
+        output += 'POST /openai...: ' + await res2.text() + '<br/>';
+      } catch (err) {
+        output += 'POST /openai ERROR: ' + err.message + '<br/>';
+      }
+
+      try {
+        // Pollinations OpenAI endpoint standard
+        const res3 = await fetch('https://text.pollinations.ai/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: [{ role: 'user', content: 'hello' }],
+            model: 'openai',
+            jsonMode: false
+          })
+        });
+        output += 'POST /: ' + await res3.text() + '<br/>';
+      } catch (err) {
+        output += 'POST / ERROR: ' + err.message + '<br/>';
+      }
+
+      document.body.innerHTML = output;
+      console.log('RESULTS', output);
+    }
+    test();
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+---
+description: Prevent Cloudflare/Next.js build failures
+globs: ["src/**/*.tsx", "src/**/*.ts", "app/**/*.tsx"]
+---
+
+# Build Safety Rules (Cloudflare Pages / Next.js)
+
+When editing pages or components, avoid these patterns that cause build failures:
+
+## 1. Mismatched export default
+- Ensure `export default X` matches the component name defined in the file (e.g. `const X: React.FC = () => ...`).
+- Run `npm run find-mismatched-exports` before pushing to catch copy-paste errors.
+
+## 2. Root-level template/backup files
+- Files at project root (e.g. `OLD_LearnHub_BACKUP_Oct31_2025.tsx`, `EXAMPLE_CALCULATOR_IMPLEMENTATION.tsx`) use `../components/` imports that don't resolve from root.
+- These are excluded in tsconfig.json/tsconfig.next.json. Do NOT remove them from exclude.
+
+## 3. Not-found page
+- The custom `app/not-found.tsx` must stay minimal (no Layout/Header/Sidebar, no `next/link`).
+- Use plain `<a href="...">` instead of `<Link>` to avoid `cache is not a function` build error.
+- Export `dynamic = 'force-static'` to help avoid cache resolution issues during build.
+- Do NOT override `react`/`react-dom` in next.config webpack aliases—this breaks React's `cache` API resolution and causes "_not-found" build failure on Cloudflare.
+
+## 4. Pages Router files (src/pages/)
+- Every page file must have a default export. Empty or placeholder pages need `export default function X() { return <Navigate to="..." />; }` or similar.

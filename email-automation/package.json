@@ -1,0 +1,31 @@
+{
+  "name": "moneycal-email-automation",
+  "version": "1.0.0",
+  "description": "Automated email notification system for MoneyCal - sends random content every 3 hours",
+  "main": "email-sender.js",
+  "scripts": {
+    "start": "node email-sender.js start",
+    "test": "node email-sender.js test",
+    "send-now": "node send-test-now.js",
+    "demo": "node demo.js",
+    "add-subscriber": "node email-sender.js add-subscriber",
+    "admin": "start admin-panel.html"
+  },
+  "keywords": [
+    "email",
+    "automation",
+    "newsletter",
+    "moneycal",
+    "notifications"
+  ],
+  "author": "MoneyCal Team",
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^6.9.7",
+    "node-cron": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+

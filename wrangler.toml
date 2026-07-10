@@ -1,0 +1,5 @@
+# Cloudflare Pages – Vite (React) static site
+# This project is Vite + React; build output is dist/, not SvelteKit.
+name = "fincal"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-01-01"

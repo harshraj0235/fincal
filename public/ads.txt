@@ -1,0 +1,18 @@
+# ads.txt file for moneycal.in
+# This file ensures transparency in programmatic advertising
+# Last Updated: May 8, 2026
+
+# Google AdSense - Primary Ad Provider
+google.com, pub-6815277662449747, DIRECT, f08c47fec0942fa0
+
+# Additional ad network entries can be added below as needed
+# Format: <DOMAIN>, <PUBLISHER_ID>, <RELATIONSHIP>, <CERTIFICATION_AUTHORITY_ID>
+# RELATIONSHIP can be DIRECT or RESELLER
+
+# Example for other networks (uncomment and customize as needed):
+# pubmatic.com, 123456, RESELLER, 5d62403b186f2ace
+# rubiconproject.com, 123456, RESELLER, 0bfd66d529a55807
+# indexexchange.com, 123456, RESELLER, 50b1c356f2c5c8fc
+
+# Contact: info@moneycal.in
+# Website: https://moneycal.in

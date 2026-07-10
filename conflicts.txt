@@ -1,0 +1,15 @@
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\EducationCostVisualizer.tsx:31:<<<<<<< HEAD
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\EducationCostVisualizer.tsx:33:=======
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\EducationCostVisualizer.tsx:34:>>>>>>> 21000974 (fix: production build issues and lint cleanup)
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\EducationCostVisualizer.tsx:50:<<<<<<< HEAD
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\EducationCostVisualizer.tsx:53:=======
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\EducationCostVisualizer.tsx:54:>>>>>>> 21000974 (fix: production build issues and lint cleanup)
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\PosterMaker.tsx:85:<<<<<<< HEAD
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\PosterMaker.tsx:87:=======
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\PosterMaker.tsx:89:>>>>>>> 21000974 (fix: production build issues and lint cleanup)
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\ReferralMessageBuilder.tsx:50:<<<<<<< HEAD
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\ReferralMessageBuilder.tsx:52:=======
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\ReferralMessageBuilder.tsx:53:>>>>>>> 21000974 (fix: production build issues and lint cleanup)
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\ReferralMessageBuilder.tsx:64:<<<<<<< HEAD
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\ReferralMessageBuilder.tsx:69:=======
+C:\Users\harshraj\Downloads\New folder (4)\fincal\src\pages\tools\marketing\ReferralMessageBuilder.tsx:72:>>>>>>> 21000974 (fix: production build issues and lint cleanup)

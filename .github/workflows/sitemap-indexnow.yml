@@ -1,0 +1,44 @@
+name: Generate and Commit Sitemap & IndexNow
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+  schedule:
+    - cron: "30 19 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-commit:
+    runs-on: ubuntu-latest
+    env:
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      INDEXNOW_KEY_LOCATION: ${{ secrets.INDEXNOW_KEY_LOCATION }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate sitemap and IndexNow JSON
+        run: node generate-comprehensive-sitemap.cjs
+
+      - name: Auto-commit sitemap and IndexNow
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(ci): refresh sitemap and IndexNow JSON"
+          file_pattern: |
+            public/sitemap.xml
+            public/index-now-submission.json
+
+      - name: Submit to IndexNow
+        if: env.INDEXNOW_KEY != ''
+        run: |
+          curl -s -X POST -H "Content-Type: application/json" --data @public/index-now-submission.json https://api.indexnow.org/indexnow

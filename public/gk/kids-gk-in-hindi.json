@@ -1,0 +1,1738 @@
+[
+  {
+    "id": 98001,
+    "question": "सबसे तेज़ दौड़ने वाला स्थलीय जानवर?",
+    "options": [
+      "चीताह",
+      "घोड़ा",
+      "शेर",
+      "हिरण"
+    ],
+    "answer": "चीताह",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98002,
+    "question": "सबसे बड़ा जीवित स्तनपायी?",
+    "options": [
+      "नीली व्हेल",
+      "हाथी",
+      "दरियाई घोड़ा",
+      "गैंडा"
+    ],
+    "answer": "नीली व्हेल",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98003,
+    "question": "सबसे लंबी गर्दन वाला जानवर?",
+    "options": [
+      "जिराफ",
+      "ऊँट",
+      "घोड़ा",
+      "हिरण"
+    ],
+    "answer": "जिराफ",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98006,
+    "question": "हनी बी किस वर्ग?",
+    "options": [
+      "कीट",
+      "स्तनपायी",
+      "सरिसृप",
+      "उभयचर"
+    ],
+    "answer": "कीट",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98007,
+    "question": "कौन-सा जानवर उभयचर?",
+    "options": [
+      "मेंढक",
+      "शेर",
+      "चिड़िया",
+      "मछली"
+    ],
+    "answer": "मेंढक",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98009,
+    "question": "मांसाहारी नहीं?",
+    "options": [
+      "गाय",
+      "शेर",
+      "बाघ",
+      "भेड़िया"
+    ],
+    "answer": "गाय",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98010,
+    "question": "शाकाहारी कौन?",
+    "options": [
+      "हिरण",
+      "शेर",
+      "भेड़िया",
+      "लोमड़ी"
+    ],
+    "answer": "हिरण",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98011,
+    "question": "सरीसृप कौन?",
+    "options": [
+      "साँप",
+      "मेंढक",
+      "मछली",
+      "कुत्ता"
+    ],
+    "answer": "साँप",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98013,
+    "question": "सबसे बड़ी बिल्ली प्रजाति?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "चीता",
+      "तेंदुआ"
+    ],
+    "answer": "बाघ",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98014,
+    "question": "राष्ट्रीय पशु भारत?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "हाथी",
+      "नीलगाय"
+    ],
+    "answer": "बाघ",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98015,
+    "question": "राष्ट्रीय पक्षी भारत?",
+    "options": [
+      "मोर",
+      "गरुड़",
+      "तोता",
+      "गिद्ध"
+    ],
+    "answer": "मोर",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98018,
+    "question": "कौन-सा जानवर जुगाली करता?",
+    "options": [
+      "गाय",
+      "कुत्ता",
+      "बिल्ली",
+      "टाइगर"
+    ],
+    "answer": "गाय",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98019,
+    "question": "कौन-सा जानवर विषैला?",
+    "options": [
+      "कोबरा",
+      "कछुआ",
+      "गाय",
+      "हिरण"
+    ],
+    "answer": "कोबरा",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98025,
+    "question": "समुद्री स्तनपायी?",
+    "options": [
+      "डॉल्फिन",
+      "शार्क",
+      "ऑक्टोपस",
+      "जेलिफिश"
+    ],
+    "answer": "डॉल्फिन",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98027,
+    "question": "कौन-सा जानवर सूंड से पानी पीता?",
+    "options": [
+      "हाथी",
+      "हिरण",
+      "घोड़ा",
+      "गाय"
+    ],
+    "answer": "हाथी",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98029,
+    "question": "कौन-सा जानवर छलावरण में माहिर?",
+    "options": [
+      "गिरगिट",
+      "शेर",
+      "गाय",
+      "भेड़"
+    ],
+    "answer": "गिरगिट",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98030,
+    "question": "कौन-सा जानवर अंधेरे में देखता?",
+    "options": [
+      "उल्लू",
+      "तोता",
+      "गौरैया",
+      "कबूतर"
+    ],
+    "answer": "उल्लू",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98031,
+    "question": "कौन-सा जानवर दूध देता?",
+    "options": [
+      "गाय",
+      "तोता",
+      "कबूतर",
+      "साँप"
+    ],
+    "answer": "गाय",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98033,
+    "question": "कौन-सा जानवर कंगारू किस देश?",
+    "options": [
+      "ऑस्ट्रेलिया",
+      "भारत",
+      "अमेरिका",
+      "अफ्रीका"
+    ],
+    "answer": "ऑस्ट्रेलिया",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98034,
+    "question": "कौन-सा जानवर पेंगुइन कहाँ?",
+    "options": [
+      "अंटार्कटिका",
+      "आर्कटिक",
+      "सहारा",
+      "हिमालय"
+    ],
+    "answer": "अंटार्कटिका",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98043,
+    "question": "कौन-सा जानवर सबसे लंबी छलांग?",
+    "options": [
+      "कंगारू",
+      "हिरण",
+      "घोड़ा",
+      "गाय"
+    ],
+    "answer": "कंगारू",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98044,
+    "question": "कौन-सा जानवर सींग से पहचान?",
+    "options": [
+      "गैंडा",
+      "हाथी",
+      "शेर",
+      "हिरण"
+    ],
+    "answer": "गैंडा",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98048,
+    "question": "कौन-सा जानवर घोड़े की टाप?",
+    "options": [
+      "नाल/खुर",
+      "दाँत",
+      "सींग",
+      "पूंछ"
+    ],
+    "answer": "नाल/खुर",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98052,
+    "question": "कौन-सा जानवर 'प्राइमेट' में?",
+    "options": [
+      "मनुष्य/गोरिल्ला",
+      "कुत्ता",
+      "बिल्ली",
+      "घोड़ा"
+    ],
+    "answer": "मनुष्य/गोरिल्ला",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98054,
+    "question": "कौन-सा जानवर शाकाहारी नहीं?",
+    "options": [
+      "लोमड़ी",
+      "गाय",
+      "भेड़",
+      "हिरण"
+    ],
+    "answer": "लोमड़ी",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98063,
+    "question": "कौन-सा जानवर कंगारू की थैली?",
+    "options": [
+      "जोई को रखने",
+      "खाना",
+      "पानी",
+      "गंध"
+    ],
+    "answer": "जोई को रखने",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98064,
+    "question": "कौन-सा जानवर पांडा आहार?",
+    "options": [
+      "बाँस",
+      "मांस",
+      "फल",
+      "मछली"
+    ],
+    "answer": "बाँस",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98067,
+    "question": "कौन-सा जानवर कोल्ड-ब्लडेड?",
+    "options": [
+      "सरीसृप",
+      "स्तनपायी",
+      "पक्षी",
+      "प्राइमेट"
+    ],
+    "answer": "सरीसृप",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98076,
+    "question": "कौन-सा जानवर उल्लू आँख?",
+    "options": [
+      "बड़ी/रात दृष्टि",
+      "छोटी",
+      "नीली",
+      "हरी"
+    ],
+    "answer": "बड़ी/रात दृष्टि",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98077,
+    "question": "कौन-सा जानवर जल-स्थल दोनों?",
+    "options": [
+      "मगरमच्छ",
+      "शेर",
+      "गाय",
+      "घोड़ा"
+    ],
+    "answer": "मगरमच्छ",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98084,
+    "question": "कौन-सा जानवर मुर्गी दाँत?",
+    "options": [
+      "नहीं",
+      "हाँ",
+      "कभी-कभी",
+      "अनिश्चित"
+    ],
+    "answer": "नहीं",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98087,
+    "question": "कौन-सा जानवर पेंगुइन उड़ता?",
+    "options": [
+      "नहीं",
+      "हाँ",
+      "कभी-कभी",
+      "अनिश्चित"
+    ],
+    "answer": "नहीं",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98089,
+    "question": "कौन-सा जानवर टाइगर आवास?",
+    "options": [
+      "वन/घना जंगल",
+      "रेगिस्तान",
+      "टुंड्रा",
+      "समुद्र"
+    ],
+    "answer": "वन/घना जंगल",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98093,
+    "question": "कौन-सा जानवर ऊँट पैर?",
+    "options": [
+      "चौड़े/रेत के लिए",
+      "पतले",
+      "सख्त",
+      "सींग"
+    ],
+    "answer": "चौड़े/रेत के लिए",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98096,
+    "question": "कौन-सा जानवर डॉल्फिन बुद्धिमत्ता?",
+    "options": [
+      "उच्च",
+      "कम",
+      "मध्यम",
+      "नहीं"
+    ],
+    "answer": "उच्च",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98138,
+    "question": "कौन-सा जानवर ‘इमू’ कहाँ?",
+    "options": [
+      "ऑस्ट्रेलिया",
+      "भारत",
+      "अफ्रीका",
+      "अमेरिका"
+    ],
+    "answer": "ऑस्ट्रेलिया",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98166,
+    "question": "कौन-सा जानवर ‘ब्लो होल’ किसमें?",
+    "options": [
+      "व्हेल/डॉल्फिन",
+      "मछली",
+      "कछुआ",
+      "पेंगुइन"
+    ],
+    "answer": "व्हेल/डॉल्फिन",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98170,
+    "question": "कौन-सा जानवर ‘कीवी’ उड़ता?",
+    "options": [
+      "नहीं",
+      "हाँ",
+      "कभी-कभी",
+      "अनिश्चित"
+    ],
+    "answer": "नहीं",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98175,
+    "question": "कौन-सा जानवर ‘गिल’ किसमें?",
+    "options": [
+      "मछलियाँ",
+      "स्तनपायी",
+      "पक्षी",
+      "सरिसृप"
+    ],
+    "answer": "मछलियाँ",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98183,
+    "question": "कौन-सा जानवर ‘चिंपांज़ी’ बुद्धि?",
+    "options": [
+      "उच्च",
+      "कम",
+      "मध्यम",
+      "नहीं"
+    ],
+    "answer": "उच्च",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98186,
+    "question": "कौन-सा जानवर ‘हैरिंग’ क्या?",
+    "options": [
+      "मछली",
+      "स्तनपायी",
+      "सरिसृप",
+      "उभयचर"
+    ],
+    "answer": "मछली",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98190,
+    "question": "कौन-सा जानवर ‘एंट ईटर’ क्या?",
+    "options": [
+      "चींटीखोर",
+      "गाय",
+      "घोड़ा",
+      "कुत्ता"
+    ],
+    "answer": "चींटीखोर",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 98200,
+    "question": "कौन-सा जानवर ‘गिलहरी’ किस समूह?",
+    "options": [
+      "कृंतक",
+      "प्राइमेट",
+      "कैनिडे",
+      "फेलिडे"
+    ],
+    "answer": "कृंतक",
+    "category": "animals",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10001,
+    "question": "भारत की राजधानी क्या है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10002,
+    "question": "भारत की मुद्रा क्या है?",
+    "options": [
+      "रुपया",
+      "डॉलर",
+      "यूरो",
+      "पाउंड"
+    ],
+    "answer": "रुपया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10003,
+    "question": "भारत का राष्ट्रीय पशु कौन है?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "हाथी",
+      "हिरन"
+    ],
+    "answer": "बाघ",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10004,
+    "question": "भारत का राष्ट्रीय पक्षी कौन है?",
+    "options": [
+      "मोर",
+      "तोता",
+      "कबूतर",
+      "चील"
+    ],
+    "answer": "मोर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10005,
+    "question": "भारत का राष्ट्रीय फूल कौन सा है?",
+    "options": [
+      "कमल",
+      "गुलाब",
+      "गेंदा",
+      "चमेली"
+    ],
+    "answer": "कमल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10006,
+    "question": "भारत का राष्ट्रीय फलों का राजा कौन है?",
+    "options": [
+      "आम",
+      "सेब",
+      "केला",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10007,
+    "question": "भारत का राष्ट्रीय दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10008,
+    "question": "स्वतंत्रता दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "5 जून"
+    ],
+    "answer": "15 अगस्त",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10009,
+    "question": "गणतंत्र दिवस किस दिन मनाया जाता है?",
+    "options": [
+      "15 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर",
+      "5 सितंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10010,
+    "question": "महात्मा गांधी का जन्मदिन कब है?",
+    "options": [
+      "2 अक्टूबर",
+      "15 अगस्त",
+      "14 नवंबर",
+      "5 जून"
+    ],
+    "answer": "2 अक्टूबर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10011,
+    "question": "विश्व पर्यावरण दिवस कब मनाया जाता है?",
+    "options": [
+      "5 जून",
+      "22 मार्च",
+      "29 अगस्त",
+      "11 जुलाई"
+    ],
+    "answer": "5 जून",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10012,
+    "question": "विश्व जल दिवस कब मनाया जाता है?",
+    "options": [
+      "22 मार्च",
+      "5 जून",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "22 मार्च",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10014,
+    "question": "भारत का सबसे बड़ा राज्य (क्षेत्रफल) कौन सा है?",
+    "options": [
+      "राजस्थान",
+      "महाराष्ट्र",
+      "मध्य प्रदेश",
+      "उत्तर प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10015,
+    "question": "भारत का सबसे अधिक आबादी वाला राज्य कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "महाराष्ट्र",
+      "बिहार",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10019,
+    "question": "भारतीय ध्वज में कितने रंग होते हैं?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10020,
+    "question": "भारत का सर्वोच्च न्यायालय कहाँ स्थित है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10021,
+    "question": "भारतीय संसद के कितने सदन होते हैं?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10022,
+    "question": "लोकसभा की अधिकतम अवधि कितने वर्षों की होती है?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10023,
+    "question": "राज्यसभा का स्वरूप क्या है?",
+    "options": [
+      "अस्थायी",
+      "स्थायी",
+      "अर्ध-स्थायी",
+      "कोई नहीं"
+    ],
+    "answer": "स्थायी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10025,
+    "question": "भारत के प्रथम प्रधानमंत्री कौन थे?",
+    "options": [
+      "जवाहरलाल नेहरू",
+      "लाल बहादुर शास्त्री",
+      "इंदिरा गांधी",
+      "मोतीलाल नेहरू"
+    ],
+    "answer": "जवाहरलाल नेहरू",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10026,
+    "question": "भारत का संविधान कब लागू हुआ?",
+    "options": [
+      "15 अगस्त 1947",
+      "26 जनवरी 1950",
+      "2 अक्टूबर 1949",
+      "1 जनवरी 1951"
+    ],
+    "answer": "26 जनवरी 1950",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10027,
+    "question": "भारत का केंद्रीय बैंक कौन सा है?",
+    "options": [
+      "RBI",
+      "SBI",
+      "NABARD",
+      "ICICI"
+    ],
+    "answer": "RBI",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10030,
+    "question": "भारत का बजट कौन प्रस्तुत करता है?",
+    "options": [
+      "वित्त मंत्री",
+      "प्रधानमंत्री",
+      "राष्ट्रपति",
+      "लोकसभा अध्यक्ष"
+    ],
+    "answer": "वित्त मंत्री",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10031,
+    "question": "विश्व का सबसे बड़ा महासागर कौन सा है?",
+    "options": [
+      "प्रशांत",
+      "अटलांटिक",
+      "हिंद",
+      "आर्कटिक"
+    ],
+    "answer": "प्रशांत",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10032,
+    "question": "दुनिया का सबसे बड़ा महाद्वीप कौन सा है?",
+    "options": [
+      "एशिया",
+      "अफ्रीका",
+      "यूरोप",
+      "ऑस्ट्रेलिया"
+    ],
+    "answer": "एशिया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10033,
+    "question": "पृथ्वी का लगभग कितना प्रतिशत भाग जल से ढका है?",
+    "options": [
+      "51%",
+      "61%",
+      "71%",
+      "81%"
+    ],
+    "answer": "71%",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10037,
+    "question": "जल का रासायनिक सूत्र क्या है?",
+    "options": [
+      "H2O",
+      "CO2",
+      "O2",
+      "NaCl"
+    ],
+    "answer": "H2O",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10038,
+    "question": "बल की SI इकाई क्या है?",
+    "options": [
+      "न्यूटन",
+      "जूल",
+      "वाट",
+      "पास्कल"
+    ],
+    "answer": "न्यूटन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10039,
+    "question": "ऊर्जा की SI इकाई क्या है?",
+    "options": [
+      "जूल",
+      "न्यूटन",
+      "वोल्ट",
+      "कैल्विन"
+    ],
+    "answer": "जूल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10040,
+    "question": "विद्युत धारा की SI इकाई क्या है?",
+    "options": [
+      "एम्पीयर",
+      "ओम",
+      "वोल्ट",
+      "वाट"
+    ],
+    "answer": "एम्पीयर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10041,
+    "question": "ध्वनि किस माध्यम में नहीं चल सकती?",
+    "options": [
+      "ठोस",
+      "द्रव",
+      "गैस",
+      "निर्वात"
+    ],
+    "answer": "निर्वात",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10046,
+    "question": "फ्रांस की राजधानी क्या है?",
+    "options": [
+      "पेरिस",
+      "रोम",
+      "लंदन",
+      "मैड्रिड"
+    ],
+    "answer": "पेरिस",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10047,
+    "question": "संयुक्त राज्य अमेरिका की राजधानी क्या है?",
+    "options": [
+      "वाशिंगटन डीसी",
+      "न्यूयॉर्क",
+      "लॉस एंजेलिस",
+      "शिकागो"
+    ],
+    "answer": "वाशिंगटन डीसी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10048,
+    "question": "जापान की मुद्रा क्या है?",
+    "options": [
+      "येन",
+      "युआन",
+      "वॉन",
+      "रुपया"
+    ],
+    "answer": "येन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10049,
+    "question": "संयुक्त राष्ट्र का मुख्यालय कहाँ है?",
+    "options": [
+      "न्यूयॉर्क",
+      "जिनेवा",
+      "पेरिस",
+      "टोक्यो"
+    ],
+    "answer": "न्यूयॉर्क",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10052,
+    "question": "रूस की राजधानी क्या है?",
+    "options": [
+      "मॉस्को",
+      "सेंट पीटर्सबर्ग",
+      "कीव",
+      "मिन्स्क"
+    ],
+    "answer": "मॉस्को",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10055,
+    "question": "चीन की महान दीवार किस देश में है?",
+    "options": [
+      "चीन",
+      "जापान",
+      "कोरिया",
+      "मंगोलिया"
+    ],
+    "answer": "चीन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10056,
+    "question": "सौरमंडल का सबसे बड़ा ग्रह कौन सा है?",
+    "options": [
+      "बृहस्पति",
+      "शनि",
+      "पृथ्वी",
+      "शुक्र"
+    ],
+    "answer": "बृहस्पति",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10057,
+    "question": "लाल ग्रह किसे कहा जाता है?",
+    "options": [
+      "मंगल",
+      "शुक्र",
+      "बुध",
+      "पृथ्वी"
+    ],
+    "answer": "मंगल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10058,
+    "question": "पृथ्वी का प्राकृतिक उपग्रह कौन सा है?",
+    "options": [
+      "चंद्रमा",
+      "मंगल",
+      "टाइटन",
+      "फोबोस"
+    ],
+    "answer": "चंद्रमा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10060,
+    "question": "CPU का पूर्ण रूप क्या है?",
+    "options": [
+      "Central Processing Unit",
+      "Control Processing Unit",
+      "Computer Processing Unit",
+      "Central Program Utility"
+    ],
+    "answer": "Central Processing Unit",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10061,
+    "question": "URL का पूर्ण रूप क्या है?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "United Resource Locator",
+      "Uniform Result Link"
+    ],
+    "answer": "Uniform Resource Locator",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10062,
+    "question": "ओलंपिक खेल कितने वर्षों में होते हैं?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": "4",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10063,
+    "question": "क्रिकेट में एक ओवर में कितनी गेंदें होती हैं?",
+    "options": [
+      "6",
+      "5",
+      "4",
+      "8"
+    ],
+    "answer": "6",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10064,
+    "question": "हॉकी टीम में कुल कितने खिलाड़ी होते हैं?",
+    "options": [
+      "11",
+      "10",
+      "9",
+      "12"
+    ],
+    "answer": "11",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10071,
+    "question": "भारत के राष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10072,
+    "question": "भारत के उपराष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10076,
+    "question": "भारत का पहला उपग्रह कौन सा था?",
+    "options": [
+      "आर्यभट्ट",
+      "रोहिणी",
+      "भास्कर",
+      "इनसैट"
+    ],
+    "answer": "आर्यभट्ट",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10078,
+    "question": "नवीकरणीय ऊर्जा का उदाहरण क्या है?",
+    "options": [
+      "सौर ऊर्जा",
+      "कोयला",
+      "डीजल",
+      "पेट्रोल"
+    ],
+    "answer": "सौर ऊर्जा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10080,
+    "question": "ग्रीनहाउस प्रभाव का प्रमुख गैस कौन सा है?",
+    "options": [
+      "कार्बन डाइऑक्साइड",
+      "ऑक्सीजन",
+      "नाइट्रोजन",
+      "हाइड्रोजन"
+    ],
+    "answer": "कार्बन डाइऑक्साइड",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95001,
+    "question": "भारत का राष्ट्रीय पशु?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "हाथी",
+      "नीलगाय"
+    ],
+    "answer": "बाघ",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95002,
+    "question": "भारत का राष्ट्रीय पक्षी?",
+    "options": [
+      "मोर",
+      "गरुड़",
+      "तोता",
+      "बुलबुल"
+    ],
+    "answer": "मोर",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95003,
+    "question": "भारत का राष्ट्रीय फूल?",
+    "options": [
+      "कमल",
+      "गुलाब",
+      "मोगरा",
+      "गेंदा"
+    ],
+    "answer": "कमल",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95004,
+    "question": "भारत का राष्ट्रीय फल?",
+    "options": [
+      "आम",
+      "केला",
+      "सेब",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95005,
+    "question": "भारत का राष्ट्रीय वृक्ष?",
+    "options": [
+      "बरगद",
+      "नीम",
+      "पीपल",
+      "साल"
+    ],
+    "answer": "बरगद",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95006,
+    "question": "भारत की राष्ट्रीय नदी?",
+    "options": [
+      "गंगा",
+      "यमुना",
+      "नर्मदा",
+      "ब्राह्मपुत्र"
+    ],
+    "answer": "गंगा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95009,
+    "question": "अशोक चक्र में कितने तीलियां होती हैं?",
+    "options": [
+      "24",
+      "32",
+      "16",
+      "12"
+    ],
+    "answer": "24",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95012,
+    "question": "राष्ट्रीय चिह्न पर लिखी उक्ति?",
+    "options": [
+      "सत्यमेव जयते",
+      "वसुधैव कुटुम्बकम",
+      "जन-गण-मन",
+      "जय हिंद"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95014,
+    "question": "भारत का राष्ट्रगान?",
+    "options": [
+      "जन गण मन",
+      "वंदे मातरम्",
+      "सारे जहाँ से अच्छा",
+      "जय हिंद"
+    ],
+    "answer": "जन गण मन",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95015,
+    "question": "भारत का राष्ट्रीय गीत?",
+    "options": [
+      "वंदे मातरम्",
+      "जन गण मन",
+      "सारे जहाँ से अच्छा",
+      "ए मेरे वतन"
+    ],
+    "answer": "वंदे मातरम्",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95019,
+    "question": "राष्ट्रीय ध्वज के रंग?",
+    "options": [
+      "केसरिया/सफेद/हरा",
+      "लाल/सफेद/नीला",
+      "पीला/नीला/हरा",
+      "केसरिया/नीला/हरा"
+    ],
+    "answer": "केसरिया/सफेद/हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95020,
+    "question": "राष्ट्रीय ध्वज के मध्य में क्या?",
+    "options": [
+      "अशोक चक्र",
+      "त्रिशूल",
+      "कमल",
+      "सिंह"
+    ],
+    "answer": "अशोक चक्र",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95024,
+    "question": "राष्ट्रीय मुद्रा?",
+    "options": [
+      "भारतीय रुपया",
+      "डॉलर",
+      "पाउंड",
+      "येन"
+    ],
+    "answer": "भारतीय रुपया",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95025,
+    "question": "राष्ट्रीय दिवस (गणतंत्र) कब?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95026,
+    "question": "राष्ट्रीय दिवस (स्वतंत्रता) कब?",
+    "options": [
+      "15 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर",
+      "1 मई"
+    ],
+    "answer": "15 अगस्त",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95027,
+    "question": "राष्ट्रीय दिवस (गांधी) कब?",
+    "options": [
+      "2 अक्टूबर",
+      "26 जनवरी",
+      "15 अगस्त",
+      "14 नवम्बर"
+    ],
+    "answer": "2 अक्टूबर",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95073,
+    "question": "राष्ट्रीय ध्वज के रंगों का क्रम?",
+    "options": [
+      "ऊपर केसरिया, बीच सफेद, नीचे हरा",
+      "ऊपर सफेद, बीच हरा, नीचे केसरिया",
+      "ऊपर हरा, बीच सफेद, नीचे केसरिया",
+      "ऊपर केसरिया, नीचे सफेद, बीच हरा"
+    ],
+    "answer": "ऊपर केसरिया, बीच सफेद, नीचे हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95077,
+    "question": "राष्ट्रीय गीत की प्रथम पंक्ति?",
+    "options": [
+      "वंदे मातरम्",
+      "जन गण मन",
+      "जय हिंद",
+      "सारे जहाँ"
+    ],
+    "answer": "वंदे मातरम्",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95080,
+    "question": "ध्वज फहराते समय कौन पक्ष ऊपर?",
+    "options": [
+      "केसरिया",
+      "सफेद",
+      "हरा",
+      "अशोक चक्र"
+    ],
+    "answer": "केसरिया",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95091,
+    "question": "राष्ट्रीय फल आम का मौसम?",
+    "options": [
+      "गर्मी",
+      "सर्दी",
+      "बरसात",
+      "वसंत"
+    ],
+    "answer": "गर्मी",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95098,
+    "question": "ध्वज के क्षैतिज पट्टियाँ?",
+    "options": [
+      "केसरिया/सफेद/हरा",
+      "सफेद/केसरिया/हरा",
+      "हरा/सफेद/केसरिया",
+      "नीला/सफेद/हरा"
+    ],
+    "answer": "केसरिया/सफेद/हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95105,
+    "question": "राष्ट्रीय प्रतीक की नीचे लिखावट?",
+    "options": [
+      "सत्यमेव जयते",
+      "जय हिंद",
+      "वंदे मातरम्",
+      "जन-गण-मन"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95109,
+    "question": "राष्ट्रीय ध्वज का स्पर्श नियम?",
+    "options": [
+      "सम्मानपूर्वक",
+      "मनमाना",
+      "कभी भी",
+      "धोना"
+    ],
+    "answer": "सम्मानपूर्वक",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95111,
+    "question": "राष्ट्रगान पंक्ति: ‘अधिनायक जय हे’?",
+    "options": [
+      "जन गण मन",
+      "वंदे मातरम्",
+      "सारे जहाँ से अच्छा",
+      "जय हिंद"
+    ],
+    "answer": "जन गण मन",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95124,
+    "question": "राष्ट्रीय प्रतीक के नीचे क्या लिखा जाए?",
+    "options": [
+      "सत्यमेव जयते",
+      "जय हिंद",
+      "भारत",
+      "India"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95131,
+    "question": "ध्वज की दिशा हवा में?",
+    "options": [
+      "स्वाभाविक",
+      "नियत",
+      "केसरिया हमेशा ऊपर",
+      "हरा हमेशा ऊपर"
+    ],
+    "answer": "स्वाभाविक",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95142,
+    "question": "ध्वज का तिरंगा नाम क्यों?",
+    "options": [
+      "तीन रंग",
+      "तीन देश",
+      "तीन धर्म",
+      "तीन पर्वत"
+    ],
+    "answer": "तीन रंग",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95146,
+    "question": "राष्ट्रीय प्रतीक में आधार पट्टिका पर क्या?",
+    "options": [
+      "सत्यमेव जयते",
+      "भारत",
+      "India",
+      "जय हिंद"
+    ],
+    "answer": "सत्यमेव जयते",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95156,
+    "question": "राष्ट्रगान/गीत स्कूल में?",
+    "options": [
+      "सम्मान सहित",
+      "नहीं",
+      "कभी-कभी",
+      "सिर्फ परीक्षा"
+    ],
+    "answer": "सम्मान सहित",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95177,
+    "question": "ध्वज के लिए पोल की स्थिति?",
+    "options": [
+      "केसरिया ऊपर",
+      "सफेद ऊपर",
+      "हरा ऊपर",
+      "नीला ऊपर"
+    ],
+    "answer": "केसरिया ऊपर",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 95184,
+    "question": "राष्ट्रगान/गीत के लिए खड़े होने की आवश्यकता?",
+    "options": [
+      "हाँ",
+      "नहीं",
+      "कभी-कभी",
+      "बैठे रहें"
+    ],
+    "answer": "हाँ",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  }
+]

@@ -1,0 +1,2788 @@
+[
+  {
+    "id": 10001,
+    "question": "भारत की राजधानी क्या है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10002,
+    "question": "भारत की मुद्रा क्या है?",
+    "options": [
+      "रुपया",
+      "डॉलर",
+      "यूरो",
+      "पाउंड"
+    ],
+    "answer": "रुपया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10003,
+    "question": "भारत का राष्ट्रीय पशु कौन है?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "हाथी",
+      "हिरन"
+    ],
+    "answer": "बाघ",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10004,
+    "question": "भारत का राष्ट्रीय पक्षी कौन है?",
+    "options": [
+      "मोर",
+      "तोता",
+      "कबूतर",
+      "चील"
+    ],
+    "answer": "मोर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10005,
+    "question": "भारत का राष्ट्रीय फूल कौन सा है?",
+    "options": [
+      "कमल",
+      "गुलाब",
+      "गेंदा",
+      "चमेली"
+    ],
+    "answer": "कमल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10006,
+    "question": "भारत का राष्ट्रीय फलों का राजा कौन है?",
+    "options": [
+      "आम",
+      "सेब",
+      "केला",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10007,
+    "question": "भारत का राष्ट्रीय दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10008,
+    "question": "स्वतंत्रता दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "5 जून"
+    ],
+    "answer": "15 अगस्त",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10009,
+    "question": "गणतंत्र दिवस किस दिन मनाया जाता है?",
+    "options": [
+      "15 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर",
+      "5 सितंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10010,
+    "question": "महात्मा गांधी का जन्मदिन कब है?",
+    "options": [
+      "2 अक्टूबर",
+      "15 अगस्त",
+      "14 नवंबर",
+      "5 जून"
+    ],
+    "answer": "2 अक्टूबर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10011,
+    "question": "विश्व पर्यावरण दिवस कब मनाया जाता है?",
+    "options": [
+      "5 जून",
+      "22 मार्च",
+      "29 अगस्त",
+      "11 जुलाई"
+    ],
+    "answer": "5 जून",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10012,
+    "question": "विश्व जल दिवस कब मनाया जाता है?",
+    "options": [
+      "22 मार्च",
+      "5 जून",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "22 मार्च",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10014,
+    "question": "भारत का सबसे बड़ा राज्य (क्षेत्रफल) कौन सा है?",
+    "options": [
+      "राजस्थान",
+      "महाराष्ट्र",
+      "मध्य प्रदेश",
+      "उत्तर प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10015,
+    "question": "भारत का सबसे अधिक आबादी वाला राज्य कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "महाराष्ट्र",
+      "बिहार",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10019,
+    "question": "भारतीय ध्वज में कितने रंग होते हैं?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10020,
+    "question": "भारत का सर्वोच्च न्यायालय कहाँ स्थित है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10021,
+    "question": "भारतीय संसद के कितने सदन होते हैं?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10022,
+    "question": "लोकसभा की अधिकतम अवधि कितने वर्षों की होती है?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10023,
+    "question": "राज्यसभा का स्वरूप क्या है?",
+    "options": [
+      "अस्थायी",
+      "स्थायी",
+      "अर्ध-स्थायी",
+      "कोई नहीं"
+    ],
+    "answer": "स्थायी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10025,
+    "question": "भारत के प्रथम प्रधानमंत्री कौन थे?",
+    "options": [
+      "जवाहरलाल नेहरू",
+      "लाल बहादुर शास्त्री",
+      "इंदिरा गांधी",
+      "मोतीलाल नेहरू"
+    ],
+    "answer": "जवाहरलाल नेहरू",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10026,
+    "question": "भारत का संविधान कब लागू हुआ?",
+    "options": [
+      "15 अगस्त 1947",
+      "26 जनवरी 1950",
+      "2 अक्टूबर 1949",
+      "1 जनवरी 1951"
+    ],
+    "answer": "26 जनवरी 1950",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10027,
+    "question": "भारत का केंद्रीय बैंक कौन सा है?",
+    "options": [
+      "RBI",
+      "SBI",
+      "NABARD",
+      "ICICI"
+    ],
+    "answer": "RBI",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10030,
+    "question": "भारत का बजट कौन प्रस्तुत करता है?",
+    "options": [
+      "वित्त मंत्री",
+      "प्रधानमंत्री",
+      "राष्ट्रपति",
+      "लोकसभा अध्यक्ष"
+    ],
+    "answer": "वित्त मंत्री",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10031,
+    "question": "विश्व का सबसे बड़ा महासागर कौन सा है?",
+    "options": [
+      "प्रशांत",
+      "अटलांटिक",
+      "हिंद",
+      "आर्कटिक"
+    ],
+    "answer": "प्रशांत",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10032,
+    "question": "दुनिया का सबसे बड़ा महाद्वीप कौन सा है?",
+    "options": [
+      "एशिया",
+      "अफ्रीका",
+      "यूरोप",
+      "ऑस्ट्रेलिया"
+    ],
+    "answer": "एशिया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10033,
+    "question": "पृथ्वी का लगभग कितना प्रतिशत भाग जल से ढका है?",
+    "options": [
+      "51%",
+      "61%",
+      "71%",
+      "81%"
+    ],
+    "answer": "71%",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10037,
+    "question": "जल का रासायनिक सूत्र क्या है?",
+    "options": [
+      "H2O",
+      "CO2",
+      "O2",
+      "NaCl"
+    ],
+    "answer": "H2O",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10038,
+    "question": "बल की SI इकाई क्या है?",
+    "options": [
+      "न्यूटन",
+      "जूल",
+      "वाट",
+      "पास्कल"
+    ],
+    "answer": "न्यूटन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10039,
+    "question": "ऊर्जा की SI इकाई क्या है?",
+    "options": [
+      "जूल",
+      "न्यूटन",
+      "वोल्ट",
+      "कैल्विन"
+    ],
+    "answer": "जूल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10040,
+    "question": "विद्युत धारा की SI इकाई क्या है?",
+    "options": [
+      "एम्पीयर",
+      "ओम",
+      "वोल्ट",
+      "वाट"
+    ],
+    "answer": "एम्पीयर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10041,
+    "question": "ध्वनि किस माध्यम में नहीं चल सकती?",
+    "options": [
+      "ठोस",
+      "द्रव",
+      "गैस",
+      "निर्वात"
+    ],
+    "answer": "निर्वात",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10046,
+    "question": "फ्रांस की राजधानी क्या है?",
+    "options": [
+      "पेरिस",
+      "रोम",
+      "लंदन",
+      "मैड्रिड"
+    ],
+    "answer": "पेरिस",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10047,
+    "question": "संयुक्त राज्य अमेरिका की राजधानी क्या है?",
+    "options": [
+      "वाशिंगटन डीसी",
+      "न्यूयॉर्क",
+      "लॉस एंजेलिस",
+      "शिकागो"
+    ],
+    "answer": "वाशिंगटन डीसी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10048,
+    "question": "जापान की मुद्रा क्या है?",
+    "options": [
+      "येन",
+      "युआन",
+      "वॉन",
+      "रुपया"
+    ],
+    "answer": "येन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10049,
+    "question": "संयुक्त राष्ट्र का मुख्यालय कहाँ है?",
+    "options": [
+      "न्यूयॉर्क",
+      "जिनेवा",
+      "पेरिस",
+      "टोक्यो"
+    ],
+    "answer": "न्यूयॉर्क",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10052,
+    "question": "रूस की राजधानी क्या है?",
+    "options": [
+      "मॉस्को",
+      "सेंट पीटर्सबर्ग",
+      "कीव",
+      "मिन्स्क"
+    ],
+    "answer": "मॉस्को",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10055,
+    "question": "चीन की महान दीवार किस देश में है?",
+    "options": [
+      "चीन",
+      "जापान",
+      "कोरिया",
+      "मंगोलिया"
+    ],
+    "answer": "चीन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10056,
+    "question": "सौरमंडल का सबसे बड़ा ग्रह कौन सा है?",
+    "options": [
+      "बृहस्पति",
+      "शनि",
+      "पृथ्वी",
+      "शुक्र"
+    ],
+    "answer": "बृहस्पति",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10057,
+    "question": "लाल ग्रह किसे कहा जाता है?",
+    "options": [
+      "मंगल",
+      "शुक्र",
+      "बुध",
+      "पृथ्वी"
+    ],
+    "answer": "मंगल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10058,
+    "question": "पृथ्वी का प्राकृतिक उपग्रह कौन सा है?",
+    "options": [
+      "चंद्रमा",
+      "मंगल",
+      "टाइटन",
+      "फोबोस"
+    ],
+    "answer": "चंद्रमा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10060,
+    "question": "CPU का पूर्ण रूप क्या है?",
+    "options": [
+      "Central Processing Unit",
+      "Control Processing Unit",
+      "Computer Processing Unit",
+      "Central Program Utility"
+    ],
+    "answer": "Central Processing Unit",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10061,
+    "question": "URL का पूर्ण रूप क्या है?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "United Resource Locator",
+      "Uniform Result Link"
+    ],
+    "answer": "Uniform Resource Locator",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10062,
+    "question": "ओलंपिक खेल कितने वर्षों में होते हैं?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": "4",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10063,
+    "question": "क्रिकेट में एक ओवर में कितनी गेंदें होती हैं?",
+    "options": [
+      "6",
+      "5",
+      "4",
+      "8"
+    ],
+    "answer": "6",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10064,
+    "question": "हॉकी टीम में कुल कितने खिलाड़ी होते हैं?",
+    "options": [
+      "11",
+      "10",
+      "9",
+      "12"
+    ],
+    "answer": "11",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10071,
+    "question": "भारत के राष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10072,
+    "question": "भारत के उपराष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10076,
+    "question": "भारत का पहला उपग्रह कौन सा था?",
+    "options": [
+      "आर्यभट्ट",
+      "रोहिणी",
+      "भास्कर",
+      "इनसैट"
+    ],
+    "answer": "आर्यभट्ट",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10078,
+    "question": "नवीकरणीय ऊर्जा का उदाहरण क्या है?",
+    "options": [
+      "सौर ऊर्जा",
+      "कोयला",
+      "डीजल",
+      "पेट्रोल"
+    ],
+    "answer": "सौर ऊर्जा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10080,
+    "question": "ग्रीनहाउस प्रभाव का प्रमुख गैस कौन सा है?",
+    "options": [
+      "कार्बन डाइऑक्साइड",
+      "ऑक्सीजन",
+      "नाइट्रोजन",
+      "हाइड्रोजन"
+    ],
+    "answer": "कार्बन डाइऑक्साइड",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20005,
+    "question": "भारत का राष्ट्रीय फल क्या कहलाता है?",
+    "options": [
+      "आम",
+      "सेब",
+      "केला",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20010,
+    "question": "भारतीय ध्वज में कौन-कौन से रंग होते हैं?",
+    "options": [
+      "केसरिया, सफेद, हरा",
+      "लाल, सफेद, नीला",
+      "पीला, सफेद, हरा",
+      "हरे, नीले, पीले"
+    ],
+    "answer": "केसरिया, सफेद, हरा",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20020,
+    "question": "भारतीय रुपये के नोट कौन जारी करता है?",
+    "options": [
+      "रिजर्व बैंक ऑफ इंडिया",
+      "वित्त मंत्रालय",
+      "SEBI",
+      "नीति आयोग"
+    ],
+    "answer": "रिजर्व बैंक ऑफ इंडिया",
+    "category": "economy",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20023,
+    "question": "उत्तर प्रदेश की राजधानी क्या है?",
+    "options": [
+      "लखनऊ",
+      "कानपुर",
+      "प्रयागराज",
+      "वाराणसी"
+    ],
+    "answer": "लखनऊ",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20024,
+    "question": "महाराष्ट्र की राजधानी क्या है?",
+    "options": [
+      "मुंबई",
+      "पुणे",
+      "नाशिक",
+      "नागपुर"
+    ],
+    "answer": "मुंबई",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20025,
+    "question": "बिहार की राजधानी क्या है?",
+    "options": [
+      "पटना",
+      "गया",
+      "मुजफ्फरपुर",
+      "दरभंगा"
+    ],
+    "answer": "पटना",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20026,
+    "question": "राजस्थान की राजधानी क्या है?",
+    "options": [
+      "जयपुर",
+      "जोधपुर",
+      "उदयपुर",
+      "भीलवाड़ा"
+    ],
+    "answer": "जयपुर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20027,
+    "question": "कर्नाटक की राजधानी क्या है?",
+    "options": [
+      "बेंगलुरु",
+      "मैसूर",
+      "हुबली",
+      "मंगलुरु"
+    ],
+    "answer": "बेंगलुरु",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20028,
+    "question": "गुजरात की राजधानी क्या है?",
+    "options": [
+      "गांधीनगर",
+      "अहमदाबाद",
+      "सूरत",
+      "वडोदरा"
+    ],
+    "answer": "गांधीनगर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20029,
+    "question": "तमिलनाडु की राजधानी क्या है?",
+    "options": [
+      "चेन्नई",
+      "कोयंबटूर",
+      "मदुरै",
+      "तिरुचिरापल्ली"
+    ],
+    "answer": "चेन्नई",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20030,
+    "question": "केरल की राजधानी क्या है?",
+    "options": [
+      "तिरुवनंतपुरम",
+      "कोची",
+      "कोझिकोड",
+      "कासरगोड"
+    ],
+    "answer": "तिरुवनंतपुरम",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20031,
+    "question": "पश्चिम बंगाल की राजधानी क्या है?",
+    "options": [
+      "कोलकाता",
+      "सिलीगुड़ी",
+      "दुर्गापुर",
+      "हावड़ा"
+    ],
+    "answer": "कोलकाता",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20033,
+    "question": "तेलंगाना की राजधानी क्या है?",
+    "options": [
+      "हैदराबाद",
+      "वारंगल",
+      "निज़ामाबाद",
+      "करीमनगर"
+    ],
+    "answer": "हैदराबाद",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20034,
+    "question": "मध्य प्रदेश की राजधानी क्या है?",
+    "options": [
+      "भोपाल",
+      "इंदौर",
+      "ग्वालियर",
+      "जबलपुर"
+    ],
+    "answer": "भोपाल",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20035,
+    "question": "छत्तीसगढ़ की राजधानी क्या है?",
+    "options": [
+      "रायपुर",
+      "बिलासपुर",
+      "दुर्ग",
+      "जांजगीर"
+    ],
+    "answer": "रायपुर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20036,
+    "question": "झारखंड की राजधानी क्या है?",
+    "options": [
+      "रांची",
+      "जमशेदपुर",
+      "धनबाद",
+      "हजारीबाग"
+    ],
+    "answer": "रांची",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20037,
+    "question": "ओडिशा की राजधानी क्या है?",
+    "options": [
+      "भुवनेश्वर",
+      "कटक",
+      "राउरकेला",
+      "पुरी"
+    ],
+    "answer": "भुवनेश्वर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20038,
+    "question": "असम की राजधानी क्या है?",
+    "options": [
+      "दिसपुर",
+      "गुवाहाटी",
+      "जोरहाट",
+      "तिनसुकिया"
+    ],
+    "answer": "दिसपुर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20039,
+    "question": "अरुणाचल प्रदेश की राजधानी क्या है?",
+    "options": [
+      "ईटानगर",
+      "तवांग",
+      "पासीघाट",
+      "रोइंग"
+    ],
+    "answer": "ईटानगर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20040,
+    "question": "नगालैंड की राजधानी क्या है?",
+    "options": [
+      "कोहिमा",
+      "दीमापुर",
+      "मोन",
+      "तुएनसांग"
+    ],
+    "answer": "कोहिमा",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20041,
+    "question": "मणिपुर की राजधानी क्या है?",
+    "options": [
+      "इंफाल",
+      "चुराचांदपुर",
+      "थौबल",
+      "तामेंगलॉन्ग"
+    ],
+    "answer": "इंफाल",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20042,
+    "question": "मिजोरम की राजधानी क्या है?",
+    "options": [
+      "आइज़ोल",
+      "लुंगलेई",
+      "चम्फाई",
+      "सिरछिप"
+    ],
+    "answer": "आइज़ोल",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20043,
+    "question": "त्रिपुरा की राजधानी क्या है?",
+    "options": [
+      "अगरतला",
+      "धलाई",
+      "कैलाशहर",
+      "उदयपुर"
+    ],
+    "answer": "अगरतला",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20044,
+    "question": "मेघालय की राजधानी क्या है?",
+    "options": [
+      "शिलॉन्ग",
+      "तुरा",
+      "जैना",
+      "नॉन्गपोह"
+    ],
+    "answer": "शिलॉन्ग",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20045,
+    "question": "सिक्किम की राजधानी क्या है?",
+    "options": [
+      "गंगटोक",
+      "नामची",
+      "मंगन",
+      "ग्यालशिंग"
+    ],
+    "answer": "गंगटोक",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20046,
+    "question": "हिमाचल प्रदेश की राजधानी क्या है?",
+    "options": [
+      "शिमला",
+      "धर्मशाला",
+      "कुल्लू",
+      "मानाली"
+    ],
+    "answer": "शिमला",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20047,
+    "question": "उत्तराखंड की राजधानी क्या है?",
+    "options": [
+      "देहरादून",
+      "गढ़वाल",
+      "नैनीताल",
+      "हरिद्वार"
+    ],
+    "answer": "देहरादून",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20048,
+    "question": "पंजाब की राजधानी क्या है?",
+    "options": [
+      "चंडीगढ़",
+      "लुधियाना",
+      "अमृतसर",
+      "जालंधर"
+    ],
+    "answer": "चंडीगढ़",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20049,
+    "question": "हरियाणा की राजधानी क्या है?",
+    "options": [
+      "चंडीगढ़",
+      "फरीदाबाद",
+      "गुरुग्राम",
+      "पंचकूला"
+    ],
+    "answer": "चंडीगढ़",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20051,
+    "question": "लद्दाख का प्रशासनिक मुख्यालय क्या है?",
+    "options": [
+      "लेह",
+      "कारगिल",
+      "नुब्रा",
+      "ज़ांस्कर"
+    ],
+    "answer": "लेह",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20052,
+    "question": "दिल्ली की राजधानी क्या है?",
+    "options": [
+      "नई दिल्ली",
+      "दिल्ली",
+      "सेंट्रल दिल्ली",
+      "कनॉट प्लेस"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20053,
+    "question": "पुदुच्चेरी का मुख्यालय क्या है?",
+    "options": [
+      "पुदुच्चेरी",
+      "कराईकल",
+      "यानम",
+      "महé"
+    ],
+    "answer": "पुदुच्चेरी",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20054,
+    "question": "अंडमान और निकोबार द्वीपसमूह की राजधानी क्या है?",
+    "options": [
+      "पोर्ट ब्लेयर",
+      "हैवलॉक",
+      "निकोबार",
+      "डिगलीपुर"
+    ],
+    "answer": "पोर्ट ब्लेयर",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20056,
+    "question": "दमन और दीव की राजधानी क्या है?",
+    "options": [
+      "दमन",
+      "दीव",
+      "सिलवासा",
+      "नवसाड़ी"
+    ],
+    "answer": "दमन",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20057,
+    "question": "दादरा और नगर हवेली की राजधानी क्या है?",
+    "options": [
+      "सिलवासा",
+      "दमन",
+      "वापी",
+      "नाशिक"
+    ],
+    "answer": "सिलवासा",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20058,
+    "question": "गोवा की राजधानी क्या है?",
+    "options": [
+      "पणजी",
+      "मडगांव",
+      "वास्को",
+      "मापुसा"
+    ],
+    "answer": "पणजी",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20059,
+    "question": "भारत की सबसे लंबी नदी कौन सी है?",
+    "options": [
+      "गंगा",
+      "ब्रहमपुत्र",
+      "गोदावरी",
+      "नर्मदा"
+    ],
+    "answer": "गंगा",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20063,
+    "question": "सतलुज नदी किस पर्वत शृंखला से निकलती है?",
+    "options": [
+      "हिमालय",
+      "अरावली",
+      "विंध्य",
+      "सह्याद्री"
+    ],
+    "answer": "हिमालय",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20066,
+    "question": "थार मरुस्थल किस राज्य में है?",
+    "options": [
+      "राजस्थान",
+      "गुजरात",
+      "हरियाणा",
+      "मध्य प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20072,
+    "question": "राष्ट्रपति का कार्यकाल कितने वर्षों का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20073,
+    "question": "उपराष्ट्रपति का कार्यकाल कितने वर्षों का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20074,
+    "question": "भारत में चुनावों का संचालन कौन करता है?",
+    "options": [
+      "निर्वाचन आयोग",
+      "संसद",
+      "राष्ट्रपति",
+      "प्रधानमंत्री"
+    ],
+    "answer": "निर्वाचन आयोग",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20077,
+    "question": "भारतीय संविधान का निर्माण किस सभा ने किया?",
+    "options": [
+      "संविधान सभा",
+      "लोकसभा",
+      "राज्यसभा",
+      "विधान सभा"
+    ],
+    "answer": "संविधान सभा",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20091,
+    "question": "भारत का राष्ट्रीय वृक्ष कौन है?",
+    "options": [
+      "बरगद",
+      "नीम",
+      "पीपल",
+      "देवदार"
+    ],
+    "answer": "बरगद",
+    "category": "symbols",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20098,
+    "question": "भारत के वर्तमान प्रधानमंत्री कौन हैं (2025 के आसपास)?",
+    "options": [
+      "नरेंद्र मोदी",
+      "मनमोहन सिंह",
+      "अटल बिहारी वाजपेयी",
+      "लाल बहादुर शास्त्री"
+    ],
+    "answer": "नरेंद्र मोदी",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20101,
+    "question": "केंद्रशासित प्रदेशों में से कौन सा राज्य नहीं है?",
+    "options": [
+      "दिल्ली",
+      "चंडीगढ़",
+      "गुजरात",
+      "पुदुच्चेरी"
+    ],
+    "answer": "गुजरात",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20102,
+    "question": "भारत के सर्वोच्च न्यायालय कहाँ स्थित है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "चेन्नई",
+      "कोलकाता"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20110,
+    "question": "थार मरुस्थल किस राज्य में फैला है?",
+    "options": [
+      "राजस्थान",
+      "गुजरात",
+      "हरियाणा",
+      "मध्य प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20113,
+    "question": "भारत का सबसे बड़ा राज्य (जनसंख्या) कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "बिहार",
+      "महाराष्ट्र",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "india",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 20116,
+    "question": "भारतीय संसद के किस सदन को 'ऊपरी सदन' कहा जाता है?",
+    "options": [
+      "राज्यसभा",
+      "लोकसभा",
+      "विधानसभा",
+      "विधान परिषद"
+    ],
+    "answer": "राज्यसभा",
+    "category": "polity",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30006,
+    "question": "विद्युत प्रतिरोध की इकाई क्या है?",
+    "options": [
+      "ओम",
+      "वोल्ट",
+      "एम्पीयर",
+      "वाट"
+    ],
+    "answer": "ओम",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30007,
+    "question": "विद्युत विभव की इकाई क्या है?",
+    "options": [
+      "वोल्ट",
+      "वाट",
+      "जूल",
+      "एम्पीयर"
+    ],
+    "answer": "वोल्ट",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30008,
+    "question": "शक्ति की SI इकाई क्या है?",
+    "options": [
+      "वाट",
+      "जूल",
+      "न्यूटन",
+      "पास्कल"
+    ],
+    "answer": "वाट",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30009,
+    "question": "दाब की SI इकाई क्या है?",
+    "options": [
+      "पास्कल",
+      "न्यूटन",
+      "जूल",
+      "वाट"
+    ],
+    "answer": "पास्कल",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30011,
+    "question": "रक्त का लाल रंग किससे होता है?",
+    "options": [
+      "हिमोग्लोबिन",
+      "प्लाज्मा",
+      "लिम्फ",
+      "कैल्शियम"
+    ],
+    "answer": "हिमोग्लोबिन",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30012,
+    "question": "मानव शरीर का सामान्य तापमान कितना होता है?",
+    "options": [
+      "37°C",
+      "36°C",
+      "38°C",
+      "35°C"
+    ],
+    "answer": "37°C",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30015,
+    "question": "कोशिका के ऊर्जा घर को क्या कहते हैं?",
+    "options": [
+      "माइटोकॉन्ड्रिया",
+      "क्लोरोप्लास्ट",
+      "न्यूक्लियस",
+      "गोल्जी बॉडी"
+    ],
+    "answer": "माइटोकॉन्ड्रिया",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30027,
+    "question": "शुद्ध पानी का pH कितना होता है?",
+    "options": [
+      "7",
+      "6",
+      "8",
+      "5"
+    ],
+    "answer": "7",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30030,
+    "question": "आवृत्ति की इकाई क्या है?",
+    "options": [
+      "हर्ट्ज",
+      "डेसिबल",
+      "पास्कल",
+      "वाट"
+    ],
+    "answer": "हर्ट्ज",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30031,
+    "question": "गति का सूत्र क्या है?",
+    "options": [
+      "दूरी/समय",
+      "द्रव्यमान/समय",
+      "ऊर्जा/समय",
+      "शक्ति/समय"
+    ],
+    "answer": "दूरी/समय",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30033,
+    "question": "सामान्य गुरुत्व त्वरण का मान लगभग कितना है?",
+    "options": [
+      "9.8 m/s²",
+      "9.8 km/s²",
+      "8.9 m/s²",
+      "10.8 m/s²"
+    ],
+    "answer": "9.8 m/s²",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30036,
+    "question": "वायुमंडल में सबसे अधिक गैस कौन सी है?",
+    "options": [
+      "नाइट्रोजन",
+      "ऑक्सीजन",
+      "कार्बन डाइऑक्साइड",
+      "हाइड्रोजन"
+    ],
+    "answer": "नाइट्रोजन",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30039,
+    "question": "दाँतों की मजबूती के लिए कौन सा खनिज महत्वपूर्ण है?",
+    "options": [
+      "कैल्शियम",
+      "सोडियम",
+      "पोटेशियम",
+      "लोहे"
+    ],
+    "answer": "कैल्शियम",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30040,
+    "question": "हृदय में कितने कक्ष होते हैं?",
+    "options": [
+      "चार",
+      "तीन",
+      "दो",
+      "पाँच"
+    ],
+    "answer": "चार",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30041,
+    "question": "श्वसन में कौन सी गैस अंदर ली जाती है?",
+    "options": [
+      "ऑक्सीजन",
+      "कार्बन डाइऑक्साइड",
+      "नाइट्रोजन",
+      "हाइड्रोजन"
+    ],
+    "answer": "ऑक्सीजन",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30042,
+    "question": "उत्सर्जन में कौन सी गैस बाहर निकाली जाती है?",
+    "options": [
+      "कार्बन डाइऑक्साइड",
+      "ऑक्सीजन",
+      "नाइट्रोजन",
+      "हाइड्रोजन"
+    ],
+    "answer": "कार्बन डाइऑक्साइड",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30043,
+    "question": "फेफड़ों का मूल कार्य क्या है?",
+    "options": [
+      "गैसों का आदान-प्रदान",
+      "रक्त शुद्धिकरण",
+      "हार्मोन उत्पादन",
+      "ऊर्जा उत्पन्न करना"
+    ],
+    "answer": "गैसों का आदान-प्रदान",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30048,
+    "question": "धातु का सामान्य गुण क्या है?",
+    "options": [
+      "विद्युत चालकता",
+      "विद्युत रोध",
+      "पारदर्शिता",
+      "अक्रियता"
+    ],
+    "answer": "विद्युत चालकता",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30050,
+    "question": "पानी का क्वथनांक सामान्यतः कितना होता है?",
+    "options": [
+      "100°C",
+      "90°C",
+      "80°C",
+      "110°C"
+    ],
+    "answer": "100°C",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30052,
+    "question": "लोहा का रासायनिक संकेत क्या है?",
+    "options": [
+      "Fe",
+      "Ir",
+      "In",
+      "I"
+    ],
+    "answer": "Fe",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30053,
+    "question": "सोडियम का रासायनिक संकेत क्या है?",
+    "options": [
+      "Na",
+      "S",
+      "Sn",
+      "N"
+    ],
+    "answer": "Na",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30054,
+    "question": "पोटेशियम का रासायनिक संकेत क्या है?",
+    "options": [
+      "K",
+      "P",
+      "Pt",
+      "Po"
+    ],
+    "answer": "K",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30055,
+    "question": "कैल्शियम का रासायनिक संकेत क्या है?",
+    "options": [
+      "Ca",
+      "Cl",
+      "C",
+      "Cu"
+    ],
+    "answer": "Ca",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30056,
+    "question": "तांबा का रासायनिक संकेत क्या है?",
+    "options": [
+      "Cu",
+      "Co",
+      "C",
+      "Cr"
+    ],
+    "answer": "Cu",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30057,
+    "question": "रजत का रासायनिक संकेत क्या है?",
+    "options": [
+      "Ag",
+      "Au",
+      "Al",
+      "Ar"
+    ],
+    "answer": "Ag",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30058,
+    "question": "स्वर्ण का रासायनिक संकेत क्या है?",
+    "options": [
+      "Au",
+      "Ag",
+      "Al",
+      "Ar"
+    ],
+    "answer": "Au",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30060,
+    "question": "ऑक्सीजन का रासायनिक संकेत क्या है?",
+    "options": [
+      "O",
+      "Ox",
+      "Oz",
+      "O2"
+    ],
+    "answer": "O",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30061,
+    "question": "नाइट्रोजन का रासायनिक संकेत क्या है?",
+    "options": [
+      "N",
+      "Ni",
+      "Na",
+      "No"
+    ],
+    "answer": "N",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30062,
+    "question": "कार्बन का रासायनिक संकेत क्या है?",
+    "options": [
+      "C",
+      "Ca",
+      "Co",
+      "Cr"
+    ],
+    "answer": "C",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30063,
+    "question": "हाइड्रोजन का रासायनिक संकेत क्या है?",
+    "options": [
+      "H",
+      "He",
+      "Hy",
+      "Hd"
+    ],
+    "answer": "H",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30064,
+    "question": "हीलियम का रासायनिक संकेत क्या है?",
+    "options": [
+      "He",
+      "H",
+      "Ho",
+      "Hi"
+    ],
+    "answer": "He",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30065,
+    "question": "क्लोरीन का रासायनिक संकेत क्या है?",
+    "options": [
+      "Cl",
+      "Ca",
+      "Cr",
+      "Cn"
+    ],
+    "answer": "Cl",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30074,
+    "question": "घर्षण किस दिशा में कार्य करता है?",
+    "options": [
+      "गति के विपरीत",
+      "गति के साथ",
+      "लंबवत",
+      "समांतर"
+    ],
+    "answer": "गति के विपरीत",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30075,
+    "question": "चुंबक के समान ध्रुव क्या करते हैं?",
+    "options": [
+      "प्रतिस्थापित",
+      "आकर्षित",
+      "निष्क्रिय",
+      "परिवर्तित"
+    ],
+    "answer": "प्रतिस्थापित",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30082,
+    "question": "श्वेत रक्त कणिकाएँ किसके लिए उत्तरदायी हैं?",
+    "options": [
+      "प्रतिरक्षा",
+      "ऑक्सीजन परिवहन",
+      "रक्त जमाव",
+      "हार्मोन"
+    ],
+    "answer": "प्रतिरक्षा",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30083,
+    "question": "लाल रक्त कणिकाएँ क्या परिवहन करती हैं?",
+    "options": [
+      "ऑक्सीजन",
+      "हार्मोन",
+      "पानी",
+      "विटामिन"
+    ],
+    "answer": "ऑक्सीजन",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30097,
+    "question": "किस प्रक्रिया में तरल से गैस बनती है?",
+    "options": [
+      "वाष्पीकरण",
+      "संघनन",
+      "उर्ध्वीपातन",
+      "द्रवीकरण"
+    ],
+    "answer": "वाष्पीकरण",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30098,
+    "question": "किस प्रक्रिया में गैस से तरल बनता है?",
+    "options": [
+      "संघनन",
+      "वाष्पीकरण",
+      "उर्ध्वीपातन",
+      "द्रवीकरण"
+    ],
+    "answer": "संघनन",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30103,
+    "question": "विटामिन D किसके निर्माण में सहायक है?",
+    "options": [
+      "हड्डियाँ",
+      "रक्त",
+      "त्वचा",
+      "फेफड़े"
+    ],
+    "answer": "हड्डियाँ",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30105,
+    "question": "रेटिनॉल कौन सा विटामिन है?",
+    "options": [
+      "विटामिन A",
+      "विटामिन B",
+      "विटामिन C",
+      "विटामिन D"
+    ],
+    "answer": "विटामिन A",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30106,
+    "question": "कैल्सीफेरॉल कौन सा विटामिन है?",
+    "options": [
+      "विटामिन D",
+      "विटामिन A",
+      "विटामिन C",
+      "विटामिन K"
+    ],
+    "answer": "विटामिन D",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30107,
+    "question": "टोकोफेरॉल कौन सा विटामिन है?",
+    "options": [
+      "विटामिन E",
+      "विटामिन B",
+      "विटामिन C",
+      "विटामिन K"
+    ],
+    "answer": "विटामिन E",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30110,
+    "question": "कार्बोहाइड्रेट का मूल घटक क्या है?",
+    "options": [
+      "ग्लूकोज",
+      "अमीनो अम्ल",
+      "न्यूक्लियोटाइड",
+      "फैटी अम्ल"
+    ],
+    "answer": "ग्लूकोज",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30111,
+    "question": "लिपिड का उदाहरण क्या है?",
+    "options": [
+      "वसा",
+      "प्रोटीन",
+      "शर्करा",
+      "एंजाइम"
+    ],
+    "answer": "वसा",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30120,
+    "question": "स्टोमा का कार्य क्या है?",
+    "options": [
+      "गैसों का आदान-प्रदान",
+      "प्रोटीन संश्लेषण",
+      "ऊर्जा उत्पादन",
+      "भंडारण"
+    ],
+    "answer": "गैसों का आदान-प्रदान",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30127,
+    "question": "ध्वनि की आवृत्ति बढ़ने पर पिच पर क्या प्रभाव होता है?",
+    "options": [
+      "बढ़ता है",
+      "घटता है",
+      "अपरिवर्तित",
+      "दोगुना"
+    ],
+    "answer": "बढ़ता है",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30142,
+    "question": "न्यूटन का दूसरा नियम क्या कहता है?",
+    "options": [
+      "बल = द्रव्यमान × त्वरण",
+      "प्रतिक्रिया बराबर और विपरीत होती है",
+      "गति स्थिर रहती है",
+      "ऊर्जा संरक्षण"
+    ],
+    "answer": "बल = द्रव्यमान × त्वरण",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30144,
+    "question": "फोटॉन किसका कण है?",
+    "options": [
+      "प्रकाश",
+      "ध्वनि",
+      "दाब",
+      "ऊर्जा"
+    ],
+    "answer": "प्रकाश",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30146,
+    "question": "प्रोटॉन का आवेश कैसा होता है?",
+    "options": [
+      "धनात्मक",
+      "ऋणात्मक",
+      "तटस्थ",
+      "परिवर्ती"
+    ],
+    "answer": "धनात्मक",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30147,
+    "question": "न्यूट्रॉन का आवेश कैसा होता है?",
+    "options": [
+      "तटस्थ",
+      "धनात्मक",
+      "ऋणात्मक",
+      "परिवर्ती"
+    ],
+    "answer": "तटस्थ",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30150,
+    "question": "प्लास्टिक किस प्रकार का पदार्थ है?",
+    "options": [
+      "पॉलिमर",
+      "धातु",
+      "अधातु",
+      "सिरेमिक"
+    ],
+    "answer": "पॉलिमर",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30159,
+    "question": "कठोरता किससे मापी जाती है?",
+    "options": [
+      "मोहन स्केल",
+      "रिक्टर स्केल",
+      "डेसीबल",
+      "हर्ट्ज"
+    ],
+    "answer": "मोहन स्केल",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30167,
+    "question": "पृथ्वी की परतों में सबसे बाहरी कौन सी है?",
+    "options": [
+      "भूपृष्ठ",
+      "मध्यमंडल",
+      "अस्थिमंडल",
+      "केंद्र"
+    ],
+    "answer": "भूपृष्ठ",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30170,
+    "question": "पवन ऊर्जा किस प्रकार की ऊर्जा है?",
+    "options": [
+      "नवीकरणीय",
+      "अनवीकरणीय",
+      "परमाणु",
+      "रासायनिक"
+    ],
+    "answer": "नवीकरणीय",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30172,
+    "question": "कैलोरी किसका माप है?",
+    "options": [
+      "ऊर्जा",
+      "दाब",
+      "घनत्व",
+      "गति"
+    ],
+    "answer": "ऊर्जा",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30173,
+    "question": "जूल किसका माप है?",
+    "options": [
+      "ऊर्जा",
+      "शक्ति",
+      "दाब",
+      "प्रतिरोध"
+    ],
+    "answer": "ऊर्जा",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30174,
+    "question": "वाट किसका माप है?",
+    "options": [
+      "शक्ति",
+      "ऊर्जा",
+      "दाब",
+      "प्रतिरोध"
+    ],
+    "answer": "शक्ति",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30175,
+    "question": "किस प्रक्रिया में ठोस से तरल बनता है?",
+    "options": [
+      "गलन",
+      "वाष्पीकरण",
+      "उर्ध्वीपातन",
+      "संघनन"
+    ],
+    "answer": "गलन",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30176,
+    "question": "किस प्रक्रिया में तरल से ठोस बनता है?",
+    "options": [
+      "जमाव",
+      "गलन",
+      "वाष्पीकरण",
+      "उर्ध्वीपातन"
+    ],
+    "answer": "जमाव",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30180,
+    "question": "तापमान किस उपकरण से मापा जाता है?",
+    "options": [
+      "थर्मामीटर",
+      "बरामीटर",
+      "वोल्टमीटर",
+      "एम्पीयरमीटर"
+    ],
+    "answer": "थर्मामीटर",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30182,
+    "question": "वोल्टेज किस उपकरण से मापा जाता है?",
+    "options": [
+      "वोल्टमीटर",
+      "एम्पीयरमीटर",
+      "ओहममीटर",
+      "बरामीटर"
+    ],
+    "answer": "वोल्टमीटर",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 30183,
+    "question": "धारा किस उपकरण से मापी जाती है?",
+    "options": [
+      "एम्पीयरमीटर",
+      "वोल्टमीटर",
+      "ओहममीटर",
+      "थर्मामीटर"
+    ],
+    "answer": "एम्पीयरमीटर",
+    "category": "science",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50002,
+    "question": "थार मरुस्थल किस राज्य में स्थित है?",
+    "options": [
+      "राजस्थान",
+      "गुजरात",
+      "हरियाणा",
+      "मध्य प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50006,
+    "question": "हिमालय किस प्रकार के पर्वत हैं?",
+    "options": [
+      "युवा मोड़दार",
+      "ज्वालामुखीय",
+      "खंडित",
+      "ब्लॉक"
+    ],
+    "answer": "युवा मोड़दार",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50010,
+    "question": "भारत का सबसे छोटा राज्य (क्षेत्रफल) कौन सा है?",
+    "options": [
+      "गोवा",
+      "सिक्किम",
+      "त्रिपुरा",
+      "मणिपुर"
+    ],
+    "answer": "गोवा",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50014,
+    "question": "हिमाचल प्रदेश की राजधानी कौन सी है?",
+    "options": [
+      "शिमला",
+      "धर्मशाला",
+      "कुल्लू",
+      "मनाली"
+    ],
+    "answer": "शिमला",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50015,
+    "question": "उत्तराखंड की राजधानी कौन सी है?",
+    "options": [
+      "देहरादून",
+      "नैनीताल",
+      "हरिद्वार",
+      "पौड़ी"
+    ],
+    "answer": "देहरादून",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50022,
+    "question": "भारत का सबसे बड़ा द्वीपसमूह कौन सा है?",
+    "options": [
+      "अंडमान और निकोबार",
+      "लक्षद्वीप",
+      "मिनिकॉय",
+      "दीव"
+    ],
+    "answer": "अंडमान और निकोबार",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50024,
+    "question": "भारत का सबसे बड़ा मैदान कौन सा है?",
+    "options": [
+      "गंगा का मैदान",
+      "नर्मदा का मैदान",
+      "गोदावरी का मैदान",
+      "कावेरी का मैदान"
+    ],
+    "answer": "गंगा का मैदान",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50035,
+    "question": "अल्यूवियल मिट्टी किस क्षेत्र में पाई जाती है?",
+    "options": [
+      "गंगा-यमुना का मैदान",
+      "दक्कन पठार",
+      "अरावली",
+      "हिमालय"
+    ],
+    "answer": "गंगा-यमुना का मैदान",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50036,
+    "question": "कच्छ का रण किस राज्य में है?",
+    "options": [
+      "गुजरात",
+      "राजस्थान",
+      "महाराष्ट्र",
+      "गोवा"
+    ],
+    "answer": "गुजरात",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50040,
+    "question": "दाल झील कहाँ है?",
+    "options": [
+      "श्रीनगर",
+      "जम्मू",
+      "लेह",
+      "कुल्लू"
+    ],
+    "answer": "श्रीनगर",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50041,
+    "question": "नैनी झील कहाँ है?",
+    "options": [
+      "नैनीताल",
+      "मसूरी",
+      "शिमला",
+      "मनाली"
+    ],
+    "answer": "नैनीताल",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50048,
+    "question": "भारत में सबसे बड़ा पठार कौन सा है?",
+    "options": [
+      "दक्कन",
+      "मालवा",
+      "बुंदेलखंड",
+      "छोटानागपुर"
+    ],
+    "answer": "दक्कन",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50052,
+    "question": "भारत में दक्षिण-पश्चिम मानसून कब आता है?",
+    "options": [
+      "जून-सितंबर",
+      "अक्टूबर-दिसंबर",
+      "जनवरी-मार्च",
+      "अप्रैल-मई"
+    ],
+    "answer": "जून-सितंबर",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50054,
+    "question": "भारत में सबसे अधिक चाय कहाँ उगाई जाती है?",
+    "options": [
+      "असम",
+      "केरल",
+      "तमिलनाडु",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "असम",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50055,
+    "question": "भारत में कॉफी मुख्यतः कहाँ उगाई जाती है?",
+    "options": [
+      "कर्नाटक",
+      "महाराष्ट्र",
+      "राजस्थान",
+      "पंजाब"
+    ],
+    "answer": "कर्नाटक",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50057,
+    "question": "भारत में सबसे अधिक गेहूँ कहाँ उगाया जाता है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "पंजाब",
+      "हरियाणा",
+      "मध्य प्रदेश"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50065,
+    "question": "भारत में सबसे अधिक गन्ना कहाँ उगाया जाता है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "महाराष्ट्र",
+      "कर्नाटक",
+      "बिहार"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50072,
+    "question": "भारत का सबसे अधिक जनसंख्या वाला राज्य कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "बिहार",
+      "महाराष्ट्र",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50090,
+    "question": "भारत में सबसे बड़ा रेगिस्तान कौन सा है?",
+    "options": [
+      "थार",
+      "कच्छ",
+      "रन",
+      "लद्दाख"
+    ],
+    "answer": "थार",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50118,
+    "question": "अंडमान-निकोबार द्वीप किस महासागर में हैं?",
+    "options": [
+      "हिंद महासागर",
+      "प्रशांत",
+      "अटलांटिक",
+      "आर्कटिक"
+    ],
+    "answer": "हिंद महासागर",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50119,
+    "question": "लक्षद्वीप किस महासागर में है?",
+    "options": [
+      "हिंद महासागर",
+      "अटलांटिक",
+      "प्रशांत",
+      "आर्कटिक"
+    ],
+    "answer": "हिंद महासागर",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50133,
+    "question": "भारत में सबसे अधिक नारियल किस राज्य में उत्पादित होता है?",
+    "options": [
+      "केरल",
+      "तामिलनाडु",
+      "कर्नाटक",
+      "आंध्र प्रदेश"
+    ],
+    "answer": "केरल",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50136,
+    "question": "भारत में सबसे अधिक मूंगफली किस राज्य में उत्पादित होती है?",
+    "options": [
+      "गुजरात",
+      "महाराष्ट्र",
+      "राजस्थान",
+      "आंध्र प्रदेश"
+    ],
+    "answer": "गुजरात",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50138,
+    "question": "भारत में सबसे अधिक गेहूँ उत्‍पादन किस राज्य में होता है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "पंजाब",
+      "हरियाणा",
+      "मध्य प्रदेश"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50139,
+    "question": "भारत में सबसे अधिक धान उत्‍पादन किस राज्य में होता है?",
+    "options": [
+      "पश्चिम बंगाल",
+      "उत्तर प्रदेश",
+      "पंजाब",
+      "बिहार"
+    ],
+    "answer": "पश्चिम बंगाल",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50142,
+    "question": "भारत में सबसे अधिक गन्ना उत्‍पादन किस राज्य में होता है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "महाराष्ट्र",
+      "कर्नाटक",
+      "बिहार"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50145,
+    "question": "भारत में सबसे अधिक कपास उत्‍पादन किस राज्य में होता है?",
+    "options": [
+      "महाराष्ट्र",
+      "गुजरात",
+      "तेलंगाना",
+      "पंजाब"
+    ],
+    "answer": "महाराष्ट्र",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50147,
+    "question": "भारत का सबसे बड़ा बंदरगाह राज्य कौन सा है?",
+    "options": [
+      "गुजरात",
+      "महाराष्ट्र",
+      "तमिलनाडु",
+      "आंध्र प्रदेश"
+    ],
+    "answer": "गुजरात",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50149,
+    "question": "भारत का सबसे बड़ा नगर कौन सा है (जनसंख्या)?",
+    "options": [
+      "मुंबई",
+      "दिल्ली",
+      "बैंगलोर",
+      "हैदराबाद"
+    ],
+    "answer": "मुंबई",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50154,
+    "question": "भारत का सबसे बड़ा नमक उत्पादन किस राज्य में है?",
+    "options": [
+      "गुजरात",
+      "राजस्थान",
+      "तमिलनाडु",
+      "ओडिशा"
+    ],
+    "answer": "गुजरात",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50156,
+    "question": "भारत में सबसे बड़ा चावल उत्पादन किस राज्य में है?",
+    "options": [
+      "पश्चिम बंगाल",
+      "उत्तर प्रदेश",
+      "पंजाब",
+      "बिहार"
+    ],
+    "answer": "पश्चिम बंगाल",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50170,
+    "question": "भारत में सबसे बड़ी खाड़ी कौन सी है?",
+    "options": [
+      "बंगाल की खाड़ी",
+      "अरब सागर",
+      "अंडमान सागर",
+      "लक्षद्वीप सागर"
+    ],
+    "answer": "बंगाल की खाड़ी",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50172,
+    "question": "भारत का सबसे बड़ा पर्वतीय नगर कौन सा है?",
+    "options": [
+      "शिमला",
+      "मसूरी",
+      "नैनीताल",
+      "दार्जिलिंग"
+    ],
+    "answer": "शिमला",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50177,
+    "question": "भारत का सबसे बड़ा पर्वतीय पर्यटन स्थल कौन सा है?",
+    "options": [
+      "मनाली",
+      "शिमला",
+      "दार्जिलिंग",
+      "मसूरी"
+    ],
+    "answer": "मनाली",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50191,
+    "question": "भारत में सबसे बड़ा तटीय सिटी कौन सा है?",
+    "options": [
+      "मुंबई",
+      "चेन्नई",
+      "कोलकाता",
+      "विशाखापत्तनम"
+    ],
+    "answer": "मुंबई",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50197,
+    "question": "भारत का सबसे बड़ा प्रकार का मिट्टी कौन सा है?",
+    "options": [
+      "अल्यूवियल",
+      "रेगुर",
+      "लाल मिट्टी",
+      "लेटेराइट"
+    ],
+    "answer": "अल्यूवियल",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 50198,
+    "question": "भारत का सबसे बड़ा पर्वतीय रेंज कौन सा है?",
+    "options": [
+      "हिमालय",
+      "अरावली",
+      "विंध्य",
+      "सतपुड़ा"
+    ],
+    "answer": "हिमालय",
+    "category": "geography",
+    "level": "easy",
+    "language": "hi"
+  }
+]

@@ -1,0 +1,6 @@
+﻿Total Routes found in App.tsx: 692
+Total Redirects found in netlify.toml: 241
+
+--- CONFLICTS (Force redirects on existing routes) ---
+
+--- REDUNDANT/SOFT REDIRECTS ---

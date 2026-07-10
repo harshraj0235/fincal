@@ -1,0 +1,611 @@
+import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import {
+  Lightbulb,
+  TrendingUp,
+  AlertCircle,
+  BarChart3,
+  BookOpen,
+  Target,
+  CheckCircle,
+  ExternalLink,
+  ArrowRight, IndianRupee, User
+} from 'lucide-react';
+import { getRandomCalculators } from '../utils/randomCalculators';
+import { sanitizeDeepContent } from '../utils/contentSanitizer';
+
+/**
+ * NewsGuideTemplate Component
+ * Structured template for news articles following best practices
+ * 7-Section Format: Headline → What's New → Why It Matters → Key Data → Coverage → Outlook → Takeaway
+ * Fully E-E-A-T compliant with author attribution, sources, and expertise signals
+ */
+
+export interface NewsGuideSection {
+  headline: string;
+  subheadline?: string;
+
+  // Featured Image (SEO optimized)
+  featuredImage?: {
+    url: string;
+    alt: string;
+    caption?: string;
+    credit?: string;
+  };
+
+  // Section 1: What's New (Latest Update)
+  whatsNew: {
+    summary: string;
+    date: string;
+    source?: ExternalSource;
+  };
+
+  // Section 2: Why It Matters
+  whyItMatters: {
+    significance: string;
+    impact: string[];
+    stakeholders: string[];
+  };
+
+  // Section 3: Key Data & Facts
+  keyData: {
+    facts: KeyFact[];
+    statistics?: DataPoint[];
+  };
+
+  // Section 4: What to Cover
+  coverage: {
+    mainTopics: CoverageTopic[];
+  };
+
+  // Section 5: Future Outlook
+  outlook: {
+    whatToWatch: string[];
+    upcomingMilestones?: Milestone[];
+    questions: string[] | { question: string; answer: string }[];
+  };
+
+  // Section 6: Actionable Takeaway
+  takeaway: {
+    forReaders: string[];
+    forBusinesses?: string[];
+    forInvestors?: string[];
+  };
+
+  // E-E-A-T Compliance
+  eeat: {
+    author: Author;
+    expertQuotes?: ExpertQuote[];
+    sources: ExternalSource[];
+    lastUpdated: string;
+    disclaimer?: string;
+  };
+
+  // Internal Linking (Auto-suggested from codebase)
+  internalLinks: {
+    calculators: string[]; // Calculator IDs
+    relatedArticles?: string[]; // Article IDs
+    tools?: string[]; // Tool IDs
+  };
+}
+
+export interface KeyFact {
+  label: string;
+  value: string;
+  source?: string;
+}
+
+export interface DataPoint {
+  metric: string;
+  value: string;
+  change?: string;
+  period?: string;
+}
+
+export interface CoverageTopic {
+  title: string;
+  description: string;
+  subtopics?: string[];
+}
+
+export interface Milestone {
+  date: string;
+  event: string;
+  importance: 'high' | 'medium' | 'low';
+}
+
+export interface Author {
+  name: string;
+  title: string;
+  bio: string;
+  credentials?: string[];
+  image?: string;
+}
+
+export interface ExpertQuote {
+  quote: string;
+  expert: string;
+  title: string;
+  organization?: string;
+  source?: string;
+}
+
+export interface ExternalSource {
+  name: string;
+  url: string;
+  credibility: 'official' | 'verified-media' | 'industry-report' | 'academic';
+}
+
+interface NewsGuideTemplateProps {
+  guide: NewsGuideSection;
+}
+
+export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) => {
+  // Generate random calculators (memoized to stay consistent during re-renders)
+  const randomCalculators = useMemo(() => getRandomCalculators(4), []);
+  const cleanGuide = useMemo(() => sanitizeDeepContent(guide), [guide]);
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {/* Featured Image - SEO Optimized for Google Images and Discover */}
+      {cleanGuide.featuredImage && (
+        <figure className="mb-8 sm:mb-12 -mx-3 sm:mx-0">
+          <div className="relative overflow-hidden rounded-none sm:rounded-2xl shadow-2xl">
+            <img
+              src={cleanGuide.featuredImage.url}
+              alt={cleanGuide.featuredImage.alt}
+              className="w-full aspect-[16/9] object-cover bg-neutral-100"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              itemProp="image"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://via.placeholder.com/1200x630?text=Article+Image';
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+          </div>
+          {(cleanGuide.featuredImage.caption || cleanGuide.featuredImage.credit) && (
+            <figcaption className="mt-3 sm:mt-4 px-3 sm:px-0 text-xs sm:text-sm text-neutral-600 leading-relaxed">
+              {cleanGuide.featuredImage.caption && (
+                <span className="block mb-1 text-neutral-700 font-medium">
+                  {cleanGuide.featuredImage.caption}
+                </span>
+              )}
+              {cleanGuide.featuredImage.credit && (
+                <span className="text-neutral-500 italic">
+                  Photo: {cleanGuide.featuredImage.credit}
+                </span>
+              )}
+            </figcaption>
+          )}
+        </figure>
+      )}
+
+      {/* Section 1: What's New - Mobile Optimized */}
+      {/* Section 1: What's New - Premium Card */}
+      <section className="mb-12 relative">
+        <div className="absolute -left-4 top-0 bottom-0 w-1 bg-blue-600 rounded-full opacity-20"></div>
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200">
+              <TrendingUp className="h-5 w-5 text-white" />
+            </div>
+            <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase text-xs tracking-[0.2em] font-serif">What's New</h2>
+          </div>
+          <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">
+            UPDATED {new Date(cleanGuide.whatsNew.date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short' })}
+          </div>
+        </div>
+
+        <div className="bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-blue-100/50 transition-all duration-700"></div>
+          <p className="text-xl sm:text-2xl text-slate-800 leading-[1.6] font-medium relative z-10 transition-colors group-hover:text-slate-900">
+            {cleanGuide.whatsNew.summary}
+          </p>
+          {cleanGuide.whatsNew.source && (
+            <div className="mt-6 pt-6 border-t border-slate-50 flex items-center justify-between relative z-10">
+              <a
+                href={cleanGuide.whatsNew.source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 text-xs font-black uppercase tracking-widest group/link"
+              >
+                Verified Source: {cleanGuide.whatsNew.source.name}
+                <ExternalLink className="h-3 w-3 ml-2 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Section 2: Why It Matters */}
+      {/* Section 2: Why It Matters - Elegant Layout */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 rounded-xl bg-orange-600 flex items-center justify-center shadow-lg shadow-orange-200">
+            <AlertCircle className="h-5 w-5 text-white" />
+          </div>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase text-xs tracking-[0.2em] font-serif">Why It Matters</h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div className="prose prose-slate prose-lg max-w-none">
+            <p className="text-xl text-slate-700 leading-relaxed font-medium mb-6">
+              {cleanGuide.whyItMatters.significance}
+            </p>
+
+            <div className="space-y-4">
+              <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Core Impact</h3>
+              <div className="grid gap-3">
+                {cleanGuide.whyItMatters.impact.map((item, index) => (
+                  <div key={index} className="flex items-start gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100/50 hover:bg-white hover:shadow-lg transition-all duration-300">
+                    <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700 font-bold text-sm tracking-tight">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-orange-50/50 rounded-[2.5rem] p-8 border border-orange-100/50 sticky top-24">
+            <h3 className="text-xs font-black uppercase tracking-widest text-orange-600 mb-6">Key Stakeholders</h3>
+            <div className="flex flex-wrap gap-2">
+              {cleanGuide.whyItMatters.stakeholders.map((stakeholder, index) => (
+                <span
+                  key={index}
+                  className="px-5 py-2.5 bg-white text-orange-900 rounded-full text-xs font-black shadow-sm border border-orange-100 hover:scale-105 transition-transform cursor-default"
+                >
+                  {stakeholder}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 p-4 bg-orange-600 rounded-2xl text-white">
+              <div className="flex items-center gap-2 mb-2">
+                <Lightbulb className="w-4 h-4" />
+                <span className="text-[10px] font-black uppercase tracking-widest">Analyst Note</span>
+              </div>
+              <p className="text-xs font-bold leading-relaxed opacity-90">
+                This development marks a significant shift in the current market landscape, particularly for retail participants.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Key Data & Facts - Data Visualization Style */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center shadow-lg shadow-purple-200">
+            <BarChart3 className="h-5 w-5 text-white" />
+          </div>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase text-xs tracking-[0.2em] font-serif">Key Data & Facts</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {cleanGuide.keyData.facts.map((fact, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white border border-slate-100 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all group"
+            >
+              <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">{fact.label}</div>
+              <div className="text-3xl font-black text-blue-600 mb-1 group-hover:scale-105 transition-transform origin-left">{fact.value}</div>
+              {fact.source && (
+                <div className="text-[10px] font-bold text-slate-400">Source: {fact.source}</div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {cleanGuide.keyData.statistics && cleanGuide.keyData.statistics.length > 0 && (
+          <div className="bg-slate-900 rounded-[2.5rem] p-10 text-white relative overflow-hidden">
+            <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-600/10 blur-3xl rounded-full -mr-32 -mb-32"></div>
+            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-purple-400 mb-8">Market Pulse</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+              {cleanGuide.keyData.statistics.map((stat, index) => (
+                <div key={index} className="relative z-10">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">{stat.metric}</p>
+                  <p className="text-3xl font-black text-white mb-2">{stat.value}</p>
+                  {stat.change && (
+                    <div className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-black ${stat.change.startsWith('+') ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
+                      }`}>
+                      {stat.change} {stat.period && <span className="opacity-50 ml-1">({stat.period})</span>}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+
+      {/* Section 4: What to Cover - Professional Typography */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-200">
+            <BookOpen className="h-5 w-5 text-white" />
+          </div>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase text-xs tracking-[0.2em] font-serif">Deep Dive</h2>
+        </div>
+
+        <div className="space-y-8">
+          {cleanGuide.coverage.mainTopics.map((topic, index) => (
+            <div key={index} className="bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 text-xs font-black">
+                  0{index + 1}
+                </div>
+                <h3 className="text-xl font-black text-slate-900 tracking-tight">{topic.title}</h3>
+              </div>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6 font-medium">{topic.description}</p>
+              {topic.subtopics && topic.subtopics.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {topic.subtopics.map((subtopic, subIndex) => (
+                    <span key={subIndex} className="px-4 py-1.5 bg-slate-50 text-slate-500 rounded-full text-[10px] font-black uppercase tracking-wider border border-slate-100/50">
+                      {subtopic}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 5: Future Outlook - Visionary Design */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-200">
+            <Target className="h-5 w-5 text-white" />
+          </div>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase text-xs tracking-[0.2em] font-serif">Future Outlook</h2>
+        </div>
+
+        <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-[3rem] p-10 text-white shadow-2xl shadow-indigo-200 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-3xl rounded-full -mr-48 -mt-48"></div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+            <div>
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-indigo-200 mb-8 border-b border-white/10 pb-4">Key Indicators</h3>
+              <div className="space-y-6">
+                {cleanGuide.outlook.whatToWatch.map((item, index) => (
+                  <div key={index} className="flex items-start gap-4 group/outlook">
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-black group-hover/outlook:bg-white group-hover/outlook:text-indigo-600 transition-all">
+                      {index + 1}
+                    </div>
+                    <p className="text-md font-bold leading-relaxed opacity-90 group-hover/outlook:opacity-100 transition-all">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              {cleanGuide.outlook.upcomingMilestones && cleanGuide.outlook.upcomingMilestones.length > 0 && (
+                <div className="mb-10">
+                  <h3 className="text-xs font-black uppercase tracking-[0.2em] text-indigo-200 mb-8 border-b border-white/10 pb-4">Timeline</h3>
+                  <div className="space-y-4">
+                    {cleanGuide.outlook.upcomingMilestones.map((milestone, index) => (
+                      <div key={index} className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all border border-white/5">
+                        <div className={`w-2 h-2 rounded-full ${milestone.importance === 'high' ? 'bg-rose-400' : 'bg-amber-400'
+                          }`}></div>
+                        <div className="flex-1">
+                          <div className="text-[10px] font-black uppercase tracking-widest opacity-60 mb-1">{milestone.date}</div>
+                          <div className="text-xs font-black tracking-tight">{milestone.event}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-indigo-200 mb-8 border-b border-white/10 pb-4">Critical Questions</h3>
+              <div className="space-y-6">
+                {cleanGuide.outlook.questions.map((q, index) => (
+                  <div key={index} className="bg-black/10 p-5 rounded-2xl border border-white/5">
+                    {typeof q === 'string' ? (
+                      <p className="text-xs font-bold leading-relaxed italic">"{q}"</p>
+                    ) : (
+                      <>
+                        <p className="text-xs font-black text-yellow-400 mb-2">Q: {q.question}</p>
+                        <p className="text-[11px] font-medium opacity-70 leading-relaxed">{q.answer}</p>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Actionable Takeaway */}
+      {/* Section 6: Actionable Takeaway - High Impact Cards */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-200">
+            <Lightbulb className="h-5 w-5 text-white" />
+          </div>
+          <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase text-xs tracking-[0.2em] font-serif">Actionable Takeaways</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:border-emerald-100 transition-all group">
+            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-emerald-600 mb-6 flex items-center gap-2">
+              <User className="w-3 h-3" />
+              For Readers
+            </h3>
+            <ul className="space-y-4">
+              {cleanGuide.takeaway.forReaders.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm font-bold text-slate-700 leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {cleanGuide.takeaway.forBusinesses && cleanGuide.takeaway.forBusinesses.length > 0 && (
+            <div className="bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:border-blue-100 transition-all group">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-blue-600 mb-6 flex items-center gap-2">
+                <Target className="w-3 h-3" />
+                For Businesses
+              </h3>
+              <ul className="space-y-4">
+                {cleanGuide.takeaway.forBusinesses.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm font-bold text-slate-700 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {cleanGuide.takeaway.forInvestors && cleanGuide.takeaway.forInvestors.length > 0 && (
+            <div className="bg-white border border-slate-100 p-8 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:border-purple-100 transition-all group">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-purple-600 mb-6 flex items-center gap-2">
+                <TrendingUp className="w-3 h-3" />
+                For Investors
+              </h3>
+              <ul className="space-y-4">
+                {cleanGuide.takeaway.forInvestors.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm font-bold text-slate-700 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Internal Links / Calculator Impact - Dark Premium Glassmorphism */}
+      <section className="mb-16">
+        <div className="bg-slate-950 rounded-[3rem] overflow-hidden border border-slate-800 shadow-2xl relative">
+          <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.1),transparent)] pointer-events-none"></div>
+
+          <div className="p-10 md:p-14 relative z-10 text-center md:text-left flex flex-col md:flex-row items-center gap-10">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 border border-blue-500/20">
+                <IndianRupee className="w-3 h-3" />
+                Financial Intelligence
+              </div>
+              <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-6 leading-tight">
+                Calculate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Personal Impact</span>
+              </h3>
+              <p className="text-slate-400 text-lg font-medium leading-relaxed max-w-xl">
+                How does this news change your financial trajectory? Use our precision calculators to get instant insights tailored to your portfolio.
+              </p>
+            </div>
+
+            <div className="w-full md:w-80 grid gap-3">
+              {randomCalculators.map((calcId, index) => (
+                <Link
+                  key={index}
+                  to={`/calculators/${calcId}`}
+                  className="flex items-center justify-between p-5 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 hover:border-blue-500/30 transition-all group active:scale-[0.98]"
+                >
+                  <span className="font-bold text-white text-sm tracking-tight group-hover:text-blue-400 transition-colors">
+                    {calcId?.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') || 'Calculator'}
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Disclaimer Section - Legal Compliance - Mobile Optimized */}
+      <section className="mb-8 sm:mb-12">
+        <div className="bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg sm:rounded-r-xl shadow-lg p-4 sm:p-6 md:p-8">
+          <h3 className="text-xl sm:text-2xl font-black text-neutral-900 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+            <AlertCircle className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-600 flex-shrink-0" />
+            Disclaimer
+          </h3>
+          <p className="text-sm sm:text-base text-neutral-800 leading-relaxed font-medium">
+            This content is for educational purposes only. I am not a certified financial expert or advisor. All information is based on personal experience, research, and knowledge, and should not be considered as professional or legal advice. Please consult with a qualified expert before making any financial decisions. All risks associated with your actions are your own responsibility. If you find any mistakes or inaccuracies, please contact me as soon as possible so I can make corrections. I try my best to comply with all applicable laws in India.
+          </p>
+        </div>
+      </section>
+
+      {/* E-E-A-T Section - Sources Only (Author shown separately) */}
+      <section className="mb-12">
+        <div className="bg-neutral-100 p-6 rounded-xl">
+          {/* Expert Quotes (E-E-A-T Signal) */}
+          {cleanGuide.eeat.expertQuotes && cleanGuide.eeat.expertQuotes.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-neutral-900 mb-3">Expert Insights</h3>
+              <div className="space-y-4">
+                {cleanGuide.eeat.expertQuotes.map((quote, index) => (
+                  <div key={index} className="bg-white p-4 rounded-lg border-l-4 border-blue-600">
+                    <p className="text-neutral-800 italic mb-2">"{quote.quote}"</p>
+                    <p className="text-sm text-neutral-600">
+                      — <span className="font-semibold">{quote.expert}</span>, {quote.title}
+                      {quote.organization && ` at ${quote.organization}`}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Sources (E-E-A-T Critical) */}
+          <div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Authoritative Sources</h3>
+            <div className="space-y-2">
+              {cleanGuide.eeat.sources.map((source, index) => (
+                <a
+                  key={index}
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition-all"
+                >
+                  <div>
+                    <p className="font-medium text-neutral-900">{source.name}</p>
+                    <p className="text-xs text-neutral-500">
+                      {source.credibility === 'official' && '🏛️ Official Source'}
+                      {source.credibility === 'verified-media' && '📰 Verified Media'}
+                      {source.credibility === 'industry-report' && '📊 Industry Report'}
+                      {source.credibility === 'academic' && '🎓 Academic Research'}
+                    </p>
+                  </div>
+                  <ExternalLink className="h-4 w-4 text-neutral-400" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Disclaimer (Financial Content) */}
+          {cleanGuide.eeat.disclaimer && (
+            <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+              <p className="text-sm text-neutral-700">
+                <span className="font-semibold">Disclaimer:</span> {cleanGuide.eeat.disclaimer}
+              </p>
+            </div>
+          )}
+
+          {/* Last Updated */}
+          <p className="text-xs text-neutral-500 mt-4">
+            Last Updated: {new Date(cleanGuide.eeat.lastUpdated).toLocaleDateString('en-IN', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default NewsGuideTemplate;
+
+
+
+

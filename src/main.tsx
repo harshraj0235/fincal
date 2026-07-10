@@ -1,0 +1,83 @@
+import { StrictMode, Suspense } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import App from './App.tsx';
+import './i18n';
+import i18n from './i18n';
+import './index.css';
+
+const maybeRecoverFromChunkError = (message?: string) => {
+  if (!message) return;
+  const normalized = message.toLowerCase();
+  const shouldReload = normalized.includes('unexpected token <') ||
+    normalized.includes('chunkloaderror') ||
+    normalized.includes('loading chunk');
+  if (!shouldReload) return;
+  const key = 'mc:chunk-reload';
+  if (sessionStorage.getItem(key)) return;
+  sessionStorage.setItem(key, '1');
+  window.location.reload();
+};
+
+window.addEventListener('error', (event) => {
+  maybeRecoverFromChunkError(event.message);
+});
+
+window.addEventListener('unhandledrejection', (event) => {
+  const reason = (event as PromiseRejectionEvent).reason as { message?: string } | string | undefined;
+  const message = typeof reason === 'string' ? reason : reason?.message;
+  maybeRecoverFromChunkError(message);
+});
+
+// Performance monitoring
+const reportWebVitals = (onPerfEntry: any) => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
+// Route-based i18n Setup
+const pathname = window.location.pathname;
+const isHindi = pathname.startsWith('/hi/') || pathname === '/hi';
+const currentLang = isHindi ? 'hi' : 'en';
+
+// Set initial language before rendering
+i18n.changeLanguage(currentLang);
+const routerBasename = isHindi ? '/hi' : '/';
+
+// Always use createRoot
+const container = document.getElementById('root')!;
+createRoot(container).render(
+  <StrictMode>
+    <HelmetProvider>
+      <BrowserRouter basename={routerBasename}>
+        <Suspense fallback={
+          <div className="page-skeleton">
+            <div className="sk-hero skeleton" />
+            <div className="sk-grid">
+              <div className="sk-card skeleton" />
+              <div className="sk-card skeleton" />
+              <div className="sk-card skeleton" />
+            </div>
+          </div>
+        }>
+          <App />
+        </Suspense>
+      </BrowserRouter>
+    </HelmetProvider>
+  </StrictMode>
+);
+
+// Report web vitals after load to avoid adding to TBT
+if (process.env.NODE_ENV === 'production' && typeof requestIdleCallback !== 'undefined') {
+  requestIdleCallback(() => reportWebVitals(console.log), { timeout: 3000 });
+} else if (process.env.NODE_ENV === 'production') {
+  setTimeout(() => reportWebVitals(console.log), 1000);
+}

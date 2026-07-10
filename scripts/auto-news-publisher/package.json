@@ -1,0 +1,20 @@
+{
+  "name": "auto-news-publisher",
+  "version": "1.0.0",
+  "description": "Automated News Publishing System for MoneyCal",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "node test.js",
+    "install-deps": "npm install axios @google/generative-ai dotenv"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "xml2js": "^0.6.2"
+  },
+  "author": "MoneyCal Team",
+  "license": "MIT"
+}
+
+

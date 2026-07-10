@@ -1,0 +1,1738 @@
+[
+  {
+    "id": 95005,
+    "question": "कोडिंग-डिकोडिंग: अगर ‘CAT’ = 3120, तो ‘DOG’ = ? (A=1,B=2…)",
+    "options": [
+      "4157",
+      "4156",
+      "4158",
+      "4257"
+    ],
+    "answer": "4157",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95007,
+    "question": "ब्लड रिलेशन: राम की बहन सीता है। सीता का बेटा मोहन है। मोहन, राम का क्या हुआ?",
+    "options": [
+      "भांजा",
+      "भाई",
+      "मामा",
+      "चाचा"
+    ],
+    "answer": "भांजा",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95013,
+    "question": "वर्णमाला: ‘ALGORITHM’ में स्वरों की संख्या?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "4",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95014,
+    "question": "सिलोज़्म: कुछ फल मीठे हैं। सभी सेब फल हैं। निष्कर्ष: कुछ सेब मीठे हो सकते हैं।",
+    "options": [
+      "सही",
+      "गलत",
+      "निश्चित गलत",
+      "निश्चित सही"
+    ],
+    "answer": "सही",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95015,
+    "question": "सिलोज़्म: सभी बिल्ली जानवर हैं। कुछ जानवर पालतू हैं। निष्कर्ष: कुछ बिल्ली पालतू हो सकती हैं।",
+    "options": [
+      "सही",
+      "गलत",
+      "निश्चित गलत",
+      "निश्चित सही"
+    ],
+    "answer": "सही",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95018,
+    "question": "क्लॉक: 3:00 बजे घंटे और मिनट सूई के बीच कोण?",
+    "options": [
+      "90°",
+      "60°",
+      "45°",
+      "120°"
+    ],
+    "answer": "90°",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95022,
+    "question": "नंबर श्रृंखला: 2, 3, 5, 8, 13, ?",
+    "options": [
+      "21",
+      "20",
+      "18",
+      "24"
+    ],
+    "answer": "21",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95025,
+    "question": "कथन-निष्कर्ष: कथन—‘धूम्रपान स्वास्थ्य के लिए हानिकारक है’। निष्कर्ष—‘धूम्रपान नहीं करना चाहिए’।",
+    "options": [
+      "सही",
+      "गलत",
+      "अपर्याप्त",
+      "निश्चित नहीं"
+    ],
+    "answer": "सही",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95026,
+    "question": "कथन-मान्यता: ‘समय पर पहुँचना अच्छा है’—मान्यता?",
+    "options": [
+      "समय की पाबंदी वांछनीय है",
+      "देरी ठीक है",
+      "समय मायने नहीं",
+      "रात में पहुँचना"
+    ],
+    "answer": "समय की पाबंदी वांछनीय है",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95031,
+    "question": "श्रृंखला: 11, 13, 17, 19, ?",
+    "options": [
+      "23",
+      "21",
+      "25",
+      "27"
+    ],
+    "answer": "23",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95034,
+    "question": "दिशाएँ: दक्षिण-पूर्व का विपरीत?",
+    "options": [
+      "उत्तर-पश्चिम",
+      "उत्तर-पूर्व",
+      "दक्षिण-पश्चिम",
+      "दक्षिण-पूर्व"
+    ],
+    "answer": "उत्तर-पश्चिम",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95037,
+    "question": "श्रृंखला: 0, 1, 1, 2, 3, 5, ?",
+    "options": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ],
+    "answer": "8",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95038,
+    "question": "एनालॉजी: नदी : जल :: सड़क : ?",
+    "options": [
+      "वाहन",
+      "गति",
+      "गड्ढा",
+      "धूल"
+    ],
+    "answer": "वाहन",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95039,
+    "question": "कथन-निष्कर्ष: ‘छात्र मेहनत करें तो सफल हों’—निष्कर्ष?",
+    "options": [
+      "मेहनत सफलता देती है",
+      "सफलता असंभव",
+      "छात्र असफल",
+      "मेहनत बेकार"
+    ],
+    "answer": "मेहनत सफलता देती है",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95040,
+    "question": "वर्णमाला: ‘REASON’ में व्यंजन कितने?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": "4",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95045,
+    "question": "कथन-धारणा: ‘पानी बचाओ’—धारणा?",
+    "options": [
+      "पानी सीमित संसाधन है",
+      "पानी अनंत",
+      "पानी बेकार",
+      "पानी सस्ता"
+    ],
+    "answer": "पानी सीमित संसाधन है",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95051,
+    "question": "सरल तर्क: यदि सभी A, B हैं; कुछ B, C हैं; तो कुछ A, C हो सकते हैं?",
+    "options": [
+      "हाँ",
+      "नहीं",
+      "निश्चित नहीं",
+      "कभी नहीं"
+    ],
+    "answer": "हाँ",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95055,
+    "question": "पजल: तीन दोस्त—A, B, C; A सबसे छोटा नहीं; B सबसे बड़ा नहीं; सबसे बड़ा?",
+    "options": [
+      "C",
+      "A",
+      "B",
+      "निश्चित नहीं"
+    ],
+    "answer": "C",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95060,
+    "question": "एनालॉजी: कागज : किताब :: कपड़ा : ?",
+    "options": [
+      "कपड़े",
+      "कुर्ता",
+      "कुर्सी",
+      "कलम"
+    ],
+    "answer": "कुर्ता",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95062,
+    "question": "श्रृंखला: 4, 7, 11, 16, ?",
+    "options": [
+      "22",
+      "21",
+      "20",
+      "19"
+    ],
+    "answer": "22",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95065,
+    "question": "ब्लड रिलेशन: भाई की बहन का बेटा?",
+    "options": [
+      "भांजा",
+      "भतीजा",
+      "मामा",
+      "ताऊ"
+    ],
+    "answer": "भांजा",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95067,
+    "question": "सिलोज़्म: कोई फल सब्जी नहीं; कुछ सेब फल हैं; निष्कर्ष—कुछ सेब सब्जी नहीं।",
+    "options": [
+      "सही",
+      "गलत",
+      "निश्चित नहीं",
+      "अपर्याप्त"
+    ],
+    "answer": "सही",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95068,
+    "question": "कथन-निष्कर्ष: ‘सड़क पर तेज़ चलना खतरा है’—निष्कर्ष?",
+    "options": [
+      "धीमे चलना सुरक्षित",
+      "तेज़ चलना ठीक",
+      "चलना बेकार",
+      "सड़क नहीं चाहिए"
+    ],
+    "answer": "धीमे चलना सुरक्षित",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95071,
+    "question": "रैंकिंग: A तीसरा, B पहला, C दूसरा—चौथा कौन?",
+    "options": [
+      "कोई नहीं",
+      "A",
+      "B",
+      "C"
+    ],
+    "answer": "कोई नहीं",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95073,
+    "question": "सरल तर्क: यदि कुछ A, B हैं और सभी B, C हैं; तो कुछ A, C हैं?",
+    "options": [
+      "हाँ",
+      "नहीं",
+      "निश्चित नहीं",
+      "कभी नहीं"
+    ],
+    "answer": "हाँ",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95074,
+    "question": "एनालॉजी: गाड़ी : पहिए :: नाव : ?",
+    "options": [
+      "चप्पू",
+      "इंजन",
+      "पानी",
+      "पतवार"
+    ],
+    "answer": "पतवार",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95077,
+    "question": "कथन-मान्यता: ‘कक्षा में शांति रखें’—मान्यता?",
+    "options": [
+      "शांति आवश्यक",
+      "शोर अच्छा",
+      "शांति बेकार",
+      "शोर जरूरी"
+    ],
+    "answer": "शांति आवश्यक",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95080,
+    "question": "श्रृंखला: 2, 5, 10, 17, 26, ?",
+    "options": [
+      "37",
+      "35",
+      "36",
+      "34"
+    ],
+    "answer": "37",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95082,
+    "question": "ब्लड रिलेशन: पिता की बहन का बेटा?",
+    "options": [
+      "मौसेरा भाई",
+      "चचेरा भाई",
+      "देवर",
+      "साला"
+    ],
+    "answer": "मौसेरा भाई",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95084,
+    "question": "कथन-निष्कर्ष: ‘पढ़ाई से समझ बढ़ती है’—निष्कर्ष?",
+    "options": [
+      "पढ़ाई लाभदायक",
+      "समझ बेकार",
+      "पढ़ाई नुकसान",
+      "समझ घटती"
+    ],
+    "answer": "पढ़ाई लाभदायक",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95085,
+    "question": "क्लॉक: 10:00 पर कोण?",
+    "options": [
+      "60°",
+      "90°",
+      "120°",
+      "150°"
+    ],
+    "answer": "60°",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95093,
+    "question": "सिलोज़्म: सभी फूल सुंदर हैं; कुछ सुंदर चीजें नाजुक हैं; निष्कर्ष—कुछ फूल नाजुक हो सकते हैं।",
+    "options": [
+      "सही",
+      "गलत",
+      "निश्चित नहीं",
+      "अपर्याप्त"
+    ],
+    "answer": "सही",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95095,
+    "question": "श्रृंखला: 1, 2, 4, 7, 11, ?",
+    "options": [
+      "16",
+      "15",
+      "14",
+      "13"
+    ],
+    "answer": "16",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95102,
+    "question": "वर्णमाला: ‘PUZZLE’ में व्यंजन कितने?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": "4",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95105,
+    "question": "कथन-निष्कर्ष: ‘समय मूल्यवान है’—निष्कर्ष?",
+    "options": [
+      "समय का सदुपयोग",
+      "समय बेकार",
+      "समय अनंत",
+      "समय नहीं"
+    ],
+    "answer": "समय का सदुपयोग",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95114,
+    "question": "कथन-मान्यता: ‘समय पर सोएँ’—मान्यता?",
+    "options": [
+      "नींद स्वास्थ्यकर है",
+      "नींद बेकार",
+      "जागना जरूरी",
+      "नींद हानिकारक"
+    ],
+    "answer": "नींद स्वास्थ्यकर है",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95117,
+    "question": "श्रृंखला: 1, 3, 7, 15, ?",
+    "options": [
+      "31",
+      "29",
+      "27",
+      "25"
+    ],
+    "answer": "31",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95120,
+    "question": "वर्णमाला: ‘ALPHABET’ में स्वर?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95129,
+    "question": "वर्णमाला: ‘REASONING’ में स्वर?",
+    "options": [
+      "4",
+      "3",
+      "5",
+      "2"
+    ],
+    "answer": "4",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95131,
+    "question": "क्लॉक: 11:00 पर कोण?",
+    "options": [
+      "30°",
+      "60°",
+      "90°",
+      "120°"
+    ],
+    "answer": "30°",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95133,
+    "question": "कथन-मान्यता: ‘पढ़ाई से नौकरी मिलती’—मान्यता?",
+    "options": [
+      "कौशल जरूरी",
+      "नौकरी बेकार",
+      "कौशल बेकार",
+      "नौकरी अनावश्यक"
+    ],
+    "answer": "कौशल जरूरी",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95135,
+    "question": "एनालॉजी: नदी : किनारा :: पहाड़ : ?",
+    "options": [
+      "पाद",
+      "चोटी",
+      "घाटी",
+      "मार्ग"
+    ],
+    "answer": "चोटी",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95143,
+    "question": "श्रृंखला: 50, 45, 55, 50, 60, ?",
+    "options": [
+      "55",
+      "50",
+      "65",
+      "60"
+    ],
+    "answer": "55",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95148,
+    "question": "वर्णमाला: ‘PUZZLE’ में स्वर?",
+    "options": [
+      "2",
+      "1",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95150,
+    "question": "सिलोज़्म: कुछ खिलौने प्लास्टिक हैं; सभी प्लास्टिक हल्के हैं; निष्कर्ष—कुछ खिलौने हल्के हैं।",
+    "options": [
+      "सही",
+      "गलत",
+      "निश्चित नहीं",
+      "अपर्याप्त"
+    ],
+    "answer": "सही",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95158,
+    "question": "एनालॉजी: कल : आज :: कल :: ?",
+    "options": [
+      "परसों",
+      "आज",
+      "बीता",
+      "आने वाला"
+    ],
+    "answer": "परसों",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95163,
+    "question": "कथन-मान्यता: ‘ईमानदारी सर्वोत्तम नीति’—मान्यता?",
+    "options": [
+      "ईमानदारी अच्छी",
+      "ईमानदारी खराब",
+      "नीति बेकार",
+      "ईमानदारी महँगी"
+    ],
+    "answer": "ईमानदारी अच्छी",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95165,
+    "question": "कैलेंडर: 30 दिन वाले महीने?",
+    "options": [
+      "अप्रैल, जून, सितंबर, नवंबर",
+      "जनवरी, मार्च",
+      "फरवरी",
+      "जुलाई"
+    ],
+    "answer": "अप्रैल, जून, सितंबर, नवंबर",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95166,
+    "question": "श्रृंखला: 5, 8, 13, 20, ?",
+    "options": [
+      "29",
+      "28",
+      "27",
+      "26"
+    ],
+    "answer": "29",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95175,
+    "question": "एनालॉजी: चाबी : ताला :: पासवर्ड : ?",
+    "options": [
+      "लॉगिन",
+      "ईमेल",
+      "कुकी",
+      "फाइल"
+    ],
+    "answer": "लॉगिन",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95180,
+    "question": "कथन-मान्यता: ‘सड़क पर हेलमेट’—मान्यता?",
+    "options": [
+      "सुरक्षा आवश्यक",
+      "हेलमेट बेकार",
+      "हेलमेट हानिकारक",
+      "हेलमेट महँगा"
+    ],
+    "answer": "सुरक्षा आवश्यक",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95192,
+    "question": "श्रृंखला: 18, 16, 20, 18, 22, ?",
+    "options": [
+      "20",
+      "21",
+      "24",
+      "23"
+    ],
+    "answer": "20",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95210,
+    "question": "श्रृंखला: 100, 95, 105, 100, 110, ?",
+    "options": [
+      "105",
+      "100",
+      "115",
+      "110"
+    ],
+    "answer": "105",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95217,
+    "question": "सिलोज़्म: सभी A, B हैं; कोई B, C नहीं; निष्कर्ष—कोई A, C नहीं।",
+    "options": [
+      "सही",
+      "गलत",
+      "निश्चित नहीं",
+      "अपर्याप्त"
+    ],
+    "answer": "सही",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 95220,
+    "question": "कैलेंडर: सप्ताह का पहला दिन सामान्यतः?",
+    "options": [
+      "सोमवार",
+      "रविवार",
+      "मंगलवार",
+      "शनिवार"
+    ],
+    "answer": "सोमवार",
+    "category": "reasoning",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30002,
+    "question": "प्रकाश का वेग लगभग कितना है?",
+    "options": [
+      "3×10⁸ मी/से",
+      "3×10⁶ मी/से",
+      "3×10¹⁰ मी/से",
+      "3×10⁴ मी/से"
+    ],
+    "answer": "3×10⁸ मी/से",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30010,
+    "question": "घनत्व किसका अनुपात है?",
+    "options": [
+      "द्रव्यमान/आयतन",
+      "दाब/आयतन",
+      "द्रव्यमान/शक्ति",
+      "ऊर्जा/समय"
+    ],
+    "answer": "द्रव्यमान/आयतन",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30013,
+    "question": "प्रकाश संश्लेषण कहाँ होता है?",
+    "options": [
+      "क्लोरोप्लास्ट",
+      "माइटोकॉन्ड्रिया",
+      "न्यूक्लियस",
+      "राइबोसोम"
+    ],
+    "answer": "क्लोरोप्लास्ट",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30014,
+    "question": "ATP का पूर्ण रूप क्या है?",
+    "options": [
+      "Adenosine Triphosphate",
+      "Amino Tri Protein",
+      "Adenine Tri Phosphate",
+      "Acid Tri Phosphate"
+    ],
+    "answer": "Adenosine Triphosphate",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30016,
+    "question": "DNA का पूर्ण रूप क्या है?",
+    "options": [
+      "Deoxyribonucleic Acid",
+      "Deoxyribose Nucleic Acid",
+      "Deoxyribonucleic Agent",
+      "Dual Nucleic Acid"
+    ],
+    "answer": "Deoxyribonucleic Acid",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30017,
+    "question": "राइबोसोम का कार्य क्या है?",
+    "options": [
+      "प्रोटीन संश्लेषण",
+      "ऊर्जा उत्पादन",
+      "भंडारण",
+      "संकेत"
+    ],
+    "answer": "प्रोटीन संश्लेषण",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30018,
+    "question": "मानव शरीर में कुल कितनी हड्डियाँ होती हैं?",
+    "options": [
+      "206",
+      "216",
+      "196",
+      "226"
+    ],
+    "answer": "206",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30021,
+    "question": "सौरमंडल का सबसे छोटा ग्रह कौन सा है?",
+    "options": [
+      "बुध",
+      "मंगल",
+      "शुक्र",
+      "पृथ्वी"
+    ],
+    "answer": "बुध",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30023,
+    "question": "ओजोन परत किस परत में होती है?",
+    "options": [
+      "समताप मंडल",
+      "क्षोभमंडल",
+      "आयन मंडल",
+      "मध्य मंडल"
+    ],
+    "answer": "समताप मंडल",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30025,
+    "question": "अम्ल का pH मान सामान्यतः कैसा होता है?",
+    "options": [
+      "7 से कम",
+      "7 से अधिक",
+      "7 के बराबर",
+      "8 से अधिक"
+    ],
+    "answer": "7 से कम",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30026,
+    "question": "क्षार का pH मान सामान्यतः कैसा होता है?",
+    "options": [
+      "7 से अधिक",
+      "7 से कम",
+      "7 के बराबर",
+      "5 से कम"
+    ],
+    "answer": "7 से अधिक",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30029,
+    "question": "ध्वनि की तीव्रता की इकाई क्या है?",
+    "options": [
+      "डेसिबल",
+      "हर्ट्ज",
+      "न्यूटन",
+      "जूल"
+    ],
+    "answer": "डेसिबल",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30032,
+    "question": "कार्य का सूत्र क्या है?",
+    "options": [
+      "बल × दूरी",
+      "ऊर्जा × समय",
+      "दाब × आयतन",
+      "घनत्व × आयतन"
+    ],
+    "answer": "बल × दूरी",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30034,
+    "question": "न्यूटन के तीसरे नियम का कथन क्या है?",
+    "options": [
+      "प्रतिक्रिया बराबर और विपरीत होती है",
+      "बल = द्रव्यमान × त्वरण",
+      "वस्तु स्थिर रहती है",
+      "ऊर्जा संरक्षण"
+    ],
+    "answer": "प्रतिक्रिया बराबर और विपरीत होती है",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30035,
+    "question": "प्रकाश के परावर्तन का नियम क्या है?",
+    "options": [
+      "आपतन कोण = परावर्तन कोण",
+      "अपवर्तन कोण = आपतन कोण",
+      "परावर्तन कोण = 90°",
+      "आपतन कोण = 0°"
+    ],
+    "answer": "आपतन कोण = परावर्तन कोण",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30037,
+    "question": "मानव रक्त में कितने प्रकार के रक्त समूह होते हैं?",
+    "options": [
+      "चार",
+      "दो",
+      "तीन",
+      "पाँच"
+    ],
+    "answer": "चार",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30038,
+    "question": "रक्त का थक्का जमने में कौन सा विटामिन सहायक है?",
+    "options": [
+      "विटामिन K",
+      "विटामिन C",
+      "विटामिन A",
+      "विटामिन D"
+    ],
+    "answer": "विटामिन K",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30044,
+    "question": "कौन सा हार्मोन रक्त शर्करा नियंत्रित करता है?",
+    "options": [
+      "इंसुलिन",
+      "एड्रिनलिन",
+      "थायरॉक्सिन",
+      "ग्लूकागन"
+    ],
+    "answer": "इंसुलिन",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30045,
+    "question": "थायरॉयड ग्रंथि कौन सा हार्मोन बनाती है?",
+    "options": [
+      "थायरॉक्सिन",
+      "इंसुलिन",
+      "टेस्टोस्टेरोन",
+      "एस्ट्रोजन"
+    ],
+    "answer": "थायरॉक्सिन",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30046,
+    "question": "प्रकाश वर्ष किसका माप है?",
+    "options": [
+      "दूरी",
+      "समय",
+      "ऊर्जा",
+      "गति"
+    ],
+    "answer": "दूरी",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30049,
+    "question": "अधातु का सामान्य गुण क्या है?",
+    "options": [
+      "विद्युत रोध",
+      "विद्युत चालकता",
+      "उच्च घनत्व",
+      "धात्विक चमक"
+    ],
+    "answer": "विद्युत रोध",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30051,
+    "question": "शुष्क बर्फ किसका ठोस रूप है?",
+    "options": [
+      "CO2",
+      "H2O",
+      "O2",
+      "NH3"
+    ],
+    "answer": "CO2",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30059,
+    "question": "पारा का रासायनिक संकेत क्या है?",
+    "options": [
+      "Hg",
+      "H",
+      "He",
+      "Ho"
+    ],
+    "answer": "Hg",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30066,
+    "question": "सिलिकॉन का रासायनिक संकेत क्या है?",
+    "options": [
+      "Si",
+      "S",
+      "Sn",
+      "Sr"
+    ],
+    "answer": "Si",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30067,
+    "question": "लिथियम का रासायनिक संकेत क्या है?",
+    "options": [
+      "Li",
+      "L",
+      "Le",
+      "Ln"
+    ],
+    "answer": "Li",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30068,
+    "question": "मैग्नीशियम का रासायनिक संकेत क्या है?",
+    "options": [
+      "Mg",
+      "Mn",
+      "Ma",
+      "Mi"
+    ],
+    "answer": "Mg",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30070,
+    "question": "एविडेंस आधारित चिकित्सा किस पर आधारित है?",
+    "options": [
+      "वैज्ञानिक प्रमाण",
+      "अनुमान",
+      "परंपरा",
+      "आस्था"
+    ],
+    "answer": "वैज्ञानिक प्रमाण",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30072,
+    "question": "एंटीबायोटिक किसके विरुद्ध काम करता है?",
+    "options": [
+      "बैक्टीरिया",
+      "वायरस",
+      "फंगस",
+      "परजीवी"
+    ],
+    "answer": "बैक्टीरिया",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30073,
+    "question": "इंजिन में पिस्टन की गति किस प्रकार की होती है?",
+    "options": [
+      "आवर्त",
+      "रेखीय",
+      "घूर्णी",
+      "वक्र"
+    ],
+    "answer": "रेखीय",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30076,
+    "question": "विद्युतचुंबक किससे बनता है?",
+    "options": [
+      "धारा और कुंडली",
+      "स्थायी चुंबक",
+      "रेडियो तरंग",
+      "ध्वनि तरंग"
+    ],
+    "answer": "धारा और कुंडली",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30078,
+    "question": "प्रकाश का अपवर्तन क्यों होता है?",
+    "options": [
+      "माध्यम के परिवर्तन",
+      "प्रकाश स्रोत",
+      "वायुमंडल",
+      "तापमान"
+    ],
+    "answer": "माध्यम के परिवर्तन",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30081,
+    "question": "NPK उर्वरक में K किसका संकेत है?",
+    "options": [
+      "पोटेशियम",
+      "सोडियम",
+      "कैल्शियम",
+      "मैग्नीशियम"
+    ],
+    "answer": "पोटेशियम",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30084,
+    "question": "प्लाज्मा का मुख्य घटक क्या है?",
+    "options": [
+      "पानी",
+      "प्रोटीन",
+      "लिपिड",
+      "कार्बोहाइड्रेट"
+    ],
+    "answer": "पानी",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30085,
+    "question": "हड्डियों का मुख्य घटक क्या है?",
+    "options": [
+      "कैल्शियम फॉस्फेट",
+      "सोडियम क्लोराइड",
+      "पोटेशियम नाइट्रेट",
+      "मैग्नीशियम सल्फेट"
+    ],
+    "answer": "कैल्शियम फॉस्फेट",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30099,
+    "question": "उर्ध्वीपातन किसका उदाहरण है?",
+    "options": [
+      "ठोस से गैस",
+      "तरल से गैस",
+      "गैस से तरल",
+      "ठोस से तरल"
+    ],
+    "answer": "ठोस से गैस",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30101,
+    "question": "हार्मोन किसके द्वारा स्रावित होते हैं?",
+    "options": [
+      "अंतःस्रावी ग्रंथियाँ",
+      "बहिःस्रावी ग्रंथियाँ",
+      "मांसपेशियाँ",
+      "हड्डियाँ"
+    ],
+    "answer": "अंतःस्रावी ग्रंथियाँ",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30102,
+    "question": "इंसुलिन किस ग्रंथि से बनता है?",
+    "options": [
+      "अग्न्याशय",
+      "थायरॉयड",
+      "पीयूष",
+      "अधिवृक्क"
+    ],
+    "answer": "अग्न्याशय",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30104,
+    "question": "विटामिन C किससे संबंधित है?",
+    "options": [
+      "एस्कॉर्बिक एसिड",
+      "रेटिनॉल",
+      "कैल्सीफेरॉल",
+      "टोकोफेरॉल"
+    ],
+    "answer": "एस्कॉर्बिक एसिड",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30109,
+    "question": "प्रोटीन के निर्माण खंड क्या हैं?",
+    "options": [
+      "अमीनो अम्ल",
+      "फैटी अम्ल",
+      "ग्लूकोज",
+      "न्यूक्लियोटाइड"
+    ],
+    "answer": "अमीनो अम्ल",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30112,
+    "question": "एंजाइम किस प्रकार के अणु होते हैं?",
+    "options": [
+      "प्रोटीन",
+      "कार्बोहाइड्रेट",
+      "लिपिड",
+      "न्यूक्लिक अम्ल"
+    ],
+    "answer": "प्रोटीन",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30116,
+    "question": "माइटोसिस का परिणाम क्या होता है?",
+    "options": [
+      "दो समान पुत्र कोशिकाएँ",
+      "चार असमान कोशिकाएँ",
+      "दो असमान कोशिकाएँ",
+      "एक बड़ी कोशिका"
+    ],
+    "answer": "दो समान पुत्र कोशिकाएँ",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30118,
+    "question": "पौधों में किस तंत्र से जल ऊपर की ओर जाता है?",
+    "options": [
+      "जाइलम",
+      "फ्लोएम",
+      "एंडोडर्मिस",
+      "स्टोमा"
+    ],
+    "answer": "जाइलम",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30119,
+    "question": "पौधों में खाद्य पदार्थ का परिवहन किसके द्वारा होता है?",
+    "options": [
+      "फ्लोएम",
+      "जाइलम",
+      "स्टोमा",
+      "क्लोरोप्लास्ट"
+    ],
+    "answer": "फ्लोएम",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30121,
+    "question": "मानव आँख का लेंस किस प्रकार का है?",
+    "options": [
+      "उत्तल",
+      "अवतल",
+      "समतल",
+      "पराबैंगनी"
+    ],
+    "answer": "उत्तल",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30124,
+    "question": "वर्णक्रम किससे बनता है?",
+    "options": [
+      "प्रकाश का प्रकीर्णन",
+      "ध्वनि का प्रकीर्णन",
+      "दाब का परिवर्तन",
+      "ताप का परिवर्तन"
+    ],
+    "answer": "प्रकाश का प्रकीर्णन",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30126,
+    "question": "ध्वनि की गति किस माध्यम में अधिक होती है?",
+    "options": [
+      "ठोस",
+      "द्रव",
+      "गैस",
+      "निर्वात"
+    ],
+    "answer": "ठोस",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30130,
+    "question": "IR किस प्रकार का विकिरण है?",
+    "options": [
+      "इन्फ्रारेड",
+      "अल्ट्रावायलेट",
+      "रेडियो",
+      "एक्स-रे"
+    ],
+    "answer": "इन्फ्रारेड",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30131,
+    "question": "UV किस प्रकार का विकिरण है?",
+    "options": [
+      "अल्ट्रावायलेट",
+      "इन्फ्रारेड",
+      "रेडियो",
+      "एक्स-रे"
+    ],
+    "answer": "अल्ट्रावायलेट",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30135,
+    "question": "बायोटेक्नोलॉजी किससे संबंधित है?",
+    "options": [
+      "जीव विज्ञान और तकनीक का समन्वय",
+      "भौतिकी का अध्ययन",
+      "रसायन का अध्ययन",
+      "गणित का अध्ययन"
+    ],
+    "answer": "जीव विज्ञान और तकनीक का समन्वय",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30136,
+    "question": "क्लोनिंग का उदाहरण कौन सा है?",
+    "options": [
+      "डॉली भेड़",
+      "लाल ग्रह",
+      "कंचनजंगा",
+      "डीएनए टेस्ट"
+    ],
+    "answer": "डॉली भेड़",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30141,
+    "question": "ISRO का पूर्ण रूप क्या है?",
+    "options": [
+      "Indian Space Research Organisation",
+      "International Space Research Organisation",
+      "Indian Science Research Organisation",
+      "Indian Space Regional Organisation"
+    ],
+    "answer": "Indian Space Research Organisation",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30143,
+    "question": "तरंग दैर्ध्य किसका माप है?",
+    "options": [
+      "दो शिखरों के बीच दूरी",
+      "गति/समय",
+      "ऊर्जा/समय",
+      "दाब/घनत्व"
+    ],
+    "answer": "दो शिखरों के बीच दूरी",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30148,
+    "question": "धातु का गलनांक सामान्यतः कैसा होता है?",
+    "options": [
+      "उच्च",
+      "निम्न",
+      "मध्यम",
+      "शून्य"
+    ],
+    "answer": "उच्च",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30149,
+    "question": "अधातु का गलनांक सामान्यतः कैसा होता है?",
+    "options": [
+      "निम्न",
+      "उच्च",
+      "मध्यम",
+      "शून्य"
+    ],
+    "answer": "निम्न",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30151,
+    "question": "सिरेमिक किस प्रकार का पदार्थ है?",
+    "options": [
+      "अकार्बनिक",
+      "कार्बनिक",
+      "धातु",
+      "पॉलिमर"
+    ],
+    "answer": "अकार्बनिक",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30153,
+    "question": "तरल क्रिस्टल किस उपकरण में उपयोग होते हैं?",
+    "options": [
+      "LCD",
+      "CRT",
+      "LED",
+      "OLED"
+    ],
+    "answer": "LCD",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30154,
+    "question": "सेमीकंडक्टर का उदाहरण कौन सा है?",
+    "options": [
+      "सिलिकॉन",
+      "तांबा",
+      "लोहा",
+      "एल्युमीनियम"
+    ],
+    "answer": "सिलिकॉन",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30157,
+    "question": "सौर पैनल किस प्रभाव पर आधारित हैं?",
+    "options": [
+      "फोटोवोल्टिक",
+      "फोटोइलेक्ट्रिक",
+      "थर्मोइलेक्ट्रिक",
+      "पाईजोइलेक्ट्रिक"
+    ],
+    "answer": "फोटोवोल्टिक",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30158,
+    "question": "भूकंप का परिमाण किससे मापा जाता है?",
+    "options": [
+      "रिक्टर स्केल",
+      "ब्यूफोर्ट स्केल",
+      "मोहन स्केल",
+      "बाल स्केल"
+    ],
+    "answer": "रिक्टर स्केल",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30165,
+    "question": "डीएनए का डबल हेलिक्स किसने प्रस्तावित किया?",
+    "options": [
+      "वॉटसन और क्रिक",
+      "डार्विन और वॉलेस",
+      "न्यूटन और गैलीलियो",
+      "प्लांक और आइंस्टीन"
+    ],
+    "answer": "वॉटसन और क्रिक",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30166,
+    "question": "डार्विन का सिद्धांत किससे संबंधित है?",
+    "options": [
+      "उत्क्रांति",
+      "गुरुत्व",
+      "ऊर्जा संरक्षण",
+      "सापेक्षता"
+    ],
+    "answer": "उत्क्रांति",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30168,
+    "question": "भूपृष्ठ मुख्यतः किससे बना है?",
+    "options": [
+      "सिलिकेट",
+      "कार्बन",
+      "गंधक",
+      "लोहा"
+    ],
+    "answer": "सिलिकेट",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30169,
+    "question": "ज्वालामुखी किस प्रकार का भूवैज्ञानिक घटना है?",
+    "options": [
+      "आंतरिक",
+      "बाह्य",
+      "वायुमंडलीय",
+      "समुद्री"
+    ],
+    "answer": "आंतरिक",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30171,
+    "question": "भू-तापीय ऊर्जा किससे प्राप्त होती है?",
+    "options": [
+      "पृथ्वी की आंतरिक ऊष्मा",
+      "सूर्य का विकिरण",
+      "पवन",
+      "जल"
+    ],
+    "answer": "पृथ्वी की आंतरिक ऊष्मा",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30179,
+    "question": "ध्वनि की तीव्रता किस पर निर्भर करती है?",
+    "options": [
+      "आयाम",
+      "आवृत्ति",
+      "तरंग दैर्ध्य",
+      "वेग"
+    ],
+    "answer": "आयाम",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30181,
+    "question": "वायुदाब किस उपकरण से मापा जाता है?",
+    "options": [
+      "बरामीटर",
+      "थर्मामीटर",
+      "वोल्टमीटर",
+      "एम्पीयरमीटर"
+    ],
+    "answer": "बरामीटर",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30184,
+    "question": "प्रतिरोध किस उपकरण से मापा जाता है?",
+    "options": [
+      "ओहममीटर",
+      "एम्पीयरमीटर",
+      "वोल्टमीटर",
+      "बरामीटर"
+    ],
+    "answer": "ओहममीटर",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30188,
+    "question": "अल्ट्रासोनिक तरंगों का उपयोग कहाँ होता है?",
+    "options": [
+      "चिकित्सा इमेजिंग",
+      "विद्युत उत्पादन",
+      "ध्वनि रिकॉर्डिंग",
+      "प्रकाश उत्पादन"
+    ],
+    "answer": "चिकित्सा इमेजिंग",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 30191,
+    "question": "धूमकेतु किससे बने होते हैं?",
+    "options": [
+      "बर्फ और धूल",
+      "धातु",
+      "गैस",
+      "रॉक"
+    ],
+    "answer": "बर्फ और धूल",
+    "category": "science",
+    "level": "medium",
+    "language": "hi"
+  }
+]

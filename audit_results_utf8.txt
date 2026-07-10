@@ -1,0 +1,57 @@
+﻿Total Routes found in App.tsx: 692
+Total Redirects found in netlify.toml: 322
+
+--- CONFLICTS (Force redirects on existing routes) ---
+FORCE REDIRECT on valid route: /finance-blog/:slug -> /blog/:slug
+FORCE REDIRECT on valid route: /finance-blog -> /blog
+FORCE REDIRECT on valid route: /team -> /about-us
+FORCE REDIRECT on valid route: /market-analysis -> /stock-market
+FORCE REDIRECT on valid route: /home-old -> /
+FORCE REDIRECT on valid route: /content-marketing -> /blog
+FORCE REDIRECT on valid route: /keyword-research -> /blog
+FORCE REDIRECT on valid route: /ai-personalization -> /
+FORCE REDIRECT on valid route: /personal-finance-management -> /learn
+FORCE REDIRECT on valid route: /comprehensive-finance-hub -> /
+FORCE REDIRECT on valid route: /festival-shopping -> /festival-tools
+FORCE REDIRECT on valid route: /news-reel -> /news
+FORCE REDIRECT on valid route: /market-analysis -> /stock-market
+FORCE REDIRECT on valid route: /calculators/green-energy-investment-calculator -> /calculators/fd-calculator
+FORCE REDIRECT on valid route: /calculators/stock-screener -> /stock-market
+FORCE REDIRECT on valid route: /calculators/intrinsic-value-calculator -> /calculators/sip-calculator
+FORCE REDIRECT on valid route: /insurance-tools/life-insurance-calculator -> /tools/insurance-calculator
+FORCE REDIRECT on valid route: /corporate-finance/loan-amortization-generator -> /loan-tools/amortization-schedule-viewer
+FORCE REDIRECT on valid route: /corporate-finance/break-even-calculator -> /calculators/business-loan-calculator
+FORCE REDIRECT on valid route: /corporate-finance/business-valuation-calculator -> /calculators/business-loan-calculator
+FORCE REDIRECT on valid route: /stock-market/stock-market-basics -> /stock-market
+FORCE REDIRECT on valid route: /stock-market/case-studies-market-psychology -> /stock-market
+FORCE REDIRECT on valid route: /stock-market/core-market-concepts -> /stock-market
+FORCE REDIRECT on valid route: /gst-tools/gst-composition-eligibility -> /gst-tools
+FORCE REDIRECT on valid route: /gst-tools/gst-turnover-tracker -> /gst-tools
+FORCE REDIRECT on valid route: /gst-tools/gst-liability-calculator -> /gst-tools
+FORCE REDIRECT on valid route: /gst-tools/gst-refund-eligibility-checker -> /gst-tools
+FORCE REDIRECT on valid route: /gst-tools/gst-penalty-interest-calculator -> /gst-tools
+FORCE REDIRECT on valid route: /gst-tools/rcm-applicability-checker -> /gst-tools
+FORCE REDIRECT on valid route: /gst-tools/composition-scheme-eligibility-checker -> /gst-tools
+FORCE REDIRECT on valid route: /gold-tools/jewellery-price-estimator -> /gold-tools
+FORCE REDIRECT on valid route: /tools/promo-designer -> /design-tools
+FORCE REDIRECT on valid route: /tools/personal-finance-dashboard -> /tools
+FORCE REDIRECT on valid route: /tools/income-tax-calculator -> /calculators/income-tax-calculator
+FORCE REDIRECT on valid route: /tools/investment-goal-planner -> /tools/financial-goal-planner
+FORCE REDIRECT on valid route: /tools/loan-emi-calculator -> /calculators/emi-calculator
+FORCE REDIRECT on valid route: /tools/mutual-fund-analyzer -> /finance-tools
+FORCE REDIRECT on valid route: /tools/gst-amount-calculator -> /gst-tools
+FORCE REDIRECT on valid route: /tools/gst-turnover-tracker -> /gst-tools
+FORCE REDIRECT on valid route: /tools/net-worth-calculator -> /tools
+FORCE REDIRECT on valid route: /finance-tools/dividend-tracker -> /finance-tools
+FORCE REDIRECT on valid route: /finance-tools/index-fund-return-comparison -> /finance-tools
+FORCE REDIRECT on valid route: /finance-tools/stock-cagr-calculator -> /finance-tools
+FORCE REDIRECT on valid route: /finance-tools/mutual-fund-goal-planner -> /finance-tools
+FORCE REDIRECT on valid route: /festival-tools/dhanteras-date-finder -> /festival-tools
+FORCE REDIRECT on valid route: /festival-info -> /festival-tools
+FORCE REDIRECT on valid route: /stock-market/advanced-trading-strategies -> /stock-market
+FORCE REDIRECT on valid route: /stock-market/technical-analysis -> /stock-market
+FORCE REDIRECT on valid route: /stock-market/fundamental-analysis -> /stock-market
+FORCE REDIRECT on valid route: /analytics -> /
+... and 31 more
+
+--- REDUNDANT/SOFT REDIRECTS ---

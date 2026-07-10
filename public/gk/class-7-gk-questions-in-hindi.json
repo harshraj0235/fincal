@@ -1,0 +1,2802 @@
+[
+  {
+    "id": 10001,
+    "question": "भारत की राजधानी क्या है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10002,
+    "question": "भारत की मुद्रा क्या है?",
+    "options": [
+      "रुपया",
+      "डॉलर",
+      "यूरो",
+      "पाउंड"
+    ],
+    "answer": "रुपया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10003,
+    "question": "भारत का राष्ट्रीय पशु कौन है?",
+    "options": [
+      "बाघ",
+      "शेर",
+      "हाथी",
+      "हिरन"
+    ],
+    "answer": "बाघ",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10004,
+    "question": "भारत का राष्ट्रीय पक्षी कौन है?",
+    "options": [
+      "मोर",
+      "तोता",
+      "कबूतर",
+      "चील"
+    ],
+    "answer": "मोर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10005,
+    "question": "भारत का राष्ट्रीय फूल कौन सा है?",
+    "options": [
+      "कमल",
+      "गुलाब",
+      "गेंदा",
+      "चमेली"
+    ],
+    "answer": "कमल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10006,
+    "question": "भारत का राष्ट्रीय फलों का राजा कौन है?",
+    "options": [
+      "आम",
+      "सेब",
+      "केला",
+      "अंगूर"
+    ],
+    "answer": "आम",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10007,
+    "question": "भारत का राष्ट्रीय दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10008,
+    "question": "स्वतंत्रता दिवस कब मनाया जाता है?",
+    "options": [
+      "26 जनवरी",
+      "15 अगस्त",
+      "2 अक्टूबर",
+      "5 जून"
+    ],
+    "answer": "15 अगस्त",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10009,
+    "question": "गणतंत्र दिवस किस दिन मनाया जाता है?",
+    "options": [
+      "15 अगस्त",
+      "26 जनवरी",
+      "2 अक्टूबर",
+      "5 सितंबर"
+    ],
+    "answer": "26 जनवरी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10010,
+    "question": "महात्मा गांधी का जन्मदिन कब है?",
+    "options": [
+      "2 अक्टूबर",
+      "15 अगस्त",
+      "14 नवंबर",
+      "5 जून"
+    ],
+    "answer": "2 अक्टूबर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10011,
+    "question": "विश्व पर्यावरण दिवस कब मनाया जाता है?",
+    "options": [
+      "5 जून",
+      "22 मार्च",
+      "29 अगस्त",
+      "11 जुलाई"
+    ],
+    "answer": "5 जून",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10012,
+    "question": "विश्व जल दिवस कब मनाया जाता है?",
+    "options": [
+      "22 मार्च",
+      "5 जून",
+      "2 अक्टूबर",
+      "14 नवंबर"
+    ],
+    "answer": "22 मार्च",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10013,
+    "question": "राष्ट्रीय खेल दिवस कब मनाया जाता है?",
+    "options": [
+      "29 अगस्त",
+      "15 अगस्त",
+      "26 जनवरी",
+      "5 सितंबर"
+    ],
+    "answer": "29 अगस्त",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10014,
+    "question": "भारत का सबसे बड़ा राज्य (क्षेत्रफल) कौन सा है?",
+    "options": [
+      "राजस्थान",
+      "महाराष्ट्र",
+      "मध्य प्रदेश",
+      "उत्तर प्रदेश"
+    ],
+    "answer": "राजस्थान",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10015,
+    "question": "भारत का सबसे अधिक आबादी वाला राज्य कौन सा है?",
+    "options": [
+      "उत्तर प्रदेश",
+      "महाराष्ट्र",
+      "बिहार",
+      "पश्चिम बंगाल"
+    ],
+    "answer": "उत्तर प्रदेश",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10016,
+    "question": "भारत का राष्ट्रीय चिन्ह कौन सा है?",
+    "options": [
+      "अशोक स्तंभ",
+      "बाघ",
+      "मोर",
+      "कमल"
+    ],
+    "answer": "अशोक स्तंभ",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10017,
+    "question": "अशोक चक्र में कितनी तीलियाँ होती हैं?",
+    "options": [
+      "20",
+      "22",
+      "24",
+      "26"
+    ],
+    "answer": "24",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10018,
+    "question": "भारतीय ध्वज का अनुपात क्या है?",
+    "options": [
+      "3:2",
+      "2:3",
+      "4:3",
+      "1:2"
+    ],
+    "answer": "3:2",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10019,
+    "question": "भारतीय ध्वज में कितने रंग होते हैं?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10020,
+    "question": "भारत का सर्वोच्च न्यायालय कहाँ स्थित है?",
+    "options": [
+      "नई दिल्ली",
+      "मुंबई",
+      "कोलकाता",
+      "चेन्नई"
+    ],
+    "answer": "नई दिल्ली",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10021,
+    "question": "भारतीय संसद के कितने सदन होते हैं?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10022,
+    "question": "लोकसभा की अधिकतम अवधि कितने वर्षों की होती है?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10023,
+    "question": "राज्यसभा का स्वरूप क्या है?",
+    "options": [
+      "अस्थायी",
+      "स्थायी",
+      "अर्ध-स्थायी",
+      "कोई नहीं"
+    ],
+    "answer": "स्थायी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10024,
+    "question": "भारत के पहले राष्ट्रपति कौन थे?",
+    "options": [
+      "डॉ. राजेंद्र प्रसाद",
+      "जवाहरलाल नेहरू",
+      "सर्वपल्ली राधाकृष्णन",
+      "बी. आर. अंबेडकर"
+    ],
+    "answer": "डॉ. राजेंद्र प्रसाद",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10025,
+    "question": "भारत के प्रथम प्रधानमंत्री कौन थे?",
+    "options": [
+      "जवाहरलाल नेहरू",
+      "लाल बहादुर शास्त्री",
+      "इंदिरा गांधी",
+      "मोतीलाल नेहरू"
+    ],
+    "answer": "जवाहरलाल नेहरू",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10026,
+    "question": "भारत का संविधान कब लागू हुआ?",
+    "options": [
+      "15 अगस्त 1947",
+      "26 जनवरी 1950",
+      "2 अक्टूबर 1949",
+      "1 जनवरी 1951"
+    ],
+    "answer": "26 जनवरी 1950",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10027,
+    "question": "भारत का केंद्रीय बैंक कौन सा है?",
+    "options": [
+      "RBI",
+      "SBI",
+      "NABARD",
+      "ICICI"
+    ],
+    "answer": "RBI",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10028,
+    "question": "GDP का पूर्ण रूप क्या है?",
+    "options": [
+      "Gross Domestic Product",
+      "Global Domestic Product",
+      "Gross Development Product",
+      "General Domestic Product"
+    ],
+    "answer": "Gross Domestic Product",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10029,
+    "question": "GST भारत में किस वर्ष लागू हुआ?",
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "answer": "2017",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10030,
+    "question": "भारत का बजट कौन प्रस्तुत करता है?",
+    "options": [
+      "वित्त मंत्री",
+      "प्रधानमंत्री",
+      "राष्ट्रपति",
+      "लोकसभा अध्यक्ष"
+    ],
+    "answer": "वित्त मंत्री",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10031,
+    "question": "विश्व का सबसे बड़ा महासागर कौन सा है?",
+    "options": [
+      "प्रशांत",
+      "अटलांटिक",
+      "हिंद",
+      "आर्कटिक"
+    ],
+    "answer": "प्रशांत",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10032,
+    "question": "दुनिया का सबसे बड़ा महाद्वीप कौन सा है?",
+    "options": [
+      "एशिया",
+      "अफ्रीका",
+      "यूरोप",
+      "ऑस्ट्रेलिया"
+    ],
+    "answer": "एशिया",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10033,
+    "question": "पृथ्वी का लगभग कितना प्रतिशत भाग जल से ढका है?",
+    "options": [
+      "51%",
+      "61%",
+      "71%",
+      "81%"
+    ],
+    "answer": "71%",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10034,
+    "question": "कर्क रेखा भारत के कितने राज्यों से होकर गुजरती है?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "8",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10035,
+    "question": "भारत का सबसे बड़ा डेल्टा कौन सा है?",
+    "options": [
+      "सुंदरबन",
+      "गोडावरी",
+      "कावेरी",
+      "नर्मदा"
+    ],
+    "answer": "सुंदरबन",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10036,
+    "question": "हिमालय किस प्रकार के पर्वत हैं?",
+    "options": [
+      "पुराने",
+      "युवा मोड़दार",
+      "ज्वालामुखीय",
+      "समतल"
+    ],
+    "answer": "युवा मोड़दार",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10037,
+    "question": "जल का रासायनिक सूत्र क्या है?",
+    "options": [
+      "H2O",
+      "CO2",
+      "O2",
+      "NaCl"
+    ],
+    "answer": "H2O",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10038,
+    "question": "बल की SI इकाई क्या है?",
+    "options": [
+      "न्यूटन",
+      "जूल",
+      "वाट",
+      "पास्कल"
+    ],
+    "answer": "न्यूटन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10039,
+    "question": "ऊर्जा की SI इकाई क्या है?",
+    "options": [
+      "जूल",
+      "न्यूटन",
+      "वोल्ट",
+      "कैल्विन"
+    ],
+    "answer": "जूल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10040,
+    "question": "विद्युत धारा की SI इकाई क्या है?",
+    "options": [
+      "एम्पीयर",
+      "ओम",
+      "वोल्ट",
+      "वाट"
+    ],
+    "answer": "एम्पीयर",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10041,
+    "question": "ध्वनि किस माध्यम में नहीं चल सकती?",
+    "options": [
+      "ठोस",
+      "द्रव",
+      "गैस",
+      "निर्वात"
+    ],
+    "answer": "निर्वात",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10042,
+    "question": "प्रकाश का वेग लगभग कितना है?",
+    "options": [
+      "3×10⁶ मी/से",
+      "3×10⁸ मी/से",
+      "3×10¹⁰ मी/से",
+      "3×10⁴ मी/से"
+    ],
+    "answer": "3×10⁸ मी/से",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10043,
+    "question": "भारतीय रिजर्व बैंक (RBI) की स्थापना कब हुई?",
+    "options": [
+      "1921",
+      "1935",
+      "1947",
+      "1950"
+    ],
+    "answer": "1935",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10044,
+    "question": "SEBI किस क्षेत्र का नियामक है?",
+    "options": [
+      "शेयर बाजार",
+      "बैंकिंग",
+      "बीमा",
+      "टेलीकॉम"
+    ],
+    "answer": "शेयर बाजार",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10045,
+    "question": "भारत में वित्तीय वर्ष कब से कब तक होता है?",
+    "options": [
+      "जनवरी-दिसंबर",
+      "अप्रैल-मार्च",
+      "जुलाई-जून",
+      "सितंबर-अगस्त"
+    ],
+    "answer": "अप्रैल-मार्च",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10046,
+    "question": "फ्रांस की राजधानी क्या है?",
+    "options": [
+      "पेरिस",
+      "रोम",
+      "लंदन",
+      "मैड्रिड"
+    ],
+    "answer": "पेरिस",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10047,
+    "question": "संयुक्त राज्य अमेरिका की राजधानी क्या है?",
+    "options": [
+      "वाशिंगटन डीसी",
+      "न्यूयॉर्क",
+      "लॉस एंजेलिस",
+      "शिकागो"
+    ],
+    "answer": "वाशिंगटन डीसी",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10048,
+    "question": "जापान की मुद्रा क्या है?",
+    "options": [
+      "येन",
+      "युआन",
+      "वॉन",
+      "रुपया"
+    ],
+    "answer": "येन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10049,
+    "question": "संयुक्त राष्ट्र का मुख्यालय कहाँ है?",
+    "options": [
+      "न्यूयॉर्क",
+      "जिनेवा",
+      "पेरिस",
+      "टोक्यो"
+    ],
+    "answer": "न्यूयॉर्क",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10050,
+    "question": "विश्व का सबसे बड़ा गर्म मरुस्थल कौन सा है?",
+    "options": [
+      "सहारा",
+      "गोबी",
+      "थार",
+      "कालीहारी"
+    ],
+    "answer": "सहारा",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10051,
+    "question": "ब्राजील की राजधानी क्या है?",
+    "options": [
+      "ब्रासीलिया",
+      "रियो डी जेनेरियो",
+      "साओ पाउलो",
+      "लिस्बन"
+    ],
+    "answer": "ब्रासीलिया",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10052,
+    "question": "रूस की राजधानी क्या है?",
+    "options": [
+      "मॉस्को",
+      "सेंट पीटर्सबर्ग",
+      "कीव",
+      "मिन्स्क"
+    ],
+    "answer": "मॉस्को",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10053,
+    "question": "ऑस्ट्रेलिया की राजधानी क्या है?",
+    "options": [
+      "कैनबरा",
+      "सिडनी",
+      "मेलबर्न",
+      "ब्रिस्बेन"
+    ],
+    "answer": "कैनबरा",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10054,
+    "question": "विश्व व्यापार संगठन (WTO) का मुख्यालय कहाँ है?",
+    "options": [
+      "जिनेवा",
+      "न्यूयॉर्क",
+      "पेरिस",
+      "टोक्यो"
+    ],
+    "answer": "जिनेवा",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10055,
+    "question": "चीन की महान दीवार किस देश में है?",
+    "options": [
+      "चीन",
+      "जापान",
+      "कोरिया",
+      "मंगोलिया"
+    ],
+    "answer": "चीन",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10056,
+    "question": "सौरमंडल का सबसे बड़ा ग्रह कौन सा है?",
+    "options": [
+      "बृहस्पति",
+      "शनि",
+      "पृथ्वी",
+      "शुक्र"
+    ],
+    "answer": "बृहस्पति",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10057,
+    "question": "लाल ग्रह किसे कहा जाता है?",
+    "options": [
+      "मंगल",
+      "शुक्र",
+      "बुध",
+      "पृथ्वी"
+    ],
+    "answer": "मंगल",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10058,
+    "question": "पृथ्वी का प्राकृतिक उपग्रह कौन सा है?",
+    "options": [
+      "चंद्रमा",
+      "मंगल",
+      "टाइटन",
+      "फोबोस"
+    ],
+    "answer": "चंद्रमा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10059,
+    "question": "ISRO का मुख्यालय कहाँ है?",
+    "options": [
+      "बेंगलुरु",
+      "श्रीहरिकोटा",
+      "हैदराबाद",
+      "त्रिवेंद्रम"
+    ],
+    "answer": "बेंगलुरु",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10060,
+    "question": "CPU का पूर्ण रूप क्या है?",
+    "options": [
+      "Central Processing Unit",
+      "Control Processing Unit",
+      "Computer Processing Unit",
+      "Central Program Utility"
+    ],
+    "answer": "Central Processing Unit",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10061,
+    "question": "URL का पूर्ण रूप क्या है?",
+    "options": [
+      "Uniform Resource Locator",
+      "Universal Resource Link",
+      "United Resource Locator",
+      "Uniform Result Link"
+    ],
+    "answer": "Uniform Resource Locator",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10062,
+    "question": "ओलंपिक खेल कितने वर्षों में होते हैं?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": "4",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10063,
+    "question": "क्रिकेट में एक ओवर में कितनी गेंदें होती हैं?",
+    "options": [
+      "6",
+      "5",
+      "4",
+      "8"
+    ],
+    "answer": "6",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10064,
+    "question": "हॉकी टीम में कुल कितने खिलाड़ी होते हैं?",
+    "options": [
+      "11",
+      "10",
+      "9",
+      "12"
+    ],
+    "answer": "11",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10065,
+    "question": "भारत में कितने केंद्र शासित प्रदेश हैं (2025 के आसपास)?",
+    "options": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ],
+    "answer": "8",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10066,
+    "question": "भारत का सबसे ऊँचा बांध कौन सा है?",
+    "options": [
+      "टिहरी",
+      "भाखड़ा नांगल",
+      "सरदार सरोवर",
+      "हीराकुंड"
+    ],
+    "answer": "टिहरी",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10067,
+    "question": "भारत में सबसे लंबी तटरेखा किस राज्य की है?",
+    "options": [
+      "गुजरात",
+      "केरल",
+      "तमिलनाडु",
+      "आंध्र प्रदेश"
+    ],
+    "answer": "गुजरात",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10068,
+    "question": "भारत का राष्ट्रीय गीत कौन सा है?",
+    "options": [
+      "वंदे मातरम्",
+      "जन गण मन",
+      "सारे जहाँ से अच्छा",
+      "अय मेरे वतन के लोगों"
+    ],
+    "answer": "वंदे मातरम्",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10069,
+    "question": "भारत का राष्ट्रगान किसने लिखा?",
+    "options": [
+      "रवींद्रनाथ टैगोर",
+      "बंकिमचंद्र",
+      "तुलसीदास",
+      "कालिदास"
+    ],
+    "answer": "रवींद्रनाथ टैगोर",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10070,
+    "question": "अशोक स्तंभ कहाँ स्थित है (राष्ट्रीय प्रतीक)?",
+    "options": [
+      "सारनाथ",
+      "बोधगया",
+      "इलाहाबाद",
+      "पाटलिपुत्र"
+    ],
+    "answer": "सारनाथ",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10071,
+    "question": "भारत के राष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10072,
+    "question": "भारत के उपराष्ट्रपति का कार्यकाल कितने वर्ष का होता है?",
+    "options": [
+      "5",
+      "4",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10073,
+    "question": "भारत के कुल कितने मौलिक अधिकार हैं?",
+    "options": [
+      "6",
+      "7",
+      "5",
+      "8"
+    ],
+    "answer": "6",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10074,
+    "question": "भारत में मौलिक कर्तव्य कितने हैं?",
+    "options": [
+      "11",
+      "10",
+      "12",
+      "9"
+    ],
+    "answer": "11",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10075,
+    "question": "चंद्रयान-1 का प्रक्षेपण किस वर्ष हुआ था?",
+    "options": [
+      "2008",
+      "2007",
+      "2009",
+      "2010"
+    ],
+    "answer": "2008",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10076,
+    "question": "भारत का पहला उपग्रह कौन सा था?",
+    "options": [
+      "आर्यभट्ट",
+      "रोहिणी",
+      "भास्कर",
+      "इनसैट"
+    ],
+    "answer": "आर्यभट्ट",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10077,
+    "question": "प्रकाश संश्लेषण कहाँ होता है?",
+    "options": [
+      "क्लोरोप्लास्ट",
+      "माइटोकॉन्ड्रिया",
+      "न्यूक्लियस",
+      "राइबोसोम"
+    ],
+    "answer": "क्लोरोप्लास्ट",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10078,
+    "question": "नवीकरणीय ऊर्जा का उदाहरण क्या है?",
+    "options": [
+      "सौर ऊर्जा",
+      "कोयला",
+      "डीजल",
+      "पेट्रोल"
+    ],
+    "answer": "सौर ऊर्जा",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 10079,
+    "question": "ओजोन परत किस परत में होती है?",
+    "options": [
+      "समताप मंडल",
+      "क्षोभमंडल",
+      "आयन मंडल",
+      "मध्य मंडल"
+    ],
+    "answer": "समताप मंडल",
+    "category": "general",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 10080,
+    "question": "ग्रीनहाउस प्रभाव का प्रमुख गैस कौन सा है?",
+    "options": [
+      "कार्बन डाइऑक्साइड",
+      "ऑक्सीजन",
+      "नाइट्रोजन",
+      "हाइड्रोजन"
+    ],
+    "answer": "कार्बन डाइऑक्साइड",
+    "category": "general",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60001,
+    "question": "सबसे पुरानी सभ्यता कौन सी मानी जाती है?",
+    "options": [
+      "सिंधु घाटी",
+      "वेदिक",
+      "मेसोपोटामिया",
+      "चीनी"
+    ],
+    "answer": "सिंधु घाटी",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60002,
+    "question": "मोहेंजोदड़ो किस नदी के किनारे स्थित है?",
+    "options": [
+      "सिंधु",
+      "रावी",
+      "घग्गर",
+      "गोदावरी"
+    ],
+    "answer": "सिंधु",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60003,
+    "question": "हड़प्पा सभ्यता का मुख्य नगर कौन सा नहीं था?",
+    "options": [
+      "हड़प्पा",
+      "मोहेंजोदड़ो",
+      "लोथल",
+      "उज्जैन"
+    ],
+    "answer": "उज्जैन",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60005,
+    "question": "सिंधु घाटी सभ्यता का प्रमुख धंधा क्या था?",
+    "options": [
+      "व्यापार",
+      "कृषि",
+      "शिकार",
+      "लोहा निर्माण"
+    ],
+    "answer": "व्यापार",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60006,
+    "question": "वेदा का सबसे पुराना ग्रंथ कौन सा है?",
+    "options": [
+      "ऋग्वेद",
+      "यजुर्वेद",
+      "सामवेद",
+      "अथर्ववेद"
+    ],
+    "answer": "ऋग्वेद",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60008,
+    "question": "महाजनपद काल में कितने महाजनपद थे?",
+    "options": [
+      "16",
+      "14",
+      "18",
+      "12"
+    ],
+    "answer": "16",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60010,
+    "question": "नंद वंश का संस्थापक कौन था?",
+    "options": [
+      "महापद्म नंद",
+      "धनानंद",
+      "बिंबिसार",
+      "अजातशत्रु"
+    ],
+    "answer": "महापद्म नंद",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60011,
+    "question": "चंद्रगुप्त मौर्य का गुरु कौन था?",
+    "options": [
+      "चाणक्य",
+      "पतंजलि",
+      "व्यास",
+      "कौटिल्य"
+    ],
+    "answer": "चाणक्य",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60012,
+    "question": "अर्थशास्त्र किसने लिखा?",
+    "options": [
+      "कौटिल्य",
+      "व्यास",
+      "कालिदास",
+      "पतंजलि"
+    ],
+    "answer": "कौटिल्य",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60013,
+    "question": "अशोक ने किस युद्ध के बाद धम्म नीति अपनाई?",
+    "options": [
+      "कलिंग युद्ध",
+      "पंजाब युद्ध",
+      "अवन्ती युद्ध",
+      "कोंकण युद्ध"
+    ],
+    "answer": "कलिंग युद्ध",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60015,
+    "question": "मौर्य साम्राज्य की राजधानी क्या थी?",
+    "options": [
+      "पाटलिपुत्र",
+      "उज्जैन",
+      "तक्षशिला",
+      "काशी"
+    ],
+    "answer": "पाटलिपुत्र",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60016,
+    "question": "गुप्त वंश का संस्थापक कौन था?",
+    "options": [
+      "श्रीगुप्त",
+      "चंद्रगुप्त प्रथम",
+      "स्कन्दगुप्त",
+      "समुद्रगुप्त"
+    ],
+    "answer": "श्रीगुप्त",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60018,
+    "question": "समुद्रगुप्त को किस उपाधि से जाना जाता है?",
+    "options": [
+      "भारतीय नेपोलियन",
+      "भारतीय सिकंदर",
+      "भारतीय अशोक",
+      "भारतीय नेहरू"
+    ],
+    "answer": "भारतीय नेपोलियन",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60019,
+    "question": "गुप्त काल को किस युग के रूप में जाना जाता है?",
+    "options": [
+      "स्वर्ण युग",
+      "लोहे का युग",
+      "कांस्य युग",
+      "पाषाण युग"
+    ],
+    "answer": "स्वर्ण युग",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60020,
+    "question": "आर्यभट किस काल में थे?",
+    "options": [
+      "गुप्त काल",
+      "मौर्य काल",
+      "नंद काल",
+      "मगध काल"
+    ],
+    "answer": "गुप्त काल",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60022,
+    "question": "हर्षवर्धन की राजधानी कहाँ थी?",
+    "options": [
+      "कन्नौज",
+      "पाटलिपुत्र",
+      "उज्जैन",
+      "विक्रमशिला"
+    ],
+    "answer": "कन्नौज",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60025,
+    "question": "महाबलीपुरम के समुद्री मंदिर किस वंश के हैं?",
+    "options": [
+      "पल्लव",
+      "चोल",
+      "राष्ट्रकूट",
+      "काकतीय"
+    ],
+    "answer": "पल्लव",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60028,
+    "question": "तक्षशिला किसके लिए प्रसिद्ध था?",
+    "options": [
+      "विद्या केंद्र",
+      "व्यापार",
+      "धर्म",
+      "कला"
+    ],
+    "answer": "विद्या केंद्र",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60029,
+    "question": "सांची के स्तूप किस काल में बने?",
+    "options": [
+      "मौर्य काल",
+      "गुप्त काल",
+      "हर्ष काल",
+      "चोल काल"
+    ],
+    "answer": "मौर्य काल",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60030,
+    "question": "बुद्ध का जन्म स्थान क्या है?",
+    "options": [
+      "लुंबिनी",
+      "कुशीनगर",
+      "बोधगया",
+      "सारनाथ"
+    ],
+    "answer": "लुंबिनी",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60031,
+    "question": "बुद्ध ने ज्ञान कहाँ प्राप्त किया?",
+    "options": [
+      "बोधगया",
+      "सारनाथ",
+      "कुशीनगर",
+      "श्रावस्ती"
+    ],
+    "answer": "बोधगया",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60032,
+    "question": "बुद्ध ने प्रथम उपदेश कहाँ दिया?",
+    "options": [
+      "सारनाथ",
+      "बोधगया",
+      "कुशीनगर",
+      "वैशाली"
+    ],
+    "answer": "सारनाथ",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60033,
+    "question": "बुद्ध का महापरिनिर्वाण कहाँ हुआ?",
+    "options": [
+      "कुशीनगर",
+      "लुंबिनी",
+      "सारनाथ",
+      "बोधगया"
+    ],
+    "answer": "कुशीनगर",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60034,
+    "question": "महावीर किस धर्म के प्रवर्तक हैं?",
+    "options": [
+      "जैन धर्म",
+      "बौद्ध धर्म",
+      "वैदिक धर्म",
+      "शैव धर्म"
+    ],
+    "answer": "जैन धर्म",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60035,
+    "question": "जैन धर्म में महावीर कौन से तीर्थंकर हैं?",
+    "options": [
+      "24वें",
+      "23वें",
+      "20वें",
+      "21वें"
+    ],
+    "answer": "24वें",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60039,
+    "question": "राजराज चोल ने कौन सा प्रसिद्ध मंदिर बनवाया?",
+    "options": [
+      "बृहदेश्वर",
+      "कोणार्क",
+      "कैलाश",
+      "श्रीरंगम"
+    ],
+    "answer": "बृहदेश्वर",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60041,
+    "question": "इल्तुतमिश किस वंश का शासक था?",
+    "options": [
+      "ममलूक",
+      "खिलजी",
+      "तुगलक",
+      "लोदी"
+    ],
+    "answer": "ममलूक",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60042,
+    "question": "तुगलक वंश का संस्थापक कौन था?",
+    "options": [
+      "गयासुद्दीन तुगलक",
+      "मुहम्मद बिन तुगलक",
+      "फिरोज तुगलक",
+      "इब्राहिम तुगलक"
+    ],
+    "answer": "गयासुद्दीन तुगलक",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60044,
+    "question": "शेरशाह सूरी ने कौन सा मार्ग बनाया?",
+    "options": [
+      "ग्रैंड ट्रंक रोड",
+      "मुगल रोड",
+      "राजमार्ग-1",
+      "सिंधु रोड"
+    ],
+    "answer": "ग्रैंड ट्रंक रोड",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60045,
+    "question": "अकबर के दरबार का इतिहासकार कौन था?",
+    "options": [
+      "अबुल-फज़ल",
+      "बादायूंनी",
+      "फिरिश्ता",
+      "याकूबी"
+    ],
+    "answer": "अबुल-फज़ल",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60046,
+    "question": "अकबर की राजस्व प्रणाली किसके द्वारा विकसित की गई?",
+    "options": [
+      "टोडरमल",
+      "मान सिंह",
+      "जय सिंह",
+      "अबुल-फज़ल"
+    ],
+    "answer": "टोडरमल",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60047,
+    "question": "जहांगीर की पत्नी नूरजहां का मूल नाम क्या था?",
+    "options": [
+      "मीहर-उन-निसा",
+      "रुकैया",
+      "जोधा",
+      "सलिमा"
+    ],
+    "answer": "मीहर-उन-निसा",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60048,
+    "question": "ताजमहल का निर्माण किसने कराया?",
+    "options": [
+      "शाहजहां",
+      "अकबर",
+      "जहांगीर",
+      "औरंगज़ेब"
+    ],
+    "answer": "शाहजहां",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60049,
+    "question": "औरंगज़ेब ने किस कर को पुनः लागू किया?",
+    "options": [
+      "जजीया",
+      "जकात",
+      "इक्तादार",
+      "दशमांश"
+    ],
+    "answer": "जजीया",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60050,
+    "question": "मराठा साम्राज्य का संस्थापक कौन था?",
+    "options": [
+      "शिवाजी",
+      "बाजी राव",
+      "माधवराव",
+      "सम्भाजी"
+    ],
+    "answer": "शिवाजी",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60052,
+    "question": "पहला पेशवा कौन था?",
+    "options": [
+      "बालाजी विश्वनाथ",
+      "बाजी राव प्रथम",
+      "माधवराव",
+      "नाना फड़नवीस"
+    ],
+    "answer": "बालाजी विश्वनाथ",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60053,
+    "question": "बक्सर का युद्ध कब हुआ?",
+    "options": [
+      "1764",
+      "1757",
+      "1781",
+      "1803"
+    ],
+    "answer": "1764",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60054,
+    "question": "प्लासी का युद्ध कब हुआ?",
+    "options": [
+      "1757",
+      "1764",
+      "1857",
+      "1707"
+    ],
+    "answer": "1757",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60055,
+    "question": "प्लासी के युद्ध में अंग्रेजों का नेतृत्व किसने किया?",
+    "options": [
+      "रॉबर्ट क्लाइव",
+      "वॉरेन हेस्टिंग्स",
+      "कॉर्नवालिस",
+      "डलहौजी"
+    ],
+    "answer": "रॉबर्ट क्लाइव",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60061,
+    "question": "स्थायी बंदोबस्त किसने लागू किया?",
+    "options": [
+      "लॉर्ड कॉर्नवालिस",
+      "वॉरेन हेस्टिंग्स",
+      "क्लाइव",
+      "डलहौजी"
+    ],
+    "answer": "लॉर्ड कॉर्नवालिस",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60063,
+    "question": "रैयतवारी प्रणाली किसने लागू की?",
+    "options": [
+      "थॉमस मुनरो",
+      "मैल्कम",
+      "कॉर्नवालिस",
+      "डलहौजी"
+    ],
+    "answer": "थॉमस मुनरो",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60064,
+    "question": "महलवारी प्रणाली कहाँ लागू हुई?",
+    "options": [
+      "उत्तर भारत",
+      "बंगाल",
+      "मद्रास",
+      "बॉम्बे"
+    ],
+    "answer": "उत्तर भारत",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60065,
+    "question": "सती प्रथा का उन्मूलन किसने किया?",
+    "options": [
+      "लॉर्ड विलियम बैंटिक",
+      "डलहौजी",
+      "कॉर्नवालिस",
+      "हैस्टिंग्स"
+    ],
+    "answer": "लॉर्ड विलियम बैंटिक",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60066,
+    "question": "विद्या सागर ने किस आंदोलन में योगदान दिया?",
+    "options": [
+      "विधवा पुनर्विवाह",
+      "सती विरोध",
+      "शिक्षा सुधार",
+      "सामाजिक सुधार"
+    ],
+    "answer": "विधवा पुनर्विवाह",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60067,
+    "question": "1857 के विद्रोह का तात्कालिक कारण क्या था?",
+    "options": [
+      "कारतूस विवाद",
+      "कर नीति",
+      "जजीया",
+      "भूमि राजस्व"
+    ],
+    "answer": "कारतूस विवाद",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60068,
+    "question": "1857 के विद्रोह का नेतृत्व दिल्ली में किसने किया?",
+    "options": [
+      "बहादुर शाह जफर",
+      "लक्ष्मीबाई",
+      "तांत्या टोपे",
+      "कुंवर सिंह"
+    ],
+    "answer": "बहादुर शाह जफर",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60069,
+    "question": "1857 के विद्रोह में झांसी में किसने नेतृत्व किया?",
+    "options": [
+      "रानी लक्ष्मीबाई",
+      "तांत्या टोपे",
+      "कुंवर सिंह",
+      "नाना साहब"
+    ],
+    "answer": "रानी लक्ष्मीबाई",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60070,
+    "question": "1857 के विद्रोह के बाद कौन सा एक्ट आया?",
+    "options": [
+      "इंडिया एक्ट 1858",
+      "चार्टर एक्ट 1833",
+      "रेगुलेटिंग एक्ट 1773",
+      "पिट्स एक्ट 1784"
+    ],
+    "answer": "इंडिया एक्ट 1858",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60071,
+    "question": "भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई?",
+    "options": [
+      "1885",
+      "1886",
+      "1884",
+      "1890"
+    ],
+    "answer": "1885",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60072,
+    "question": "कांग्रेस का पहला अधिवेशन कहाँ हुआ?",
+    "options": [
+      "बॉम्बे",
+      "कलकत्ता",
+      "अलाहाबाद",
+      "लखनऊ"
+    ],
+    "answer": "बॉम्बे",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60073,
+    "question": "कांग्रेस का पहला अध्यक्ष कौन था?",
+    "options": [
+      "W.C. बनर्जी",
+      "दादाभाई नौरोजी",
+      "गोपाल कृष्ण गोखले",
+      "लाला लाजपत राय"
+    ],
+    "answer": "W.C. बनर्जी",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60075,
+    "question": "स्वदेशी आंदोलन कब शुरू हुआ?",
+    "options": [
+      "1905",
+      "1906",
+      "1907",
+      "1908"
+    ],
+    "answer": "1905",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60076,
+    "question": "बंग-भंग किसने किया?",
+    "options": [
+      "लॉर्ड कर्जन",
+      "डलहौजी",
+      "कॉर्नवालिस",
+      "हैस्टिंग्स"
+    ],
+    "answer": "लॉर्ड कर्जन",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60078,
+    "question": "होम रूल आंदोलन किसने शुरू किया?",
+    "options": [
+      "बाल गंगाधर तिलक",
+      "एनी बेसेंट",
+      "गोखले",
+      "लाजपत राय"
+    ],
+    "answer": "बाल गंगाधर तिलक",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60079,
+    "question": "एनी बेसेंट का संबंध किस आंदोलन से है?",
+    "options": [
+      "होम रूल",
+      "खिलाफत",
+      "सत्याग्रह",
+      "स्वदेशी"
+    ],
+    "answer": "होम रूल",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60080,
+    "question": "रॉलेट एक्ट कब आया?",
+    "options": [
+      "1919",
+      "1918",
+      "1920",
+      "1921"
+    ],
+    "answer": "1919",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60081,
+    "question": "जलियांवाला बाग हत्याकांड कब हुआ?",
+    "options": [
+      "1919",
+      "1920",
+      "1918",
+      "1921"
+    ],
+    "answer": "1919",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60082,
+    "question": "असहयोग आंदोलन कब शुरू हुआ?",
+    "options": [
+      "1920",
+      "1919",
+      "1921",
+      "1922"
+    ],
+    "answer": "1920",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60083,
+    "question": "खिलाफत आंदोलन किसने चलाया?",
+    "options": [
+      "अली बंधु",
+      "गांधी",
+      "नेहरू",
+      "पटेल"
+    ],
+    "answer": "अली बंधु",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60084,
+    "question": "सविनय अवज्ञा आंदोलन कब शुरू हुआ?",
+    "options": [
+      "1930",
+      "1929",
+      "1931",
+      "1932"
+    ],
+    "answer": "1930",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60085,
+    "question": "नमक सत्याग्रह कहाँ से शुरू हुआ?",
+    "options": [
+      "साबरमती",
+      "येरवदा",
+      "दांडी",
+      "चम्पारण"
+    ],
+    "answer": "साबरमती",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60086,
+    "question": "दांडी यात्रा कब हुई?",
+    "options": [
+      "1930",
+      "1929",
+      "1931",
+      "1932"
+    ],
+    "answer": "1930",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60087,
+    "question": "भारत छोड़ो आंदोलन कब हुआ?",
+    "options": [
+      "1942",
+      "1940",
+      "1939",
+      "1941"
+    ],
+    "answer": "1942",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60088,
+    "question": "आजाद हिंद फौज किसने बनाई?",
+    "options": [
+      "सुभाष चंद्र बोस",
+      "भगत सिंह",
+      "चंद्रशेखर आजाद",
+      "सरदार पटेल"
+    ],
+    "answer": "सुभाष चंद्र बोस",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60089,
+    "question": "लाल-बाल-पाल में 'बाल' कौन हैं?",
+    "options": [
+      "बाल गंगाधर तिलक",
+      "लाला लाजपत राय",
+      "बिपिन चंद्र पाल",
+      "गोखले"
+    ],
+    "answer": "बाल गंगाधर तिलक",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60090,
+    "question": "साइमन कमीशन कब आया?",
+    "options": [
+      "1928",
+      "1927",
+      "1929",
+      "1930"
+    ],
+    "answer": "1928",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60094,
+    "question": "कैबिनेट मिशन कब आया?",
+    "options": [
+      "1946",
+      "1945",
+      "1947",
+      "1944"
+    ],
+    "answer": "1946",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60095,
+    "question": "माउंटबेटन योजना कब आई?",
+    "options": [
+      "1947",
+      "1946",
+      "1945",
+      "1944"
+    ],
+    "answer": "1947",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60096,
+    "question": "भारत का स्वतंत्रता दिवस कब है?",
+    "options": [
+      "15 अगस्त 1947",
+      "26 जनवरी 1950",
+      "2 अक्टूबर 1947",
+      "14 अगस्त 1947"
+    ],
+    "answer": "15 अगस्त 1947",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60097,
+    "question": "भारतीय संविधान कब लागू हुआ?",
+    "options": [
+      "26 जनवरी 1950",
+      "26 नवंबर 1949",
+      "15 अगस्त 1947",
+      "1 जनवरी 1950"
+    ],
+    "answer": "26 जनवरी 1950",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60099,
+    "question": "संविधान सभा के स्थायी अध्यक्ष कौन थे?",
+    "options": [
+      "डॉ. राजेंद्र प्रसाद",
+      "सचिदानंद सिन्हा",
+      "नेहरू",
+      "पटेल"
+    ],
+    "answer": "डॉ. राजेंद्र प्रसाद",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60101,
+    "question": "भारतीय राष्ट्रीय कांग्रेस के उग्रवादी नेता कौन थे?",
+    "options": [
+      "लाल-बाल-पाल",
+      "गोखले",
+      "नौरोजी",
+      "तिलक-गोखले"
+    ],
+    "answer": "लाल-बाल-पाल",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60103,
+    "question": "चंपारण सत्याग्रह कब हुआ?",
+    "options": [
+      "1917",
+      "1915",
+      "1919",
+      "1920"
+    ],
+    "answer": "1917",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60104,
+    "question": "खिलाफत आंदोलन के प्रमुख नेता कौन थे?",
+    "options": [
+      "अली बंधु",
+      "गांधी",
+      "नेहरू",
+      "पटेल"
+    ],
+    "answer": "अली बंधु",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60105,
+    "question": "भूसुधार के लिए प्रसिद्ध नेता कौन थे?",
+    "options": [
+      "जवाहरलाल नेहरू",
+      "राम मनोहर लोहिया",
+      "जयप्रकाश नारायण",
+      "विनोबा भावे"
+    ],
+    "answer": "विनोबा भावे",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60106,
+    "question": "‘सुवर्ण नियम’ किसने कहा—सत्य और अहिंसा?",
+    "options": [
+      "गांधी",
+      "नेहरू",
+      "पटेल",
+      "तिलक"
+    ],
+    "answer": "गांधी",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60107,
+    "question": "‘स्वराज मेरा जन्मसिद्ध अधिकार है’ किसने कहा?",
+    "options": [
+      "बाल गंगाधर तिलक",
+      "लाला लाजपत राय",
+      "बिपिन चंद्र पाल",
+      "गोखले"
+    ],
+    "answer": "बाल गंगाधर तिलक",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60109,
+    "question": "‘अमर सोनार बांग्ला’ किसका गीत है?",
+    "options": [
+      "रवींद्रनाथ टैगोर",
+      "बंकिमचंद्र",
+      "सुभाष बोस",
+      "नजरुल"
+    ],
+    "answer": "रवींद्रनाथ टैगोर",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60110,
+    "question": "‘वंदे मातरम्’ किस उपन्यास से लिया गया है?",
+    "options": [
+      "आनंदमठ",
+      "गोदान",
+      "गीतांजलि",
+      "गबन"
+    ],
+    "answer": "आनंदमठ",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60111,
+    "question": "भाभा परमाणु अनुसंधान केंद्र किसके नाम पर है?",
+    "options": [
+      "होमी जहांगीर भाभा",
+      "विक्रम साराभाई",
+      "सत्येन्द्र बोस",
+      "मेघनाद साहा"
+    ],
+    "answer": "होमी जहांगीर भाभा",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60112,
+    "question": "‘ड्रेन ऑफ वेल्थ’ सिद्धांत किसने दिया?",
+    "options": [
+      "दादाभाई नौरोजी",
+      "गोखले",
+      "तिलक",
+      "लाजपत राय"
+    ],
+    "answer": "दादाभाई नौरोजी",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60114,
+    "question": "बारडोली सत्याग्रह का नेतृत्व किसने किया?",
+    "options": [
+      "वल्लभभाई पटेल",
+      "गांधी",
+      "नेहरू",
+      "तिलक"
+    ],
+    "answer": "वल्लभभाई पटेल",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60115,
+    "question": "साइमन कमीशन का नारा क्या था?",
+    "options": [
+      "Simon Go Back",
+      "Quit India",
+      "Boycott British",
+      "No Tax"
+    ],
+    "answer": "Simon Go Back",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60116,
+    "question": "भगत सिंह ने किसे गोली मारी?",
+    "options": [
+      "सांडर्स",
+      "डायर",
+      "कर्जन",
+      "लैमोंट"
+    ],
+    "answer": "सांडर्स",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60117,
+    "question": "काकोरी कांड किस वर्ष में हुआ?",
+    "options": [
+      "1925",
+      "1924",
+      "1926",
+      "1927"
+    ],
+    "answer": "1925",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60121,
+    "question": "फॉरवर्ड ब्लॉक किसने बनाया?",
+    "options": [
+      "सुभाष चंद्र बोस",
+      "नेहरू",
+      "पटेल",
+      "गांधी"
+    ],
+    "answer": "सुभाष चंद्र बोस",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60123,
+    "question": "कांग्रेस सोशलिस्ट पार्टी के नेता कौन थे?",
+    "options": [
+      "जयप्रकाश नारायण",
+      "लोहिया",
+      "नेहरू",
+      "पटेल"
+    ],
+    "answer": "जयप्रकाश नारायण",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60125,
+    "question": "‘Do or Die’ किस आंदोलन का नारा था?",
+    "options": [
+      "भारत छोड़ो",
+      "असहयोग",
+      "सविनय अवज्ञा",
+      "स्वदेशी"
+    ],
+    "answer": "भारत छोड़ो",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60130,
+    "question": "गांधी-इरविन समझौता कब हुआ?",
+    "options": [
+      "1931",
+      "1930",
+      "1932",
+      "1929"
+    ],
+    "answer": "1931",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60133,
+    "question": "‘डिस्कवरी ऑफ इंडिया’ किसने लिखी?",
+    "options": [
+      "जवाहरलाल नेहरू",
+      "गांधी",
+      "पटेल",
+      "तिलक"
+    ],
+    "answer": "जवाहरलाल नेहरू",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60134,
+    "question": "'Hind Swaraj' किसने लिखा?",
+    "options": [
+      "गांधी",
+      "नेहरू",
+      "तिलक",
+      "लोहिया"
+    ],
+    "answer": "गांधी",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60135,
+    "question": "‘गीतांजलि’ किसने लिखी?",
+    "options": [
+      "रवींद्रनाथ टैगोर",
+      "बंकिमचंद्र",
+      "नजरुल",
+      "सरोजिनी नायडू"
+    ],
+    "answer": "रवींद्रनाथ टैगोर",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60138,
+    "question": "शाहजहां का शासनकाल किस कला के लिए प्रसिद्ध है?",
+    "options": [
+      "स्थापत्य कला",
+      "चित्रकला",
+      "संगीत",
+      "नृत्य"
+    ],
+    "answer": "स्थापत्य कला",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60140,
+    "question": "‘फतेहपुर सीकरी’ किसने बसाया?",
+    "options": [
+      "अकबर",
+      "जहांगीर",
+      "शाहजहां",
+      "औरंगज़ेब"
+    ],
+    "answer": "अकबर",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60142,
+    "question": "इब्राहिम लोदी को किसने पराजित किया?",
+    "options": [
+      "बाबर",
+      "तातार खान",
+      "शेरशाह",
+      "अकबर"
+    ],
+    "answer": "बाबर",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60143,
+    "question": "पानीपत का प्रथम युद्ध कब हुआ?",
+    "options": [
+      "1526",
+      "1556",
+      "1761",
+      "1707"
+    ],
+    "answer": "1526",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60144,
+    "question": "पानीपत का द्वितीय युद्ध किसके बीच हुआ?",
+    "options": [
+      "अकबर और हेमू",
+      "बाबर और इब्राहिम",
+      "मराठा और अहमद शाह",
+      "नादिर शाह और मुगल"
+    ],
+    "answer": "अकबर और हेमू",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60145,
+    "question": "पानीपत का तृतीय युद्ध कब हुआ?",
+    "options": [
+      "1761",
+      "1757",
+      "1764",
+      "1781"
+    ],
+    "answer": "1761",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60148,
+    "question": "‘राजतरंगिणी’ किसने लिखी?",
+    "options": [
+      "कल्हण",
+      "बाणभट्ट",
+      "कालिदास",
+      "भास"
+    ],
+    "answer": "कल्हण",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60150,
+    "question": "‘गीत गोविंद’ किसने लिखा?",
+    "options": [
+      "जयदेव",
+      "कालिदास",
+      "भास",
+      "रवींद्र"
+    ],
+    "answer": "जयदेव",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60151,
+    "question": "‘अकबरनामा’ किसने लिखा?",
+    "options": [
+      "अबुल-फज़ल",
+      "बादायूनी",
+      "फिरिश्ता",
+      "याकूबी"
+    ],
+    "answer": "अबुल-फज़ल",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60153,
+    "question": "‘हुमायूँनामा’ किसने लिखा?",
+    "options": [
+      "गुलबदन बेगम",
+      "जहांगीर",
+      "अबुल-फज़ल",
+      "बादायूनी"
+    ],
+    "answer": "गुलबदन बेगम",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60154,
+    "question": "भारत के पहले प्रधानमंत्री कौन थे?",
+    "options": [
+      "जवाहरलाल नेहरू",
+      "लाल बहादुर शास्त्री",
+      "इंदिरा गांधी",
+      "राजीव गांधी"
+    ],
+    "answer": "जवाहरलाल नेहरू",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60156,
+    "question": "भारत के पहले उपराष्ट्रपति कौन थे?",
+    "options": [
+      "डॉ. सर्वपल्ली राधाकृष्णन",
+      "डॉ. जाकिर हुसैन",
+      "गुलजारीलाल नंदा",
+      "मोरारजी देसाई"
+    ],
+    "answer": "डॉ. सर्वपल्ली राधाकृष्णन",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60157,
+    "question": "हरित क्रांति किसके नाम से जुड़ी है?",
+    "options": [
+      "एम.एस. स्वामीनाथन",
+      "विक्रम साराभाई",
+      "होमी भाभा",
+      "विनोबा भावे"
+    ],
+    "answer": "एम.एस. स्वामीनाथन",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60158,
+    "question": "श्वेत क्रांति किससे संबंधित है?",
+    "options": [
+      "दुग्ध उत्पादन",
+      "अनाज उत्पादन",
+      "तेल उत्पादन",
+      "कपास उत्पादन"
+    ],
+    "answer": "दुग्ध उत्पादन",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60159,
+    "question": "भारत में पंचवर्षीय योजना किस वर्ष शुरू हुई?",
+    "options": [
+      "1951",
+      "1950",
+      "1952",
+      "1949"
+    ],
+    "answer": "1951",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60160,
+    "question": "अंतरिक्ष कार्यक्रम के जनक कौन हैं?",
+    "options": [
+      "विक्रम साराभाई",
+      "होमी भाभा",
+      "ए.पी.जे. अब्दुल कलाम",
+      "मेघनाद साहा"
+    ],
+    "answer": "विक्रम साराभाई",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60161,
+    "question": "भारत का पहला उपग्रह आर्यभट कब प्रक्षेपित हुआ?",
+    "options": [
+      "1975",
+      "1971",
+      "1980",
+      "1977"
+    ],
+    "answer": "1975",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60162,
+    "question": "1971 का युद्ध किसके बीच हुआ?",
+    "options": [
+      "भारत-पाकिस्तान",
+      "भारत-चीन",
+      "भारत-श्रीलंका",
+      "भारत-नेपाल"
+    ],
+    "answer": "भारत-पाकिस्तान",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60163,
+    "question": "1962 का युद्ध किसके बीच हुआ?",
+    "options": [
+      "भारत-चीन",
+      "भारत-पाकिस्तान",
+      "भारत-श्रीलंका",
+      "भारत-नेपाल"
+    ],
+    "answer": "भारत-चीन",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60164,
+    "question": "1965 का युद्ध किसके बीच हुआ?",
+    "options": [
+      "भारत-पाकिस्तान",
+      "भारत-चीन",
+      "भारत-श्रीलंका",
+      "भारत-नेपाल"
+    ],
+    "answer": "भारत-पाकिस्तान",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60165,
+    "question": "कारगिल युद्ध कब हुआ?",
+    "options": [
+      "1999",
+      "1998",
+      "2000",
+      "2001"
+    ],
+    "answer": "1999",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60166,
+    "question": "भारत में आपातकाल कब लगाया गया था?",
+    "options": [
+      "1975-77",
+      "1971-73",
+      "1965-66",
+      "1984-85"
+    ],
+    "answer": "1975-77",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60167,
+    "question": "‘जय जवान जय किसान’ का नारा किसने दिया?",
+    "options": [
+      "लाल बहादुर शास्त्री",
+      "नेहरू",
+      "इंदिरा गांधी",
+      "राजीव गांधी"
+    ],
+    "answer": "लाल बहादुर शास्त्री",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60168,
+    "question": "हरित क्रांति का मुख्य उद्देश्य क्या था?",
+    "options": [
+      "अनाज उत्पादन बढ़ाना",
+      "तेल उत्पादन",
+      "दुग्ध उत्पादन",
+      "कपास उत्पादन"
+    ],
+    "answer": "अनाज उत्पादन बढ़ाना",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60170,
+    "question": "ब्लू रिवोल्यूशन किससे संबंधित है?",
+    "options": [
+      "मत्स्य उत्पादन",
+      "तेल उत्पादन",
+      "अनाज उत्पादन",
+      "दुग्ध उत्पादन"
+    ],
+    "answer": "मत्स्य उत्पादन",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60172,
+    "question": "भारत का पहला परमाणु परीक्षण कब हुआ?",
+    "options": [
+      "1974",
+      "1971",
+      "1975",
+      "1998"
+    ],
+    "answer": "1974",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  },
+  {
+    "id": 60173,
+    "question": "भारत के दूसरे परमाणु परीक्षण (Pokhran-II) कब हुए?",
+    "options": [
+      "1998",
+      "1999",
+      "1995",
+      "2001"
+    ],
+    "answer": "1998",
+    "category": "history",
+    "level": "easy",
+    "language": "hi"
+  },
+  {
+    "id": 60174,
+    "question": "प्रथम आम चुनाव कब हुए?",
+    "options": [
+      "1951-52",
+      "1950-51",
+      "1952-53",
+      "1949-50"
+    ],
+    "answer": "1951-52",
+    "category": "history",
+    "level": "medium",
+    "language": "hi"
+  }
+]

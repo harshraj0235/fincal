@@ -1,0 +1,31 @@
+// datasource and generator can be added when backend environment is available
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+// }
+// generator client {
+//   provider = "prisma-client-js"
+// }
+
+model Scheme {
+  id               String            @id @default(cuid())
+  name             String
+  slug             String            @unique
+  briefBenefit     String
+  officialUrl      String
+  category         String
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  eligibilityRules EligibilityRule[]
+}
+
+model EligibilityRule {
+  id          String  @id @default(cuid())
+  schemeId    String
+  scheme      Scheme  @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+  key         String
+  op          String  // 'eq' | 'gte' | 'lte' | 'in' | 'bool'
+  valueJson   Json
+  weight      Int
+  description String
+}

@@ -1,0 +1,74 @@
+# MoneyCal.in
+
+> India's most comprehensive financial calculator platform. Free online financial planning tools for EMI, SIP, Tax, Mutual Funds, and more.
+
+## About
+
+MoneyCal.in is a free financial calculator and tools platform built for Indian users. We provide accurate, easy-to-use calculators for personal finance planning, investment analysis, tax computation, and loan management. All tools are free, require no login, and work entirely in your browser.
+
+## Main Sections
+
+- [Home](https://moneycal.in/)
+- [All Calculators](https://moneycal.in/calculators/)
+- [Loan Tools](https://moneycal.in/loan-tools/)
+- [Finance Tools](https://moneycal.in/finance-tools/)
+- [Tax Tools](https://moneycal.in/tax-tools/)
+- [Insurance Tools](https://moneycal.in/insurance-tools/)
+- [Gold Tools](https://moneycal.in/gold-tools/)
+- [Bank Tools](https://moneycal.in/bank-tools/)
+- [GST Tools](https://moneycal.in/tools/gst-calculator/)
+- [Crypto](https://moneycal.in/crypto/)
+- [IPO Dashboard](https://moneycal.in/ipo/)
+- [Stock Market](https://moneycal.in/stock-market/)
+
+## Popular Calculators
+
+- [EMI Calculator](https://moneycal.in/calculators/emi-calculator/)
+- [SIP Calculator](https://moneycal.in/calculators/sip-calculator/)
+- [Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator/)
+- [FD Calculator](https://moneycal.in/calculators/fd-calculator/)
+- [PPF Calculator](https://moneycal.in/calculators/ppf-calculator/)
+- [CAGR Calculator](https://moneycal.in/calculators/cagr-calculator/)
+- [Mutual Fund Calculator](https://moneycal.in/calculators/mutual-fund-calculator/)
+- [Home Loan EMI Calculator](https://moneycal.in/calculators/home-loan-emi-calculator/)
+- [Car Loan EMI Calculator](https://moneycal.in/calculators/car-loan-emi-calculator/)
+- [Retirement Calculator](https://moneycal.in/calculators/retirement-calculator/)
+- [NPS Calculator](https://moneycal.in/calculators/nps-calculator/)
+- [HRA Calculator](https://moneycal.in/calculators/hra-calculator/)
+- [Gratuity Calculator](https://moneycal.in/calculators/gratuity-calculator/)
+- [ROI Calculator](https://moneycal.in/calculators/roi-calculator/)
+
+## Content & Learning
+
+- [Blog & Guides](https://moneycal.in/blog/)
+- [Learn Finance](https://moneycal.in/learn/)
+- [Discover (Trending News)](https://moneycal.in/discover/)
+- [Government Schemes](https://moneycal.in/government-schemes/)
+- [Financial Education](https://moneycal.in/financial-education/)
+- [Web Stories](https://moneycal.in/web-stories/)
+
+## Legal & Company
+
+- [About Us](https://moneycal.in/about-us/)
+- [Contact Us](https://moneycal.in/contact-us/)
+- [Privacy Policy](https://moneycal.in/privacy-policy/)
+- [Terms of Service](https://moneycal.in/terms-of-service/)
+- [Disclaimer](https://moneycal.in/disclaimer/)
+- [Cookie Policy](https://moneycal.in/cookie-policy/)
+- [Editorial Policy](https://moneycal.in/editorial-policy/)
+
+## Sitemaps
+
+- [Main Sitemap](https://moneycal.in/sitemap.xml)
+- [News Sitemap](https://moneycal.in/sitemap-news.xml)
+- [Discover Sitemap](https://moneycal.in/sitemap-discover.xml)
+- [Blog Sitemap](https://moneycal.in/sitemap-blog.xml)
+- [Calculator Sitemap](https://moneycal.in/sitemap-calculators.xml)
+
+## Technical
+
+- All calculators use standard financial formulas as per RBI and Income Tax Act guidelines
+- Content available in English (en-IN)
+- No login or registration required
+- All calculations happen client-side for privacy
+- Mobile-responsive and PWA-enabled
