@@ -1,3 +1,8 @@
+import { incomeTaxReturnItrFilingLastDateAlert } from './income-tax-return-itr-filing-last-date-alert';
+import { tataAdvancedSystemsNewOrderStockSurge } from './tata-advanced-systems-new-order-stock-surge';
+import { indianRailwaysNewTicketBookingRules } from './indian-railways-new-ticket-booking-rules';
+import { goldSilverPricesToday } from './gold-silver-prices-today';
+import { kusumgarIpoGmp } from './kusumgar-ipo-gmp';
 import { epfoFy26InterestPayoutMechanism } from './epfo-fy26-interest-payout-mechanism';
 import { voluntaryEpfContributionLimitSalaryHike } from './voluntary-epf-contribution-limit-salary-hike';
 import { marketCrashIndiaVixSpike2026 } from './market-crash-india-vix-spike-2026';
@@ -489,6 +494,11 @@ import { indoreLocoPilotStopsTrainForSamosaVideo } from './indore-loco-pilot-sto
 
 // ADD NEW DISCOVER ARTICLES HERE
 const _discoverArticles: DiscoverArticle[] = [
+    incomeTaxReturnItrFilingLastDateAlert,
+    tataAdvancedSystemsNewOrderStockSurge,
+    indianRailwaysNewTicketBookingRules,
+    goldSilverPricesToday,
+    kusumgarIpoGmp,
     epfoFy26InterestPayoutMechanism,
     voluntaryEpfContributionLimitSalaryHike,
     marketCrashIndiaVixSpike2026,
