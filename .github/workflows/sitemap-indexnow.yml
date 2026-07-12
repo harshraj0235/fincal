@@ -27,8 +27,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install dependencies
+        run: npm ci || npm install
+
       - name: Generate sitemap and IndexNow JSON
-        run: node generate-comprehensive-sitemap.cjs
+        run: npm run generate-sitemaps
 
       - name: Auto-commit sitemap and IndexNow
         uses: stefanzweifel/git-auto-commit-action@v5

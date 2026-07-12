@@ -33,8 +33,10 @@ jobs:
       
       - name: Generate and Verify Sitemaps
         run: |
+          echo "🚀 Installing dependencies..."
+          npm ci || npm install
           echo "🚀 Generating sitemaps..."
-          node scripts/generate-sitemaps-production.cjs
+          npm run generate-sitemaps
           echo "✅ Sitemaps generated successfully!"
           echo "📊 Verifying sitemap files..."
           ls -la public/sitemap*.xml
