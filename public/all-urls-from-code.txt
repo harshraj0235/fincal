@@ -145,6 +145,7 @@ https://moneycal.in/festival-tools/vrat-upavas-calendar
 https://moneycal.in/festival-tools/weekly-tithi-finder
 https://moneycal.in/finance-blog
 https://moneycal.in/finance-categories
+https://moneycal.in/finance-gpt
 https://moneycal.in/finance-tools
 https://moneycal.in/finance-tools/asset-allocation-tool
 https://moneycal.in/finance-tools/dividend-tracker

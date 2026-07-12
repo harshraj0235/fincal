@@ -384,6 +384,7 @@ const ReligiousTraditionalTools = lazy(() => import('./pages/ReligiousTraditiona
 const PujaVidhiGenerator = lazy(() => import('./pages/religious/PujaVidhiGenerator'));
 const FunEngagementTools = lazy(() => import('./pages/FunEngagementTools'));
 const Discover = lazy(() => import('./pages/Discover'));
+const FinanceGPT = lazy(() => import('./pages/FinanceGPT'));
 
 // Learn Platform - Loan Basics (20 lessons)
 const LearnHome = lazy(() => import('./pages/learn/index'));
@@ -978,6 +979,10 @@ function App() {
           <Route path="/gk/:categorySlug/:topicSlug" element={<Layout><MoneycalGK /></Layout>} />
           <Route path="/gk/:topicSlug" element={<Layout><MoneycalGK /></Layout>} />
           
+          {/* Finance GPT — AI Research Chat */}
+          <Route path="/finance-gpt" element={<Suspense fallback={skeletonFallback}><FinanceGPT /></Suspense>} />
+          <Route path="/ask" element={<Navigate to="/finance-gpt" replace />} />
+
           {/* Google Discover Hub */}
           <Route path="/discover" element={<Layout><Discover /></Layout>} />
           
@@ -997,7 +1002,7 @@ function App() {
               <ScrollToTop />
               <Suspense fallback={skeletonFallback}>
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<FinanceGPT />} />
                   <Route path="/home-old" element={<HomeOld />} />
                   <Route path="/embed/:calculatorId" element={<EmbedPage />} />
                   <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />

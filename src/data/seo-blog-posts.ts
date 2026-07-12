@@ -755,7 +755,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Real Estate', 'Property Investment', 'REITs', 'Commercial Real Estate'],
     keywords: ['real estate investment', 'property investment india', 'reits investment', 'commercial real estate', 'residential property', 'real estate portfolio', 'property valuation', 'real estate trends'],
     date: '2025-01-10',
-    lastModified: '2026-07-01',
+    lastModified: '2026-07-12',
     coverImage: '/images/blogs/real-estate-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Real Estate Investment Guide India 2025: Complete Strategy' },

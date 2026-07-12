@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<!-- MoneyCal OTHER - 1666 URLs - 2026-07-12 -->
+<!-- MoneyCal OTHER - 1668 URLs - 2026-07-12 -->
   <url>
     <loc>https://moneycal.in</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in" />
@@ -11733,6 +11733,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/finance-categories" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/finance-categories" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/finance-categories" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/finance-gpt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/finance-gpt" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/finance-gpt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/finance-gpt" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/finance-gpt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/finance-gpt" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/finance-gpt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/finance-gpt" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

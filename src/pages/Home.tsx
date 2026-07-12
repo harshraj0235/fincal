@@ -13,6 +13,8 @@ import { resourcesList, toolsList } from '../data/homeSearchData';
 import { streamGeminiResponse, ContentItem, SourceLink, CoreChatMessage } from '../lib/llmEngine';
 import StockWidget from '../components/StockWidget';
 import ChartWidget from '../components/ChartWidget';
+import SourceCards from '../components/SourceCards';
+import ThinkingPanel from '../components/ThinkingPanel';
 
 type ChatMessage = {
   id: string;
@@ -585,23 +587,34 @@ export const Home: React.FC = () => {
                               </div>
                             )}
 
-                            {/* Source Citations */}
+                            {/* Source Citations — Perplexity-style cards with favicons */}
                             {!msg.isStreaming && msg.sources && msg.sources.length > 0 && (
                               <div className="mt-4 pt-3 border-t border-gray-100">
                                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 flex items-center gap-1">
                                   <Globe2 className="w-3 h-3" /> Sources
                                 </p>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none' }}>
                                   {msg.sources.map((src, si) => (
                                     <a
                                       key={si}
                                       href={src.url}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-lg text-[11px] text-gray-500 hover:text-blue-600 transition-all"
+                                      className="flex items-center gap-2 px-3 py-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl text-xs transition-all shadow-sm hover:shadow flex-shrink-0 relative group"
                                     >
-                                      <LinkIcon className="w-3 h-3" />
-                                      <span className="font-medium">{src.domain}</span>
+                                      <img
+                                        src={`https://www.google.com/s2/favicons?domain=${src.domain}&sz=32`}
+                                        alt=""
+                                        width={16}
+                                        height={16}
+                                        className="rounded-sm"
+                                        loading="lazy"
+                                      />
+                                      <div className="flex flex-col min-w-0">
+                                        <span className="font-semibold text-gray-700 truncate max-w-[120px]">{src.title}</span>
+                                        <span className="text-[10px] text-gray-400">{src.domain}</span>
+                                      </div>
+                                      <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-blue-600 text-white text-[9px] font-bold flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">{si + 1}</span>
                                     </a>
                                   ))}
                                 </div>
@@ -635,19 +648,42 @@ export const Home: React.FC = () => {
                     </div>
                   ))}
 
-                  {/* Thinking state */}
+                  {/* Thinking state — Enhanced with multi-step animated panel */}
                   {thinkingState !== null && (
                     <div className="flex items-start gap-3 sm:gap-4">
                       <div className="bg-gradient-to-br from-blue-600 to-teal-500 text-white p-2.5 rounded-xl shadow-md shadow-blue-500/20 mt-0.5 shrink-0">
                         <IndianRupee className="w-4 h-4" />
                       </div>
-                      <div className="flex items-center gap-3 py-3">
-                        <div className="flex gap-1.5">
-                          <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                          <span className="w-2 h-2 bg-teal-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                          <span className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      <div className="flex-1 bg-gradient-to-r from-blue-50/50 to-teal-50/50 border border-blue-100 rounded-2xl px-4 py-3">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="flex gap-1">
+                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                            <span className="w-1.5 h-1.5 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                          </div>
+                          <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Researching</span>
                         </div>
-                        <span className="text-xs text-gray-400 ml-1">{thinkingState}</span>
+                        <div className="space-y-1.5">
+                          {[
+                            { label: '🔍 MoneyCal knowledge base search कर रहा हूँ...', key: 'knowledge' },
+                            { label: '🌐 Live Web Search कर रहा हूँ...', key: 'web' },
+                            { label: '🧠 आपके सवाल को analyze कर रहा हूँ...', key: 'analyze' },
+                            { label: '✍️ जवाब लिख रहा हूँ...', key: 'write' },
+                          ].map((step) => {
+                            const isActive = thinkingState?.includes(step.label.slice(2, 8));
+                            const isDone = thinkingState ? thinkingState.localeCompare(step.label) > 0 : false;
+                            return (
+                              <div key={step.key} className={`flex items-center gap-2 text-xs transition-all duration-300 ${
+                                isActive ? 'text-blue-700 font-medium' : isDone ? 'text-green-600' : 'text-gray-400'
+                              }`}>
+                                <span className="w-4 text-center">
+                                  {isDone ? '✅' : isActive ? '⏳' : '⬜'}
+                                </span>
+                                <span>{step.label}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   )}
