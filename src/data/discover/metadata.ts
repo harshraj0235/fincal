@@ -3250,6 +3250,96 @@ export const discoverMetadata = [
         "date": "2026-07-03T12:00:00+05:30"
     },
     {
+        "id": "epfo-migration-glitches-database-transfer",
+        "slug": "epfo-migration-glitches-database-transfer",
+        "title": "EPFO का नया सिस्टम शुरू: ट्रांसफर के चक्कर में कहीं अटक न जाए आपका पैसा, तुरंत चेक करें ये 3 सेटिंग्स",
+        "snippet": "EPFO ने सेंट्रलाइज्ड डेटाबेस माइग्रेशन शुरू कर दिया है। जानिए इस नए सिस्टम के फायदे, तकनीकी खामियां और कैसे बचाएं अपना फंसा हुआ PF का पैसा। पूरी सच्चाई।",
+        "coverImage": "/images/discover/epfo-higher-pension-latest-update-deadline.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "sabrina-pasterski-next-einstein-physics-genius",
+        "slug": "sabrina-pasterski-next-einstein-physics-genius",
+        "title": "\"अगला अल्बर्ट आइंस्टीन\": 14 साल की उम्र में जिसने खुद का हवाई जहाज बनाया, जानें कौन हैं सबरीना पास्टर्सकी",
+        "snippet": "दुनिया जिसे \"अगला अल्बर्ट आइंस्टीन\" कह रही है, उस सबरीना पास्टर्सकी (Sabrina Pasterski) की कहानी जो 14 साल की उम्र में हवाई जहाज बनाकर उड़ चुकी थीं। एक प्रेरणादायक सफर।",
+        "coverImage": "/images/discover/cbse-board-exams-2026-pattern-change.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "bcci-india-squad-jemimah-rodrigues-inside-story",
+        "slug": "bcci-india-squad-jemimah-rodrigues-inside-story",
+        "title": "BCCI का अचानक बड़ा फैसला: स्क्वाड में रातों-रात बदलाव के पीछे की वो इनसाइड स्टोरी जो किसी को नहीं पता",
+        "snippet": "BCCI ने भारतीय महिला क्रिकेट टीम के स्क्वाड में अचानक बदलाव कर सबको चौंका दिया है। जेमिमा रोड्रिग्स को लेकर हुए इस फैसले की असली वजह और पूरी इनसाइड स्टोरी जानिए।",
+        "coverImage": "/images/discover/t20-rule-change-icc-new-update-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "pixel-11-pro-hidden-features-leaked-price",
+        "slug": "pixel-11-pro-hidden-features-leaked-price",
+        "title": "Pixel 11 Pro का ये एक सीक्रेट फीचर iPhone को कर देगा फेल, लॉन्च से पहले लीक हुई असली कीमत",
+        "snippet": "Google Pixel 11 Pro के लॉन्च से पहले इसके खुफिया फीचर्स और कीमत लीक हो गई है। जानिए इसका वह सीक्रेट कैमरा और AI फीचर जो आईफोन (iPhone) के भी पसीने छुड़ा देगा।",
+        "coverImage": "/images/discover/smartphone-battery-health-app-accubattery.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "indian-army-agniveer-hidden-benefits-fighter-jets",
+        "slug": "indian-army-agniveer-hidden-benefits-fighter-jets",
+        "title": "Indian Army में भर्ती होने वालों को अब मिलेंगे ये नए हिडन भत्ते, लड़ाकू विमानों की सुरक्षा यूनिट में शामिल होने का मौका",
+        "snippet": "अग्निवीर योजना (Agniveer Scheme) के तहत भर्ती होने वाले युवाओं के लिए रक्षा मंत्रालय ने नए हिडन भत्ते और टेक्निकल ट्रेनिंग के दरवाजे खोल दिए हैं। जानिए पूरी डिटेल।",
+        "coverImage": "/images/discover/agni-5-mirv-missile-test.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "obsession-movie-netflix-ending-explained-clues",
+        "slug": "obsession-movie-netflix-ending-explained-clues",
+        "title": "Netflix पर तहलका मचा रही है ये सस्पेंस थ्रिलर फिल्म, क्लाइमेक्स का वो सच जो आधे लोगों को समझ ही नहीं आया",
+        "snippet": "नेटफ्लिक्स (Netflix) की सस्पेंस थ्रिलर फिल्म 'Obsession' ने इंटरनेट पर तहलका मचा रखा है। जानिए इस फिल्म के खौफनाक क्लाइमेक्स और हिडन क्लूज (Hidden Clues) की पूरी सच्चाई।",
+        "coverImage": "/images/discover/netflix-price-hike-india-ott-subscription.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "vimag-labs-manish-seth-startup-success-lessons",
+        "slug": "vimag-labs-manish-seth-startup-success-lessons",
+        "title": "Vimag Labs के मनीष सेठ ने कैसे खड़ी की करोड़ों की कंपनी? भारतीय युवाओं के लिए 3 बड़े बिजनेस लेसन",
+        "snippet": "Vimag Labs के फाउंडर मनीष सेठ की अनसुनी कहानी। जानिए कैसे उन्होंने अपनी असफलताओं से सीखकर बिना किसी बड़े फंड के एक करोड़ों की टेक कंपनी (Tech Company) खड़ी कर दी।",
+        "coverImage": "/images/discover/top-business-trends-exploding.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "oman-golden-visa-scheme-rules-indians",
+        "slug": "oman-golden-visa-scheme-rules-indians",
+        "title": "ओमान में रहने का सुनहरा मौका! भारतीयों के लिए बदले नियम, बिना किसी पाबंदी के ऐसे पा सकते हैं लॉन्ग-टर्म वीजा",
+        "snippet": "ओमान (Oman) सरकार ने भारतीयों और प्रवासियों के लिए अपने \"गोल्डन वीजा\" (Golden Visa) नियमों में बड़े बदलाव किए हैं। जानिए आप कैसे पा सकते हैं 10 साल का रेजिडेंसी वीजा।",
+        "coverImage": "/images/discover/dubai-visa-rules-change-for-indians.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "argentina-england-messi-switzerland-football-rivalry",
+        "slug": "argentina-england-messi-switzerland-football-rivalry",
+        "title": "Messi और अर्जेंटीना के खिलाफ क्यों खौफ में रहती हैं यूरोपीय टीमें? मैदान के बाहर की वो दुश्मनी जो मैच को बनाती है जंग",
+        "snippet": "अर्जेंटीना और यूरोपीय टीमों (विशेषकर इंग्लैंड और स्विट्जरलैंड) के बीच की वो खौफनाक फुटबॉल दुश्मनी (Football Rivalry) जिसे बहुत कम भारतीय फैंस जानते हैं। जानिए इनसाइड स्टोरी।",
+        "coverImage": "/images/discover/portugal_vs_croatia_highlights.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
+        "id": "visakhapatnam-strike-impact-hindi-states-services",
+        "slug": "visakhapatnam-strike-impact-hindi-states-services",
+        "title": "इस बड़ी हड़ताल से क्या आपके शहर में भी ठप हो जाएंगी सेवाएं? विशाखापट्टनम से लेकर उत्तर भारत तक सीधा असर",
+        "snippet": "विशाखापट्टनम (Visakhapatnam) में शुरू हुई एक बड़ी हड़ताल (Strike) का असर अब सीधे उत्तर भारत के शहरों, बैंकिंग और सप्लाई चेन पर पड़ने वाला है। जानिए पूरी सच्चाई।",
+        "coverImage": "/images/discover/indian-railways-new-ticket-booking-rules.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-02T12:00:00+05:30"
+    },
+    {
         "id": "yrf-spy-universe-economics-alpha",
         "slug": "yrf-spy-universe-economics-alpha",
         "title": "The Economics of the YRF Spy Universe & Alpha's ₹100 Crore Gamble",

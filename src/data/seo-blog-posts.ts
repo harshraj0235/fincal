@@ -1051,7 +1051,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Home Loans', 'Real Estate', 'Loan Guide', 'Interest Rates'],
     keywords: ['home loan india', 'home loan interest rates', 'home loan eligibility', 'home loan comparison', 'best home loan', 'home loan tips', 'home loan calculator', 'home loan process'],
     date: '2025-01-08',
-    lastModified: '2026-07-02',
+    lastModified: '2026-07-12',
     coverImage: '/images/blogs/home-loan-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Complete Home Loan Guide India 2025: Interest Rates & Tips' },

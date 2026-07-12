@@ -3,6 +3,16 @@ import { mustardOilPricesTodayNewRate } from './mustard-oil-prices-today-new-rat
 import { kalyanJewellersSharePriceTargetUpdate } from './kalyan-jewellers-share-price-target-update';
 import { bseSensexMarketCrashOrBoomToday } from './bse-sensex-market-crash-or-boom-today';
 import { pmKisanYojanaNewInstallmentStatus } from './pm-kisan-yojana-new-installment-status';
+import { epfoMigrationGlitchesDatabaseTransfer } from './epfo-migration-glitches-database-transfer';
+import { sabrinaPasterskiNextEinsteinPhysicsGenius } from './sabrina-pasterski-next-einstein-physics-genius';
+import { bcciIndiaSquadJemimahRodriguesInsideStory } from './bcci-india-squad-jemimah-rodrigues-inside-story';
+import { pixel11ProHiddenFeaturesLeakedPrice } from './pixel-11-pro-hidden-features-leaked-price';
+import { indianArmyAgniveerHiddenBenefitsFighterJets } from './indian-army-agniveer-hidden-benefits-fighter-jets';
+import { obsessionMovieNetflixEndingExplainedClues } from './obsession-movie-netflix-ending-explained-clues';
+import { vimagLabsManishSethStartupSuccessLessons } from './vimag-labs-manish-seth-startup-success-lessons';
+import { omanGoldenVisaSchemeRulesIndians } from './oman-golden-visa-scheme-rules-indians';
+import { argentinaEnglandMessiSwitzerlandFootballRivalry } from './argentina-england-messi-switzerland-football-rivalry';
+import { visakhapatnamStrikeImpactHindiStatesServices } from './visakhapatnam-strike-impact-hindi-states-services';
 import { incomeTaxReturnItrFilingLastDateAlert } from './income-tax-return-itr-filing-last-date-alert';
 import { tataAdvancedSystemsNewOrderStockSurge } from './tata-advanced-systems-new-order-stock-surge';
 import { indianRailwaysNewTicketBookingRules } from './indian-railways-new-ticket-booking-rules';
@@ -499,6 +509,16 @@ import { indoreLocoPilotStopsTrainForSamosaVideo } from './indore-loco-pilot-sto
 
 // ADD NEW DISCOVER ARTICLES HERE
 const _discoverArticles: DiscoverArticle[] = [
+    epfoMigrationGlitchesDatabaseTransfer,
+    sabrinaPasterskiNextEinsteinPhysicsGenius,
+    bcciIndiaSquadJemimahRodriguesInsideStory,
+    pixel11ProHiddenFeaturesLeakedPrice,
+    indianArmyAgniveerHiddenBenefitsFighterJets,
+    obsessionMovieNetflixEndingExplainedClues,
+    vimagLabsManishSethStartupSuccessLessons,
+    omanGoldenVisaSchemeRulesIndians,
+    argentinaEnglandMessiSwitzerlandFootballRivalry,
+    visakhapatnamStrikeImpactHindiStatesServices,
     pmKisanYojanaNewInstallmentStatus,
     bseSensexMarketCrashOrBoomToday,
     kalyanJewellersSharePriceTargetUpdate,
