@@ -459,7 +459,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Mutual Funds', 'SIP', 'Investment', 'Portfolio Management'],
     keywords: ['mutual funds india', 'sip investment', 'fund selection', 'portfolio management', 'equity funds', 'debt funds', 'hybrid funds', 'fund performance'],
     date: '2025-01-12',
-    lastModified: '2026-07-01',
+    lastModified: '2026-07-12',
     coverImage: '/images/blogs/mutual-funds-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Mutual Funds Investment Guide India 2025: Complete Strategy' },

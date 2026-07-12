@@ -1,3 +1,8 @@
+import { fdInterestRatesHikePsuBank } from './fd-interest-rates-hike-psu-bank';
+import { mustardOilPricesTodayNewRate } from './mustard-oil-prices-today-new-rate';
+import { kalyanJewellersSharePriceTargetUpdate } from './kalyan-jewellers-share-price-target-update';
+import { bseSensexMarketCrashOrBoomToday } from './bse-sensex-market-crash-or-boom-today';
+import { pmKisanYojanaNewInstallmentStatus } from './pm-kisan-yojana-new-installment-status';
 import { incomeTaxReturnItrFilingLastDateAlert } from './income-tax-return-itr-filing-last-date-alert';
 import { tataAdvancedSystemsNewOrderStockSurge } from './tata-advanced-systems-new-order-stock-surge';
 import { indianRailwaysNewTicketBookingRules } from './indian-railways-new-ticket-booking-rules';
@@ -494,6 +499,11 @@ import { indoreLocoPilotStopsTrainForSamosaVideo } from './indore-loco-pilot-sto
 
 // ADD NEW DISCOVER ARTICLES HERE
 const _discoverArticles: DiscoverArticle[] = [
+    pmKisanYojanaNewInstallmentStatus,
+    bseSensexMarketCrashOrBoomToday,
+    kalyanJewellersSharePriceTargetUpdate,
+    mustardOilPricesTodayNewRate,
+    fdInterestRatesHikePsuBank,
     incomeTaxReturnItrFilingLastDateAlert,
     tataAdvancedSystemsNewOrderStockSurge,
     indianRailwaysNewTicketBookingRules,

@@ -1,6 +1,96 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "pm-kisan-yojana-new-installment-status",
+        "slug": "pm-kisan-yojana-new-installment-status",
+        "title": "PM Kisan Yojana: किसानों के खाते में आने वाली है 18वीं किस्त! इस तारीख से पहले कर लें ये जरूरी काम वरना अटक जाएगा पैसा",
+        "snippet": "PM Kisan Samman Nidhi की 18वीं किस्त जल्द आने वाली है। अगर आपने e-KYC नहीं कराया है तो आपका पैसा अटक सकता है। जानिए पूरी प्रक्रिया।",
+        "coverImage": "/images/discover/ev_boom_2026_stocks.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T09:00:00+05:30"
+    },
+    {
+        "id": "bse-sensex-market-crash-or-boom-today",
+        "slug": "bse-sensex-market-crash-or-boom-today",
+        "title": "BSE Sensex में बड़ी हलचल! बाजार में आज जबरदस्त उठापटक, निवेशकों के ₹5 लाख करोड़ का फैसला एक दिन में",
+        "snippet": "आज शेयर बाजार में भारी उतार-चढ़ाव देखा गया। BSE Sensex और Nifty50 में बड़ी मूवमेंट हुई। जानिए बाजार के गिरने या चढ़ने की असली वजह और आगे क्या होगा।",
+        "coverImage": "/images/discover/stock-market-crash-today-reasons.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T09:00:00+05:30"
+    },
+    {
+        "id": "kalyan-jewellers-share-price-target-update",
+        "slug": "kalyan-jewellers-share-price-target-update",
+        "title": "Kalyan Jewellers के शेयर में बड़ा धमाका! एक्सपर्ट्स ने दिया नया टारगेट, निवेशक हुए मालामाल",
+        "snippet": "Kalyan Jewellers के शेयर में जबरदस्त तेजी आई है। तिमाही नतीजों के बाद एक्सपर्ट्स ने शेयर का नया टारगेट प्राइस तय किया है। जानिए पूरी डिटेल।",
+        "coverImage": "/images/discover/kalyan-jewellers-share-price-target-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T09:00:00+05:30"
+    },
+    {
+        "id": "mustard-oil-prices-today-new-rate",
+        "slug": "mustard-oil-prices-today-new-rate",
+        "title": "सरसों तेल के दामों में अचानक बड़ा बदलाव! किचन का बजट होगा गड़बड़, जानिए आज का नया रेट",
+        "snippet": "सरसों तेल की कीमतों में अचानक बड़ा बदलाव आया है। जानिए आपके शहर में आज सरसों तेल का भाव क्या चल रहा है और आने वाले दिनों में क्या होगा।",
+        "coverImage": "/images/discover/mcx-share-price-soars-commodity-trading.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T09:00:00+05:30"
+    },
+    {
+        "id": "fd-interest-rates-hike-psu-bank",
+        "slug": "fd-interest-rates-hike-psu-bank",
+        "title": "FD कराने वालों की बल्ले-बल्ले! इस सरकारी बैंक ने अचानक बढ़ा दिया ब्याज, अब मिलेगा सबसे ज्यादा मुनाफा",
+        "snippet": "अगर आप भी सुरक्षित निवेश के लिए Fixed Deposit (FD) कराने की सोच रहे हैं, तो आपके लिए बहुत बड़ी खुशखबरी है। सरकारी बैंकों में ब्याज दरें बढ़ गई हैं।",
+        "coverImage": "/images/discover/fd-laddering-safe-investment-options.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-11T09:00:00+05:30"
+    },
+    {
+        "id": "income-tax-return-itr-filing-last-date-alert",
+        "slug": "income-tax-return-itr-filing-last-date-alert",
+        "title": "Income Tax Return: अगर अभी तक नहीं भरा ITR तो जेब होगी ढीली! आखिरी तारीख से पहले सरकार का नया अलर्ट जारी",
+        "snippet": "ITR भरने की आखिरी तारीख करीब आ रही है। अगर आपने अभी तक अपना इनकम टैक्स रिटर्न फाइल नहीं किया है, तो ₹5,000 तक का भारी जुर्माना लग सकता है।",
+        "coverImage": "/images/discover/income-tax-return-itr-filing-last-date-alert.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-10T12:00:00+05:30"
+    },
+    {
+        "id": "tata-advanced-systems-new-order-stock-surge",
+        "slug": "tata-advanced-systems-new-order-stock-surge",
+        "title": "Tata की इस कंपनी को मिला बड़ा ऑर्डर! शेयरों में अपर सर्किट की तैयारी, एक्सपर्ट्स बोले- तुरंत लगाओ दांव",
+        "snippet": "टाटा ग्रुप की डिफेंस कंपनी TASL को भारतीय सेना से ₹1,600 करोड़ का महा-ऑर्डर मिला है। जानिए इसका टाटा के शेयरों और निवेशकों के पोर्टफोलियो पर क्या असर होगा।",
+        "coverImage": "/images/discover/tata-advanced-systems-new-order-stock-surge.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-10T12:00:00+05:30"
+    },
+    {
+        "id": "indian-railways-new-ticket-booking-rules",
+        "slug": "indian-railways-new-ticket-booking-rules",
+        "title": "Indian Railways: ट्रेन टिकट बुकिंग के नियमों में बड़ा बदलाव! यात्रा से पहले जान लें वरना कटेगा भारी जुर्माना",
+        "snippet": "भारतीय रेलवे ने 1 जुलाई 2026 से टिकट बुकिंग और सफर के नियमों में बड़े बदलाव किए हैं। बिना टिकट यात्रा करने पर जुर्माना 2 गुना कर दिया गया है।",
+        "coverImage": "/images/discover/indian-railways-new-ticket-booking-rules.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-10T12:00:00+05:30"
+    },
+    {
+        "id": "gold-silver-prices-today-city-rates",
+        "slug": "gold-silver-prices-today-city-rates",
+        "title": "सोना-चांदी खरीदने वालों की चमकी किस्मत! आज अचानक गिरे दाम, देखें आपके शहर में क्या है नया रेट",
+        "snippet": "अगर आप सोना या चांदी खरीदने का प्लान बना रहे हैं, तो आपके लिए बहुत बड़ी खुशखबरी है। आज सोने और चांदी की कीमतों में भारी गिरावट दर्ज की गई है। जानिए अपने शहर का नया भाव।",
+        "coverImage": "/images/discover/gold-silver-prices-today.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-10T12:00:00+05:30"
+    },
+    {
+        "id": "kusumgar-ipo-gmp-listing-gains",
+        "slug": "kusumgar-ipo-gmp-listing-gains",
+        "title": "Kusumgar IPO ने आते ही मचाया गदर! GMP में भारी उछाल, दांव लगाने वाले पहले ही दिन होंगे मालामाल?",
+        "snippet": "Kusumgar Corporates IPO में दांव लगाने का शानदार मौका! GMP ने रचा नया इतिहास। जानिए ₹398-₹419 के इस IPO में निवेश करने पर कितना होगा मुनाफा।",
+        "coverImage": "/images/discover/kusumgar-ipo-gmp.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-10T12:00:00+05:30"
+    },
+    {
         "id": "taiwan-index-nikkei-225-market-crash",
         "slug": "taiwan-index-nikkei-225-market-crash",
         "title": "ग्लोबल मार्केट क्रैश का सच: जब अमेरिका और एशिया के बाजार हिलते हैं, तो हमारा सेंसेक्स क्यों डूबता है?",
