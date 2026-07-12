@@ -163,7 +163,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Investment', 'Wealth Building', 'Mutual Funds', 'Stock Market'],
     keywords: ['best investments india', 'investment options 2025', 'mutual funds india', 'stock market investment', 'gold investment', 'real estate investment', 'wealth building', 'investment strategies'],
     date: '2025-01-14',
-    lastModified: '2026-07-01',
+    lastModified: '2026-07-12',
     coverImage: '/images/blogs/best-investments-india-2025.jpg',
     content: [
       { type: 'heading', content: 'Best Investment Options in India 2025: Complete Guide' },

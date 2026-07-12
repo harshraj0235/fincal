@@ -1,6 +1,186 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "epf-passbook-merge-multiple-uans-post-migration-guide",
+        "slug": "epf-passbook-merge-multiple-uans-post-migration-guide",
+        "title": "पुरानी कंपनी का पीएफ फंसा है? नई EPFO माइग्रेशन गाइड से 5 मिनट में मर्ज करें 2 UAN नंबर",
+        "snippet": "अगर आपने कई कंपनियां बदली हैं और आपके पास एक से ज्यादा UAN नंबर हो गए हैं, तो आपका पुराना पीएफ का पैसा फंस सकता है। जानिए ईपीएफओ के नए सिस्टम में UAN मर्ज करने का ऑनलाइन तरीका।",
+        "coverImage": "/images/discover/epfo_uan_portal_updates.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:09:00+05:30"
+    },
+    {
+        "id": "almada-global-tech-crypto-connection-india-trend",
+        "slug": "almada-global-tech-crypto-connection-india-trend",
+        "title": "गूगल पर अचानक ट्रेंड हुआ Almada, जानें भारत के इंटरनेट यूजर्स के लिए क्यों है जरूरी",
+        "snippet": "पिछले कुछ घंटों से \"Almada\" शब्द गूगल और ट्विटर पर तहलका मचा रहा है। आखिर यह अल्माडा क्या है और इसका ग्लोबल टेक और क्रिप्टो मार्केट (Crypto Market) से क्या कनेक्शन है? आसान भाषा में समझें।",
+        "coverImage": "/images/discover/india_8_percent_growth.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:08:00+05:30"
+    },
+    {
+        "id": "zee-entertainment-zeel-share-crash-survival-expert-advice",
+        "slug": "zee-entertainment-zeel-share-crash-survival-expert-advice",
+        "title": "Zee Share में अचानक हलचल, फंसे हुए छोटे निवेशक अब क्या करें? एक्सपर्ट्स की सीधी सलाह",
+        "snippet": "ज़ी एंटरटेनमेंट (ZEEL) के शेयरों में लगातार हो रही गिरावट और भारी हलचल ने रिटेल निवेशकों (Retail Investors) की नींद उड़ा दी है। जानिए क्या आपको इस शेयर को होल्ड (Hold) करना चाहिए या बेच देना चाहिए?",
+        "coverImage": "/images/discover/market-crash-india-vix-spike-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:07:00+05:30"
+    },
+    {
+        "id": "stake-app-legality-india-bank-account-freeze-rules",
+        "slug": "stake-app-legality-india-bank-account-freeze-rules",
+        "title": "Stake App और गेमिंग के चक्कर में फ्रीज हो रहे हैं बैंक अकाउंट? फंसने से पहले जानें ये नियम",
+        "snippet": "क्या भारत में Stake App जैसे ऑनलाइन सट्टेबाजी (Online Betting) और गेमिंग ऐप्स लीगल हैं? जानिए क्यों अचानक से हजारों युवाओं के बैंक खाते फ्रीज (Bank Account Freeze) किए जा रहे हैं।",
+        "coverImage": "/images/discover/fake-battery-bms-app-scam-alert.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:06:00+05:30"
+    },
+    {
+        "id": "mango-fraud-chemically-ripened-vs-natural-identification",
+        "slug": "mango-fraud-chemically-ripened-vs-natural-identification",
+        "title": "आम खरीदने से पहले बाल्टी में डालें, तैर गया तो समझो जहर है! ऐसे पहचानें असली और नकली आम",
+        "snippet": "क्या आप केमिकल (Calcium Carbide) से पके जहरीले आम खा रहे हैं? एक बाल्टी पानी से जानिए बाजार में बिकने वाले आम की असली सच्चाई और बचने के तरीके।",
+        "coverImage": "/images/discover/monsoon_inflation_alert.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:05:00+05:30"
+    },
+    {
+        "id": "debt-free-penny-stocks-under-20-high-promoter-holding",
+        "slug": "debt-free-penny-stocks-under-20-high-promoter-holding",
+        "title": "Debt-Free Penny Stocks: ₹20 से सस्ते ये 3 शेयर, प्रमोटर्स के पास है भारी हिस्सेदारी",
+        "snippet": "शेयर बाजार में 20 रुपये से सस्ते पेनी स्टॉक्स (Penny Stocks) में निवेश करना जोखिम भरा होता है, लेकिन अगर कंपनी कर्ज-मुक्त (Debt-Free) हो तो यह एक मल्टीबैगर बन सकता है। जानिए ऐसे 3 शानदार शेयर्स।",
+        "coverImage": "/images/discover/cupid-ltd-share-analysis-multibagger.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:04:00+05:30"
+    },
+    {
+        "id": "hidden-greater-noida-real-estate-gems-under-40-lakhs",
+        "slug": "hidden-greater-noida-real-estate-gems-under-40-lakhs",
+        "title": "ग्रेटर नोएडा के ये 3 गुप्त इलाके, जहां 40 लाख से कम में मिल रहा है अपना घर",
+        "snippet": "अगर आप दिल्ली-एनसीआर (Delhi-NCR) में अपना घर खरीदने का सपना देख रहे हैं, तो ग्रेटर नोएडा (Greater Noida) के इन 3 अंडररेटेड (Underrated) सेक्टर्स के बारे में जान लीजिए जहां प्रॉपर्टी अभी भी सस्ती है।",
+        "coverImage": "/images/discover/india_ai_jobs_boom.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:03:00+05:30"
+    },
+    {
+        "id": "indian-fighter-pilots-diet-routine-sukhoi-rafale",
+        "slug": "indian-fighter-pilots-diet-routine-sukhoi-rafale",
+        "title": "सुखोई और राफेल उड़ाने से पहले क्या खाते हैं भारतीय पायलट? शरीर पर होता है इतना खतरनाक दबाव",
+        "snippet": "आसमान में ध्वनि की गति (Speed of Sound) से उड़ने वाले भारतीय वायुसेना (IAF) के फाइटर पायलट्स की डाइट और रूटीन कैसी होती है? जानिए उनकी फिटनेस के वो गहरे राज जो आपको हैरान कर देंगे।",
+        "coverImage": "/images/discover/ev-battery-blast-prevention-bms-app-settings.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:02:00+05:30"
+    },
+    {
+        "id": "real-cost-1-lakh-salary-delhi-mumbai-middle-class",
+        "slug": "real-cost-1-lakh-salary-delhi-mumbai-middle-class",
+        "title": "₹1 लाख महीना कमाने वाले भी दिल्ली-मुंबई में क्यों हैं परेशान? देखें मिडिल क्लास का असली खर्च",
+        "snippet": "अगर आपको लगता है कि मेट्रो शहरों (Metro Cities) में 1 लाख रुपये महीने की सैलरी एक लग्जरी लाइफ (Luxury Life) जीने के लिए काफी है, तो इस कड़वी सच्चाई को जरूर जान लें।",
+        "coverImage": "/images/discover/bank-of-baroda-digital-rupee-app.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:01:00+05:30"
+    },
+    {
+        "id": "epfo-server-down-check-pf-balance-without-umang",
+        "slug": "epfo-server-down-check-pf-balance-without-umang",
+        "title": "EPFO Server Down? बिना उमंग ऐप इन 3 तरीकों से चेक करें अपना पीएफ बैलेंस",
+        "snippet": "EPFO के सर्वर और उमंग ऐप (Umang App) के डाउन होने पर अपना पीएफ बैलेंस (PF Balance) चेक करने के 3 सबसे आसान और ऑफलाइन तरीके। फौरन जानें।",
+        "coverImage": "/images/discover/epfo-latest-news-update-pf-balance-check.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T16:00:00+05:30"
+    },
+    {
+        "id": "visakhapatnam-strike-impact-hindi-states-services",
+        "slug": "visakhapatnam-strike-impact-hindi-states-services",
+        "title": "इस बड़ी हड़ताल से क्या आपके शहर में भी ठप हो जाएंगी सेवाएं? विशाखापट्टनम से लेकर उत्तर भारत तक सीधा असर",
+        "snippet": "विशाखापट्टनम (Visakhapatnam) में शुरू हुई एक बड़ी हड़ताल (Strike) का असर अब सीधे उत्तर भारत के शहरों, बैंकिंग और सप्लाई चेन पर पड़ने वाला है। जानिए पूरी सच्चाई।",
+        "coverImage": "/images/discover/indian-railways-new-ticket-booking-rules.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:09:00+05:30"
+    },
+    {
+        "id": "argentina-england-messi-switzerland-football-rivalry",
+        "slug": "argentina-england-messi-switzerland-football-rivalry",
+        "title": "Messi और अर्जेंटीना के खिलाफ क्यों खौफ में रहती हैं यूरोपीय टीमें? मैदान के बाहर की वो दुश्मनी जो मैच को बनाती है जंग",
+        "snippet": "अर्जेंटीना और यूरोपीय टीमों (विशेषकर इंग्लैंड और स्विट्जरलैंड) के बीच की वो खौफनाक फुटबॉल दुश्मनी (Football Rivalry) जिसे बहुत कम भारतीय फैंस जानते हैं। जानिए इनसाइड स्टोरी।",
+        "coverImage": "/images/discover/portugal_vs_croatia_highlights.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:08:00+05:30"
+    },
+    {
+        "id": "oman-golden-visa-scheme-rules-indians",
+        "slug": "oman-golden-visa-scheme-rules-indians",
+        "title": "ओमान में रहने का सुनहरा मौका! भारतीयों के लिए बदले नियम, बिना किसी पाबंदी के ऐसे पा सकते हैं लॉन्ग-टर्म वीजा",
+        "snippet": "ओमान (Oman) सरकार ने भारतीयों और प्रवासियों के लिए अपने \"गोल्डन वीजा\" (Golden Visa) नियमों में बड़े बदलाव किए हैं। जानिए आप कैसे पा सकते हैं 10 साल का रेजिडेंसी वीजा।",
+        "coverImage": "/images/discover/dubai-visa-rules-change-for-indians.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:07:00+05:30"
+    },
+    {
+        "id": "vimag-labs-manish-seth-startup-success-lessons",
+        "slug": "vimag-labs-manish-seth-startup-success-lessons",
+        "title": "Vimag Labs के मनीष सेठ ने कैसे खड़ी की करोड़ों की कंपनी? भारतीय युवाओं के लिए 3 बड़े बिजनेस लेसन",
+        "snippet": "Vimag Labs के फाउंडर मनीष सेठ की अनसुनी कहानी। जानिए कैसे उन्होंने अपनी असफलताओं से सीखकर बिना किसी बड़े फंड के एक करोड़ों की टेक कंपनी (Tech Company) खड़ी कर दी।",
+        "coverImage": "/images/discover/top-business-trends-exploding.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:06:00+05:30"
+    },
+    {
+        "id": "obsession-movie-netflix-ending-explained-clues",
+        "slug": "obsession-movie-netflix-ending-explained-clues",
+        "title": "Netflix पर तहलका मचा रही है ये सस्पेंस थ्रिलर फिल्म, क्लाइमेक्स का वो सच जो आधे लोगों को समझ ही नहीं आया",
+        "snippet": "नेटफ्लिक्स (Netflix) की सस्पेंस थ्रिलर फिल्म 'Obsession' ने इंटरनेट पर तहलका मचा रखा है। जानिए इस फिल्म के खौफनाक क्लाइमेक्स और हिडन क्लूज (Hidden Clues) की पूरी सच्चाई।",
+        "coverImage": "/images/discover/netflix-price-hike-india-ott-subscription.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:05:00+05:30"
+    },
+    {
+        "id": "indian-army-agniveer-hidden-benefits-fighter-jets",
+        "slug": "indian-army-agniveer-hidden-benefits-fighter-jets",
+        "title": "Indian Army में भर्ती होने वालों को अब मिलेंगे ये नए हिडन भत्ते, लड़ाकू विमानों की सुरक्षा यूनिट में शामिल होने का मौका",
+        "snippet": "अग्निवीर योजना (Agniveer Scheme) के तहत भर्ती होने वाले युवाओं के लिए रक्षा मंत्रालय ने नए हिडन भत्ते और टेक्निकल ट्रेनिंग के दरवाजे खोल दिए हैं। जानिए पूरी डिटेल।",
+        "coverImage": "/images/discover/agni-5-mirv-missile-test.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:04:00+05:30"
+    },
+    {
+        "id": "pixel-11-pro-hidden-features-leaked-price",
+        "slug": "pixel-11-pro-hidden-features-leaked-price",
+        "title": "Pixel 11 Pro का ये एक सीक्रेट फीचर iPhone को कर देगा फेल, लॉन्च से पहले लीक हुई असली कीमत",
+        "snippet": "Google Pixel 11 Pro के लॉन्च से पहले इसके खुफिया फीचर्स और कीमत लीक हो गई है। जानिए इसका वह सीक्रेट कैमरा और AI फीचर जो आईफोन (iPhone) के भी पसीने छुड़ा देगा।",
+        "coverImage": "/images/discover/smartphone-battery-health-app-accubattery.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:03:00+05:30"
+    },
+    {
+        "id": "bcci-india-squad-jemimah-rodrigues-inside-story",
+        "slug": "bcci-india-squad-jemimah-rodrigues-inside-story",
+        "title": "BCCI का अचानक बड़ा फैसला: स्क्वाड में रातों-रात बदलाव के पीछे की वो इनसाइड स्टोरी जो किसी को नहीं पता",
+        "snippet": "BCCI ने भारतीय महिला क्रिकेट टीम के स्क्वाड में अचानक बदलाव कर सबको चौंका दिया है। जेमिमा रोड्रिग्स को लेकर हुए इस फैसले की असली वजह और पूरी इनसाइड स्टोरी जानिए।",
+        "coverImage": "/images/discover/t20-rule-change-icc-new-update-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:02:00+05:30"
+    },
+    {
+        "id": "sabrina-pasterski-next-einstein-physics-genius",
+        "slug": "sabrina-pasterski-next-einstein-physics-genius",
+        "title": "\"अगला अल्बर्ट आइंस्टीन\": 14 साल की उम्र में जिसने खुद का हवाई जहाज बनाया, जानें कौन हैं सबरीना पास्टर्सकी",
+        "snippet": "दुनिया जिसे \"अगला अल्बर्ट आइंस्टीन\" कह रही है, उस सबरीना पास्टर्सकी (Sabrina Pasterski) की कहानी जो 14 साल की उम्र में हवाई जहाज बनाकर उड़ चुकी थीं। एक प्रेरणादायक सफर।",
+        "coverImage": "/images/discover/cbse-board-exams-2026-pattern-change.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:01:00+05:30"
+    },
+    {
+        "id": "epfo-migration-glitches-database-transfer",
+        "slug": "epfo-migration-glitches-database-transfer",
+        "title": "EPFO का नया सिस्टम शुरू: ट्रांसफर के चक्कर में कहीं अटक न जाए आपका पैसा, तुरंत चेक करें ये 3 सेटिंग्स",
+        "snippet": "EPFO ने सेंट्रलाइज्ड डेटाबेस माइग्रेशन शुरू कर दिया है। जानिए इस नए सिस्टम के फायदे, तकनीकी खामियां और कैसे बचाएं अपना फंसा हुआ PF का पैसा। पूरी सच्चाई।",
+        "coverImage": "/images/discover/epfo-higher-pension-latest-update-deadline.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-12T15:00:00+05:30"
+    },
+    {
         "id": "pm-kisan-yojana-new-installment-status",
         "slug": "pm-kisan-yojana-new-installment-status",
         "title": "PM Kisan Yojana: किसानों के खाते में आने वाली है 18वीं किस्त! इस तारीख से पहले कर लें ये जरूरी काम वरना अटक जाएगा पैसा",
@@ -3248,96 +3428,6 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/ca_foundation_result_2026.png",
         "author": "MoneyCal Team",
         "date": "2026-07-03T12:00:00+05:30"
-    },
-    {
-        "id": "epfo-migration-glitches-database-transfer",
-        "slug": "epfo-migration-glitches-database-transfer",
-        "title": "EPFO का नया सिस्टम शुरू: ट्रांसफर के चक्कर में कहीं अटक न जाए आपका पैसा, तुरंत चेक करें ये 3 सेटिंग्स",
-        "snippet": "EPFO ने सेंट्रलाइज्ड डेटाबेस माइग्रेशन शुरू कर दिया है। जानिए इस नए सिस्टम के फायदे, तकनीकी खामियां और कैसे बचाएं अपना फंसा हुआ PF का पैसा। पूरी सच्चाई।",
-        "coverImage": "/images/discover/epfo-higher-pension-latest-update-deadline.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "sabrina-pasterski-next-einstein-physics-genius",
-        "slug": "sabrina-pasterski-next-einstein-physics-genius",
-        "title": "\"अगला अल्बर्ट आइंस्टीन\": 14 साल की उम्र में जिसने खुद का हवाई जहाज बनाया, जानें कौन हैं सबरीना पास्टर्सकी",
-        "snippet": "दुनिया जिसे \"अगला अल्बर्ट आइंस्टीन\" कह रही है, उस सबरीना पास्टर्सकी (Sabrina Pasterski) की कहानी जो 14 साल की उम्र में हवाई जहाज बनाकर उड़ चुकी थीं। एक प्रेरणादायक सफर।",
-        "coverImage": "/images/discover/cbse-board-exams-2026-pattern-change.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "bcci-india-squad-jemimah-rodrigues-inside-story",
-        "slug": "bcci-india-squad-jemimah-rodrigues-inside-story",
-        "title": "BCCI का अचानक बड़ा फैसला: स्क्वाड में रातों-रात बदलाव के पीछे की वो इनसाइड स्टोरी जो किसी को नहीं पता",
-        "snippet": "BCCI ने भारतीय महिला क्रिकेट टीम के स्क्वाड में अचानक बदलाव कर सबको चौंका दिया है। जेमिमा रोड्रिग्स को लेकर हुए इस फैसले की असली वजह और पूरी इनसाइड स्टोरी जानिए।",
-        "coverImage": "/images/discover/t20-rule-change-icc-new-update-2026.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "pixel-11-pro-hidden-features-leaked-price",
-        "slug": "pixel-11-pro-hidden-features-leaked-price",
-        "title": "Pixel 11 Pro का ये एक सीक्रेट फीचर iPhone को कर देगा फेल, लॉन्च से पहले लीक हुई असली कीमत",
-        "snippet": "Google Pixel 11 Pro के लॉन्च से पहले इसके खुफिया फीचर्स और कीमत लीक हो गई है। जानिए इसका वह सीक्रेट कैमरा और AI फीचर जो आईफोन (iPhone) के भी पसीने छुड़ा देगा।",
-        "coverImage": "/images/discover/smartphone-battery-health-app-accubattery.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "indian-army-agniveer-hidden-benefits-fighter-jets",
-        "slug": "indian-army-agniveer-hidden-benefits-fighter-jets",
-        "title": "Indian Army में भर्ती होने वालों को अब मिलेंगे ये नए हिडन भत्ते, लड़ाकू विमानों की सुरक्षा यूनिट में शामिल होने का मौका",
-        "snippet": "अग्निवीर योजना (Agniveer Scheme) के तहत भर्ती होने वाले युवाओं के लिए रक्षा मंत्रालय ने नए हिडन भत्ते और टेक्निकल ट्रेनिंग के दरवाजे खोल दिए हैं। जानिए पूरी डिटेल।",
-        "coverImage": "/images/discover/agni-5-mirv-missile-test.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "obsession-movie-netflix-ending-explained-clues",
-        "slug": "obsession-movie-netflix-ending-explained-clues",
-        "title": "Netflix पर तहलका मचा रही है ये सस्पेंस थ्रिलर फिल्म, क्लाइमेक्स का वो सच जो आधे लोगों को समझ ही नहीं आया",
-        "snippet": "नेटफ्लिक्स (Netflix) की सस्पेंस थ्रिलर फिल्म 'Obsession' ने इंटरनेट पर तहलका मचा रखा है। जानिए इस फिल्म के खौफनाक क्लाइमेक्स और हिडन क्लूज (Hidden Clues) की पूरी सच्चाई।",
-        "coverImage": "/images/discover/netflix-price-hike-india-ott-subscription.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "vimag-labs-manish-seth-startup-success-lessons",
-        "slug": "vimag-labs-manish-seth-startup-success-lessons",
-        "title": "Vimag Labs के मनीष सेठ ने कैसे खड़ी की करोड़ों की कंपनी? भारतीय युवाओं के लिए 3 बड़े बिजनेस लेसन",
-        "snippet": "Vimag Labs के फाउंडर मनीष सेठ की अनसुनी कहानी। जानिए कैसे उन्होंने अपनी असफलताओं से सीखकर बिना किसी बड़े फंड के एक करोड़ों की टेक कंपनी (Tech Company) खड़ी कर दी।",
-        "coverImage": "/images/discover/top-business-trends-exploding.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "oman-golden-visa-scheme-rules-indians",
-        "slug": "oman-golden-visa-scheme-rules-indians",
-        "title": "ओमान में रहने का सुनहरा मौका! भारतीयों के लिए बदले नियम, बिना किसी पाबंदी के ऐसे पा सकते हैं लॉन्ग-टर्म वीजा",
-        "snippet": "ओमान (Oman) सरकार ने भारतीयों और प्रवासियों के लिए अपने \"गोल्डन वीजा\" (Golden Visa) नियमों में बड़े बदलाव किए हैं। जानिए आप कैसे पा सकते हैं 10 साल का रेजिडेंसी वीजा।",
-        "coverImage": "/images/discover/dubai-visa-rules-change-for-indians.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "argentina-england-messi-switzerland-football-rivalry",
-        "slug": "argentina-england-messi-switzerland-football-rivalry",
-        "title": "Messi और अर्जेंटीना के खिलाफ क्यों खौफ में रहती हैं यूरोपीय टीमें? मैदान के बाहर की वो दुश्मनी जो मैच को बनाती है जंग",
-        "snippet": "अर्जेंटीना और यूरोपीय टीमों (विशेषकर इंग्लैंड और स्विट्जरलैंड) के बीच की वो खौफनाक फुटबॉल दुश्मनी (Football Rivalry) जिसे बहुत कम भारतीय फैंस जानते हैं। जानिए इनसाइड स्टोरी।",
-        "coverImage": "/images/discover/portugal_vs_croatia_highlights.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
-    },
-    {
-        "id": "visakhapatnam-strike-impact-hindi-states-services",
-        "slug": "visakhapatnam-strike-impact-hindi-states-services",
-        "title": "इस बड़ी हड़ताल से क्या आपके शहर में भी ठप हो जाएंगी सेवाएं? विशाखापट्टनम से लेकर उत्तर भारत तक सीधा असर",
-        "snippet": "विशाखापट्टनम (Visakhapatnam) में शुरू हुई एक बड़ी हड़ताल (Strike) का असर अब सीधे उत्तर भारत के शहरों, बैंकिंग और सप्लाई चेन पर पड़ने वाला है। जानिए पूरी सच्चाई।",
-        "coverImage": "/images/discover/indian-railways-new-ticket-booking-rules.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-02T12:00:00+05:30"
     },
     {
         "id": "yrf-spy-universe-economics-alpha",

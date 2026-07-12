@@ -1,3 +1,13 @@
+import { epfoServerDownCheckPfBalanceWithoutUmang } from './epfo-server-down-check-pf-balance-without-umang';
+import { realCost1LakhSalaryDelhiMumbaiMiddleClass } from './real-cost-1-lakh-salary-delhi-mumbai-middle-class';
+import { indianFighterPilotsDietRoutineSukhoiRafale } from './indian-fighter-pilots-diet-routine-sukhoi-rafale';
+import { hiddenGreaterNoidaRealEstateGemsUnder40Lakhs } from './hidden-greater-noida-real-estate-gems-under-40-lakhs';
+import { debtFreePennyStocksUnder20HighPromoterHolding } from './debt-free-penny-stocks-under-20-high-promoter-holding';
+import { mangoFraudChemicallyRipenedVsNaturalIdentification } from './mango-fraud-chemically-ripened-vs-natural-identification';
+import { stakeAppLegalityIndiaBankAccountFreezeRules } from './stake-app-legality-india-bank-account-freeze-rules';
+import { zeeEntertainmentZeelShareCrashSurvivalExpertAdvice } from './zee-entertainment-zeel-share-crash-survival-expert-advice';
+import { almadaGlobalTechCryptoConnectionIndiaTrend } from './almada-global-tech-crypto-connection-india-trend';
+import { epfPassbookMergeMultipleUansPostMigrationGuide } from './epf-passbook-merge-multiple-uans-post-migration-guide';
 import { fdInterestRatesHikePsuBank } from './fd-interest-rates-hike-psu-bank';
 import { mustardOilPricesTodayNewRate } from './mustard-oil-prices-today-new-rate';
 import { kalyanJewellersSharePriceTargetUpdate } from './kalyan-jewellers-share-price-target-update';
@@ -509,6 +519,16 @@ import { indoreLocoPilotStopsTrainForSamosaVideo } from './indore-loco-pilot-sto
 
 // ADD NEW DISCOVER ARTICLES HERE
 const _discoverArticles: DiscoverArticle[] = [
+    epfoServerDownCheckPfBalanceWithoutUmang,
+    realCost1LakhSalaryDelhiMumbaiMiddleClass,
+    indianFighterPilotsDietRoutineSukhoiRafale,
+    hiddenGreaterNoidaRealEstateGemsUnder40Lakhs,
+    debtFreePennyStocksUnder20HighPromoterHolding,
+    mangoFraudChemicallyRipenedVsNaturalIdentification,
+    stakeAppLegalityIndiaBankAccountFreezeRules,
+    zeeEntertainmentZeelShareCrashSurvivalExpertAdvice,
+    almadaGlobalTechCryptoConnectionIndiaTrend,
+    epfPassbookMergeMultipleUansPostMigrationGuide,
     epfoMigrationGlitchesDatabaseTransfer,
     sabrinaPasterskiNextEinsteinPhysicsGenius,
     bcciIndiaSquadJemimahRodriguesInsideStory,
