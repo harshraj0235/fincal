@@ -7,7 +7,7 @@ export const epfoMigrationGlitchesDatabaseTransfer: DiscoverArticle = {
     snippet: 'EPFO ने सेंट्रलाइज्ड डेटाबेस माइग्रेशन शुरू कर दिया है। जानिए इस नए सिस्टम के फायदे, तकनीकी खामियां और कैसे बचाएं अपना फंसा हुआ PF का पैसा। पूरी सच्चाई।',
     coverImage: '/images/discover/epfo-higher-pension-latest-update-deadline.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:00:00+05:30',
     sections: [
         {
             type: 'p',

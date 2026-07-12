@@ -7,7 +7,7 @@ export const pixel11ProHiddenFeaturesLeakedPrice: DiscoverArticle = {
     snippet: 'Google Pixel 11 Pro के लॉन्च से पहले इसके खुफिया फीचर्स और कीमत लीक हो गई है। जानिए इसका वह सीक्रेट कैमरा और AI फीचर जो आईफोन (iPhone) के भी पसीने छुड़ा देगा।',
     coverImage: '/images/discover/smartphone-battery-health-app-accubattery.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:03:00+05:30',
     sections: [
         {
             type: 'p',

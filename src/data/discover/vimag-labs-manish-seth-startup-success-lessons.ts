@@ -7,7 +7,7 @@ export const vimagLabsManishSethStartupSuccessLessons: DiscoverArticle = {
     snippet: 'Vimag Labs के फाउंडर मनीष सेठ की अनसुनी कहानी। जानिए कैसे उन्होंने अपनी असफलताओं से सीखकर बिना किसी बड़े फंड के एक करोड़ों की टेक कंपनी (Tech Company) खड़ी कर दी।',
     coverImage: '/images/discover/top-business-trends-exploding.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:06:00+05:30',
     sections: [
         {
             type: 'p',

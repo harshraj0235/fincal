@@ -7,7 +7,7 @@ export const sabrinaPasterskiNextEinsteinPhysicsGenius: DiscoverArticle = {
     snippet: 'दुनिया जिसे "अगला अल्बर्ट आइंस्टीन" कह रही है, उस सबरीना पास्टर्सकी (Sabrina Pasterski) की कहानी जो 14 साल की उम्र में हवाई जहाज बनाकर उड़ चुकी थीं। एक प्रेरणादायक सफर।',
     coverImage: '/images/discover/cbse-board-exams-2026-pattern-change.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:01:00+05:30',
     sections: [
         {
             type: 'p',

@@ -7,7 +7,7 @@ export const omanGoldenVisaSchemeRulesIndians: DiscoverArticle = {
     snippet: 'ओमान (Oman) सरकार ने भारतीयों और प्रवासियों के लिए अपने "गोल्डन वीजा" (Golden Visa) नियमों में बड़े बदलाव किए हैं। जानिए आप कैसे पा सकते हैं 10 साल का रेजिडेंसी वीजा।',
     coverImage: '/images/discover/dubai-visa-rules-change-for-indians.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:07:00+05:30',
     sections: [
         {
             type: 'p',

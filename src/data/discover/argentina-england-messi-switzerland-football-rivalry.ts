@@ -7,7 +7,7 @@ export const argentinaEnglandMessiSwitzerlandFootballRivalry: DiscoverArticle = 
     snippet: 'अर्जेंटीना और यूरोपीय टीमों (विशेषकर इंग्लैंड और स्विट्जरलैंड) के बीच की वो खौफनाक फुटबॉल दुश्मनी (Football Rivalry) जिसे बहुत कम भारतीय फैंस जानते हैं। जानिए इनसाइड स्टोरी।',
     coverImage: '/images/discover/portugal_vs_croatia_highlights.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:08:00+05:30',
     sections: [
         {
             type: 'p',

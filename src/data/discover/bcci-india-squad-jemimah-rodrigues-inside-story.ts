@@ -7,7 +7,7 @@ export const bcciIndiaSquadJemimahRodriguesInsideStory: DiscoverArticle = {
     snippet: 'BCCI ने भारतीय महिला क्रिकेट टीम के स्क्वाड में अचानक बदलाव कर सबको चौंका दिया है। जेमिमा रोड्रिग्स को लेकर हुए इस फैसले की असली वजह और पूरी इनसाइड स्टोरी जानिए।',
     coverImage: '/images/discover/t20-rule-change-icc-new-update-2026.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:02:00+05:30',
     sections: [
         {
             type: 'p',

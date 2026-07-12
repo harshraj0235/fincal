@@ -7,7 +7,7 @@ export const visakhapatnamStrikeImpactHindiStatesServices: DiscoverArticle = {
     snippet: 'विशाखापट्टनम (Visakhapatnam) में शुरू हुई एक बड़ी हड़ताल (Strike) का असर अब सीधे उत्तर भारत के शहरों, बैंकिंग और सप्लाई चेन पर पड़ने वाला है। जानिए पूरी सच्चाई।',
     coverImage: '/images/discover/indian-railways-new-ticket-booking-rules.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:09:00+05:30',
     sections: [
         {
             type: 'p',

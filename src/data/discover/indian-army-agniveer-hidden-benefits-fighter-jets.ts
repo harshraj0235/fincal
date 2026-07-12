@@ -7,7 +7,7 @@ export const indianArmyAgniveerHiddenBenefitsFighterJets: DiscoverArticle = {
     snippet: 'अग्निवीर योजना (Agniveer Scheme) के तहत भर्ती होने वाले युवाओं के लिए रक्षा मंत्रालय ने नए हिडन भत्ते और टेक्निकल ट्रेनिंग के दरवाजे खोल दिए हैं। जानिए पूरी डिटेल।',
     coverImage: '/images/discover/agni-5-mirv-missile-test.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:04:00+05:30',
     sections: [
         {
             type: 'p',

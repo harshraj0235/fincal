@@ -7,7 +7,7 @@ export const obsessionMovieNetflixEndingExplainedClues: DiscoverArticle = {
     snippet: 'नेटफ्लिक्स (Netflix) की सस्पेंस थ्रिलर फिल्म \'Obsession\' ने इंटरनेट पर तहलका मचा रखा है। जानिए इस फिल्म के खौफनाक क्लाइमेक्स और हिडन क्लूज (Hidden Clues) की पूरी सच्चाई।',
     coverImage: '/images/discover/netflix-price-hike-india-ott-subscription.png',
     author: 'MoneyCal Team',
-    date: '2026-07-02T12:00:00+05:30',
+    date: '2026-07-12T15:05:00+05:30',
     sections: [
         {
             type: 'p',
