@@ -518,7 +518,28 @@ import { indoreMonsoonWeddingViralVideoWaterloggedMandap } from './indore-monsoo
 import { indoreLocoPilotStopsTrainForSamosaVideo } from './indore-loco-pilot-stops-train-for-samosa-video';
 
 // ADD NEW DISCOVER ARTICLES HERE
+import { epfoJobChangePfTransfer } from './epfo-job-change-pf-transfer';
+import { oneLakhSalaryMetroCitySurvival } from './one-lakh-salary-metro-city-survival';
+import { bseSensexHighJuly2026 } from './bse-sensex-high-july-2026';
+import { kusumgarLaserPowerIpoAllotment } from './kusumgar-laser-power-ipo-allotment';
+import { bankHolidaysJuly2026 } from './bank-holidays-july-2026';
+import { tcsTechStocksTargetPrice2026 } from './tcs-tech-stocks-target-price-2026';
+import { kalyanJewellersSharePriceGold } from './kalyan-jewellers-share-price-gold';
+import { incomeTaxReturnFilingLastDateNotice } from './income-tax-return-filing-last-date-notice';
+import { brentCrudeOilPetrolDieselPrice } from './brent-crude-oil-petrol-diesel-price';
+import { dixonTechnologiesShareMakeInIndia } from './dixon-technologies-share-make-in-india';
+
 const _discoverArticles: DiscoverArticle[] = [
+    epfoJobChangePfTransfer,
+    oneLakhSalaryMetroCitySurvival,
+    bseSensexHighJuly2026,
+    kusumgarLaserPowerIpoAllotment,
+    bankHolidaysJuly2026,
+    tcsTechStocksTargetPrice2026,
+    kalyanJewellersSharePriceGold,
+    incomeTaxReturnFilingLastDateNotice,
+    brentCrudeOilPetrolDieselPrice,
+    dixonTechnologiesShareMakeInIndia,
     epfoServerDownCheckPfBalanceWithoutUmang,
     realCost1LakhSalaryDelhiMumbaiMiddleClass,
     indianFighterPilotsDietRoutineSukhoiRafale,

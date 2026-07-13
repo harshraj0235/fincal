@@ -1,6 +1,96 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "epfo-job-change-pf-transfer",
+        "slug": "epfo-job-change-pf-transfer",
+        "title": "Job Change? Don't Lose Your Money: Step-by-Step Guide to Transfer Your PF Balance Online via EPFO",
+        "snippet": "नौकरी बदलने पर PF transfer करना भूल गए? आपकी एक छोटी सी गलती से आपका लाखों का नुकसान हो सकता है। जानिए EPFO portal पर PF transfer करने का आसान ऑनलाइन तरीका।",
+        "coverImage": "/images/discover/epfo-job-change-pf-transfer.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "one-lakh-salary-metro-city-survival",
+        "slug": "one-lakh-salary-metro-city-survival",
+        "title": "Is ₹1 Lakh a Month Enough to Survive in India's Metro Cities? The Viral Internet Debate",
+        "snippet": "क्या भारत के बड़े शहरों में 1 लाख रुपये की सैलरी काफी है? जानिए इंटरनेट पर चल रही इस वायरल बहस की असली सच्चाई और मेट्रो शहरों में कॉस्ट ऑफ़ लिविंग (Cost of Living) का पूरा गणित।",
+        "coverImage": "/images/discover/one-lakh-salary-metro-city-survival.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "bse-sensex-high-july-2026",
+        "slug": "bse-sensex-high-july-2026",
+        "title": "Stock Market Boom: BSE Sensex Scales New Heights! 3 Key Reasons Behind Today's Rally",
+        "snippet": "BSE Sensex में आज जबरदस्त उछाल! जानिए किन 3 बड़े कारणों से शेयर बाजार नई ऊंचाइयों को छू रहा है और क्या आम निवेशकों को अभी पैसा लगाना चाहिए या मुनाफा बुक करना चाहिए?",
+        "coverImage": "/images/discover/bse-sensex-high-july-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "kusumgar-laser-power-ipo-allotment",
+        "slug": "kusumgar-laser-power-ipo-allotment",
+        "title": "IPO Alert: Kusumgar Allotment Out Today & Laser Power GMP Skyrockets! Check Status Instantly",
+        "snippet": "Kusumgar IPO का Allotment Status आज जारी हो रहा है! साथ ही Laser Power IPO के GMP में आया जबरदस्त उछाल। यहाँ जानिए आप अपना IPO allotment status कैसे चेक कर सकते हैं।",
+        "coverImage": "/images/discover/kusumgar-laser-power-ipo-allotment.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "bank-holidays-july-2026",
+        "slug": "bank-holidays-july-2026",
+        "title": "Bank Holiday Alert: Are Banks Closed in Your State This Week? Check the Full RBI List",
+        "snippet": "बैंक जाने की कर रहे हैं तैयारी? पहले चेक कर लें RBI की Bank Holidays List! जुलाई 2026 में लगातार कई दिन बैंक बंद रहेंगे। जानिए आपके राज्य में बैंक किस-किस दिन बंद हैं।",
+        "coverImage": "/images/discover/bank-holidays-july-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "tcs-tech-stocks-target-price-2026",
+        "slug": "tcs-tech-stocks-target-price-2026",
+        "title": "TCS Share Price Moves: Why India's IT Giant is Trending Today and What Analysts Say",
+        "snippet": "TCS के Q1 नतीजों और AI लीडरशिप में बड़े बदलाव के बाद शेयर बाज़ार में मची हलचल। जानिए क्या आपको TCS के शेयर खरीदने चाहिए या बेचने? देखें एक्सपर्ट्स के नए Target Price.",
+        "coverImage": "/images/discover/tcs-tech-stocks-target-price-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "kalyan-jewellers-share-price-gold",
+        "slug": "kalyan-jewellers-share-price-gold",
+        "title": "Kalyan Jewellers Share Price Sparkles: Is it the Best Time to Buy Festive Retail Stocks?",
+        "snippet": "Kalyan Jewellers के शेयर में 4 दिन में 48% का तूफानी उछाल! Q1 नतीजों में 38% की बंपर सेल के बाद निवेशकों की हुई चाँदी। जानिए क्या है इस तेजी का असली कारण और एक्सपर्ट्स का नया टारगेट।",
+        "coverImage": "/images/discover/kalyan-jewellers-share-price-gold.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "income-tax-return-filing-last-date-notice",
+        "slug": "income-tax-return-filing-last-date-notice",
+        "title": "Income Tax Update: Missed the Deadline or Got a Notice? How to Avoid Heavy Penalties",
+        "snippet": "क्या आपने अभी तक अपना ITR फाइल नहीं किया है? ITR फाइल करने की आखिरी तारीख (July 31) नज़दीक है। जानिए देरी होने पर आपको कितना जुर्माना (Penalty) देना पड़ सकता है।",
+        "coverImage": "/images/discover/income-tax-return-filing-last-date-notice.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "brent-crude-oil-petrol-diesel-price",
+        "slug": "brent-crude-oil-petrol-diesel-price",
+        "title": "Global Crisis Alert: Brent Crude Surges Amid Middle East Tensions. Will Petrol Prices Rise in India?",
+        "snippet": "ग्लोबल मार्केट में कच्चे तेल (Crude Oil) की कीमतों में अचानक भारी उछाल! मिडिल ईस्ट के तनाव का सीधा असर। जानिए क्या भारत में भी पेट्रोल-डीजल (Petrol-Diesel) के दाम बढ़ने वाले हैं?",
+        "coverImage": "/images/discover/brent-crude-oil-petrol-diesel-price.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "dixon-technologies-share-make-in-india",
+        "slug": "dixon-technologies-share-make-in-india",
+        "title": "Make in India Masterstroke: Why Dixon Tech Share is the Ultimate Wealth Creator of 2026",
+        "snippet": "Dixon Technologies ने Vivo के साथ किया करोड़ों का JV एग्रीमेंट! \"Make in India\" का यह मास्टरस्ट्रोक कैसे भारत को ग्लोबल मैन्युफैक्चरिंग हब बना रहा है? जानिए इस मल्टीबैगर स्टॉक की पूरी कहानी।",
+        "coverImage": "/images/discover/dixon-technologies-share-make-in-india.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
         "id": "epf-passbook-merge-multiple-uans-post-migration-guide",
         "slug": "epf-passbook-merge-multiple-uans-post-migration-guide",
         "title": "पुरानी कंपनी का पीएफ फंसा है? नई EPFO माइग्रेशन गाइड से 5 मिनट में मर्ज करें 2 UAN नंबर",
