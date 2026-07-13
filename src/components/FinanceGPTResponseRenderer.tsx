@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useMemo, useState } from 'react';
 import { SourceLink } from '../lib/llmEngine';
 import StockLiveWidget from './StockLiveWidget';
-import { Share2, Check } from 'lucide-react';
+import { Share2, Check, Copy } from 'lucide-react';
 
 const MiniSIP = lazy(() => import('./MiniSIP'));
 const MiniEMI = lazy(() => import('./MiniEMI'));
@@ -21,10 +21,21 @@ interface FinanceGPTResponseRendererProps {
  */
 const FinanceGPTResponseRenderer: React.FC<FinanceGPTResponseRendererProps> = ({ text, sources = [] }) => {
   const [isShared, setIsShared] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.log('Copy failed', err);
+    }
+  };
 
   const handleShare = async () => {
     const snippet = text.replace(/```[\s\S]*?```/g, '').replace(/\[\d+\]/g, '').trim().substring(0, 150) + '...';
-    
+
     const shareData = {
       title: 'Moneycal - India\'s #1 AI Financial Advisor',
       text: `I just asked Moneycal for financial advice:\n\n"${snippet}"\n\nAsk your own questions for free on Moneycal!`,
@@ -231,7 +242,25 @@ const FinanceGPTResponseRenderer: React.FC<FinanceGPTResponseRendererProps> = ({
       })}
 
       {text.length > 0 && (
-        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end">
+        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end gap-2">
+          <button
+            onClick={handleCopy}
+            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 hover:text-blue-600 rounded-full transition-colors border border-gray-200"
+            title="Copy full response"
+          >
+            {isCopied ? (
+              <>
+                <Check className="w-4 h-4 text-green-500" />
+                <span className="text-green-600">Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-4 h-4" />
+                <span>Copy</span>
+              </>
+            )}
+          </button>
+
           <button
             onClick={handleShare}
             className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 hover:text-blue-600 rounded-full transition-colors border border-gray-200"
@@ -240,7 +269,7 @@ const FinanceGPTResponseRenderer: React.FC<FinanceGPTResponseRendererProps> = ({
             {isShared ? (
               <>
                 <Check className="w-4 h-4 text-green-500" />
-                <span className="text-green-600">Copied!</span>
+                <span className="text-green-600">Shared!</span>
               </>
             ) : (
               <>

@@ -172,8 +172,14 @@ const FinanceGPT: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [savedChats, setSavedChats] = useState<SavedChat[]>([]);
   const [activeChatId, setActiveChatId] = useState<string | null>(null);
+  const [isListening, setIsListening] = useState(false);
+  const [uploadedFile, setUploadedFile] = useState<{ name: string; text: string } | null>(null);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [inputFocused, setInputFocused] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
   const contentIndexRef = useRef<ContentItem[]>([]);
 
   // Load saved chats from localStorage
@@ -220,7 +226,84 @@ const FinanceGPT: React.FC = () => {
     setInput(e.target.value);
     e.target.style.height = 'auto';
     e.target.style.height = Math.min(e.target.scrollHeight, 160) + 'px';
+    setShowSuggestions(e.target.value.length > 0);
   };
+
+  // ─── Voice Input (Web Speech API) ──────────────────────
+  const handleVoiceInput = () => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert('Voice input is not supported in this browser. Please use Chrome or Edge.');
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'hi-IN';
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+    setIsListening(true);
+    recognition.onresult = (event: any) => {
+      const transcript = Array.from(event.results)
+        .map((result: any) => result[0].transcript)
+        .join('');
+      setInput(transcript);
+      if (inputRef.current) {
+        inputRef.current.style.height = 'auto';
+        inputRef.current.style.height = Math.min(inputRef.current.scrollHeight, 160) + 'px';
+      }
+    };
+    recognition.onend = () => setIsListening(false);
+    recognition.onerror = () => setIsListening(false);
+    recognition.start();
+  };
+
+  // ─── File Upload Handler ───────────────────────────────
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      let text = '';
+      if (file.type === 'text/plain' || file.type === 'text/csv' || file.name.endsWith('.csv') || file.name.endsWith('.txt')) {
+        text = await file.text();
+      } else if (file.type === 'application/json' || file.name.endsWith('.json')) {
+        text = await file.text();
+      } else if (file.type.startsWith('image/')) {
+        text = `[User uploaded an image: ${file.name}. Please describe and analyze this image.]`;
+      } else if (file.type === 'application/pdf') {
+        text = `[User uploaded a PDF: ${file.name}. Extract and analyze the content.]`;
+      } else {
+        text = await file.text();
+      }
+      const truncated = text.substring(0, 8000);
+      setUploadedFile({ name: file.name, text: truncated });
+    } catch {
+      alert('Could not read this file. Try a TXT, CSV, or JSON file.');
+    }
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  // ─── Computed Suggestions ──────────────────────────────
+  const filteredSuggestions = React.useMemo(() => {
+    if (!input.trim()) return [];
+    const q = input.toLowerCase();
+    const allSuggestions = [
+      ...SUGGESTED_QUERIES[researchMode],
+      ...Object.values(SUGGESTED_QUERIES).flat(),
+      ...contentIndexRef.current.map(c => c.title),
+    ];
+    const unique = [...new Set(allSuggestions)];
+    return unique.filter(s => s.toLowerCase().includes(q)).slice(0, 6);
+  }, [input, researchMode]);
+
+  // Close suggestions on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (suggestionsRef.current && !suggestionsRef.current.contains(e.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
 
   // ─── New Chat ────────────────────────────────────────────
   const handleNewChat = () => {
@@ -262,10 +345,17 @@ const FinanceGPT: React.FC = () => {
 
   // Handle query submit
   const handleSubmit = useCallback(async (queryOverride?: string) => {
-    const query = queryOverride || input.trim();
+    let query = queryOverride || input.trim();
     if (!query || isLoading) return;
 
+    // If file is uploaded, prepend its content to the query
+    if (uploadedFile) {
+      query = `[Uploaded Document: ${uploadedFile.name}]\n\n${uploadedFile.text}\n\n--- User's Question ---\n${query}`;
+      setUploadedFile(null);
+    }
+
     setInput('');
+    setShowSuggestions(false);
     if (inputRef.current) inputRef.current.style.height = 'auto';
 
     const userMsg: ChatMessage = {
@@ -636,34 +726,118 @@ const FinanceGPT: React.FC = () => {
 
           {/* ─── Input Bar ─── */}
           <div className={`fgpt-input-area ${hasMessages ? 'fgpt-input-area-bottom' : ''}`}>
-            <div className="fgpt-input-container">
-              <textarea
-                ref={inputRef}
-                className="fgpt-input"
-                placeholder="कोई भी financial सवाल पूछें..."
-                value={input}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                rows={1}
-                disabled={isLoading}
-              />
-              <button
-                className={`fgpt-send-btn ${input.trim() && !isLoading ? 'fgpt-send-btn-active' : ''}`}
-                onClick={() => handleSubmit()}
-                disabled={!input.trim() || isLoading}
-              >
-                {isLoading ? (
-                  <span className="fgpt-send-spinner"></span>
-                ) : (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            <div className="fgpt-input-container" ref={suggestionsRef}>
+              {/* Uploaded file badge */}
+              {uploadedFile && (
+                <div className="fgpt-file-badge">
+                  <span>📎 {uploadedFile.name}</span>
+                  <button onClick={() => setUploadedFile(null)} className="fgpt-file-badge-remove">✕</button>
+                </div>
+              )}
+
+              <div className="fgpt-input-row">
+                {/* File upload button */}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".txt,.csv,.json,.pdf,image/*"
+                  onChange={handleFileUpload}
+                  style={{ display: 'none' }}
+                />
+                <button
+                  className="fgpt-input-icon-btn"
+                  onClick={() => fileInputRef.current?.click()}
+                  title="Upload document"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
                   </svg>
-                )}
-              </button>
+                </button>
+
+                <textarea
+                  ref={inputRef}
+                  className="fgpt-input"
+                  placeholder="कोई भी सवाल पूछें — finance, stocks, tax या कुछ भी..."
+                  value={input}
+                  onChange={handleInputChange}
+                  onKeyDown={handleKeyDown}
+                  onFocus={() => setInputFocused(true)}
+                  onBlur={() => setTimeout(() => setInputFocused(false), 200)}
+                  rows={1}
+                  disabled={isLoading}
+                />
+
+                {/* Voice input button */}
+                <button
+                  className={`fgpt-input-icon-btn ${isListening ? 'fgpt-voice-active' : ''}`}
+                  onClick={handleVoiceInput}
+                  title="Voice input"
+                  disabled={isListening}
+                >
+                  {isListening ? (
+                    <span className="fgpt-voice-pulse"></span>
+                  ) : (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+                      <path d="M19 10v2a7 7 0 01-14 0v-2"/>
+                      <line x1="12" y1="19" x2="12" y2="23"/>
+                      <line x1="8" y1="23" x2="16" y2="23"/>
+                    </svg>
+                  )}
+                </button>
+
+                {/* Send button */}
+                <button
+                  className={`fgpt-send-btn ${input.trim() && !isLoading ? 'fgpt-send-btn-active' : ''}`}
+                  onClick={() => handleSubmit()}
+                  disabled={!input.trim() || isLoading}
+                >
+                  {isLoading ? (
+                    <span className="fgpt-send-spinner"></span>
+                  ) : (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  )}
+                </button>
+              </div>
+
+              {/* ─── Suggestions Dropdown ─── */}
+              {showSuggestions && filteredSuggestions.length > 0 && (
+                <div className="fgpt-suggestions-dropdown">
+                  {filteredSuggestions.map((s, i) => (
+                    <button
+                      key={i}
+                      className="fgpt-suggestion-item"
+                      onMouseDown={() => { setInput(s); setShowSuggestions(false); handleSubmit(s); }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* ─── Trending on Focus (when input is empty) ─── */}
+              {inputFocused && !input && !showSuggestions && !hasMessages && (
+                <div className="fgpt-suggestions-dropdown fgpt-trending-dropdown">
+                  <div className="fgpt-trending-dropdown-label">🔥 Trending on MoneyCal</div>
+                  {discoverArticles.slice(0, 5).map((article, i) => (
+                    <button
+                      key={i}
+                      className="fgpt-suggestion-item"
+                      onMouseDown={() => handleSubmit(article.title)}
+                    >
+                      <span className="fgpt-trending-dot">📈</span>
+                      {article.title.substring(0, 60)}{article.title.length > 60 ? '...' : ''}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
             <p className="fgpt-disclaimer-text">
-              MoneyCal • AI-powered • 200+ tools • Hinglish
+              MoneyCal • AI-powered • Voice & Document Analysis • 200+ tools
             </p>
           </div>
 

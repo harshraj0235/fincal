@@ -1567,3 +1567,167 @@
     font-size: 22px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   NEW: Input Row Layout (Perplexity-style)
+   ═══════════════════════════════════════════════════════════ */
+
+.fgpt-input-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  width: 100%;
+}
+
+.fgpt-input-row .fgpt-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 4px;
+}
+
+.fgpt-input-icon-btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fgpt-input-icon-btn:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+}
+
+.fgpt-input-icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─── Voice Pulse Animation ─── */
+.fgpt-voice-active {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.fgpt-voice-pulse {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ef4444;
+  display: block;
+  animation: voicePulse 1s ease-in-out infinite;
+}
+
+@keyframes voicePulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.7; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+}
+
+/* ─── File Upload Badge ─── */
+.fgpt-file-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  margin: 8px 8px 0;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 8px;
+  font-size: 12px;
+  color: #c4b5fd;
+}
+
+.fgpt-file-badge-remove {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.fgpt-file-badge-remove:hover {
+  color: #ef4444;
+}
+
+/* ─── Suggestions Dropdown ─── */
+.fgpt-suggestions-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: #141420;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+  z-index: 50;
+  animation: suggestionsSlideUp 0.15s ease-out;
+}
+
+@keyframes suggestionsSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fgpt-suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: #cbd5e1;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.fgpt-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.fgpt-suggestion-item:hover {
+  background: rgba(139, 92, 246, 0.08);
+  color: #e2e8f0;
+}
+
+.fgpt-suggestion-item svg {
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+/* ─── Trending Dropdown ─── */
+.fgpt-trending-dropdown-label {
+  padding: 10px 16px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f59e0b;
+}
+
+.fgpt-trending-dot {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* ─── Input Container relative for dropdown ─── */
+.fgpt-input-container {
+  position: relative;
+}
