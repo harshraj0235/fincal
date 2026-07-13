@@ -94,8 +94,7 @@ export const BlogPost: React.FC = () => {
   }, 0) : 500;
 
   const baseUrl = 'https://moneycal.in';
-  const authorProfile = teamProfiles.find((profile) => profile.id === 'harsh-raj') || teamProfiles[0];
-  const authorName = authorProfile?.name || 'MoneyCal Editorial Team';
+  const authorName = post.author || 'MoneyCal Team';
   const postPath = isAstroBlog ? '/astro-finance/blog/' : '/blog/';
   const canonicalUrl = `${baseUrl}${postPath}${post.slug}`;
   const freshDateISO = getFreshDateISO48h();
