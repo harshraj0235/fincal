@@ -480,7 +480,11 @@ function generateSitemap() {
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
     
     // Sort newest first so Google crawls latest articles first
-    const sortedDiscover = [...allDiscoverArticles].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const sortedDiscover = [...allDiscoverArticles].sort((a, b) => {
+        const dA = a.date ? new Date(a.date).getTime() : 0;
+        const dB = b.date ? new Date(b.date).getTime() : 0;
+        return (isNaN(dB) ? 0 : dB) - (isNaN(dA) ? 0 : dA);
+    });
     sortedDiscover.forEach(a => {
         let lastModDate = new Date();
         try {
@@ -505,10 +509,17 @@ function generateSitemap() {
     console.log(`✅ Generated Sitemap: /sitemap-discover.xml`);
 
     // === Generate Google News Sitemap with latest 50 articles ===
-    const sorted = [...allDiscoverArticles].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 50);
+    const sorted = [...allDiscoverArticles].sort((a, b) => {
+        const dA = a.date ? new Date(a.date).getTime() : 0;
+        const dB = b.date ? new Date(b.date).getTime() : 0;
+        return (isNaN(dB) ? 0 : dB) - (isNaN(dA) ? 0 : dA);
+    }).slice(0, 50);
     let newsXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n`;
     sorted.forEach(a => {
-        const pubDate = new Date(a.date).toISOString().split('T')[0];
+        let pubDate = new Date().toISOString().split('T')[0];
+        if (a.date && !isNaN(new Date(a.date).getTime())) {
+            pubDate = new Date(a.date).toISOString().split('T')[0];
+        }
         const safeHeadline = sanitizeForAttr(a.title).replace(/&/g, '&amp;');
         newsXml += `  <url>\n    <loc>https://moneycal.in/discover/${a.slug}/</loc>\n    <news:news>\n      <news:publication>\n        <news:name>MoneyCal.in</news:name>\n        <news:language>hi</news:language>\n      </news:publication>\n      <news:publication_date>${pubDate}</news:publication_date>\n      <news:title>${safeHeadline}</news:title>\n    </news:news>\n  </url>\n`;
     });
