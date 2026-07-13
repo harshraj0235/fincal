@@ -358,6 +358,7 @@ function buildSeoMap() {
             const excerptMatch = block.match(/excerpt:\s*["']([^"']{10,}?)["']/);
             const metaTitleMatch = block.match(/metaTitle:\s*["']([^"']+)["']/);
             const metaDescMatch = block.match(/metaDescription:\s*["']([^"']+)["']/);
+            const authorMatch = block.match(/author:\s*["']([^"']+)["']/);
 
             if (slugMatch) {
                 const slug = slugMatch[1];
@@ -423,6 +424,7 @@ function buildSeoMap() {
                     title: (metaTitleMatch ? metaTitleMatch[1] : (titleMatch ? titleMatch[1] : humanize(slug))) + ' | MoneyCal.in',
                     description: (metaDescMatch ? metaDescMatch[1] : (excerptMatch ? excerptMatch[1] : '')).substring(0, 160),
                     section: 'blog',
+                    author: authorMatch ? authorMatch[1] : undefined,
                     body: bodyHtml,
                     faqs: block.includes('faqSchema:') ? [] : undefined
                 };
@@ -504,6 +506,7 @@ function buildSeoMap() {
             const titleMatch = content.match(/title:\s*['"]([^'"]+)['"]/);
             const snippetMatch = content.match(/snippet:\s*['"]([^'"]+)['"]/);
             const coverMatch = content.match(/coverImage:\s*['"`]([^'"`]+)['"`]/);
+            const authorMatch = content.match(/author:\s*['"`]([^'"`]+)['"`]/);
             // Match fixed date strings like '2026-07-02T...' or new Date().toISOString()
             const dateMatch = content.match(/date:\s*['"`]([^'"`]+)['"`]/) || content.match(/date:\s*new Date\(\)\.toISOString\(\)/);
 
@@ -551,6 +554,7 @@ function buildSeoMap() {
                     section: 'discover',
                     date: articleDate,
                     coverImage: fullCoverUrl,
+                    author: authorMatch ? authorMatch[1] : undefined,
                     body: bodyHtml || undefined
                 };
             }
@@ -1318,20 +1322,21 @@ function injectSeoTags(template, pathname, seo, seoMap) {
         const afterRoot = html.substring(lastDivIndex);
         const originalShell = html.substring(contentStartIndex, lastDivIndex);
 
-        let finalContent = '';
+        let finalContent = originalShell;
+        let finalAfterRoot = afterRoot;
         
         if (bodyContent) {
-            // [CRITICAL SEO FIX] Inject the SEO HTML directly into the #root div.
-            // Googlebot will see the full content and index it perfectly without display:none penalties.
-            // When React loads for real users, createRoot() will automatically replace this static 
-            // HTML with the fully interactive React application.
-            finalContent = `\n    <div id="seo-prerender-content" class="seo-static-prerender">\n      ${botHeader}\n      ${bodyContent}\n      ${botFooter}\n    </div>\n`;
-        } else {
-            // Fallback for non-content pages (e.g. calculators without data)
-            finalContent = `\n    ${originalShell.trim()}\n`;
+            // [CRITICAL SEO FIX] Inject the SEO HTML outside the #root div and hide it visually.
+            // This prevents the jarring layout shift for real users (who will see the skeleton loader),
+            // while still providing the full text content to Googlebot in the initial HTML payload.
+            const hiddenStyles = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
+            const hiddenHtml = `\n  <!-- SEO Content for Crawlers (Visually Hidden to prevent layout shift) -->\n  <div id="seo-prerender-content" style="${hiddenStyles}">\n    ${botHeader}\n    ${bodyContent}\n    ${botFooter}\n  </div>\n`;
+            
+            // Inject the hidden SEO content immediately after the closing </div> of #root
+            finalAfterRoot = afterRoot.replace('</div>', `</div>${hiddenHtml}`);
         }
         
-        let finalHtml = beforeRoot + finalContent + afterRoot;
+        let finalHtml = beforeRoot + finalContent + finalAfterRoot;
         return finalHtml;
     }
 
@@ -1401,7 +1406,7 @@ function generateJsonLd(pathname, seo, canonicalUrl) {
                 "name": "MoneyCal India",
                 "logo": { "@type": "ImageObject", "url": "https://moneycal.in/android-chrome-512x512.jpg" }
             },
-            "author": { "@type": "Person", "name": "MoneyCal Editorial Team" },
+            "author": { "@type": "Person", "name": seo.author || "MoneyCal Team" },
             "datePublished": seo.date || "2025-01-15",
             "dateModified": today
         };
@@ -1421,7 +1426,7 @@ function generateJsonLd(pathname, seo, canonicalUrl) {
                 "name": "MoneyCal India",
                 "logo": { "@type": "ImageObject", "url": "https://moneycal.in/android-chrome-512x512.jpg" }
             },
-            "author": { "@type": "Person", "name": "MoneyCal Editorial Team" },
+            "author": { "@type": "Person", "name": seo.author || "MoneyCal Team" },
             "datePublished": seo.date || "2025-01-20",
             "dateModified": today
         };
@@ -1584,7 +1589,7 @@ function generateBodyContent(pathname, seo, seoMap) {
       <header style="margin-bottom:2rem;border-bottom:1px solid #f3f4f6;padding-bottom:1.5rem">
         <h1 style="font-size:2.5rem;font-weight:900;margin-bottom:1rem;line-height:1.2;color:#111827">${escapeHtml(cleanTitle)}</h1>
         <div style="font-size:0.9rem;color:#6b7280;font-weight:600">
-          <span>By MoneyCal Editorial Team</span> • <span>Published ${seo.date ? new Date(seo.date).getFullYear() : new Date().getFullYear()}</span>
+          <span>By ${seo.author || 'MoneyCal Team'}</span> • <span>Published ${seo.date ? new Date(seo.date).getFullYear() : new Date().getFullYear()}</span>
         </div>
       </header>
       ${tocHtml}
