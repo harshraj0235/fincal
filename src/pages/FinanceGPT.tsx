@@ -290,8 +290,8 @@ const FinanceGPT: React.FC = () => {
       ...Object.values(SUGGESTED_QUERIES).flat(),
       ...contentIndexRef.current.map(c => c.title),
     ];
-    const unique = [...new Set(allSuggestions)];
-    return unique.filter(s => s.toLowerCase().includes(q)).slice(0, 6);
+    const unique = [...new Set(allSuggestions)].filter(Boolean);
+    return unique.filter(s => s && s.toLowerCase().includes(q)).slice(0, 6);
   }, [input, researchMode]);
 
   // Close suggestions on outside click
