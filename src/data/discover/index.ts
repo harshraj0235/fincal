@@ -1,4 +1,13 @@
-import { nolanOdysseyMovie } from './nolan-the-odyssey-movie-2026-cast-release-date';
+import { nolanOdysseyArticle1 } from './nolan-odyssey-movie-release-date-india-fans';
+import { nolanOdysseyArticle2 } from './odyssey-movie-vs-ramayana-trending-india';
+import { nolanOdysseyArticle3 } from './odyssey-official-trailer-breakdown-most-expensive';
+import { nolanOdysseyArticle4 } from './odyssey-bollywood-superstar-cast-cameo-leak';
+import { nolanOdysseyArticle5 } from './odyssey-cast-revealed-tom-holland-zendaya';
+import { nolanOdysseyArticle6 } from './odyssey-movie-ending-explained-twists';
+import { nolanOdysseyArticle7 } from './odyssey-movie-monsters-magic-box-office';
+import { nolanOdysseyArticle8 } from './odyssey-full-movie-story-leak-mythology';
+import { nolanOdysseyArticle9 } from './odyssey-where-to-watch-online-netflix-prime';
+import { nolanOdysseyArticle10 } from './odyssey-movie-review-post-credit-scene';
 import { yashToxicMovie } from './yash-toxic-movie-raya-release-date-box-office';
 import { toxicMovieTabaahiSong } from './toxic-movie-tabaahi-song-yash-kiara-chemistry';
 import { toxicMovieBoxOffice } from './toxic-movie-box-office-collection-1200-crore-budget';
@@ -1104,7 +1113,16 @@ const _discoverArticles: DiscoverArticle[] = [
     toxicMovieReleaseStrategy,
     toxicMovieGoaSetting,
     toxicMovieFemaleCast,
-    nolanOdysseyMovie,
+    nolanOdysseyArticle1,
+    nolanOdysseyArticle2,
+    nolanOdysseyArticle3,
+    nolanOdysseyArticle4,
+    nolanOdysseyArticle5,
+    nolanOdysseyArticle6,
+    nolanOdysseyArticle7,
+    nolanOdysseyArticle8,
+    nolanOdysseyArticle9,
+    nolanOdysseyArticle10,
     // Add variables here
 ];
 

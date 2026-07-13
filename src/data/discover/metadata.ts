@@ -82,6 +82,298 @@ export const discoverMetadata = [
         "date": "2026-07-13T12:05:00+05:30"
     },
     {
+        "id": "odyssey-movie-vs-ramayana-trending-india",
+        "slug": "odyssey-movie-vs-ramayana-trending-india",
+        "title": "Before Ramayana, Watch This? Why The Odyssey Movie Is Trending in India Today!",
+        "snippet": "इंडिया में नितेश तिवारी की रामायण (Ramayan) का बज है, लेकिन नोलन की The Odyssey ने ग्लोबल माइथोलॉजी का नया ट्रेंड सेट कर दिया है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYbkA4E-OOY1QDfesvo-UE-4PYOBYvUEL2ojx9O4R20g&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:05:00+05:30"
+    },
+    {
+        "id": "nolan-odyssey-movie-release-date-india-fans",
+        "slug": "nolan-odyssey-movie-release-date-india-fans",
+        "title": "The Odyssey Movie Release Date: India Fans Go Crazy Over This Epic Action Trailer!",
+        "snippet": "Christopher Nolan की 2026 की सबसे बड़ी फिल्म The Odyssey का बजट, कास्ट, और रिलीज डेट।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhgUTYO2xabedpb2UK3Sm-IQBUlNfm3LnlTjamtT4SA&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "mexico-vs-ecuador-aftermath",
+        "slug": "mexico-vs-ecuador-aftermath",
+        "title": "The Unseen Drama: Why the Mexico vs Ecuador Clash Has Sparked a Massive Football Row",
+        "snippet": "A deeper look into the controversial referee decisions, player clashes, and locker room statements following the highly contested Mexico vs Ecuador match.",
+        "coverImage": "/images/discover/mexico-ecuador-aftermath.png",
+        "author": "Football Insider",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "france-vs-sweden-tactical-shock",
+        "slug": "france-vs-sweden-tactical-shock",
+        "title": "France vs Sweden: क्यों विश्व फुटबॉल में फ्रांस बनाम स्वीडन की भिड़ंत बन गई है सबसे बड़ी प्रतिद्वंद्विता?",
+        "snippet": "FIFA World Cup 2026 के राउंड ऑफ 32 में फ्रांस और स्वीडन के बीच हुए मुकाबले ने फुटबॉल जगत को हिला कर रख दिया है। जानिए कोच दिदिएर डेसचैम्प्स की वह रणनीति जिसने स्वीडन को पस्त कर दिया।",
+        "coverImage": "/images/discover/france-sweden-tactics.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "cote-divoire-vs-norway-shock-result",
+        "slug": "cote-divoire-vs-norway-shock-result",
+        "title": "How Côte d'Ivoire Just Exposed Norway’s Biggest Tactical Flaw to the Entire World",
+        "snippet": "A deep dive into how an African powerhouse completely neutralized Europe's elite attackers and exposed a glaring systemic weakness.",
+        "coverImage": "/images/discover/cote-divoire-norway-tactics.png",
+        "author": "Global Football Analyst",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "raul-jimenez-renaissance",
+        "slug": "raul-jimenez-renaissance",
+        "title": "Why Raúl Jiménez’s Latest On-Field Display Has Left Football Pundits Speechless",
+        "snippet": "A look into the remarkable career revival of Raúl Jiménez, detailing his incredible resilience and how he definitively silenced his fiercest critics.",
+        "coverImage": "/images/discover/raul-jimenez-renaissance.png",
+        "author": "Sports Desk",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "gilberto-mora-phenomenon",
+        "slug": "gilberto-mora-phenomenon",
+        "title": "Europe’s Elite Clubs Are Already Racing to Sign Mexico’s New 15-Year-Old Wonderkid",
+        "snippet": "Introducing Gilberto Mora to global fans: a deep dive into the scout reports, his record-breaking rise, and the sudden astronomical spike in his price tag.",
+        "coverImage": "/images/discover/gilberto-mora-phenomenon.png",
+        "author": "Football Scout Analytics",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "india-secret-strategy-england-t20",
+        "slug": "india-secret-strategy-england-t20",
+        "title": "IND vs ENG T20: वह गुप्त रणनीति जिसने इंग्लैंड के मजबूत टॉप ऑर्डर को घुटने टेकने पर मजबूर कर दिया",
+        "snippet": "भारत बनाम इंग्लैंड टी20 सीरीज के पहले ही मुकाबले में भारतीय टीम प्रबंधन ने एक ऐसी रणनीति का उपयोग किया जिसने इंग्लैंड के खतरनाक बल्लेबाजों को बैकफुट पर ला दिया। जानिए पूरा विश्लेषण।",
+        "coverImage": "/images/discover/india-secret-strategy-england-t20.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "west-indies-australia-power-hitting",
+        "slug": "west-indies-australia-power-hitting",
+        "title": "Did the West Indies Just Expose Australia’s Bowling Attack With This Ridiculous Power Hitting?",
+        "snippet": "A deep dive into the sheer physics, bat-speed metrics, and tactical breakdown behind the explosive power hitting that dismantled the Australian bowling attack.",
+        "coverImage": "/images/discover/west-indies-australia-power-hitting.png",
+        "author": "Cricket Science Analytics",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "moises-henriques-portugal-twist",
+        "slug": "moises-henriques-portugal-twist",
+        "title": "Why Australian Cricketer Moises Henriques Just Officially Debuted for Portugal",
+        "snippet": "The emotional and technical story behind the former Australian all-rounder’s international switch, and what his debut means for the future of European cricket.",
+        "coverImage": "/images/discover/moises-henriques-portugal.png",
+        "author": "Global Cricket Correspondent",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "alia-bhatt-spy-universe-transformation",
+        "slug": "alia-bhatt-spy-universe-transformation",
+        "title": "Alia Bhatt’s Brutal Spy Universe Transformation Will Leave You Speechless",
+        "snippet": "Inside the gruelling physical and emotional preparation behind Alia Bhatt’s turn as the lethal assassin \"Sita\" in the upcoming YRF blockbuster \"Alpha\".",
+        "coverImage": "/images/discover/alia-bhatt-spy-universe.png",
+        "author": "Entertainment Desk",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "nayanthara-toxic-look-revealed",
+        "slug": "nayanthara-toxic-look-revealed",
+        "title": "Nayanthara’s \"Toxic\" Look Revealed: Why Fans Are Losing Their Minds Over Ganga",
+        "snippet": "The first official look of Nayanthara as the formidable \"Ganga\" in Yash’s upcoming blockbuster \"Toxic\" has dropped, and it is breaking the internet.",
+        "coverImage": "/images/discover/nayanthara-toxic-look.png",
+        "author": "Cinema Updates",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "re-neet-2026-debate-explodes",
+        "slug": "re-neet-2026-debate-explodes",
+        "title": "The Re-NEET 2026 Debate Just Exploded After This Controversial Supreme Court Decision",
+        "snippet": "A comprehensive breakdown of the Re-NEET 2026 paper leak saga, the recent Supreme Court verdict, and what it means for millions of medical aspirants.",
+        "coverImage": "/images/discover/re-neet-2026-debate.png",
+        "author": "Education Correspondent",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "8th-cpc-arrears-calculation",
+        "slug": "8th-cpc-arrears-calculation",
+        "title": "The Truth About the 8th CPC Arrears Calculation That No One Is Telling You",
+        "snippet": "Debunking the viral WhatsApp rumors about the 8th Central Pay Commission arrears and breaking down the real math behind the expected payouts for 2026.",
+        "coverImage": "/images/discover/8th-cpc-arrears.png",
+        "author": "Financial Desk",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "supreme-court-holiday-overhaul",
+        "slug": "supreme-court-holiday-overhaul",
+        "title": "Why the Supreme Court Just Quietly Overhauled Its Summer Vacation Policy",
+        "snippet": "Exploring the controversy behind the Supreme Court's new \"partial court working days\" and what the end of the traditional summer vacation means for everyday litigants.",
+        "coverImage": "/images/discover/supreme-court-holiday.png",
+        "author": "Legal Affairs Correspondent",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "tata-sierra-ev-launch-leak",
+        "slug": "tata-sierra-ev-launch-leak",
+        "title": "Leaked: The Unbelievable Starting Price and Features of the Upcoming Tata Sierra EV",
+        "snippet": "The iconic Tata Sierra returns as a futuristic EV. Here is everything you need to know about the official pricing, massive range, and retro-modern design.",
+        "coverImage": "/images/discover/tata-sierra-ev-launch.png",
+        "author": "Auto Tech Review",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "strawberry-moon-spiritual-meaning",
+        "slug": "strawberry-moon-spiritual-meaning",
+        "title": "Strawberry Full Moon Astrology: जानिए इस सप्ताह का स्ट्रॉबेरी मून आपकी राशि पर क्या प्रभाव डालेगा?",
+        "snippet": "जून 2026 का स्ट्रॉबेरी मून (Strawberry Full Moon) ज्योतिषीय दृष्टि से बेहद महत्वपूर्ण है। जानिए सभी 12 राशियों पर इसका प्रभाव और अपनी वित्तीय व व्यक्तिगत स्थिति को सुधारने के उपाय।",
+        "coverImage": "/images/discover/strawberry-moon-spiritual.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "yrf-spy-universe-economics-alpha",
+        "slug": "yrf-spy-universe-economics-alpha",
+        "title": "The Economics of the YRF Spy Universe & Alpha's ₹100 Crore Gamble",
+        "snippet": "A deep dive into the staggering financial mechanics, massive budgets, and unprecedented box office stakes behind the latest female-led YRF blockbuster, Alpha.",
+        "coverImage": "/images/discover/alpha-economics.png",
+        "author": "Financial Analytics Desk",
+        "date": "2026-07-01T23:59:59.000Z"
+    },
+    {
+        "id": "financial-dangers-of-movie-piracy-scams",
+        "slug": "financial-dangers-of-movie-piracy-scams",
+        "title": "The Hidden Financial Dangers of Movie Piracy Scams in 2026",
+        "snippet": "Why searching for free movie downloads is the fastest way to drain your bank account. An investigative look into the highly sophisticated financial malware ecosystem of 2026.",
+        "coverImage": "/images/discover/alpha-piracy.png",
+        "author": "Cybersecurity & Finance Desk",
+        "date": "2026-07-01T23:59:59.000Z"
+    },
+    {
+        "id": "ott-vs-theatrical-strategy-alpha",
+        "slug": "ott-vs-theatrical-strategy-alpha",
+        "title": "OTT Rights vs Theatrical Release: The Business Strategy Behind Alpha",
+        "snippet": "Why did YRF reject a rumored ₹215 crore Netflix deal? A financial analysis of the theatrical-first release strategy behind the upcoming blockbuster Alpha.",
+        "coverImage": "/images/discover/alpha-ott.png",
+        "author": "Entertainment Business Desk",
+        "date": "2026-07-01T23:59:59.000Z"
+    },
+    {
+        "id": "monsoon-home-appliance-protection-tips",
+        "slug": "monsoon-home-appliance-protection-tips",
+        "title": "मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!",
+        "snippet": "बारिश के मौसम में भारी उमस (Humidity) और वोल्टेज के उतार-चढ़ाव से Inverter AC, Smart TV और फ्रिज जैसे महंगे अप्लायंसेज खराब हो सकते हैं। जानिए इन्हें कैसे सुरक्षित रखें।",
+        "coverImage": "/images/discover/home_appliance_monsoon_protection_1783245538901.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "rrb-group-d-general-science-preparation-strategy",
+        "slug": "rrb-group-d-general-science-preparation-strategy",
+        "title": "RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!",
+        "snippet": "रेलवे ग्रुप डी (RRB Group D) में जनरल साइंस के 25 प्रश्न सिलेक्शन तय करते हैं। जानिए NCERT आधारित फिजिक्स, केमिस्ट्री और बायोलॉजी की फर्स्ट-अटेम्प्ट सक्सेस स्ट्रेटेजी।",
+        "coverImage": "/images/discover/rrb_group_d_science_preparation_1783245643869.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "it-layoff-financial-legal-checklist",
+        "slug": "it-layoff-financial-legal-checklist",
+        "title": "IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!",
+        "snippet": "नौकरी जाना एक कठिन अनुभव है, लेकिन सही वित्तीय और कानूनी कदम उठाने से आप इस मुश्किल समय से आसानी से उबर सकते हैं। जानिए सेवरेंस पैकेज, हेल्थ इंश्योरेंस पोर्टिंग और लिंक्डइन स्ट्रेटेजी।",
+        "coverImage": "/images/discover/it_layoff_survival_guide_1783245724945.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "understanding-grey-market-premium-gmp",
+        "slug": "understanding-grey-market-premium-gmp",
+        "title": "Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!",
+        "snippet": "आईपीओ (IPO) में निवेश करने से पहले ग्रे मार्केट प्रीमियम (GMP) पर सबकी नजर होती है। लेकिन क्या आप जानते हैं कि इस पर आंख मूंदकर भरोसा करना कितना खतरनाक हो सकता है? जानिए इसके पीछे का सच।",
+        "coverImage": "/images/discover/ipo_grey_market_premium_1783246013796.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "gujarat-tat-s-mains-preparation-strategy",
+        "slug": "gujarat-tat-s-mains-preparation-strategy",
+        "title": "Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!",
+        "snippet": "गुजरात शिक्षक योग्यता परीक्षा (TAT-S) का प्रीलिम्स रिजल्ट आ चुका है। जिन उम्मीदवारों के 70 से अधिक अंक हैं, वे 3 अगस्त को होने वाली मुख्य परीक्षा (Mains) की तैयारी कैसे करें, जानिए बेस्ट राइटिंग स्ट्रेटेजी।",
+        "coverImage": "/images/discover/gujarat_tat_s_mains_preparation_1783246061055.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "odyssey-movie-review-post-credit-scene",
+        "slug": "odyssey-movie-review-post-credit-scene",
+        "title": "The Odyssey Movie Review: Don't Watch It Until You See This Post-Credit Scene!",
+        "snippet": "नोलन की फिल्म में पहली बार पोस्ट-क्रेडिट सीन! क्या यह एक पूरी ग्रीक माइथोलॉजी ट्राइलॉजी की शुरुआत है?",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSboj1QTsBlQ8SYN7gjXM6_ICAAohBUoTVEEEHAHnRN4A&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:45:00+05:30"
+    },
+    {
+        "id": "odyssey-where-to-watch-online-netflix-prime",
+        "slug": "odyssey-where-to-watch-online-netflix-prime",
+        "title": "Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?",
+        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey के डिजिटल राइट्स किस ओटीटी प्लेटफॉर्म के पास जाएंगे?",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnOCU-JCKez_dp8jJmITP0bunaWTNJZL4-M5YTNfYuQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:40:00+05:30"
+    },
+    {
+        "id": "odyssey-full-movie-story-leak-mythology",
+        "slug": "odyssey-full-movie-story-leak-mythology",
+        "title": "The Odyssey Full Movie Story Leak: Is This Hollywood's Greatest Mythological Epic?",
+        "snippet": "इथाका के राजा की खूनी वापसी! 100 राजकुमारों का कत्ल और पत्नी से दोबारा मिलने की रोंगटे खड़े कर देने वाली कहानी।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8GQxtAZVtPO--s1a9Iy8a0hd24RVyjrbWhOnXHWsUA&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:35:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-monsters-magic-box-office",
+        "slug": "odyssey-movie-monsters-magic-box-office",
+        "title": "Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!",
+        "snippet": "साइक्लोप्स और समुद्र के देवताओं से भरे द ओडिसी के भयंकर युद्ध सीन जो बिना CGI के शूट हुए हैं!",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4X5--b30MX5U_UMNGplwfg0E42o4WNxI00Cr6k2ZAtA&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:30:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-ending-explained-twists",
+        "slug": "odyssey-movie-ending-explained-twists",
+        "title": "The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!",
+        "snippet": "क्रिस्टोफर नोलन की फिल्मों में ट्विस्ट न हो ऐसा हो ही नहीं सकता! The Odyssey के टाइम और स्पेस ट्विस्ट की लीक हुई डिटेल्स।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3c6sezlRQMBhKV9w1ETT-63ykOH6Ct2KmXe0TetV4g&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:25:00+05:30"
+    },
+    {
+        "id": "odyssey-cast-revealed-tom-holland-zendaya",
+        "slug": "odyssey-cast-revealed-tom-holland-zendaya",
+        "title": "The Odyssey Cast Revealed: You Won't Believe Who Is Playing Odysseus!",
+        "snippet": "Matt Damon, Tom Holland और Zendaya जैसी बड़ी स्टारकास्ट वाली The Odyssey हॉलीवुड का सबसे बड़ा प्रोजेक्ट है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFS4QJHrI2_e9UZqSZi37RMskJu9-U8g53PpejWMucg&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:20:00+05:30"
+    },
+    {
+        "id": "odyssey-bollywood-superstar-cast-cameo-leak",
+        "slug": "odyssey-bollywood-superstar-cast-cameo-leak",
+        "title": "Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!",
+        "snippet": "क्या क्रिस्टोफर नोलन की The Odyssey फिल्म में किसी बॉलीवुड सुपरस्टार का कैमियो होने वाला है? जानिए असली सच्चाई।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOL3T2B2-3oi485sch2XGBzbHiTiet8M5Mg5SjzFmMw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:15:00+05:30"
+    },
+    {
+        "id": "odyssey-official-trailer-breakdown-most-expensive",
+        "slug": "odyssey-official-trailer-breakdown-most-expensive",
+        "title": "The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?",
+        "snippet": "Christopher Nolan की 250 मिलियन डॉलर की फिल्म द ओडिसी! क्या यह फिल्म इतिहास की सबसे बड़ी ब्लॉकबस्टर बनेगी?",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAnr3VrWXkrWUGrcgzZ9ZKwW22LGDiWQVjxWnX2rfxPw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:10:00+05:30"
+    },
+    {
         "id": "bcci-squad-changes-rohit-sharma",
         "slug": "bcci-squad-changes-rohit-sharma",
         "title": "BCCI का बड़ा फैसला: Rohit Sharma की कप्तानी और Team India के स्क्वाड में हुए ये चौंकाने वाले बदलाव!",
@@ -258,6 +550,15 @@ export const discoverMetadata = [
         "title": "Make in India Masterstroke: Why Dixon Tech Share is the Ultimate Wealth Creator of 2026",
         "snippet": "Dixon Technologies ने Vivo के साथ किया करोड़ों का JV एग्रीमेंट! \"Make in India\" का यह मास्टरस्ट्रोक कैसे भारत को ग्लोबल मैन्युफैक्चरिंग हब बना रहा है? जानिए इस मल्टीबैगर स्टॉक की पूरी कहानी।",
         "coverImage": "/images/discover/dixon-technologies-share-make-in-india.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "yash-toxic-movie-raya-release-date-box-office",
+        "slug": "yash-toxic-movie-raya-release-date-box-office",
+        "title": "Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 10 बड़े खुलासे",
+        "snippet": "Yash upcoming movie Toxic: A Fairy Tale for Grown-Ups के रिलीज डेट, कास्ट, बजट और डायरेक्टर Geetu Mohandas के डार्क विजन की पूरी सच्चाई। जानिए 1500 शब्दों में पूरी डिटेल।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJxhYd61dcfTnwxbQMMZxIj-9xAgv6DZyl69r1qKs3g&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:00:00+05:30"
     },
@@ -2861,217 +3162,6 @@ export const discoverMetadata = [
         "coverImage": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80",
         "author": "MoneyCal Team",
         "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "mexico-vs-ecuador-aftermath",
-        "slug": "mexico-vs-ecuador-aftermath",
-        "title": "The Unseen Drama: Why the Mexico vs Ecuador Clash Has Sparked a Massive Football Row",
-        "snippet": "A deeper look into the controversial referee decisions, player clashes, and locker room statements following the highly contested Mexico vs Ecuador match.",
-        "coverImage": "/images/discover/mexico-ecuador-aftermath.png",
-        "author": "Football Insider",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "france-vs-sweden-tactical-shock",
-        "slug": "france-vs-sweden-tactical-shock",
-        "title": "France vs Sweden: क्यों विश्व फुटबॉल में फ्रांस बनाम स्वीडन की भिड़ंत बन गई है सबसे बड़ी प्रतिद्वंद्विता?",
-        "snippet": "FIFA World Cup 2026 के राउंड ऑफ 32 में फ्रांस और स्वीडन के बीच हुए मुकाबले ने फुटबॉल जगत को हिला कर रख दिया है। जानिए कोच दिदिएर डेसचैम्प्स की वह रणनीति जिसने स्वीडन को पस्त कर दिया।",
-        "coverImage": "/images/discover/france-sweden-tactics.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "cote-divoire-vs-norway-shock-result",
-        "slug": "cote-divoire-vs-norway-shock-result",
-        "title": "How Côte d'Ivoire Just Exposed Norway’s Biggest Tactical Flaw to the Entire World",
-        "snippet": "A deep dive into how an African powerhouse completely neutralized Europe's elite attackers and exposed a glaring systemic weakness.",
-        "coverImage": "/images/discover/cote-divoire-norway-tactics.png",
-        "author": "Global Football Analyst",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "raul-jimenez-renaissance",
-        "slug": "raul-jimenez-renaissance",
-        "title": "Why Raúl Jiménez’s Latest On-Field Display Has Left Football Pundits Speechless",
-        "snippet": "A look into the remarkable career revival of Raúl Jiménez, detailing his incredible resilience and how he definitively silenced his fiercest critics.",
-        "coverImage": "/images/discover/raul-jimenez-renaissance.png",
-        "author": "Sports Desk",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "gilberto-mora-phenomenon",
-        "slug": "gilberto-mora-phenomenon",
-        "title": "Europe’s Elite Clubs Are Already Racing to Sign Mexico’s New 15-Year-Old Wonderkid",
-        "snippet": "Introducing Gilberto Mora to global fans: a deep dive into the scout reports, his record-breaking rise, and the sudden astronomical spike in his price tag.",
-        "coverImage": "/images/discover/gilberto-mora-phenomenon.png",
-        "author": "Football Scout Analytics",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "india-secret-strategy-england-t20",
-        "slug": "india-secret-strategy-england-t20",
-        "title": "IND vs ENG T20: वह गुप्त रणनीति जिसने इंग्लैंड के मजबूत टॉप ऑर्डर को घुटने टेकने पर मजबूर कर दिया",
-        "snippet": "भारत बनाम इंग्लैंड टी20 सीरीज के पहले ही मुकाबले में भारतीय टीम प्रबंधन ने एक ऐसी रणनीति का उपयोग किया जिसने इंग्लैंड के खतरनाक बल्लेबाजों को बैकफुट पर ला दिया। जानिए पूरा विश्लेषण।",
-        "coverImage": "/images/discover/india-secret-strategy-england-t20.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "west-indies-australia-power-hitting",
-        "slug": "west-indies-australia-power-hitting",
-        "title": "Did the West Indies Just Expose Australia’s Bowling Attack With This Ridiculous Power Hitting?",
-        "snippet": "A deep dive into the sheer physics, bat-speed metrics, and tactical breakdown behind the explosive power hitting that dismantled the Australian bowling attack.",
-        "coverImage": "/images/discover/west-indies-australia-power-hitting.png",
-        "author": "Cricket Science Analytics",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "moises-henriques-portugal-twist",
-        "slug": "moises-henriques-portugal-twist",
-        "title": "Why Australian Cricketer Moises Henriques Just Officially Debuted for Portugal",
-        "snippet": "The emotional and technical story behind the former Australian all-rounder’s international switch, and what his debut means for the future of European cricket.",
-        "coverImage": "/images/discover/moises-henriques-portugal.png",
-        "author": "Global Cricket Correspondent",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "alia-bhatt-spy-universe-transformation",
-        "slug": "alia-bhatt-spy-universe-transformation",
-        "title": "Alia Bhatt’s Brutal Spy Universe Transformation Will Leave You Speechless",
-        "snippet": "Inside the gruelling physical and emotional preparation behind Alia Bhatt’s turn as the lethal assassin \"Sita\" in the upcoming YRF blockbuster \"Alpha\".",
-        "coverImage": "/images/discover/alia-bhatt-spy-universe.png",
-        "author": "Entertainment Desk",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "nayanthara-toxic-look-revealed",
-        "slug": "nayanthara-toxic-look-revealed",
-        "title": "Nayanthara’s \"Toxic\" Look Revealed: Why Fans Are Losing Their Minds Over Ganga",
-        "snippet": "The first official look of Nayanthara as the formidable \"Ganga\" in Yash’s upcoming blockbuster \"Toxic\" has dropped, and it is breaking the internet.",
-        "coverImage": "/images/discover/nayanthara-toxic-look.png",
-        "author": "Cinema Updates",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "re-neet-2026-debate-explodes",
-        "slug": "re-neet-2026-debate-explodes",
-        "title": "The Re-NEET 2026 Debate Just Exploded After This Controversial Supreme Court Decision",
-        "snippet": "A comprehensive breakdown of the Re-NEET 2026 paper leak saga, the recent Supreme Court verdict, and what it means for millions of medical aspirants.",
-        "coverImage": "/images/discover/re-neet-2026-debate.png",
-        "author": "Education Correspondent",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "8th-cpc-arrears-calculation",
-        "slug": "8th-cpc-arrears-calculation",
-        "title": "The Truth About the 8th CPC Arrears Calculation That No One Is Telling You",
-        "snippet": "Debunking the viral WhatsApp rumors about the 8th Central Pay Commission arrears and breaking down the real math behind the expected payouts for 2026.",
-        "coverImage": "/images/discover/8th-cpc-arrears.png",
-        "author": "Financial Desk",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "supreme-court-holiday-overhaul",
-        "slug": "supreme-court-holiday-overhaul",
-        "title": "Why the Supreme Court Just Quietly Overhauled Its Summer Vacation Policy",
-        "snippet": "Exploring the controversy behind the Supreme Court's new \"partial court working days\" and what the end of the traditional summer vacation means for everyday litigants.",
-        "coverImage": "/images/discover/supreme-court-holiday.png",
-        "author": "Legal Affairs Correspondent",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "tata-sierra-ev-launch-leak",
-        "slug": "tata-sierra-ev-launch-leak",
-        "title": "Leaked: The Unbelievable Starting Price and Features of the Upcoming Tata Sierra EV",
-        "snippet": "The iconic Tata Sierra returns as a futuristic EV. Here is everything you need to know about the official pricing, massive range, and retro-modern design.",
-        "coverImage": "/images/discover/tata-sierra-ev-launch.png",
-        "author": "Auto Tech Review",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "strawberry-moon-spiritual-meaning",
-        "slug": "strawberry-moon-spiritual-meaning",
-        "title": "Strawberry Full Moon Astrology: जानिए इस सप्ताह का स्ट्रॉबेरी मून आपकी राशि पर क्या प्रभाव डालेगा?",
-        "snippet": "जून 2026 का स्ट्रॉबेरी मून (Strawberry Full Moon) ज्योतिषीय दृष्टि से बेहद महत्वपूर्ण है। जानिए सभी 12 राशियों पर इसका प्रभाव और अपनी वित्तीय व व्यक्तिगत स्थिति को सुधारने के उपाय।",
-        "coverImage": "/images/discover/strawberry-moon-spiritual.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "yrf-spy-universe-economics-alpha",
-        "slug": "yrf-spy-universe-economics-alpha",
-        "title": "The Economics of the YRF Spy Universe & Alpha's ₹100 Crore Gamble",
-        "snippet": "A deep dive into the staggering financial mechanics, massive budgets, and unprecedented box office stakes behind the latest female-led YRF blockbuster, Alpha.",
-        "coverImage": "/images/discover/alpha-economics.png",
-        "author": "Financial Analytics Desk",
-        "date": "2026-07-01T23:59:59.000Z"
-    },
-    {
-        "id": "financial-dangers-of-movie-piracy-scams",
-        "slug": "financial-dangers-of-movie-piracy-scams",
-        "title": "The Hidden Financial Dangers of Movie Piracy Scams in 2026",
-        "snippet": "Why searching for free movie downloads is the fastest way to drain your bank account. An investigative look into the highly sophisticated financial malware ecosystem of 2026.",
-        "coverImage": "/images/discover/alpha-piracy.png",
-        "author": "Cybersecurity & Finance Desk",
-        "date": "2026-07-01T23:59:59.000Z"
-    },
-    {
-        "id": "ott-vs-theatrical-strategy-alpha",
-        "slug": "ott-vs-theatrical-strategy-alpha",
-        "title": "OTT Rights vs Theatrical Release: The Business Strategy Behind Alpha",
-        "snippet": "Why did YRF reject a rumored ₹215 crore Netflix deal? A financial analysis of the theatrical-first release strategy behind the upcoming blockbuster Alpha.",
-        "coverImage": "/images/discover/alpha-ott.png",
-        "author": "Entertainment Business Desk",
-        "date": "2026-07-01T23:59:59.000Z"
-    },
-    {
-        "id": "monsoon-home-appliance-protection-tips",
-        "slug": "monsoon-home-appliance-protection-tips",
-        "title": "मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!",
-        "snippet": "बारिश के मौसम में भारी उमस (Humidity) और वोल्टेज के उतार-चढ़ाव से Inverter AC, Smart TV और फ्रिज जैसे महंगे अप्लायंसेज खराब हो सकते हैं। जानिए इन्हें कैसे सुरक्षित रखें।",
-        "coverImage": "/images/discover/home_appliance_monsoon_protection_1783245538901.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "rrb-group-d-general-science-preparation-strategy",
-        "slug": "rrb-group-d-general-science-preparation-strategy",
-        "title": "RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!",
-        "snippet": "रेलवे ग्रुप डी (RRB Group D) में जनरल साइंस के 25 प्रश्न सिलेक्शन तय करते हैं। जानिए NCERT आधारित फिजिक्स, केमिस्ट्री और बायोलॉजी की फर्स्ट-अटेम्प्ट सक्सेस स्ट्रेटेजी।",
-        "coverImage": "/images/discover/rrb_group_d_science_preparation_1783245643869.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "it-layoff-financial-legal-checklist",
-        "slug": "it-layoff-financial-legal-checklist",
-        "title": "IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!",
-        "snippet": "नौकरी जाना एक कठिन अनुभव है, लेकिन सही वित्तीय और कानूनी कदम उठाने से आप इस मुश्किल समय से आसानी से उबर सकते हैं। जानिए सेवरेंस पैकेज, हेल्थ इंश्योरेंस पोर्टिंग और लिंक्डइन स्ट्रेटेजी।",
-        "coverImage": "/images/discover/it_layoff_survival_guide_1783245724945.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "understanding-grey-market-premium-gmp",
-        "slug": "understanding-grey-market-premium-gmp",
-        "title": "Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!",
-        "snippet": "आईपीओ (IPO) में निवेश करने से पहले ग्रे मार्केट प्रीमियम (GMP) पर सबकी नजर होती है। लेकिन क्या आप जानते हैं कि इस पर आंख मूंदकर भरोसा करना कितना खतरनाक हो सकता है? जानिए इसके पीछे का सच।",
-        "coverImage": "/images/discover/ipo_grey_market_premium_1783246013796.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "gujarat-tat-s-mains-preparation-strategy",
-        "slug": "gujarat-tat-s-mains-preparation-strategy",
-        "title": "Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!",
-        "snippet": "गुजरात शिक्षक योग्यता परीक्षा (TAT-S) का प्रीलिम्स रिजल्ट आ चुका है। जिन उम्मीदवारों के 70 से अधिक अंक हैं, वे 3 अगस्त को होने वाली मुख्य परीक्षा (Mains) की तैयारी कैसे करें, जानिए बेस्ट राइटिंग स्ट्रेटेजी।",
-        "coverImage": "/images/discover/gujarat_tat_s_mains_preparation_1783246061055.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "yash-toxic-movie-raya-release-date-box-office",
-        "slug": "yash-toxic-movie-raya-release-date-box-office",
-        "title": "Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 10 बड़े खुलासे",
-        "snippet": "Yash upcoming movie Toxic: A Fairy Tale for Grown-Ups के रिलीज डेट, कास्ट, बजट और डायरेक्टर Geetu Mohandas के डार्क विजन की पूरी सच्चाई। जानिए 1500 शब्दों में पूरी डिटेल।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJxhYd61dcfTnwxbQMMZxIj-9xAgv6DZyl69r1qKs3g&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:00:00+05:30"
     },
     {
         "id": "mango-prices-crash-3-rupees",
