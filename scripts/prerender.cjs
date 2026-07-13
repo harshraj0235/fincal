@@ -1117,15 +1117,15 @@ function getRelatedLinks(pathname, seoMap, count = 4) {
 }
 
 function injectSeoTags(template, pathname, seo, seoMap) {
-    // Ensure pathname is normalized for the canonical URL
+    // Ensure pathname is normalized for the canonical URL (Vercel enforces trailing slash for directories)
     let normalizedPath = pathname;
-    if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
-        normalizedPath = normalizedPath.slice(0, -1);
+    if (normalizedPath !== '/' && !normalizedPath.endsWith('/')) {
+        normalizedPath = normalizedPath + '/';
     }
     // NEW SEO ENFORCEMENT LOGIC Auto-corrects missing keywords and short descriptions
-    const keywordPath = normalizedPath === '/' ? 'home' : normalizedPath.split('/').pop().replace(/-/g, ' ');
-    let baseTitle = seo.title || `MoneyCal.in | ${humanize(normalizedPath)}`;
-    let baseDesc = seo.description || `Free online ${humanize(normalizedPath)} tools and calculators for India.`;
+    const keywordPath = normalizedPath === '/' ? 'home' : normalizedPath.replace(/\/$/, '').split('/').pop().replace(/-/g, ' ');
+    let baseTitle = seo.title || `MoneyCal.in | ${humanize(normalizedPath.replace(/\/$/, ''))}`;
+    let baseDesc = seo.description || `Free online ${humanize(normalizedPath.replace(/\/$/, ''))} tools and calculators for India.`;
 
     // 1. Enforce Title Keyword Relevance for Googlebot matching
     const isHinglish = keywordPath.includes('rupaye') || keywordPath.includes('kare') || keywordPath.includes('hindi') || keywordPath.includes('se') || keywordPath.includes('mein') || keywordPath.includes('liye');
@@ -1191,8 +1191,8 @@ function injectSeoTags(template, pathname, seo, seoMap) {
 
     // Generate Hreflang Tags
     const isHindi = normalizedPath.startsWith('/hi');
-    const enUrl = isHindi ? `${BASE_URL}${normalizedPath.replace('/hi', '') || '/'}` : canonicalUrl;
-    const hiUrl = isHindi ? canonicalUrl : `${BASE_URL}/hi${normalizedPath === '/' ? '' : normalizedPath}`;
+    const enUrl = isHindi ? `${BASE_URL}${normalizedPath.replace('/hi', '') === '' ? '/' : normalizedPath.replace('/hi', '')}` : canonicalUrl;
+    const hiUrl = isHindi ? canonicalUrl : `${BASE_URL}/hi${normalizedPath === '/' ? '/' : normalizedPath}`;
     const hreflangTags = `
     <link rel="alternate" hreflang="en-IN" href="${enUrl}" />
     <link rel="alternate" hreflang="hi-IN" href="${hiUrl}" />
@@ -1318,38 +1318,20 @@ function injectSeoTags(template, pathname, seo, seoMap) {
         const afterRoot = html.substring(lastDivIndex);
         const originalShell = html.substring(contentStartIndex, lastDivIndex);
 
-        // [CRITICAL SEO FIX] Remove <noscript> so Googlebot gives full weight to the content.
-        // Google devalues content inside <noscript>. 
-        // We use a regular div. React's createRoot will safely wipe this out upon hydration.
-        // [PURE STATIC HTML] Remove React Hydration for content pages to maximize AdSense performance
-        const isContentPath = pathname.includes('/blog/') || pathname.includes('/news/') || pathname.includes('/government-schemes/') || pathname.includes('/ipo/') || pathname.includes('/discover/') || pathname.includes('/crypto/') || pathname.includes('/gk/') || pathname.includes('/astro-finance/') || pathname.includes('/msme-subsidies/') || pathname.includes('/land-records/') || pathname.includes('/scholarships/') || pathname.includes('/youth-banking/') || pathname.includes('/taxation-2026/') || pathname.includes('/scam-diagnostics/') || pathname.includes('/trading-terminals/') || pathname.includes('/macro-trends/') || pathname.includes('/insurance-niche/');
-        
         let finalContent = '';
         
-        // If it's a content path and we have SEO body, we will strip React below.
-        // Therefore, we MUST hide the original shell (skeleton) so Googlebot sees the real content in the first viewport.
-        if (isContentPath && seo.body) {
-            // Add display:none to original shell so it doesn't push down the SEO content
-            finalContent = `\n    <div style="display:none;">\n${originalShell.trim()}\n</div>\n`;
-            finalContent += `    <div id="seo-prerender-content" class="seo-static-prerender">\n      ${botHeader}\n      ${bodyContent}\n      ${botFooter}\n    </div>\n`;
-        } else if (bodyContent) {
-            // Keep original shell visible for SPA loading, hide SEO content (Googlebot still reads it from DOM)
-            finalContent = `\n    ${originalShell.trim()}\n`;
-            finalContent += `    <div id="seo-prerender-content" class="seo-static-prerender" style="display:none;">\n      ${botHeader}\n      ${bodyContent}\n      ${botFooter}\n    </div>\n`;
+        if (bodyContent) {
+            // [CRITICAL SEO FIX] Inject the SEO HTML directly into the #root div.
+            // Googlebot will see the full content and index it perfectly without display:none penalties.
+            // When React loads for real users, createRoot() will automatically replace this static 
+            // HTML with the fully interactive React application.
+            finalContent = `\n    <div id="seo-prerender-content" class="seo-static-prerender">\n      ${botHeader}\n      ${bodyContent}\n      ${botFooter}\n    </div>\n`;
         } else {
-            // Fallback for non-content pages (e.g. calculators)
+            // Fallback for non-content pages (e.g. calculators without data)
             finalContent = `\n    ${originalShell.trim()}\n`;
         }
         
         let finalHtml = beforeRoot + finalContent + afterRoot;
-        // ONLY strip React if we have a real data-driven seo.body. Hardcoded React components (like ChhathPuja.tsx) MUST hydrate!
-        if (isContentPath && seo.body) {
-            finalHtml = finalHtml.replace(/<script type="module"[^>]*src="\/assets\/index-[^>]*><\/script>/gi, '');
-            finalHtml = finalHtml.replace(/<script type="module"[^>]*src="\/src\/main\.tsx"[^>]*><\/script>/gi, '');
-            // Also remove any link rel="modulepreload" to prevent useless fetching
-            finalHtml = finalHtml.replace(/<link rel="modulepreload"[^>]*>/gi, '');
-        }
-
         return finalHtml;
     }
 
@@ -1841,8 +1823,9 @@ function generateGoogleNewsAndFeed(seoMap) {
     // Generate sitemap-news.xml
     let newsSitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n<!-- Google News Sitemap -->\n`;
     recentNews.forEach(n => {
+        const urlPath = (n.path !== '/' && !n.path.endsWith('/')) ? `${n.path}/` : n.path;
         newsSitemapXml += `  <url>
-    <loc>https://moneycal.in${n.path}</loc>
+    <loc>https://moneycal.in${urlPath}</loc>
     <news:news>
       <news:publication>
         <news:name>MoneyCal</news:name>
@@ -1864,11 +1847,12 @@ function generateGoogleNewsAndFeed(seoMap) {
     let rssXml = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n  <title>MoneyCal News &amp; Updates</title>\n  <link>https://moneycal.in</link>\n  <description>Latest financial news, IPO updates, and market trends from MoneyCal.in</description>\n  <language>hi-IN</language>\n  <atom:link href="https://moneycal.in/feed.xml" rel="self" type="application/rss+xml" />\n`;
 
     top50.forEach(n => {
+        const urlPath = (n.path !== '/' && !n.path.endsWith('/')) ? `${n.path}/` : n.path;
         const pubDate = n.data.date ? new Date(n.data.date).toUTCString() : new Date().toUTCString();
         rssXml += `  <item>
     <title>${escapeHtml(n.data.title ? n.data.title.split('|')[0].trim() : humanize(n.path))}</title>
-    <link>https://moneycal.in${n.path}</link>
-    <guid>https://moneycal.in${n.path}</guid>
+    <link>https://moneycal.in${urlPath}</link>
+    <guid>https://moneycal.in${urlPath}</guid>
     <pubDate>${pubDate}</pubDate>
     <description>${escapeHtml(n.data.description || '')}</description>
   </item>\n`;

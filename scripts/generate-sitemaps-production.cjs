@@ -182,10 +182,21 @@ async function generateSitemaps() {
   // Expand URLs for i18n
   const expandedUrls = [];
   allUrls.forEach(url => {
-    // Strip trailing slashes to keep things clean
-    const cleanUrl = url.replace(/\/$/, '');
-    const pathPart = cleanUrl.replace(BASE_URL, '') || '/';
-    const hiUrl = `${BASE_URL}/hi${pathPart === '/' ? '' : pathPart}`;
+    // Add trailing slashes for Vercel redirect compliance
+    let cleanUrl = url.replace(/\/$/, '');
+    if (cleanUrl !== BASE_URL) {
+      cleanUrl += '/';
+    }
+    
+    let pathPart = cleanUrl.replace(BASE_URL, '');
+    let hiUrl = '';
+    
+    if (pathPart === '' || pathPart === '/') {
+        hiUrl = `${BASE_URL}/hi/`;
+    } else {
+        // pathPart already has a trailing slash from cleanUrl
+        hiUrl = `${BASE_URL}/hi${pathPart}`;
+    }
     
     // English entry
     expandedUrls.push({
