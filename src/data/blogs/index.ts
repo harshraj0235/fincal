@@ -71,8 +71,10 @@ import { aliaBhattAlphaSalaryBlog } from './alia-bhatt-alpha-salary-roi';
 import { alphaNetflixOttRightsBlog } from './alpha-netflix-ott-rights-strategy';
 import { yrfSpyUniverseAlphaEconomicsBlog } from './yrf-spy-universe-alpha-franchise-economics';
 import { financialRisksAlphaMoviePiracyBlog } from './financial-risks-telegram-alpha-movie-download-scams';
+import { moneycontrolSipCalculatorAlternative } from './711';
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
+  moneycontrolSipCalculatorAlternative,
   alphaMovieBudgetBlog,
   aliaBhattAlphaSalaryBlog,
   alphaNetflixOttRightsBlog,
@@ -220,3 +222,4 @@ export { candlesSoapsBusiness as blog684 } from './684';
 export { handmadeGiftItemsBusiness as blog685 } from './685';
 export { pickleBusinessBlog as blog686 } from './686';
 export { paperBagBusinessBlog as blog687 } from './687';
+export { moneycontrolSipCalculatorAlternative } from './711';
