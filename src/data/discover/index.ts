@@ -1,3 +1,9 @@
+import { 
+    toxicMovieTabaahiSong, toxicMovieBoxOffice, toxicMovieDoubleRole, 
+    toxicMovieCensorship, toxicMovieRavanLink, toxicMovieAction, 
+    toxicMovieReleaseStrategy, toxicMovieGoaSetting, toxicMovieFemaleCast 
+} from './toxic-movie-series';
+import { yashToxicMovie } from './yash-toxic-movie-raya-release-date-box-office';
 import { epfoServerDownCheckPfBalanceWithoutUmang } from './epfo-server-down-check-pf-balance-without-umang';
 import { realCost1LakhSalaryDelhiMumbaiMiddleClass } from './real-cost-1-lakh-salary-delhi-mumbai-middle-class';
 import { indianFighterPilotsDietRoutineSukhoiRafale } from './indian-fighter-pilots-diet-routine-sukhoi-rafale';
@@ -1083,6 +1089,16 @@ const _discoverArticles: DiscoverArticle[] = [
     itLayoffFinancialLegalChecklist,
     understandingGreyMarketPremiumGmp,
     gujaratTatSMainsPreparationStrategy,
+    yashToxicMovie,
+    toxicMovieTabaahiSong,
+    toxicMovieBoxOffice,
+    toxicMovieDoubleRole,
+    toxicMovieCensorship,
+    toxicMovieRavanLink,
+    toxicMovieAction,
+    toxicMovieReleaseStrategy,
+    toxicMovieGoaSetting,
+    toxicMovieFemaleCast,
     // Add variables here
 ];
 

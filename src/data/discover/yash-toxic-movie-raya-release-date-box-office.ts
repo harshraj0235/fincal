@@ -1,0 +1,177 @@
+import { DiscoverArticle } from './types';
+
+export const yashToxicMovie: DiscoverArticle = {
+    id: 'yash-toxic-movie-raya-release-date-box-office',
+    slug: 'yash-toxic-movie-raya-release-date-box-office',
+    title: 'Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 5 बड़े खुलासे',
+    snippet: 'Yash upcoming movie Toxic: A Fairy Tale for Grown-Ups के रिलीज डेट, कास्ट, और KGF कनेक्शन की पूरी सच्चाई। जानिए क्यों ₹1000 करोड़ की यह फिल्म सारे रिकॉर्ड तोड़ेगी।',
+    coverImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJxhYd61dcfTnwxbQMMZxIj-9xAgv6DZyl69r1qKs3g&s=10',
+    author: 'MoneyCal Team',
+    date: '2026-07-13T12:00:00+05:30',
+    sections: [
+        {
+            type: 'p',
+            content: 'KGF Chapter 2 के बाद पूरे भारत को सुपरस्टार यश (Yash) की अगली फिल्म का बेसब्री से इंतजार था। और अब, <strong>Yash Toxic Movie</strong> इंटरनेट पर तहलका मचा रही है! "Toxic: A Fairy Tale for Grown-Ups" सिर्फ एक फिल्म नहीं है, बल्कि यह एक साइकोलॉजिकल एक्शन थ्रिलर है जो भारतीय सिनेमा के सारे पुराने रिकॉर्ड तोड़ने वाली है। डायरेक्टर Geetu Mohandas के निर्देशन में बन रही इस फिल्म में यश एक बिल्कुल नए और डार्क अवतार में नजर आएंगे, जिसे लोग \'Raya\' के नाम से जान रहे हैं। सोशल मीडिया पर हर जगह सिर्फ इसी फिल्म की चर्चा है — चाहे वो इसका जबरदस्त बजट हो, हॉलीवुड लेवल का एक्शन हो, या फिर Nayanthara और Kiara Advani जैसी मेगास्टार्स की एंट्री। इस आर्टिकल में हम आपको Toxic movie के बारे में वो 5 बड़े खुफिया राज बताएंगे जो मेकर्स अभी दुनिया से छिपा रहे हैं!'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional teaser. Used for fair use, review, and editorial reporting only. No copyright infringement intended.</span>'
+        },
+        {
+            type: 'h2',
+            content: '1. Beyond Rocky Bhai: Yash’s Character "Raya" in Toxic is Way More Dangerous'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPk9DaIDLmkR7dq5-uUKnPE9_cnSyMWAOXuZsi6szrA&s'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'KGF में रॉकी भाई का किरदार एक सीधा-साधा एंग्री यंग मैन था, जो अपनी मां के सपने पूरे करने के लिए अंडरवर्ल्ड का बेताज बादशाह बन गया। लेकिन <strong>Toxic movie</strong> में यश का किरदार, जिसका नाम अफवाहों के अनुसार \'Raya\' है, पूरी तरह से अलग है। यह किरदार एक टिपिकल मास हीरो नहीं ক্ষমতায় नहीं है, बल्कि एक डार्क, साइकोलॉजिकल एंटी-हीरो है। फिल्म के टीजर में जो वाइब दी गई है, उससे साफ पता चलता है कि "Raya" दिमाग से खेलता है। वह सिर्फ गोलियां नहीं चलाता, बल्कि लोगों के दिमाग से खिलवाड़ करके अपनी सत्ता कायम करता है।'
+        },
+        {
+            type: 'p',
+            content: 'Geetu Mohandas, जो अपनी रियलिस्टिक और डार्क फिल्मों के लिए जानी जाती हैं, यश के इस किरदार को एक "Fairy Tale for Grown-Ups" की तरह पेश कर रही हैं। इसका मतलब है कि फिल्म में बहुत ज्यादा वॉयलेंस, एब्यूज, और मैच्योर थीम्स होंगी। यह बच्चों के लिए नहीं है! अगर हम फिल्म के बजट की बात करें, तो अफवाह है कि इसका बजट ₹500 करोड़ से भी ज्यादा है। इतनी बड़ी रकम का सही कैलकुलेशन करने के लिए बड़ी-बड़ी कंपनियों को <a href="https://moneycal.in/tools/gst-calculator">GST Calculator</a> का सहारा लेना पड़ता होगा! लेकिन यश की फैन फॉलोइंग को देखते हुए, मेकर्स को यकीन है कि यह फिल्म बॉक्स ऑफिस पर तबाही मचाएगी।'
+        },
+        {
+            type: 'h2',
+            content: '2. Guns, Retro Luxury, and Cartels: 1970s Goa का खूंखार अंडरवर्ल्ड'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4M9FaugHpSF-E5-6AZi9yf4e-XwMOMQe7gtMVGfjyoQ&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'Toxic movie की कहानी हवा में नहीं, बल्कि 1940 से 1970 के दशक के गोवा (Goa) के खतरनाक ड्रग्स और स्मगलिंग कार्टेल्स के इर्द-गिर्द घूमती है। यह वह समय था जब पुर्तगाली भारत से जा रहे थे और गोवा में विदेशी ड्रग्स का बड़ा बाजार पनप रहा था। फिल्म में विंटेज एस्थेटिक्स, टॉमी गन्स (Tommy guns), पुरानी विंटेज गाड़ियां, और क्लासिक रेट्रो लुक देखने को मिलेगा। टीजर में ही जो लाल रंग का डार्क टोन और जुआ खेलते हुए लोग दिखाए गए हैं, वह पूरी तरह से रेट्रो लग्जरी और अंडरवर्ल्ड को दर्शाता है।'
+        },
+        {
+            type: 'p',
+            content: 'रिपोर्ट्स के मुताबिक, सेट डिजाइनिंग पर ₹100 करोड़ से ज्यादा खर्च किए गए हैं ताकि 1970 के गोवा को बिल्कुल असली दिखाया जा सके। वैसे अगर आप भी 1970 से लेकर आज तक की महंगाई (inflation) का हिसाब लगाना चाहें, तो यह काफी हैरान करने वाला होगा। अगर उस समय किसी ने ₹10,000 की FD की होती, तो आज उसकी वैल्यू क्या होती? आप खुद हमारा <a href="https://moneycal.in/tools/fd-calculator">FD Calculator</a> यूज़ करके देख सकते हैं कि कंपाउंड इंटरेस्ट का जादू क्या होता है! फिल्म में भी पैसों और पावर का यह खेल बहुत ही खूंखार तरीके से दिखाया जाएगा।'
+        },
+        {
+            type: 'callout',
+            content: '<strong>🚨 Viral Theory:</strong> इंटरनेट पर एक बड़ी थ्योरी यह चल रही है कि फिल्म में यश डबल रोल में हो सकते हैं — यानी यश ही फिल्म के हीरो होंगे और खुद ही सबसे बड़े विलेन! अगर यह सच निकला, तो सिनेमाघरों में बवाल मचना तय है।'
+        },
+        {
+            type: 'h2',
+            content: '3. Toxic Cast: Nayanthara, Kiara Advani और Huma Qureshi का खौफनाक रोल'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNj4b7lPB0ZPt_sy1hycuVE8QC7rRMwQ2q5T6etH2UrQ&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'अक्सर देखा जाता है कि मास एक्शन फिल्मों में हीरोइनों का रोल सिर्फ गानों और रोमांस तक सीमित रहता है। लेकिन <strong>Toxic release date</strong> से पहले जो कास्ट अनाउंसमेंट हुई है, उसने सबको हिला कर रख दिया है। फिल्म में लेडी सुपरस्टार नयनतारा (Nayanthara), कियारा आडवाणी (Kiara Advani), और हुमा कुरैशी (Huma Qureshi) लीड रोल्स में हैं। "Ladies & Ladies" प्रोमो से साफ हो गया है कि ये औरतें इस 1970s के गोवा ड्रग कार्टेल को अपने इशारों पर नचाएंगी। इनमें लस्ट, पावर, और धोखे का जबरदस्त खेल देखने को मिलेगा।'
+        },
+        {
+            type: 'p',
+            content: 'नयनतारा फिल्म में यश की बहन या एक खूंखार मास्टरमाइंड का रोल निभा सकती हैं, जबकि कियारा आडवाणी यश के अपोजिट एक ग्रे-शेड (grey shade) किरदार में होंगी। इन सभी बड़े स्टार्स की फीस को मिलाकर फिल्म का बजट आसमान छू रहा है। कई स्टार्स ने अपनी फीस को फिल्म के प्रॉफिट में शेयर के रूप में भी लिया है। बड़े स्टार्स अपना पैसा बहुत ही स्मार्ट तरीके से इन्वेस्ट करते हैं, शायद वो भी अपने पैसों को SIP के जरिए ग्रो करते हों। आम इंसान भी मात्र ₹1000 से अमीर बन सकता है, बस उसे <a href="https://moneycal.in/tools/sip-calculator">SIP Calculator</a> का इस्तेमाल करके सही प्लानिंग करनी चाहिए।'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'h2',
+            content: '4. The Hollywood Action Connection: John Wick का एक्शन डायरेक्टर भारत में!'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLQi8DGCr22xRksV4AzfvrPTrcJ1tmjo9n82SISaBVtQ&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'Toxic movie को एक ग्लोबल इवेंट बनाने के लिए मेकर्स कोई कसर नहीं छोड़ रहे हैं। इस फिल्म के एक्शन सीन्स को डिजाइन करने के लिए हॉलीवुड के टॉप एक्शन डायरेक्टर J.J. Perry (जो John Wick जैसी फिल्मों के एक्शन कोरियोग्राफर रहे हैं) को भारत लाया गया है। इसका मतलब है कि फिल्म में टिपिकल साउथ इंडियन एक्शन (जहां गाड़ियां हवा में उड़ती हैं) के बजाय बहुत ही रियलिस्टिक, हाई-रिकॉइल वेपन मास्टरी और हैंड-टू-हैंड कॉम्बैट देखने को मिलेगा। '
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZlLUfPtAaQfpiHbyDMiiQrz_6HnvEfuSGO-rfnyOIpw&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'फिल्म के अंदर जो गन कल्चर दिखाया जाएगा, वो भारतीय सिनेमा के लिए बिल्कुल नया अनुभव होगा। लेकिन इस डार्क कंटेंट और गन सीन्स की वजह से सेंसरशिप का भी भारी खतरा मंडरा रहा है। फिल्म गर्व से खुद को एक \'Fairy Tale for Grown-Ups\' बुला रही है, यानी मेकर्स इसे A-Rating के साथ रिलीज करने से नहीं डर रहे हैं। A-Rating होने के बावजूद अगर फिल्म ब्लॉकबस्टर होती है, तो इसका बॉक्स ऑफिस कलेक्शन (Toxic box office collection prediction) आसानी से ₹1000 करोड़ पार कर सकता है। इतनी बड़ी कमाई पर प्रोड्यूसर्स को कितना इनकम टैक्स भरना पड़ेगा, इसका हिसाब तो सिर्फ <a href="https://moneycal.in/tools/income-tax-calculator">Income Tax Calculator</a> ही लगा सकता है!'
+        },
+        {
+            type: 'h2',
+            content: '5. The Masterstroke Release Date: 4 बड़े Festivals पर एक साथ कब्जा'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQPE4z60blVrg-aYSj0VimmMIWLhppr-lx6LBfVuCoqw&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'Toxic movie release date को लेकर सबसे बड़ी खबर यह है कि मेकर्स ने बहुत ही तगड़ी स्ट्रैटेजी बनाई है। इस फिल्म को ऐसी डेट पर रिलीज किया जा रहा है जिससे इसे लगातार कई छुट्टियों का फायदा मिले। फिल्म Onam, Raksha Bandhan, Varamahalakshmi, और Eid के आसपास एक लंबे फेस्टिव वीकेंड को टारगेट कर रही है। इसे पैन-इंडिया (Pan-India) लेवल पर हिंदी, कन्नड़, तेलुगु, तमिल और मलयालम में एक साथ रिलीज किया जाएगा।'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKs3DMhnpClgH0z7nHYbIPH8SAntjkam4jzZeX9TyGsw&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'अगर फिल्म दर्शकों को पसंद आ गई, तो यह KGF 2 के ₹1200 करोड़ के रिकॉर्ड को भी पीछे छोड़ सकती है। यश के लिए यह फिल्म इसलिए भी जरूरी है क्योंकि इसके बाद वो सीधे नितेश तिवारी की "रामायण" (Ramayan) में \'रावण\' के किरदार में दिखने वाले हैं। \'Raya\' से लेकर \'Ravan\' तक का यह सफर यश को इंडियन सिनेमा का सबसे बड़ा ग्लोबल सुपरस्टार बना देगा। इस मेगा-सिनेमैटिक जर्नी का असर पूरे भारत के बॉक्स ऑफिस मार्केट पर पड़ेगा।'
+        },
+        {
+            type: 'h2',
+            content: 'निष्कर्ष: क्या Toxic सारे रिकॉर्ड तोड़ पाएगी?'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ92hGrwwOLfOp6PyrhxffRLjQ_-8j6p1rrE9LfZk6fmw&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'Toxic movie सिर्फ एक फिल्म नहीं, बल्कि एक इमोशन बनने जा रही है। इसका डार्क थीम, रेट्रो गोवा का सेट, हॉलीवुड लेवल का एक्शन, और यश का खूंखार लुक इसे साल की सबसे बड़ी ब्लॉकबस्टर बनाने का दम रखता है। नयनतारा और कियारा के रोल्स फिल्म में चार चांद लगा देंगे। अगर आप भी इस फिल्म का फर्स्ट डे फर्स्ट शो देखना चाहते हैं, तो अभी से अपने खर्चे मैनेज करना शुरू कर दें।'
+        },
+        {
+            type: 'image',
+            content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1xj84tPHRriwl2eN5_JzHVjN_Htl3O5qZzPX0xVsmdQ&s=10'
+        },
+        {
+            type: 'p',
+            content: '<span style="font-size: 11px; color: #888; display:block; text-align:center;">Image Source: Promotional material. Used for editorial reporting.</span>'
+        },
+        {
+            type: 'p',
+            content: 'वैसे, फिल्मों का मजा अपनी जगह है, लेकिन अपनी रियल लाइफ को ब्लॉकबस्टर बनाने के लिए फाइनेंस की नॉलेज होना बहुत जरूरी है। अगर आप अपने घर का सपना पूरा करना चाहते हैं, तो फिल्म की टिकट बुक करने के साथ-साथ एक बार <a href="https://moneycal.in/tools/home-loan-emi-calculator">Home Loan EMI Calculator</a> जरूर चेक करें, ताकि आपके भविष्य की प्लानिंग भी यश के बॉक्स ऑफिस रिकॉर्ड्स की तरह सुपरहिट रहे!'
+        }
+    ]
+};
