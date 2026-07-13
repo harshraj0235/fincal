@@ -1,6 +1,96 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "bcci-squad-changes-rohit-sharma",
+        "slug": "bcci-squad-changes-rohit-sharma",
+        "title": "BCCI का बड़ा फैसला: Rohit Sharma की कप्तानी और Team India के स्क्वाड में हुए ये चौंकाने वाले बदलाव!",
+        "snippet": "भारतीय क्रिकेट कंट्रोल बोर्ड (BCCI) ने आगामी सीरीज के लिए टीम इंडिया में बड़े बदलाव किए हैं। चोटिल खिलाड़ियों को बाहर का रास्ता दिखा दिया गया है और कप्तानी को लेकर भी बड़ा अपडेट आया है। जानिए पूरी सच्चाई।",
+        "coverImage": "/images/discover/bcci-squad-changes-rohit-sharma.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "avengers-doomsday-poster-easter-eggs",
+        "slug": "avengers-doomsday-poster-easter-eggs",
+        "title": "Avengers Doomsday Poster: मार्वल की नई फिल्म के पोस्टर ने मचाया तहलका! डॉक्टर डूम के रूप में इस दिग्गज की वापसी?",
+        "snippet": "Marvel Studios की अपकमिंग फिल्म Avengers: Doomsday का नया पोस्टर (Concept Art) रिलीज़ हो गया है। इस पोस्टर में X-Men से लेकर Fantastic Four तक के ढेरों हिडन डिटेल्स (Easter Eggs) छिपे हैं। जानिए भारत में कब रिलीज़ होगी ये फिल्म।",
+        "coverImage": "/images/discover/avengers-doomsday-poster-easter-eggs.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "dhamaal-4-announcement",
+        "slug": "dhamaal-4-announcement",
+        "title": "Dhamaal 4 Announcement: 'धमाल 4' की हुई धांसू एंट्री! अरशद वारसी और रितेश ने फिर किया लोटपोट, जानिए फिल्म का असली सच",
+        "snippet": "कॉमेडी फैंस का इंतज़ार हुआ खत्म! Dhamaal 4 सिनेमाघरों में रिलीज़ हो चुकी है। अरशद वारसी और अजय देवगन की इस फिल्म ने बॉक्स ऑफिस पर धमाल मचा दिया है। क्या संजय दत्त (Sanjay Dutt) की वापसी हुई है? जानिए पूरी सच्चाई।",
+        "coverImage": "/images/discover/dhamaal-4-announcement.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "wimbledon-2026-live",
+        "slug": "wimbledon-2026-live",
+        "title": "Wimbledon 2026 Final: विंबलडन में बड़ा उलटफेर! जानिए किसने जीता खिताब और भारत में कहाँ देखे गए मैच",
+        "snippet": "टेनिस (Tennis) के सबसे बड़े टूर्नामेंट Wimbledon 2026 का रोमांचक अंत हो चुका है। इस साल ग्रास कोर्ट पर कई बड़े उलटफेर (Upsets) देखने को मिले। जानिए मेन्स और विमेंस सिंगल्स का खिताब किसने अपने नाम किया।",
+        "coverImage": "/images/discover/wimbledon-2026-live.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "sonam-wangchuk-protest-latest-update",
+        "slug": "sonam-wangchuk-protest-latest-update",
+        "title": "Sonam Wangchuk Protest Update: लद्दाख की मांग और NEET विवाद! 15वें दिन भूख हड़ताल पर सोनम वांगचुक की तबीयत बिगड़ी",
+        "snippet": "मशहूर एक्टिविस्ट सोनम वांगचुक पिछले 15 दिनों से दिल्ली के जंतर मंतर पर भूख हड़ताल पर बैठे हैं। जानिए उनकी मुख्य मांगें क्या हैं और क्यों उन्होंने कॉकरोच जनता पार्टी (CJP) का समर्थन किया है।",
+        "coverImage": "/images/discover/sonam-wangchuk-protest-latest-update.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "1-lakh-salary-middle-class-trap",
+        "slug": "1-lakh-salary-middle-class-trap",
+        "title": "1 Lakh Salary is the New Trap: क्यों 1 लाख महीना कमाने वाला भी आज 10 तारीख को गरीब हो जाता है?",
+        "snippet": "सोशल मीडिया पर एक नई बहस छिड़ गई है कि क्या आज के समय में भारत के महानगरों में ₹1,00,000 महीने की सैलरी काफी है? जानिए क्यों यह सैलरी अब एक मिडिल क्लास ट्रैप (Middle Class Trap) बन चुकी है और इससे कैसे बचें।",
+        "coverImage": "/images/discover/one-lakh-salary-metro-city-survival.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "epf-transfer-without-uan-password-online",
+        "slug": "epf-transfer-without-uan-password-online",
+        "title": "UAN Password भूल गए? कोई बात नहीं! बिना पासवर्ड के ऐसे ट्रांसफर करें अपना PF का पैसा",
+        "snippet": "नौकरी बदलने के बाद PF ट्रांसफर करना जरूरी है, लेकिन अगर आप अपना UAN पासवर्ड भूल गए हैं तो क्या करें? EPFO के नए नियमों के तहत अब बिना पासवर्ड के भी आप अपना पीएफ ट्रांसफर (PF Transfer) कर सकते हैं। जानिए पूरा स्टेप-बाय-स्टेप प्रोसेस।",
+        "coverImage": "/images/discover/epfo-job-change-pf-transfer.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "sensex-targets-100k-multibagger-stocks",
+        "slug": "sensex-targets-100k-multibagger-stocks",
+        "title": "Sensex Update: शेयर बाजार में ऐतिहासिक उछाल! इन 5 शेयरों ने दिया 300% रिटर्न, क्या अब 1 लाख पार करेगा सेंसेक्स?",
+        "snippet": "जुलाई 2026 में BSE Sensex ने सभी पुराने रिकॉर्ड तोड़ दिए हैं। मार्केट के इस बूम (Market Boom) में किन शेयरों ने निवेशकों को मालामाल किया? क्या अब सेंसेक्स 1 लाख का जादुई आंकड़ा छूने वाला है?",
+        "coverImage": "/images/discover/bse-sensex-high-july-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "aamir-khan-3rd-marriage-fake-news-busted",
+        "slug": "aamir-khan-3rd-marriage-fake-news-busted",
+        "title": "Aamir Khan 3rd Marriage: क्या सच में तीसरी बार दूल्हा बन रहे हैं आमिर खान? जानिए वायरल तस्वीर की पूरी सच्चाई",
+        "snippet": "बॉलीवुड के मिस्टर परफेक्शनिस्ट आमिर खान (Aamir Khan) की तीसरी शादी की खबरें सोशल मीडिया पर आग की तरह फैल रही हैं। क्या फातिमा सना शेख (Fatima Sana Shaikh) के साथ वायरल हो रही वह तस्वीर असली है? जानिए इस खबर का पूरा सच (Fact Check)।",
+        "coverImage": "/images/discover/aamir-khan-third-marriage-announcement-gossip.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "netflix-obsession-breaking-records-india",
+        "slug": "netflix-obsession-breaking-records-india",
+        "title": "Netflix 'Obsession' Review: सस्पेंस और थ्रिल का बाप! क्यों भारत में नंबर 1 पर ट्रेंड कर रही है ये सीरीज?",
+        "snippet": "अगर आप ओटीटी (OTT) पर कुछ दमदार सस्पेंस और साइकोलॉजिकल थ्रिलर (Psychological Thriller) देखने का प्लान बना रहे हैं, तो Netflix की नई सीरीज 'Obsession' आपके होश उड़ा देगी। बिना स्पॉइलर के जानिए इसका रिव्यू और कहानी का सच।",
+        "coverImage": "/images/discover/obsession-movie-netflix-ending-explained-clues.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
         "id": "epfo-job-change-pf-transfer",
         "slug": "epfo-job-change-pf-transfer",
         "title": "Job Change? Don't Lose Your Money: Step-by-Step Guide to Transfer Your PF Balance Online via EPFO",

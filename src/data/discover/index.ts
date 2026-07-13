@@ -518,6 +518,16 @@ import { indoreMonsoonWeddingViralVideoWaterloggedMandap } from './indore-monsoo
 import { indoreLocoPilotStopsTrainForSamosaVideo } from './indore-loco-pilot-stops-train-for-samosa-video';
 
 // ADD NEW DISCOVER ARTICLES HERE
+import { bcciSquadChangesRohitSharma } from './bcci-squad-changes-rohit-sharma';
+import { avengersDoomsdayPosterEasterEggs } from './avengers-doomsday-poster-easter-eggs';
+import { dhamaal4Announcement } from './dhamaal-4-announcement';
+import { wimbledon2026Live } from './wimbledon-2026-live';
+import { sonamWangchukProtestLatestUpdate } from './sonam-wangchuk-protest-latest-update';
+import { oneLakhSalaryMiddleClassTrap } from './1-lakh-salary-middle-class-trap';
+import { epfTransferWithoutUanPasswordOnline } from './epf-transfer-without-uan-password-online';
+import { sensexTargets100kMultibaggerStocks } from './sensex-targets-100k-multibagger-stocks';
+import { aamirKhan3rdMarriageFakeNewsBusted } from './aamir-khan-3rd-marriage-fake-news-busted';
+import { netflixObsessionBreakingRecordsIndia } from './netflix-obsession-breaking-records-india';
 import { epfoJobChangePfTransfer } from './epfo-job-change-pf-transfer';
 import { oneLakhSalaryMetroCitySurvival } from './one-lakh-salary-metro-city-survival';
 import { bseSensexHighJuly2026 } from './bse-sensex-high-july-2026';
@@ -530,6 +540,16 @@ import { brentCrudeOilPetrolDieselPrice } from './brent-crude-oil-petrol-diesel-
 import { dixonTechnologiesShareMakeInIndia } from './dixon-technologies-share-make-in-india';
 
 const _discoverArticles: DiscoverArticle[] = [
+    bcciSquadChangesRohitSharma,
+    avengersDoomsdayPosterEasterEggs,
+    dhamaal4Announcement,
+    wimbledon2026Live,
+    sonamWangchukProtestLatestUpdate,
+    oneLakhSalaryMiddleClassTrap,
+    epfTransferWithoutUanPasswordOnline,
+    sensexTargets100kMultibaggerStocks,
+    aamirKhan3rdMarriageFakeNewsBusted,
+    netflixObsessionBreakingRecordsIndia,
     epfoJobChangePfTransfer,
     oneLakhSalaryMetroCitySurvival,
     bseSensexHighJuly2026,
