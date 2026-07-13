@@ -1,4 +1,4 @@
-import { BlogPost } from '../types';
+import { BlogPost } from './types';
 
 export const moneycontrolSipCalculatorAlternative: BlogPost = {
   id: 711,

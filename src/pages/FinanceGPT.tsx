@@ -148,11 +148,11 @@ function buildContentIndex(): ContentItem[] {
     cat.calculators.forEach((calc) => {
       items.push({
         id: calc.id,
-        title: calc.title,
+        title: calc.name,
         description: calc.description || '',
         category: cat.name,
         url: `/tools/${calc.id}`,
-        keywords: `${calc.title} ${cat.name}`,
+        keywords: `${calc.name} ${cat.name}`,
         type: 'calculator',
       });
     });
@@ -433,8 +433,8 @@ const FinanceGPT: React.FC = () => {
 
       setChatHistory(prev => [
         ...prev,
-        { role: 'user', content: query },
-        { role: 'assistant', content: result.answer || streamedText },
+        { role: 'user' as const, content: query },
+        { role: 'assistant' as const, content: result.answer || streamedText },
       ].slice(-10));
 
     } catch (error) {
@@ -755,7 +755,7 @@ const FinanceGPT: React.FC = () => {
                     <Link key={article.id} to={`/discover/${article.slug}`} className="fgpt-trending-card">
                       <h3 className="fgpt-trending-card-title">{article.title}</h3>
                       <span className="fgpt-trending-card-date">
-                        {new Date(article.date).toLocaleDateString('hi-IN', { month: 'short', day: 'numeric' })}
+                        {new Date(article.date || Date.now()).toLocaleDateString('hi-IN', { month: 'short', day: 'numeric' })}
                       </span>
                     </Link>
                   ))}

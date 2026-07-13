@@ -75,8 +75,10 @@ import { moneycontrolSipCalculatorAlternative } from './711';
 import { howToCheckMutualFundReturnsFaster } from './712';
 import { moneycontrolVsMoneycalSipCalculatorAccurate } from './713';
 import { stepByStepMoneycontrolSipCalculatorBeginners } from './714';
+import { bestAdFreeMoneycontrolTrackerAlternative } from './715';
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
+  bestAdFreeMoneycontrolTrackerAlternative,
   stepByStepMoneycontrolSipCalculatorBeginners,
   moneycontrolVsMoneycalSipCalculatorAccurate,
   howToCheckMutualFundReturnsFaster,
@@ -232,3 +234,4 @@ export { moneycontrolSipCalculatorAlternative } from './711';
 export { howToCheckMutualFundReturnsFaster } from './712';
 export { moneycontrolVsMoneycalSipCalculatorAccurate } from './713';
 export { stepByStepMoneycontrolSipCalculatorBeginners } from './714';
+export { bestAdFreeMoneycontrolTrackerAlternative } from './715';
