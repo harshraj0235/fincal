@@ -12,7 +12,7 @@ export const howToCheckMutualFundReturnsFaster: BlogPost = {
   excerpt: 'Tracking mutual fund returns shouldn’t involve endless buffering or closing pop-up ads. Here is how you can check your mutual fund returns faster and more accurately in 2026.',
   categories: ['Mutual Funds', 'Investing Tools', 'Portfolio Tracking'],
   keywords: ['How to check Mutual Fund returns', 'Moneycontrol mutual fund alternative', 'check mutual fund returns faster', 'mutual fund tracker India', 'SIP return calculator without ads', 'track SIP performance'],
-  date: '2026-07-13',
+  date: '2026-07-13T23:59:57Z',
   lastModified: '2026-07-13',
   coverImage: '/images/blogs/how-to-check-mutual-fund-returns-like-moneycontrol-but-faster.png',
   content: [

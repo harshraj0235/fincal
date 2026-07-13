@@ -12,7 +12,7 @@ export const moneycontrolSipCalculatorAlternative: BlogPost = {
   excerpt: 'Tired of slow, ad-heavy SIP calculators? We dive deep into why an ad-free Moneycontrol SIP calculator alternative is what you need for accurate mutual fund planning in 2026.',
   categories: ['Mutual Funds', 'SIP', 'Financial Planning', 'Investing Tools'],
   keywords: ['Moneycontrol SIP Calculator Alternative', 'SIP calculator without ads', 'mutual fund returns calculator', 'Moneycontrol alternatives 2026', 'fast SIP calculator India', 'Moneycontrol mutual fund calculator'],
-  date: '2026-07-13',
+  date: '2026-07-13T23:59:59Z',
   lastModified: '2026-07-13',
   coverImage: '/images/blogs/moneycontrol-sip-calculator-alternative.png',
   content: [

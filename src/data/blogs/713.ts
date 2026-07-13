@@ -12,7 +12,7 @@ export const moneycontrolVsMoneycalSipCalculatorAccurate: BlogPost = {
   excerpt: 'We mathematically compare the Moneycontrol SIP Calculator against the new ad-free MoneyCal platform. Find out which tool offers the highest accuracy and best user experience for 2026.',
   categories: ['Mutual Funds', 'Investing Tools', 'Financial Planning'],
   keywords: ['Moneycontrol vs MoneyCal', 'is Moneycontrol SIP calculator accurate', 'accurate SIP calculator 2026', 'Moneycontrol SIP calculator alternative', 'compare mutual fund calculators India', 'best SIP calculator without ads'],
-  date: '2026-07-13',
+  date: '2026-07-13T23:59:58Z',
   lastModified: '2026-07-13',
   coverImage: '/images/blogs/moneycontrol-vs-moneycal-sip-calculator-accurate-2026.png',
   content: [

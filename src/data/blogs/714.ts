@@ -12,7 +12,7 @@ export const stepByStepMoneycontrolSipCalculatorBeginners: BlogPost = {
   excerpt: 'Are you a beginner looking to calculate your first mutual fund investment? Here is a complete, jargon-free guide to using SIP calculators effectively in 2026.',
   categories: ['Mutual Funds', 'Beginner Guides', 'SIP'],
   keywords: ['How to use Moneycontrol SIP calculator', 'SIP calculator for beginners', 'Moneycontrol mutual fund calculator guide', 'calculate SIP returns easily', 'SIP for beginners India', 'best SIP calculator 2026'],
-  date: '2026-07-13',
+  date: '2026-07-13T23:59:59Z',
   lastModified: '2026-07-13',
   coverImage: '/images/blogs/step-by-step-how-to-use-the-moneycontrol-sip-calculator-for-beginners.png',
   content: [
