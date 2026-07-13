@@ -4,7 +4,7 @@ export const moneycontrolSipCalculatorAlternative: BlogPost = {
   id: 711,
   slug: 'moneycontrol-sip-calculator-alternative',
   title: 'Moneycontrol SIP Calculator Alternative: How to Calculate Returns Without Ads in 2026',
-  author: 'MoneyCal India Team',
+  author: 'MoneyCal Team',
   authorTitle: 'Financial Experts',
   authorImage: '/images/authors/team.jpg',
   authorBio: 'Expert financial advisors helping Indians make informed money decisions with comprehensive guides and tools.',
