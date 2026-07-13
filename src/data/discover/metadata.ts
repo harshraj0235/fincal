@@ -13,7 +13,7 @@ export const discoverMetadata = [
         "id": "toxic-movie-1970-goa-underworld-aesthetic",
         "slug": "toxic-movie-1970-goa-underworld-aesthetic",
         "title": "Toxic Movie 1970s Goa: ड्रग्स, माफिया और विंटेज लग्जरी का खूंखार खेल!",
-        "snippet": "Yash की नई फिल्म Toxic 1940 से 1970 के दशक के गोवा पर आधारित है। जानिए इस रेट्रो अंडरवर्ल्ड की सच्चाई क्या है।",
+        "snippet": "Yash की नई फिल्म Toxic 1950 से 1970 के दशक के गोवा पर आधारित है। जानिए इस रेट्रो अंडरवर्ल्ड की सच्चाई क्या है।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNj4b7lPB0ZPt_sy1hycuVE8QC7rRMwQ2q5T6etH2UrQ&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:40:00+05:30"
@@ -58,7 +58,7 @@ export const discoverMetadata = [
         "id": "toxic-movie-yash-double-role-theory-villain",
         "slug": "toxic-movie-yash-double-role-theory-villain",
         "title": "Toxic Movie Leaked Story: क्या Yash खुद ही होंगे फिल्म के सबसे बड़े विलेन?",
-        "snippet": "इंटरनेट पर तहलका मचा रही है Toxic movie की डबल रोल थ्योरी! जानिए कैसे यश फिल्म में हीरो और विलेन दोनों का किरदार निभा सकते हैं।",
+        "snippet": "इंटरनेट पर तहलका मचा रही है Toxic movie की डबल रोल (Dual Role) थ्योरी! जानिए कैसे यश फिल्म में हीरो और विलेन दोनों का किरदार निभा सकते हैं।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZlLUfPtAaQfpiHbyDMiiQrz_6HnvEfuSGO-rfnyOIpw&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:15:00+05:30"
@@ -67,7 +67,7 @@ export const discoverMetadata = [
         "id": "toxic-movie-box-office-collection-1200-crore-budget",
         "slug": "toxic-movie-box-office-collection-1200-crore-budget",
         "title": "Toxic Box Office Prediction: क्या Yash की नई फिल्म ₹1200 करोड़ कमा पाएगी?",
-        "snippet": "Toxic movie budget ₹500+ करोड़ है। जानिए क्यों इस फिल्म पर सबसे ज्यादा दबाव है और क्या यह KGF Chapter 2 का रिकॉर्ड तोड़ पाएगी।",
+        "snippet": "Toxic movie budget ₹500 से ₹1000 करोड़ के बीच है। जानिए क्यों इस फिल्म पर बॉक्स ऑफिस का सबसे ज्यादा दबाव है और क्या यह KGF 2 का रिकॉर्ड तोड़ पाएगी।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:10:00+05:30"
@@ -76,7 +76,7 @@ export const discoverMetadata = [
         "id": "toxic-movie-tabaahi-song-yash-kiara-chemistry",
         "slug": "toxic-movie-tabaahi-song-yash-kiara-chemistry",
         "title": "Toxic Movie Song Tabaahi: Yash और Kiara Advani की केमिस्ट्री ने तोड़े सारे रिकॉर्ड!",
-        "snippet": "Yash की Toxic movie का नया गाना Tabaahi इंटरनेट पर वायरल। जानिए क्यों यह गाना Raataan Lambiyan को भी पीछे छोड़ रहा है।",
+        "snippet": "Yash की Toxic movie का नया गाना Tabaahi इंटरनेट पर वायरल। जानिए क्यों यह गाना Raataan Lambiyan को भी पीछे छोड़ रहा है और फिल्म के हिट होने की गारंटी दे रहा है।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPk9DaIDLmkR7dq5-uUKnPE9_cnSyMWAOXuZsi6szrA&s",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:05:00+05:30"
@@ -3067,8 +3067,8 @@ export const discoverMetadata = [
     {
         "id": "yash-toxic-movie-raya-release-date-box-office",
         "slug": "yash-toxic-movie-raya-release-date-box-office",
-        "title": "Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 5 बड़े खुलासे",
-        "snippet": "Yash upcoming movie Toxic: A Fairy Tale for Grown-Ups के रिलीज डेट, कास्ट, और KGF कनेक्शन की पूरी सच्चाई। जानिए क्यों ₹1000 करोड़ की यह फिल्म सारे रिकॉर्ड तोड़ेगी।",
+        "title": "Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 10 बड़े खुलासे",
+        "snippet": "Yash upcoming movie Toxic: A Fairy Tale for Grown-Ups के रिलीज डेट, कास्ट, बजट और डायरेक्टर Geetu Mohandas के डार्क विजन की पूरी सच्चाई। जानिए 1500 शब्दों में पूरी डिटेल।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJxhYd61dcfTnwxbQMMZxIj-9xAgv6DZyl69r1qKs3g&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:00:00+05:30"

@@ -1,9 +1,13 @@
-import { 
-    toxicMovieTabaahiSong, toxicMovieBoxOffice, toxicMovieDoubleRole, 
-    toxicMovieCensorship, toxicMovieRavanLink, toxicMovieAction, 
-    toxicMovieReleaseStrategy, toxicMovieGoaSetting, toxicMovieFemaleCast 
-} from './toxic-movie-series';
 import { yashToxicMovie } from './yash-toxic-movie-raya-release-date-box-office';
+import { toxicMovieTabaahiSong } from './toxic-movie-tabaahi-song-yash-kiara-chemistry';
+import { toxicMovieBoxOffice } from './toxic-movie-box-office-collection-1200-crore-budget';
+import { toxicMovieDoubleRole } from './toxic-movie-yash-double-role-theory-villain';
+import { toxicMovieCensorship } from './toxic-movie-gun-scene-controversy-a-rating';
+import { toxicMovieRavanLink } from './toxic-movie-raya-to-ravan-ramayan-nitesh-tiwari';
+import { toxicMovieAction } from './toxic-movie-hollywood-action-director-jj-perry';
+import { toxicMovieReleaseStrategy } from './toxic-movie-release-date-4-festivals-strategy';
+import { toxicMovieGoaSetting } from './toxic-movie-1970-goa-underworld-aesthetic';
+import { toxicMovieFemaleCast } from './toxic-movie-cast-nayanthara-kiara-huma';
 import { epfoServerDownCheckPfBalanceWithoutUmang } from './epfo-server-down-check-pf-balance-without-umang';
 import { realCost1LakhSalaryDelhiMumbaiMiddleClass } from './real-cost-1-lakh-salary-delhi-mumbai-middle-class';
 import { indianFighterPilotsDietRoutineSukhoiRafale } from './indian-fighter-pilots-diet-routine-sukhoi-rafale';
