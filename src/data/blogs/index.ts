@@ -74,8 +74,10 @@ import { financialRisksAlphaMoviePiracyBlog } from './financial-risks-telegram-a
 import { moneycontrolSipCalculatorAlternative } from './711';
 import { howToCheckMutualFundReturnsFaster } from './712';
 import { moneycontrolVsMoneycalSipCalculatorAccurate } from './713';
+import { stepByStepMoneycontrolSipCalculatorBeginners } from './714';
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
+  stepByStepMoneycontrolSipCalculatorBeginners,
   moneycontrolVsMoneycalSipCalculatorAccurate,
   howToCheckMutualFundReturnsFaster,
   moneycontrolSipCalculatorAlternative,
@@ -229,3 +231,4 @@ export { paperBagBusinessBlog as blog687 } from './687';
 export { moneycontrolSipCalculatorAlternative } from './711';
 export { howToCheckMutualFundReturnsFaster } from './712';
 export { moneycontrolVsMoneycalSipCalculatorAccurate } from './713';
+export { stepByStepMoneycontrolSipCalculatorBeginners } from './714';
