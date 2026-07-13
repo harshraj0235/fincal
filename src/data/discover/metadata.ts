@@ -85,7 +85,7 @@ export const discoverMetadata = [
         "id": "odyssey-movie-vs-ramayana-trending-india",
         "slug": "odyssey-movie-vs-ramayana-trending-india",
         "title": "Before Ramayana, Watch This? Why The Odyssey Movie Is Trending in India Today!",
-        "snippet": "इंडिया में नितेश तिवारी की रामायण (Ramayan) का बज है, लेकिन नोलन की The Odyssey ने ग्लोबल माइथोलॉजी का नया ट्रेंड सेट कर दिया है।",
+        "snippet": "इंडिया में रामायण (Ramayana) का बज है, लेकिन नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey ने ग्लोबल माइथोलॉजी का नया ट्रेंड सेट कर दिया है। जानिए दोनों में क्या समानताएं हैं।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYbkA4E-OOY1QDfesvo-UE-4PYOBYvUEL2ojx9O4R20g&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:05:00+05:30"
@@ -94,7 +94,7 @@ export const discoverMetadata = [
         "id": "nolan-odyssey-movie-release-date-india-fans",
         "slug": "nolan-odyssey-movie-release-date-india-fans",
         "title": "The Odyssey Movie Release Date: India Fans Go Crazy Over This Epic Action Trailer!",
-        "snippet": "Christopher Nolan की 2026 की सबसे बड़ी फिल्म The Odyssey का बजट, कास्ट, और रिलीज डेट।",
+        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म The Odyssey की रिलीज डेट, कास्ट, और चौंकाने वाले फैक्ट्स। क्या यह Oppenheimer का रिकॉर्ड तोड़ेगी?",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhgUTYO2xabedpb2UK3Sm-IQBUlNfm3LnlTjamtT4SA&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:00:00+05:30"
@@ -305,7 +305,7 @@ export const discoverMetadata = [
         "id": "odyssey-movie-review-post-credit-scene",
         "slug": "odyssey-movie-review-post-credit-scene",
         "title": "The Odyssey Movie Review: Don't Watch It Until You See This Post-Credit Scene!",
-        "snippet": "नोलन की फिल्म में पहली बार पोस्ट-क्रेडिट सीन! क्या यह एक पूरी ग्रीक माइथोलॉजी ट्राइलॉजी की शुरुआत है?",
+        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में पहली बार होगा एक सीक्रेट पोस्ट-क्रेडिट सीन! जानिए यह सीन क्यों इतना खास है।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSboj1QTsBlQ8SYN7gjXM6_ICAAohBUoTVEEEHAHnRN4A&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:45:00+05:30"
@@ -314,7 +314,7 @@ export const discoverMetadata = [
         "id": "odyssey-where-to-watch-online-netflix-prime",
         "slug": "odyssey-where-to-watch-online-netflix-prime",
         "title": "Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?",
-        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey के डिजिटल राइट्स किस ओटीटी प्लेटफॉर्म के पास जाएंगे?",
+        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey के डिजिटल राइट्स किस ओटीटी (OTT) प्लेटफॉर्म के पास जाएंगे? जानिए स्ट्रीमिंग डिटेल्स।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnOCU-JCKez_dp8jJmITP0bunaWTNJZL4-M5YTNfYuQ&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:40:00+05:30"
@@ -323,7 +323,7 @@ export const discoverMetadata = [
         "id": "odyssey-full-movie-story-leak-mythology",
         "slug": "odyssey-full-movie-story-leak-mythology",
         "title": "The Odyssey Full Movie Story Leak: Is This Hollywood's Greatest Mythological Epic?",
-        "snippet": "इथाका के राजा की खूनी वापसी! 100 राजकुमारों का कत्ल और पत्नी से दोबारा मिलने की रोंगटे खड़े कर देने वाली कहानी।",
+        "snippet": "इथाका के राजा ओडीसियस की खूनी वापसी! 100 राजकुमारों का बेरहमी से कत्ल और पत्नी से दोबारा मिलने की रोंगटे खड़े कर देने वाली कहानी।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8GQxtAZVtPO--s1a9Iy8a0hd24RVyjrbWhOnXHWsUA&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:35:00+05:30"
@@ -332,7 +332,7 @@ export const discoverMetadata = [
         "id": "odyssey-movie-monsters-magic-box-office",
         "slug": "odyssey-movie-monsters-magic-box-office",
         "title": "Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!",
-        "snippet": "साइक्लोप्स और समुद्र के देवताओं से भरे द ओडिसी के भयंकर युद्ध सीन जो बिना CGI के शूट हुए हैं!",
+        "snippet": "बिना CGI के शूट हुए साइक्लोप्स और समुद्र के देवताओं के भयंकर युद्ध सीन! जानिए 250 मिलियन डॉलर की फिल्म द ओडिसी के बॉक्स ऑफिस प्रेडिक्शंस।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4X5--b30MX5U_UMNGplwfg0E42o4WNxI00Cr6k2ZAtA&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:30:00+05:30"
@@ -341,7 +341,7 @@ export const discoverMetadata = [
         "id": "odyssey-movie-ending-explained-twists",
         "slug": "odyssey-movie-ending-explained-twists",
         "title": "The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!",
-        "snippet": "क्रिस्टोफर नोलन की फिल्मों में ट्विस्ट न हो ऐसा हो ही नहीं सकता! The Odyssey के टाइम और स्पेस ट्विस्ट की लीक हुई डिटेल्स।",
+        "snippet": "क्रिस्टोफर नोलन की फिल्मों में ट्विस्ट न हो ऐसा हो ही नहीं सकता! 250 मिलियन डॉलर की फिल्म The Odyssey के टाइम और स्पेस ट्विस्ट की लीक हुई डिटेल्स।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3c6sezlRQMBhKV9w1ETT-63ykOH6Ct2KmXe0TetV4g&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:25:00+05:30"
@@ -350,7 +350,7 @@ export const discoverMetadata = [
         "id": "odyssey-cast-revealed-tom-holland-zendaya",
         "slug": "odyssey-cast-revealed-tom-holland-zendaya",
         "title": "The Odyssey Cast Revealed: You Won't Believe Who Is Playing Odysseus!",
-        "snippet": "Matt Damon, Tom Holland और Zendaya जैसी बड़ी स्टारकास्ट वाली The Odyssey हॉलीवुड का सबसे बड़ा प्रोजेक्ट है।",
+        "snippet": "Matt Damon, Tom Holland और Zendaya जैसी बड़ी स्टारकास्ट वाली 250 मिलियन डॉलर की फिल्म The Odyssey हॉलीवुड का सबसे बड़ा प्रोजेक्ट है।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFS4QJHrI2_e9UZqSZi37RMskJu9-U8g53PpejWMucg&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:20:00+05:30"
@@ -359,7 +359,7 @@ export const discoverMetadata = [
         "id": "odyssey-bollywood-superstar-cast-cameo-leak",
         "slug": "odyssey-bollywood-superstar-cast-cameo-leak",
         "title": "Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!",
-        "snippet": "क्या क्रिस्टोफर नोलन की The Odyssey फिल्म में किसी बॉलीवुड सुपरस्टार का कैमियो होने वाला है? जानिए असली सच्चाई।",
+        "snippet": "क्या क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में किसी बॉलीवुड या साउथ सुपरस्टार का कैमियो होने वाला है? जानिए असली सच्चाई।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOL3T2B2-3oi485sch2XGBzbHiTiet8M5Mg5SjzFmMw&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:15:00+05:30"
@@ -368,7 +368,7 @@ export const discoverMetadata = [
         "id": "odyssey-official-trailer-breakdown-most-expensive",
         "slug": "odyssey-official-trailer-breakdown-most-expensive",
         "title": "The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?",
-        "snippet": "Christopher Nolan की 250 मिलियन डॉलर की फिल्म द ओडिसी! क्या यह फिल्म इतिहास की सबसे बड़ी ब्लॉकबस्टर बनेगी?",
+        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म द ओडिसी! क्या यह फिल्म हॉलीवुड के इतिहास की सबसे बड़ी ब्लॉकबस्टर और महंगी फिल्म बनेगी?",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAnr3VrWXkrWUGrcgzZ9ZKwW22LGDiWQVjxWnX2rfxPw&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:10:00+05:30"
