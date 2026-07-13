@@ -291,7 +291,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 0px 20px 40px;
+  padding: 32px 20px 40px;
   max-width: 720px;
   width: 100%;
   margin: 0 auto;
@@ -315,7 +315,6 @@
   text-align: center;
   z-index: 1;
   margin-bottom: 24px;
-  margin-top: -40px;
 }
 
 .fgpt-logo-icon {
@@ -596,7 +595,7 @@
 .fgpt-input-area {
   width: 100%;
   max-width: 720px;
-  padding: 0 20px 24px;
+  padding: 0 0 24px;
   z-index: 20;
   margin: 0 auto;
 }
@@ -606,9 +605,8 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding-bottom: 16px;
+  padding: 24px 20px 16px;
   background: linear-gradient(to top, #0a0a0f 60%, transparent);
-  padding-top: 24px;
 }
 
 .fgpt-input-container {
@@ -1661,17 +1659,31 @@
 /* ─── Suggestions Dropdown ─── */
 .fgpt-suggestions-dropdown {
   position: absolute;
-  bottom: 100%;
+  top: 100%;
   left: 0;
   right: 0;
   background: #141420;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
-  margin-bottom: 6px;
+  margin-top: 6px;
   overflow: hidden;
-  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
   z-index: 50;
+  animation: suggestionsSlideDown 0.15s ease-out;
+}
+
+.fgpt-input-area-bottom .fgpt-suggestions-dropdown {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 6px;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
   animation: suggestionsSlideUp 0.15s ease-out;
+}
+
+@keyframes suggestionsSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes suggestionsSlideUp {
