@@ -1,3 +1,4 @@
+import { nolanOdysseyMovie } from './nolan-the-odyssey-movie-2026-cast-release-date';
 import { yashToxicMovie } from './yash-toxic-movie-raya-release-date-box-office';
 import { toxicMovieTabaahiSong } from './toxic-movie-tabaahi-song-yash-kiara-chemistry';
 import { toxicMovieBoxOffice } from './toxic-movie-box-office-collection-1200-crore-budget';
@@ -1103,6 +1104,7 @@ const _discoverArticles: DiscoverArticle[] = [
     toxicMovieReleaseStrategy,
     toxicMovieGoaSetting,
     toxicMovieFemaleCast,
+    nolanOdysseyMovie,
     // Add variables here
 ];
 
