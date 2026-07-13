@@ -1,6 +1,7 @@
-import React, { lazy, Suspense, useMemo } from 'react';
+import React, { lazy, Suspense, useMemo, useState } from 'react';
 import { SourceLink } from '../lib/llmEngine';
 import StockLiveWidget from './StockLiveWidget';
+import { Share2, Check } from 'lucide-react';
 
 const MiniSIP = lazy(() => import('./MiniSIP'));
 const MiniEMI = lazy(() => import('./MiniEMI'));
@@ -19,6 +20,29 @@ interface FinanceGPTResponseRendererProps {
  * - [1] inline citations → hoverable tooltips mapped to sources
  */
 const FinanceGPTResponseRenderer: React.FC<FinanceGPTResponseRendererProps> = ({ text, sources = [] }) => {
+  const [isShared, setIsShared] = useState(false);
+
+  const handleShare = async () => {
+    const snippet = text.replace(/```[\s\S]*?```/g, '').replace(/\[\d+\]/g, '').trim().substring(0, 150) + '...';
+    
+    const shareData = {
+      title: 'Moneycal - India\'s #1 AI Financial Advisor',
+      text: `I just asked Moneycal for financial advice:\n\n"${snippet}"\n\nAsk your own questions for free on Moneycal!`,
+      url: 'https://moneycal.in'
+    };
+
+    try {
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+        setIsShared(true);
+        setTimeout(() => setIsShared(false), 3000);
+      }
+    } catch (err) {
+      console.log('Share aborted or failed', err);
+    }
+  };
 
   const renderedBlocks = useMemo(() => {
     if (!text) return [];
@@ -205,6 +229,28 @@ const FinanceGPTResponseRenderer: React.FC<FinanceGPTResponseRendererProps> = ({
         }
         return null;
       })}
+
+      {text.length > 0 && (
+        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end">
+          <button
+            onClick={handleShare}
+            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 hover:text-blue-600 rounded-full transition-colors border border-gray-200"
+            title="Share this answer"
+          >
+            {isShared ? (
+              <>
+                <Check className="w-4 h-4 text-green-500" />
+                <span className="text-green-600">Copied!</span>
+              </>
+            ) : (
+              <>
+                <Share2 className="w-4 h-4" />
+                <span>Share</span>
+              </>
+            )}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
