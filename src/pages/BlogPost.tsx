@@ -205,15 +205,7 @@ export const BlogPost: React.FC = () => {
       `}</style>
 
       <div style={styles.pageWrapper}>
-        <nav style={styles.navbar}>
-          <a href="/" style={styles.logo}>
-            <div style={styles.logoIcon}>₹</div> MoneyCal.in
-          </a>
-          <div style={styles.navLinks}>
-            <a href="/discover" style={styles.navLink}>Discover Hub</a>
-            <a href="/ipo" style={styles.navLink}>IPO Dashboard</a>
-          </div>
-        </nav>
+
 
         <div style={styles.layout}>
           <aside className="discover-ad-sidebar">
@@ -338,15 +330,7 @@ export const BlogPost: React.FC = () => {
           </aside>
         </div>
 
-        <footer style={styles.footer}>
-          <div style={styles.footerLinks}>
-            <a href="/about-us" style={styles.footerLink}>About Us</a>
-            <a href="/contact-us" style={styles.footerLink}>Contact</a>
-            <a href="/privacy-policy" style={styles.footerLink}>Privacy Policy</a>
-            <a href="/terms-and-conditions" style={styles.footerLink}>Terms</a>
-          </div>
-          <p>© {new Date().getFullYear()} MoneyCal.in - All Rights Reserved.</p>
-        </footer>
+
       </div>
     </>
   );
