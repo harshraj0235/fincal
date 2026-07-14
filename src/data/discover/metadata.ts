@@ -1,6 +1,51 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "iphone-18-release-date-leaks-features-2026",
+        "slug": "iphone-18-release-date-leaks-features-2026",
+        "title": "iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!",
+        "snippet": "एप्पल लवर्स के लिए बड़ी खबर! आईफोन 18 सीरीज की लॉन्चिंग टाइमलाइन और कुछ हैरान करने वाले फीचर्स सामने आ गए हैं। प्रोसेसर से लेकर कैमरा अपग्रेड तक, जानिए क्या कुछ होगा खास।",
+        "coverImage": "/images/discover/iphone-18-release-date-leak.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T13:00:00+05:30"
+    },
+    {
+        "id": "8th-pay-commission-hra-calculator-x-y-z-cities",
+        "slug": "8th-pay-commission-hra-calculator-x-y-z-cities",
+        "title": "8th Pay Commission Calculator: केंद्रीय कर्मचारियों की लगेगी लॉटरी! नए HRA कैलकुलेटर से जानें कितनी बढ़ेगी आपकी इन-हैंड सैलरी",
+        "snippet": "8वें वेतन आयोग के लागू होने से केंद्रीय कर्मचारियों के हाउस रेंट अलाउंस (HRA) में भारी उछाल आने की उम्मीद है। फिटमेंट फैक्टर और X, Y, Z शहरों के हिसाब से अपने नए वेतन का गणित यहाँ समझें।",
+        "coverImage": "/images/discover/8th-pay-commission-hra.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T12:00:00+05:30"
+    },
+    {
+        "id": "sbi-amc-ipo-day-1-gmp-subscription",
+        "slug": "sbi-amc-ipo-day-1-gmp-subscription",
+        "title": "SBI Funds Management IPO: पहले ही दिन GMP ने मचाया गदर! दांव लगाने से पहले जानें आज का लेटेस्ट प्रीमियम",
+        "snippet": "देश का सबसे बड़ा 11,693 करोड़ रुपये का AMC आईपीओ खुल चुका है। ग्रे मार्केट में यह करीब 15-16% के प्रीमियम पर ट्रेड कर रहा है। क्या आपको इसमें पैसा लगाना चाहिए? एक्सपर्ट्स की राय देखें।",
+        "coverImage": "/images/discover/sbi-amc-ipo-day-1.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T11:00:00+05:30"
+    },
+    {
+        "id": "ranbir-kapoor-pune-land-deal-16-crore",
+        "slug": "ranbir-kapoor-pune-land-deal-16-crore",
+        "title": "रणबीर कपूर ने पुणे में खरीदी करोड़ों की जमीन! अयोध्या के बाद अब यहां लगाया बड़ा दांव",
+        "snippet": "बॉलीवुड के 'रॉकस्टार' रणबीर कपूर ने पुणे के मुलशी में 25.7 एकड़ जमीन की बड़ी डील की है। इसके लिए उन्होंने ₹16.42 करोड़ चुकाए हैं। जानिए इस लग्जरी इन्वेस्टमेंट की पूरी डिटेल।",
+        "coverImage": "/images/discover/ranbir-kapoor-pune-land-deal.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "wi-vs-nz-2nd-odi-jayden-lennox-5-wickets",
+        "slug": "wi-vs-nz-2nd-odi-jayden-lennox-5-wickets",
+        "title": "WI vs NZ: 2nd ODI में न्यूजीलैंड ने पलटी बाजी, जानें 5 विकेट से जीत के असली हीरो कौन!",
+        "snippet": "पहले वनडे में हार के बाद कीवी टीम ने शानदार वापसी की। जयडेन लेनॉक्स के 'पंजा' (5 विकेट) के दम पर वेस्टइंडीज की टीम ढेर हो गई। जानें इस थ्रिलर मैच के बड़े टर्निंग पॉइंट्स।",
+        "coverImage": "/images/discover/wi-vs-nz-2nd-odi.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
         "id": "bank-holiday-alert-july-13-19",
         "slug": "bank-holiday-alert-july-13-19",
         "title": "Bank Holiday Alert: अगले हफ्ते 4 दिन बंद रहेंगे बैंक, आज ही निपटा लें काम!",

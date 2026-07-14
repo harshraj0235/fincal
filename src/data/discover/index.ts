@@ -568,8 +568,18 @@ import { goldPricePredictionDiwali } from './gold-price-prediction-80000-festiva
 import { epfoNewRulesClaimSettlement } from './epfo-new-rules-claim-settlement-update-2026';
 import { niftyBeginnersGuideGroww } from './nifty-today-groww-trading-beginners-guide';
 import { ankurWarikooInvestmentTips } from './ankur-warikoo-investment-tips-index-funds-wealth';
+import { ranbirKapoorPuneLandDeal } from './ranbir-kapoor-pune-land-deal-16-crore';
+import { sbiAmcIpoDay1GmpSubscription } from './sbi-amc-ipo-day-1-gmp-subscription';
+import { eighthPayCommissionHraCalculator } from './8th-pay-commission-hra-calculator-x-y-z-cities';
+import { iphone18ReleaseDateLeaksFeatures } from './iphone-18-release-date-leaks-features-2026';
+import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wickets';
 
 const _discoverArticles: DiscoverArticle[] = [
+    iphone18ReleaseDateLeaksFeatures,
+    eighthPayCommissionHraCalculator,
+    sbiAmcIpoDay1GmpSubscription,
+    ranbirKapoorPuneLandDeal,
+    wiVsNz2ndOdiJaydenLennox,
     bankHolidayAlertJuly13to19,
     kusumgarIpoAllotmentStatus,
     sbiFundsManagementIpoGmp,

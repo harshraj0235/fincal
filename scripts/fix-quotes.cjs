@@ -4,18 +4,7 @@ const path = require('path');
 
 const dir = path.join(__dirname, '..', 'src', 'data', 'discover');
 
-const files = [
-    'bank-holiday-alert-july-13-19-digital-banking.ts',
-    'kusumgar-ipo-allotment-status-bse-check-guide.ts',
-    'sbi-funds-management-ipo-gmp-listing-gains.ts',
-    'hdfc-bank-tcs-jobs-automation-ai-impact.ts',
-    'kalyan-jewellers-share-price-target-buy-sell.ts',
-    'cupid-share-price-multibagger-target-analysis.ts',
-    'gold-price-prediction-80000-festival-sgb-investment.ts',
-    'epfo-new-rules-claim-settlement-update-2026.ts',
-    'nifty-today-groww-trading-beginners-guide.ts',
-    'ankur-warikoo-investment-tips-index-funds-wealth.ts',
-];
+const files = fs.readdirSync(dir).filter(f => f.endsWith('.ts') && f !== 'index.ts' && f !== 'types.ts');
 
 let totalFixes = 0;
 
