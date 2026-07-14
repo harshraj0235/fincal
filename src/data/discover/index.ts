@@ -558,8 +558,28 @@ import { kalyanJewellersSharePriceGold } from './kalyan-jewellers-share-price-go
 import { incomeTaxReturnFilingLastDateNotice } from './income-tax-return-filing-last-date-notice';
 import { brentCrudeOilPetrolDieselPrice } from './brent-crude-oil-petrol-diesel-price';
 import { dixonTechnologiesShareMakeInIndia } from './dixon-technologies-share-make-in-india';
+import { bankHolidayAlertJuly13to19 } from './bank-holiday-alert-july-13-19-digital-banking';
+import { kusumgarIpoAllotmentStatus } from './kusumgar-ipo-allotment-status-bse-check-guide';
+import { sbiFundsManagementIpoGmp } from './sbi-funds-management-ipo-gmp-listing-gains';
+import { hdfcTcsJobsAutomationAiImpact } from './hdfc-bank-tcs-jobs-automation-ai-impact';
+import { kalyanJewellersSharePriceTarget } from './kalyan-jewellers-share-price-target-buy-sell';
+import { cupidSharePriceMultibagger } from './cupid-share-price-multibagger-target-analysis';
+import { goldPricePredictionDiwali } from './gold-price-prediction-80000-festival-sgb-investment';
+import { epfoNewRulesClaimSettlement } from './epfo-new-rules-claim-settlement-update-2026';
+import { niftyBeginnersGuideGroww } from './nifty-today-groww-trading-beginners-guide';
+import { ankurWarikooInvestmentTips } from './ankur-warikoo-investment-tips-index-funds-wealth';
 
 const _discoverArticles: DiscoverArticle[] = [
+    bankHolidayAlertJuly13to19,
+    kusumgarIpoAllotmentStatus,
+    sbiFundsManagementIpoGmp,
+    hdfcTcsJobsAutomationAiImpact,
+    kalyanJewellersSharePriceTarget,
+    cupidSharePriceMultibagger,
+    goldPricePredictionDiwali,
+    epfoNewRulesClaimSettlement,
+    niftyBeginnersGuideGroww,
+    ankurWarikooInvestmentTips,
     bcciSquadChangesRohitSharma,
     avengersDoomsdayPosterEasterEggs,
     dhamaal4Announcement,

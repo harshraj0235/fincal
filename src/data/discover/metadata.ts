@@ -1,6 +1,96 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "bank-holiday-alert-july-13-19",
+        "slug": "bank-holiday-alert-july-13-19",
+        "title": "Bank Holiday Alert: अगले हफ्ते 4 दिन बंद रहेंगे बैंक, आज ही निपटा लें काम!",
+        "snippet": "जुलाई के मध्य में (13-19 जुलाई) कई राज्यों में बैंक लगातार 4 दिन बंद रह सकते हैं। RBI की छुट्टियों की लिस्ट देखें और जानें कि डिजिटल बैंकिंग का कैसे उपयोग करें।",
+        "coverImage": "/images/discover/bank-holiday-alert-july-13-19.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "kusumgar-ipo-allotment-status-bse-check-guide",
+        "slug": "kusumgar-ipo-allotment-status-bse-check-guide",
+        "title": "Kusumgar IPO Allotment Status: आपको शेयर मिले या पैसे होंगे रिफंड? ऐसे चेक करें अपना स्टेटस",
+        "snippet": "कुसुमगर कॉरपोरेट्स लिमिटेड (Kusumgar Corporates IPO) का अलॉटमेंट स्टेटस 13 जुलाई को जारी हो चुका है। जानें कि Bigshare Services या BSE पर कैसे चेक करें कि आपको शेयर मिले या नहीं।",
+        "coverImage": "/images/discover/kusumgar-ipo-allotment-status.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "sbi-funds-management-ipo-gmp-listing-gains",
+        "slug": "sbi-funds-management-ipo-gmp-listing-gains",
+        "title": "SBI Funds Management IPO: खुलने से पहले ग्रे मार्केट में मची हलचल, जानें लेटेस्ट GMP और कमाई",
+        "snippet": "SBI Funds Management IPO 14 जुलाई को खुल चुका है। ग्रे मार्केट में (GMP) 100 रुपये से ज्यादा का प्रीमियम चल रहा है। जानें क्या आपको निवेश करना चाहिए या नहीं।",
+        "coverImage": "/images/discover/sbi-funds-management-ipo-gmp.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "hdfc-bank-tcs-jobs-automation-ai-impact",
+        "slug": "hdfc-bank-tcs-jobs-automation-ai-impact",
+        "title": "HDFC Bank और TCS में बड़ा बदलाव: क्या AI और ऑटोमेशन के कारण जा रही है बैंकिंग नौकरियां?",
+        "snippet": "HDFC बैंक में 9 साल में पहली बार कर्मचारियों की संख्या घटी, वहीं TCS 2026 में AI टैलेंट की बंपर भर्ती कर रहा है। जानें इस बड़े बदलाव का आपकी नौकरी पर क्या असर होगा।",
+        "coverImage": "/images/discover/hdfc-bank-tcs-jobs-automation.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "kalyan-jewellers-share-price-target-buy-sell",
+        "slug": "kalyan-jewellers-share-price-target-buy-sell",
+        "title": "Kalyan Jewellers Share Price: रॉकेट बना यह ज्वेलरी शेयर, क्या अभी खरीदने पर होगा बंपर मुनाफा?",
+        "snippet": "Kalyan Jewellers के शेयरों में 50% से ज्यादा का उछाल आया है। Citi और ICICI जैसी ब्रोकरेज फर्म्स ने ₹750 तक का टारगेट प्राइस दिया है। जानें क्या आपको निवेश करना चाहिए।",
+        "coverImage": "/images/discover/kalyan-jewellers-share-price-target.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "cupid-share-price-multibagger-target-analysis",
+        "slug": "cupid-share-price-multibagger-target-analysis",
+        "title": "Cupid Ltd Share Price: 100 रुपये से कम का यह पेनी स्टॉक कर रहा कमाल, क्या बनेगा अगला मल्टीबैगर?",
+        "snippet": "Cupid Ltd के शेयर ने पिछले 1 साल में 800% से ज्यादा का रिटर्न देकर निवेशकों को मालामाल कर दिया है। कंपनी के नए बिजनेस प्लान और IVD सेगमेंट से 2026 में शेयर ₹200 का टारगेट छू सकता है।",
+        "coverImage": "/images/discover/cupid-share-price-multibagger.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "gold-price-prediction-80000-festival-sgb-investment",
+        "slug": "gold-price-prediction-80000-festival-sgb-investment",
+        "title": "Gold Price Prediction: क्या दीवाली तक 80,000 के पार जाएगा सोना? जानें कहां निवेश करना है सही",
+        "snippet": "जुलाई 2026 में सोने की कीमतों में भारी उतार-चढ़ाव देखा जा रहा है। जानें क्या दीवाली तक सोना ₹80,000 का स्तर पार कर पाएगा और SGB में निवेश के नए नियम क्या हैं।",
+        "coverImage": "/images/discover/gold-price-prediction-diwali.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "epfo-new-rules-claim-settlement-update-2026",
+        "slug": "epfo-new-rules-claim-settlement-update-2026",
+        "title": "EPFO New Rules: PF से पैसा निकालना हुआ और भी आसान, सरकार ने बदल दिए क्लेम सेटलमेंट के ये 3 नियम",
+        "snippet": "EPFO 3.0 के तहत जुलाई 2026 में पीएफ क्लेम सेटलमेंट के नियमों में बड़ा बदलाव हुआ है। ऑटो-सेटलमेंट लिमिट 1 लाख से बढ़ाकर 5 लाख कर दी गई है। जानें सभी नए नियम।",
+        "coverImage": "/images/discover/epfo-new-rules-claim-settlement.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "nifty-today-groww-trading-beginners-guide",
+        "slug": "nifty-today-groww-trading-beginners-guide",
+        "title": "Nifty 50 में पहली बार कैसे लगाएं पैसा? Groww ऐप से ट्रेडिंग शुरू करने का पूरा प्रोसेस",
+        "snippet": "क्या आप शेयर बाजार में नए हैं? जानें Nifty 50 क्या है और Groww ऐप का इस्तेमाल करके आप सुरक्षित रूप से अपना पहला निवेश कैसे शुरू कर सकते हैं।",
+        "coverImage": "/images/discover/nifty-today-groww-trading.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "ankur-warikoo-investment-tips-index-funds-wealth",
+        "slug": "ankur-warikoo-investment-tips-index-funds-wealth",
+        "title": "Ankur Warikoo की सलाह: सिर्फ 5 मिनट में अपना पैसा बढ़ाएं, Index Funds से बनें करोड़पति",
+        "snippet": "अंकुर वारिकू जैसे फाइनेंशियल इन्फ्लूएंसर का मानना है कि इंडेक्स फंड्स में पैसिव निवेश करके कोई भी व्यक्ति लंबी अवधि में करोड़पति बन सकता है। जानें उनकी 5 सबसे बड़ी सलाह।",
+        "coverImage": "/images/discover/ankur-warikoo-investment-tips.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
         "id": "toxic-movie-cast-nayanthara-kiara-huma",
         "slug": "toxic-movie-cast-nayanthara-kiara-huma",
         "title": "Toxic Cast: Nayanthara और Kiara Advani चलाएंगी गोवा का अंडरवर्ल्ड?",
@@ -69,6 +159,15 @@ export const discoverMetadata = [
         "title": "Toxic Box Office Prediction: क्या Yash की नई फिल्म ₹1200 करोड़ कमा पाएगी?",
         "snippet": "Toxic movie budget ₹500 से ₹1000 करोड़ के बीच है। जानिए क्यों इस फिल्म पर बॉक्स ऑफिस का सबसे ज्यादा दबाव है और क्या यह KGF 2 का रिकॉर्ड तोड़ पाएगी।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:10:00+05:30"
+    },
+    {
+        "id": "odyssey-official-trailer-breakdown-most-expensive",
+        "slug": "odyssey-official-trailer-breakdown-most-expensive",
+        "title": "The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?",
+        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म द ओडिसी! क्या यह फिल्म हॉलीवुड के इतिहास की सबसे बड़ी ब्लॉकबस्टर और महंगी फिल्म बनेगी?",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAnr3VrWXkrWUGrcgzZ9ZKwW22LGDiWQVjxWnX2rfxPw&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:10:00+05:30"
     },
@@ -363,15 +462,6 @@ export const discoverMetadata = [
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOL3T2B2-3oi485sch2XGBzbHiTiet8M5Mg5SjzFmMw&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:15:00+05:30"
-    },
-    {
-        "id": "odyssey-official-trailer-breakdown-most-expensive",
-        "slug": "odyssey-official-trailer-breakdown-most-expensive",
-        "title": "The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?",
-        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म द ओडिसी! क्या यह फिल्म हॉलीवुड के इतिहास की सबसे बड़ी ब्लॉकबस्टर और महंगी फिल्म बनेगी?",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAnr3VrWXkrWUGrcgzZ9ZKwW22LGDiWQVjxWnX2rfxPw&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:10:00+05:30"
     },
     {
         "id": "bcci-squad-changes-rohit-sharma",
