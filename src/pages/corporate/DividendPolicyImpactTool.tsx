@@ -90,7 +90,7 @@ export const DividendPolicyImpactTool: React.FC = () => {
   const calculateDividendImpact = () => {
     const {
       currentStockPrice, sharesOutstanding, earningsPerShare, bookValuePerShare,
-      currentDividendPerShare, dividendPayoutRatio, dividendGrowthRate,
+      currentDividendPerShare, dividendPayoutRatio, dividendYield, dividendGrowthRate,
       netIncome, retainedEarnings, freeCashFlow, capitalExpenditure,
       riskFreeRate, marketRiskPremium, beta, requiredReturn,
       scenario1PayoutRatio, scenario2PayoutRatio, scenario3PayoutRatio,
