@@ -3,6 +3,17 @@
    ═══════════════════════════════════════════════════════════ */
 
 :root, .light {
+  --fgpt-text: #0f172a;
+  --fgpt-text-secondary: #334155;
+  --fgpt-text-secondary: #334155;
+  --fgpt-text: #0f172a;
+  --fgpt-bg-hover-light: rgba(0,0,0,0.04);
+  --fgpt-bg-active-light: rgba(0,0,0,0.07);
+  --fgpt-border-light: rgba(0,0,0,0.05);
+  --fgpt-purple-300: #6d28d9;
+  --fgpt-indigo-400: #4338ca;
+  --fgpt-indigo-300: #3730a3;
+  --fgpt-violet-400: #5b21b6;
   --fgpt-bg: #ffffff;
   --fgpt-sidebar-bg: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   --fgpt-border: rgba(0,0,0,0.08);
@@ -20,6 +31,17 @@
 }
 
 .dark {
+  --fgpt-text: #e2e8f0;
+  --fgpt-text-secondary: #cbd5e1;
+  --fgpt-text-secondary: #d1d5db;
+  --fgpt-text: white;
+  --fgpt-bg-hover-light: rgba(255,255,255,0.04);
+  --fgpt-bg-active-light: rgba(255,255,255,0.07);
+  --fgpt-border-light: rgba(255,255,255,0.05);
+  --fgpt-purple-300: #c4b5fd;
+  --fgpt-indigo-400: #818cf8;
+  --fgpt-indigo-300: #a5b4fc;
+  --fgpt-violet-400: #a78bfa;
   --fgpt-bg: #0a0a0f;
   --fgpt-sidebar-bg: linear-gradient(180deg, #0d0d14 0%, #0a0a10 100%);
   --fgpt-border: rgba(255,255,255,0.06);
@@ -29,7 +51,7 @@
   --fgpt-text-secondary: #94a3b8;
   --fgpt-text-muted: #64748b;
   --fgpt-bg-hover: rgba(255,255,255,0.03);
-  --fgpt-bg-active: rgba(255,255,255,0.05);
+  --fgpt-bg-active: var(--fgpt-border-light);
   --fgpt-surface: #141420;
   --fgpt-surface-hover: rgba(255,255,255,0.02);
   --fgpt-input-bg: rgba(15,15,25,0.9);
@@ -96,7 +118,7 @@
   background: rgba(139, 92, 246, 0.1);
   border: 1px solid rgba(139, 92, 246, 0.2);
   border-radius: 12px;
-  color: #a78bfa;
+  color: var(--fgpt-violet-400);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -153,7 +175,7 @@
 }
 
 .fgpt-chat-item:hover {
-  background: rgba(255,255,255,0.04);
+  background: var(--fgpt-bg-hover-light);
 }
 
 .fgpt-chat-item-active {
@@ -176,7 +198,7 @@
 }
 
 .fgpt-chat-item:hover .fgpt-chat-item-title {
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
 }
 
 .fgpt-chat-item-delete {
@@ -220,7 +242,7 @@
 }
 
 .fgpt-sidebar-trend-link:hover {
-  color: #818cf8;
+  color: var(--fgpt-indigo-400);
   background: rgba(139, 92, 246, 0.05);
 }
 
@@ -256,7 +278,7 @@
 }
 
 .fgpt-mobile-new-btn {
-  color: #a78bfa;
+  color: var(--fgpt-violet-400);
   border-color: rgba(139, 92, 246, 0.2);
   background: rgba(139, 92, 246, 0.08);
 }
@@ -264,7 +286,7 @@
 .fgpt-mobile-badge {
   font-size: 11px;
   font-weight: 700;
-  color: #818cf8;
+  color: var(--fgpt-indigo-400);
   padding: 3px 10px;
   border-radius: 20px;
   background: rgba(139, 92, 246, 0.1);
@@ -367,7 +389,7 @@
 .fgpt-title {
   font-size: 42px;
   font-weight: 800;
-  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%);
+  background: linear-gradient(135deg, var(--fgpt-indigo-400) 0%, var(--fgpt-violet-400) 50%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -412,7 +434,7 @@
   padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid var(--fgpt-border-hover);
-  background: rgba(255,255,255,0.04);
+  background: var(--fgpt-bg-hover-light);
   color: var(--fgpt-text-secondary);
   font-size: 13px;
   font-weight: 500;
@@ -422,7 +444,7 @@
 
 .fgpt-mode-pill:hover {
   border-color: rgba(139, 92, 246, 0.4);
-  color: #c4b5fd;
+  color: var(--fgpt-purple-300);
   background: rgba(139, 92, 246, 0.08);
 }
 
@@ -454,7 +476,7 @@
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
   background: var(--fgpt-bg-hover);
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
   font-size: 14px;
   text-align: left;
   cursor: pointer;
@@ -465,7 +487,7 @@
 .fgpt-suggestion:hover {
   border-color: rgba(139, 92, 246, 0.35);
   background: rgba(139, 92, 246, 0.06);
-  color: #e2e8f0;
+  color: var(--fgpt-text);
   transform: translateY(-1px);
 }
 
@@ -528,18 +550,18 @@
 }
 
 .fgpt-user-text {
-  color: #e2e8f0;
+  color: var(--fgpt-text);
   font-size: 15px;
   line-height: 1.6;
   font-weight: 500;
 }
 
 .fgpt-assistant-content {
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
 }
 
 .fgpt-cursor-blink {
-  color: #818cf8;
+  color: var(--fgpt-indigo-400);
   font-size: 18px;
   animation: fgpt-blink 0.8s step-end infinite;
 }
@@ -573,9 +595,9 @@
   text-align: left;
   padding: 10px 14px;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--fgpt-bg-active-light);
   background: var(--fgpt-surface-hover);
-  color: #a5b4fc;
+  color: var(--fgpt-indigo-300);
   font-size: 13px;
   cursor: pointer;
   transition: all 0.2s;
@@ -585,7 +607,7 @@
 .fgpt-followup-btn:hover {
   border-color: rgba(139, 92, 246, 0.3);
   background: rgba(139, 92, 246, 0.06);
-  color: #c4b5fd;
+  color: var(--fgpt-purple-300);
 }
 
 /* ─── Recommendations ─── */
@@ -668,7 +690,7 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #e2e8f0;
+  color: var(--fgpt-text);
   font-size: 15px;
   line-height: 1.5;
   resize: none;
@@ -697,7 +719,7 @@
 
 .fgpt-send-btn-active {
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
+  color: var(--fgpt-text);
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(99, 102, 241, 0.3);
 }
@@ -710,7 +732,7 @@
   width: 16px;
   height: 16px;
   border: 2px solid rgba(255,255,255,0.2);
-  border-top-color: white;
+  border-top-color: var(--fgpt-text);
   border-radius: 50%;
   animation: fgpt-spin 0.6s linear infinite;
 }
@@ -753,7 +775,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #818cf8;
+  background: var(--fgpt-indigo-400);
   animation: fgpt-dotPulse 1.4s ease-in-out infinite;
 }
 
@@ -766,7 +788,7 @@
 }
 
 .thinking-title {
-  color: #a5b4fc;
+  color: var(--fgpt-indigo-300);
   font-size: 13px;
   font-weight: 600;
 }
@@ -787,7 +809,7 @@
 }
 
 .thinking-step-active {
-  color: #c4b5fd;
+  color: var(--fgpt-purple-300);
 }
 
 .thinking-step-done {
@@ -806,7 +828,7 @@
   width: 12px;
   height: 12px;
   border: 2px solid rgba(139, 92, 246, 0.2);
-  border-top-color: #a78bfa;
+  border-top-color: var(--fgpt-violet-400);
   border-radius: 50%;
   animation: fgpt-spin 0.6s linear infinite;
   display: inline-block;
@@ -847,7 +869,7 @@
   gap: 8px;
   padding: 8px 12px;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--fgpt-bg-active-light);
   background: var(--fgpt-bg-hover);
   text-decoration: none;
   flex-shrink: 0;
@@ -875,7 +897,7 @@
 }
 
 .source-card-title {
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
   font-size: 11px;
   font-weight: 500;
   white-space: nowrap;
@@ -896,7 +918,7 @@
   height: 18px;
   border-radius: 50%;
   background: #4f46e5;
-  color: white;
+  color: var(--fgpt-text);
   font-size: 10px;
   font-weight: 700;
   display: flex;
@@ -908,7 +930,7 @@
    RESPONSE RENDERER
    ═══════════════════════════════════════════════════════════ */
 .gpt-response {
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
   font-size: 14px;
   line-height: 1.7;
 }
@@ -922,14 +944,14 @@
 }
 
 .gpt-h2 {
-  color: #e2e8f0;
+  color: var(--fgpt-text);
   font-size: 17px;
   font-weight: 700;
   margin: 20px 0 8px;
 }
 
 .gpt-h3 {
-  color: #d1d5db;
+  color: var(--fgpt-text-secondary);
   font-size: 15px;
   font-weight: 600;
   margin: 16px 0 6px;
@@ -946,11 +968,11 @@
 }
 
 .gpt-li::marker {
-  color: #818cf8;
+  color: var(--fgpt-indigo-400);
 }
 
 .gpt-link {
-  color: #818cf8;
+  color: var(--fgpt-indigo-400);
   text-decoration: underline;
   text-decoration-color: rgba(129, 140, 248, 0.3);
   text-underline-offset: 2px;
@@ -959,12 +981,12 @@
 }
 
 .gpt-link:hover {
-  color: #a5b4fc;
+  color: var(--fgpt-indigo-300);
   text-decoration-color: rgba(129, 140, 248, 0.7);
 }
 
 .gpt-link-internal {
-  color: #a78bfa;
+  color: var(--fgpt-violet-400);
   text-decoration: none;
   background: rgba(139, 92, 246, 0.08);
   padding: 2px 8px;
@@ -987,11 +1009,11 @@
   border-radius: 4px;
   font-size: 13px;
   font-family: 'Fira Code', 'Consolas', monospace;
-  color: #a5b4fc;
+  color: var(--fgpt-indigo-300);
 }
 
 .gpt-citation {
-  color: #818cf8;
+  color: var(--fgpt-indigo-400);
   font-size: 11px;
   font-weight: 700;
   cursor: help;
@@ -1001,7 +1023,7 @@
 }
 
 .gpt-citation:hover {
-  color: #c4b5fd;
+  color: var(--fgpt-purple-300);
 }
 
 .gpt-disclaimer {
@@ -1020,7 +1042,7 @@
   overflow-x: auto;
   margin: 12px 0;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--fgpt-bg-active-light);
 }
 
 .gpt-table {
@@ -1031,7 +1053,7 @@
 
 .gpt-table th {
   background: rgba(139, 92, 246, 0.08);
-  color: #c4b5fd;
+  color: var(--fgpt-purple-300);
   padding: 10px 14px;
   text-align: left;
   font-weight: 600;
@@ -1043,7 +1065,7 @@
 
 .gpt-table td {
   padding: 9px 14px;
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
   border-bottom: 1px solid var(--fgpt-bg-hover);
 }
 
@@ -1057,7 +1079,7 @@
 }
 
 .gpt-stock-widget {
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--fgpt-bg-active-light);
   border-radius: 12px;
   overflow: hidden;
   background: var(--fgpt-surface-hover);
@@ -1074,7 +1096,7 @@
 .gpt-stock-icon { font-size: 16px; }
 
 .gpt-stock-ticker {
-  color: #a5b4fc;
+  color: var(--fgpt-indigo-300);
   font-weight: 700;
   font-size: 14px;
   font-family: 'Fira Code', monospace;
@@ -1086,14 +1108,14 @@
 
 /* ─── Chart Widget ─── */
 .gpt-chart-widget {
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--fgpt-bg-active-light);
   border-radius: 12px;
   padding: 16px;
   background: var(--fgpt-surface-hover);
 }
 
 .gpt-chart-title {
-  color: #e2e8f0;
+  color: var(--fgpt-text);
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 14px;
@@ -1122,7 +1144,7 @@
 .gpt-chart-bar-track {
   flex: 1;
   height: 24px;
-  background: rgba(255,255,255,0.04);
+  background: var(--fgpt-bg-hover-light);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -1140,7 +1162,7 @@
 }
 
 .gpt-chart-bar-value {
-  color: #c4b5fd;
+  color: var(--fgpt-purple-300);
   font-size: 12px;
   font-weight: 600;
   width: 80px;
@@ -1221,7 +1243,7 @@
 }
 
 .fgpt-trending-see-all {
-  color: #818cf8;
+  color: var(--fgpt-indigo-400);
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
@@ -1229,7 +1251,7 @@
 }
 
 .fgpt-trending-see-all:hover {
-  color: #a5b4fc;
+  color: var(--fgpt-indigo-300);
 }
 
 .fgpt-trending-grid {
@@ -1241,7 +1263,7 @@
 .fgpt-trending-card {
   padding: 14px 16px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid var(--fgpt-bg-active-light);
   background: var(--fgpt-bg-hover);
   text-decoration: none;
   transition: all 0.2s;
@@ -1254,7 +1276,7 @@
 }
 
 .fgpt-trending-card-title {
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
   font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
@@ -1266,7 +1288,7 @@
 }
 
 .fgpt-trending-card:hover .fgpt-trending-card-title {
-  color: #a5b4fc;
+  color: var(--fgpt-indigo-300);
 }
 
 .fgpt-trending-card-date {
@@ -1300,14 +1322,14 @@
 .fgpt-seo-h2 {
   font-size: 18px;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--fgpt-text);
   margin: 0 0 12px;
 }
 
 .fgpt-seo-h3 {
   font-size: 15px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
   margin: 20px 0 8px;
 }
 
@@ -1331,7 +1353,7 @@
   padding: 6px 14px;
   font-size: 12px;
   font-weight: 500;
-  color: #a78bfa;
+  color: var(--fgpt-violet-400);
   text-decoration: none;
   border: 1px solid rgba(139, 92, 246, 0.15);
   border-radius: 10px;
@@ -1364,7 +1386,7 @@
   padding: 14px 18px;
   font-size: 14px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--fgpt-text-secondary);
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -1387,11 +1409,11 @@
 
 .fgpt-faq-item[open] .fgpt-faq-q::after {
   content: '−';
-  color: #a78bfa;
+  color: var(--fgpt-violet-400);
 }
 
 .fgpt-faq-q:hover {
-  color: #e2e8f0;
+  color: var(--fgpt-text);
 }
 
 .fgpt-faq-a {
@@ -1495,7 +1517,7 @@
   display: block;
   font-size: 14px;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--fgpt-text);
 }
 
 .stock-live-symbol {
@@ -1508,7 +1530,7 @@
 .stock-live-ticker-name {
   font-size: 14px;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--fgpt-text);
 }
 
 .stock-live-badge {
@@ -1637,7 +1659,7 @@
 
 .fgpt-input-icon-btn:hover {
   background: rgba(139, 92, 246, 0.1);
-  color: #a78bfa;
+  color: var(--fgpt-violet-400);
 }
 
 .fgpt-input-icon-btn:disabled {
@@ -1676,7 +1698,7 @@
   border: 1px solid rgba(139, 92, 246, 0.25);
   border-radius: 8px;
   font-size: 12px;
-  color: #c4b5fd;
+  color: var(--fgpt-purple-300);
 }
 
 .fgpt-file-badge-remove {
@@ -1737,8 +1759,8 @@
   padding: 10px 16px;
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  color: #cbd5e1;
+  border-bottom: 1px solid var(--fgpt-bg-hover-light);
+  color: var(--fgpt-text-secondary);
   font-size: 13px;
   cursor: pointer;
   text-align: left;
@@ -1752,7 +1774,7 @@
 
 .fgpt-suggestion-item:hover {
   background: rgba(139, 92, 246, 0.08);
-  color: #e2e8f0;
+  color: var(--fgpt-text);
 }
 
 .fgpt-suggestion-item svg {
