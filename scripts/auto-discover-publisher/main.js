@@ -217,7 +217,12 @@ async function updateIndexTs(newArticles) {
     fs.writeFileSync(INDEX_TS_PATH, indexContent);
 }
 
+const PUBLISHED_TRENDS_FILE = path.join(__dirname, 'published_trends.txt');
 const publishedTopics = new Set();
+if (fs.existsSync(PUBLISHED_TRENDS_FILE)) {
+    const lines = fs.readFileSync(PUBLISHED_TRENDS_FILE, 'utf-8').split('\n').map(l => l.trim()).filter(Boolean);
+    lines.forEach(l => publishedTopics.add(l));
+}
 
 async function processNextArticle() {
     console.log(`\n⏰ [${new Date().toLocaleString()}] Waking up to find a new trend...`);
@@ -258,6 +263,7 @@ async function processNextArticle() {
             
             console.log(`🎉 Article published and sitemaps updated successfully!`);
             publishedTopics.add(trend.topic);
+            fs.appendFileSync(PUBLISHED_TRENDS_FILE, trend.topic + '\n');
 
         } catch (err) {
             console.error(`❌ Failed to generate article for "${trend.topic}":`, err.message);
@@ -269,13 +275,10 @@ async function processNextArticle() {
 }
 
 async function main() {
-    console.log('🚀 Starting Continuous Auto-Discover Publisher (Every 30 minutes)...');
+    console.log('🚀 Starting Auto-Discover Publisher (Single Run for GitHub Actions)...');
     
-    // Process the first article immediately
+    // Process exactly one article and exit
     await processNextArticle();
-
-    // Then process one every 30 minutes (1800,000 ms)
-    setInterval(processNextArticle, 30 * 60 * 1000);
 }
 
 main();

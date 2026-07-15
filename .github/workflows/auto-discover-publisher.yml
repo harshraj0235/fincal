@@ -4,8 +4,8 @@ name: Auto-Publish Discover Articles
 
 on:
   schedule:
-    # Runs at 6:00 AM IST (00:30 UTC) and 6:00 PM IST (12:30 UTC)
-    - cron: '30 0,12 * * *'
+    # Runs every 30 minutes
+    - cron: '*/30 * * * *'
   
   # Manual trigger (for testing)
   workflow_dispatch:
@@ -47,7 +47,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/discover/ public/images/discover/
+          git add src/data/discover/ public/images/discover/ scripts/auto-discover-publisher/published_trends.txt
           
           # Only commit if there are changes
           if git diff --staged --quiet; then
