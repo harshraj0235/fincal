@@ -206,8 +206,8 @@ export const Header: React.FC<HeaderProps> = () => {
                   <Link
                     to={item.href}
                     className={`px-4 py-2 rounded-lg text-[14px] font-bold transition-all duration-150 whitespace-nowrap ${isActive(item.href)
-                      ? `${itemColor} bg-blue-50/50`
-                      : `text-gray-700 hover:${itemColor} ${itemHoverBg}`
+                      ? `${itemColor} bg-blue-50/50 dark:bg-gray-800`
+                      : `text-gray-700 dark:text-gray-200 hover:${itemColor} ${itemHoverBg} dark:hover:bg-gray-800`
                       }`}
                   >
                     <span className="flex items-center gap-1.5">
@@ -224,7 +224,7 @@ export const Header: React.FC<HeaderProps> = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: 0.15 }}
-                        className={`absolute top-full left-0 mt-1 bg-white rounded-xl shadow-xl border border-gray-100 py-2 
+                        className={`absolute top-full left-0 mt-1 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 py-2 
                           ${item.name === 'Learn' ? 'w-[420px] grid grid-cols-2 gap-0' 
                           : (item.name === 'Calculators' || item.name === 'Tools') ? 'w-[380px] grid grid-cols-2 gap-0'
                           : 'w-56'}`}
@@ -235,7 +235,7 @@ export const Header: React.FC<HeaderProps> = () => {
                           <Link
                             key={subItem.name}
                             to={subItem.href}
-                            className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            className="block px-4 py-2.5 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                             onClick={() => setIsDropdownOpen(null)}
                           >
                             {subItem.name}
@@ -273,10 +273,10 @@ export const Header: React.FC<HeaderProps> = () => {
 
             <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors lg:hidden"
+              className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors lg:hidden"
               aria-label="Search"
             >
-              <Search className="w-5 h-5 text-gray-600" />
+              <Search className="w-5 h-5 text-gray-600 dark:text-gray-300" />
             </button>
 
             <button
@@ -291,13 +291,13 @@ export const Header: React.FC<HeaderProps> = () => {
                 setIsMobileMenuOpen(next); 
                 if (!next) setExpandedMobileSection(null); 
               }}
-              className="xl:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="xl:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-600" />
+                <X className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               ) : (
-                <Menu className="w-6 h-6 text-gray-600" />
+                <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               )}
             </button>
           </div>
