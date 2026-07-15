@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "bukayo-saka-brand-endorsements",
+        "slug": "bukayo-saka-brand-endorsements",
+        "title": "Bukayo Saka: Brand Endorsements Aur Unka Football Market Value Par Asar",
+        "snippet": "Is article mein hum Bukayo Saka ke brand endorsements aur unke football market value par unke asar ko explore karenge.",
+        "coverImage": "/images/discover/bukayo-saka-brand-endorsements.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T20:05:27.009Z"
+    },
+    {
         "id": "zee5-subscription-growth-revenue-impact",
         "slug": "zee5-subscription-growth-revenue-impact",
         "title": "Zee5 Ka Subscription Growth Aur Revenue Impact: Ek Ghar Ki Baat",
