@@ -930,7 +930,7 @@
    RESPONSE RENDERER
    ═══════════════════════════════════════════════════════════ */
 .gpt-response {
-  color: var(--fgpt-text-secondary);
+  color: inherit;
   font-size: 14px;
   line-height: 1.7;
 }
