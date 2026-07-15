@@ -557,7 +557,7 @@
 }
 
 .fgpt-assistant-content {
-  color: var(--fgpt-text-secondary);
+  color: var(--fgpt-text);
 }
 
 .fgpt-cursor-blink {
