@@ -1,3 +1,13 @@
+import { hangSengDaxIndexGlobalMarket } from './hang-seng-dax-index-global-market';
+import { vedantaGroupAnilAgarwalMasterstroke } from './vedanta-group-anil-agarwal-masterstroke';
+import { chatgptClaudeAiIndiaPricing } from './chatgpt-claude-ai-india-pricing';
+import { epfoVishwas2026Scheme } from './epfo-vishwas-2026-scheme';
+import { silverPriceSurgeRumor } from './silver-price-surge-rumor';
+import { adaniPowerGrowwNews } from './adani-power-groww-news';
+import { nseBseCrashTcsItcBel } from './nse-bse-crash-tcs-itc-bel';
+import { alpineSbiIpoGmp } from './alpine-sbi-ipo-gmp';
+import { kusumgarSharePriceSurge } from './kusumgar-share-price-surge';
+import { ibmAngelOneSharePriceSurge } from './ibm-angel-one-share-price-surge';
 import { nolanOdysseyArticle1 } from './nolan-odyssey-movie-release-date-india-fans';
 import { nolanOdysseyArticle2 } from './odyssey-movie-vs-ramayana-trending-india';
 import { nolanOdysseyArticle3 } from './odyssey-official-trailer-breakdown-most-expensive';
@@ -1153,6 +1163,16 @@ const _discoverArticles: DiscoverArticle[] = [
     nolanOdysseyArticle8,
     nolanOdysseyArticle9,
     nolanOdysseyArticle10,
+    ibmAngelOneSharePriceSurge,
+    kusumgarSharePriceSurge,
+    alpineSbiIpoGmp,
+    nseBseCrashTcsItcBel,
+    adaniPowerGrowwNews,
+    silverPriceSurgeRumor,
+    epfoVishwas2026Scheme,
+    chatgptClaudeAiIndiaPricing,
+    vedantaGroupAnilAgarwalMasterstroke,
+    hangSengDaxIndexGlobalMarket,
     // Add variables here
 ];
 
