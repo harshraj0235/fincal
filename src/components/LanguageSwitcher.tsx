@@ -7,7 +7,6 @@ export const LanguageSwitcher: React.FC<{ className?: string }> = ({ className =
 
   const toggleLanguage = () => {
     const isCurrentlyHindi = currentLang === 'hi';
-    const newLang = isCurrentlyHindi ? 'en' : 'hi';
     
     // We use window.location to properly change the basename
     const pathname = window.location.pathname;
