@@ -3,12 +3,12 @@
 // export dynamically through wrangler, or we can potentially let users directly
 // add them as a sort of "plugin" system.
 
-import ENTRY, { __INTERNAL_WRANGLER_MIDDLEWARE__ } from "C:\\Users\\harshraj\\Downloads\\fincal-bb7d01a807c196910afaf795d49b3171c2cefe8b\\cloudflare-worker\\.wrangler\\tmp\\bundle-Jlg8Nk\\middleware-insertion-facade.js";
+import ENTRY, { __INTERNAL_WRANGLER_MIDDLEWARE__ } from "C:\\Users\\harshraj\\Downloads\\fincal-bb7d01a807c196910afaf795d49b3171c2cefe8b\\cloudflare-worker\\.wrangler\\tmp\\bundle-cQGZEh\\middleware-insertion-facade.js";
 import { __facade_invoke__, __facade_register__, Dispatcher } from "C:\\Users\\harshraj\\AppData\\Local\\npm-cache\\_npx\\32026684e21afda6\\node_modules\\wrangler\\templates\\middleware\\common.ts";
-import type { WorkerEntrypointConstructor } from "C:\\Users\\harshraj\\Downloads\\fincal-bb7d01a807c196910afaf795d49b3171c2cefe8b\\cloudflare-worker\\.wrangler\\tmp\\bundle-Jlg8Nk\\middleware-insertion-facade.js";
+import type { WorkerEntrypointConstructor } from "C:\\Users\\harshraj\\Downloads\\fincal-bb7d01a807c196910afaf795d49b3171c2cefe8b\\cloudflare-worker\\.wrangler\\tmp\\bundle-cQGZEh\\middleware-insertion-facade.js";
 
 // Preserve all the exports from the worker
-export * from "C:\\Users\\harshraj\\Downloads\\fincal-bb7d01a807c196910afaf795d49b3171c2cefe8b\\cloudflare-worker\\.wrangler\\tmp\\bundle-Jlg8Nk\\middleware-insertion-facade.js";
+export * from "C:\\Users\\harshraj\\Downloads\\fincal-bb7d01a807c196910afaf795d49b3171c2cefe8b\\cloudflare-worker\\.wrangler\\tmp\\bundle-cQGZEh\\middleware-insertion-facade.js";
 
 class __Facade_ScheduledController__ implements ScheduledController {
 	readonly #noRetry: ScheduledController["noRetry"];
