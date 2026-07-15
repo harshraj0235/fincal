@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "fifa-world-cup-2026-bracket",
+        "slug": "fifa-world-cup-2026-bracket",
+        "title": "FIFA World Cup 2026: Local Business aur Tourism par Economic Impact",
+        "snippet": "FIFA World Cup 2026 ka local businesses aur tourism par economic impact ka analysis...",
+        "coverImage": "/images/discover/fifa-world-cup-2026-bracket.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T21:29:48.942Z"
+    },
+    {
         "id": "bukayo-saka-brand-endorsements",
         "slug": "bukayo-saka-brand-endorsements",
         "title": "Bukayo Saka: Brand Endorsements Aur Unka Football Market Value Par Asar",

@@ -1,3 +1,4 @@
+import { fifaWorldCup2026Bracket } from './fifa-world-cup-2026-bracket';
 import { bukayoSakaBrandEndorsements } from './bukayo-saka-brand-endorsements';
 import { zee5SubscriptionGrowthRevenueImpact } from './zee5-subscription-growth-revenue-impact';
 import { jioTvImpactAnalysis } from './jio-tv-impact-analysis';
@@ -602,6 +603,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    fifaWorldCup2026Bracket,
+
     bukayoSakaBrandEndorsements,
 
     zee5SubscriptionGrowthRevenueImpact,
