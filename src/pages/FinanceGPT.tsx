@@ -752,7 +752,10 @@ const FinanceGPT: React.FC = () => {
                   <Link to="/discover" className="fgpt-trending-see-all">सभी देखें →</Link>
                 </div>
                 <div className="fgpt-trending-grid">
-                  {discoverArticles.slice(0, 4).map(article => (
+                {[...discoverArticles]
+                  .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())
+                  .slice(0, 4)
+                  .map(article => (
                     <Link key={article.id} to={`/discover/${article.slug}`} className="fgpt-trending-card">
                       <h3 className="fgpt-trending-card-title">{article.title}</h3>
                       <span className="fgpt-trending-card-date">
