@@ -1,0 +1,71 @@
+# 🤖 Automated Discover Article Publisher - Runs Daily at 6 AM and 6 PM IST
+
+name: Auto-Publish Discover Articles
+
+on:
+  schedule:
+    # Runs at 6:00 AM IST (00:30 UTC) and 6:00 PM IST (12:30 UTC)
+    - cron: '30 0,12 * * *'
+  
+  # Manual trigger (for testing)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-discover:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
+          fetch-depth: 1
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📥 Install Dependencies
+        run: npm ci
+
+      - name: 🤖 Run Auto Discover Publisher
+        run: node scripts/auto-discover-publisher/main.js
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+      - name: 🏗️ Build Project (Verify No Errors)
+        run: npm run build
+        continue-on-error: true
+
+      - name: 💾 Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/discover/ public/images/discover/
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No new articles generated."
+          else
+            git commit -m "🤖 Auto-publish trending discover articles [skip ci]"
+            git push origin main
+          fi
+
+      - name: 📊 Generate Report
+        if: always()
+        run: |
+          echo "## 🤖 Auto Discover Publisher Report" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: 📧 Notify on Failure
+        if: failure()
+        run: |
+          echo "❌ Auto Discover Publisher Failed!"
+          echo "Check workflow logs for details."
