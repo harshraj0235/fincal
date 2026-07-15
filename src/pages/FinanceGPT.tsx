@@ -739,11 +739,10 @@ const FinanceGPT: React.FC = () => {
           <div className="hidden md:block absolute top-6 right-6 z-20">
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white hover:bg-green-600 rounded-full shadow-md transition-all font-medium text-sm"
+              className="flex items-center justify-center p-2.5 bg-green-500 text-white hover:bg-green-600 rounded-full shadow-md transition-all font-medium text-sm"
               title="Toggle theme"
             >
-              {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
           </div>
 
