@@ -981,7 +981,7 @@ function App() {
           
           {/* Finance GPT — AI Research Chat */}
           <Route path="/finance-gpt" element={<Suspense fallback={skeletonFallback}><FinanceGPT /></Suspense>} />
-          <Route path="/ask" element={<Navigate to="/finance-gpt" replace />} />
+          <Route path="/ask" element={<Navigate to="/" replace />} />
 
           {/* Google Discover Hub */}
           <Route path="/discover" element={<Layout><Discover /></Layout>} />
@@ -1003,6 +1003,7 @@ function App() {
               <Suspense fallback={skeletonFallback}>
                 <Routes>
                   <Route path="/" element={<FinanceGPT />} />
+                  <Route path="/ask/:chatId" element={<FinanceGPT />} />
                   <Route path="/home-old" element={<HomeOld />} />
                   <Route path="/embed/:calculatorId" element={<EmbedPage />} />
                   <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />

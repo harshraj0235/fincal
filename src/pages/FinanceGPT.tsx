@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import '../styles/financeGPT.css';
 import SEOHelmet from '../components/SEOHelmet';
 import ThinkingPanel from '../components/ThinkingPanel';
 import SourceCards from '../components/SourceCards';
 import FinanceGPTResponseRenderer from '../components/FinanceGPTResponseRenderer';
-import { streamGeminiResponse, ContentItem, SourceLink, CoreChatMessage, LLMResponse, ResearchMode } from '../lib/llmEngine';
+import { streamGeminiResponse, ContentItem, SourceLink, CoreChatMessage, LLMResponse, ResearchMode, AI_PROXY_URL } from '../lib/llmEngine';
 import { calculatorCategories } from '../data/calculatorData';
 import { discoverMetadata as discoverArticles } from '../data/discover/metadata';
 import { Sun, Moon } from 'lucide-react';
@@ -73,6 +73,19 @@ const SUGGESTED_QUERIES: Record<ResearchMode, string[]> = {
 };
 
 const STORAGE_KEY = 'moneycal_chats';
+
+// Generate UUID v4 (like Perplexity's shareable URLs)
+function generateUUID(): string {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  // Fallback for older browsers
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
 
 // ─── SEO Data ────────────────────────────────────────────
 const SEO_TITLE = 'MoneyCal — Free AI Financial Calculator & Assistant India 2025-26 | SIP, EMI, Tax Calculator';
@@ -163,6 +176,8 @@ function buildContentIndex(): ContentItem[] {
 
 // ─── Main Component ──────────────────────────────────────
 const FinanceGPT: React.FC = () => {
+  const navigate = useNavigate();
+  const { chatId: urlChatId } = useParams<{ chatId?: string }>();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -177,6 +192,7 @@ const FinanceGPT: React.FC = () => {
   const [uploadedFile, setUploadedFile] = useState<{ name: string; text: string } | null>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [inputFocused, setInputFocused] = useState(false);
+  const [shareToast, setShareToast] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -202,8 +218,45 @@ const FinanceGPT: React.FC = () => {
   // Load saved chats from localStorage
   useEffect(() => {
     contentIndexRef.current = buildContentIndex();
-    setSavedChats(loadChats());
-  }, []);
+    const chats = loadChats();
+    setSavedChats(chats);
+
+    // If URL has a chatId, load that conversation
+    if (urlChatId) {
+      const found = chats.find(c => c.id === urlChatId);
+      if (found) {
+        setMessages(found.messages);
+        setActiveChatId(found.id);
+        setChatHistory(
+          found.messages
+            .filter(m => !m.isStreaming)
+            .map(m => ({ role: m.role, content: m.content }))
+            .slice(-10)
+        );
+      } else {
+        // Not in local storage, try fetching from the global database
+        fetch(`${AI_PROXY_URL}/chat/${urlChatId}`)
+          .then(res => res.json())
+          .then((remoteChat: SavedChat) => {
+            if (remoteChat && remoteChat.messages) {
+              setMessages(remoteChat.messages);
+              setActiveChatId(remoteChat.id);
+              setChatHistory(
+                remoteChat.messages
+                  .filter(m => !m.isStreaming)
+                  .map(m => ({ role: m.role, content: m.content }))
+                  .slice(-10)
+              );
+              // Save to local storage for future quick access
+              const updatedChats = [remoteChat, ...chats];
+              setSavedChats(updatedChats);
+              saveChats(updatedChats);
+            }
+          })
+          .catch(err => console.error('Failed to load remote chat', err));
+      }
+    }
+  }, [urlChatId]);
 
   // Auto-scroll
   useEffect(() => {
@@ -216,24 +269,40 @@ const FinanceGPT: React.FC = () => {
     
     setSavedChats(prev => {
       let updated: SavedChat[];
+      let chatToSave: SavedChat;
       if (activeChatId) {
-        updated = prev.map(c => 
-          c.id === activeChatId 
-            ? { ...c, messages, title: generateChatTitle(messages), updatedAt: new Date().toISOString() }
-            : c
-        );
+        updated = prev.map(c => {
+          if (c.id === activeChatId) {
+            chatToSave = { ...c, messages, title: generateChatTitle(messages), updatedAt: new Date().toISOString() };
+            return chatToSave;
+          }
+          return c;
+        });
       } else {
-        const newId = `chat-${Date.now()}`;
+        const newId = generateUUID();
         setActiveChatId(newId);
-        updated = [{
+        // Update URL to shareable /ask/<uuid> without full page reload
+        navigate(`/ask/${newId}`, { replace: true });
+        chatToSave = {
           id: newId,
           title: generateChatTitle(messages),
           messages,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
-        }, ...prev];
+        };
+        updated = [chatToSave, ...prev];
       }
       saveChats(updated);
+      
+      // Save to global Cloudflare KV database for sharing
+      if (chatToSave!) {
+        fetch(`${AI_PROXY_URL}/chat/${chatToSave.id}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(chatToSave)
+        }).catch(err => console.error('Failed to sync chat to cloud', err));
+      }
+      
       return updated;
     });
   }, [messages.filter(m => !m.isStreaming).length]); // Only trigger on non-streaming msg count change
@@ -324,7 +393,13 @@ const FinanceGPT: React.FC = () => {
 
   // ─── New Chat ────────────────────────────────────────────
   const handleNewChat = () => {
-    window.location.reload();
+    setMessages([]);
+    setChatHistory([]);
+    setActiveChatId(null);
+    setInput('');
+    setShowThinking(false);
+    setThinkingSteps([]);
+    navigate('/', { replace: true });
   };
 
   // ─── Load Saved Chat ────────────────────────────────────
@@ -339,6 +414,8 @@ const FinanceGPT: React.FC = () => {
     );
     setSidebarOpen(false);
     setShowThinking(false);
+    // Update URL to this chat's shareable link
+    navigate(`/ask/${chat.id}`, { replace: true });
   };
 
   // ─── Delete Chat ─────────────────────────────────────────
@@ -357,10 +434,39 @@ const FinanceGPT: React.FC = () => {
       setInput('');
       setShowThinking(false);
       setThinkingSteps([]);
+      navigate('/', { replace: true });
     }
   };
 
   // Handle query submit
+  const handleShareChat = useCallback(() => {
+    if (!activeChatId) return;
+    const shareUrl = `${window.location.origin}/ask/${activeChatId}`;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      setShareToast(true);
+      setTimeout(() => setShareToast(false), 2500);
+    }).catch(() => {
+      // Fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = shareUrl;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      setShareToast(true);
+      setTimeout(() => setShareToast(false), 2500);
+    });
+  }, [activeChatId]);
+
+  const handleWhatsAppShare = useCallback(() => {
+    if (!activeChatId) return;
+    const shareUrl = `${window.location.origin}/ask/${activeChatId}`;
+    const firstUserMsg = messages.find(m => m.role === 'user');
+    const text = firstUserMsg
+      ? `🧠 MoneyCal AI से पूछा: "${firstUserMsg.content.slice(0, 100)}"\n\nजवाब देखें 👉 ${shareUrl}`
+      : `MoneyCal AI — India का Free Finance Assistant 👉 ${shareUrl}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+  }, [activeChatId, messages]);
   const handleSubmit = useCallback(async (queryOverride?: string) => {
     let query = queryOverride || input.trim();
     if (!query || isLoading) return;
@@ -852,6 +958,28 @@ const FinanceGPT: React.FC = () => {
                               </div>
                             </div>
                           )}
+
+                          {/* Share Actions */}
+                          {!msg.isStreaming && msg.content && activeChatId && (
+                            <div className="fgpt-share-actions">
+                              <button
+                                className="fgpt-share-btn"
+                                onClick={handleShareChat}
+                                title="Copy shareable link"
+                              >
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                                Share Link
+                              </button>
+                              <button
+                                className="fgpt-share-btn fgpt-share-whatsapp"
+                                onClick={handleWhatsAppShare}
+                                title="Share on WhatsApp"
+                              >
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                WhatsApp
+                              </button>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -943,6 +1071,14 @@ const FinanceGPT: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Share Toast Notification */}
+      {shareToast && (
+        <div className="fgpt-share-toast">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Link copied! Anyone with this link can view this conversation.
+        </div>
+      )}
     </>
   );
 };
