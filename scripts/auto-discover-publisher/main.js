@@ -213,7 +213,7 @@ async function updateIndexTs(newArticles) {
     if (!match) throw new Error('Could not find _discoverArticles array in index.ts');
 
     const insertPosition = match.index + match[0].length;
-    indexContent = indexContent.slice(0, insertPosition) + '\\n' + arrayPushStatements + indexContent.slice(insertPosition);
+    indexContent = indexContent.slice(0, insertPosition) + '\n' + arrayPushStatements + indexContent.slice(insertPosition);
 
     fs.writeFileSync(INDEX_TS_PATH, indexContent);
 }
