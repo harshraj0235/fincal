@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useMemo, useState } from 'react';
 import { SourceLink } from '../lib/llmEngine';
 import StockLiveWidget from './StockLiveWidget';
-import { Share2, Check, Copy } from 'lucide-react';
+import { Share2, Check, Copy, ThumbsUp, ThumbsDown } from 'lucide-react';
 
 const MiniSIP = lazy(() => import('./MiniSIP'));
 const MiniEMI = lazy(() => import('./MiniEMI'));
@@ -22,6 +22,22 @@ interface FinanceGPTResponseRendererProps {
 const FinanceGPTResponseRenderer: React.FC<FinanceGPTResponseRendererProps> = ({ text, sources = [] }) => {
   const [isShared, setIsShared] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
+  const [feedback, setFeedback] = useState<'up' | 'down' | null>(null);
+
+  const handleFeedback = (type: 'up' | 'down') => {
+    setFeedback(type);
+    // Save feedback to localStorage for tracking
+    try {
+      const stored = JSON.parse(localStorage.getItem('moneycal_feedback') || '[]');
+      stored.push({
+        type,
+        query: text.substring(0, 100),
+        timestamp: Date.now(),
+      });
+      // Keep last 200 feedback entries
+      localStorage.setItem('moneycal_feedback', JSON.stringify(stored.slice(-200)));
+    } catch { /* ignore storage errors */ }
+  };
 
   const handleCopy = async () => {
     try {
@@ -242,42 +258,74 @@ const FinanceGPTResponseRenderer: React.FC<FinanceGPTResponseRendererProps> = ({
       })}
 
       {text.length > 0 && (
-        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-end gap-2">
-          <button
-            onClick={handleCopy}
-            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 hover:text-blue-600 rounded-full transition-colors border border-gray-200"
-            title="Copy full response"
-          >
-            {isCopied ? (
-              <>
-                <Check className="w-4 h-4 text-green-500" />
-                <span className="text-green-600">Copied!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-4 h-4" />
-                <span>Copy</span>
-              </>
-            )}
-          </button>
+        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+          {/* Feedback buttons (left side) */}
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => handleFeedback('up')}
+              className={`flex items-center gap-1 px-2.5 py-1.5 text-sm font-medium rounded-full transition-all border ${
+                feedback === 'up'
+                  ? 'bg-green-50 text-green-600 border-green-200 scale-110'
+                  : 'text-gray-500 bg-gray-50 hover:bg-green-50 hover:text-green-600 border-gray-200'
+              }`}
+              title="Good answer"
+              disabled={feedback !== null}
+            >
+              <ThumbsUp className="w-3.5 h-3.5" />
+              {feedback === 'up' && <span className="text-xs">धन्यवाद!</span>}
+            </button>
+            <button
+              onClick={() => handleFeedback('down')}
+              className={`flex items-center gap-1 px-2.5 py-1.5 text-sm font-medium rounded-full transition-all border ${
+                feedback === 'down'
+                  ? 'bg-red-50 text-red-500 border-red-200 scale-110'
+                  : 'text-gray-500 bg-gray-50 hover:bg-red-50 hover:text-red-500 border-gray-200'
+              }`}
+              title="Bad answer"
+              disabled={feedback !== null}
+            >
+              <ThumbsDown className="w-3.5 h-3.5" />
+            </button>
+          </div>
 
-          <button
-            onClick={handleShare}
-            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 hover:text-blue-600 rounded-full transition-colors border border-gray-200"
-            title="Share this answer"
-          >
-            {isShared ? (
-              <>
-                <Check className="w-4 h-4 text-green-500" />
-                <span className="text-green-600">Shared!</span>
-              </>
-            ) : (
-              <>
-                <Share2 className="w-4 h-4" />
-                <span>Share</span>
-              </>
-            )}
-          </button>
+          {/* Copy + Share buttons (right side) */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopy}
+              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 hover:text-blue-600 rounded-full transition-colors border border-gray-200"
+              title="Copy full response"
+            >
+              {isCopied ? (
+                <>
+                  <Check className="w-4 h-4 text-green-500" />
+                  <span className="text-green-600">Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4" />
+                  <span>Copy</span>
+                </>
+              )}
+            </button>
+
+            <button
+              onClick={handleShare}
+              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-gray-100 hover:text-blue-600 rounded-full transition-colors border border-gray-200"
+              title="Share this answer"
+            >
+              {isShared ? (
+                <>
+                  <Check className="w-4 h-4 text-green-500" />
+                  <span className="text-green-600">Shared!</span>
+                </>
+              ) : (
+                <>
+                  <Share2 className="w-4 h-4" />
+                  <span>Share</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
       )}
     </div>

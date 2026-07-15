@@ -5,7 +5,7 @@ import SEOHelmet from '../components/SEOHelmet';
 import ThinkingPanel from '../components/ThinkingPanel';
 import SourceCards from '../components/SourceCards';
 import FinanceGPTResponseRenderer from '../components/FinanceGPTResponseRenderer';
-import { streamGeminiResponse, ContentItem, SourceLink, CoreChatMessage, LLMResponse } from '../lib/llmEngine';
+import { streamGeminiResponse, ContentItem, SourceLink, CoreChatMessage, LLMResponse, ResearchMode } from '../lib/llmEngine';
 import { calculatorCategories } from '../data/calculatorData';
 import { discoverMetadata as discoverArticles } from '../data/discover/metadata';
 
@@ -33,7 +33,7 @@ interface SavedChat {
   updatedAt: string;
 }
 
-type ResearchMode = 'general' | 'stocks' | 'tax' | 'schemes' | 'news';
+
 
 const RESEARCH_MODES: { id: ResearchMode; icon: string; label: string }[] = [
   { id: 'general', icon: '🧠', label: 'General' },
@@ -413,7 +413,8 @@ const FinanceGPT: React.FC = () => {
         chatHistory,
         'beginner',
         onChunk,
-        onThinkingUpdate
+        onThinkingUpdate,
+        researchMode
       );
 
       setMessages(prev =>

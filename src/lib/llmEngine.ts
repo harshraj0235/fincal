@@ -14,6 +14,8 @@ export type ContentItem = {
   type: 'calculator' | 'hub' | 'blog' | 'news' | 'scheme' | 'page' | 'discover';
 };
 
+export type ResearchMode = 'general' | 'stocks' | 'tax' | 'schemes' | 'news';
+
 export type SourceLink = {
   title: string;
   url: string;
@@ -34,13 +36,95 @@ export type CoreChatMessage = { role: 'user' | 'assistant'; content: string };
 // OpenRouter API Configuration
 // ───────────────────────────────────────────────────────
 const OPENROUTER_API_KEY = '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';
-const OPENROUTER_MODEL = 'openrouter/free';
+const OPENROUTER_MODEL = 'meta-llama/llama-4-maverick';
 const OPENROUTER_API_URL = `https://openrouter.ai/api/v1/chat/completions`;
+
+// ───────────────────────────────────────────────────────
+// Response Cache (1-hour TTL)
+// ───────────────────────────────────────────────────────
+const responseCache = new Map<string, { response: LLMResponse; timestamp: number }>();
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+
+function getCacheKey(query: string, mode: ResearchMode): string {
+  return `${mode}::${query.trim().toLowerCase()}`;
+}
+
+function getCachedResponse(query: string, mode: ResearchMode): LLMResponse | null {
+  const key = getCacheKey(query, mode);
+  const cached = responseCache.get(key);
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+    return cached.response;
+  }
+  if (cached) responseCache.delete(key); // expired
+  return null;
+}
+
+function setCachedResponse(query: string, mode: ResearchMode, response: LLMResponse): void {
+  const key = getCacheKey(query, mode);
+  // Keep cache size manageable
+  if (responseCache.size > 100) {
+    const firstKey = responseCache.keys().next().value;
+    if (firstKey) responseCache.delete(firstKey);
+  }
+  responseCache.set(key, { response, timestamp: Date.now() });
+}
+
+// ───────────────────────────────────────────────────────
+// Research Mode — Mode-specific prompt instructions
+// ───────────────────────────────────────────────────────
+function getResearchModeInstruction(mode: ResearchMode): string {
+  switch (mode) {
+    case 'stocks':
+      return `\n## RESEARCH MODE: STOCKS 📊
+- You are in STOCK ANALYSIS mode. The user wants detailed stock market information.
+- ALWAYS render a \`\`\`stock TICKER\`\`\` widget for any company mentioned.
+- Include: PE ratio, 52-week high/low, sector comparison, promoter holding if known.
+- Mention recent quarterly results, revenue growth, profit margins.
+- Compare with sector peers when relevant.
+- Add a \`\`\`chart\`\`\` widget to visualize comparisons if useful.\n`;
+    case 'tax':
+      return `\n## RESEARCH MODE: TAX 💰
+- You are in TAX ANALYSIS mode. The user wants detailed Indian tax information.
+- ALWAYS use FY 2025-26 tax slabs and rules.
+- ALWAYS include a comparison table of Old vs New Tax Regime when relevant.
+- Mention specific sections: 80C, 80D, 80G, 80E, 80TTA, 24(b), HRA exemption.
+- Calculate exact tax amounts with step-by-step breakdown.
+- Recommend MoneyCal's Income Tax Calculator for personalized calculations.\n`;
+    case 'schemes':
+      return `\n## RESEARCH MODE: GOVERNMENT SCHEMES 🏦
+- You are in GOVERNMENT SCHEMES mode. The user wants scheme details.
+- List: Eligibility criteria, required documents, application process (step-by-step), official website link.
+- Mention the scheme's budget allocation and number of beneficiaries if known.
+- Compare with similar schemes when relevant.
+- Always mention the official portal URL for applying.\n`;
+    case 'news':
+      return `\n## RESEARCH MODE: NEWS 📰
+- You are in FINANCIAL NEWS mode. The user wants latest market/financial news.
+- Focus on latest developments with specific dates.
+- Provide market impact analysis — how this news affects investors.
+- Cite sources with [1], [2] etc.
+- Give actionable takeaways — what should investors do in response.
+- Mention related stocks/sectors that are affected.\n`;
+    default:
+      return '';
+  }
+}
+
+function getSearchQueryPrefix(mode: ResearchMode): string {
+  switch (mode) {
+    case 'stocks': return 'India stock market analysis ';
+    case 'tax': return 'India income tax FY 2025-26 ';
+    case 'schemes': return 'Indian government scheme details ';
+    case 'news': return 'latest India financial news today ';
+    default: return '';
+  }
+}
 
 // ───────────────────────────────────────────────────────
 // System Prompt — The "Brain" of Finance GPT
 // ───────────────────────────────────────────────────────
-function buildSystemPrompt(userProfile: 'beginner' | 'expert', contextSnippet: string, webSnippet: string): string {
+function buildSystemPrompt(userProfile: 'beginner' | 'expert', contextSnippet: string, webSnippet: string, researchMode: ResearchMode = 'general'): string {
+  const modeInstruction = getResearchModeInstruction(researchMode);
   const profileInstruction = userProfile === 'beginner'
     ? 'User is a BEGINNER. Use very simple language, avoid jargon, explain terms, give relatable examples like "chai ka budget" or "monthly salary". Be encouraging and patient.'
     : 'User is a finance EXPERT. Be precise, use technical terms, give advanced strategies, cite specific sections of law.';
@@ -62,13 +146,18 @@ function buildSystemPrompt(userProfile: 'beginner' | 'expert', contextSnippet: s
 - Use emojis strategically: 📊📈💰🏦💡🎯✅❌⚠️🔬🌍📱 to make answers scannable.
 
 ## RESPONSE FORMAT RULES
-1. **Start with the answer, not preamble.** Don't say "That's a great question!" — just answer directly.
+1. **Start with a QUICK ANSWER BOX** — The very first thing in your response should be a 1-2 line direct answer in bold. Example:
+   **💡 Quick Answer: SIP में ₹5,000/month invest करने से 20 साल में ~₹49.9 lakh बन सकते हैं (at 12% returns)।**
 2. **Numbers first.** For finance questions, always lead with concrete numbers, calculations, rates. Users want facts, not theory.
 3. **Use Markdown formatting:**
    - Use **bold** for key terms and numbers
    - Use bullet points for lists
    - Use tables for comparisons (e.g., Old vs New Tax Regime)
    - Use ### headings to organize long answers
+4. **End with KEY TAKEAWAY** — Before the follow-up questions, add:
+   ### 🎯 Key Takeaway
+   A 2-3 line boxed summary of the most important point.
+5. **Include ACTION STEPS** — Give numbered, clear, actionable steps the user can take right now.
 
 ## GENERATIVE UI (WIDGETS & CHARTS) — LIVE DATA
 You have the ability to render beautiful interactive widgets with **LIVE real-time data** directly in the chat.
@@ -138,7 +227,7 @@ Use the following real-time web search results (including full scraped content) 
 - Do NOT provide a bibliography or list of sources at the end. The system will handle that. Just use the inline numbers.
 
 ${webSnippet}
-
+${modeInstruction}
 ## CALCULATOR RECOMMENDATIONS
 When relevant, naturally recommend MoneyCal calculators. Here's your available toolkit:
 ${contextSnippet}
@@ -288,46 +377,8 @@ function generateSources(query: string): SourceLink[] {
 }
 
 // ───────────────────────────────────────────────────────
-// Generate Dynamic Follow-up Questions
+// Generate Dynamic Follow-up Questions (no separate API call — extracted from main response)
 // ───────────────────────────────────────────────────────
-async function generateDynamicFollowUps(query: string, chatHistory: CoreChatMessage[]): Promise<string[]> {
-  try {
-    const messages = [
-      { role: 'system', content: 'You are an AI that generates exactly 3 insightful follow-up questions for a financial conversation. The questions MUST be in Hinglish (Hindi + English). Return ONLY a JSON array of 3 strings, e.g. ["question 1?", "question 2?", "question 3?"]. No other text, no markdown block.' },
-      ...chatHistory.slice(-4),
-      { role: 'user', content: query }
-    ];
-
-    const response = await fetch(OPENROUTER_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OPENROUTER_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: OPENROUTER_MODEL,
-        messages,
-        temperature: 0.5
-      })
-    });
-    
-    if (response.ok) {
-      const data = await response.json();
-      const content = data?.choices?.[0]?.message?.content || '';
-      try {
-        const parsed = JSON.parse(content.replace(/```json/g, '').replace(/```/g, '').trim());
-        if (Array.isArray(parsed) && parsed.length >= 3) {
-          return parsed.slice(0, 3);
-        }
-      } catch (e) {
-        console.warn('Failed to parse dynamic follow-ups JSON:', e);
-      }
-    }
-  } catch (error) {
-    console.error('Follow-ups generation failed:', error);
-  }
-  return generateDefaultFollowUps(query);
-}
 
 // ───────────────────────────────────────────────────────
 // Streaming Gemini API Call
@@ -338,19 +389,25 @@ export async function streamGeminiResponse(
   chatHistory: CoreChatMessage[] = [],
   userProfile: 'beginner' | 'expert' = 'beginner',
   onChunk: (text: string) => void,
-  onThinkingUpdate: (step: string) => void
+  onThinkingUpdate: (step: string) => void,
+  researchMode: ResearchMode = 'general'
 ): Promise<LLMResponse> {
+  // Check cache first for identical queries
+  const cached = getCachedResponse(query, researchMode);
+  if (cached) {
+    onThinkingUpdate('⚡ Cache se instant answer mil gaya!');
+    onChunk(cached.answer);
+    return cached;
+  }
   // Step 1: Search content index for relevant tools
   onThinkingUpdate('🔍 MoneyCal knowledge base search कर रहा हूँ...');
   const localResults = searchContentIndex(query, contentIndex);
   const contextSnippet = buildContextSnippet(localResults.length > 0 ? localResults : contentIndex.slice(0, 15));
 
-  // Start fetching dynamic follow-ups in parallel to save time
-  const followUpsPromise = generateDynamicFollowUps(query, chatHistory);
-
   // Step 1.5: Perform Live Web Search with Full Scraped Content
   onThinkingUpdate('🌐 Live Web Search कर रहा हूँ...');
-  const webResults = await searchWeb(query, true);
+  const searchQuery = getSearchQueryPrefix(researchMode) + query;
+  const webResults = await searchWeb(searchQuery, true);
   let webSnippet = 'No live web context found.';
   if (webResults.length > 0) {
     webSnippet = webResults.map((r, i) => `[${i + 1}] Title: ${r.title}\nURL: ${r.url}\nSnippet: ${r.snippet}\nFull Content: ${r.fullContent || 'N/A'}\n`).join('\n');
@@ -358,7 +415,7 @@ export async function streamGeminiResponse(
 
   // Step 2: Build system prompt
   onThinkingUpdate('🧠 आपके सवाल को समझ रहा हूँ...');
-  const systemPrompt = buildSystemPrompt(userProfile, contextSnippet, webSnippet);
+  const systemPrompt = buildSystemPrompt(userProfile, contextSnippet, webSnippet, researchMode);
 
   // Step 3: Build conversation messages for OpenRouter
   const messages: any[] = [];
@@ -506,16 +563,21 @@ export async function streamGeminiResponse(
     sources = Array.from(new Map(allSources.map(item => [item.url, item])).values()).slice(0, 5);
   }
 
-  // Await the dynamic follow-ups if the AI didn't already generate them in the text
-  const dynamicQuestions = await followUpsPromise;
+  // Use follow-ups extracted from the main response, or fall back to defaults
+  const finalFollowUps = questions.length > 0 ? questions : generateDefaultFollowUps(query);
 
-  return {
+  const result: LLMResponse = {
     answer: cleanedText || fullResponse,
     sources,
     recommendations: localResults.slice(0, 4),
     calculatorType,
-    followUpQuestions: questions.length > 0 ? questions : dynamicQuestions,
+    followUpQuestions: finalFollowUps,
   };
+
+  // Cache the response for future identical queries
+  setCachedResponse(query, researchMode, result);
+
+  return result;
 }
 
 // ───────────────────────────────────────────────────────

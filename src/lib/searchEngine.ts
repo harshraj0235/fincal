@@ -5,21 +5,60 @@ export interface SearchResult {
   fullContent?: string;
 }
 
+// ───────────────────────────────────────────────────────
+// Multi-proxy fallback for CORS — if one goes down, try the next
+// ───────────────────────────────────────────────────────
+const CORS_PROXIES = [
+  (url: string) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+  (url: string) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+  (url: string) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+];
+
+async function fetchWithFallback(targetUrl: string): Promise<{ contents: string } | null> {
+  for (const buildProxyUrl of CORS_PROXIES) {
+    try {
+      const proxyUrl = buildProxyUrl(targetUrl);
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000); // 8s timeout per proxy
+
+      const response = await fetch(proxyUrl, { signal: controller.signal });
+      clearTimeout(timeout);
+
+      if (!response.ok) continue;
+
+      // allorigins returns { contents: "..." }, others return raw text
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        const data = await response.json();
+        // allorigins format
+        if (data.contents) return { contents: data.contents };
+        // codetabs format — returns raw string in json sometimes
+        if (typeof data === 'string') return { contents: data };
+        return null;
+      } else {
+        // corsproxy.io and codetabs return raw HTML
+        const text = await response.text();
+        if (text) return { contents: text };
+      }
+    } catch (err) {
+      console.warn(`Proxy failed, trying next...`, err);
+      continue;
+    }
+  }
+  console.error('All CORS proxies failed for:', targetUrl);
+  return null;
+}
+
 export async function fetchWebpageContent(url: string): Promise<string> {
   try {
     // Some urls might be invalid
     if (!url.startsWith('http')) return '';
 
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
-    const response = await fetch(proxyUrl);
-    if (!response.ok) return '';
-    
-    const data = await response.json();
-    const htmlString = data.contents;
-    if (!htmlString) return '';
+    const data = await fetchWithFallback(url);
+    if (!data?.contents) return '';
 
     const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, 'text/html');
+    const doc = parser.parseFromString(data.contents, 'text/html');
 
     // Remove noise elements
     const elementsToRemove = doc.querySelectorAll('script, style, nav, header, footer, iframe, noscript, aside, form, .ad, .sidebar, [role="banner"], [role="contentinfo"]');
@@ -40,22 +79,15 @@ export async function searchWeb(query: string, fetchFullContent: boolean = false
   try {
     const encodedQuery = encodeURIComponent(query);
     const ddgUrl = `https://html.duckduckgo.com/html/?q=${encodedQuery}`;
-    // Using AllOrigins CORS proxy since browser will block direct DDG HTML calls
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(ddgUrl)}`;
 
-    const response = await fetch(proxyUrl);
-    if (!response.ok) {
-      console.error('Search proxy failed:', response.status);
+    const data = await fetchWithFallback(ddgUrl);
+    if (!data?.contents) {
+      console.error('Search: all proxies failed');
       return [];
     }
 
-    const data = await response.json();
-    const htmlString = data.contents;
-    
-    if (!htmlString) return [];
-
     const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, 'text/html');
+    const doc = parser.parseFromString(data.contents, 'text/html');
 
     const results: SearchResult[] = [];
     const resultNodes = doc.querySelectorAll('.result__body');

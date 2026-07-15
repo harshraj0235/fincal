@@ -199,6 +199,15 @@ export const discoverMetadata = [
         "date": "2026-07-13T12:15:00+05:30"
     },
     {
+        "id": "odyssey-bollywood-superstar-cast-cameo-leak",
+        "slug": "odyssey-bollywood-superstar-cast-cameo-leak",
+        "title": "Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!",
+        "snippet": "क्या क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में किसी बॉलीवुड या साउथ सुपरस्टार का कैमियो होने वाला है? जानिए असली सच्चाई।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOL3T2B2-3oi485sch2XGBzbHiTiet8M5Mg5SjzFmMw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:15:00+05:30"
+    },
+    {
         "id": "toxic-movie-box-office-collection-1200-crore-budget",
         "slug": "toxic-movie-box-office-collection-1200-crore-budget",
         "title": "Toxic Box Office Prediction: क्या Yash की नई फिल्म ₹1200 करोड़ कमा पाएगी?",
@@ -446,6 +455,186 @@ export const discoverMetadata = [
         "author": "MoneyCal Team"
     },
     {
+        "id": "aaj-ka-rashifal-dhan-labh-2026",
+        "slug": "aaj-ka-rashifal-dhan-labh-2026",
+        "title": "Rashifal: आज चमकेगी इन भाग्यशाली राशियों की किस्मत, होगा बड़ा धन लाभ!",
+        "snippet": "15 जुलाई 2026 को बन रहे हैं कई दुर्लभ शुभ योग। जानिए मेष से लेकर मीन राशि तक, किन राशियों के लिए आज का दिन लाएगा अपार धन और सफलता।",
+        "coverImage": "/images/discover/aaj-ka-rashifal-dhan-labh-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T21:30:00+05:30"
+    },
+    {
+        "id": "monsoon-2026-heavy-rain-alert-states",
+        "slug": "monsoon-2026-heavy-rain-alert-states",
+        "title": "Monsoon 2026 Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, IMD ने जारी किया रेड अलर्ट!",
+        "snippet": "मौसम विभाग (IMD) ने देश के 22 राज्यों में अगले 48 घंटों के लिए भारी बारिश (Heavy Rain) का अलर्ट जारी किया है। जानिए किन राज्यों में है बाढ़ का सबसे ज्यादा खतरा।",
+        "coverImage": "/images/discover/monsoon-2026-heavy-rain-alert-states.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T21:00:00+05:30"
+    },
+    {
+        "id": "ibm-share-price-buy-or-sell",
+        "slug": "ibm-share-price-buy-or-sell",
+        "title": "IBM Share Price में आया 115 सालों का सबसे बड़ा क्रैश! क्या यह शेयर खरीदने का सही समय है?",
+        "snippet": "जुलाई 2026 में IBM के शेयरों में 25% की भारी गिरावट दर्ज की गई। जानिए AI हार्डवेयर की बढ़ती डिमांड ने कैसे इस टेक दिग्गज को नुकसान पहुंचाया और अब निवेशकों को क्या करना चाहिए।",
+        "coverImage": "/images/discover/ibm-share-price-buy-or-sell.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T20:30:00+05:30"
+    },
+    {
+        "id": "irctc-new-website-launch-fast-booking",
+        "slug": "irctc-new-website-launch-fast-booking",
+        "title": "IRCTC की नई वेबसाइट लॉन्च! अब तत्काल टिकट बुकिंग होगी सुपरफास्ट, देखें बड़े बदलाव",
+        "snippet": "IRCTC ने अपनी वेबसाइट का नया और फास्ट वर्जन लॉन्च कर दिया है। अब 1.5 लाख टिकट प्रति मिनट बुक हो सकेंगे। जानिए नए फीचर्स और बदलावों के बारे में पूरी जानकारी।",
+        "coverImage": "/images/discover/irctc-new-website-launch-fast-booking.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T20:00:00+05:30"
+    },
+    {
+        "id": "ration-card-new-update-2026",
+        "slug": "ration-card-new-update-2026",
+        "title": "Ration Card धारकों के लिए बड़ी खुशखबरी, सरकार ने किया यह नया बदलाव!",
+        "snippet": "राशन कार्ड (Ration Card) धारकों के लिए e-KYC हुई अनिवार्य। प्रधानमंत्री गरीब कल्याण अन्न योजना (PMGKAY) के तहत फ्री राशन दिसंबर 2028 तक बढ़ाया गया। जानें पूरी डिटेल।",
+        "coverImage": "/images/discover/ration-card-new-update-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T19:30:00+05:30"
+    },
+    {
+        "id": "shah-rukh-khan-bungalow-petition",
+        "slug": "shah-rukh-khan-bungalow-petition",
+        "title": "Shah Rukh Khan के बंगले 'Mannat' को लेकर सुप्रीम कोर्ट का बड़ा फैसला, जानें पूरा मामला",
+        "snippet": "शाहरुख खान के बंगले 'मन्नत' (Mannat) के रेनोवेशन को लेकर सुप्रीम कोर्ट में दायर हुई थी याचिका। चीफ जस्टिस ने याचिकाकर्ता को लगाई फटकार। जानिए क्या है पूरी सच्चाई।",
+        "coverImage": "/images/discover/shah-rukh-khan-bungalow-petition.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T19:00:00+05:30"
+    },
+    {
+        "id": "diljit-dosanjh-new-movie-satluj",
+        "slug": "diljit-dosanjh-new-movie-satluj",
+        "title": "Diljit Dosanjh की New Movie Satluj का धमाकेदार ऐलान, फैंस में बड़ा क्रेज और विवाद",
+        "snippet": "दिलजीत दोसांझ की नई फिल्म Satluj OTT प्लेटफॉर्म से रिलीज के 48 घंटे के भीतर ही क्यों हटा दी गई? जानिए इस विवादित फिल्म की पूरी सच्चाई और फैंस का रिएक्शन।",
+        "coverImage": "/images/discover/diljit-dosanjh-new-movie-satluj.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T18:30:00+05:30"
+    },
+    {
+        "id": "maruti-suzuki-brezza-facelift-2026",
+        "slug": "maruti-suzuki-brezza-facelift-2026",
+        "title": "New Maruti Suzuki Brezza Facelift 2026 Launch! देखें बेमिसाल फीचर्स और कीमत",
+        "snippet": "मारुति सुजुकी 23 जुलाई 2026 को अपनी नई Brezza Facelift लॉन्च करने जा रही है। जानिए इसके ADAS लेवल 2, नए टर्बो इंजन और एडवांस फीचर्स से जुड़ी हर जानकारी।",
+        "coverImage": "/images/discover/maruti-suzuki-brezza-facelift-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T18:00:00+05:30"
+    },
+    {
+        "id": "france-vs-spain-football-upset",
+        "slug": "france-vs-spain-football-upset",
+        "title": "France vs Spain: फुटबॉल वर्ल्ड कप में बड़ा उलटफेर, फैंस हुए हैरान!",
+        "snippet": "FIFA World Cup 2026 के सेमीफाइनल में स्पेन ने फ्रांस को 2-0 से हराकर किया बड़ा उलटफेर। जानिए कैसे एम्बाप्पे (Mbappé) की टीम को मिली करारी हार।",
+        "coverImage": "/images/discover/france-vs-spain-football-upset.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T17:30:00+05:30"
+    },
+    {
+        "id": "ind-vs-eng-axar-patel-record",
+        "slug": "ind-vs-eng-axar-patel-record",
+        "title": "IND vs ENG: Axar Patel का धमाका, तोड़ दिया सालों पुराना बड़ा रिकॉर्ड!",
+        "snippet": "भारत बनाम इंग्लैंड मैच में अक्षर पटेल (Axar Patel) ने गेंद और बल्ले दोनों से ऐसा गदर मचाया कि एक बहुत बड़ा रिकॉर्ड टूट गया। जानिए इस ऐतिहासिक जीत की पूरी कहानी।",
+        "coverImage": "/images/discover/ind-vs-eng-axar-patel-record.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T17:00:00+05:30"
+    },
+    {
+        "id": "hang-seng-dax-index-global-market",
+        "slug": "hang-seng-dax-index-global-market",
+        "title": "Hang Seng और DAX Index में हलचल, वैश्विक बाजारों के एक्शन से क्या Indian Market डूबेगा?",
+        "snippet": "वैश्विक शेयर बाजारों, खास तौर पर Hang Seng और DAX Index में गिरावट से भारतीय शेयर बाजार पर दबाव बढ़ा है। जानिए निवेशकों को इस माहौल में क्या रणनीति अपनानी चाहिए।",
+        "coverImage": "/images/discover/hang-seng-dax-index-global-market.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T16:30:00+05:30"
+    },
+    {
+        "id": "vedanta-group-anil-agarwal-masterstroke",
+        "slug": "vedanta-group-anil-agarwal-masterstroke",
+        "title": "अनिल अग्रवाल का नया मास्टरस्ट्रोक! वेदांता ग्रुप के निवेशकों की खुली किस्मत",
+        "snippet": "वेदांता ग्रुप (Vedanta Group) के डीमर्जर और चेयरमैन अनिल अग्रवाल के नए विजन 2026 ने बाजार में तहलका मचा दिया है। जानिए 5 नई कंपनियों और $100 बिलियन के टारगेट का पूरा सच।",
+        "coverImage": "/images/discover/vedanta-group-anil-agarwal-masterstroke.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T16:00:00+05:30"
+    },
+    {
+        "id": "chatgpt-claude-ai-india-pricing",
+        "slug": "chatgpt-claude-ai-india-pricing",
+        "title": "ChatGPT और Claude AI को लेकर भारत में बड़ा बदलाव, क्या आपकी जेब पर पड़ेगा असर?",
+        "snippet": "Claude AI ने भारत में अपने सब्सक्रिप्शन प्लान्स को भारतीय रुपये (INR) में लॉन्च कर दिया है। जानिए नई कीमतें, GST के नियम और इससे ChatGPT यूजर्स पर क्या असर पड़ेगा।",
+        "coverImage": "/images/discover/chatgpt-claude-ai-india-pricing.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T15:30:00+05:30"
+    },
+    {
+        "id": "epfo-vishwas-2026-scheme",
+        "slug": "epfo-vishwas-2026-scheme",
+        "title": "EPFO ने लॉन्च की Vishwas 2026 EPF Scheme! नौकरीपेशा लोग तुरंत उठाएं फायदा",
+        "snippet": "EPFO ने एम्प्लॉयर्स और कर्मचारियों के लिए Vishwas 2026 स्कीम लॉन्च की है। जानिए क्या है यह नई EPF योजना और इससे करोड़ों नौकरीपेशा लोगों को कैसे मिलेगा फायदा।",
+        "coverImage": "/images/discover/epfo-vishwas-2026-scheme.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T15:00:00+05:30"
+    },
+    {
+        "id": "silver-price-surge-rumor",
+        "slug": "silver-price-surge-rumor",
+        "title": "चाँदी की कीमतों में 1000% का जोरदार उछाल! क्या रिकॉर्ड तोड़ने को तैयार है Silver?",
+        "snippet": "क्या सच में चाँदी (Silver) की कीमतों में 1000% का उछाल आया है? जानिए आज के ताजा भाव, MCX के आंकड़े और बाजार में फैली इस सनसनीखेज खबर का पूरा सच।",
+        "coverImage": "/images/discover/silver-price-surge-rumor.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T14:30:00+05:30"
+    },
+    {
+        "id": "adani-power-groww-news",
+        "slug": "adani-power-groww-news",
+        "title": "Adani Power और Groww को लेकर आई बड़ी खबर, आज ही देख लें ये अपडेट",
+        "snippet": "अडानी पावर के शेयरों में तेजी और Groww ऐप के नए फीचर्स ने बाजार में हलचल मचा दी है। जानिए निवेशकों के लिए क्या हैं इसके मायने और Q1 नतीजों से जुड़ी अहम जानकारी।",
+        "coverImage": "/images/discover/adani-power-groww-news.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T14:00:00+05:30"
+    },
+    {
+        "id": "nse-bse-crash-tcs-itc-bel",
+        "slug": "nse-bse-crash-tcs-itc-bel",
+        "title": "NSE और BSE पर हाहाकार! TCS, ITC और BEL के शेयरों में अचानक क्या हुआ?",
+        "snippet": "भारतीय शेयर बाजार में भारी गिरावट! Sensex और Nifty के क्रैश होने के पीछे क्या हैं कारण? जानिए TCS, ITC और BEL जैसे बड़े शेयरों पर इसका क्या असर हुआ है।",
+        "coverImage": "/images/discover/nse-bse-crash-tcs-itc-bel.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T13:30:00+05:30"
+    },
+    {
+        "id": "alpine-sbi-ipo-gmp",
+        "slug": "alpine-sbi-ipo-gmp",
+        "title": "Alpine Texworld और SBI Funds Management IPO का बड़ा धमाका: GMP देखकर उड़ जाएंगे होश!",
+        "snippet": "जुलाई 2026 में शेयर बाजार में IPO की बहार! Alpine Texworld और SBI Funds Management IPO के Grey Market Premium (GMP) ने निवेशकों में हलचल मचा दी है। जानिए पूरी डिटेल्स।",
+        "coverImage": "/images/discover/alpine-sbi-ipo-gmp.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T13:00:00+05:30"
+    },
+    {
+        "id": "kusumgar-share-price-surge",
+        "slug": "kusumgar-share-price-surge",
+        "title": "Kusumgar Share Price 700% उछला! इस गुमनाम स्टॉक ने सबको चौंकाया",
+        "snippet": "क्या सच में Kusumgar के शेयर में 700% का उछाल आया है? जानिए इस गुमनाम स्टॉक के बंपर IPO, लिस्टिंग प्रीमियम और निवेशकों की छप्पर फाड़ कमाई का पूरा सच।",
+        "coverImage": "/images/discover/kusumgar-share-price-surge.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T12:30:00+05:30"
+    },
+    {
+        "id": "ibm-angel-one-share-price-surge",
+        "slug": "ibm-angel-one-share-price-surge",
+        "title": "IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच",
+        "snippet": "Angel One और IBM के शेयरों में आई बड़ी हलचल के पीछे का कारण क्या है? जानिए Q1 FY27 रिजल्ट्स, डिविडेंड और AI के कारण बाजार में आए इस बड़े बदलाव की पूरी कहानी।",
+        "coverImage": "/images/discover/ibm-angel-one-share-price-surge.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T12:00:00+05:30"
+    },
+    {
         "id": "odyssey-movie-review-post-credit-scene",
         "slug": "odyssey-movie-review-post-credit-scene",
         "title": "The Odyssey Movie Review: Don't Watch It Until You See This Post-Credit Scene!",
@@ -498,15 +687,6 @@ export const discoverMetadata = [
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFS4QJHrI2_e9UZqSZi37RMskJu9-U8g53PpejWMucg&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:20:00+05:30"
-    },
-    {
-        "id": "odyssey-bollywood-superstar-cast-cameo-leak",
-        "slug": "odyssey-bollywood-superstar-cast-cameo-leak",
-        "title": "Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!",
-        "snippet": "क्या क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में किसी बॉलीवुड या साउथ सुपरस्टार का कैमियो होने वाला है? जानिए असली सच्चाई।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOL3T2B2-3oi485sch2XGBzbHiTiet8M5Mg5SjzFmMw&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:15:00+05:30"
     },
     {
         "id": "bcci-squad-changes-rohit-sharma",
