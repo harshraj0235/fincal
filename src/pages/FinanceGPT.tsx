@@ -721,29 +721,11 @@ const FinanceGPT: React.FC = () => {
             </button>
             <span className="fgpt-mobile-badge">🧠 AI</span>
             <div className="flex gap-2">
-              <button 
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                className="p-1.5 bg-green-500 text-white hover:bg-green-600 rounded-lg shadow-sm transition-colors"
-                title="Toggle Theme"
-              >
-                {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
               <button className="fgpt-mobile-new-btn" onClick={handleNewChat}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 New
               </button>
             </div>
-          </div>
-
-          {/* Desktop Theme Toggle */}
-          <div className="hidden md:block absolute top-6 right-6 z-20">
-            <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              className="flex items-center justify-center p-2.5 bg-green-500 text-white hover:bg-green-600 rounded-full shadow-md transition-all font-medium text-sm"
-              title="Toggle theme"
-            >
-              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
           </div>
 
           {/* ─── Hero / Empty State ─── */}
