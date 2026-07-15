@@ -594,7 +594,10 @@ const FinanceGPT: React.FC = () => {
         {inputFocused && !input && !showSuggestions && !hasMessages && (
           <div className="fgpt-suggestions-dropdown fgpt-trending-dropdown">
             <div className="fgpt-trending-dropdown-label">⚡ Latest Auto Updates</div>
-            {discoverArticles.slice(0, 5).map((article, i) => (
+            {[...discoverArticles]
+              .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())
+              .slice(0, 5)
+              .map((article, i) => (
               <button
                 key={i}
                 className="fgpt-suggestion-item"
