@@ -8,6 +8,7 @@ import FinanceGPTResponseRenderer from '../components/FinanceGPTResponseRenderer
 import { streamGeminiResponse, ContentItem, SourceLink, CoreChatMessage, LLMResponse, ResearchMode } from '../lib/llmEngine';
 import { calculatorCategories } from '../data/calculatorData';
 import { discoverMetadata as discoverArticles } from '../data/discover/metadata';
+import { Sun, Moon } from 'lucide-react';
 
 // ─── Types ───────────────────────────────────────────────
 interface ChatMessage {
@@ -181,6 +182,22 @@ const FinanceGPT: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
   const contentIndexRef = useRef<ContentItem[]>([]);
+
+  // Dark mode state
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('moneycal_dark_mode') === 'true';
+  });
+
+  // Handle dark mode changes
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('moneycal_dark_mode', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('moneycal_dark_mode', 'false');
+    }
+  }, [isDarkMode]);
 
   // Load saved chats from localStorage
   useEffect(() => {
@@ -697,15 +714,34 @@ const FinanceGPT: React.FC = () => {
         <div className="fgpt-page">
 
           {/* Mobile top bar */}
-          <div className="fgpt-mobile-topbar">
+          <div className="fgpt-mobile-topbar flex justify-between items-center px-4 py-3">
             <button className="fgpt-mobile-menu-btn" onClick={() => setSidebarOpen(true)}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
               History
             </button>
             <span className="fgpt-mobile-badge">🧠 AI</span>
-            <button className="fgpt-mobile-new-btn" onClick={handleNewChat}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              New
+            <div className="flex gap-2">
+              <button 
+                onClick={() => setIsDarkMode(!isDarkMode)}
+                className="p-1.5 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </button>
+              <button className="fgpt-mobile-new-btn" onClick={handleNewChat}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                New
+              </button>
+            </div>
+          </div>
+
+          {/* Desktop Theme Toggle */}
+          <div className="hidden md:block absolute top-6 right-6 z-20">
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2.5 bg-white/80 dark:bg-gray-800/80 backdrop-blur border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-full shadow-sm transition-all"
+              title="Toggle theme"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
           </div>
 
