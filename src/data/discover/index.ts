@@ -1,3 +1,4 @@
+import { jioTvImpactAnalysis } from './jio-tv-impact-analysis';
 import { dhamaal4Movie } from './dhamaal-4-movie';
 import { akshayKumarBrandEndorsements } from './akshay-kumar-brand-endorsements';
 import { irctcFinancialPerformanceGrowthStrategy } from './irctc-financial-performance-growth-strategy';
@@ -599,6 +600,7 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+        jioTvImpactAnalysis,
         dhamaal4Movie,
         akshayKumarBrandEndorsements,
         irctcFinancialPerformanceGrowthStrategy,
