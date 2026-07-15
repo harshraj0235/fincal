@@ -1,6 +1,24 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "zee5-subscription-growth-revenue-impact",
+        "slug": "zee5-subscription-growth-revenue-impact",
+        "title": "Zee5 Ka Subscription Growth Aur Revenue Impact: Ek Ghar Ki Baat",
+        "snippet": "Zee5 ki subscription growth aur revenue impact ka analysis in competitive streaming market...",
+        "coverImage": "/images/discover/zee5-subscription-growth-revenue-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T19:28:39.740Z"
+    },
+    {
+        "id": "jio-tv-impact-analysis",
+        "slug": "jio-tv-impact-analysis",
+        "title": "Jio TV: Streaming Market Par Chha Gayi Dhamaka",
+        "snippet": "Jio TV ka impact aur business strategy ka analysis in Indian digital entertainment landscape...",
+        "coverImage": "/images/discover/jio-tv-impact-analysis.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T19:05:30.213Z"
+    },
+    {
         "id": "dhamaal-4-movie",
         "slug": "dhamaal-4-movie",
         "title": "Dhamaal 4 Movie: Box Office Impact and Brand Opportunities",
@@ -208,11 +226,29 @@ export const discoverMetadata = [
         "date": "2026-07-13T12:25:00+05:30"
     },
     {
+        "id": "odyssey-movie-ending-explained-twists",
+        "slug": "odyssey-movie-ending-explained-twists",
+        "title": "The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!",
+        "snippet": "क्रिस्टोफर नोलन की फिल्मों में ट्विस्ट न हो ऐसा हो ही नहीं सकता! 250 मिलियन डॉलर की फिल्म The Odyssey के टाइम और स्पेस ट्विस्ट की लीक हुई डिटेल्स।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3c6sezlRQMBhKV9w1ETT-63ykOH6Ct2KmXe0TetV4g&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:25:00+05:30"
+    },
+    {
         "id": "toxic-movie-gun-scene-controversy-a-rating",
         "slug": "toxic-movie-gun-scene-controversy-a-rating",
         "title": "Toxic Movie Controversy: गन सीन पर मचा बवाल, फिल्म को मिलेगी 'A' रेटिंग?",
         "snippet": "Yash की अपकमिंग फिल्म Toxic के एक सीन पर सेंसर बोर्ड की नजर। जानिए क्यों मेकर्स फिल्म से इस डार्क और हिंसक सीन को हटाने से मना कर रहे हैं।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKs3DMhnpClgH0z7nHYbIPH8SAntjkam4jzZeX9TyGsw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:20:00+05:30"
+    },
+    {
+        "id": "odyssey-cast-revealed-tom-holland-zendaya",
+        "slug": "odyssey-cast-revealed-tom-holland-zendaya",
+        "title": "The Odyssey Cast Revealed: You Won't Believe Who Is Playing Odysseus!",
+        "snippet": "Matt Damon, Tom Holland और Zendaya जैसी बड़ी स्टारकास्ट वाली 250 मिलियन डॉलर की फिल्म The Odyssey हॉलीवुड का सबसे बड़ा प्रोजेक्ट है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFS4QJHrI2_e9UZqSZi37RMskJu9-U8g53PpejWMucg&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:20:00+05:30"
     },
@@ -278,15 +314,6 @@ export const discoverMetadata = [
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhgUTYO2xabedpb2UK3Sm-IQBUlNfm3LnlTjamtT4SA&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:00:00+05:30"
-    },
-    {
-        "id": "mexico-vs-ecuador-aftermath",
-        "slug": "mexico-vs-ecuador-aftermath",
-        "title": "The Unseen Drama: Why the Mexico vs Ecuador Clash Has Sparked a Massive Football Row",
-        "snippet": "A deeper look into the controversial referee decisions, player clashes, and locker room statements following the highly contested Mexico vs Ecuador match.",
-        "coverImage": "/images/discover/mexico-ecuador-aftermath.png",
-        "author": "Football Insider",
-        "date": "2026-07-04T06:22:48.508Z"
     },
     {
         "id": "france-vs-sweden-tactical-shock",
@@ -696,24 +723,6 @@ export const discoverMetadata = [
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4X5--b30MX5U_UMNGplwfg0E42o4WNxI00Cr6k2ZAtA&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:30:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-ending-explained-twists",
-        "slug": "odyssey-movie-ending-explained-twists",
-        "title": "The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!",
-        "snippet": "क्रिस्टोफर नोलन की फिल्मों में ट्विस्ट न हो ऐसा हो ही नहीं सकता! 250 मिलियन डॉलर की फिल्म The Odyssey के टाइम और स्पेस ट्विस्ट की लीक हुई डिटेल्स।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3c6sezlRQMBhKV9w1ETT-63ykOH6Ct2KmXe0TetV4g&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:25:00+05:30"
-    },
-    {
-        "id": "odyssey-cast-revealed-tom-holland-zendaya",
-        "slug": "odyssey-cast-revealed-tom-holland-zendaya",
-        "title": "The Odyssey Cast Revealed: You Won't Believe Who Is Playing Odysseus!",
-        "snippet": "Matt Damon, Tom Holland और Zendaya जैसी बड़ी स्टारकास्ट वाली 250 मिलियन डॉलर की फिल्म The Odyssey हॉलीवुड का सबसे बड़ा प्रोजेक्ट है।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFS4QJHrI2_e9UZqSZi37RMskJu9-U8g53PpejWMucg&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:20:00+05:30"
     },
     {
         "id": "bcci-squad-changes-rohit-sharma",
@@ -4025,6 +4034,15 @@ export const discoverMetadata = [
         "snippet": "Global markets bleed, but India finds strength in $1 Billion foreign investment and RBI’s masterstroke to boost the Rupee via NRI deposits.",
         "coverImage": "/discover/market-updates-today/cover.png",
         "author": "MoneyCal Team",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "mexico-vs-ecuador-aftermath",
+        "slug": "mexico-vs-ecuador-aftermath",
+        "title": "The Unseen Drama: Why the Mexico vs Ecuador Clash Has Sparked a Massive Football Row",
+        "snippet": "A deeper look into the controversial referee decisions, player clashes, and locker room statements following the highly contested Mexico vs Ecuador match.",
+        "coverImage": "/images/discover/mexico-ecuador-aftermath.png",
+        "author": "Football Insider",
         "date": "2026-07-04T06:22:48.508Z"
     },
     {

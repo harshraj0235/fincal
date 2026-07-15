@@ -1,3 +1,4 @@
+import { zee5SubscriptionGrowthRevenueImpact } from './zee5-subscription-growth-revenue-impact';
 import { jioTvImpactAnalysis } from './jio-tv-impact-analysis';
 import { dhamaal4Movie } from './dhamaal-4-movie';
 import { akshayKumarBrandEndorsements } from './akshay-kumar-brand-endorsements';
@@ -600,6 +601,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    zee5SubscriptionGrowthRevenueImpact,
+
         jioTvImpactAnalysis,
         dhamaal4Movie,
         akshayKumarBrandEndorsements,
