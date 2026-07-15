@@ -68,7 +68,7 @@ export const AutoBreadcrumbs: React.FC = () => {
 
   const crumbs = useMemo((): BreadcrumbItem[] => {
     const segments = location.pathname.split('/').filter(Boolean);
-    if (segments.length === 0) return []; // Don't show breadcrumbs on home
+    if (segments.length === 0 || segments[0] === 'ask') return []; // Don't show breadcrumbs on home or chat pages
 
     const items: BreadcrumbItem[] = [];
     let path = '';

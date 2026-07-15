@@ -1,7 +1,7 @@
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
-// .wrangler/tmp/bundle-cQGZEh/checked-fetch.js
+// .wrangler/tmp/bundle-63Nsx8/checked-fetch.js
 var urls = /* @__PURE__ */ new Set();
 function checkURL(request, init) {
   const url = request instanceof URL ? request : new URL(
@@ -39,48 +39,14 @@ var worker_default = {
     if (request.method === "OPTIONS") {
       return handleCORS(request);
     }
-    if (request.method !== "POST" && request.method !== "GET") {
+    if (request.method !== "POST") {
       return new Response("Method not allowed", { status: 405 });
     }
     const origin = request.headers.get("Origin") || "";
-    if (!ALLOWED_ORIGINS.includes(origin) && !origin.includes("moneycal") && origin !== "") {
-      if (request.method !== "GET") {
-        return new Response("Forbidden", { status: 403 });
-      }
+    if (!ALLOWED_ORIGINS.includes(origin) && !origin.includes("moneycal")) {
+      return new Response("Forbidden", { status: 403 });
     }
     try {
-      const url = new URL(request.url);
-      if (url.pathname.startsWith("/chat/")) {
-        const chatId = url.pathname.replace("/chat/", "");
-        if (!chatId) return new Response("Chat ID missing", { status: 400, headers: corsHeaders(origin) });
-        if (request.method === "GET") {
-          if (!env.MONEYCAL_CHATS) {
-            return new Response(JSON.stringify({ error: "KV Namespace not configured" }), { status: 500, headers: corsHeaders(origin) });
-          }
-          const chatData = await env.MONEYCAL_CHATS.get(chatId);
-          if (!chatData) {
-            return new Response(JSON.stringify({ error: "Chat not found" }), { status: 404, headers: corsHeaders(origin) });
-          }
-          return new Response(chatData, {
-            status: 200,
-            headers: { ...corsHeaders(origin), "Content-Type": "application/json" }
-          });
-        }
-        if (request.method === "POST") {
-          if (!env.MONEYCAL_CHATS) {
-            return new Response(JSON.stringify({ error: "KV Namespace not configured" }), { status: 500, headers: corsHeaders(origin) });
-          }
-          const body2 = await request.text();
-          await env.MONEYCAL_CHATS.put(chatId, body2);
-          return new Response(JSON.stringify({ success: true }), {
-            status: 200,
-            headers: { ...corsHeaders(origin), "Content-Type": "application/json" }
-          });
-        }
-      }
-      if (request.method !== "POST") {
-        return new Response("Not found", { status: 404, headers: corsHeaders(origin) });
-      }
       const body = await request.json();
       if (!body.messages || !Array.isArray(body.messages)) {
         return new Response(JSON.stringify({ error: "Invalid request: messages array required" }), {
@@ -141,7 +107,7 @@ var worker_default = {
 function corsHeaders(origin) {
   return {
     "Access-Control-Allow-Origin": origin || "*",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type"
   };
 }
@@ -196,7 +162,7 @@ var jsonError = /* @__PURE__ */ __name(async (request, env, _ctx, middlewareCtx)
 }, "jsonError");
 var middleware_miniflare3_json_error_default = jsonError;
 
-// .wrangler/tmp/bundle-cQGZEh/middleware-insertion-facade.js
+// .wrangler/tmp/bundle-63Nsx8/middleware-insertion-facade.js
 var __INTERNAL_WRANGLER_MIDDLEWARE__ = [
   middleware_ensure_req_body_drained_default,
   middleware_miniflare3_json_error_default
@@ -228,7 +194,7 @@ function __facade_invoke__(request, env, ctx, dispatch, finalMiddleware) {
 }
 __name(__facade_invoke__, "__facade_invoke__");
 
-// .wrangler/tmp/bundle-cQGZEh/middleware-loader.entry.ts
+// .wrangler/tmp/bundle-63Nsx8/middleware-loader.entry.ts
 var __Facade_ScheduledController__ = class ___Facade_ScheduledController__ {
   constructor(scheduledTime, cron, noRetry) {
     this.scheduledTime = scheduledTime;

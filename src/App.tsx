@@ -981,7 +981,7 @@ function App() {
           
           {/* Finance GPT — AI Research Chat */}
           <Route path="/finance-gpt" element={<Suspense fallback={skeletonFallback}><FinanceGPT /></Suspense>} />
-          <Route path="/ask" element={<Navigate to="/" replace />} />
+          <Route path="/ask" element={<Navigate to="/finance-gpt" replace />} />
 
           {/* Google Discover Hub */}
           <Route path="/discover" element={<Layout><Discover /></Layout>} />

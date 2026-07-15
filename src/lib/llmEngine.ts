@@ -33,13 +33,11 @@ export type LLMResponse = {
 export type CoreChatMessage = { role: 'user' | 'assistant'; content: string };
 
 // ───────────────────────────────────────────────────────
-// API Configuration — Cloudflare Worker Proxy (API key is server-side)
+// OpenRouter API Configuration
 // ───────────────────────────────────────────────────────
-// IMPORTANT: Deploy the Cloudflare Worker from /cloudflare-worker/ and set this URL.
-// The Worker keeps the OpenRouter API key secret on the server.
-// For local dev, you can set VITE_AI_PROXY_URL in .env.local
-export const AI_PROXY_URL = import.meta.env.VITE_AI_PROXY_URL || 'https://moneycal-ai-proxy.harshraj0235.workers.dev';
+const OPENROUTER_API_KEY = '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';
 const OPENROUTER_MODEL = 'meta-llama/llama-4-maverick';
+const OPENROUTER_API_URL = `https://openrouter.ai/api/v1/chat/completions`;
 
 // ───────────────────────────────────────────────────────
 // Response Cache (1-hour TTL)
@@ -449,10 +447,13 @@ export async function streamGeminiResponse(
   let fullResponse = '';
 
   try {
-    const response = await fetch(AI_PROXY_URL, {
+    const response = await fetch(OPENROUTER_API_URL, {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+        'HTTP-Referer': 'https://moneycal.in', // Optional, for OpenRouter rankings
+        'X-Title': 'MoneyCal' // Optional, for OpenRouter rankings
       },
       body: JSON.stringify({
         model: OPENROUTER_MODEL,
@@ -509,10 +510,11 @@ export async function streamGeminiResponse(
 
     // Fallback: Non-streaming call
     try {
-      const fbResponse = await fetch(AI_PROXY_URL, {
+      const fbResponse = await fetch(OPENROUTER_API_URL, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${OPENROUTER_API_KEY}`
         },
         body: JSON.stringify({
           model: OPENROUTER_MODEL,

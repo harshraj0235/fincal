@@ -29,8 +29,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const [showBackToTop, setShowBackToTop] = useState(false);
 
-  const isHomePage = location.pathname === '/';
-  const isChatPage = location.pathname.startsWith('/ask/');
+  const isHomePage = location.pathname === '/' || location.pathname.startsWith('/ask/');
   const isMoneyPage = location.pathname.startsWith('/money/');
   const isNewsPage = location.pathname.startsWith('/news');
   const isCalculatorPage = location.pathname.includes('/calculators/');
@@ -190,21 +189,16 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Header */}
       <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
-      {/* Breadcrumbs — auto-generated from URL, hidden on chat pages */}
-      {!isHomePage && !isChatPage && (
-        <div className="pt-16">
-          <AutoBreadcrumbs />
-        </div>
-      )}
-      
-      {/* Spacer for fixed header on chat pages since breadcrumbs are hidden */}
-      {(isHomePage || isChatPage) && <div className="pt-16"></div>}
+      {/* Breadcrumbs — auto-generated from URL */}
+      <div className="pt-16">
+        <AutoBreadcrumbs />
+      </div>
 
       {/* Main Layout */}
       <div className="flex-1 flex">
         {/* Desktop Sidebar — always in DOM to prevent CLS, hidden via CSS on pages that don't need it */}
         <aside
-          className={`hidden lg:block w-64 flex-shrink-0 border-r border-gray-200 bg-white ${isHomePage || isChatPage || isMoneyPage || isNewsPage || isBlogPage ? '!hidden' : ''
+          className={`hidden lg:block w-64 flex-shrink-0 border-r border-gray-200 bg-white ${isHomePage || isMoneyPage || isNewsPage || isBlogPage ? '!hidden' : ''
             }`}
         >
           <Sidebar />
@@ -212,7 +206,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         {/* Mobile Sidebar Overlay — only when open */}
         <AnimatePresence>
-          {sidebarOpen && !isHomePage && !isChatPage && !isMoneyPage && !isNewsPage && (
+          {sidebarOpen && !isHomePage && !isMoneyPage && !isNewsPage && (
             <>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -236,7 +230,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         {/* Main Content Area */}
         <main id="main-content" className="flex-1 min-w-0 flex flex-col" role="main">
-          {!isHomePage && !isChatPage && (
+          {!isHomePage && (
               <div className="hidden sm:flex w-full justify-center border-b border-gray-100 bg-gray-50/50 pt-4 pb-2 mb-4">
                 <BannerAd width={728} height={90} />
               </div>
@@ -246,7 +240,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             {children}
           </div>
 
-          {!isHomePage && !isChatPage && (
+          {!isHomePage && (
               <div className="w-full flex justify-center border-t border-gray-100 bg-gray-50/50 py-6 mt-8">
                 <BannerAd width={300} height={250} />
               </div>
@@ -258,8 +252,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </main>
       </div>
 
-      {/* Footer — hidden on homepage and chat for clean UI */}
-      {!isHomePage && !isChatPage && <Footer />}
+      {/* Footer — hidden on homepage for clean chat UI */}
+      {!isHomePage && <Footer />}
 
 
       {/* Back to Top Button */}
