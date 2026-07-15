@@ -1,3 +1,13 @@
+import { aajKaRashifalDhanLabh2026 } from './aaj-ka-rashifal-dhan-labh-2026';
+import { monsoon2026HeavyRainAlertStates } from './monsoon-2026-heavy-rain-alert-states';
+import { ibmSharePriceBuyOrSell } from './ibm-share-price-buy-or-sell';
+import { irctcNewWebsiteLaunchFastBooking } from './irctc-new-website-launch-fast-booking';
+import { rationCardNewUpdate2026 } from './ration-card-new-update-2026';
+import { shahRukhKhanBungalowPetition } from './shah-rukh-khan-bungalow-petition';
+import { diljitDosanjhNewMovieSatluj } from './diljit-dosanjh-new-movie-satluj';
+import { marutiSuzukiBrezzaFacelift2026 } from './maruti-suzuki-brezza-facelift-2026';
+import { franceVsSpainFootballUpset } from './france-vs-spain-football-upset';
+import { indVsEngAxarPatelRecord } from './ind-vs-eng-axar-patel-record';
 import { hangSengDaxIndexGlobalMarket } from './hang-seng-dax-index-global-market';
 import { vedantaGroupAnilAgarwalMasterstroke } from './vedanta-group-anil-agarwal-masterstroke';
 import { chatgptClaudeAiIndiaPricing } from './chatgpt-claude-ai-india-pricing';
@@ -1173,6 +1183,16 @@ const _discoverArticles: DiscoverArticle[] = [
     chatgptClaudeAiIndiaPricing,
     vedantaGroupAnilAgarwalMasterstroke,
     hangSengDaxIndexGlobalMarket,
+    indVsEngAxarPatelRecord,
+    franceVsSpainFootballUpset,
+    marutiSuzukiBrezzaFacelift2026,
+    diljitDosanjhNewMovieSatluj,
+    shahRukhKhanBungalowPetition,
+    rationCardNewUpdate2026,
+    irctcNewWebsiteLaunchFastBooking,
+    ibmSharePriceBuyOrSell,
+    monsoon2026HeavyRainAlertStates,
+    aajKaRashifalDhanLabh2026,
     // Add variables here
 ];
 
