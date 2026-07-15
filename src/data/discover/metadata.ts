@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "fasal-beema-impact",
+        "slug": "fasal-beema-impact",
+        "title": "Fasal Beema ka Kisanon par Asar aur Krishi Arthvyavastha",
+        "snippet": "Fasal beema kisano ki aarthik sthirata aur krishi arthvyavastha par kaise prabhavit karta hai, jaaniye is article mein.",
+        "coverImage": "/images/discover/fasal-beema-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T23:56:28.048Z"
+    },
+    {
         "id": "fifa-world-cup-2026-economic-impact",
         "slug": "fifa-world-cup-2026-economic-impact",
         "title": "FIFA World Cup 2026 Ka Economic Impact Local Businesses Aur Tourism Par",

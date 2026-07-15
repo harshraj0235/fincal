@@ -1,3 +1,4 @@
+import { fasalBeemaImpact } from './fasal-beema-impact';
 import { fifaWorldCup2026EconomicImpact } from './fifa-world-cup-2026-economic-impact';
 import { fifaWorldCup2026Bracket } from './fifa-world-cup-2026-bracket';
 import { bukayoSakaBrandEndorsements } from './bukayo-saka-brand-endorsements';
@@ -604,6 +605,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    fasalBeemaImpact,
+
     fifaWorldCup2026EconomicImpact,
 
     fifaWorldCup2026Bracket,
