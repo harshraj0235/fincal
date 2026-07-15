@@ -29,7 +29,9 @@ import {
   Banknote,
   FileText,
   DollarSign,
-  Building
+  Building,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { SearchBar } from './SearchBar';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -45,6 +47,9 @@ export const Header: React.FC<HeaderProps> = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileSection, setExpandedMobileSection] = useState<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('moneycal_dark_mode') === 'true';
+  });
   const location = useLocation();
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -53,6 +58,17 @@ export const Header: React.FC<HeaderProps> = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle dark mode changes
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('moneycal_dark_mode', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('moneycal_dark_mode', 'false');
+    }
+  }, [isDarkMode]);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -155,8 +171,8 @@ export const Header: React.FC<HeaderProps> = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${isScrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
-        : 'bg-white border-b border-gray-50'
+        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800'
+        : 'bg-white dark:bg-gray-900 border-b border-gray-50 dark:border-gray-800'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -244,6 +260,15 @@ export const Header: React.FC<HeaderProps> = () => {
 
           {/* Right Side */}
           <div className="flex items-center space-x-2 flex-shrink-0">
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors rounded-full hover:bg-gray-50 dark:hover:bg-gray-800"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
             <LanguageSwitcher className="hidden sm:flex" />
 
             <button

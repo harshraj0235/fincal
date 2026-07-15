@@ -26,6 +26,17 @@
   --section-gap-lg: 7rem;
 }
 
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --border: #1e293b;
+  /* Slightly adjusted primary for dark mode */
+  --primary-light: #1e3a8a;
+  --primary-dark: #60a5fa;
+}
+
+
 /* ── Global Styles ────────────────────────────────────────────────────── */
 *,
 *::before,
