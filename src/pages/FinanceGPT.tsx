@@ -723,7 +723,8 @@ const FinanceGPT: React.FC = () => {
             <div className="flex gap-2">
               <button 
                 onClick={() => setIsDarkMode(!isDarkMode)}
-                className="p-1.5 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="p-1.5 bg-green-500 text-white hover:bg-green-600 rounded-lg shadow-sm transition-colors"
+                title="Toggle Theme"
               >
                 {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               </button>
@@ -738,10 +739,11 @@ const FinanceGPT: React.FC = () => {
           <div className="hidden md:block absolute top-6 right-6 z-20">
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-2.5 bg-white/80 dark:bg-gray-800/80 backdrop-blur border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-full shadow-sm transition-all"
+              className="flex items-center gap-2 px-4 py-2 bg-green-500 text-white hover:bg-green-600 rounded-full shadow-md transition-all font-medium text-sm"
               title="Toggle theme"
             >
-              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
           </div>
 
