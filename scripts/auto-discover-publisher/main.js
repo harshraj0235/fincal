@@ -35,7 +35,7 @@ async function callOpenRouter(prompt, systemPrompt = "You are a specialized API 
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "model": "perplexity/llama-3.1-sonar-large-128k-online", // Perplexity online model for live research
+                    "model": "openai/gpt-4o-mini", // Universal fast model
                     "messages": [
                         { "role": "system", "content": systemPrompt },
                         { "role": "user", "content": prompt }
@@ -151,12 +151,18 @@ export const generatedArticle = {
     let slug = slugMatch[1];
 
     // Change export name from 'generatedArticle' to camelCase slug
-    const camelSlug = slug.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+    let camelSlug = slug.replace(/-([a-zA-Z0-9])/g, (g) => g[1].toUpperCase());
+    if (/^[0-9]/.test(camelSlug)) {
+        camelSlug = '_' + camelSlug;
+    }
     code = code.replace(/export const [a-zA-Z0-9_]+ =/, `export const ${camelSlug} = `);
     // Ensure DiscoverArticle type is imported and used
     if (!code.includes('DiscoverArticle')) {
         code = "import { DiscoverArticle } from './types';\n\n" + code.replace(`export const ${camelSlug} = `, `export const ${camelSlug}: DiscoverArticle = `);
     }
+
+    // Force replace the date to be the actual current time to avoid AI hallucinations
+    code = code.replace(/date:\s*['"].*?['"]/, `date: '${new Date().toISOString()}'`);
 
     const titleMatch = code.match(/title:\s*['"](.*?)['"]/);
     const title = titleMatch ? titleMatch[1] : topicObj.topic;

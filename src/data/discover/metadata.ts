@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "dhamaal-4-movie",
+        "slug": "dhamaal-4-movie",
+        "title": "Dhamaal 4 Movie: Box Office Impact and Brand Opportunities",
+        "snippet": "Dhamaal 4 ki box office collection aur Indian film industry par uska prabhav...",
+        "coverImage": "/images/discover/dhamaal-4-movie.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T18:19:07.936Z"
+    },
+    {
         "id": "irctc-financial-performance-growth-strategy",
         "slug": "irctc-financial-performance-growth-strategy",
         "title": "IRCTC ki Financial Performance aur Digital Ticketing Growth Strategy",
