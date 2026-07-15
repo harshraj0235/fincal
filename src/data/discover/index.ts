@@ -1,3 +1,5 @@
+import { akshayKumarBrandEndorsements } from './akshay-kumar-brand-endorsements';
+import { irctcFinancialPerformanceGrowthStrategy } from './irctc-financial-performance-growth-strategy';
 import { aajKaRashifalDhanLabh2026 } from './aaj-ka-rashifal-dhan-labh-2026';
 import { monsoon2026HeavyRainAlertStates } from './monsoon-2026-heavy-rain-alert-states';
 import { ibmSharePriceBuyOrSell } from './ibm-share-price-buy-or-sell';
@@ -595,6 +597,8 @@ import { iphone18ReleaseDateLeaksFeatures } from './iphone-18-release-date-leaks
 import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wickets';
 
 const _discoverArticles: DiscoverArticle[] = [
+    akshayKumarBrandEndorsements,
+    irctcFinancialPerformanceGrowthStrategy,
     iphone18ReleaseDateLeaksFeatures,
     eighthPayCommissionHraCalculator,
     sbiAmcIpoDay1GmpSubscription,

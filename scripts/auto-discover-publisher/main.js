@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,7 +15,7 @@ if (!OPENROUTER_API_KEY) {
     process.exit(1);
 }
 
-const ROOT_DIR = path.resolve(__dirname, '../../..');
+const ROOT_DIR = path.resolve(__dirname, '../..');
 const DISCOVER_DIR = path.join(ROOT_DIR, 'src', 'data', 'discover');
 const INDEX_TS_PATH = path.join(DISCOVER_DIR, 'index.ts');
 const IMAGE_DIR = path.join(ROOT_DIR, 'public', 'images', 'discover');
@@ -34,7 +35,7 @@ async function callOpenRouter(prompt, systemPrompt = "You are a specialized API 
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    "model": "openai/gpt-4o-mini", // Universal fast model
+                    "model": "perplexity/llama-3.1-sonar-large-128k-online", // Perplexity online model for live research
                     "messages": [
                         { "role": "system", "content": systemPrompt },
                         { "role": "user", "content": prompt }
@@ -50,7 +51,7 @@ async function callOpenRouter(prompt, systemPrompt = "You are a specialized API 
             const data = await response.json();
             return data.choices[0].message.content;
         } catch (error) {
-            console.error(`Attempt ${i+1} failed: ${error.message}`);
+            console.error(`Attempt ${i + 1} failed: ${error.message}`);
             if (i === maxRetries - 1) throw error;
             await new Promise(r => setTimeout(r, 2000)); // wait 2s before retry
         }
@@ -61,7 +62,7 @@ async function fetchTrends() {
     console.log('📡 Fetching Google Trends (India)...');
     const response = await fetch('https://trends.google.com/trending/rss?geo=IN');
     const text = await response.text();
-    
+
     // Extract titles using regex
     const titles = [];
     const regex = /<title>(.*?)<\/title>/g;
@@ -72,29 +73,29 @@ async function fetchTrends() {
             titles.push(title);
         }
     }
-    
+
     if (titles.length === 0) throw new Error('Could not parse trends');
     return titles;
 }
 
 async function filterTrendsForFinance(trends) {
     console.log(`🤖 Filtering ${trends.length} trends for business/finance angles...`);
-    
+
     const prompt = `
 I have a list of trending topics from India today.
-I need to select exactly 10 topics that can be written about from a Business, Finance, Economic, or Tech-Consumer perspective.
+I need to select exactly 1 top trending topic that can be written about from a Business, Finance, Economic, or Tech-Consumer perspective.
 Even if a trend is about entertainment or sports (like a movie or cricket), find the business angle (e.g. "Box office collection / business impact", "Player's net worth/brand endorsements").
 
 Here are the trends:
 ${trends.map(t => '- ' + t).join('\n')}
 
-Select exactly 10 trends and return a valid JSON array of objects.
+Select exactly 1 trend and return a valid JSON array of objects.
 Format: [ { "topic": "Trend Name", "angle": "The business/finance angle to write about" } ]
 Ensure your response is ONLY valid JSON, no markdown blocks or extra text.
     `;
 
     const responseText = await callOpenRouter(prompt, "You are a JSON generator. Output only valid JSON arrays.");
-    
+
     // Clean markdown if present
     const cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
     return JSON.parse(cleanJson);
@@ -102,7 +103,7 @@ Ensure your response is ONLY valid JSON, no markdown blocks or extra text.
 
 async function generateArticle(topicObj) {
     console.log(`\n✍️ Generating article for: ${topicObj.topic} (Angle: ${topicObj.angle})...`);
-    
+
     const prompt = `
 You are a top-tier Indian finance and news writer for MoneyCal.in.
 Follow these EXACT rules:
@@ -136,19 +137,19 @@ export const generatedArticle = {
     `;
 
     const rawContent = await callOpenRouter(prompt, "You output ONLY valid TypeScript code blocks.");
-    
+
     // Extract typescript code from response
     let code = rawContent;
     const match = code.match(/\`\`\`typescript([\s\S]*?)\`\`\`/);
     if (match) code = match[1].trim();
     code = code.replace(/```/g, '').trim();
-    
+
     // We need to parse this code to extract the slug to save the file properly
     const slugMatch = code.match(/slug:\s*['"](.*?)['"]/);
     if (!slugMatch) throw new Error("Failed to generate valid slug in TS output.");
-    
+
     let slug = slugMatch[1];
-    
+
     // Change export name from 'generatedArticle' to camelCase slug
     const camelSlug = slug.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
     code = code.replace(/export const [a-zA-Z0-9_]+ =/, `export const ${camelSlug} = `);
@@ -167,7 +168,7 @@ async function generateImage(slug, title) {
     console.log(`🎨 Generating image for ${slug}...`);
     const imagePrompt = `A modern, vibrant, professional illustration showing ${title}. Style: Clean, editorial, high-contrast colors, Indian context. No text overlay. Premium magazine quality.`;
     const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=675&nologo=true`;
-    
+
     for (let i = 0; i < 3; i++) {
         try {
             const response = await fetch(imageUrl);
@@ -177,7 +178,7 @@ async function generateImage(slug, title) {
             fs.writeFileSync(imagePath, Buffer.from(buffer));
             return `/images/discover/${slug}.png`;
         } catch (e) {
-            console.error(`Image gen failed (attempt ${i+1}):`, e.message);
+            console.error(`Image gen failed (attempt ${i + 1}):`, e.message);
             await new Promise(r => setTimeout(r, 2000));
         }
     }
@@ -187,66 +188,88 @@ async function generateImage(slug, title) {
 async function updateIndexTs(newArticles) {
     console.log('📝 Updating index.ts...');
     let indexContent = fs.readFileSync(INDEX_TS_PATH, 'utf-8');
-    
+
     let importStatements = '';
     let arrayPushStatements = '';
-    
+
     for (const article of newArticles) {
         importStatements += `import { ${article.camelSlug} } from './${article.slug}';\n`;
         arrayPushStatements += `    ${article.camelSlug},\n`;
     }
-    
+
     // Prepend imports
     indexContent = importStatements + indexContent;
-    
+
     // Append to array
     // Find: const _discoverArticles: DiscoverArticle[] = [
     const arrayMatch = indexContent.indexOf('const _discoverArticles: DiscoverArticle[] = [');
     if (arrayMatch === -1) throw new Error('Could not find _discoverArticles array in index.ts');
-    
+
     const insertPosition = indexContent.indexOf('[', arrayMatch) + 1;
     indexContent = indexContent.slice(0, insertPosition) + '\\n' + arrayPushStatements + indexContent.slice(insertPosition);
-    
+
     fs.writeFileSync(INDEX_TS_PATH, indexContent);
 }
 
-async function main() {
-    console.log('🚀 Starting Automated Discover Publisher Pipeline...');
+const publishedTopics = new Set();
+
+async function processNextArticle() {
+    console.log(`\n⏰ [${new Date().toLocaleString()}] Waking up to find a new trend...`);
     try {
         const rawTrends = await fetchTrends();
-        const selectedTrends = await filterTrendsForFinance(rawTrends);
-        
-        console.log(`✅ Selected ${selectedTrends.length} trends to publish.`);
-        
-        const successfulArticles = [];
-        
-        for (const trend of selectedTrends) {
-            try {
-                const articleData = await generateArticle(trend);
-                const imagePath = await generateImage(articleData.slug, articleData.title);
-                
-                // Save TS file
-                const filePath = path.join(DISCOVER_DIR, `${articleData.slug}.ts`);
-                fs.writeFileSync(filePath, articleData.code);
-                console.log(`✅ Saved: ${filePath}`);
-                
-                successfulArticles.push(articleData);
-            } catch (err) {
-                console.error(`❌ Failed to generate article for "${trend.topic}":`, err.message);
-            }
+        const unseenTrends = rawTrends.filter(t => !publishedTopics.has(t));
+
+        if (unseenTrends.length === 0) {
+            console.log('⚠️ No new trends found right now. Will check again in 30 minutes.');
+            return;
         }
-        
-        if (successfulArticles.length > 0) {
-            await updateIndexTs(successfulArticles);
-            console.log(`🎉 Pipeline Complete! Successfully generated and added ${successfulArticles.length} articles.`);
-        } else {
-            console.log('⚠️ Pipeline Complete, but no articles were successfully generated.');
+
+        const selectedTrends = await filterTrendsForFinance(unseenTrends);
+
+        if (!selectedTrends || selectedTrends.length === 0) {
+            console.log('⚠️ AI could not find a suitable finance angle for the current trends.');
+            return;
         }
-        
+
+        const trend = selectedTrends[0];
+        console.log(`\n✅ Selected new trend: ${trend.topic}`);
+
+        try {
+            const articleData = await generateArticle(trend);
+            const imagePath = await generateImage(articleData.slug, articleData.title);
+
+            // Save TS file
+            const filePath = path.join(DISCOVER_DIR, `${articleData.slug}.ts`);
+            fs.writeFileSync(filePath, articleData.code);
+            console.log(`✅ Saved: ${filePath}`);
+
+            await updateIndexTs([articleData]);
+            console.log('🔄 Generating metadata for frontend...');
+            execSync('npx tsx scripts/generateDiscoverMetadata.ts', { cwd: ROOT_DIR, stdio: 'inherit' });
+            
+            console.log('🗺️ Regenerating sitemaps...');
+            execSync('npm run generate-sitemaps', { cwd: ROOT_DIR, stdio: 'inherit' });
+            
+            console.log(`🎉 Article published and sitemaps updated successfully!`);
+            publishedTopics.add(trend.topic);
+
+        } catch (err) {
+            console.error(`❌ Failed to generate article for "${trend.topic}":`, err.message);
+        }
+
     } catch (err) {
-        console.error('🛑 Fatal Pipeline Error:', err);
-        process.exit(1);
+        console.error('🛑 Pipeline Error during cycle:', err);
     }
+}
+
+async function main() {
+    console.log('🚀 Starting Continuous Auto-Discover Publisher (Every 30 minutes)...');
+    
+    // Process the first article immediately
+    await processNextArticle();
+
+    // Then process one every 30 minutes (1800,000 ms)
+    setInterval(processNextArticle, 30 * 60 * 1000);
 }
 
 main();

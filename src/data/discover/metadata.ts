@@ -1,6 +1,24 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "irctc-financial-performance-growth-strategy",
+        "slug": "irctc-financial-performance-growth-strategy",
+        "title": "IRCTC ki Financial Performance aur Digital Ticketing Growth Strategy",
+        "snippet": "IRCTC ki financial performance aur digital ticketing mein growth strategy par detail analysis...",
+        "coverImage": "/images/discover/irctc-financial-performance-growth-strategy.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T17:42:56.225Z"
+    },
+    {
+        "id": "akshay-kumar-brand-endorsements",
+        "slug": "akshay-kumar-brand-endorsements",
+        "title": "Akshay Kumar ke Brand Endorsements aur Unka Net Worth par Asar",
+        "snippet": "Is article mein hum jaanenge Akshay Kumar ke brand endorsements aur unke net worth par unka kya asar hai...",
+        "coverImage": "/images/discover/akshay-kumar-brand-endorsements.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T17:42:34.843Z"
+    },
+    {
         "id": "iphone-18-release-date-leaks-features-2026",
         "slug": "iphone-18-release-date-leaks-features-2026",
         "title": "iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!",
