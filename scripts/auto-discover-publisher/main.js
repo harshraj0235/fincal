@@ -208,7 +208,7 @@ async function updateIndexTs(newArticles) {
 
     // Append to array
     // Find array declaration using regex to ignore whitespace/newlines from code formatters
-    const arrayMatchRegex = /const\s+_discoverArticles\s*:\s*DiscoverArticle\s*\[\s*\]\s*=\s*\[/;
+    const arrayMatchRegex = /const\s+_discoverArticles[^=]*=\s*\[/;
     const match = indexContent.match(arrayMatchRegex);
     if (!match) throw new Error('Could not find _discoverArticles array in index.ts');
 
