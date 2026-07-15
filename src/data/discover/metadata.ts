@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "fifa-world-cup-2026-economic-impact",
+        "slug": "fifa-world-cup-2026-economic-impact",
+        "title": "FIFA World Cup 2026 Ka Economic Impact Local Businesses Aur Tourism Par",
+        "snippet": "FIFA World Cup 2026 se local businesses aur tourism par kya economic impact hoga, jaaniye is article mein...",
+        "coverImage": "/images/discover/fifa-world-cup-2026-economic-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T22:32:26.496Z"
+    },
+    {
         "id": "fifa-world-cup-2026-bracket",
         "slug": "fifa-world-cup-2026-bracket",
         "title": "FIFA World Cup 2026: Local Business aur Tourism par Economic Impact",
