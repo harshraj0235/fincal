@@ -207,11 +207,12 @@ async function updateIndexTs(newArticles) {
     indexContent = importStatements + indexContent;
 
     // Append to array
-    // Find: const _discoverArticles: DiscoverArticle[] = [
-    const arrayMatch = indexContent.indexOf('const _discoverArticles: DiscoverArticle[] = [');
-    if (arrayMatch === -1) throw new Error('Could not find _discoverArticles array in index.ts');
+    // Find array declaration using regex to ignore whitespace/newlines from code formatters
+    const arrayMatchRegex = /const\s+_discoverArticles\s*:\s*DiscoverArticle\s*\[\s*\]\s*=\s*\[/;
+    const match = indexContent.match(arrayMatchRegex);
+    if (!match) throw new Error('Could not find _discoverArticles array in index.ts');
 
-    const insertPosition = indexContent.indexOf('[', arrayMatch) + 1;
+    const insertPosition = match.index + match[0].length;
     indexContent = indexContent.slice(0, insertPosition) + '\\n' + arrayPushStatements + indexContent.slice(insertPosition);
 
     fs.writeFileSync(INDEX_TS_PATH, indexContent);
