@@ -593,7 +593,7 @@ const FinanceGPT: React.FC = () => {
         {/* ─── Trending on Focus (when input is empty) ─── */}
         {inputFocused && !input && !showSuggestions && !hasMessages && (
           <div className="fgpt-suggestions-dropdown fgpt-trending-dropdown">
-            <div className="fgpt-trending-dropdown-label">🔥 Trending on MoneyCal</div>
+            <div className="fgpt-trending-dropdown-label">⚡ Latest Auto Updates</div>
             {discoverArticles.slice(0, 5).map((article, i) => (
               <button
                 key={i}
@@ -767,7 +767,7 @@ const FinanceGPT: React.FC = () => {
               {/* ─── Trending Stories ─── */}
               <div className="fgpt-trending">
                 <div className="fgpt-trending-header">
-                  <span className="fgpt-trending-label">📈 TRENDING STORIES</span>
+                  <span className="fgpt-trending-label">⚡ LATEST AUTO UPDATE</span>
                   <Link to="/discover" className="fgpt-trending-see-all">सभी देखें →</Link>
                 </div>
                 <div className="fgpt-trending-grid">
