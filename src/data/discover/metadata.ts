@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "icc-cricket-world-cup-economic-impact",
+        "slug": "icc-cricket-world-cup-economic-impact",
+        "title": "आईसीसी क्रिकेट विश्व कप का आर्थिक प्रभाव",
+        "snippet": "आईसीसी क्रिकेट विश्व कप से स्थानीय व्यापार और पर्यटन पर प्रभाव का विश्लेषण...",
+        "coverImage": "/images/discover/icc-cricket-world-cup-economic-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T02:10:14.195Z"
+    },
+    {
         "id": "fasal-beema-impact",
         "slug": "fasal-beema-impact",
         "title": "Fasal Beema ka Kisanon par Asar aur Krishi Arthvyavastha",
