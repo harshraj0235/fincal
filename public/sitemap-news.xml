@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://moneycal.in/discover/jio-financial-services-profit-growth/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal.in</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16</news:publication_date>
+      <news:title>जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या है खास</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://moneycal.in/discover/jio-financial-services-analysis/</loc>
     <news:news>
       <news:publication>
@@ -537,17 +548,6 @@
       </news:publication>
       <news:publication_date>2026-07-14</news:publication_date>
       <news:title>SBI Funds Management IPO: खुलने से पहले ग्रे मार्केट में मची हलचल, जानें लेटेस्ट GMP और कमाई</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/discover/hdfc-bank-tcs-jobs-automation-ai-impact/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal.in</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
-      <news:title>HDFC Bank और TCS में बड़ा बदलाव: क्या AI और ऑटोमेशन के कारण जा रही है बैंकिंग नौकरियां?</news:title>
     </news:news>
   </url>
 </urlset>

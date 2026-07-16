@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "jio-financial-services-profit-growth",
+        "slug": "jio-financial-services-profit-growth",
+        "title": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या है खास",
+        "snippet": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़कर 830 करोड़ रुपये हुआ, जानें इसके पीछे की कहानी और अब क्या करें।",
+        "coverImage": "/images/discover/jio-financial-services-profit-growth.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T18:17:37.574Z"
+    },
+    {
         "id": "jio-financial-services-analysis",
         "slug": "jio-financial-services-analysis",
         "title": "जियो फाइनेंशियल सर्विसेज: आईपीओ से पहले कमाई में धमाका",
