@@ -49,14 +49,14 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           touch scripts/auto-discover-publisher/published_trends.txt
-          git add src/data/discover/ public/images/discover/ scripts/auto-discover-publisher/published_trends.txt
+          git add -A
           
           # Only commit if there are changes
           if git diff --staged --quiet; then
             echo "No new articles generated."
           else
             git commit -m "🤖 Auto-publish trending discover articles"
-            git pull origin main --rebase
+            git pull origin main --rebase -X ours
             git push origin main
           fi
 

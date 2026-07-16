@@ -49,14 +49,14 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           touch scripts/auto-ipo-publisher/published_ipos.txt
-          git add src/data/ipo/ public/images/ipo/ src/services/ipoApi.ts scripts/auto-ipo-publisher/published_ipos.txt
+          git add -A
           
           # Only commit if there are changes
           if git diff --staged --quiet; then
             echo "No new IPO articles generated."
           else
             git commit -m "🤖 Auto-publish trending IPO article"
-            git pull origin main --rebase
+            git pull origin main --rebase -X ours
             git push origin main
           fi
 
