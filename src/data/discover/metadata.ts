@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "oneplus-europe-market-strategy",
+        "slug": "oneplus-europe-market-strategy",
+        "title": "OnePlus Europe: Aapke Smartphone Khareedne ki Strategy pe Kaisa Asar?",
+        "snippet": "OnePlus ki market strategy aur sales performance ka deep analysis. Aapko kya dekhna chahiye?",
+        "coverImage": "/images/discover/oneplus-europe-market-strategy.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T06:54:19.854Z"
+    },
+    {
         "id": "oneplus-shutdown-impact",
         "slug": "oneplus-shutdown-impact",
         "title": "OnePlus Shutdown: Aapki Smartphone Choices Par Kaisa Asar Hoga?",
