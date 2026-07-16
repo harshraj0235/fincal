@@ -37,13 +37,14 @@ When the user gives a topic, do these searches FIRST:
 - Example: `"OnePlus N6 Battery: क्या 8,000mAh सच में गेम-चेंजर है? पूरी सच्चाई"`
 - **NEVER use**: "You won't believe", misleading claims, false urgency
 
-### Content Rules
+### Content Rules (SEO & Bypass AI Detection)
 - **Minimum 1500 words** (this is non-negotiable)
 - Write in **simple Hindi-English mix** (Hinglish) — the way normal Indians talk
+- **Burstiness & Perplexity**: Mix very short, punchy sentences (3-5 words) with longer, explanatory sentences. This completely defeats AI detectors.
+- **BAN THESE AI WORDS**: Never use "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify". Write like a real human journalist.
 - Use **short paragraphs** (3-4 lines max per paragraph)
-- Use **short sentences** — if a sentence has more than 20 words, break it
 - Add **emotion** — the reader should FEEL something while reading
-- Write like you're explaining to a friend, not writing a textbook
+- Write like you're explaining to a friend, not writing a textbook. Plagiarism-free and unique.
 - **NO markdown syntax** — use only HTML tags: `<strong>`, `<a href>`, `<br>`
 - **NO `*`, `**`, `[]()` markdown** — everything must be pure HTML
 

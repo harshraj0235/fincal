@@ -105,12 +105,15 @@ async function generateArticle(topicObj) {
     console.log(`\n✍️ Generating article for: ${topicObj.topic} (Angle: ${topicObj.angle})...`);
 
     const prompt = `
-You are a top-tier Indian finance and news writer for MoneyCal.in.
-Follow these EXACT rules:
-- Write a 1500+ word article in simple Hindi-English mix (Hinglish).
+You are a top-tier Indian finance and news expert for MoneyCal.in.
+Follow these EXACT rules to write an authoritative, E-E-A-T compliant Google Discover article:
+- Write a 1500+ word article in simple, highly engaging Hindi-English mix (Hinglish).
 - Write about the topic: "${topicObj.topic}". 
 - Focus heavily on this angle: "${topicObj.angle}".
-- Use at least 5 real facts with numbers/percentages (approximate realistically if exact current data is unavailable, but make it look professional).
+- MAKE IT 100% HUMAN-FRIENDLY & BYPASS AI DETECTORS: Write with high 'burstiness' and 'perplexity' (mix very short, punchy sentences with longer, complex ones). 
+- STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark". Write exactly how a real Indian journalist speaks. Make it completely plagiarism-free.
+- NO CLICKBAIT: Write an honest, highly engaging headline that accurately reflects the content. Do not use phrases like "You won't believe".
+- E-E-A-T QUALITY (CRITICAL FOR DISCOVER RANKING): Use at least 5 real facts with numbers/percentages to prove expertise. Provide unique actionable insights (e.g. "What this means for you"). Answer long-tail search intents related to the topic.
 - Format strictly as a TypeScript object for our Discover section.
 - NEVER use markdown in the content strings. Use only HTML tags like <strong>, <br>, <a href="...">
 - Include exactly 3-5 internal links to our tools (e.g., <a href='https://moneycal.in/tools/sip-calculator'>SIP Calculator</a>, <a href='https://moneycal.in/tools/income-tax-calculator'>Income Tax</a>).
@@ -172,7 +175,7 @@ export const generatedArticle = {
 
 async function generateImage(slug, title) {
     console.log(`🎨 Generating image for ${slug}...`);
-    const imagePrompt = `A modern, vibrant, professional illustration showing ${title}. Style: Clean, editorial, high-contrast colors, Indian context. No text overlay. Premium magazine quality.`;
+    const imagePrompt = `High-quality editorial photography, photorealistic, cinematic lighting showing ${title}. Clean, high-contrast colors, Indian context, news publication style. No text overlay. Premium magazine quality.`;
     const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=675&nologo=true`;
 
     for (let i = 0; i < 3; i++) {
