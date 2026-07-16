@@ -149,6 +149,9 @@ Naturally include related entities (UPI, RBI, Income Tax, EPFO, SBI, HDFC, PAN, 
 - 5 FAQs at the end (Real user questions, short answers).
 - DWELL TIME HACK (MONEYCONTROL STRATEGY): You MUST include a specific call-to-action telling the user to use a calculator. Include exactly 3-5 internal links to relevant calculators (e.g., "Calculate your exact impact here: <a href='https://moneycal.in/tools/income-tax-calculator'>Income Tax Calculator</a>"). Ensure the slug is URL safe.
 
+>>> TYPESCRIPT SYNTAX RULE (CRITICAL) <<<
+NEVER use single quotes (') inside your content text. If you need to use quotes inside the text, use double quotes ("). Using single quotes will break the TypeScript compiler because the content itself is wrapped in single quotes.
+
 Format your response EXACTLY like this (and nothing else, no extra text):
 \`\`\`typescript
 export const generatedArticle = {
