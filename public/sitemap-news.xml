@@ -8,7 +8,18 @@
         <news:language>hi</news:language>
       </news:publication>
       <news:publication_date>2026-07-16</news:publication_date>
-      <news:title>जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या है खास</news:title>
+      <news:title>जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/jio-financial-services-profit-growth/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal.in</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16</news:publication_date>
+      <news:title>जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें</news:title>
     </news:news>
   </url>
   <url>
@@ -537,17 +548,6 @@
       </news:publication>
       <news:publication_date>2026-07-14</news:publication_date>
       <news:title>Kusumgar IPO Allotment Status: आपको शेयर मिले या पैसे होंगे रिफंड? ऐसे चेक करें अपना स्टेटस</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/discover/sbi-funds-management-ipo-gmp-listing-gains/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal.in</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
-      <news:title>SBI Funds Management IPO: खुलने से पहले ग्रे मार्केट में मची हलचल, जानें लेटेस्ट GMP और कमाई</news:title>
     </news:news>
   </url>
 </urlset>

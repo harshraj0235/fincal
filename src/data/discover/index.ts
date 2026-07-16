@@ -1,4 +1,5 @@
 import { jioFinancialServicesProfitGrowth } from './jio-financial-services-profit-growth';
+import { jioFinancialServicesProfitGrowth } from './jio-financial-services-profit-growth';
 import { jioFinancialServicesAnalysis } from './jio-financial-services-analysis';
 import { agricultureMachineryImpact } from './agriculture-machinery-impact';
 import { wiproShareQ1ResultsImpact } from './wipro-share-q1-results-impact';
@@ -619,6 +620,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    jioFinancialServicesProfitGrowth,
+
     jioFinancialServicesProfitGrowth,
 
     jioFinancialServicesAnalysis,

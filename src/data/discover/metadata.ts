@@ -3,11 +3,20 @@ export const discoverMetadata = [
     {
         "id": "jio-financial-services-profit-growth",
         "slug": "jio-financial-services-profit-growth",
-        "title": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या है खास",
-        "snippet": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़कर 830 करोड़ रुपये हुआ, जानें इसके पीछे की कहानी और अब क्या करें।",
-        "coverImage": "/images/discover/jio-financial-services-profit-growth.png",
+        "title": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें",
+        "snippet": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, अब निवेशकों की नजरें IPO पर हैं।",
+        "coverImage": "/images/discover/jio-financial-services.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-16T18:17:37.574Z"
+        "date": "2026-07-16T18:39:52.263Z"
+    },
+    {
+        "id": "jio-financial-services-profit-growth",
+        "slug": "jio-financial-services-profit-growth",
+        "title": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें",
+        "snippet": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, अब निवेशकों की नजरें IPO पर हैं।",
+        "coverImage": "/images/discover/jio-financial-services.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T18:39:52.263Z"
     },
     {
         "id": "jio-financial-services-analysis",
