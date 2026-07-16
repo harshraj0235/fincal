@@ -981,6 +981,48 @@ function generateStaticPages(seoMap) {
         // Get SEO data for this path (from map or auto-generate from URL)
         const seo = seoMap[pathname] || generateSeoFromPath(pathname);
 
+        // --- GLOBAL FAQ INJECTION (Boosts SEO across the entire site) ---
+        const cleanTitle = seo.title ? seo.title.split('|')[0].trim() : humanize(pathname);
+        const isTool = pathname.includes('/calculators/') || pathname.includes('/tools/') || pathname.includes('/category/');
+        
+        let autoFaqs = [];
+        if (isTool) {
+            autoFaqs = [
+                {
+                    question: `How accurate is the ${cleanTitle}?`,
+                    answer: `The ${cleanTitle} is designed to provide highly accurate estimates based on the latest Indian financial formulas and market standards. However, please consult a financial advisor for final decisions.`
+                },
+                {
+                    question: `Is the ${cleanTitle} free to use?`,
+                    answer: `Yes, the ${cleanTitle} on MoneyCal.in is completely free to use with no hidden charges or limits, helping Indians make better financial decisions every day.`
+                }
+            ];
+        } else {
+            autoFaqs = [
+                {
+                    question: `What is the key takeaway regarding ${cleanTitle}?`,
+                    answer: `For the most comprehensive details and key takeaways about ${cleanTitle}, please refer to the complete analysis provided in the article above. We continuously monitor and update this topic for our readers.`
+                },
+                {
+                    question: `Why is understanding ${cleanTitle} important today?`,
+                    answer: `Staying informed about ${cleanTitle} is crucial for making better financial decisions and understanding current market and economic trends in India. Our platform provides expert insights to help you stay ahead.`
+                }
+            ];
+        }
+
+        if (!seo.faqs) {
+            seo.faqs = autoFaqs;
+        } else {
+            // Append to existing FAQs to make them "better" and more comprehensive
+            const existingQs = new Set(seo.faqs.map(f => f.question));
+            autoFaqs.forEach(f => {
+                if (!existingQs.has(f.question)) {
+                    seo.faqs.push(f);
+                }
+            });
+        }
+        // --- END GLOBAL FAQ INJECTION ---
+
         try {
             // Inject SEO tags
             const html = injectSeoTags(template, pathname, seo, seoMap);
