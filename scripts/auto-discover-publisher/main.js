@@ -214,7 +214,7 @@ async function generateImage(slug, title, topic) {
         console.error(`Unsplash fallback also failed:`, unsplashError.message);
         // Absolute fallback to default hero image to prevent build crashes
         const defaultImagePath = path.join(IMAGE_DIR, `${slug}.png`);
-        fs.copyFileSync(path.join(process.cwd(), 'public/default-news-hero.jpg'), defaultImagePath);
+        fs.copyFileSync(path.join(process.cwd(), 'public/android-chrome-512x512.jpg'), defaultImagePath);
         console.log(`✅ Copied default hero image as final fallback.`);
         return `/images/discover/${slug}.png`;
     }
