@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "oneplus-shutdown-impact",
+        "slug": "oneplus-shutdown-impact",
+        "title": "OnePlus Shutdown: Aapki Smartphone Choices Par Kaisa Asar Hoga?",
+        "snippet": "OnePlus ki bandi se smartphone bazaar aur aapki choices par kya asar padega, jaaniye iss article mein.",
+        "coverImage": "/images/discover/oneplus-shutdown-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T06:10:02.113Z"
+    },
+    {
         "id": "dixon-technologies-share-price-analysis",
         "slug": "dixon-technologies-share-price-analysis",
         "title": "Dixon Technologies Share Price: Recent Fluctuations and Investor Insights",
