@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "dixon-technologies-share-price-analysis",
+        "slug": "dixon-technologies-share-price-analysis",
+        "title": "Dixon Technologies Share Price: Recent Fluctuations and Investor Insights",
+        "snippet": "Dixon Technologies ke share price mein recent fluctuations ko samjhte hue investors aur tech market par iska impact.",
+        "coverImage": "/images/discover/dixon-technologies-share-price-analysis.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T05:34:27.603Z"
+    },
+    {
         "id": "icc-cricket-world-cup-economic-impact",
         "slug": "icc-cricket-world-cup-economic-impact",
         "title": "आईसीसी क्रिकेट विश्व कप का आर्थिक प्रभाव",
