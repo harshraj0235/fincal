@@ -227,9 +227,27 @@ Return ONLY the TypeScript object.
 async function generateImage(slug, title, keyword, customPrompt) {
     console.log(`🎨 Generating image for ${slug} (Topic: ${keyword})...`);
     
-    let basePrompt = customPrompt ? customPrompt : `The core concept of: ${keyword}.`;
-    const imagePrompt = `High-quality editorial photography, photorealistic Indian context. ${basePrompt} Professional financial news style, clear symbolism. Clean, high-contrast. No text overlay.`;
-    const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=675&nologo=true`;
+    // Step 1: Use LLM to optimize the prompt (ensures it is highly descriptive and strictly English)
+    const promptInstructions = `
+I have an article with the following Hindi topic: "${keyword}"
+
+Write a highly detailed, purely English image generation prompt for this topic. 
+The image should be a professional, photorealistic editorial photography style for a financial news website (like Bloomberg or LiveMint).
+DO NOT include any text, logos, or words in the image.
+Keep the prompt under 50 words.
+
+Return ONLY the English image prompt, nothing else.`;
+
+    let finalPrompt = '';
+    try {
+        finalPrompt = await callOpenRouter(promptInstructions, "You output ONLY English image prompts. No markdown, no quotes.");
+    } catch (e) {
+        console.error("⚠️ Failed to optimize prompt via LLM, using fallback.");
+        finalPrompt = `High-quality editorial photography, photorealistic Indian context. The core concept of: ${keyword}. Professional financial news style, clear symbolism. Clean, high-contrast. No text overlay.`;
+    }
+
+    console.log(`✅ Optimized Image Prompt: "${finalPrompt}"`);
+    const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(finalPrompt)}?width=1200&height=675&nologo=true`;
 
     for (let i = 0; i < 3; i++) {
         try {
