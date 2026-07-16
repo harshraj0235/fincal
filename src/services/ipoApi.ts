@@ -1,4 +1,5 @@
 import { cocaColaIndiaIpoReviewHindi } from '../data/ipo/coca-cola-india-ipo-review-hindi';
+import { caliberMiningLogisticsIpoReviewHindi } from '../data/ipo/caliber-mining-logistics-ipo-review-hindi';
 import { makemytripIpoReviewHindi } from '../data/ipo/makemytrip-ipo-review-hindi';
 import { IpoDetails, IpoResponse } from '../types/ipo';
 import { makemytripIpoReviewHindi } from '../data/ipo/makemytrip-ipo-review-hindi';
@@ -115,6 +116,8 @@ import { citichemIndiaIpo } from '../data/ipo/citichem-india';
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const allIpoData: IpoDetails[] = [
+    caliberMiningLogisticsIpoReviewHindi,
+
     cocaColaIndiaIpoReviewHindi,
 
     makemytripIpoReviewHindi,
