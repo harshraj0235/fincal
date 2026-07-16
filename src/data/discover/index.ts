@@ -1,3 +1,4 @@
+import { gautamGambhirBrandEndorsements } from './gautam-gambhir-brand-endorsements';
 import { hangSengImpactIndia } from './hang-seng-impact-india';
 import { hangSengIndexImpact } from './hang-seng-index-impact';
 import { epfoAccountsInterestCreditImpact } from './epfo-accounts-interest-credit-impact';
@@ -612,6 +613,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    gautamGambhirBrandEndorsements,
+
     hangSengImpactIndia,
 
     hangSengIndexImpact,
