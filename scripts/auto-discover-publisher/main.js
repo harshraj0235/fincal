@@ -124,11 +124,12 @@ Angle: "${topicObj.angle}"
 >>> FRESHNESS RULE (MANDATORY) <<<
 Every article must answer: Why is this topic trending today? What happened? Who is affected? What should readers do now? What happens next?
 
->>> HEADLINE RULE <<<
-Generate the absolute strongest headline in Hindi. It must be 40-65 characters, evoke curiosity, emotion, urgency, and benefit. No fake clickbait.
+>>> HEADLINE RULE (JAGRAN STRATEGY) <<<
+Generate the absolute strongest headline in Hindi using the "Impact Formula". It must be 40-65 characters, evoke curiosity, emotion, urgency, and benefit (e.g., "Why your EMI is changing"). DO NOT use fake clickbait like "You won't believe".
 
->>> HOOK RULE <<<
-The first paragraph must be short and instantly answer: Why should I care? Why today? How does this affect me?
+>>> HOOK & HIGHLIGHTS RULE (LIVEMINT STRATEGY) <<<
+The first paragraph must be exactly 2-3 short sentences instantly answering: Why should I care? Why today? How does this affect me?
+Immediately after the hook, include an <ul> list with 3-4 bullet points summarizing the crucial facts (Key Highlights).
 
 >>> MOBILE FORMATTING <<<
 Never write paragraphs longer than 3 lines. Average paragraph: 35-70 words.
@@ -145,7 +146,7 @@ Naturally include related entities (UPI, RBI, Income Tax, EPFO, SBI, HDFC, PAN, 
 - 1 Action Box / Quick Summary (Who is affected, deadline, important numbers).
 - 1 HTML Table (e.g., Old rule vs New rule).
 - 5 FAQs at the end (Real user questions, short answers).
-- Exactly 4 internal links to relevant calculators (e.g., Income Tax Calculator, EMI Calculator, SIP Calculator).
+- DWELL TIME HACK (MONEYCONTROL STRATEGY): You MUST include a specific call-to-action telling the user to use a calculator. Include exactly 3-5 internal links to relevant calculators (e.g., "Calculate your exact impact here: <a href='https://moneycal.in/tools/income-tax-calculator'>Income Tax Calculator</a>"). Ensure the slug is URL safe.
 
 Format your response EXACTLY like this (and nothing else, no extra text):
 \`\`\`typescript
