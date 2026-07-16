@@ -105,19 +105,22 @@ async function generateArticle(topicObj) {
     console.log(`\n✍️ Generating article for: ${topicObj.topic} (Angle: ${topicObj.angle})...`);
 
     const prompt = `
-You are a top-tier Indian finance and news expert for MoneyCal.in.
-Follow these EXACT rules to write an authoritative, E-E-A-T compliant Google Discover article:
+You are a top-tier Indian finance and news expert for MoneyCal.in, utilizing the exact strategies of LiveMint, MoneyControl, and Jagran.
+Follow these EXACT rules to write an authoritative, Google Discover-optimized article:
 - Write a 1500+ word article in simple, highly engaging Hindi-English mix (Hinglish).
-- Write about the topic: "${topicObj.topic}". 
-- Focus heavily on this angle: "${topicObj.angle}".
-- MAKE IT 100% HUMAN-FRIENDLY & BYPASS AI DETECTORS: Write with high 'burstiness' and 'perplexity' (mix very short, punchy sentences with longer, complex ones). 
-- STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark". Write exactly how a real Indian journalist speaks. Make it completely plagiarism-free.
-- NO CLICKBAIT: Write an honest, highly engaging headline that accurately reflects the content. Do not use phrases like "You won't believe".
-- E-E-A-T QUALITY (CRITICAL FOR DISCOVER RANKING): Use at least 5 real facts with numbers/percentages to prove expertise. Provide unique actionable insights (e.g. "What this means for you"). Answer long-tail search intents related to the topic.
-- Format strictly as a TypeScript object for our Discover section.
-- NEVER use markdown in the content strings. Use only HTML tags like <strong>, <br>, <a href="...">
-- Include exactly 3-5 internal links to our tools (e.g., <a href='https://moneycal.in/tools/sip-calculator'>SIP Calculator</a>, <a href='https://moneycal.in/tools/income-tax-calculator'>Income Tax</a>).
-- Ensure the slug is URL safe (lowercase, hyphens only).
+- Topic: "${topicObj.topic}". Angle: "${topicObj.angle}".
+- MAKE IT 100% HUMAN-FRIENDLY & BYPASS AI DETECTORS: Write with high 'burstiness' (mix punchy 3-word sentences with longer ones). 
+- STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark". Write exactly how a real Indian journalist speaks.
+
+>>> THE DISCOVER SEO STRUCTURE (MANDATORY) <<<
+1. HEADLINE (Jagran Strategy): Use the "Impact Formula". Write an honest but highly emotional/impactful headline focusing on how it affects the common man (e.g., "Why your EMI is changing"). DO NOT use clickbait like "You won't believe".
+2. HOOK: The first paragraph must be exactly 2-3 short sentences addressing the reader directly about the impact.
+3. KEY HIGHLIGHTS (LiveMint Strategy): Immediately after the hook, include an <ul> list with 3-4 bullet points summarizing the crucial facts.
+4. E-E-A-T QUALITY: Use at least 5 real facts with numbers/percentages to prove expertise.
+5. THE DWELL TIME HACK (MoneyControl Strategy): You MUST include a specific call-to-action telling the user to use a calculator. Example: "Calculate your exact impact here: <a href='https://moneycal.in/tools/income-tax-calculator'>Income Tax Calculator</a>".
+
+- Format strictly as a TypeScript object for our Discover section. NEVER use markdown. Use only HTML tags like <strong>, <br>, <ul>, <li>, <a href="...">
+- Include exactly 3-5 internal links to our tools. Ensure the slug is URL safe.
 
 Format your response EXACTLY like this (and nothing else, no extra text):
 \`\`\`typescript
@@ -175,7 +178,7 @@ export const generatedArticle = {
 
 async function generateImage(slug, title) {
     console.log(`🎨 Generating image for ${slug}...`);
-    const imagePrompt = `High-quality editorial photography, photorealistic, cinematic lighting showing ${title}. Clean, high-contrast colors, Indian context, news publication style. No text overlay. Premium magazine quality.`;
+    const imagePrompt = `High-quality editorial photography, photorealistic Indian context, expressive subjects showing real emotion related to ${title}. Clean, high-contrast, news publication style. No text overlay. Premium magazine quality.`;
     const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=675&nologo=true`;
 
     for (let i = 0; i < 3; i++) {
