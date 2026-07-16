@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<!-- MoneyCal OTHER - 1864 URLs - 2026-07-16 -->
+<!-- MoneyCal OTHER - 1868 URLs - 2026-07-16 -->
   <url>
     <loc>https://moneycal.in</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in" />
@@ -2234,6 +2234,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://moneycal.in/discover/agriculture-machinery-impact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/agriculture-machinery-impact/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/agriculture-machinery-impact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/agriculture-machinery-impact/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/agriculture-machinery-impact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/agriculture-machinery-impact/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/agriculture-machinery-impact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/agriculture-machinery-impact/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://moneycal.in/discover/ai-helping-small-shops-make-more-money/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/ai-helping-small-shops-make-more-money/" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/ai-helping-small-shops-make-more-money/" />
@@ -2661,6 +2679,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/amazon-ceo-india-ai-revolution/" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/amazon-ceo-india-ai-revolution/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/amazon-ceo-india-ai-revolution/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/analysis-of-maruti-suzuki-market-performance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/analysis-of-maruti-suzuki-market-performance/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/analysis-of-maruti-suzuki-market-performance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/analysis-of-maruti-suzuki-market-performance/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/analysis-of-maruti-suzuki-market-performance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/analysis-of-maruti-suzuki-market-performance/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/analysis-of-maruti-suzuki-market-performance/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/analysis-of-maruti-suzuki-market-performance/" />
     <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

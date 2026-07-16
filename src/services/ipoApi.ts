@@ -1,3 +1,4 @@
+import { makemytripIpoReviewHindi } from '../data/ipo/makemytrip-ipo-review-hindi';
 import { IpoDetails, IpoResponse } from '../types/ipo';
 import { makemytripIpoReviewHindi } from '../data/ipo/makemytrip-ipo-review-hindi';
 import { sbiFundsManagementIpoReviewHindi } from '../data/ipo/sbi-funds-management-ipo-review-hindi';
