@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { ResultChart } from '../components/ResultChart';
+import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
 
@@ -124,6 +125,29 @@ const GoldLoanEmiCalculator: React.FC = () => {
             <div className="overflow-x-auto"><table className="w-full glc-table"><thead><tr className="border-b border-slate-100"><th className="text-left">Period</th><th className="text-right">Principal</th><th className="text-right">Interest</th><th className="text-right">Balance</th></tr></thead><tbody className="divide-y divide-slate-50">
               {breakup.slice(0, showAmortization ? breakup.length : 3).map((y, i) => { const rem = Math.max(0, loanAmount - breakup.slice(0, i + 1).reduce((a, b) => a + b.principal, 0)); return <tr key={i}><td className="font-black text-slate-900">{i + 1}</td><td className="text-right text-emerald-600 font-bold">+{formatCurrency(Math.round(y.principal))}</td><td className="text-right text-rose-500 font-bold">-{formatCurrency(Math.round(y.interest))}</td><td className="text-right text-blue-600 font-black">{formatCurrency(Math.round(rem))}</td></tr>; })}
             </tbody></table></div>
+            
+            {(() => {
+              const exportData = breakup.map((y, i) => ({ 
+                period: i + 1, 
+                principal: Math.round(y.principal), 
+                interest: Math.round(y.interest), 
+                balance: Math.round(Math.max(0, loanAmount - breakup.slice(0, i + 1).reduce((a, b) => a + b.principal, 0))) 
+              }));
+              return (
+                <ExportButtons 
+                  data={exportData}
+                  filename="Gold_Loan_Amortization_Schedule"
+                  title="Gold Loan Amortization Schedule"
+                  columns={[
+                    { header: 'Period', dataKey: 'period' },
+                    { header: 'Principal Paid (Rs)', dataKey: 'principal', isCurrency: true },
+                    { header: 'Interest Paid (Rs)', dataKey: 'interest', isCurrency: true },
+                    { header: 'Outstanding Balance (Rs)', dataKey: 'balance', isCurrency: true }
+                  ]}
+                />
+              );
+            })()}
+
           </div></div>
 
           <div className="mt-12"><div className="glc-glass p-8">

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { ResultChart } from '../components/ResultChart';
+import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
 
@@ -115,6 +116,33 @@ export const CreditCardEmiCalculator: React.FC = () => {
                   <div className="cce-stat text-left" style={{ borderColor: '#d9f99d' }}><p className="text-[10px] font-bold text-emerald-500 uppercase mb-1">You Pay Extra</p><p className="text-xl font-black text-emerald-600">{((extraCost / purchaseAmount) * 100).toFixed(1)}%</p></div>
                 </div>
                 <div className="h-56 mt-4"><ResultChart data={[{ name: 'Purchase', value: purchaseAmount, color: '#be185d' }, { name: 'Interest + Fees', value: Math.max(1, Math.round(extraCost)), color: '#ef4444' }]} centerText={`${((extraCost / (totalPayment || 1)) * 100).toFixed(1)}%\nExtra`} /></div>
+                
+                <div className="mt-8 border-t border-slate-100 pt-6">
+                  <ExportButtons 
+                    data={[{
+                      amount: purchaseAmount,
+                      tenure: tenure,
+                      rate: interestRate,
+                      emi: Math.round(emi),
+                      fee: Math.round(processingAmount),
+                      gst: Math.round(gstOnFee),
+                      interest: Math.round(totalInterest),
+                      total: Math.round(totalPayment)
+                    }]}
+                    filename="Credit_Card_EMI_Report"
+                    title="Credit Card EMI Report"
+                    columns={[
+                      { header: 'Purchase Amount', dataKey: 'amount', isCurrency: true },
+                      { header: 'Tenure (Months)', dataKey: 'tenure', isCurrency: false },
+                      { header: 'Interest Rate (%)', dataKey: 'rate', isCurrency: false },
+                      { header: 'Monthly EMI', dataKey: 'emi', isCurrency: true },
+                      { header: 'Processing Fee', dataKey: 'fee', isCurrency: true },
+                      { header: 'GST on Fee (18%)', dataKey: 'gst', isCurrency: true },
+                      { header: 'Total Interest', dataKey: 'interest', isCurrency: true },
+                      { header: 'Total Payable', dataKey: 'total', isCurrency: true }
+                    ]}
+                  />
+                </div>
               </div>
             </div>
           </div>

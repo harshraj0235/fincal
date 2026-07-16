@@ -143,6 +143,10 @@ Mention exact numbers, dates, and circulars. Never invent facts. Add an External
 >>> NLP OPTIMIZATION <<<
 Naturally include related entities (UPI, RBI, Income Tax, EPFO, SBI, HDFC, PAN, Aadhaar, GST, Mutual Funds, Sensex, Nifty) without keyword stuffing.
 
+>>> KNOWLEDGE GRAPH ENTITIES (SEO) <<<
+Identify 1 or 2 core entities that this article is about (e.g., "Income Tax", "Reserve Bank of India", "HDFC Bank").
+Output these in the 'entities' array with their precise English Wikipedia URL (e.g., https://en.wikipedia.org/wiki/Income_tax_in_India). This is critical for Google Knowledge Graph linking.
+
 >>> CONTENT BLOCKS TO INCLUDE <<<
 - 1 Action Box / Quick Summary (Who is affected, deadline, important numbers).
 - 1 HTML Table (e.g., Old rule vs New rule).
@@ -172,6 +176,9 @@ export const generatedArticle = {
         { type: 'p', content: '<table>...</table>' },
         { type: 'h2', content: 'FAQs' },
         { type: 'p', content: '<strong>Q1: Question?</strong><br>Answer...' }
+    ],
+    entities: [
+        { name: 'Main Entity Name', url: 'https://en.wikipedia.org/wiki/Main_Entity' }
     ]
 };
 // IMAGE_PROMPT: (MUST BE WRITTEN IN ENGLISH) Create a highly realistic editorial-quality image for Google Discover. 16:9, Ultra realistic, 8K, Natural lighting, No text, No logo. Professional news photography style. Topic-focused. Include important objects related to the article. Avoid random people.
@@ -182,6 +189,7 @@ Before final output silently verify:
 ✓ No AI phrases
 ✓ Discover optimized & Mobile friendly
 ✓ E-E-A-T facts and NLP entities included
+✓ Knowledge Graph entity array populated with correct Wikipedia URL
 ✓ Table and FAQs added
 ✓ JSON/TypeScript syntax valid
 Return ONLY the TypeScript object.

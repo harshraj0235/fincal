@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { ResultChart } from '../components/ResultChart';
+import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
 
@@ -356,6 +357,36 @@ export const PersonalLoanCalculator: React.FC = () => {
                   </tbody>
                 </table>
               </div>
+
+              {(() => {
+                const exportData = amortView === 'yearly' 
+                  ? breakup.map((y, i) => ({ 
+                      year: i + 1, 
+                      principal: Math.round(y.principal), 
+                      interest: Math.round(y.interest), 
+                      balance: Math.round(Math.max(0, loanAmount - breakup.slice(0, i + 1).reduce((a, b) => a + b.principal, 0))) 
+                    }))
+                  : monthlySchedule.map(r => ({
+                      month: r.month,
+                      principal: Math.round(r.principal),
+                      interest: Math.round(r.interest),
+                      balance: Math.round(r.balance)
+                    }));
+                return (
+                  <ExportButtons 
+                    data={exportData}
+                    filename="Personal_Loan_Amortization_Schedule"
+                    title="Personal Loan Amortization Schedule"
+                    columns={[
+                      { header: amortView === 'yearly' ? 'Year' : 'Month', dataKey: amortView === 'yearly' ? 'year' : 'month' },
+                      { header: 'Principal Paid (Rs)', dataKey: 'principal', isCurrency: true },
+                      { header: 'Interest Paid (Rs)', dataKey: 'interest', isCurrency: true },
+                      { header: 'Outstanding Balance (Rs)', dataKey: 'balance', isCurrency: true }
+                    ]}
+                  />
+                );
+              })()}
+
               {!showAmortization && <div className="text-center mt-6"><button onClick={() => setShowAmortization(true)} className="text-xs font-black text-violet-600 uppercase hover:text-violet-800">View Full Schedule →</button></div>}
             </div>
           </div>

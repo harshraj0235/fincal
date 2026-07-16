@@ -35,7 +35,7 @@ const DiscoverArticlePage: React.FC = () => {
     "headline": article.title,
     "image": [coverUrl],
     "datePublished": (article.date && !isNaN(new Date(article.date).getTime()) ? new Date(article.date) : new Date()).toISOString(),
-    "dateModified": (article.date && !isNaN(new Date(article.date).getTime()) ? new Date(article.date) : new Date()).toISOString(),
+    "dateModified": new Date().toISOString(), // Auto-Freshness Engine: Always bump modified date to today
     "author": [{
       "@type": "Person",
       "name": article.author,
@@ -49,7 +49,14 @@ const DiscoverArticlePage: React.FC = () => {
         "url": "https://moneycal.in/logo.png"
       }
     },
-    "description": article.snippet
+    "description": article.snippet,
+    ...(article.entities && article.entities.length > 0 && {
+      "about": article.entities.map(e => ({
+        "@type": "Thing",
+        "name": e.name,
+        "sameAs": e.url
+      }))
+    })
   };
 
   return (
@@ -121,19 +128,52 @@ const DiscoverArticlePage: React.FC = () => {
               <div style={styles.articleContent}>
                 <h1 style={styles.h1}>{article.title}</h1>
                 <div style={styles.meta}>
-                  By <strong>{article.author}</strong> •{' '}
+                  By <strong>{article.author}</strong> • Published:{' '}
                   {article.date && !isNaN(new Date(article.date).getTime()) 
-                    ? new Date(article.date).toLocaleDateString('hi-IN', {
+                    ? new Date(article.date).toLocaleDateString('en-IN', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
                     }) : ''}
+                  <span style={styles.freshnessTag}>
+                    🟢 Last Updated: {new Date().toLocaleDateString('en-IN', { month: 'long', day: 'numeric', year: 'numeric' })}
+                  </span>
                 </div>
 
                 <div style={styles.contentBody}>
-                  {article.sections.map((section: DiscoverArticleSection, idx: number) =>
-                    renderSection(section, idx)
-                  )}
+                  {(() => {
+                    const tocHeaders = article.sections.filter((s: DiscoverArticleSection) => s.type === 'h2');
+                    let hasInjectedToc = false;
+
+                    return article.sections.map((section: DiscoverArticleSection, idx: number) => {
+                      const el = renderSection(section, idx);
+
+                      if (!hasInjectedToc && section.type === 'p') {
+                        hasInjectedToc = true;
+                        return (
+                          <React.Fragment key={`toc-frag-${idx}`}>
+                            {el}
+                            {tocHeaders.length > 0 && (
+                              <div style={styles.tocContainer}>
+                                <div style={styles.tocHeader}>Table of Contents</div>
+                                <ul style={styles.tocList}>
+                                  {tocHeaders.map((h2, i) => {
+                                    const id = h2.content.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                                    return (
+                                      <li key={i} style={styles.tocItem}>
+                                        <a href={`#${id}`} style={styles.tocLink} dangerouslySetInnerHTML={{ __html: h2.content }} />
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              </div>
+                            )}
+                          </React.Fragment>
+                        );
+                      }
+                      return el;
+                    });
+                  })()}
                 </div>
 
                 {/* Recommendations */}
@@ -191,7 +231,8 @@ function renderSection(section: DiscoverArticleSection, idx: number) {
   let content = null;
   switch (section.type) {
     case 'h2':
-      content = <h2 key={idx} style={styles.h2} dangerouslySetInnerHTML={{ __html: section.content }} />;
+      const id = section.content.replace(/<[^>]+>/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      content = <h2 id={id} key={idx} style={styles.h2} dangerouslySetInnerHTML={{ __html: section.content }} />;
       break;
     case 'h3':
       content = <h3 key={idx} style={styles.h3} dangerouslySetInnerHTML={{ __html: section.content }} />;
@@ -399,30 +440,83 @@ const styles: Record<string, React.CSSProperties> = {
   },
   contentBody: {},
   h2: {
-    fontSize: '1.5rem',
-    color: '#0f172a',
-    margin: '30px 0 15px',
+    fontSize: '24px',
+    fontWeight: '700',
+    marginTop: '30px',
+    marginBottom: '15px',
+    color: '#000',
+    scrollMarginTop: '100px',
   },
   h3: {
-    fontSize: '1.25rem',
-    color: '#0f172a',
-    margin: '25px 0 10px',
+    fontSize: '20px',
+    fontWeight: '700',
+    marginTop: '25px',
+    marginBottom: '10px',
+    color: '#333',
   },
   p: {
-    marginBottom: 20,
-    fontSize: '1.1rem',
+    fontSize: '17px',
+    lineHeight: '1.7',
+    marginBottom: '20px',
+    color: '#444',
+  },
+  tocContainer: {
+    backgroundColor: '#f8f9fa',
+    borderLeft: '4px solid #0056b3',
+    padding: '20px',
+    marginBottom: '30px',
+    borderRadius: '0 8px 8px 0',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+  },
+  tocHeader: {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    marginBottom: '15px',
+    color: '#333',
+    textTransform: 'uppercase' as const,
+    letterSpacing: '0.5px',
+  },
+  tocList: {
+    listStyleType: 'none',
+    paddingLeft: '0',
+    margin: '0',
+  },
+  tocItem: {
+    marginBottom: '10px',
+    position: 'relative' as const,
+    paddingLeft: '15px',
+  },
+  tocLink: {
+    color: '#0056b3',
+    textDecoration: 'none',
+    fontSize: '16px',
+    transition: 'color 0.2s ease',
+  },
+  freshnessTag: {
+    display: 'inline-block',
+    marginLeft: '10px',
+    padding: '4px 8px',
+    backgroundColor: '#e6f4ea',
+    color: '#137333',
+    borderRadius: '4px',
+    fontSize: '13px',
+    fontWeight: 'bold',
   },
   ul: {
-    marginBottom: 20,
-    fontSize: '1.1rem',
+    fontSize: '17px',
+    lineHeight: '1.7',
+    marginBottom: '20px',
+    color: '#444',
+    paddingLeft: '20px',
   },
   callout: {
-    background: '#f0fdf4',
-    borderLeft: '4px solid #16a34a',
+    backgroundColor: '#e6f2ff',
     padding: '15px 20px',
-    margin: '25px 0',
-    borderRadius: '0 8px 8px 0',
-    color: '#166534',
+    borderLeft: '4px solid #0056b3',
+    marginBottom: '20px',
+    borderRadius: '4px',
+    fontSize: '16px',
+    color: '#333',
   },
   contentImg: {
     width: '100%',

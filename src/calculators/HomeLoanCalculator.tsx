@@ -6,6 +6,7 @@ import {
   calculatePrepaymentImpact,
   calculateHomeLoanTaxSavings
 } from '../utils/calculatorUtils';
+import { ExportButtons } from '../components/ExportButtons';
 import SEOHelmet from '../components/SEOHelmet';
 
 /* ═══════════════════════════════════════════════════════════════
@@ -354,6 +355,19 @@ export const HomeLoanCalculator: React.FC = () => {
               {showFullAmort ? 'Show Less' : `Show All ${yearlySchedule.length} Years`}
             </button>
           )}
+
+          <ExportButtons 
+            data={yearlySchedule}
+            filename="Home_Loan_Amortization_Schedule"
+            title="Home Loan Amortization Schedule"
+            columns={[
+              { header: 'Year', dataKey: 'year' },
+              { header: 'Principal Paid (Rs)', dataKey: 'principalPaid', isCurrency: true },
+              { header: 'Interest Paid (Rs)', dataKey: 'interestPaid', isCurrency: true },
+              { header: 'Total Paid (Rs)', dataKey: 'totalPaid', isCurrency: true },
+              { header: 'Outstanding Balance (Rs)', dataKey: 'balance', isCurrency: true }
+            ]}
+          />
         </div>
 
         {/* ===== BANK RATES TABLE ===== */}

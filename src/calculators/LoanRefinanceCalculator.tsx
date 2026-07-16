@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { formatCurrency, calculateEMI } from '../utils/calculatorUtils';
 import { Sliders, IndianRupee, ArrowRight } from 'lucide-react';
 import { BarChart } from '../components/BarChart';
+import { ExportButtons } from '../components/ExportButtons';
 
 export const LoanRefinanceCalculator: React.FC = () => {
   // Existing loan details
@@ -390,6 +391,25 @@ export const LoanRefinanceCalculator: React.FC = () => {
             </div>
           )}
         </div>
+      </div>
+      
+      <div className="mt-8 border-t border-neutral-200 pt-6">
+        <ExportButtons 
+          data={[
+            { metric: 'Monthly EMI', current: Math.round(currentEmi), new: Math.round(newEmi), difference: Math.round(currentEmi - newEmi) },
+            { metric: 'Total Payment', current: Math.round(currentTotalPayment), new: Math.round(newTotalPayment), difference: Math.round(currentTotalPayment - newTotalPayment) },
+            { metric: 'Interest Rate (%)', current: currentInterestRate, new: newInterestRate, difference: Number((currentInterestRate - newInterestRate).toFixed(2)) },
+            { metric: 'Loan Tenure (Months)', current: remainingTenure * 12, new: newTenure * 12, difference: (remainingTenure * 12) - (newTenure * 12) }
+          ]}
+          filename="Loan_Refinance_Comparison"
+          title="Loan Refinance Comparison"
+          columns={[
+            { header: 'Metric', dataKey: 'metric' },
+            { header: 'Current Loan', dataKey: 'current', isCurrency: false },
+            { header: 'New Loan', dataKey: 'new', isCurrency: false },
+            { header: 'Difference / Savings', dataKey: 'difference', isCurrency: false }
+          ]}
+        />
       </div>
     </div>
   );

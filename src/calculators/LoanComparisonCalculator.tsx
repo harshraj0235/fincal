@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI } from '../utils/calculatorUtils';
 import { BarChart } from '../components/BarChart';
+import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
 
@@ -98,6 +99,27 @@ export const LoanComparisonCalculator: React.FC = () => {
           <div className="mt-10 lcc-glass p-8">
             <h2 className="text-xl font-black text-slate-900 mb-6 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-indigo-500"></span> Total Payment Comparison</h2>
             <div className="h-72"><BarChart data={computedOptions.map((o) => ({ label: o.bank || `Option ${o.id}`, value: o.totalPayment, color: o.id === bestOption.id ? '#22c55e' : '#6366f1' }))} xKey="label" yKey="value" color="color" xLabel="Lenders" yLabel="Total Payment (₹)" formatY={(v) => formatCurrency(v)} /></div>
+            
+            <div className="mt-8 border-t border-slate-100 pt-6">
+              <ExportButtons 
+                data={computedOptions.map(o => ({
+                  bank: o.bank || `Option ${o.id}`,
+                  emi: Math.round(o.emi),
+                  processing: Math.round(o.processingFeeAmount),
+                  interest: Math.round(o.totalInterest),
+                  total: Math.round(o.totalPayment)
+                }))}
+                filename="Loan_Comparison_Report"
+                title="Loan Comparison Report"
+                columns={[
+                  { header: 'Lender / Bank', dataKey: 'bank' },
+                  { header: 'Monthly EMI (Rs)', dataKey: 'emi', isCurrency: true },
+                  { header: 'Processing Fee (Rs)', dataKey: 'processing', isCurrency: true },
+                  { header: 'Total Interest (Rs)', dataKey: 'interest', isCurrency: true },
+                  { header: 'Total Payment (Rs)', dataKey: 'total', isCurrency: true }
+                ]}
+              />
+            </div>
           </div>
 
           <div className="mt-12"><CalculatorContentWrapper {...contentData} /></div>

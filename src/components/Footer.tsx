@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
         { name: 'Bank Tools', href: '/bank-tools' },
         { name: 'Insurance Tools', href: '/insurance-tools' },
         { name: 'Discover Articles', href: '/discover' },
-        { name: 'Government Schemes', href: '/government-schemes' },
+        { name: 'Govt Schemes List', href: '/government-schemes' },
       ]
     },
     {

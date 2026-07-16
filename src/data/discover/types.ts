@@ -3,6 +3,10 @@ export interface DiscoverArticleSection {
     content: string;
     alt?: string;
 }
+export interface DiscoverEntity {
+    name: string;
+    url: string;
+}
 
 export interface DiscoverArticle {
     id: string;
@@ -14,4 +18,5 @@ export interface DiscoverArticle {
     date: string;
     category?: string;
     sections: DiscoverArticleSection[];
+    entities?: DiscoverEntity[];
 }

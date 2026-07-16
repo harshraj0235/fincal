@@ -1,28 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { calculatorCategories } from '../data/calculatorData';
+import { categorySeoData } from '../data/categorySeoData';
 import { 
-  Calculator, 
   Building, 
   TrendingUp, 
   DollarSign, 
   PieChart, 
   Shield, 
-  ChevronRight,
   Search,
   ArrowLeft,
-  Grid,
-  List, IndianRupee } from 'lucide-react';
+  IndianRupee,
+  X
+} from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
+import { ResponsiveAd } from '../components/BannerAd';
+
+const getCategoryIcon = (categoryId: string) => {
+  switch(categoryId) {
+    case 'loan-calculators': return <Building className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'investment-calculators': return <TrendingUp className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'tax-calculators': return <DollarSign className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'retirement-calculators': return <PieChart className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'business-calculators': return <Building className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'property-calculators': return <Building className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'insurance-calculators': return <Shield className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'banking-calculators': return <IndianRupee className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'fintech-payments': return <IndianRupee className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'investments-wealth-management': return <TrendingUp className="h-10 w-10 text-blue-600 mb-4" />;
+    case 'personal-finance': return <PieChart className="h-10 w-10 text-blue-600 mb-4" />;
+    default: return <IndianRupee className="h-10 w-10 text-blue-600 mb-4" />;
+  }
+};
 
 const CategoryCalculators: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const category = calculatorCategories.find(cat => cat.id === categoryId);
 
@@ -32,44 +47,10 @@ const CategoryCalculators: React.FC = () => {
     }
   }, [category, navigate]);
 
-  const getCategoryIcon = (categoryId: string) => {
-    switch(categoryId) {
-      case 'loan-calculators': return <Building className="h-8 w-8 text-white" />;
-      case 'investment-calculators': return <TrendingUp className="h-8 w-8 text-white" />;
-      case 'tax-calculators': return <DollarSign className="h-8 w-8 text-white" />;
-      case 'retirement-calculators': return <PieChart className="h-8 w-8 text-white" />;
-      case 'business-calculators': return <IndianRupee className="h-8 w-8 text-white" />;
-      case 'property-calculators': return <Building className="h-8 w-8 text-white" />;
-      case 'insurance-calculators': return <Shield className="h-8 w-8 text-white" />;
-      case 'banking-calculators': return <DollarSign className="h-8 w-8 text-white" />;
-      case 'fintech-payments': return <IndianRupee className="h-8 w-8 text-white" />;
-      case 'investments-wealth-management': return <TrendingUp className="h-8 w-8 text-white" />;
-      case 'personal-finance': return <PieChart className="h-8 w-8 text-white" />;
-      default: return <IndianRupee className="h-8 w-8 text-white" />;
-    }
-  };
-  
-  const getCategoryColor = (categoryId: string) => {
-    switch(categoryId) {
-      case 'loan-calculators': return 'from-blue-500 to-blue-700';
-      case 'investment-calculators': return 'from-green-500 to-green-700';
-      case 'tax-calculators': return 'from-purple-500 to-purple-700';
-      case 'retirement-calculators': return 'from-orange-500 to-orange-700';
-      case 'business-calculators': return 'from-indigo-500 to-indigo-700';
-      case 'property-calculators': return 'from-red-500 to-red-700';
-      case 'insurance-calculators': return 'from-pink-500 to-pink-700';
-      case 'banking-calculators': return 'from-cyan-500 to-cyan-700';
-      case 'fintech-payments': return 'from-amber-500 to-amber-700';
-      case 'investments-wealth-management': return 'from-emerald-500 to-emerald-700';
-      case 'personal-finance': return 'from-teal-500 to-teal-700';
-      default: return 'from-primary-500 to-primary-700';
-    }
-  };
-
   if (!category) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+      <div className="min-h-screen bg-[#f7f9fa] pt-20">
+        <div className="max-w-4xl mx-auto px-4 py-12 text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Category Not Found</h1>
           <p className="text-gray-600 mb-8">The requested category could not be found.</p>
           <Link
@@ -88,7 +69,9 @@ const CategoryCalculators: React.FC = () => {
     calculator.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     calculator.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
   const categoryKeywords = Array.from(new Set(category.calculators.flatMap(calc => calc.keywords || []).slice(0, 24)));
+  
   const faqItems = [
     {
       question: `What is included in ${category.name}?`,
@@ -101,16 +84,11 @@ const CategoryCalculators: React.FC = () => {
     {
       question: 'Are these calculators accurate for India?',
       answer: 'Yes. They use standard formulas commonly used by Indian banks and financial institutions.'
-    },
-    {
-      question: 'Can I use these tools on mobile?',
-      answer: 'Yes. All calculators are optimized for mobile screens and update instantly as you change inputs.'
     }
   ];
 
   return (
     <>
-      <WhatsAppBanner />
       <AstroFinanceButton />
       <SEOHelmet
         title={`${category.name} - Financial Calculators | MoneyCal.in`}
@@ -127,162 +105,110 @@ const CategoryCalculators: React.FC = () => {
         structuredData={{}}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Header Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
-          >
-            <button
-              onClick={() => navigate('/calculators')}
-              className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors mb-6"
-            >
-              <ArrowLeft className="h-5 w-5 mr-2" />
-              Back to All Categories
-            </button>
-            
-            <div className="flex items-center mb-6">
-              <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mr-6 shadow-lg`}>
-                {getCategoryIcon(category.id)}
-              </div>
-              <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">{category.name}</h1>
-                <p className="text-xl text-gray-600">{category.description}</p>
-              </div>
-            </div>
-          </motion.div>
+      <div className="min-h-screen bg-[#f7f9fa] pt-8 pb-20">
+        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+          
+          {/* Header */}
+          <div className="text-center mb-12 flex flex-col items-center">
+            {getCategoryIcon(category.id)}
+            <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-2">
+              {category.name}
+            </h1>
+            <p className="text-lg text-gray-500 max-w-2xl">
+              {category.description}
+            </p>
+          </div>
 
-          {/* Search and View Controls */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 mb-8"
-          >
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+          {/* Search Bar */}
+          <div className="max-w-2xl mx-auto mb-16 relative">
+            <div className="relative group shadow-sm rounded-full">
+              <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+              </div>
               <input
                 type="text"
                 placeholder={`Search ${category.name.toLowerCase()}...`}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm"
+                className="block w-full pl-14 pr-12 py-4 bg-white border border-gray-200 rounded-full text-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all font-medium"
               />
-            </div>
-            
-            <div className="flex gap-2">
-              <button
-                onClick={() => setViewMode('grid')}
-                className={`p-3 rounded-lg transition-colors ${
-                  viewMode === 'grid' 
-                    ? 'bg-blue-600 text-white' 
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
-              >
-                <Grid className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => setViewMode('list')}
-                className={`p-3 rounded-lg transition-colors ${
-                  viewMode === 'list' 
-                    ? 'bg-blue-600 text-white' 
-                    : 'bg-white text-gray-600 hover:bg-gray-50'
-                }`}
-              >
-                <List className="w-5 h-5" />
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Calculators Grid/List */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className={`${
-              viewMode === 'grid' 
-                ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' 
-                : 'space-y-4'
-            }`}
-          >
-            {filteredCalculators.map((calculator, index) => (
-              <motion.div
-                key={calculator.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * index }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6"
-              >
-                <Link
-                  to={`/calculators/${calculator.id}`}
-                  className="block group"
+              {searchTerm && (
+                <button
+                  onClick={() => setSearchTerm('')}
+                  className="absolute inset-y-0 right-0 pr-6 flex items-center text-gray-400 hover:text-gray-600"
                 >
-                  <div className="flex items-center mb-4">
-                    <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform`}>
-                      <IndianRupee className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{calculator.name}</h3>
-                      <p className="text-gray-600 text-sm line-clamp-2">{calculator.description}</p>
-                    </div>
-                  </div>
+                  <X className="h-5 w-5" />
+                </button>
+              )}
+            </div>
+          </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-blue-600 group-hover:text-blue-700 font-medium text-sm flex items-center">
-                      Use Calculator
-                      <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                    <div className="text-sm text-gray-500">
-                      {index + 1} of {filteredCalculators.length}
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+          <div className="w-full flex justify-center mb-8">
+            <ResponsiveAd />
+          </div>
+
+          {/* Calculators Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+            {filteredCalculators.map(calculator => (
+              <Link
+                key={calculator.id}
+                to={`/calculators/${calculator.id}`}
+                className="bg-white border border-gray-200 rounded-[1rem] p-6 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:border-gray-300 transition-all duration-300 flex flex-col group h-full"
+              >
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-800 text-lg mb-2 group-hover:text-blue-600 transition-colors">
+                    {calculator.name}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-4">
+                    {calculator.description}
+                  </p>
+                </div>
+                <div className="mt-auto flex justify-end">
+                   <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                      <ArrowLeft className="w-4 h-4 rotate-135" style={{ transform: 'rotate(135deg)' }} />
+                   </div>
+                </div>
+              </Link>
             ))}
-          </motion.div>
+          </div>
+
+          <div className="flex justify-center mb-16">
+             <Link
+               to="/calculators"
+               className="inline-flex flex-col items-center justify-center text-blue-600 hover:text-blue-800 font-semibold transition-colors group"
+             >
+               <span className="flex items-center mb-2">
+                 <ArrowLeft className="h-4 w-4 mr-1 group-hover:-translate-x-1 transition-transform" />
+                 Back to all categories
+               </span>
+               <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <Building className="w-5 h-5" />
+               </div>
+             </Link>
+          </div>
+
+          {/* SEO Content Section */}
+          {!searchTerm && categorySeoData[category.id] && (
+            <div className="bg-white border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-sm mb-16">
+               <div className="prose prose-blue max-w-none prose-h2:text-2xl prose-h2:font-bold prose-h2:text-gray-900 prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600" dangerouslySetInnerHTML={{ __html: categorySeoData[category.id] }} />
+            </div>
+          )}
 
           {/* No Results */}
           {filteredCalculators.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-12"
-            >
-              <div className="text-gray-400 mb-4">
-                <Search className="h-16 w-16 mx-auto" />
-              </div>
+            <div className="text-center py-16 bg-white border border-gray-200 dashed rounded-2xl">
+              <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No calculators found</h3>
-              <p className="text-gray-600 mb-6">Try adjusting your search terms or browse all categories.</p>
+              <p className="text-gray-600 mb-6">Try adjusting your search terms.</p>
               <button
                 onClick={() => setSearchTerm('')}
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-bold"
               >
                 Clear Search
               </button>
-            </motion.div>
+            </div>
           )}
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            className="mt-16 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100"
-          >
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">{category.name} FAQ</h2>
-              <p className="text-gray-600">Quick answers to help you pick the right calculator.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {faqItems.map(item => (
-                <div key={item.question} className="border border-gray-200 rounded-2xl p-6 bg-gray-50">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.question}</h3>
-                  <p className="text-gray-600">{item.answer}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </>

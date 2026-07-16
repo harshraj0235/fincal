@@ -4,6 +4,7 @@ import { getCalculatorById } from '../data/calculatorData';
 import SEOHelmet from '../components/SEOHelmet';
 import { BannerAd } from '../components/BannerAd';
 import { PAASection } from '../components/PAASection';
+import { CalculatorAIAssistant } from '../components/CalculatorAIAssistant';
 
 // Import all calculators
 import { EmiCalculator } from '../calculators/EmiCalculator';
@@ -555,6 +556,14 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
       />
 
       {renderCalculator()}
+      
+      {/* AI Assistant */}
+      <div className="max-w-4xl mx-auto px-4 lg:px-8 mb-16">
+        <CalculatorAIAssistant 
+          calculatorName={calculator.name} 
+          calculatorDescription={calculator.description} 
+        />
+      </div>
       
       {/* Banner Ad below calculator form */}
       <div className="w-full flex justify-center py-8">

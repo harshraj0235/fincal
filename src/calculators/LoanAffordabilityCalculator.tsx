@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { ResultChart } from '../components/ResultChart';
+import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
 
@@ -86,6 +87,31 @@ export const LoanAffordabilityCalculator: React.FC = () => {
                   <div className="lac-stat text-left"><p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Total Interest</p><p className="text-xl font-black text-rose-600">{formatCurrency(totalInterest)}</p></div>
                 </div>
                 <div className="h-56"><ResultChart data={[{ name: 'Expenses', value: monthlyExpenses, color: '#f59e0b' }, { name: 'Existing EMI', value: existingEmi || 1, color: '#ef4444' }, { name: 'New EMI', value: maxEmi, color: '#06b6d4' }, { name: 'Savings', value: Math.max(1, savings), color: '#22c55e' }]} centerText={`${formatCurrency(monthlyIncome)}\nIncome`} /></div>
+                
+                <div className="mt-8 border-t border-slate-100 pt-6">
+                  <ExportButtons 
+                    data={[{
+                      income: monthlyIncome,
+                      expenses: monthlyExpenses,
+                      existing: existingEmi,
+                      maxLoan: maxLoan,
+                      maxEmi: maxEmi,
+                      foir: foir,
+                      savings: savings
+                    }]}
+                    filename="Loan_Affordability_Report"
+                    title="Loan Affordability Report"
+                    columns={[
+                      { header: 'Monthly Income', dataKey: 'income', isCurrency: true },
+                      { header: 'Monthly Expenses', dataKey: 'expenses', isCurrency: true },
+                      { header: 'Existing EMI', dataKey: 'existing', isCurrency: true },
+                      { header: 'Max Loan Amount', dataKey: 'maxLoan', isCurrency: true },
+                      { header: 'Max New EMI', dataKey: 'maxEmi', isCurrency: true },
+                      { header: 'FOIR (%)', dataKey: 'foir', isCurrency: false },
+                      { header: 'Monthly Savings', dataKey: 'savings', isCurrency: true }
+                    ]}
+                  />
+                </div>
               </div>
             </div>
           </div>
