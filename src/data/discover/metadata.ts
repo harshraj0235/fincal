@@ -1,6 +1,24 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "wipro-share-q1-results-impact",
+        "slug": "wipro-share-q1-results-impact",
+        "title": "Wipro के Q1 परिणाम: निवेशकों की धारणा पर असर",
+        "snippet": "Wipro के Q1 परिणामों का शेयर बाजार पर क्या असर हुआ है? जानें।",
+        "coverImage": "/images/discover/wipro-share-q1-results-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T14:05:06.270Z"
+    },
+    {
+        "id": "kuldeep-yadav-brand-endorsements",
+        "slug": "kuldeep-yadav-brand-endorsements",
+        "title": "कुलदीप यादव: ब्रांड एंडोर्समेंट्स पर उनका प्रभाव",
+        "snippet": "कुलदीप यादव की क्रिकेट में सफलता उनके ब्रांड एंडोर्समेंट्स को कैसे प्रभावित कर रही है?",
+        "coverImage": "/images/discover/kuldeep-yadav-brand-endorsements.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T11:59:55.675Z"
+    },
+    {
         "id": "share-price-analysis",
         "slug": "share-price-analysis",
         "title": "शेयर प्राइस में उतार-चढ़ाव: निवेशकों की राय पर असर",

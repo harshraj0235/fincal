@@ -1,3 +1,4 @@
+import { wiproShareQ1ResultsImpact } from './wipro-share-q1-results-impact';
 import { kuldeepYadavBrandEndorsements } from './kuldeep-yadav-brand-endorsements';
 import { sharePriceAnalysis } from './share-price-analysis';
 import { gautamGambhirBrandEndorsements } from './gautam-gambhir-brand-endorsements';
@@ -615,6 +616,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    wiproShareQ1ResultsImpact,
+
     kuldeepYadavBrandEndorsements,
 
     sharePriceAnalysis,
