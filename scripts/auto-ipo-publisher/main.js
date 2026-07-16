@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { pingGoogleIndexingApi } from '../utils/google-indexer.js';
+import { parseStringPromise } from 'xml2js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,9 +21,14 @@ const ROOT_DIR = path.resolve(__dirname, '../..');
 const IPO_DIR = path.join(ROOT_DIR, 'src', 'data', 'ipo');
 const IPO_API_PATH = path.join(ROOT_DIR, 'src', 'services', 'ipoApi.ts');
 const IMAGE_DIR = path.join(ROOT_DIR, 'public', 'images', 'ipo');
+const PUBLISHED_TRACKER = path.join(__dirname, 'published_ipos.txt');
 
 if (!fs.existsSync(IMAGE_DIR)) {
     fs.mkdirSync(IMAGE_DIR, { recursive: true });
+}
+
+if (!fs.existsSync(PUBLISHED_TRACKER)) {
+    fs.writeFileSync(PUBLISHED_TRACKER, '', 'utf8');
 }
 
 async function callOpenRouter(prompt, systemPrompt = "You are a specialized API that returns valid JSON or code.", maxRetries = 3) {
@@ -40,7 +46,7 @@ async function callOpenRouter(prompt, systemPrompt = "You are a specialized API 
                         { "role": "system", "content": systemPrompt },
                         { "role": "user", "content": prompt }
                     ],
-                    "temperature": 0.7
+                    "temperature": 0.5
                 })
             });
 
@@ -59,56 +65,56 @@ async function callOpenRouter(prompt, systemPrompt = "You are a specialized API 
 }
 
 async function fetchIpoNews() {
-    console.log('📡 Fetching IPO News via Google RSS...');
+    console.log('📡 Fetching latest IPO News from Google News...');
     const url = 'https://news.google.com/rss/search?q=India+IPO+OR+DRHP+OR+GMP+when:1d&hl=en-IN&gl=IN&ceid=IN:en';
     const response = await fetch(url);
     const text = await response.text();
 
-    const titles = [];
-    const regex = /<title>(.*?)<\/title>/g;
-    let match;
-    while ((match = regex.exec(text)) !== null) {
-        let title = match[1].replace(/<\/?title>/g, '').trim();
-        if (!title.includes('Daily Search') && !title.includes('<![CDATA[')) {
-            titles.push(title);
-        }
+    const result = await parseStringPromise(text);
+    const items = result.rss.channel[0].item;
+
+    const newsArticles = [];
+    for (const item of items) {
+        const title = item.title[0];
+        const snippetRaw = item.description && item.description[0] ? item.description[0] : '';
+        const cleanSnippet = snippetRaw.replace(/<[^>]*>?/gm, '').trim();
+        
+        newsArticles.push({
+            title: title,
+            context: cleanSnippet
+        });
     }
-    if (titles.length === 0) throw new Error('Could not parse IPO news');
-    return titles;
+
+    if (newsArticles.length === 0) throw new Error('Could not parse IPO news');
+    return newsArticles;
 }
 
-async function selectIpoTopic(newsTitles) {
-    console.log(`🤖 Filtering ${newsTitles.length} news items for the hottest IPO...`);
-    
+async function selectIpoTopic(newsArticles) {
+    console.log(`🤖 Selecting best IPO from ${newsArticles.length} recent news articles...`);
+
+    const publishedIpos = fs.readFileSync(PUBLISHED_TRACKER, 'utf8').split('\n').filter(Boolean);
+
     const prompt = `
-I have a list of recent IPO news from India today.
-Select exactly 1 specific upcoming or recently opened IPO company that people are highly interested in (e.g. Swiggy IPO, Hyundai IPO, etc.).
-Avoid general news like "Market crashes". Pick a specific company's IPO.
+I have a list of recent IPO-related news headlines from India.
+I need to select EXACTLY ONE company that is currently in the news for its IPO (Upcoming, Open, or Listed recently).
+Do NOT select any IPO that is in this "Already Published" list:
+[${publishedIpos.join(', ')}]
 
-News Titles:
-${newsTitles.map(t => '- ' + t).join('\n')}
+Here are the recent news headlines:
+${newsArticles.slice(0, 15).map(n => `- Title: ${n.title}\n  Snippet: ${n.context}`).join('\n\n')}
 
-Select exactly 1 IPO. Return a valid JSON array of objects.
-Format: [ { "company": "Company Name", "topic": "The exact IPO event (e.g., DRHP filed, GMP surge, Subscription Day 1)" } ]
+Select the most important, hype-generating IPO (e.g., Bajaj Housing, NTPC Green, etc.) from the list.
+Return a valid JSON object with the company name, a brief angle, and the context snippet.
+Format: { "company": "Company Name", "angle": "What's happening (e.g. DRHP filed, GMP surging)", "context": "The exact news snippet as ground truth" }
 Ensure your response is ONLY valid JSON.
     `;
 
-    const responseText = await callOpenRouter(prompt, "You are a JSON generator. Output only valid JSON arrays.");
+    const responseText = await callOpenRouter(prompt, "You are a JSON generator. Output only a valid JSON object.");
     const cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
     return JSON.parse(cleanJson);
 }
 
 async function generateIpoArticle(ipoObj) {
-    console.log(`\n✍️ Generating 3000-word IPO article for: ${ipoObj.company} (${ipoObj.topic})...`);
-
-    const prompt = `
-You are the Chief IPO Analyst of MoneyCal.in.
-Write a MASSIVE 3000-word highly detailed IPO article for "${ipoObj.company}".
-Current Event Context: "${ipoObj.topic}"
-
->>> STRICT STRUCTURE REQUIRED <<<
-1. Introduction (Company context, why the IPO matters)
-2. IPO Highlights (Prices, Dates, Lot Size, Issue Size)
 3. Company Overview & Business Model
 4. Financial Analysis (Revenue, Profit, Assets over last 3 years)
 5. Objectives of the Issue
@@ -307,7 +313,7 @@ async function processNextIpo() {
         
         const unseenNews = rawNews.filter(t => {
             for (const pub of publishedTopics) {
-                if (t.toLowerCase().includes(pub.toLowerCase())) return false;
+                if (t.title.toLowerCase().includes(pub.toLowerCase())) return false;
             }
             return true;
         });
@@ -317,14 +323,13 @@ async function processNextIpo() {
             return;
         }
 
-        const selectedIpos = await selectIpoTopic(unseenNews);
+        const ipo = await selectIpoTopic(unseenNews);
 
-        if (!selectedIpos || selectedIpos.length === 0) {
+        if (!ipo || !ipo.company) {
             console.log('⚠️ AI could not pick an IPO topic.');
             return;
         }
 
-        const ipo = selectedIpos[0];
         console.log(`\n✅ Selected new IPO: ${ipo.company}`);
 
         try {

@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { pingGoogleIndexingApi } from '../utils/google-indexer.js';
+import { parseStringPromise } from 'xml2js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,38 +61,46 @@ async function callOpenRouter(prompt, systemPrompt = "You are a specialized API 
 }
 
 async function fetchTrends() {
-    console.log('📡 Fetching Google Trends (India)...');
+    console.log('📡 Fetching Google Trends (India) with Context...');
     const response = await fetch('https://trends.google.com/trending/rss?geo=IN');
     const text = await response.text();
-
-    // Extract titles using regex
-    const titles = [];
-    const regex = /<title>(.*?)<\/title>/g;
-    let match;
-    while ((match = regex.exec(text)) !== null) {
-        let title = match[1].replace(/<\/?title>/g, '').trim();
+    
+    const result = await parseStringPromise(text);
+    const items = result.rss.channel[0].item;
+    
+    const trends = [];
+    for (const item of items) {
+        const title = item.title[0];
+        
+        let context = '';
+        if (item['ht:news_item']) {
+            context = item['ht:news_item'].map(news => news['ht:news_item_title'][0]).join(' | ');
+        } else if (item.description && item.description[0]) {
+            context = item.description[0];
+        }
+        
         if (title !== 'Daily Search Trends' && !title.includes('<![CDATA[')) {
-            titles.push(title);
+            trends.push({ topic: title, context: context });
         }
     }
 
-    if (titles.length === 0) throw new Error('Could not parse trends');
-    return titles;
+    if (trends.length === 0) throw new Error('Could not parse trends');
+    return trends;
 }
 
 async function filterTrendsForFinance(trends) {
     console.log(`🤖 Filtering ${trends.length} trends for business/finance angles...`);
 
     const prompt = `
-I have a list of trending topics from India today.
+I have a list of trending topics from India today along with their latest news headlines (Context).
 I need to select exactly 1 top trending topic that can be written about from a Business, Finance, Economic, or Tech-Consumer perspective.
 Even if a trend is about entertainment or sports (like a movie or cricket), find the business angle (e.g. "Box office collection / business impact", "Player's net worth/brand endorsements").
 
 Here are the trends:
-${trends.map(t => '- ' + t).join('\n')}
+${trends.map(t => `- Topic: ${t.topic}\n  Context: ${t.context}`).join('\n\n')}
 
 Select exactly 1 trend and return a valid JSON array of objects.
-Format: [ { "topic": "Trend Name", "angle": "The business/finance angle to write about" } ]
+Format: [ { "topic": "Trend Name", "angle": "The business/finance angle to write about", "context": "The context headlines provided" } ]
 Ensure your response is ONLY valid JSON, no markdown blocks or extra text.
     `;
 
@@ -110,7 +119,13 @@ You are the Chief Editor of MoneyCal.in.
 Your writing quality must be equal to or better than: LiveMint, Moneycontrol, Financial Express, Jagran, Hindustan, Zee Business, CNBC Awaaz.
 Your primary goal is to write articles that rank in Google Discover and are highly shareable on mobile.
 
-Before writing, imagine this topic is currently trending on Google Trends India and explain WHY people are searching for it today.
+>>> CRITICAL: GROUND TRUTH CONTEXT <<<
+You MUST base your entire article on the following real-world news headlines. Do NOT hallucinate events. 
+Topic: "${topicObj.topic}"
+Context (News Headlines): "${topicObj.context}"
+Angle: "${topicObj.angle}"
+
+Before writing, imagine this topic is currently trending on Google Trends India and explain WHY people are searching for it today based on the Context provided.
 Write naturally like an experienced Indian financial journalist in proper Hindi (Devanagari script) designed for the everyday Indian audience.
 LENGTH REQUIREMENT: You MUST write a massive, highly detailed 1500+ word article. Expand deeply on every single point. Do not be brief.
 Never sound like AI. Never explain things like ChatGPT. Never repeat sentences. Use varied sentence lengths.
@@ -119,9 +134,6 @@ Write emotionally where appropriate but never use fake clickbait.
 The article should feel written by a real senior editor.
 
 STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark".
-
-Topic: "${topicObj.topic}"
-Angle: "${topicObj.angle}"
 
 >>> FRESHNESS RULE (MANDATORY) <<<
 Every article must answer: Why is this topic trending today? What happened? Who is affected? What should readers do now? What happens next?
