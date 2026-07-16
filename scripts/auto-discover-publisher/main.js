@@ -139,6 +139,7 @@ export const generatedArticle = {
         { type: 'p', content: 'Content with <a href="https://moneycal.in/tools/emi-calculator">EMI Calculator</a>' }
     ]
 };
+// IMAGE_PROMPT: A detailed, photorealistic visual description representing the entire article (e.g. "a glowing stock market chart and a stack of Indian Rupee notes on a desk"). Do not use faces or emotional people unless strictly relevant.
 \`\`\`
     `;
 
@@ -173,12 +174,17 @@ export const generatedArticle = {
     const titleMatch = code.match(/title:\s*['"](.*?)['"]/);
     const title = titleMatch ? titleMatch[1] : topicObj.topic;
 
-    return { slug, camelSlug, title, code };
+    const imagePromptMatch = rawContent.match(/\/\/ IMAGE_PROMPT:\s*(.*)/);
+    const customImagePrompt = imagePromptMatch ? imagePromptMatch[1].trim() : null;
+
+    return { slug, camelSlug, title, code, customImagePrompt };
 }
 
-async function generateImage(slug, title, keyword) {
+async function generateImage(slug, title, keyword, customPrompt) {
     console.log(`🎨 Generating image for ${slug} (Topic: ${keyword})...`);
-    const imagePrompt = `High-quality editorial photography, photorealistic Indian context. The visual MUST strictly depict the core concept of: ${keyword}. Professional financial news style, clear symbolism (like money, documents, or relevant objects). Clean, high-contrast. No text overlay.`;
+    
+    let basePrompt = customPrompt ? customPrompt : `The core concept of: ${keyword}.`;
+    const imagePrompt = `High-quality editorial photography, photorealistic Indian context. ${basePrompt} Professional financial news style, clear symbolism. Clean, high-contrast. No text overlay.`;
     const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=675&nologo=true`;
 
     for (let i = 0; i < 3; i++) {
@@ -194,7 +200,22 @@ async function generateImage(slug, title, keyword) {
             await new Promise(r => setTimeout(r, 2000));
         }
     }
-    throw new Error('Failed to generate image after 3 attempts');
+    
+    console.log('⚠️ Pollinations failed. Falling back to Unsplash...');
+    try {
+        const unsplashUrl = `https://source.unsplash.com/1200x675/?${encodeURIComponent(keyword.split(' ').slice(0, 2).join(','))}`;
+        const uResponse = await fetch(unsplashUrl);
+        if (uResponse.ok) {
+            const buffer = await uResponse.arrayBuffer();
+            const imagePath = path.join(IMAGE_DIR, `${slug}.png`);
+            fs.writeFileSync(imagePath, Buffer.from(buffer));
+            return `/images/discover/${slug}.png`;
+        }
+    } catch (err) {
+        console.error('Unsplash fallback failed:', err.message);
+    }
+    
+    throw new Error('Failed to generate image from all sources');
 }
 
 async function updateIndexTs(newArticles) {
@@ -254,7 +275,7 @@ async function processNextArticle() {
 
         try {
             const articleData = await generateArticle(trend);
-            const imagePath = await generateImage(articleData.slug, articleData.title, trend.topic);
+            const imagePath = await generateImage(articleData.slug, articleData.title, trend.topic, articleData.customImagePrompt);
 
             // Save TS file
             const filePath = path.join(DISCOVER_DIR, `${articleData.slug}.ts`);
