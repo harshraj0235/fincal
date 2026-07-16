@@ -3,11 +3,11 @@ export const discoverMetadata = [
     {
         "id": "jio-financial-services-analysis",
         "slug": "jio-financial-services-analysis",
-        "title": "जियो फाइनेंशियल सर्विसेज: IPO से पहले शानदार कमाई का रहस्य",
-        "snippet": "जियो फाइनेंशियल सर्विसेज की कमाई में 227% का इजाफा, जानें इसका असर निवेशकों पर...",
+        "title": "जियो फाइनेंशियल सर्विसेज: आईपीओ से पहले कमाई में धमाका",
+        "snippet": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें इसके पीछे के कारण और इसका आईपीओ पर असर...",
         "coverImage": "/images/discover/jio-financial-services-analysis.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-16T17:51:57.271Z"
+        "date": "2026-07-16T17:44:54.076Z"
     },
     {
         "id": "agriculture-machinery-impact",
