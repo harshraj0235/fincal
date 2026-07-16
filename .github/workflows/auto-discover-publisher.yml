@@ -54,7 +54,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No new articles generated."
           else
-            git commit -m "🤖 Auto-publish trending discover articles [skip ci]"
+            git commit -m "🤖 Auto-publish trending discover articles"
             git push origin main
           fi
 
