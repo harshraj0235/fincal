@@ -178,7 +178,7 @@ export const generatedArticle = {
 
 async function generateImage(slug, title, keyword) {
     console.log(`🎨 Generating image for ${slug} (Topic: ${keyword})...`);
-    const imagePrompt = `High-quality editorial photography, photorealistic Indian context. The image MUST strictly depict the topic: ${keyword}. Expressive subjects showing real emotion related to ${title}. Clean, high-contrast, news publication style. No text overlay. Premium magazine quality.`;
+    const imagePrompt = `High-quality editorial photography, photorealistic Indian context. The visual MUST strictly depict the core concept of: ${keyword}. Professional financial news style, clear symbolism (like money, documents, or relevant objects). Clean, high-contrast. No text overlay.`;
     const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=675&nologo=true`;
 
     for (let i = 0; i < 3; i++) {
