@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { pingGoogleIndexingApi } from '../utils/google-indexer.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -360,6 +361,10 @@ async function processNextArticle() {
             execSync('npm run generate-sitemaps', { cwd: ROOT_DIR, stdio: 'inherit' });
             
             console.log(`🎉 Article published and sitemaps updated successfully!`);
+            
+            // 🚀 Instantly Index on Google
+            await pingGoogleIndexingApi(`https://moneycal.in/discover/${articleData.slug}`);
+
             publishedTopics.add(trend.topic);
             fs.appendFileSync(PUBLISHED_TRENDS_FILE, trend.topic + '\n');
 

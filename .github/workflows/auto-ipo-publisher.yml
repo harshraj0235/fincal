@@ -38,6 +38,7 @@ jobs:
         run: node scripts/auto-ipo-publisher/main.js
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
 
       - name: 🏗️ Build Project (Verify No Errors)
         run: npm run build

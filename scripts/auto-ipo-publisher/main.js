@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { pingGoogleIndexingApi } from '../utils/google-indexer.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -341,6 +342,9 @@ async function processNextIpo() {
             execSync('npm run generate-sitemaps', { cwd: ROOT_DIR, stdio: 'inherit' });
             
             console.log(`🎉 IPO article published successfully!`);
+            
+            // 🚀 Instantly Index on Google
+            await pingGoogleIndexingApi(`https://moneycal.in/ipo/${articleData.slug}`);
             
             // Log company name to avoid duplicates
             publishedTopics.add(ipo.company);
