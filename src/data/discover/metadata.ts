@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "hang-seng-index-impact",
+        "slug": "hang-seng-index-impact",
+        "title": "Hang Seng Index ka Asar: Aapki Investment Strategy par Kaisa Hoga Prabhav?",
+        "snippet": "Hang Seng Index ka prabhav aapki investments aur business outlook par kaise hota hai, yeh jaaniye.",
+        "coverImage": "/images/discover/hang-seng-index-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T08:48:11.615Z"
+    },
+    {
         "id": "epfo-accounts-interest-credit-impact",
         "slug": "epfo-accounts-interest-credit-impact",
         "title": "EPFO Interest Credit: How It Transforms Your Savings and Investments",

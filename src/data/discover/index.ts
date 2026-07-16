@@ -1,3 +1,4 @@
+import { hangSengIndexImpact } from './hang-seng-index-impact';
 import { epfoAccountsInterestCreditImpact } from './epfo-accounts-interest-credit-impact';
 import { oneplusEuropeMarketStrategy } from './oneplus-europe-market-strategy';
 import { oneplusShutdownImpact } from './oneplus-shutdown-impact';
@@ -610,6 +611,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    hangSengIndexImpact,
+
     epfoAccountsInterestCreditImpact,
 
     oneplusEuropeMarketStrategy,
