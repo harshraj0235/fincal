@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "agriculture-machinery-impact",
+        "slug": "agriculture-machinery-impact",
+        "title": "कृषि यंत्रों का प्रभाव: किसानों की उत्पादकता और आर्थिक लाभ",
+        "snippet": "कृषि यंत्रों की मदद से किसानों की उत्पादकता में वृद्धि और आर्थिक लाभ। जानें कैसे।",
+        "coverImage": "/images/discover/agriculture-machinery-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T15:55:08.750Z"
+    },
+    {
         "id": "wipro-share-q1-results-impact",
         "slug": "wipro-share-q1-results-impact",
         "title": "Wipro के Q1 परिणाम: निवेशकों की धारणा पर असर",
@@ -172,139 +181,13 @@ export const discoverMetadata = [
         "date": "2026-07-15T17:42:34.843Z"
     },
     {
-        "id": "iphone-18-release-date-leaks-features-2026",
-        "slug": "iphone-18-release-date-leaks-features-2026",
-        "title": "iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!",
-        "snippet": "एप्पल लवर्स के लिए बड़ी खबर! आईफोन 18 सीरीज की लॉन्चिंग टाइमलाइन और कुछ हैरान करने वाले फीचर्स सामने आ गए हैं। प्रोसेसर से लेकर कैमरा अपग्रेड तक, जानिए क्या कुछ होगा खास।",
-        "coverImage": "/images/discover/iphone-18-release-date-leak.png",
+        "id": "ibm-angel-one-share-price-surge",
+        "slug": "ibm-angel-one-share-price-surge",
+        "title": "IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच",
+        "snippet": "Angel One और IBM के शेयरों में आई बड़ी हलचल के पीछे का कारण क्या है? जानिए Q1 FY27 रिजल्ट्स, डिविडेंड और AI के कारण बाजार में आए इस बड़े बदलाव की पूरी कहानी।",
+        "coverImage": "/images/discover/ibm-angel-one-share-price-surge.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-14T13:00:00+05:30"
-    },
-    {
-        "id": "8th-pay-commission-hra-calculator-x-y-z-cities",
-        "slug": "8th-pay-commission-hra-calculator-x-y-z-cities",
-        "title": "8th Pay Commission Calculator: केंद्रीय कर्मचारियों की लगेगी लॉटरी! नए HRA कैलकुलेटर से जानें कितनी बढ़ेगी आपकी इन-हैंड सैलरी",
-        "snippet": "8वें वेतन आयोग के लागू होने से केंद्रीय कर्मचारियों के हाउस रेंट अलाउंस (HRA) में भारी उछाल आने की उम्मीद है। फिटमेंट फैक्टर और X, Y, Z शहरों के हिसाब से अपने नए वेतन का गणित यहाँ समझें।",
-        "coverImage": "/images/discover/8th-pay-commission-hra.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T12:00:00+05:30"
-    },
-    {
-        "id": "sbi-amc-ipo-day-1-gmp-subscription",
-        "slug": "sbi-amc-ipo-day-1-gmp-subscription",
-        "title": "SBI Funds Management IPO: पहले ही दिन GMP ने मचाया गदर! दांव लगाने से पहले जानें आज का लेटेस्ट प्रीमियम",
-        "snippet": "देश का सबसे बड़ा 11,693 करोड़ रुपये का AMC आईपीओ खुल चुका है। ग्रे मार्केट में यह करीब 15-16% के प्रीमियम पर ट्रेड कर रहा है। क्या आपको इसमें पैसा लगाना चाहिए? एक्सपर्ट्स की राय देखें।",
-        "coverImage": "/images/discover/sbi-amc-ipo-day-1.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T11:00:00+05:30"
-    },
-    {
-        "id": "ranbir-kapoor-pune-land-deal-16-crore",
-        "slug": "ranbir-kapoor-pune-land-deal-16-crore",
-        "title": "रणबीर कपूर ने पुणे में खरीदी करोड़ों की जमीन! अयोध्या के बाद अब यहां लगाया बड़ा दांव",
-        "snippet": "बॉलीवुड के 'रॉकस्टार' रणबीर कपूर ने पुणे के मुलशी में 25.7 एकड़ जमीन की बड़ी डील की है। इसके लिए उन्होंने ₹16.42 करोड़ चुकाए हैं। जानिए इस लग्जरी इन्वेस्टमेंट की पूरी डिटेल।",
-        "coverImage": "/images/discover/ranbir-kapoor-pune-land-deal.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "wi-vs-nz-2nd-odi-jayden-lennox-5-wickets",
-        "slug": "wi-vs-nz-2nd-odi-jayden-lennox-5-wickets",
-        "title": "WI vs NZ: 2nd ODI में न्यूजीलैंड ने पलटी बाजी, जानें 5 विकेट से जीत के असली हीरो कौन!",
-        "snippet": "पहले वनडे में हार के बाद कीवी टीम ने शानदार वापसी की। जयडेन लेनॉक्स के 'पंजा' (5 विकेट) के दम पर वेस्टइंडीज की टीम ढेर हो गई। जानें इस थ्रिलर मैच के बड़े टर्निंग पॉइंट्स।",
-        "coverImage": "/images/discover/wi-vs-nz-2nd-odi.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "bank-holiday-alert-july-13-19",
-        "slug": "bank-holiday-alert-july-13-19",
-        "title": "Bank Holiday Alert: अगले हफ्ते 4 दिन बंद रहेंगे बैंक, आज ही निपटा लें काम!",
-        "snippet": "जुलाई के मध्य में (13-19 जुलाई) कई राज्यों में बैंक लगातार 4 दिन बंद रह सकते हैं। RBI की छुट्टियों की लिस्ट देखें और जानें कि डिजिटल बैंकिंग का कैसे उपयोग करें।",
-        "coverImage": "/images/discover/bank-holiday-alert-july-13-19.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "kusumgar-ipo-allotment-status-bse-check-guide",
-        "slug": "kusumgar-ipo-allotment-status-bse-check-guide",
-        "title": "Kusumgar IPO Allotment Status: आपको शेयर मिले या पैसे होंगे रिफंड? ऐसे चेक करें अपना स्टेटस",
-        "snippet": "कुसुमगर कॉरपोरेट्स लिमिटेड (Kusumgar Corporates IPO) का अलॉटमेंट स्टेटस 13 जुलाई को जारी हो चुका है। जानें कि Bigshare Services या BSE पर कैसे चेक करें कि आपको शेयर मिले या नहीं।",
-        "coverImage": "/images/discover/kusumgar-ipo-allotment-status.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "sbi-funds-management-ipo-gmp-listing-gains",
-        "slug": "sbi-funds-management-ipo-gmp-listing-gains",
-        "title": "SBI Funds Management IPO: खुलने से पहले ग्रे मार्केट में मची हलचल, जानें लेटेस्ट GMP और कमाई",
-        "snippet": "SBI Funds Management IPO 14 जुलाई को खुल चुका है। ग्रे मार्केट में (GMP) 100 रुपये से ज्यादा का प्रीमियम चल रहा है। जानें क्या आपको निवेश करना चाहिए या नहीं।",
-        "coverImage": "/images/discover/sbi-funds-management-ipo-gmp.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "hdfc-bank-tcs-jobs-automation-ai-impact",
-        "slug": "hdfc-bank-tcs-jobs-automation-ai-impact",
-        "title": "HDFC Bank और TCS में बड़ा बदलाव: क्या AI और ऑटोमेशन के कारण जा रही है बैंकिंग नौकरियां?",
-        "snippet": "HDFC बैंक में 9 साल में पहली बार कर्मचारियों की संख्या घटी, वहीं TCS 2026 में AI टैलेंट की बंपर भर्ती कर रहा है। जानें इस बड़े बदलाव का आपकी नौकरी पर क्या असर होगा।",
-        "coverImage": "/images/discover/hdfc-bank-tcs-jobs-automation.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "kalyan-jewellers-share-price-target-buy-sell",
-        "slug": "kalyan-jewellers-share-price-target-buy-sell",
-        "title": "Kalyan Jewellers Share Price: रॉकेट बना यह ज्वेलरी शेयर, क्या अभी खरीदने पर होगा बंपर मुनाफा?",
-        "snippet": "Kalyan Jewellers के शेयरों में 50% से ज्यादा का उछाल आया है। Citi और ICICI जैसी ब्रोकरेज फर्म्स ने ₹750 तक का टारगेट प्राइस दिया है। जानें क्या आपको निवेश करना चाहिए।",
-        "coverImage": "/images/discover/kalyan-jewellers-share-price-target.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "cupid-share-price-multibagger-target-analysis",
-        "slug": "cupid-share-price-multibagger-target-analysis",
-        "title": "Cupid Ltd Share Price: 100 रुपये से कम का यह पेनी स्टॉक कर रहा कमाल, क्या बनेगा अगला मल्टीबैगर?",
-        "snippet": "Cupid Ltd के शेयर ने पिछले 1 साल में 800% से ज्यादा का रिटर्न देकर निवेशकों को मालामाल कर दिया है। कंपनी के नए बिजनेस प्लान और IVD सेगमेंट से 2026 में शेयर ₹200 का टारगेट छू सकता है।",
-        "coverImage": "/images/discover/cupid-share-price-multibagger.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "gold-price-prediction-80000-festival-sgb-investment",
-        "slug": "gold-price-prediction-80000-festival-sgb-investment",
-        "title": "Gold Price Prediction: क्या दीवाली तक 80,000 के पार जाएगा सोना? जानें कहां निवेश करना है सही",
-        "snippet": "जुलाई 2026 में सोने की कीमतों में भारी उतार-चढ़ाव देखा जा रहा है। जानें क्या दीवाली तक सोना ₹80,000 का स्तर पार कर पाएगा और SGB में निवेश के नए नियम क्या हैं।",
-        "coverImage": "/images/discover/gold-price-prediction-diwali.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "epfo-new-rules-claim-settlement-update-2026",
-        "slug": "epfo-new-rules-claim-settlement-update-2026",
-        "title": "EPFO New Rules: PF से पैसा निकालना हुआ और भी आसान, सरकार ने बदल दिए क्लेम सेटलमेंट के ये 3 नियम",
-        "snippet": "EPFO 3.0 के तहत जुलाई 2026 में पीएफ क्लेम सेटलमेंट के नियमों में बड़ा बदलाव हुआ है। ऑटो-सेटलमेंट लिमिट 1 लाख से बढ़ाकर 5 लाख कर दी गई है। जानें सभी नए नियम।",
-        "coverImage": "/images/discover/epfo-new-rules-claim-settlement.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "nifty-today-groww-trading-beginners-guide",
-        "slug": "nifty-today-groww-trading-beginners-guide",
-        "title": "Nifty 50 में पहली बार कैसे लगाएं पैसा? Groww ऐप से ट्रेडिंग शुरू करने का पूरा प्रोसेस",
-        "snippet": "क्या आप शेयर बाजार में नए हैं? जानें Nifty 50 क्या है और Groww ऐप का इस्तेमाल करके आप सुरक्षित रूप से अपना पहला निवेश कैसे शुरू कर सकते हैं।",
-        "coverImage": "/images/discover/nifty-today-groww-trading.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
-    },
-    {
-        "id": "ankur-warikoo-investment-tips-index-funds-wealth",
-        "slug": "ankur-warikoo-investment-tips-index-funds-wealth",
-        "title": "Ankur Warikoo की सलाह: सिर्फ 5 मिनट में अपना पैसा बढ़ाएं, Index Funds से बनें करोड़पति",
-        "snippet": "अंकुर वारिकू जैसे फाइनेंशियल इन्फ्लूएंसर का मानना है कि इंडेक्स फंड्स में पैसिव निवेश करके कोई भी व्यक्ति लंबी अवधि में करोड़पति बन सकता है। जानें उनकी 5 सबसे बड़ी सलाह।",
-        "coverImage": "/images/discover/ankur-warikoo-investment-tips.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-14T10:00:00+05:30"
+        "date": "2026-07-15T12:00:00+05:30"
     },
     {
         "id": "toxic-movie-cast-nayanthara-kiara-huma",
@@ -312,6 +195,15 @@ export const discoverMetadata = [
         "title": "Toxic Cast: Nayanthara और Kiara Advani चलाएंगी गोवा का अंडरवर्ल्ड?",
         "snippet": "Toxic movie में महिलाओं का दबदबा! नयनतारा और कियारा आडवाणी के खूंखार रोल्स के बारे में वो बातें जो इंटरनेट पर लीक हो गई हैं।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:45:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-review-post-credit-scene",
+        "slug": "odyssey-movie-review-post-credit-scene",
+        "title": "The Odyssey Movie Review: Don't Watch It Until You See This Post-Credit Scene!",
+        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में पहली बार होगा एक सीक्रेट पोस्ट-क्रेडिट सीन! जानिए यह सीन क्यों इतना खास है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSboj1QTsBlQ8SYN7gjXM6_ICAAohBUoTVEEEHAHnRN4A&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:45:00+05:30"
     },
@@ -325,6 +217,15 @@ export const discoverMetadata = [
         "date": "2026-07-13T12:40:00+05:30"
     },
     {
+        "id": "odyssey-where-to-watch-online-netflix-prime",
+        "slug": "odyssey-where-to-watch-online-netflix-prime",
+        "title": "Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?",
+        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey के डिजिटल राइट्स किस ओटीटी (OTT) प्लेटफॉर्म के पास जाएंगे? जानिए स्ट्रीमिंग डिटेल्स।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnOCU-JCKez_dp8jJmITP0bunaWTNJZL4-M5YTNfYuQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:40:00+05:30"
+    },
+    {
         "id": "toxic-movie-release-date-4-festivals-strategy",
         "slug": "toxic-movie-release-date-4-festivals-strategy",
         "title": "Toxic Release Date: मेकर्स का मास्टरस्ट्रोक! एक साथ 4 बड़े त्योहारों पर कब्जा",
@@ -334,11 +235,29 @@ export const discoverMetadata = [
         "date": "2026-07-13T12:35:00+05:30"
     },
     {
+        "id": "odyssey-full-movie-story-leak-mythology",
+        "slug": "odyssey-full-movie-story-leak-mythology",
+        "title": "The Odyssey Full Movie Story Leak: Is This Hollywood's Greatest Mythological Epic?",
+        "snippet": "इथाका के राजा ओडीसियस की खूनी वापसी! 100 राजकुमारों का बेरहमी से कत्ल और पत्नी से दोबारा मिलने की रोंगटे खड़े कर देने वाली कहानी।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8GQxtAZVtPO--s1a9Iy8a0hd24RVyjrbWhOnXHWsUA&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:35:00+05:30"
+    },
+    {
         "id": "toxic-movie-hollywood-action-director-jj-perry",
         "slug": "toxic-movie-hollywood-action-director-jj-perry",
         "title": "Toxic Movie Action: John Wick के स्टंटमैन ने Yash को दिया खतरनाक लुक!",
         "snippet": "John Wick के एक्शन कोरियोग्राफर J.J. Perry ने Toxic में एक्शन का लेवल हॉलीवुड जैसा कर दिया है। जानिए फिल्म में क्या खास होगा।",
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPk9DaIDLmkR7dq5-uUKnPE9_cnSyMWAOXuZsi6szrA&s",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:30:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-monsters-magic-box-office",
+        "slug": "odyssey-movie-monsters-magic-box-office",
+        "title": "Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!",
+        "snippet": "बिना CGI के शूट हुए साइक्लोप्स और समुद्र के देवताओं के भयंकर युद्ध सीन! जानिए 250 मिलियन डॉलर की फिल्म द ओडिसी के बॉक्स ऑफिस प्रेडिक्शंस।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4X5--b30MX5U_UMNGplwfg0E42o4WNxI00Cr6k2ZAtA&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:30:00+05:30"
     },
@@ -440,42 +359,6 @@ export const discoverMetadata = [
         "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhgUTYO2xabedpb2UK3Sm-IQBUlNfm3LnlTjamtT4SA&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:00:00+05:30"
-    },
-    {
-        "id": "france-vs-sweden-tactical-shock",
-        "slug": "france-vs-sweden-tactical-shock",
-        "title": "France vs Sweden: क्यों विश्व फुटबॉल में फ्रांस बनाम स्वीडन की भिड़ंत बन गई है सबसे बड़ी प्रतिद्वंद्विता?",
-        "snippet": "FIFA World Cup 2026 के राउंड ऑफ 32 में फ्रांस और स्वीडन के बीच हुए मुकाबले ने फुटबॉल जगत को हिला कर रख दिया है। जानिए कोच दिदिएर डेसचैम्प्स की वह रणनीति जिसने स्वीडन को पस्त कर दिया।",
-        "coverImage": "/images/discover/france-sweden-tactics.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "cote-divoire-vs-norway-shock-result",
-        "slug": "cote-divoire-vs-norway-shock-result",
-        "title": "How Côte d'Ivoire Just Exposed Norway’s Biggest Tactical Flaw to the Entire World",
-        "snippet": "A deep dive into how an African powerhouse completely neutralized Europe's elite attackers and exposed a glaring systemic weakness.",
-        "coverImage": "/images/discover/cote-divoire-norway-tactics.png",
-        "author": "Global Football Analyst",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "raul-jimenez-renaissance",
-        "slug": "raul-jimenez-renaissance",
-        "title": "Why Raúl Jiménez’s Latest On-Field Display Has Left Football Pundits Speechless",
-        "snippet": "A look into the remarkable career revival of Raúl Jiménez, detailing his incredible resilience and how he definitively silenced his fiercest critics.",
-        "coverImage": "/images/discover/raul-jimenez-renaissance.png",
-        "author": "Sports Desk",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "gilberto-mora-phenomenon",
-        "slug": "gilberto-mora-phenomenon",
-        "title": "Europe’s Elite Clubs Are Already Racing to Sign Mexico’s New 15-Year-Old Wonderkid",
-        "snippet": "Introducing Gilberto Mora to global fans: a deep dive into the scout reports, his record-breaking rise, and the sudden astronomical spike in his price tag.",
-        "coverImage": "/images/discover/gilberto-mora-phenomenon.png",
-        "author": "Football Scout Analytics",
-        "date": "2026-07-04T06:22:48.508Z"
     },
     {
         "id": "india-secret-strategy-england-t20",
@@ -806,49 +689,139 @@ export const discoverMetadata = [
         "date": "2026-07-15T12:30:00+05:30"
     },
     {
-        "id": "ibm-angel-one-share-price-surge",
-        "slug": "ibm-angel-one-share-price-surge",
-        "title": "IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच",
-        "snippet": "Angel One और IBM के शेयरों में आई बड़ी हलचल के पीछे का कारण क्या है? जानिए Q1 FY27 रिजल्ट्स, डिविडेंड और AI के कारण बाजार में आए इस बड़े बदलाव की पूरी कहानी।",
-        "coverImage": "/images/discover/ibm-angel-one-share-price-surge.png",
+        "id": "iphone-18-release-date-leaks-features-2026",
+        "slug": "iphone-18-release-date-leaks-features-2026",
+        "title": "iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!",
+        "snippet": "एप्पल लवर्स के लिए बड़ी खबर! आईफोन 18 सीरीज की लॉन्चिंग टाइमलाइन और कुछ हैरान करने वाले फीचर्स सामने आ गए हैं। प्रोसेसर से लेकर कैमरा अपग्रेड तक, जानिए क्या कुछ होगा खास।",
+        "coverImage": "/images/discover/iphone-18-release-date-leak.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-15T12:00:00+05:30"
+        "date": "2026-07-14T13:00:00+05:30"
     },
     {
-        "id": "odyssey-movie-review-post-credit-scene",
-        "slug": "odyssey-movie-review-post-credit-scene",
-        "title": "The Odyssey Movie Review: Don't Watch It Until You See This Post-Credit Scene!",
-        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में पहली बार होगा एक सीक्रेट पोस्ट-क्रेडिट सीन! जानिए यह सीन क्यों इतना खास है।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSboj1QTsBlQ8SYN7gjXM6_ICAAohBUoTVEEEHAHnRN4A&s=10",
+        "id": "8th-pay-commission-hra-calculator-x-y-z-cities",
+        "slug": "8th-pay-commission-hra-calculator-x-y-z-cities",
+        "title": "8th Pay Commission Calculator: केंद्रीय कर्मचारियों की लगेगी लॉटरी! नए HRA कैलकुलेटर से जानें कितनी बढ़ेगी आपकी इन-हैंड सैलरी",
+        "snippet": "8वें वेतन आयोग के लागू होने से केंद्रीय कर्मचारियों के हाउस रेंट अलाउंस (HRA) में भारी उछाल आने की उम्मीद है। फिटमेंट फैक्टर और X, Y, Z शहरों के हिसाब से अपने नए वेतन का गणित यहाँ समझें।",
+        "coverImage": "/images/discover/8th-pay-commission-hra.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-13T12:45:00+05:30"
+        "date": "2026-07-14T12:00:00+05:30"
     },
     {
-        "id": "odyssey-where-to-watch-online-netflix-prime",
-        "slug": "odyssey-where-to-watch-online-netflix-prime",
-        "title": "Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?",
-        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey के डिजिटल राइट्स किस ओटीटी (OTT) प्लेटफॉर्म के पास जाएंगे? जानिए स्ट्रीमिंग डिटेल्स।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnOCU-JCKez_dp8jJmITP0bunaWTNJZL4-M5YTNfYuQ&s=10",
+        "id": "sbi-amc-ipo-day-1-gmp-subscription",
+        "slug": "sbi-amc-ipo-day-1-gmp-subscription",
+        "title": "SBI Funds Management IPO: पहले ही दिन GMP ने मचाया गदर! दांव लगाने से पहले जानें आज का लेटेस्ट प्रीमियम",
+        "snippet": "देश का सबसे बड़ा 11,693 करोड़ रुपये का AMC आईपीओ खुल चुका है। ग्रे मार्केट में यह करीब 15-16% के प्रीमियम पर ट्रेड कर रहा है। क्या आपको इसमें पैसा लगाना चाहिए? एक्सपर्ट्स की राय देखें।",
+        "coverImage": "/images/discover/sbi-amc-ipo-day-1.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-13T12:40:00+05:30"
+        "date": "2026-07-14T11:00:00+05:30"
     },
     {
-        "id": "odyssey-full-movie-story-leak-mythology",
-        "slug": "odyssey-full-movie-story-leak-mythology",
-        "title": "The Odyssey Full Movie Story Leak: Is This Hollywood's Greatest Mythological Epic?",
-        "snippet": "इथाका के राजा ओडीसियस की खूनी वापसी! 100 राजकुमारों का बेरहमी से कत्ल और पत्नी से दोबारा मिलने की रोंगटे खड़े कर देने वाली कहानी।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8GQxtAZVtPO--s1a9Iy8a0hd24RVyjrbWhOnXHWsUA&s=10",
+        "id": "ranbir-kapoor-pune-land-deal-16-crore",
+        "slug": "ranbir-kapoor-pune-land-deal-16-crore",
+        "title": "रणबीर कपूर ने पुणे में खरीदी करोड़ों की जमीन! अयोध्या के बाद अब यहां लगाया बड़ा दांव",
+        "snippet": "बॉलीवुड के 'रॉकस्टार' रणबीर कपूर ने पुणे के मुलशी में 25.7 एकड़ जमीन की बड़ी डील की है। इसके लिए उन्होंने ₹16.42 करोड़ चुकाए हैं। जानिए इस लग्जरी इन्वेस्टमेंट की पूरी डिटेल।",
+        "coverImage": "/images/discover/ranbir-kapoor-pune-land-deal.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-13T12:35:00+05:30"
+        "date": "2026-07-14T10:00:00+05:30"
     },
     {
-        "id": "odyssey-movie-monsters-magic-box-office",
-        "slug": "odyssey-movie-monsters-magic-box-office",
-        "title": "Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!",
-        "snippet": "बिना CGI के शूट हुए साइक्लोप्स और समुद्र के देवताओं के भयंकर युद्ध सीन! जानिए 250 मिलियन डॉलर की फिल्म द ओडिसी के बॉक्स ऑफिस प्रेडिक्शंस।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4X5--b30MX5U_UMNGplwfg0E42o4WNxI00Cr6k2ZAtA&s=10",
+        "id": "wi-vs-nz-2nd-odi-jayden-lennox-5-wickets",
+        "slug": "wi-vs-nz-2nd-odi-jayden-lennox-5-wickets",
+        "title": "WI vs NZ: 2nd ODI में न्यूजीलैंड ने पलटी बाजी, जानें 5 विकेट से जीत के असली हीरो कौन!",
+        "snippet": "पहले वनडे में हार के बाद कीवी टीम ने शानदार वापसी की। जयडेन लेनॉक्स के 'पंजा' (5 विकेट) के दम पर वेस्टइंडीज की टीम ढेर हो गई। जानें इस थ्रिलर मैच के बड़े टर्निंग पॉइंट्स।",
+        "coverImage": "/images/discover/wi-vs-nz-2nd-odi.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-13T12:30:00+05:30"
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "bank-holiday-alert-july-13-19",
+        "slug": "bank-holiday-alert-july-13-19",
+        "title": "Bank Holiday Alert: अगले हफ्ते 4 दिन बंद रहेंगे बैंक, आज ही निपटा लें काम!",
+        "snippet": "जुलाई के मध्य में (13-19 जुलाई) कई राज्यों में बैंक लगातार 4 दिन बंद रह सकते हैं। RBI की छुट्टियों की लिस्ट देखें और जानें कि डिजिटल बैंकिंग का कैसे उपयोग करें।",
+        "coverImage": "/images/discover/bank-holiday-alert-july-13-19.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "kusumgar-ipo-allotment-status-bse-check-guide",
+        "slug": "kusumgar-ipo-allotment-status-bse-check-guide",
+        "title": "Kusumgar IPO Allotment Status: आपको शेयर मिले या पैसे होंगे रिफंड? ऐसे चेक करें अपना स्टेटस",
+        "snippet": "कुसुमगर कॉरपोरेट्स लिमिटेड (Kusumgar Corporates IPO) का अलॉटमेंट स्टेटस 13 जुलाई को जारी हो चुका है। जानें कि Bigshare Services या BSE पर कैसे चेक करें कि आपको शेयर मिले या नहीं।",
+        "coverImage": "/images/discover/kusumgar-ipo-allotment-status.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "sbi-funds-management-ipo-gmp-listing-gains",
+        "slug": "sbi-funds-management-ipo-gmp-listing-gains",
+        "title": "SBI Funds Management IPO: खुलने से पहले ग्रे मार्केट में मची हलचल, जानें लेटेस्ट GMP और कमाई",
+        "snippet": "SBI Funds Management IPO 14 जुलाई को खुल चुका है। ग्रे मार्केट में (GMP) 100 रुपये से ज्यादा का प्रीमियम चल रहा है। जानें क्या आपको निवेश करना चाहिए या नहीं।",
+        "coverImage": "/images/discover/sbi-funds-management-ipo-gmp.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "hdfc-bank-tcs-jobs-automation-ai-impact",
+        "slug": "hdfc-bank-tcs-jobs-automation-ai-impact",
+        "title": "HDFC Bank और TCS में बड़ा बदलाव: क्या AI और ऑटोमेशन के कारण जा रही है बैंकिंग नौकरियां?",
+        "snippet": "HDFC बैंक में 9 साल में पहली बार कर्मचारियों की संख्या घटी, वहीं TCS 2026 में AI टैलेंट की बंपर भर्ती कर रहा है। जानें इस बड़े बदलाव का आपकी नौकरी पर क्या असर होगा।",
+        "coverImage": "/images/discover/hdfc-bank-tcs-jobs-automation.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "kalyan-jewellers-share-price-target-buy-sell",
+        "slug": "kalyan-jewellers-share-price-target-buy-sell",
+        "title": "Kalyan Jewellers Share Price: रॉकेट बना यह ज्वेलरी शेयर, क्या अभी खरीदने पर होगा बंपर मुनाफा?",
+        "snippet": "Kalyan Jewellers के शेयरों में 50% से ज्यादा का उछाल आया है। Citi और ICICI जैसी ब्रोकरेज फर्म्स ने ₹750 तक का टारगेट प्राइस दिया है। जानें क्या आपको निवेश करना चाहिए।",
+        "coverImage": "/images/discover/kalyan-jewellers-share-price-target.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "cupid-share-price-multibagger-target-analysis",
+        "slug": "cupid-share-price-multibagger-target-analysis",
+        "title": "Cupid Ltd Share Price: 100 रुपये से कम का यह पेनी स्टॉक कर रहा कमाल, क्या बनेगा अगला मल्टीबैगर?",
+        "snippet": "Cupid Ltd के शेयर ने पिछले 1 साल में 800% से ज्यादा का रिटर्न देकर निवेशकों को मालामाल कर दिया है। कंपनी के नए बिजनेस प्लान और IVD सेगमेंट से 2026 में शेयर ₹200 का टारगेट छू सकता है।",
+        "coverImage": "/images/discover/cupid-share-price-multibagger.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "gold-price-prediction-80000-festival-sgb-investment",
+        "slug": "gold-price-prediction-80000-festival-sgb-investment",
+        "title": "Gold Price Prediction: क्या दीवाली तक 80,000 के पार जाएगा सोना? जानें कहां निवेश करना है सही",
+        "snippet": "जुलाई 2026 में सोने की कीमतों में भारी उतार-चढ़ाव देखा जा रहा है। जानें क्या दीवाली तक सोना ₹80,000 का स्तर पार कर पाएगा और SGB में निवेश के नए नियम क्या हैं।",
+        "coverImage": "/images/discover/gold-price-prediction-diwali.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "epfo-new-rules-claim-settlement-update-2026",
+        "slug": "epfo-new-rules-claim-settlement-update-2026",
+        "title": "EPFO New Rules: PF से पैसा निकालना हुआ और भी आसान, सरकार ने बदल दिए क्लेम सेटलमेंट के ये 3 नियम",
+        "snippet": "EPFO 3.0 के तहत जुलाई 2026 में पीएफ क्लेम सेटलमेंट के नियमों में बड़ा बदलाव हुआ है। ऑटो-सेटलमेंट लिमिट 1 लाख से बढ़ाकर 5 लाख कर दी गई है। जानें सभी नए नियम।",
+        "coverImage": "/images/discover/epfo-new-rules-claim-settlement.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "nifty-today-groww-trading-beginners-guide",
+        "slug": "nifty-today-groww-trading-beginners-guide",
+        "title": "Nifty 50 में पहली बार कैसे लगाएं पैसा? Groww ऐप से ट्रेडिंग शुरू करने का पूरा प्रोसेस",
+        "snippet": "क्या आप शेयर बाजार में नए हैं? जानें Nifty 50 क्या है और Groww ऐप का इस्तेमाल करके आप सुरक्षित रूप से अपना पहला निवेश कैसे शुरू कर सकते हैं।",
+        "coverImage": "/images/discover/nifty-today-groww-trading.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
+    },
+    {
+        "id": "ankur-warikoo-investment-tips-index-funds-wealth",
+        "slug": "ankur-warikoo-investment-tips-index-funds-wealth",
+        "title": "Ankur Warikoo की सलाह: सिर्फ 5 मिनट में अपना पैसा बढ़ाएं, Index Funds से बनें करोड़पति",
+        "snippet": "अंकुर वारिकू जैसे फाइनेंशियल इन्फ्लूएंसर का मानना है कि इंडेक्स फंड्स में पैसिव निवेश करके कोई भी व्यक्ति लंबी अवधि में करोड़पति बन सकता है। जानें उनकी 5 सबसे बड़ी सलाह।",
+        "coverImage": "/images/discover/ankur-warikoo-investment-tips.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-14T10:00:00+05:30"
     },
     {
         "id": "bcci-squad-changes-rohit-sharma",
@@ -4169,6 +4142,42 @@ export const discoverMetadata = [
         "snippet": "A deeper look into the controversial referee decisions, player clashes, and locker room statements following the highly contested Mexico vs Ecuador match.",
         "coverImage": "/images/discover/mexico-ecuador-aftermath.png",
         "author": "Football Insider",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "france-vs-sweden-tactical-shock",
+        "slug": "france-vs-sweden-tactical-shock",
+        "title": "France vs Sweden: क्यों विश्व फुटबॉल में फ्रांस बनाम स्वीडन की भिड़ंत बन गई है सबसे बड़ी प्रतिद्वंद्विता?",
+        "snippet": "FIFA World Cup 2026 के राउंड ऑफ 32 में फ्रांस और स्वीडन के बीच हुए मुकाबले ने फुटबॉल जगत को हिला कर रख दिया है। जानिए कोच दिदिएर डेसचैम्प्स की वह रणनीति जिसने स्वीडन को पस्त कर दिया।",
+        "coverImage": "/images/discover/france-sweden-tactics.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "cote-divoire-vs-norway-shock-result",
+        "slug": "cote-divoire-vs-norway-shock-result",
+        "title": "How Côte d'Ivoire Just Exposed Norway’s Biggest Tactical Flaw to the Entire World",
+        "snippet": "A deep dive into how an African powerhouse completely neutralized Europe's elite attackers and exposed a glaring systemic weakness.",
+        "coverImage": "/images/discover/cote-divoire-norway-tactics.png",
+        "author": "Global Football Analyst",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "raul-jimenez-renaissance",
+        "slug": "raul-jimenez-renaissance",
+        "title": "Why Raúl Jiménez’s Latest On-Field Display Has Left Football Pundits Speechless",
+        "snippet": "A look into the remarkable career revival of Raúl Jiménez, detailing his incredible resilience and how he definitively silenced his fiercest critics.",
+        "coverImage": "/images/discover/raul-jimenez-renaissance.png",
+        "author": "Sports Desk",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "gilberto-mora-phenomenon",
+        "slug": "gilberto-mora-phenomenon",
+        "title": "Europe’s Elite Clubs Are Already Racing to Sign Mexico’s New 15-Year-Old Wonderkid",
+        "snippet": "Introducing Gilberto Mora to global fans: a deep dive into the scout reports, his record-breaking rise, and the sudden astronomical spike in his price tag.",
+        "coverImage": "/images/discover/gilberto-mora-phenomenon.png",
+        "author": "Football Scout Analytics",
         "date": "2026-07-04T06:22:48.508Z"
     },
     {
