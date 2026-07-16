@@ -139,7 +139,7 @@ export const generatedArticle = {
         { type: 'p', content: 'Content with <a href="https://moneycal.in/tools/emi-calculator">EMI Calculator</a>' }
     ]
 };
-// IMAGE_PROMPT: A detailed, photorealistic visual description representing the entire article (e.g. "a glowing stock market chart and a stack of Indian Rupee notes on a desk"). Do not use faces or emotional people unless strictly relevant.
+// IMAGE_PROMPT: (MUST BE WRITTEN IN ENGLISH) A detailed, photorealistic visual description representing the entire article (e.g. "a glowing stock market chart and a stack of Indian Rupee notes on a desk"). Do not use faces or emotional people unless strictly relevant.
 \`\`\`
     `;
 
