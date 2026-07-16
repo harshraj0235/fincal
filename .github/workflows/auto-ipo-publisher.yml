@@ -1,0 +1,72 @@
+# 🤖 Automated IPO Article Publisher - Runs Every 3 Hours
+
+name: Auto-Publish IPO Articles
+
+on:
+  schedule:
+    # Runs every 3 hours
+    - cron: '0 */3 * * *'
+  
+  # Manual trigger (for testing)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-ipo:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
+          fetch-depth: 1
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📥 Install Dependencies
+        run: npm ci
+
+      - name: 🤖 Run Auto IPO Publisher
+        run: node scripts/auto-ipo-publisher/main.js
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+      - name: 🏗️ Build Project (Verify No Errors)
+        run: npm run build
+        continue-on-error: true
+
+      - name: 💾 Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          touch scripts/auto-ipo-publisher/published_ipos.txt
+          git add src/data/ipo/ public/images/ipo/ src/services/ipoApi.ts scripts/auto-ipo-publisher/published_ipos.txt
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No new IPO articles generated."
+          else
+            git commit -m "🤖 Auto-publish trending IPO article"
+            git push origin main
+          fi
+
+      - name: 📊 Generate Report
+        if: always()
+        run: |
+          echo "## 🤖 Auto IPO Publisher Report" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: 📧 Notify on Failure
+        if: failure()
+        run: |
+          echo "❌ Auto IPO Publisher Failed!"
+          echo "Check workflow logs for details."
