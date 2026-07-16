@@ -1,6 +1,24 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "share-price-analysis",
+        "slug": "share-price-analysis",
+        "title": "शेयर प्राइस में उतार-चढ़ाव: निवेशकों की राय पर असर",
+        "snippet": "हाल के शेयर प्राइस उतार-चढ़ाव ने निवेशकों को कैसे प्रभावित किया है, जानें।",
+        "coverImage": "/images/discover/share-price-analysis.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T10:04:32.268Z"
+    },
+    {
+        "id": "gautam-gambhir-brand-endorsements",
+        "slug": "gautam-gambhir-brand-endorsements",
+        "title": "गौतम गम्भीर की ब्रांड एंडोर्समेंट्स का खेल विपणन पर प्रभाव",
+        "snippet": "गौतम गम्भीर की ब्रांड एंडोर्समेंट्स ने खेल विपणन को नया आयाम दिया है। जानें कैसे...",
+        "coverImage": "/images/discover/gautam-gambhir-brand-endorsements.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T09:39:35.296Z"
+    },
+    {
         "id": "hang-seng-impact-india",
         "slug": "hang-seng-impact-india",
         "title": "हांग सेंग इंडेक्स के उतार-चढ़ाव का भारतीय निवेशों और चीन के साथ व्यापार संबंधों पर असर",
@@ -8,15 +26,6 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/hang-seng-impact-india.png",
         "author": "MoneyCal Team",
         "date": "2026-07-16T09:06:55.128Z"
-    },
-    {
-        "id": "hang-seng-index-impact",
-        "slug": "hang-seng-index-impact",
-        "title": "Hang Seng Index ka Asar: Aapki Investment Strategy par Kaisa Hoga Prabhav?",
-        "snippet": "Hang Seng Index ka prabhav aapki investments aur business outlook par kaise hota hai, yeh jaaniye.",
-        "coverImage": "/images/discover/hang-seng-index-impact.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-16T08:48:11.615Z"
     },
     {
         "id": "epfo-accounts-interest-credit-impact",
@@ -5430,5 +5439,14 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/sbi-mf-ipo-discover.png",
         "author": "MoneyCal Team",
         "date": "2026-06-23T10:00:00Z"
+    },
+    {
+        "id": "hang-seng-index-impact",
+        "slug": "hang-seng-index-impact",
+        "title": "Hang Seng Index: Global Markets par Asar aur Indian Investors ke Liye Investment Strategies",
+        "snippet": "Hang Seng Index ka global markets par impact aur Indian investors ke liye strategies. Janiye important facts aur tips!",
+        "coverImage": "/images/discover/hang-seng-index-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2023-10-05T09:17:30.191Z"
     }
 ];
