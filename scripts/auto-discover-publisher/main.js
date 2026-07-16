@@ -176,12 +176,9 @@ export const generatedArticle = {
     return { slug, camelSlug, title, code };
 }
 
-async function generateImage(slug, title, topic) {
-    const keyword = topic || title.split(' ').slice(0, 3).join(' ');
-    console.log(`🎨 Generating image for ${slug} (Keyword: ${keyword})...`);
-    
-    // ENHANCED PROMPT: Forcing the exact keyword to be central to the generated image
-    const imagePrompt = `High-quality editorial photography focusing on "${keyword}". Photorealistic Indian context, expressive subjects showing real emotion related to ${title}. Clean, high-contrast, news publication style. No text overlay. Premium magazine quality.`;
+async function generateImage(slug, title, keyword) {
+    console.log(`🎨 Generating image for ${slug} (Topic: ${keyword})...`);
+    const imagePrompt = `High-quality editorial photography, photorealistic Indian context. The image MUST strictly depict the topic: ${keyword}. Expressive subjects showing real emotion related to ${title}. Clean, high-contrast, news publication style. No text overlay. Premium magazine quality.`;
     const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=675&nologo=true`;
 
     for (let i = 0; i < 3; i++) {
@@ -191,33 +188,13 @@ async function generateImage(slug, title, topic) {
             const buffer = await response.arrayBuffer();
             const imagePath = path.join(IMAGE_DIR, `${slug}.png`);
             fs.writeFileSync(imagePath, Buffer.from(buffer));
-            console.log(`✅ Image successfully generated via Pollinations.`);
             return `/images/discover/${slug}.png`;
         } catch (e) {
             console.error(`Image gen failed (attempt ${i + 1}):`, e.message);
             await new Promise(r => setTimeout(r, 2000));
         }
     }
-    
-    // FALLBACK TO UNSPLASH
-    console.log(`⚠️ Pollinations exhausted. Falling back to Unsplash for keyword: ${keyword}`);
-    try {
-        const unsplashUrl = `https://source.unsplash.com/1200x675/?${encodeURIComponent(keyword)},india`;
-        const response = await fetch(unsplashUrl);
-        if (!response.ok) throw new Error('Unsplash returned ' + response.status);
-        const buffer = await response.arrayBuffer();
-        const imagePath = path.join(IMAGE_DIR, `${slug}.png`);
-        fs.writeFileSync(imagePath, Buffer.from(buffer));
-        console.log(`✅ Image successfully fetched from Unsplash fallback.`);
-        return `/images/discover/${slug}.png`;
-    } catch (unsplashError) {
-        console.error(`Unsplash fallback also failed:`, unsplashError.message);
-        // Absolute fallback to default hero image to prevent build crashes
-        const defaultImagePath = path.join(IMAGE_DIR, `${slug}.png`);
-        fs.copyFileSync(path.join(process.cwd(), 'public/android-chrome-512x512.jpg'), defaultImagePath);
-        console.log(`✅ Copied default hero image as final fallback.`);
-        return `/images/discover/${slug}.png`;
-    }
+    throw new Error('Failed to generate image after 3 attempts');
 }
 
 async function updateIndexTs(newArticles) {
