@@ -115,12 +115,33 @@ Ensure your response is ONLY valid JSON.
 }
 
 async function generateIpoArticle(ipoObj) {
+    console.log(`\n✍️ Generating highly detailed IPO analysis for: ${ipoObj.company}...`);
+
+    const prompt = `
+You are the Chief Editor of MoneyCal.in, an expert in the Indian stock market.
+Write a massive, comprehensive IPO review in proper Hindi (Devanagari script).
+
+>>> CRITICAL: GROUND TRUTH CONTEXT <<<
+You MUST base your entire article on the following real-world news context. Do NOT hallucinate events.
+Company: "${ipoObj.company}"
+Angle: "${ipoObj.angle}"
+Context (News Headline): "${ipoObj.context}"
+
+Based ONLY on this context and your general financial knowledge, write the review.
+Make sure to explain why the company is in the news today.
+
+LENGTH REQUIREMENT: Write a massive 1500+ word article.
+Be highly analytical. Include sections like:
+1. Introduction (Company context, why the IPO matters)
+2. IPO Highlights (Prices, Dates, Lot Size, Issue Size)
 3. Company Overview & Business Model
 4. Financial Analysis (Revenue, Profit, Assets over last 3 years)
 5. Objectives of the Issue
 6. SWOT Analysis (Strengths, Weaknesses, Opportunities, Threats)
 7. GMP (Grey Market Premium) Updates & Subscription Status
 8. Should You Apply? (Expert conclusion)
+
+STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark".
 
 >>> TYPESCRIPT SYNTAX RULE (CRITICAL) <<<
 NEVER use single quotes (') inside your text content. Use double quotes (") instead.
