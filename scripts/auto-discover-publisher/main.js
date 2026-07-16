@@ -107,7 +107,7 @@ async function generateArticle(topicObj) {
     const prompt = `
 You are a top-tier Indian finance and news expert for MoneyCal.in, utilizing the exact strategies of LiveMint, MoneyControl, and Jagran.
 Follow these EXACT rules to write an authoritative, Google Discover-optimized article:
-- Write a 1500+ word article in simple, highly engaging Hindi-English mix (Hinglish).
+- Write a 1500+ word article in simple, highly engaging and proper Hindi (Devanagari script) designed for the everyday Indian audience.
 - Topic: "${topicObj.topic}". Angle: "${topicObj.angle}".
 - MAKE IT 100% HUMAN-FRIENDLY & BYPASS AI DETECTORS: Write with high 'burstiness' (mix punchy 3-word sentences with longer ones). 
 - STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark". Write exactly how a real Indian journalist speaks.
@@ -127,8 +127,8 @@ Format your response EXACTLY like this (and nothing else, no extra text):
 export const generatedArticle = {
     id: 'slug-here',
     slug: 'slug-here',
-    title: 'Compelling Hinglish Title', // NEVER include text like "(61 chars)", "(50 chars)" or any meta instructions in the generated title
-    snippet: 'Meta description in Hinglish (150 chars max)...',
+    title: 'Compelling Hindi Title (Devanagari script)', // NEVER include text like "(61 chars)", "(50 chars)" or any meta instructions in the generated title
+    snippet: 'Meta description in Hindi (150 chars max)...',
     coverImage: '/images/discover/slug-here.png',
     author: 'MoneyCal Team',
     date: '${new Date().toISOString()}',
