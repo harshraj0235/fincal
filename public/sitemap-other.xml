@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<!-- MoneyCal OTHER - 1868 URLs - 2026-07-16 -->
+<!-- MoneyCal OTHER - 1872 URLs - 2026-07-16 -->
   <url>
     <loc>https://moneycal.in</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in" />
@@ -6896,6 +6896,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://moneycal.in/discover/jio-financial-services-analysis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/jio-financial-services-analysis/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/jio-financial-services-analysis/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/jio-financial-services-analysis/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/jio-financial-services-analysis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/jio-financial-services-analysis/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/jio-financial-services-analysis/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/jio-financial-services-analysis/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://moneycal.in/discover/jio-financial-services-share-price-blackrock/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/jio-financial-services-share-price-blackrock/" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/jio-financial-services-share-price-blackrock/" />
@@ -12795,6 +12813,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/windy-app-weather-update-online/" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/windy-app-weather-update-online/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/windy-app-weather-update-online/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/wipro-results-analysis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/wipro-results-analysis/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/wipro-results-analysis/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/wipro-results-analysis/" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/wipro-results-analysis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/discover/wipro-results-analysis/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/discover/wipro-results-analysis/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/discover/wipro-results-analysis/" />
     <lastmod>2026-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

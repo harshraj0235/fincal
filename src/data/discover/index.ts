@@ -1,3 +1,4 @@
+import { jioFinancialServicesAnalysis } from './jio-financial-services-analysis';
 import { agricultureMachineryImpact } from './agriculture-machinery-impact';
 import { wiproShareQ1ResultsImpact } from './wipro-share-q1-results-impact';
 import { kuldeepYadavBrandEndorsements } from './kuldeep-yadav-brand-endorsements';
@@ -617,6 +618,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    jioFinancialServicesAnalysis,
+
     agricultureMachineryImpact,
 
     wiproShareQ1ResultsImpact,

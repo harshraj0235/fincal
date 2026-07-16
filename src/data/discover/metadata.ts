@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "jio-financial-services-analysis",
+        "slug": "jio-financial-services-analysis",
+        "title": "जियो फाइनेंशियल सर्विसेज: IPO से पहले शानदार कमाई का रहस्य",
+        "snippet": "जियो फाइनेंशियल सर्विसेज की कमाई में 227% का इजाफा, जानें इसका असर निवेशकों पर...",
+        "coverImage": "/images/discover/jio-financial-services-analysis.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T17:51:57.271Z"
+    },
+    {
         "id": "agriculture-machinery-impact",
         "slug": "agriculture-machinery-impact",
         "title": "कृषि यंत्रों का प्रभाव: किसानों की उत्पादकता और आर्थिक लाभ",
