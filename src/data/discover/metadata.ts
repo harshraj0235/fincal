@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "hang-seng-impact-india",
+        "slug": "hang-seng-impact-india",
+        "title": "हांग सेंग इंडेक्स के उतार-चढ़ाव का भारतीय निवेशों और चीन के साथ व्यापार संबंधों पर असर",
+        "snippet": "हांग सेंग इंडेक्स के उतार-चढ़ाव का आम आदमी पर गहरा असर। जानें निवेश पर इसके प्रभाव।",
+        "coverImage": "/images/discover/hang-seng-impact-india.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T09:06:55.128Z"
+    },
+    {
         "id": "hang-seng-index-impact",
         "slug": "hang-seng-index-impact",
         "title": "Hang Seng Index ka Asar: Aapki Investment Strategy par Kaisa Hoga Prabhav?",
