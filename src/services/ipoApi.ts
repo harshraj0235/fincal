@@ -1,4 +1,5 @@
 import { IpoDetails, IpoResponse } from '../types/ipo';
+import { makemytripIpoReviewHindi } from '../data/ipo/makemytrip-ipo-review-hindi';
 import { sbiFundsManagementIpoReviewHindi } from '../data/ipo/sbi-funds-management-ipo-review-hindi';
 import { relianceJioIpo } from '../data/ipo/reliance-jio';
 import { vedantaCopperTechIpo } from '../data/ipo/vedanta-coppertech';
@@ -112,6 +113,8 @@ import { citichemIndiaIpo } from '../data/ipo/citichem-india';
 // ═══════════════════════════════════════════════════════════════════════════
 
 export const allIpoData: IpoDetails[] = [
+    makemytripIpoReviewHindi,
+
     sbiFundsManagementIpoReviewHindi,
 
     // ─── MEGA ARTICLES (Mainboard + SME) ──────────────────────────────────
