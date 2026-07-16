@@ -1,3 +1,4 @@
+import { epfoAccountsInterestCreditImpact } from './epfo-accounts-interest-credit-impact';
 import { oneplusEuropeMarketStrategy } from './oneplus-europe-market-strategy';
 import { oneplusShutdownImpact } from './oneplus-shutdown-impact';
 import { dixonTechnologiesSharePriceAnalysis } from './dixon-technologies-share-price-analysis';
@@ -609,6 +610,8 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    epfoAccountsInterestCreditImpact,
+
     oneplusEuropeMarketStrategy,
 
     oneplusShutdownImpact,

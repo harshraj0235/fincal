@@ -1,6 +1,15 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "epfo-accounts-interest-credit-impact",
+        "slug": "epfo-accounts-interest-credit-impact",
+        "title": "EPFO Interest Credit: How It Transforms Your Savings and Investments",
+        "snippet": "EPFO ka interest credit aapki savings aur investments par kya asar daal raha hai? Jaaniye iska impact aur apne future ko kaise secure karein.",
+        "coverImage": "/images/discover/epfo-accounts-interest-credit-impact.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-16T07:36:11.205Z"
+    },
+    {
         "id": "oneplus-europe-market-strategy",
         "slug": "oneplus-europe-market-strategy",
         "title": "OnePlus Europe: Aapke Smartphone Khareedne ki Strategy pe Kaisa Asar?",
