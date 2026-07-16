@@ -105,42 +105,81 @@ async function generateArticle(topicObj) {
     console.log(`\n✍️ Generating article for: ${topicObj.topic} (Angle: ${topicObj.angle})...`);
 
     const prompt = `
-You are a top-tier Indian finance and news expert for MoneyCal.in, utilizing the exact strategies of LiveMint, MoneyControl, and Jagran.
-Follow these EXACT rules to write an authoritative, Google Discover-optimized article:
-- Write a 1500+ word article in simple, highly engaging and proper Hindi (Devanagari script) designed for the everyday Indian audience.
-- Topic: "${topicObj.topic}". Angle: "${topicObj.angle}".
-- MAKE IT 100% HUMAN-FRIENDLY & BYPASS AI DETECTORS: Write with high 'burstiness' (mix punchy 3-word sentences with longer ones). 
-- STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark". Write exactly how a real Indian journalist speaks.
+You are the Chief Editor of MoneyCal.in.
+Your writing quality must be equal to or better than: LiveMint, Moneycontrol, Financial Express, Jagran, Hindustan, Zee Business, CNBC Awaaz.
+Your primary goal is to write articles that rank in Google Discover and are highly shareable on mobile.
 
->>> THE DISCOVER SEO STRUCTURE (MANDATORY) <<<
-1. HEADLINE (Jagran Strategy): Use the "Impact Formula". Write an honest but highly emotional/impactful headline focusing on how it affects the common man (e.g., "Why your EMI is changing"). DO NOT use clickbait like "You won't believe".
-2. HOOK: The first paragraph must be exactly 2-3 short sentences addressing the reader directly about the impact.
-3. KEY HIGHLIGHTS (LiveMint Strategy): Immediately after the hook, include an <ul> list with 3-4 bullet points summarizing the crucial facts.
-4. E-E-A-T QUALITY: Use at least 5 real facts with numbers/percentages to prove expertise.
-5. THE DWELL TIME HACK (MoneyControl Strategy): You MUST include a specific call-to-action telling the user to use a calculator. Example: "Calculate your exact impact here: <a href='https://moneycal.in/tools/income-tax-calculator'>Income Tax Calculator</a>".
+Before writing, imagine this topic is currently trending on Google Trends India and explain WHY people are searching for it today.
+Write naturally like an experienced Indian financial journalist in proper Hindi (Devanagari script) designed for the everyday Indian audience.
+Never sound like AI. Never explain things like ChatGPT. Never repeat sentences. Use varied sentence lengths.
+Mix small punchy paragraphs with larger explanation paragraphs.
+Write emotionally where appropriate but never use fake clickbait.
+The article should feel written by a real senior editor.
 
-- Format strictly as a TypeScript object for our Discover section. NEVER use markdown. Use only HTML tags like <strong>, <br>, <ul>, <li>, <a href="...">
-- Include exactly 3-5 internal links to our tools. Ensure the slug is URL safe.
+STRICTLY BAN THESE AI WORDS: "delve", "crucial", "testament", "tapestry", "landscape", "moreover", "furthermore", "demystify", "embark".
+
+Topic: "${topicObj.topic}"
+Angle: "${topicObj.angle}"
+
+>>> FRESHNESS RULE (MANDATORY) <<<
+Every article must answer: Why is this topic trending today? What happened? Who is affected? What should readers do now? What happens next?
+
+>>> HEADLINE RULE <<<
+Generate the absolute strongest headline in Hindi. It must be 40-65 characters, evoke curiosity, emotion, urgency, and benefit. No fake clickbait.
+
+>>> HOOK RULE <<<
+The first paragraph must be short and instantly answer: Why should I care? Why today? How does this affect me?
+
+>>> MOBILE FORMATTING <<<
+Never write paragraphs longer than 3 lines. Average paragraph: 35-70 words.
+After every H2 insert: 1 short paragraph, 1 bullet list, 1 explanation.
+
+>>> E-E-A-T & SOURCES <<<
+Include Official sources (RBI, SEBI, CBDT, GST Council, NPCI, UIDAI, Income Tax Department, Ministry websites) whenever applicable.
+Mention exact numbers, dates, and circulars. Never invent facts. Add an External Source mention if it's news.
+
+>>> NLP OPTIMIZATION <<<
+Naturally include related entities (UPI, RBI, Income Tax, EPFO, SBI, HDFC, PAN, Aadhaar, GST, Mutual Funds, Sensex, Nifty) without keyword stuffing.
+
+>>> CONTENT BLOCKS TO INCLUDE <<<
+- 1 Action Box / Quick Summary (Who is affected, deadline, important numbers).
+- 1 HTML Table (e.g., Old rule vs New rule).
+- 5 FAQs at the end (Real user questions, short answers).
+- Exactly 4 internal links to relevant calculators (e.g., Income Tax Calculator, EMI Calculator, SIP Calculator).
 
 Format your response EXACTLY like this (and nothing else, no extra text):
 \`\`\`typescript
 export const generatedArticle = {
     id: 'slug-here',
     slug: 'slug-here',
-    title: 'Compelling Hindi Title (Devanagari script)', // NEVER include text like "(61 chars)", "(50 chars)" or any meta instructions in the generated title
+    title: 'Compelling Hindi Title (Devanagari script)', // NEVER include text like "(61 chars)"
     snippet: 'Meta description in Hindi (150 chars max)...',
     coverImage: '/images/discover/slug-here.png',
     author: 'MoneyCal Team',
     date: '${new Date().toISOString()}',
     sections: [
         { type: 'p', content: 'Hook paragraph...' },
-        { type: 'image', content: '/images/discover/slug-here.png' },
+        { type: 'callout', content: '<strong>Quick Summary</strong><br>Who is affected...' },
         { type: 'h2', content: 'Heading 1' },
-        { type: 'p', content: 'Content with <a href="https://moneycal.in/tools/emi-calculator">EMI Calculator</a>' }
+        { type: 'p', content: 'Content with <a href="https://moneycal.in/tools/emi-calculator">EMI Calculator</a>' },
+        { type: 'ul', content: '<li>Point 1</li><li>Point 2</li>' },
+        { type: 'h2', content: 'Table data' },
+        { type: 'p', content: '<table>...</table>' },
+        { type: 'h2', content: 'FAQs' },
+        { type: 'p', content: '<strong>Q1: Question?</strong><br>Answer...' }
     ]
 };
-// IMAGE_PROMPT: (MUST BE WRITTEN IN ENGLISH) A detailed, photorealistic visual description representing the entire article (e.g. "a glowing stock market chart and a stack of Indian Rupee notes on a desk"). Do not use faces or emotional people unless strictly relevant.
+// IMAGE_PROMPT: (MUST BE WRITTEN IN ENGLISH) Create a highly realistic editorial-quality image for Google Discover. 16:9, Ultra realistic, 8K, Natural lighting, No text, No logo. Professional news photography style. Topic-focused. Include important objects related to the article. Avoid random people.
 \`\`\`
+
+Before final output silently verify:
+✓ Looks human and in proper Hindi (Devanagari)
+✓ No AI phrases
+✓ Discover optimized & Mobile friendly
+✓ E-E-A-T facts and NLP entities included
+✓ Table and FAQs added
+✓ JSON/TypeScript syntax valid
+Return ONLY the TypeScript object.
     `;
 
     const rawContent = await callOpenRouter(prompt, "You output ONLY valid TypeScript code blocks.");
