@@ -903,7 +903,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Tax Planning', 'Section 80C', 'Investment', 'Tax Saving'],
     keywords: ['tax saving investments', 'section 80C', 'ELSS funds', 'PPF investment', 'EPF contribution', 'NPS tax benefit', 'tax planning india', '80C deduction'],
     date: '2025-01-09',
-    lastModified: '2026-07-09',
+    lastModified: '2026-07-17',
     coverImage: '/images/blogs/tax-saving-investments-2025.jpg',
     content: [
       { type: 'heading', content: 'Best Tax Saving Investments Under Section 80C India 2025' },
