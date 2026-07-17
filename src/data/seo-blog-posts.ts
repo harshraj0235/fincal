@@ -15,7 +15,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Personal Finance', 'Financial Planning', 'Investment', 'Tax Planning'],
     keywords: ['personal finance india', 'budgeting india', 'saving strategies', 'investment planning', 'tax planning', 'wealth building', 'financial planning india', 'money management'],
     date: '2025-01-15',
-    lastModified: '2026-07-09',
+    lastModified: '2026-07-17',
     coverImage: '/images/blogs/personal-finance-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Complete Guide to Personal Finance in India 2025' },
