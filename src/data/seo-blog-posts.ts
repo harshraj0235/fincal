@@ -311,7 +311,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Stock Market', 'Investment', 'Trading', 'Portfolio Management'],
     keywords: ['stock market india', 'equity investing', 'fundamental analysis', 'technical analysis', 'portfolio management', 'trading strategies', 'nse bse', 'stock selection'],
     date: '2025-01-13',
-    lastModified: '2026-07-09',
+    lastModified: '2026-07-17',
     coverImage: '/images/blogs/stock-market-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Stock Market Investing Guide India 2025: Complete Strategy' },
