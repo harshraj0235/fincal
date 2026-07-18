@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<!-- MoneyCal CALCULATORS - 300 URLs - 2026-07-18 -->
+<!-- MoneyCal CALCULATORS - 302 URLs - 2026-07-18 -->
   <url>
     <loc>https://moneycal.in/blog/calculators/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/blog/calculators/" />
@@ -2301,6 +2301,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/calculators/sbi-fd-calculator/" />
     <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/calculators/sbi-fd-calculator/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/calculators/sbi-fd-calculator/" />
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/calculators/schemes-finder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/calculators/schemes-finder/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/calculators/schemes-finder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/calculators/schemes-finder/" />
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/calculators/schemes-finder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/calculators/schemes-finder/" />
+    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/calculators/schemes-finder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/calculators/schemes-finder/" />
     <lastmod>2026-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>

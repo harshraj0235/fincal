@@ -431,6 +431,30 @@ export const GovernmentSchemes: React.FC = () => {
             <ResponsiveAd />
           </div>
 
+          {/* FEATURED: Schemes Finder */}
+          <div className="mb-10 bg-white rounded-2xl shadow-md border border-indigo-100 overflow-hidden hover:shadow-lg transition-shadow relative">
+            <div className="absolute top-0 right-0 bg-amber-400 text-amber-950 text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider z-10">
+              Free Tool
+            </div>
+            <div className="md:flex">
+              <div className="md:w-1/3 bg-gradient-to-br from-indigo-50 to-blue-50 p-6 flex flex-col justify-center items-center text-indigo-600 border-b md:border-b-0 md:border-r border-indigo-100">
+                <CheckCircle className="w-16 h-16 mb-3 opacity-80" />
+                <span className="text-sm font-bold uppercase tracking-widest text-indigo-500">Eligibility Checker</span>
+              </div>
+              <div className="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Govt Scheme Eligibility Checker</h2>
+                <p className="text-gray-600 mb-6">
+                  Not sure which government schemes you qualify for? Answer 5 simple questions about your age, income, and occupation to instantly find out your eligibility and get direct apply links.
+                </p>
+                <div>
+                  <Link to="/schemes-finder" className="inline-flex items-center justify-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors shadow-sm">
+                    Check Your Eligibility <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* ═══════════════════════════════════════════════════════════════
               CATEGORY EXPLORER CARDS
           ═══════════════════════════════════════════════════════════════ */}
