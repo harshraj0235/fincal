@@ -1,24 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<!-- Google News Sitemap -->
   <url>
-    <loc>https://moneycal.in/discover/jio-financial-services-profit-growth/</loc>
+    <loc>https://moneycal.in/discover/understanding-grey-market-premium-gmp/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
-      <news:title>जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें</news:title>
+      <news:publication_date>2026-07-18T09:56:50.984Z</news:publication_date>
+      <news:title>Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/understanding-grey-market-premium-gmp/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.984Z</news:publication_date>
+      <news:title>Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/rrb-group-d-general-science-preparation-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.974Z</news:publication_date>
+      <news:title>RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/rrb-group-d-general-science-preparation-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.974Z</news:publication_date>
+      <news:title>RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/monsoon-home-appliance-protection-tips/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.955Z</news:publication_date>
+      <news:title>मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/monsoon-home-appliance-protection-tips/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.955Z</news:publication_date>
+      <news:title>मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/it-layoff-financial-legal-checklist/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.945Z</news:publication_date>
+      <news:title>IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/it-layoff-financial-legal-checklist/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.945Z</news:publication_date>
+      <news:title>IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/gujarat-tat-s-mains-preparation-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.939Z</news:publication_date>
+      <news:title>Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/gujarat-tat-s-mains-preparation-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-18T09:56:50.939Z</news:publication_date>
+      <news:title>Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/jio-financial-services-profit-growth/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T18:39:52.263Z</news:publication_date>
+      <news:title>जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/jio-financial-services-profit-growth/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T18:39:52.263Z</news:publication_date>
       <news:title>जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें</news:title>
     </news:news>
   </url>
@@ -26,21 +137,87 @@
     <loc>https://moneycal.in/discover/jio-financial-services-analysis/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T17:44:54.076Z</news:publication_date>
       <news:title>जियो फाइनेंशियल सर्विसेज: आईपीओ से पहले कमाई में धमाका</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/jio-financial-services-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T17:44:54.076Z</news:publication_date>
+      <news:title>जियो फाइनेंशियल सर्विसेज: आईपीओ से पहले कमाई में धमाका</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/wipro-results-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T17:40:58.998Z</news:publication_date>
+      <news:title>Wipro Ke Results Ki Visheshta Aur IT Sector Par Prabhav</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/wipro-results-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T17:40:58.998Z</news:publication_date>
+      <news:title>Wipro Ke Results Ki Visheshta Aur IT Sector Par Prabhav</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/dax-impact-global-investment-trends/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T16:40:59.584Z</news:publication_date>
+      <news:title>DAX Index ka Global Investment Trends par Asar</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/dax-impact-global-investment-trends/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T16:40:59.584Z</news:publication_date>
+      <news:title>DAX Index ka Global Investment Trends par Asar</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/agriculture-machinery-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T15:55:08.750Z</news:publication_date>
+      <news:title>कृषि यंत्रों का प्रभाव: किसानों की उत्पादकता और आर्थिक लाभ</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/agriculture-machinery-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T15:55:08.750Z</news:publication_date>
       <news:title>कृषि यंत्रों का प्रभाव: किसानों की उत्पादकता और आर्थिक लाभ</news:title>
     </news:news>
   </url>
@@ -48,32 +225,153 @@
     <loc>https://moneycal.in/discover/wipro-share-q1-results-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T14:05:06.270Z</news:publication_date>
       <news:title>Wipro के Q1 परिणाम: निवेशकों की धारणा पर असर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/wipro-share-q1-results-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T14:05:06.270Z</news:publication_date>
+      <news:title>Wipro के Q1 परिणाम: निवेशकों की धारणा पर असर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/jiohotstar-impact-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T12:17:29.706Z</news:publication_date>
+      <news:title>Jio aur Hotstar ka Partnership: Streaming Market par Asar</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/jiohotstar-impact-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T12:17:29.706Z</news:publication_date>
+      <news:title>Jio aur Hotstar ka Partnership: Streaming Market par Asar</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/kuldeep-yadav-brand-endorsements/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T11:59:55.675Z</news:publication_date>
       <news:title>कुलदीप यादव: ब्रांड एंडोर्समेंट्स पर उनका प्रभाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/kuldeep-yadav-brand-endorsements/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T11:59:55.675Z</news:publication_date>
+      <news:title>कुलदीप यादव: ब्रांड एंडोर्समेंट्स पर उनका प्रभाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/gold-analysis-investment-strategies-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T11:17:32.068Z</news:publication_date>
+      <news:title>Gold Prices Ka Analysis Aur Investment Strategies in India</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/gold-analysis-investment-strategies-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T11:17:32.068Z</news:publication_date>
+      <news:title>Gold Prices Ka Analysis Aur Investment Strategies in India</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/gold-prices-and-investment-trends/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T10:47:31.928Z</news:publication_date>
+      <news:title>Sone Ki Kimat Aur Nivesh Pravrutti</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/gold-prices-and-investment-trends/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T10:47:31.928Z</news:publication_date>
+      <news:title>Sone Ki Kimat Aur Nivesh Pravrutti</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/share-price-impact-market-fluctuations/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T10:17:32.133Z</news:publication_date>
+      <news:title>Share Price: Market Fluctuations Ka Investor Sentiment Par Asar</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/share-price-impact-market-fluctuations/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T10:17:32.133Z</news:publication_date>
+      <news:title>Share Price: Market Fluctuations Ka Investor Sentiment Par Asar</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/share-price-analysis/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T10:04:32.268Z</news:publication_date>
+      <news:title>शेयर प्राइस में उतार-चढ़ाव: निवेशकों की राय पर असर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/share-price-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T10:04:32.268Z</news:publication_date>
       <news:title>शेयर प्राइस में उतार-चढ़ाव: निवेशकों की राय पर असर</news:title>
     </news:news>
   </url>
@@ -81,10 +379,21 @@
     <loc>https://moneycal.in/discover/gautam-gambhir-brand-endorsements/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T09:39:35.296Z</news:publication_date>
+      <news:title>गौतम गम्भीर की ब्रांड एंडोर्समेंट्स का खेल विपणन पर प्रभाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/gautam-gambhir-brand-endorsements/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T09:39:35.296Z</news:publication_date>
       <news:title>गौतम गम्भीर की ब्रांड एंडोर्समेंट्स का खेल विपणन पर प्रभाव</news:title>
     </news:news>
   </url>
@@ -92,10 +401,21 @@
     <loc>https://moneycal.in/discover/hang-seng-impact-india/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T09:06:55.128Z</news:publication_date>
+      <news:title>हांग सेंग इंडेक्स के उतार-चढ़ाव का भारतीय निवेशों और चीन के साथ व्यापार संबंधों पर असर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/hang-seng-impact-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T09:06:55.128Z</news:publication_date>
       <news:title>हांग सेंग इंडेक्स के उतार-चढ़ाव का भारतीय निवेशों और चीन के साथ व्यापार संबंधों पर असर</news:title>
     </news:news>
   </url>
@@ -103,10 +423,21 @@
     <loc>https://moneycal.in/discover/epfo-accounts-interest-credit-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T07:36:11.205Z</news:publication_date>
+      <news:title>EPFO Interest Credit: How It Transforms Your Savings and Investments</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epfo-accounts-interest-credit-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T07:36:11.205Z</news:publication_date>
       <news:title>EPFO Interest Credit: How It Transforms Your Savings and Investments</news:title>
     </news:news>
   </url>
@@ -114,10 +445,21 @@
     <loc>https://moneycal.in/discover/oneplus-europe-market-strategy/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T06:54:19.854Z</news:publication_date>
+      <news:title>OnePlus Europe: Aapke Smartphone Khareedne ki Strategy pe Kaisa Asar?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/oneplus-europe-market-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T06:54:19.854Z</news:publication_date>
       <news:title>OnePlus Europe: Aapke Smartphone Khareedne ki Strategy pe Kaisa Asar?</news:title>
     </news:news>
   </url>
@@ -125,10 +467,21 @@
     <loc>https://moneycal.in/discover/oneplus-shutdown-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T06:10:02.113Z</news:publication_date>
+      <news:title>OnePlus Shutdown: Aapki Smartphone Choices Par Kaisa Asar Hoga?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/oneplus-shutdown-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T06:10:02.113Z</news:publication_date>
       <news:title>OnePlus Shutdown: Aapki Smartphone Choices Par Kaisa Asar Hoga?</news:title>
     </news:news>
   </url>
@@ -136,10 +489,21 @@
     <loc>https://moneycal.in/discover/dixon-technologies-share-price-analysis/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T05:34:27.603Z</news:publication_date>
+      <news:title>Dixon Technologies Share Price: Recent Fluctuations and Investor Insights</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/dixon-technologies-share-price-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T05:34:27.603Z</news:publication_date>
       <news:title>Dixon Technologies Share Price: Recent Fluctuations and Investor Insights</news:title>
     </news:news>
   </url>
@@ -147,10 +511,21 @@
     <loc>https://moneycal.in/discover/icc-cricket-world-cup-economic-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-16</news:publication_date>
+      <news:publication_date>2026-07-16T02:10:14.195Z</news:publication_date>
+      <news:title>आईसीसी क्रिकेट विश्व कप का आर्थिक प्रभाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/icc-cricket-world-cup-economic-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-16T02:10:14.195Z</news:publication_date>
       <news:title>आईसीसी क्रिकेट विश्व कप का आर्थिक प्रभाव</news:title>
     </news:news>
   </url>
@@ -158,10 +533,21 @@
     <loc>https://moneycal.in/discover/fasal-beema-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T23:56:28.048Z</news:publication_date>
+      <news:title>Fasal Beema ka Kisanon par Asar aur Krishi Arthvyavastha</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/fasal-beema-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T23:56:28.048Z</news:publication_date>
       <news:title>Fasal Beema ka Kisanon par Asar aur Krishi Arthvyavastha</news:title>
     </news:news>
   </url>
@@ -169,10 +555,21 @@
     <loc>https://moneycal.in/discover/fifa-world-cup-2026-economic-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T22:32:26.496Z</news:publication_date>
+      <news:title>FIFA World Cup 2026 Ka Economic Impact Local Businesses Aur Tourism Par</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/fifa-world-cup-2026-economic-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T22:32:26.496Z</news:publication_date>
       <news:title>FIFA World Cup 2026 Ka Economic Impact Local Businesses Aur Tourism Par</news:title>
     </news:news>
   </url>
@@ -180,10 +577,21 @@
     <loc>https://moneycal.in/discover/fifa-world-cup-2026-bracket/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T21:29:48.942Z</news:publication_date>
+      <news:title>FIFA World Cup 2026: Local Business aur Tourism par Economic Impact</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/fifa-world-cup-2026-bracket/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T21:29:48.942Z</news:publication_date>
       <news:title>FIFA World Cup 2026: Local Business aur Tourism par Economic Impact</news:title>
     </news:news>
   </url>
@@ -191,10 +599,21 @@
     <loc>https://moneycal.in/discover/bukayo-saka-brand-endorsements/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T20:05:27.009Z</news:publication_date>
+      <news:title>Bukayo Saka: Brand Endorsements Aur Unka Football Market Value Par Asar</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/bukayo-saka-brand-endorsements/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T20:05:27.009Z</news:publication_date>
       <news:title>Bukayo Saka: Brand Endorsements Aur Unka Football Market Value Par Asar</news:title>
     </news:news>
   </url>
@@ -202,10 +621,21 @@
     <loc>https://moneycal.in/discover/zee5-subscription-growth-revenue-impact/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T19:28:39.740Z</news:publication_date>
+      <news:title>Zee5 Ka Subscription Growth Aur Revenue Impact: Ek Ghar Ki Baat</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/zee5-subscription-growth-revenue-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T19:28:39.740Z</news:publication_date>
       <news:title>Zee5 Ka Subscription Growth Aur Revenue Impact: Ek Ghar Ki Baat</news:title>
     </news:news>
   </url>
@@ -213,21 +643,65 @@
     <loc>https://moneycal.in/discover/jio-tv-impact-analysis/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T19:05:30.213Z</news:publication_date>
       <news:title>Jio TV: Streaming Market Par Chha Gayi Dhamaka</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/jio-tv-impact-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T19:05:30.213Z</news:publication_date>
+      <news:title>Jio TV: Streaming Market Par Chha Gayi Dhamaka</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/dhamaal-4-movie-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T18:49:54.652Z</news:publication_date>
+      <news:title>Dhamaal 4 Movie: Box Office Potential Aur Franchise Impact</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/dhamaal-4-movie-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T18:49:54.652Z</news:publication_date>
+      <news:title>Dhamaal 4 Movie: Box Office Potential Aur Franchise Impact</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/dhamaal-4-movie/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T18:19:07.936Z</news:publication_date>
+      <news:title>Dhamaal 4 Movie: Box Office Impact and Brand Opportunities</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/dhamaal-4-movie/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T18:19:07.936Z</news:publication_date>
       <news:title>Dhamaal 4 Movie: Box Office Impact and Brand Opportunities</news:title>
     </news:news>
   </url>
@@ -235,10 +709,21 @@
     <loc>https://moneycal.in/discover/irctc-financial-performance-growth-strategy/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T17:42:56.225Z</news:publication_date>
+      <news:title>IRCTC ki Financial Performance aur Digital Ticketing Growth Strategy</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/irctc-financial-performance-growth-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T17:42:56.225Z</news:publication_date>
       <news:title>IRCTC ki Financial Performance aur Digital Ticketing Growth Strategy</news:title>
     </news:news>
   </url>
@@ -246,10 +731,21 @@
     <loc>https://moneycal.in/discover/akshay-kumar-brand-endorsements/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T17:42:34.843Z</news:publication_date>
+      <news:title>Akshay Kumar ke Brand Endorsements aur Unka Net Worth par Asar</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/akshay-kumar-brand-endorsements/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T17:42:34.843Z</news:publication_date>
       <news:title>Akshay Kumar ke Brand Endorsements aur Unka Net Worth par Asar</news:title>
     </news:news>
   </url>
@@ -257,10 +753,21 @@
     <loc>https://moneycal.in/discover/aaj-ka-rashifal-dhan-labh-2026/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T16:00:00.000Z</news:publication_date>
+      <news:title>Rashifal: आज चमकेगी इन भाग्यशाली राशियों की किस्मत, होगा बड़ा धन लाभ!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/aaj-ka-rashifal-dhan-labh-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T16:00:00.000Z</news:publication_date>
       <news:title>Rashifal: आज चमकेगी इन भाग्यशाली राशियों की किस्मत, होगा बड़ा धन लाभ!</news:title>
     </news:news>
   </url>
@@ -268,10 +775,21 @@
     <loc>https://moneycal.in/discover/monsoon-2026-heavy-rain-alert-states/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T15:30:00.000Z</news:publication_date>
+      <news:title>Monsoon 2026 Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, IMD ने जारी किया रेड अलर्ट!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/monsoon-2026-heavy-rain-alert-states/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T15:30:00.000Z</news:publication_date>
       <news:title>Monsoon 2026 Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, IMD ने जारी किया रेड अलर्ट!</news:title>
     </news:news>
   </url>
@@ -279,10 +797,21 @@
     <loc>https://moneycal.in/discover/ibm-share-price-buy-or-sell/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T15:00:00.000Z</news:publication_date>
+      <news:title>IBM Share Price में आया 115 सालों का सबसे बड़ा क्रैश! क्या यह शेयर खरीदने का सही समय है?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/ibm-share-price-buy-or-sell/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T15:00:00.000Z</news:publication_date>
       <news:title>IBM Share Price में आया 115 सालों का सबसे बड़ा क्रैश! क्या यह शेयर खरीदने का सही समय है?</news:title>
     </news:news>
   </url>
@@ -290,10 +819,21 @@
     <loc>https://moneycal.in/discover/irctc-new-website-launch-fast-booking/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T14:30:00.000Z</news:publication_date>
+      <news:title>IRCTC की नई वेबसाइट लॉन्च! अब तत्काल टिकट बुकिंग होगी सुपरफास्ट, देखें बड़े बदलाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/irctc-new-website-launch-fast-booking/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T14:30:00.000Z</news:publication_date>
       <news:title>IRCTC की नई वेबसाइट लॉन्च! अब तत्काल टिकट बुकिंग होगी सुपरफास्ट, देखें बड़े बदलाव</news:title>
     </news:news>
   </url>
@@ -301,10 +841,21 @@
     <loc>https://moneycal.in/discover/ration-card-new-update-2026/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T14:00:00.000Z</news:publication_date>
+      <news:title>Ration Card धारकों के लिए बड़ी खुशखबरी, सरकार ने किया यह नया बदलाव!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/ration-card-new-update-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T14:00:00.000Z</news:publication_date>
       <news:title>Ration Card धारकों के लिए बड़ी खुशखबरी, सरकार ने किया यह नया बदलाव!</news:title>
     </news:news>
   </url>
@@ -312,21 +863,43 @@
     <loc>https://moneycal.in/discover/shah-rukh-khan-bungalow-petition/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
-      <news:title>Shah Rukh Khan के बंगले &amp;#39;Mannat&amp;#39; को लेकर सुप्रीम कोर्ट का बड़ा फैसला, जानें पूरा मामला</news:title>
+      <news:publication_date>2026-07-15T13:30:00.000Z</news:publication_date>
+      <news:title>Shah Rukh Khan के बंगले \</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/shah-rukh-khan-bungalow-petition/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T13:30:00.000Z</news:publication_date>
+      <news:title>Shah Rukh Khan के बंगले \</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/diljit-dosanjh-new-movie-satluj/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T13:00:00.000Z</news:publication_date>
+      <news:title>Diljit Dosanjh की New Movie Satluj का धमाकेदार ऐलान, फैंस में बड़ा क्रेज और विवाद</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/diljit-dosanjh-new-movie-satluj/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T13:00:00.000Z</news:publication_date>
       <news:title>Diljit Dosanjh की New Movie Satluj का धमाकेदार ऐलान, फैंस में बड़ा क्रेज और विवाद</news:title>
     </news:news>
   </url>
@@ -334,10 +907,21 @@
     <loc>https://moneycal.in/discover/maruti-suzuki-brezza-facelift-2026/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T12:30:00.000Z</news:publication_date>
+      <news:title>New Maruti Suzuki Brezza Facelift 2026 Launch! देखें बेमिसाल फीचर्स और कीमत</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/maruti-suzuki-brezza-facelift-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T12:30:00.000Z</news:publication_date>
       <news:title>New Maruti Suzuki Brezza Facelift 2026 Launch! देखें बेमिसाल फीचर्स और कीमत</news:title>
     </news:news>
   </url>
@@ -345,10 +929,21 @@
     <loc>https://moneycal.in/discover/france-vs-spain-football-upset/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T12:00:00.000Z</news:publication_date>
+      <news:title>France vs Spain: फुटबॉल वर्ल्ड कप में बड़ा उलटफेर, फैंस हुए हैरान!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/france-vs-spain-football-upset/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T12:00:00.000Z</news:publication_date>
       <news:title>France vs Spain: फुटबॉल वर्ल्ड कप में बड़ा उलटफेर, फैंस हुए हैरान!</news:title>
     </news:news>
   </url>
@@ -356,10 +951,21 @@
     <loc>https://moneycal.in/discover/ind-vs-eng-axar-patel-record/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T11:30:00.000Z</news:publication_date>
+      <news:title>IND vs ENG: Axar Patel का धमाका, तोड़ दिया सालों पुराना बड़ा रिकॉर्ड!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/ind-vs-eng-axar-patel-record/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T11:30:00.000Z</news:publication_date>
       <news:title>IND vs ENG: Axar Patel का धमाका, तोड़ दिया सालों पुराना बड़ा रिकॉर्ड!</news:title>
     </news:news>
   </url>
@@ -367,10 +973,21 @@
     <loc>https://moneycal.in/discover/hang-seng-dax-index-global-market/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T11:00:00.000Z</news:publication_date>
+      <news:title>Hang Seng और DAX Index में हलचल, वैश्विक बाजारों के एक्शन से क्या Indian Market डूबेगा?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/hang-seng-dax-index-global-market/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T11:00:00.000Z</news:publication_date>
       <news:title>Hang Seng और DAX Index में हलचल, वैश्विक बाजारों के एक्शन से क्या Indian Market डूबेगा?</news:title>
     </news:news>
   </url>
@@ -378,10 +995,21 @@
     <loc>https://moneycal.in/discover/vedanta-group-anil-agarwal-masterstroke/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T10:30:00.000Z</news:publication_date>
+      <news:title>अनिल अग्रवाल का नया मास्टरस्ट्रोक! वेदांता ग्रुप के निवेशकों की खुली किस्मत</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/vedanta-group-anil-agarwal-masterstroke/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T10:30:00.000Z</news:publication_date>
       <news:title>अनिल अग्रवाल का नया मास्टरस्ट्रोक! वेदांता ग्रुप के निवेशकों की खुली किस्मत</news:title>
     </news:news>
   </url>
@@ -389,10 +1017,21 @@
     <loc>https://moneycal.in/discover/chatgpt-claude-ai-india-pricing/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T10:00:00.000Z</news:publication_date>
+      <news:title>ChatGPT और Claude AI को लेकर भारत में बड़ा बदलाव, क्या आपकी जेब पर पड़ेगा असर?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/chatgpt-claude-ai-india-pricing/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T10:00:00.000Z</news:publication_date>
       <news:title>ChatGPT और Claude AI को लेकर भारत में बड़ा बदलाव, क्या आपकी जेब पर पड़ेगा असर?</news:title>
     </news:news>
   </url>
@@ -400,10 +1039,21 @@
     <loc>https://moneycal.in/discover/epfo-vishwas-2026-scheme/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T09:30:00.000Z</news:publication_date>
+      <news:title>EPFO ने लॉन्च की Vishwas 2026 EPF Scheme! नौकरीपेशा लोग तुरंत उठाएं फायदा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epfo-vishwas-2026-scheme/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T09:30:00.000Z</news:publication_date>
       <news:title>EPFO ने लॉन्च की Vishwas 2026 EPF Scheme! नौकरीपेशा लोग तुरंत उठाएं फायदा</news:title>
     </news:news>
   </url>
@@ -411,10 +1061,21 @@
     <loc>https://moneycal.in/discover/silver-price-surge-rumor/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T09:00:00.000Z</news:publication_date>
+      <news:title>चाँदी की कीमतों में 1000% का जोरदार उछाल! क्या रिकॉर्ड तोड़ने को तैयार है Silver?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/silver-price-surge-rumor/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T09:00:00.000Z</news:publication_date>
       <news:title>चाँदी की कीमतों में 1000% का जोरदार उछाल! क्या रिकॉर्ड तोड़ने को तैयार है Silver?</news:title>
     </news:news>
   </url>
@@ -422,10 +1083,21 @@
     <loc>https://moneycal.in/discover/adani-power-groww-news/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T08:30:00.000Z</news:publication_date>
+      <news:title>Adani Power और Groww को लेकर आई बड़ी खबर, आज ही देख लें ये अपडेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/adani-power-groww-news/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T08:30:00.000Z</news:publication_date>
       <news:title>Adani Power और Groww को लेकर आई बड़ी खबर, आज ही देख लें ये अपडेट</news:title>
     </news:news>
   </url>
@@ -433,10 +1105,21 @@
     <loc>https://moneycal.in/discover/nse-bse-crash-tcs-itc-bel/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T08:00:00.000Z</news:publication_date>
+      <news:title>NSE और BSE पर हाहाकार! TCS, ITC और BEL के शेयरों में अचानक क्या हुआ?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/nse-bse-crash-tcs-itc-bel/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T08:00:00.000Z</news:publication_date>
       <news:title>NSE और BSE पर हाहाकार! TCS, ITC और BEL के शेयरों में अचानक क्या हुआ?</news:title>
     </news:news>
   </url>
@@ -444,10 +1127,21 @@
     <loc>https://moneycal.in/discover/alpine-sbi-ipo-gmp/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T07:30:00.000Z</news:publication_date>
+      <news:title>Alpine Texworld और SBI Funds Management IPO का बड़ा धमाका: GMP देखकर उड़ जाएंगे होश!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/alpine-sbi-ipo-gmp/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T07:30:00.000Z</news:publication_date>
       <news:title>Alpine Texworld और SBI Funds Management IPO का बड़ा धमाका: GMP देखकर उड़ जाएंगे होश!</news:title>
     </news:news>
   </url>
@@ -455,10 +1149,21 @@
     <loc>https://moneycal.in/discover/kusumgar-share-price-surge/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T07:00:00.000Z</news:publication_date>
+      <news:title>Kusumgar Share Price 700% उछला! इस गुमनाम स्टॉक ने सबको चौंकाया</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/kusumgar-share-price-surge/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T07:00:00.000Z</news:publication_date>
       <news:title>Kusumgar Share Price 700% उछला! इस गुमनाम स्टॉक ने सबको चौंकाया</news:title>
     </news:news>
   </url>
@@ -466,21 +1171,153 @@
     <loc>https://moneycal.in/discover/ibm-angel-one-share-price-surge/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-15</news:publication_date>
+      <news:publication_date>2026-07-15T06:30:00.000Z</news:publication_date>
       <news:title>IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/ibm-angel-one-share-price-surge/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-15T06:30:00.000Z</news:publication_date>
+      <news:title>IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/venus-transit-shukra-gochar-july-2026-astrology/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T12:30:00.000Z</news:publication_date>
+      <news:title>Shukra Gochar 2026: सिंह राशि में शुक्र का महा-गोचर, 3 राशियों पर बरसेगा अपार धन, जानें अपना हाल</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/venus-transit-shukra-gochar-july-2026-astrology/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T12:30:00.000Z</news:publication_date>
+      <news:title>Shukra Gochar 2026: सिंह राशि में शुक्र का महा-गोचर, 3 राशियों पर बरसेगा अपार धन, जानें अपना हाल</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/anthropic-claude-pro-india-subscription-price-features/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T11:30:00.000Z</news:publication_date>
+      <news:title>Anthropic Claude Pro भारत में लॉन्च: ChatGPT को टक्कर देने आया यह एडवांस्ड AI, जानें कितनी है सब्सक्रिप्शन फीस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/anthropic-claude-pro-india-subscription-price-features/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T11:30:00.000Z</news:publication_date>
+      <news:title>Anthropic Claude Pro भारत में लॉन्च: ChatGPT को टक्कर देने आया यह एडवांस्ड AI, जानें कितनी है सब्सक्रिप्शन फीस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/nta-exam-updates-july-ugc-net-neet/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T10:30:00.000Z</news:publication_date>
+      <news:title>NTA Exam Alert: नेशनल टेस्टिंग एजेंसी ने जारी किया नया नोटिफिकेशन, इन छात्रों के लिए जरूरी अपडेट जारी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/nta-exam-updates-july-ugc-net-neet/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T10:30:00.000Z</news:publication_date>
+      <news:title>NTA Exam Alert: नेशनल टेस्टिंग एजेंसी ने जारी किया नया नोटिफिकेशन, इन छात्रों के लिए जरूरी अपडेट जारी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/cyclospora-parasite-outbreak-symptoms-prevention/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T09:30:00.000Z</news:publication_date>
+      <news:title>Cyclospora Parasite: अचानक फैला इस खतरनाक परजीवी का संक्रमण! भूलकर भी न करें ये गलतियां, जानें लक्षण और बचाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/cyclospora-parasite-outbreak-symptoms-prevention/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T09:30:00.000Z</news:publication_date>
+      <news:title>Cyclospora Parasite: अचानक फैला इस खतरनाक परजीवी का संक्रमण! भूलकर भी न करें ये गलतियां, जानें लक्षण और बचाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/sharad-pawar-maharashtra-politics-ncp-meeting/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T08:30:00.000Z</news:publication_date>
+      <news:title>शरद पवार का बड़ा सियासी दांव: महाराष्ट्र की राजनीति में अचानक मची हलचल, क्या बदलने वाला है पूरा गेम?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/sharad-pawar-maharashtra-politics-ncp-meeting/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T08:30:00.000Z</news:publication_date>
+      <news:title>शरद पवार का बड़ा सियासी दांव: महाराष्ट्र की राजनीति में अचानक मची हलचल, क्या बदलने वाला है पूरा गेम?</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/iphone-18-release-date-leaks-features-2026/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
+      <news:publication_date>2026-07-14T07:30:00.000Z</news:publication_date>
+      <news:title>iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/iphone-18-release-date-leaks-features-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T07:30:00.000Z</news:publication_date>
       <news:title>iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!</news:title>
     </news:news>
   </url>
@@ -488,10 +1325,21 @@
     <loc>https://moneycal.in/discover/8th-pay-commission-hra-calculator-x-y-z-cities/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
+      <news:publication_date>2026-07-14T06:30:00.000Z</news:publication_date>
+      <news:title>8th Pay Commission Calculator: केंद्रीय कर्मचारियों की लगेगी लॉटरी! नए HRA कैलकुलेटर से जानें कितनी बढ़ेगी आपकी इन-हैंड सैलरी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/8th-pay-commission-hra-calculator-x-y-z-cities/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T06:30:00.000Z</news:publication_date>
       <news:title>8th Pay Commission Calculator: केंद्रीय कर्मचारियों की लगेगी लॉटरी! नए HRA कैलकुलेटर से जानें कितनी बढ़ेगी आपकी इन-हैंड सैलरी</news:title>
     </news:news>
   </url>
@@ -499,55 +1347,1672 @@
     <loc>https://moneycal.in/discover/sbi-amc-ipo-day-1-gmp-subscription/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
+      <news:publication_date>2026-07-14T05:30:00.000Z</news:publication_date>
       <news:title>SBI Funds Management IPO: पहले ही दिन GMP ने मचाया गदर! दांव लगाने से पहले जानें आज का लेटेस्ट प्रीमियम</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://moneycal.in/discover/ranbir-kapoor-pune-land-deal-16-crore/</loc>
+    <loc>https://moneycal.in/hi/discover/sbi-amc-ipo-day-1-gmp-subscription/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
-      <news:title>रणबीर कपूर ने पुणे में खरीदी करोड़ों की जमीन! अयोध्या के बाद अब यहां लगाया बड़ा दांव</news:title>
+      <news:publication_date>2026-07-14T05:30:00.000Z</news:publication_date>
+      <news:title>SBI Funds Management IPO: पहले ही दिन GMP ने मचाया गदर! दांव लगाने से पहले जानें आज का लेटेस्ट प्रीमियम</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://moneycal.in/discover/wi-vs-nz-2nd-odi-jayden-lennox-5-wickets/</loc>
+    <loc>https://moneycal.in/discover/ankur-warikoo-investment-tips-index-funds-wealth/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
-      <news:title>WI vs NZ: 2nd ODI में न्यूजीलैंड ने पलटी बाजी, जानें 5 विकेट से जीत के असली हीरो कौन!</news:title>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Ankur Warikoo की सलाह: सिर्फ 5 मिनट में अपना पैसा बढ़ाएं, Index Funds से बनें करोड़पति</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/bank-holiday-alert-july-13-19/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
       <news:title>Bank Holiday Alert: अगले हफ्ते 4 दिन बंद रहेंगे बैंक, आज ही निपटा लें काम!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/cupid-share-price-multibagger-target-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Cupid Ltd Share Price: 100 रुपये से कम का यह पेनी स्टॉक कर रहा कमाल, क्या बनेगा अगला मल्टीबैगर?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/epfo-new-rules-claim-settlement-update-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>EPFO New Rules: PF से पैसा निकालना हुआ और भी आसान, सरकार ने बदल दिए क्लेम सेटलमेंट के ये 3 नियम</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/gold-price-prediction-80000-festival-sgb-investment/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Gold Price Prediction: क्या दीवाली तक 80,000 के पार जाएगा सोना? जानें कहां निवेश करना है सही</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/hdfc-bank-tcs-jobs-automation-ai-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>HDFC Bank और TCS में बड़ा बदलाव: क्या AI और ऑटोमेशन के कारण जा रही है बैंकिंग नौकरियां?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/kalyan-jewellers-share-price-target-buy-sell/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Kalyan Jewellers Share Price: रॉकेट बना यह ज्वेलरी शेयर, क्या अभी खरीदने पर होगा बंपर मुनाफा?</news:title>
     </news:news>
   </url>
   <url>
     <loc>https://moneycal.in/discover/kusumgar-ipo-allotment-status-bse-check-guide/</loc>
     <news:news>
       <news:publication>
-        <news:name>MoneyCal.in</news:name>
+        <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-14</news:publication_date>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
       <news:title>Kusumgar IPO Allotment Status: आपको शेयर मिले या पैसे होंगे रिफंड? ऐसे चेक करें अपना स्टेटस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/nifty-today-groww-trading-beginners-guide/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Nifty 50 में पहली बार कैसे लगाएं पैसा? Groww ऐप से ट्रेडिंग शुरू करने का पूरा प्रोसेस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/ranbir-kapoor-pune-land-deal-16-crore/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>रणबीर कपूर ने पुणे में खरीदी करोड़ों की जमीन! अयोध्या के बाद अब यहां लगाया बड़ा दांव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/sbi-funds-management-ipo-gmp-listing-gains/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>SBI Funds Management IPO: खुलने से पहले ग्रे मार्केट में मची हलचल, जानें लेटेस्ट GMP और कमाई</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/wi-vs-nz-2nd-odi-jayden-lennox-5-wickets/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>WI vs NZ: 2nd ODI में न्यूजीलैंड ने पलटी बाजी, जानें 5 विकेट से जीत के असली हीरो कौन!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/ankur-warikoo-investment-tips-index-funds-wealth/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Ankur Warikoo की सलाह: सिर्फ 5 मिनट में अपना पैसा बढ़ाएं, Index Funds से बनें करोड़पति</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/bank-holiday-alert-july-13-19/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Bank Holiday Alert: अगले हफ्ते 4 दिन बंद रहेंगे बैंक, आज ही निपटा लें काम!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/cupid-share-price-multibagger-target-analysis/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Cupid Ltd Share Price: 100 रुपये से कम का यह पेनी स्टॉक कर रहा कमाल, क्या बनेगा अगला मल्टीबैगर?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epfo-new-rules-claim-settlement-update-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>EPFO New Rules: PF से पैसा निकालना हुआ और भी आसान, सरकार ने बदल दिए क्लेम सेटलमेंट के ये 3 नियम</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/gold-price-prediction-80000-festival-sgb-investment/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Gold Price Prediction: क्या दीवाली तक 80,000 के पार जाएगा सोना? जानें कहां निवेश करना है सही</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/hdfc-bank-tcs-jobs-automation-ai-impact/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>HDFC Bank और TCS में बड़ा बदलाव: क्या AI और ऑटोमेशन के कारण जा रही है बैंकिंग नौकरियां?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/kalyan-jewellers-share-price-target-buy-sell/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Kalyan Jewellers Share Price: रॉकेट बना यह ज्वेलरी शेयर, क्या अभी खरीदने पर होगा बंपर मुनाफा?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/kusumgar-ipo-allotment-status-bse-check-guide/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Kusumgar IPO Allotment Status: आपको शेयर मिले या पैसे होंगे रिफंड? ऐसे चेक करें अपना स्टेटस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/nifty-today-groww-trading-beginners-guide/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>Nifty 50 में पहली बार कैसे लगाएं पैसा? Groww ऐप से ट्रेडिंग शुरू करने का पूरा प्रोसेस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/ranbir-kapoor-pune-land-deal-16-crore/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>रणबीर कपूर ने पुणे में खरीदी करोड़ों की जमीन! अयोध्या के बाद अब यहां लगाया बड़ा दांव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/sbi-funds-management-ipo-gmp-listing-gains/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>SBI Funds Management IPO: खुलने से पहले ग्रे मार्केट में मची हलचल, जानें लेटेस्ट GMP और कमाई</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/wi-vs-nz-2nd-odi-jayden-lennox-5-wickets/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-14T04:30:00.000Z</news:publication_date>
+      <news:title>WI vs NZ: 2nd ODI में न्यूजीलैंड ने पलटी बाजी, जानें 5 विकेट से जीत के असली हीरो कौन!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-movie-review-post-credit-scene/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:15:00.000Z</news:publication_date>
+      <news:title>The Odyssey Movie Review: Don\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-cast-nayanthara-kiara-huma/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:15:00.000Z</news:publication_date>
+      <news:title>Toxic Cast: Nayanthara और Kiara Advani चलाएंगी गोवा का अंडरवर्ल्ड?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-movie-review-post-credit-scene/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:15:00.000Z</news:publication_date>
+      <news:title>The Odyssey Movie Review: Don\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-cast-nayanthara-kiara-huma/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:15:00.000Z</news:publication_date>
+      <news:title>Toxic Cast: Nayanthara और Kiara Advani चलाएंगी गोवा का अंडरवर्ल्ड?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-where-to-watch-online-netflix-prime/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:10:00.000Z</news:publication_date>
+      <news:title>Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-1970-goa-underworld-aesthetic/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:10:00.000Z</news:publication_date>
+      <news:title>Toxic Movie 1970s Goa: ड्रग्स, माफिया और विंटेज लग्जरी का खूंखार खेल!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-where-to-watch-online-netflix-prime/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:10:00.000Z</news:publication_date>
+      <news:title>Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-1970-goa-underworld-aesthetic/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:10:00.000Z</news:publication_date>
+      <news:title>Toxic Movie 1970s Goa: ड्रग्स, माफिया और विंटेज लग्जरी का खूंखार खेल!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-full-movie-story-leak-mythology/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:05:00.000Z</news:publication_date>
+      <news:title>The Odyssey Full Movie Story Leak: Is This Hollywood\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-release-date-4-festivals-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:05:00.000Z</news:publication_date>
+      <news:title>Toxic Release Date: मेकर्स का मास्टरस्ट्रोक! एक साथ 4 बड़े त्योहारों पर कब्जा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-full-movie-story-leak-mythology/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:05:00.000Z</news:publication_date>
+      <news:title>The Odyssey Full Movie Story Leak: Is This Hollywood\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-release-date-4-festivals-strategy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:05:00.000Z</news:publication_date>
+      <news:title>Toxic Release Date: मेकर्स का मास्टरस्ट्रोक! एक साथ 4 बड़े त्योहारों पर कब्जा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-movie-monsters-magic-box-office/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:00:00.000Z</news:publication_date>
+      <news:title>Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-hollywood-action-director-jj-perry/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:00:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Action: John Wick के स्टंटमैन ने Yash को दिया खतरनाक लुक!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-movie-monsters-magic-box-office/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:00:00.000Z</news:publication_date>
+      <news:title>Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-hollywood-action-director-jj-perry/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T07:00:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Action: John Wick के स्टंटमैन ने Yash को दिया खतरनाक लुक!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-movie-ending-explained-twists/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:55:00.000Z</news:publication_date>
+      <news:title>The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-raya-to-ravan-ramayan-nitesh-tiwari/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:55:00.000Z</news:publication_date>
+      <news:title>Raya से लेकर Ravan तक: Yash कैसे कर रहे हैं इंडियन सिनेमा पर कब्जा!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-movie-ending-explained-twists/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:55:00.000Z</news:publication_date>
+      <news:title>The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-raya-to-ravan-ramayan-nitesh-tiwari/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:55:00.000Z</news:publication_date>
+      <news:title>Raya से लेकर Ravan तक: Yash कैसे कर रहे हैं इंडियन सिनेमा पर कब्जा!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-cast-revealed-tom-holland-zendaya/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:50:00.000Z</news:publication_date>
+      <news:title>The Odyssey Cast Revealed: You Won\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-gun-scene-controversy-a-rating/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:50:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Controversy: गन सीन पर मचा बवाल, फिल्म को मिलेगी \</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-cast-revealed-tom-holland-zendaya/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:50:00.000Z</news:publication_date>
+      <news:title>The Odyssey Cast Revealed: You Won\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-gun-scene-controversy-a-rating/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:50:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Controversy: गन सीन पर मचा बवाल, फिल्म को मिलेगी \</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-bollywood-superstar-cast-cameo-leak/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:45:00.000Z</news:publication_date>
+      <news:title>Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-yash-double-role-theory-villain/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:45:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Leaked Story: क्या Yash खुद ही होंगे फिल्म के सबसे बड़े विलेन?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-bollywood-superstar-cast-cameo-leak/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:45:00.000Z</news:publication_date>
+      <news:title>Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-yash-double-role-theory-villain/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:45:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Leaked Story: क्या Yash खुद ही होंगे फिल्म के सबसे बड़े विलेन?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-official-trailer-breakdown-most-expensive/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:40:00.000Z</news:publication_date>
+      <news:title>The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-box-office-collection-1200-crore-budget/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:40:00.000Z</news:publication_date>
+      <news:title>Toxic Box Office Prediction: क्या Yash की नई फिल्म ₹1200 करोड़ कमा पाएगी?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-official-trailer-breakdown-most-expensive/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:40:00.000Z</news:publication_date>
+      <news:title>The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-box-office-collection-1200-crore-budget/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:40:00.000Z</news:publication_date>
+      <news:title>Toxic Box Office Prediction: क्या Yash की नई फिल्म ₹1200 करोड़ कमा पाएगी?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/odyssey-movie-vs-ramayana-trending-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:35:00.000Z</news:publication_date>
+      <news:title>Before Ramayana, Watch This? Why The Odyssey Movie Is Trending in India Today!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/toxic-movie-tabaahi-song-yash-kiara-chemistry/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:35:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Song Tabaahi: Yash और Kiara Advani की केमिस्ट्री ने तोड़े सारे रिकॉर्ड!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/odyssey-movie-vs-ramayana-trending-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:35:00.000Z</news:publication_date>
+      <news:title>Before Ramayana, Watch This? Why The Odyssey Movie Is Trending in India Today!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/toxic-movie-tabaahi-song-yash-kiara-chemistry/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:35:00.000Z</news:publication_date>
+      <news:title>Toxic Movie Song Tabaahi: Yash और Kiara Advani की केमिस्ट्री ने तोड़े सारे रिकॉर्ड!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/1-lakh-salary-middle-class-trap/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>1 Lakh Salary is the New Trap: क्यों 1 लाख महीना कमाने वाला भी आज 10 तारीख को गरीब हो जाता है?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/aamir-khan-3rd-marriage-fake-news-busted/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Aamir Khan 3rd Marriage: क्या सच में तीसरी बार दूल्हा बन रहे हैं आमिर खान? जानिए वायरल तस्वीर की पूरी सच्चाई</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/avengers-doomsday-poster-easter-eggs/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Avengers Doomsday Poster: मार्वल की नई फिल्म के पोस्टर ने मचाया तहलका! डॉक्टर डूम के रूप में इस दिग्गज की वापसी?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/bank-holidays-july-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Bank Holiday Alert: Are Banks Closed in Your State This Week? Check the Full RBI List</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/bcci-squad-changes-rohit-sharma/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>BCCI का बड़ा फैसला: Rohit Sharma की कप्तानी और Team India के स्क्वाड में हुए ये चौंकाने वाले बदलाव!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/brent-crude-oil-petrol-diesel-price/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Global Crisis Alert: Brent Crude Surges Amid Middle East Tensions. Will Petrol Prices Rise in India?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/bse-sensex-high-july-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Stock Market Boom: BSE Sensex Scales New Heights! 3 Key Reasons Behind Today\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/dhamaal-4-announcement/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Dhamaal 4 Announcement: \</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/dixon-technologies-share-make-in-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Make in India Masterstroke: Why Dixon Tech Share is the Ultimate Wealth Creator of 2026</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/epf-transfer-without-uan-password-online/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>UAN Password भूल गए? कोई बात नहीं! बिना पासवर्ड के ऐसे ट्रांसफर करें अपना PF का पैसा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/epfo-job-change-pf-transfer/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Job Change? Don\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/income-tax-return-filing-last-date-notice/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Income Tax Update: Missed the Deadline or Got a Notice? How to Avoid Heavy Penalties</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/kalyan-jewellers-share-price-gold/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Kalyan Jewellers Share Price Sparkles: Is it the Best Time to Buy Festive Retail Stocks?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/kusumgar-laser-power-ipo-allotment/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>IPO Alert: Kusumgar Allotment Out Today &amp; Laser Power GMP Skyrockets! Check Status Instantly</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/netflix-obsession-breaking-records-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Netflix \</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/nolan-odyssey-movie-release-date-india-fans/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>The Odyssey Movie Release Date: India Fans Go Crazy Over This Epic Action Trailer!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/one-lakh-salary-metro-city-survival/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Is ₹1 Lakh a Month Enough to Survive in India\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/sensex-targets-100k-multibagger-stocks/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Sensex Update: शेयर बाजार में ऐतिहासिक उछाल! इन 5 शेयरों ने दिया 300% रिटर्न, क्या अब 1 लाख पार करेगा सेंसेक्स?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/sonam-wangchuk-protest-latest-update/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Sonam Wangchuk Protest Update: लद्दाख की मांग और NEET विवाद! 15वें दिन भूख हड़ताल पर सोनम वांगचुक की तबीयत बिगड़ी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/tcs-tech-stocks-target-price-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>TCS Share Price Moves: Why India\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/wimbledon-2026-live/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Wimbledon 2026 Final: विंबलडन में बड़ा उलटफेर! जानिए किसने जीता खिताब और भारत में कहाँ देखे गए मैच</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/yash-toxic-movie-raya-release-date-box-office/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 10 बड़े खुलासे</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/1-lakh-salary-middle-class-trap/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>1 Lakh Salary is the New Trap: क्यों 1 लाख महीना कमाने वाला भी आज 10 तारीख को गरीब हो जाता है?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/aamir-khan-3rd-marriage-fake-news-busted/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Aamir Khan 3rd Marriage: क्या सच में तीसरी बार दूल्हा बन रहे हैं आमिर खान? जानिए वायरल तस्वीर की पूरी सच्चाई</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/avengers-doomsday-poster-easter-eggs/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Avengers Doomsday Poster: मार्वल की नई फिल्म के पोस्टर ने मचाया तहलका! डॉक्टर डूम के रूप में इस दिग्गज की वापसी?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/bank-holidays-july-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Bank Holiday Alert: Are Banks Closed in Your State This Week? Check the Full RBI List</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/bcci-squad-changes-rohit-sharma/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>BCCI का बड़ा फैसला: Rohit Sharma की कप्तानी और Team India के स्क्वाड में हुए ये चौंकाने वाले बदलाव!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/brent-crude-oil-petrol-diesel-price/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Global Crisis Alert: Brent Crude Surges Amid Middle East Tensions. Will Petrol Prices Rise in India?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/bse-sensex-high-july-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Stock Market Boom: BSE Sensex Scales New Heights! 3 Key Reasons Behind Today\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/dhamaal-4-announcement/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Dhamaal 4 Announcement: \</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/dixon-technologies-share-make-in-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Make in India Masterstroke: Why Dixon Tech Share is the Ultimate Wealth Creator of 2026</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epf-transfer-without-uan-password-online/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>UAN Password भूल गए? कोई बात नहीं! बिना पासवर्ड के ऐसे ट्रांसफर करें अपना PF का पैसा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epfo-job-change-pf-transfer/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Job Change? Don\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/income-tax-return-filing-last-date-notice/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Income Tax Update: Missed the Deadline or Got a Notice? How to Avoid Heavy Penalties</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/kalyan-jewellers-share-price-gold/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Kalyan Jewellers Share Price Sparkles: Is it the Best Time to Buy Festive Retail Stocks?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/kusumgar-laser-power-ipo-allotment/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>IPO Alert: Kusumgar Allotment Out Today &amp; Laser Power GMP Skyrockets! Check Status Instantly</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/netflix-obsession-breaking-records-india/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Netflix \</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/nolan-odyssey-movie-release-date-india-fans/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>The Odyssey Movie Release Date: India Fans Go Crazy Over This Epic Action Trailer!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/one-lakh-salary-metro-city-survival/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Is ₹1 Lakh a Month Enough to Survive in India\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/sensex-targets-100k-multibagger-stocks/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Sensex Update: शेयर बाजार में ऐतिहासिक उछाल! इन 5 शेयरों ने दिया 300% रिटर्न, क्या अब 1 लाख पार करेगा सेंसेक्स?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/sonam-wangchuk-protest-latest-update/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Sonam Wangchuk Protest Update: लद्दाख की मांग और NEET विवाद! 15वें दिन भूख हड़ताल पर सोनम वांगचुक की तबीयत बिगड़ी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/tcs-tech-stocks-target-price-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>TCS Share Price Moves: Why India\</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/wimbledon-2026-live/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Wimbledon 2026 Final: विंबलडन में बड़ा उलटफेर! जानिए किसने जीता खिताब और भारत में कहाँ देखे गए मैच</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/yash-toxic-movie-raya-release-date-box-office/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-13T06:30:00.000Z</news:publication_date>
+      <news:title>Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 10 बड़े खुलासे</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/epf-passbook-merge-multiple-uans-post-migration-guide/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:39:00.000Z</news:publication_date>
+      <news:title>पुरानी कंपनी का पीएफ फंसा है? नई EPFO माइग्रेशन गाइड से 5 मिनट में मर्ज करें 2 UAN नंबर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epf-passbook-merge-multiple-uans-post-migration-guide/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:39:00.000Z</news:publication_date>
+      <news:title>पुरानी कंपनी का पीएफ फंसा है? नई EPFO माइग्रेशन गाइड से 5 मिनट में मर्ज करें 2 UAN नंबर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/almada-global-tech-crypto-connection-india-trend/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:38:00.000Z</news:publication_date>
+      <news:title>गूगल पर अचानक ट्रेंड हुआ Almada, जानें भारत के इंटरनेट यूजर्स के लिए क्यों है जरूरी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/almada-global-tech-crypto-connection-india-trend/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:38:00.000Z</news:publication_date>
+      <news:title>गूगल पर अचानक ट्रेंड हुआ Almada, जानें भारत के इंटरनेट यूजर्स के लिए क्यों है जरूरी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/zee-entertainment-zeel-share-crash-survival-expert-advice/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:37:00.000Z</news:publication_date>
+      <news:title>Zee Share में अचानक हलचल, फंसे हुए छोटे निवेशक अब क्या करें? एक्सपर्ट्स की सीधी सलाह</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/zee-entertainment-zeel-share-crash-survival-expert-advice/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:37:00.000Z</news:publication_date>
+      <news:title>Zee Share में अचानक हलचल, फंसे हुए छोटे निवेशक अब क्या करें? एक्सपर्ट्स की सीधी सलाह</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/stake-app-legality-india-bank-account-freeze-rules/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:36:00.000Z</news:publication_date>
+      <news:title>Stake App और गेमिंग के चक्कर में फ्रीज हो रहे हैं बैंक अकाउंट? फंसने से पहले जानें ये नियम</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/stake-app-legality-india-bank-account-freeze-rules/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:36:00.000Z</news:publication_date>
+      <news:title>Stake App और गेमिंग के चक्कर में फ्रीज हो रहे हैं बैंक अकाउंट? फंसने से पहले जानें ये नियम</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/mango-fraud-chemically-ripened-vs-natural-identification/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:35:00.000Z</news:publication_date>
+      <news:title>आम खरीदने से पहले बाल्टी में डालें, तैर गया तो समझो जहर है! ऐसे पहचानें असली और नकली आम</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/mango-fraud-chemically-ripened-vs-natural-identification/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:35:00.000Z</news:publication_date>
+      <news:title>आम खरीदने से पहले बाल्टी में डालें, तैर गया तो समझो जहर है! ऐसे पहचानें असली और नकली आम</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/debt-free-penny-stocks-under-20-high-promoter-holding/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:34:00.000Z</news:publication_date>
+      <news:title>Debt-Free Penny Stocks: ₹20 से सस्ते ये 3 शेयर, प्रमोटर्स के पास है भारी हिस्सेदारी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/debt-free-penny-stocks-under-20-high-promoter-holding/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:34:00.000Z</news:publication_date>
+      <news:title>Debt-Free Penny Stocks: ₹20 से सस्ते ये 3 शेयर, प्रमोटर्स के पास है भारी हिस्सेदारी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/hidden-greater-noida-real-estate-gems-under-40-lakhs/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:33:00.000Z</news:publication_date>
+      <news:title>ग्रेटर नोएडा के ये 3 गुप्त इलाके, जहां 40 लाख से कम में मिल रहा है अपना घर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/hidden-greater-noida-real-estate-gems-under-40-lakhs/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:33:00.000Z</news:publication_date>
+      <news:title>ग्रेटर नोएडा के ये 3 गुप्त इलाके, जहां 40 लाख से कम में मिल रहा है अपना घर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/indian-fighter-pilots-diet-routine-sukhoi-rafale/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:32:00.000Z</news:publication_date>
+      <news:title>सुखोई और राफेल उड़ाने से पहले क्या खाते हैं भारतीय पायलट? शरीर पर होता है इतना खतरनाक दबाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/indian-fighter-pilots-diet-routine-sukhoi-rafale/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:32:00.000Z</news:publication_date>
+      <news:title>सुखोई और राफेल उड़ाने से पहले क्या खाते हैं भारतीय पायलट? शरीर पर होता है इतना खतरनाक दबाव</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/real-cost-1-lakh-salary-delhi-mumbai-middle-class/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:31:00.000Z</news:publication_date>
+      <news:title>₹1 लाख महीना कमाने वाले भी दिल्ली-मुंबई में क्यों हैं परेशान? देखें मिडिल क्लास का असली खर्च</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/real-cost-1-lakh-salary-delhi-mumbai-middle-class/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:31:00.000Z</news:publication_date>
+      <news:title>₹1 लाख महीना कमाने वाले भी दिल्ली-मुंबई में क्यों हैं परेशान? देखें मिडिल क्लास का असली खर्च</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/epfo-server-down-check-pf-balance-without-umang/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:30:00.000Z</news:publication_date>
+      <news:title>EPFO Server Down? बिना उमंग ऐप इन 3 तरीकों से चेक करें अपना पीएफ बैलेंस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epfo-server-down-check-pf-balance-without-umang/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T10:30:00.000Z</news:publication_date>
+      <news:title>EPFO Server Down? बिना उमंग ऐप इन 3 तरीकों से चेक करें अपना पीएफ बैलेंस</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/visakhapatnam-strike-impact-hindi-states-services/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:39:00.000Z</news:publication_date>
+      <news:title>इस बड़ी हड़ताल से क्या आपके शहर में भी ठप हो जाएंगी सेवाएं? विशाखापट्टनम से लेकर उत्तर भारत तक सीधा असर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/visakhapatnam-strike-impact-hindi-states-services/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:39:00.000Z</news:publication_date>
+      <news:title>इस बड़ी हड़ताल से क्या आपके शहर में भी ठप हो जाएंगी सेवाएं? विशाखापट्टनम से लेकर उत्तर भारत तक सीधा असर</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/argentina-england-messi-switzerland-football-rivalry/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:38:00.000Z</news:publication_date>
+      <news:title>Messi और अर्जेंटीना के खिलाफ क्यों खौफ में रहती हैं यूरोपीय टीमें? मैदान के बाहर की वो दुश्मनी जो मैच को बनाती है जंग</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/argentina-england-messi-switzerland-football-rivalry/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:38:00.000Z</news:publication_date>
+      <news:title>Messi और अर्जेंटीना के खिलाफ क्यों खौफ में रहती हैं यूरोपीय टीमें? मैदान के बाहर की वो दुश्मनी जो मैच को बनाती है जंग</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/oman-golden-visa-scheme-rules-indians/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:37:00.000Z</news:publication_date>
+      <news:title>ओमान में रहने का सुनहरा मौका! भारतीयों के लिए बदले नियम, बिना किसी पाबंदी के ऐसे पा सकते हैं लॉन्ग-टर्म वीजा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/oman-golden-visa-scheme-rules-indians/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:37:00.000Z</news:publication_date>
+      <news:title>ओमान में रहने का सुनहरा मौका! भारतीयों के लिए बदले नियम, बिना किसी पाबंदी के ऐसे पा सकते हैं लॉन्ग-टर्म वीजा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/vimag-labs-manish-seth-startup-success-lessons/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:36:00.000Z</news:publication_date>
+      <news:title>Vimag Labs के मनीष सेठ ने कैसे खड़ी की करोड़ों की कंपनी? भारतीय युवाओं के लिए 3 बड़े बिजनेस लेसन</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/vimag-labs-manish-seth-startup-success-lessons/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:36:00.000Z</news:publication_date>
+      <news:title>Vimag Labs के मनीष सेठ ने कैसे खड़ी की करोड़ों की कंपनी? भारतीय युवाओं के लिए 3 बड़े बिजनेस लेसन</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/obsession-movie-netflix-ending-explained-clues/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:35:00.000Z</news:publication_date>
+      <news:title>Netflix पर तहलका मचा रही है ये सस्पेंस थ्रिलर फिल्म, क्लाइमेक्स का वो सच जो आधे लोगों को समझ ही नहीं आया</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/obsession-movie-netflix-ending-explained-clues/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:35:00.000Z</news:publication_date>
+      <news:title>Netflix पर तहलका मचा रही है ये सस्पेंस थ्रिलर फिल्म, क्लाइमेक्स का वो सच जो आधे लोगों को समझ ही नहीं आया</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/indian-army-agniveer-hidden-benefits-fighter-jets/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:34:00.000Z</news:publication_date>
+      <news:title>Indian Army में भर्ती होने वालों को अब मिलेंगे ये नए हिडन भत्ते, लड़ाकू विमानों की सुरक्षा यूनिट में शामिल होने का मौका</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/indian-army-agniveer-hidden-benefits-fighter-jets/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:34:00.000Z</news:publication_date>
+      <news:title>Indian Army में भर्ती होने वालों को अब मिलेंगे ये नए हिडन भत्ते, लड़ाकू विमानों की सुरक्षा यूनिट में शामिल होने का मौका</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/pixel-11-pro-hidden-features-leaked-price/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:33:00.000Z</news:publication_date>
+      <news:title>Pixel 11 Pro का ये एक सीक्रेट फीचर iPhone को कर देगा फेल, लॉन्च से पहले लीक हुई असली कीमत</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/pixel-11-pro-hidden-features-leaked-price/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:33:00.000Z</news:publication_date>
+      <news:title>Pixel 11 Pro का ये एक सीक्रेट फीचर iPhone को कर देगा फेल, लॉन्च से पहले लीक हुई असली कीमत</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/bcci-india-squad-jemimah-rodrigues-inside-story/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:32:00.000Z</news:publication_date>
+      <news:title>BCCI का अचानक बड़ा फैसला: स्क्वाड में रातों-रात बदलाव के पीछे की वो इनसाइड स्टोरी जो किसी को नहीं पता</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/bcci-india-squad-jemimah-rodrigues-inside-story/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:32:00.000Z</news:publication_date>
+      <news:title>BCCI का अचानक बड़ा फैसला: स्क्वाड में रातों-रात बदलाव के पीछे की वो इनसाइड स्टोरी जो किसी को नहीं पता</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/epfo-migration-glitches-database-transfer/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:30:00.000Z</news:publication_date>
+      <news:title>EPFO का नया सिस्टम शुरू: ट्रांसफर के चक्कर में कहीं अटक न जाए आपका पैसा, तुरंत चेक करें ये 3 सेटिंग्स</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/epfo-migration-glitches-database-transfer/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T09:30:00.000Z</news:publication_date>
+      <news:title>EPFO का नया सिस्टम शुरू: ट्रांसफर के चक्कर में कहीं अटक न जाए आपका पैसा, तुरंत चेक करें ये 3 सेटिंग्स</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/bse-sensex-market-crash-or-boom-today/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>BSE Sensex में बड़ी हलचल! बाजार में आज जबरदस्त उठापटक, निवेशकों के ₹5 लाख करोड़ का फैसला एक दिन में</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/kalyan-jewellers-share-price-target-update/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>Kalyan Jewellers के शेयर में बड़ा धमाका! एक्सपर्ट्स ने दिया नया टारगेट, निवेशक हुए मालामाल</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/mustard-oil-prices-today-new-rate/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>सरसों तेल के दामों में अचानक बड़ा बदलाव! किचन का बजट होगा गड़बड़, जानिए आज का नया रेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/pm-kisan-yojana-new-installment-status/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>PM Kisan Yojana: किसानों के खाते में आने वाली है 18वीं किस्त! इस तारीख से पहले कर लें ये जरूरी काम वरना अटक जाएगा पैसा</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/bse-sensex-market-crash-or-boom-today/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>BSE Sensex में बड़ी हलचल! बाजार में आज जबरदस्त उठापटक, निवेशकों के ₹5 लाख करोड़ का फैसला एक दिन में</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/kalyan-jewellers-share-price-target-update/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>Kalyan Jewellers के शेयर में बड़ा धमाका! एक्सपर्ट्स ने दिया नया टारगेट, निवेशक हुए मालामाल</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/mustard-oil-prices-today-new-rate/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>सरसों तेल के दामों में अचानक बड़ा बदलाव! किचन का बजट होगा गड़बड़, जानिए आज का नया रेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/pm-kisan-yojana-new-installment-status/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-12T03:30:00.000Z</news:publication_date>
+      <news:title>PM Kisan Yojana: किसानों के खाते में आने वाली है 18वीं किस्त! इस तारीख से पहले कर लें ये जरूरी काम वरना अटक जाएगा पैसा</news:title>
     </news:news>
   </url>
 </urlset>
