@@ -51,6 +51,7 @@ const Top10 = lazy(() => import('./pages/Top10'));
 
 const ProgrammaticMasterDispatcher = lazy(() => import('./pages/calculators/ProgrammaticMasterDispatcher'));
 const EmbedPage = lazy(() => import('./pages/EmbedPage'));
+const SchemesFinder = lazy(() => import('./pages/SchemesFinder'));
 
 const StateStampDutyGuide = lazy(() => import('./pages/stamp-duty/StateStampDutyGuide'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -972,6 +973,7 @@ function App() {
         <Routes>
           {/* Missed Call Banking Directory route - outside Layout */}
           <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
+          <Route path="/schemes-finder" element={<Layout><Suspense fallback={skeletonFallback}><SchemesFinder /></Suspense></Layout>} />
 
           {/* GK routes - Moved inside with Layout helper for now or just move to Layout routes later */}
           <Route path="/gk" element={<Layout><GKHub /></Layout>} />
