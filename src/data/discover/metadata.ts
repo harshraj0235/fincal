@@ -545,6 +545,51 @@ export const discoverMetadata = [
         "author": "MoneyCal Team"
     },
     {
+        "id": "odyssey-movie-hindi-dubbed-download-telegram",
+        "slug": "odyssey-movie-hindi-dubbed-download-telegram",
+        "title": "The Odyssey Movie: How to download the odyssey movie in hindi dubbed? सच्चाई",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-movie-hindi-dubbed-download-telegram.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-download-filmyzilla-1080p-hindi",
+        "slug": "odyssey-movie-download-filmyzilla-1080p-hindi",
+        "title": "Filmyzilla Leaks: how to download the odyssey movie in hindi dubbed? जानिए",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-movie-download-filmyzilla-1080p-hindi.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "how-to-watch-odyssey-hindi-dubbed-online",
+        "slug": "how-to-watch-odyssey-hindi-dubbed-online",
+        "title": "how to download the odyssey movie in hindi dubbed? Legal OTT Release चौंकाने वाला",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/how-to-watch-odyssey-hindi-dubbed-online.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "odyssey-christopher-nolan-hindi-dubbed-ott",
+        "slug": "odyssey-christopher-nolan-hindi-dubbed-ott",
+        "title": "Nolan's Magic: how to download the odyssey movie in hindi dubbed? पूरी जानकारी",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-christopher-nolan-hindi-dubbed-ott.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-2026-hindi-dubbed-vegamovies",
+        "slug": "odyssey-movie-2026-hindi-dubbed-vegamovies",
+        "title": "Vegamovies 2026: how to download the odyssey movie in hindi dubbed? बड़ी खबर",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-movie-2026-hindi-dubbed-vegamovies.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
         "id": "aaj-ka-rashifal-dhan-labh-2026",
         "slug": "aaj-ka-rashifal-dhan-labh-2026",
         "title": "Rashifal: आज चमकेगी इन भाग्यशाली राशियों की किस्मत, होगा बड़ा धन लाभ!",
