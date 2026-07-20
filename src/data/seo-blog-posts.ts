@@ -459,7 +459,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Mutual Funds', 'SIP', 'Investment', 'Portfolio Management'],
     keywords: ['mutual funds india', 'sip investment', 'fund selection', 'portfolio management', 'equity funds', 'debt funds', 'hybrid funds', 'fund performance'],
     date: '2025-01-12',
-    lastModified: '2026-07-12',
+    lastModified: '2026-07-20',
     coverImage: '/images/blogs/mutual-funds-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Mutual Funds Investment Guide India 2025: Complete Strategy' },
@@ -755,7 +755,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Real Estate', 'Property Investment', 'REITs', 'Commercial Real Estate'],
     keywords: ['real estate investment', 'property investment india', 'reits investment', 'commercial real estate', 'residential property', 'real estate portfolio', 'property valuation', 'real estate trends'],
     date: '2025-01-10',
-    lastModified: '2026-07-12',
+    lastModified: '2026-07-20',
     coverImage: '/images/blogs/real-estate-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Real Estate Investment Guide India 2025: Complete Strategy' },
@@ -1051,7 +1051,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Home Loans', 'Real Estate', 'Loan Guide', 'Interest Rates'],
     keywords: ['home loan india', 'home loan interest rates', 'home loan eligibility', 'home loan comparison', 'best home loan', 'home loan tips', 'home loan calculator', 'home loan process'],
     date: '2025-01-08',
-    lastModified: '2026-07-12',
+    lastModified: '2026-07-20',
     coverImage: '/images/blogs/home-loan-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Complete Home Loan Guide India 2025: Interest Rates & Tips' },
