@@ -66,15 +66,13 @@ export const FdCalculator: React.FC<FdSEOProps> = ({
           <span className="mx-1">/</span>
           <Link to="/calculators" className="hover:text-blue-600">Calculators</Link>
           <span className="mx-1">/</span>
-          <span className="text-gray-800 font-semibold">FD Calculator</span>
+          <span className="text-gray-800 font-semibold">{h1 || 'FD Calculator'}</span>
         </nav>
 
         <div className="mb-6">
-              
-              <div className="p-4 bg-gray-50 border-t border-gray-200 text-xs text-gray-500">
-                <strong>Note:</strong> FD Interest is taxable based on your income tax slab. Banks deduct 10% TDS if interest exceeds ₹40k (₹50k for Seniors) in a year.
-              </div>
-            </div>
+          <OmniWidget config={fdConfig} engine={engine} />
+          <div className="p-4 bg-gray-50 border-t border-gray-200 text-xs text-gray-500 rounded-b-xl">
+            <strong>Note:</strong> FD Interest is taxable based on your income tax slab. Banks deduct 10% TDS if interest exceeds ₹40k (₹50k for Seniors) in a year.
           </div>
         </div>
 
