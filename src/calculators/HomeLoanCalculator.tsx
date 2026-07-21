@@ -9,6 +9,9 @@ import {
 import { ExportButtons } from '../components/ExportButtons';
 import SEOHelmet from '../components/SEOHelmet';
 import CalculatorSchema from '../components/CalculatorSchema';
+import { homeLoanConfig } from '../engine/configs/homeLoanConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 /* ═══════════════════════════════════════════════════════════════
    HOME LOAN CALCULATOR — PURE STATIC HTML EDITION (2025)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -46,21 +49,28 @@ const FAQ_DATA = [
 ];
 
 export const HomeLoanCalculator: React.FC = () => {
-  const [propertyValue, setPropertyValue] = useState(6000000);
-  const [downPayment, setDownPayment] = useState(20);
-  const [interestRate, setInterestRate] = useState(8.75);
-  const [loanTenure, setLoanTenure] = useState(20);
-  const [monthlyPrepayment, setMonthlyPrepayment] = useState(0);
-  const [taxSlab, setTaxSlab] = useState(0.30);
+  const engine = useOmniEngine(homeLoanConfig);
+
   const [showFullAmort, setShowFullAmort] = useState(false);
 
-  // Derived values
+  // Derived values from engine
+  const propertyValue = Number(engine.state.variables.propertyValue?.value) || 6000000;
+  const downPayment = Number(engine.state.variables.downPayment?.value) || 20;
+  const interestRate = Number(engine.state.variables.rate?.value) || 8.75;
+  const loanTenure = Number(engine.state.variables.tenure?.value) || 240;
+  const tenureInMonths = engine.state.variables.tenure?.unit === 'years'
+    ? (Number(engine.state.variables.tenure?.value) * 12) || 240
+    : Number(engine.state.variables.tenure?.value) || 240;
+  const tenureType = engine.state.variables.tenure?.unit === 'years' ? 'years' : 'months';
+  
+  const monthlyPrepayment = Number(engine.state.variables.monthlyPrepayment?.value) || 0;
+  const taxSlab = Number(engine.state.variables.taxSlab?.value) || 0.30;
+
   const loanAmount = Math.round(propertyValue * (1 - downPayment / 100));
-  const tenureInMonths = loanTenure * 12;
   const ltv = ((loanAmount / propertyValue) * 100).toFixed(1);
 
   // Calculations
-  const emi = useMemo(() => calculateEMI(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);
+  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
   const totalPayment = emi * tenureInMonths;
   const totalInterest = totalPayment - loanAmount;
 
@@ -70,7 +80,7 @@ export const HomeLoanCalculator: React.FC = () => {
     let balance = loanAmount;
     const monthlyRate = interestRate / 12 / 100;
     
-    for (let yr = 1; yr <= loanTenure; yr++) {
+    for (let yr = 1; yr <= (tenureInMonths / 12); yr++) {
       let yearPrincipal = 0;
       let yearInterest = 0;
       
@@ -96,7 +106,7 @@ export const HomeLoanCalculator: React.FC = () => {
       if (balance <= 0) break;
     }
     return schedule;
-  }, [loanAmount, interestRate, loanTenure, emi, monthlyPrepayment]);
+  }, [loanAmount, interestRate, tenureInMonths, emi, monthlyPrepayment]);
 
   const actualTotalInterest = yearlySchedule.reduce((acc, curr) => acc + curr.interestPaid, 0);
   const actualTenureMonths = yearlySchedule.filter(y => y.balance > 0).length * 12; // Approximation based on years
@@ -112,10 +122,10 @@ export const HomeLoanCalculator: React.FC = () => {
   }, [yearlySchedule, taxSlab]);
 
   const applyPreset = (preset: typeof PRESETS[0]) => {
-    setPropertyValue(preset.property);
-    setDownPayment(Math.round((1 - preset.loan / preset.property) * 100));
-    setInterestRate(preset.rate);
-    setLoanTenure(preset.tenure);
+    engine.updateVariable('propertyValue', preset.property.toString(), 'inr');
+    engine.updateVariable('downPayment', Math.round((1 - preset.loan / preset.property) * 100).toString(), 'percent');
+    engine.updateVariable('rate', preset.rate.toString(), 'percent_yearly');
+    engine.updateVariable('tenure', preset.tenure.toString(), 'years');
   };
 
   const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
@@ -167,157 +177,35 @@ export const HomeLoanCalculator: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-[#f0fdfa] border border-[#99f6e4] rounded-lg p-5 shadow-sm">
-              <h2 className="text-xl font-semibold mb-4 text-[#0f766e] border-b border-[#99f6e4] pb-2">Property & Loan Details</h2>
-
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-[#ccfbf1]">
-                    <td className="py-3 pr-2 font-medium w-1/2">
-                      <label htmlFor="propertyValue">Property Value (₹)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="propertyValue" type="number" value={propertyValue}
-                        onChange={(e) => setPropertyValue(Math.max(100000, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#0f766e]"
-                        min="100000" max="500000000" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#ccfbf1]">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="downPayment">Down Payment (%)</label>
-                      <p className="text-xs text-gray-500 font-normal">Min 10-20% required</p>
-                    </td>
-                    <td className="py-3">
-                      <div className="flex gap-2">
-                        <input id="downPayment" type="number" value={downPayment}
-                          onChange={(e) => setDownPayment(Math.max(0, Math.min(99, Number(e.target.value) || 0)))}
-                          className="w-20 p-2 border border-gray-300 rounded focus:outline-none focus:border-[#0f766e]"
-                          min="0" max="99" />
-                        <span className="text-sm self-center text-gray-500">₹{fmtNum(propertyValue * (downPayment / 100))}</span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#ccfbf1]">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="interestRate">Interest Rate (% p.a.)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="interestRate" type="number" step="0.05" value={interestRate}
-                        onChange={(e) => setInterestRate(Math.max(1, Math.min(30, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#0f766e]"
-                        min="1" max="30" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#ccfbf1]">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="loanTenure">Loan Tenure (Years)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="loanTenure" type="number" value={loanTenure}
-                        onChange={(e) => setLoanTenure(Math.max(1, Math.min(30, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#0f766e]"
-                        min="1" max="30" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#ccfbf1]">
-                    <td className="py-3 pr-2 font-medium text-[#0f766e]">
-                      <label htmlFor="monthlyPrepayment">Monthly Prepayment (₹)</label>
-                      <p className="text-xs text-teal-700 font-normal">Optional extra EMI</p>
-                    </td>
-                    <td className="py-3">
-                      <input id="monthlyPrepayment" type="number" value={monthlyPrepayment}
-                        onChange={(e) => setMonthlyPrepayment(Math.max(0, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-teal-300 rounded bg-teal-50 focus:outline-none focus:border-[#0f766e]"
-                        min="0" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="taxSlab">Your Income Tax Slab</label>
-                    </td>
-                    <td className="py-3">
-                      <select id="taxSlab" value={taxSlab} onChange={(e) => setTaxSlab(Number(e.target.value))}
-                        className="w-full p-2 border border-gray-300 rounded bg-white focus:outline-none focus:border-[#0f766e]">
-                        <option value={0.05}>5% Slab (Old Regime)</option>
-                        <option value={0.20}>20% Slab (Old Regime)</option>
-                        <option value={0.30}>30% Slab (Old/New Regime)</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <div className="flex flex-col gap-8">
+          <div className="w-full">
+            <OmniWidget config={homeLoanConfig} engine={engine} />
           </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-md flex flex-col h-full">
-              <h2 className="text-xl font-semibold mb-4 text-[#0f766e] border-b border-gray-200 pb-2">Home Loan Result</h2>
-
-              <div className="bg-[#f0fdfa] p-4 rounded-lg mb-4 text-center border border-[#99f6e4]">
-                <p className="text-gray-600 text-sm font-medium uppercase tracking-wide">Monthly EMI</p>
-                <p className="text-4xl font-bold text-[#0f766e] my-1">₹{fmtNum(Math.round(emi))}</p>
-                {monthlyPrepayment > 0 && <p className="text-sm text-teal-700 font-bold">+ ₹{fmtNum(monthlyPrepayment)} extra/mo</p>}
-              </div>
-
-              <table className="w-full text-left text-sm border-collapse mb-4">
-                <tbody>
-                  <tr className="border-b border-gray-100">
-                    <td className="py-2 text-gray-600">Loan Amount (Principal):</td>
-                    <td className="py-2 font-semibold text-right">{fmt(loanAmount)}</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="py-2 text-gray-600">Loan to Value (LTV) Ratio:</td>
-                    <td className="py-2 font-semibold text-right">{ltv}%</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 text-red-600">
-                    <td className="py-2">Total Interest Payable:</td>
-                    <td className="py-2 font-semibold text-right">
-                      {monthlyPrepayment > 0 ? (
-                        <>
-                          <span className="line-through text-gray-400 mr-2">{fmt(Math.round(totalInterest))}</span>
-                          {fmt(Math.round(actualTotalInterest))}
-                        </>
-                      ) : (
-                        fmt(Math.round(totalInterest))
-                      )}
-                    </td>
-                  </tr>
-                  <tr className="font-bold bg-gray-50">
-                    <td className="py-2 px-1 rounded-l">Total Amount Payable:</td>
-                    <td className="py-2 px-1 text-right rounded-r">{fmt(Math.round(actualTotalInterest + loanAmount))}</td>
-                  </tr>
-                </tbody>
-              </table>
-
+          
+          <div className="flex flex-col md:flex-row gap-4 mt-4">
               {/* Prepayment Savings Box */}
               {monthlyPrepayment > 0 && prepaymentImpact && (
-                <div className="mt-2 bg-green-50 border border-green-200 p-3 rounded-lg">
+                <div className="flex-1 bg-green-50 border border-green-200 p-6 rounded-lg">
                   <p className="text-sm font-bold text-green-800 mb-1">🔥 Prepayment Savings!</p>
-                  <p className="text-xs text-green-700">Interest Saved: <strong className="text-lg text-green-600">{fmt(Math.round(prepaymentImpact.interestSaved))}</strong></p>
-                  <p className="text-xs text-green-700">Tenure Reduced: <strong>{prepaymentImpact.tenureSavedMonths} months</strong> ({(prepaymentImpact.tenureSavedMonths/12).toFixed(1)} years)</p>
+                  <p className="text-sm text-green-700">Interest Saved: <strong className="text-xl text-green-600">{fmt(Math.round(prepaymentImpact.interestSaved))}</strong></p>
+                  <p className="text-sm text-green-700">Tenure Reduced: <strong>{prepaymentImpact.tenureSavedMonths} months</strong> ({(prepaymentImpact.tenureSavedMonths/12).toFixed(1)} years)</p>
                 </div>
               )}
 
               {/* Tax Savings Box */}
-              <div className="mt-auto pt-4 border-t border-gray-200">
-                <p className="text-sm font-bold text-[#0f766e] mb-1">Year 1 Tax Savings Estimation</p>
+              <div className="flex-1 bg-teal-50 border border-teal-200 p-6 rounded-lg">
+                <p className="text-sm font-bold text-[#0f766e] mb-2">Year 1 Tax Savings Estimation</p>
                 <div className="flex justify-between items-center text-sm">
                   <div>
-                    <p className="text-gray-600 text-xs">Sec 24(b) - Interest: {fmt(Math.round(taxSavings.interestDeduction))}</p>
-                    <p className="text-gray-600 text-xs">Sec 80C - Principal: {fmt(Math.round(taxSavings.principalDeduction))}</p>
+                    <p className="text-gray-600 text-sm">Sec 24(b) - Interest: {fmt(Math.round(taxSavings.interestDeduction))}</p>
+                    <p className="text-gray-600 text-sm">Sec 80C - Principal: {fmt(Math.round(taxSavings.principalDeduction))}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-gray-500 text-xs uppercase">Est. Tax Saved</p>
-                    <p className="font-bold text-lg text-[#0f766e]">{fmt(Math.round(taxSavings.totalTaxSaved))}</p>
+                    <p className="font-bold text-2xl text-[#0f766e]">{fmt(Math.round(taxSavings.totalTaxSaved))}</p>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
 

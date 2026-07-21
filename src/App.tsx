@@ -42,8 +42,7 @@ const RetirementScorecard = lazy(() => import('./pages/tools/marketing/Retiremen
 const ReferralMessageBuilder = lazy(() => import('./pages/tools/marketing/ReferralMessageBuilder'));
 
 // Lazy load all page-level components
-const Home = lazy(() => import('./pages/Home'));
-const LoanCalculator = lazy(() => import('./calculators/LoanCalculator'));
+const LoanCalculator = lazy(() => import('./calculators/LoanCalculator').then(m => ({ default: m.LoanCalculator })));
 const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
 const ToolsHub = lazy(() => import('./pages/ToolsHub'));
@@ -103,6 +102,74 @@ const CorporateMasterclass = lazy(() => import('./pages/MasterclassSeries'));
 const MasterclassLesson = lazy(() => import('./pages/MasterclassLesson'));
 const BankLockerFinder = lazy(() => import('./calculators/BankLockerFinder'));
 const MissedCallBankingDirectory = lazy(() => import('./pages/MissedCallBankingDirectory'));
+
+// --- Omni Engine Test Page ---
+import { OmniWidget } from './engine/components/OmniWidget';
+import { OmniCalculatorLayout } from './engine/components/OmniCalculatorLayout';
+import { emiConfig } from './engine/configs/emiConfig';
+
+const OmniTestPage = () => {
+  return (
+    <div className="pt-24 pb-12 min-h-screen bg-gray-50 dark:bg-gray-900">
+      <Suspense fallback={<div>Loading Widget...</div>}>
+         <OmniCalculatorLayout config={emiConfig}>
+            {/* Article Content - Simulating MDX / Content Management System */}
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">How to Use the Omni EMI Calculator</h2>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+               Welcome to our next-generation <strong>Omni EMI Calculator</strong>. Unlike traditional calculators where you can only calculate the final EMI, this tool allows you to perform <em>multi-way calculations</em>.
+            </p>
+            
+            <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-100 mt-10 mb-4">What is Multi-Way Calculation?</h3>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+               Simply put, you can leave any field blank or change any combination of fields, and the engine will automatically solve for the missing variable.
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300 mb-8">
+               <li><strong>Find your EMI:</strong> Enter your Loan Amount, Interest Rate, and Tenure.</li>
+               <li><strong>Find your Max Loan:</strong> Know how much EMI you can afford? Enter the EMI, Rate, and Tenure, and we'll tell you the maximum Loan Amount you can take.</li>
+               <li><strong>Find your Tenure:</strong> Enter your Loan Amount, Interest Rate, and desired EMI to find out how many months it will take to pay off the loan.</li>
+            </ul>
+
+            <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-100 mt-10 mb-4">The Mathematical Formula</h3>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+               The core formula used by banks to calculate Equated Monthly Installment is:
+            </p>
+            <div className="bg-slate-50 dark:bg-[#171a23] p-6 rounded-xl border border-slate-200 dark:border-gray-800 text-center my-6 overflow-x-auto">
+               <code className="text-lg text-indigo-600 dark:text-indigo-400 font-mono">
+                  E = P × r × (1 + r)ⁿ / ((1 + r)ⁿ - 1)
+               </code>
+            </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
+               Where <strong>E</strong> is EMI, <strong>P</strong> is Principal Loan Amount, <strong>r</strong> is the monthly interest rate, and <strong>n</strong> is the loan tenure in months.
+            </p>
+
+            <div className="mt-12 pt-8 border-t border-slate-100 dark:border-gray-800">
+               <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-100 mb-4">Frequently Asked Questions</h3>
+               <div className="space-y-6">
+                  <div>
+                     <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200">Can I change the units from Years to Months?</h4>
+                     <p className="text-slate-600 dark:text-slate-400 mt-1">Yes, our dynamic unit converter allows you to instantly switch between Months and Years without losing your base calculation.</p>
+                  </div>
+                  <div>
+                     <h4 className="text-lg font-medium text-slate-800 dark:text-slate-200">How accurate is this calculator?</h4>
+                     <p className="text-slate-600 dark:text-slate-400 mt-1">This tool uses standard banking formulas and is 100% accurate for fixed-rate loans. For floating rates, your actual EMI may vary over time.</p>
+                  </div>
+               </div>
+            </div>
+            
+            <div className="mt-12 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-start gap-4 border border-blue-100 dark:border-blue-900/50">
+               <div className="w-12 h-12 rounded-full bg-blue-200 dark:bg-blue-800 flex-shrink-0 flex items-center justify-center text-xl">👨‍💻</div>
+               <div>
+                  <h4 className="font-bold text-slate-900 dark:text-white">Written by Financial Experts</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Our OmniEngine tools are rigorously tested against real-world banking algorithms to ensure perfect precision for our users.</p>
+               </div>
+            </div>
+         </OmniCalculatorLayout>
+      </Suspense>
+    </div>
+  );
+};
+// ------------------------------
+
 const ExcelToolsPage = lazy(() => import('./pages/ExcelToolsPage'));
 const ExcelToolDetail = lazy(() => import('./pages/ExcelToolDetail'));
 const GovernmentSchemes = lazy(() => import('./pages/GovernmentSchemes'));
@@ -729,7 +796,7 @@ const DaArrearsCalculator = lazy(() => import('./calculators/DaArrearsCalculator
 const SalarySlipGenerator = lazy(() => import('./calculators/SalarySlipGenerator').then((m) => ({ default: m.SalarySlipGenerator })));
 const CtcCalculator = lazy(() => import('./calculators/CtcCalculator').then((m) => ({ default: m.CtcCalculator })));
 const EighthPayCommissionCalculator = lazy(() => import('./calculators/EighthPayCommissionCalculator').then((m) => ({ default: m.EighthPayCommissionCalculator })));
-const SalaryCalculator = lazy(() => import('./calculators/SalaryCalculator'));
+const SalaryCalculator = lazy(() => import('./calculators/SalaryCalculator').then((m) => ({ default: m.SalaryCalculator })));
 const HraExemptionCalculator = lazy(() =>
   import('./calculators/HraExemptionCalculator').then((m) => ({ default: m.HraExemptionCalculator }))
 );
@@ -971,6 +1038,8 @@ function App() {
       <WebVitalsMonitor />
       <Suspense fallback={fullPageSkeleton}>
         <Routes>
+          {/* Omni Engine Test Route */}
+          <Route path="/omni-test" element={<OmniTestPage />} />
           {/* Missed Call Banking Directory route - outside Layout */}
           <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
           <Route path="/schemes-finder" element={<Layout><Suspense fallback={skeletonFallback}><SchemesFinder /></Suspense></Layout>} />

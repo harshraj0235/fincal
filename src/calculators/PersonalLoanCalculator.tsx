@@ -5,6 +5,9 @@ import { ResultChart } from '../components/ResultChart';
 import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
+import { personalLoanConfig } from '../engine/configs/personalLoanConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 
 /* ═══════════════════════════════════════════════════════
    PERSONAL LOAN CALCULATOR — PREMIUM EDITION 2025
@@ -44,22 +47,24 @@ const FAQ_DATA = [
 ];
 
 export const PersonalLoanCalculator: React.FC = () => {
-  const [loanAmount, setLoanAmount] = useState(500000);
-  const [interestRate, setInterestRate] = useState(12.0);
-  const [loanTenure, setLoanTenure] = useState(3);
-  const [tenureType, setTenureType] = useState<'years' | 'months'>('years');
-  const [monthlyIncome, setMonthlyIncome] = useState(75000);
+  const engine = useOmniEngine(personalLoanConfig);
+
   const [showAmortization, setShowAmortization] = useState(false);
   const [amortView, setAmortView] = useState<'yearly' | 'monthly'>('yearly');
   const [activePreset, setActivePreset] = useState(-1);
 
-  useEffect(() => {
-    const maxLoan = Math.min(5000000, monthlyIncome * 25);
-    if (loanAmount > maxLoan) setLoanAmount(maxLoan);
-  }, [monthlyIncome, loanAmount]);
+  // Derive values from engine state
+  const monthlyIncome = Number(engine.state.variables.monthlyIncome?.value) || 75000;
+  const loanAmount = Number(engine.state.variables.principal?.value) || 500000;
+  const interestRate = Number(engine.state.variables.rate?.value) || 12.0;
+  const loanTenure = Number(engine.state.variables.tenure?.value) || 36; // in months from engine (if base unit)
+  // Engine stores tenure in months because months has toBaseMultiplier: 1
+  const tenureInMonths = engine.state.variables.tenure?.unit === 'years' 
+    ? (Number(engine.state.variables.tenure?.value) * 12) || 36
+    : Number(engine.state.variables.tenure?.value) || 36;
+  const tenureType = engine.state.variables.tenure?.unit === 'years' ? 'years' : 'months';
 
-  const tenureInMonths = tenureType === 'years' ? loanTenure * 12 : loanTenure;
-  const emi = useMemo(() => calculateEMI(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);
+  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
   const totalPayment = emi * tenureInMonths;
   const totalInterest = totalPayment - loanAmount;
   const emiToIncomeRatio = ((emi / monthlyIncome) * 100).toFixed(1);
@@ -82,7 +87,11 @@ export const PersonalLoanCalculator: React.FC = () => {
   }, [loanAmount, interestRate, tenureInMonths, emi]);
 
   const applyPreset = (p: typeof PRESETS[0], i: number) => {
-    setLoanAmount(p.amount); setInterestRate(p.rate); setLoanTenure(p.tenure); setMonthlyIncome(p.income); setTenureType('years'); setActivePreset(i);
+    engine.updateVariable('monthlyIncome', p.income.toString(), 'inr');
+    engine.updateVariable('principal', p.amount.toString(), 'inr');
+    engine.updateVariable('rate', p.rate.toString());
+    engine.updateVariable('tenure', p.tenure.toString(), 'years');
+    setActivePreset(i);
   };
 
   const affordabilityColor = parseFloat(emiToIncomeRatio) > 50 ? 'text-red-600' : parseFloat(emiToIncomeRatio) > 40 ? 'text-amber-600' : 'text-emerald-600';
@@ -228,107 +237,8 @@ export const PersonalLoanCalculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* LEFT: INPUTS */}
-            <div className="plc-glass p-8 plc-animate">
-              <h2 className="text-xl font-black text-slate-900 mb-8 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-violet-600 shadow-[0_0_8px_rgba(124,58,237,0.5)]"></span>
-                Personal Loan Details
-              </h2>
-
-              <div className="space-y-7">
-                {/* Monthly Income */}
-                <div>
-                  <div className="flex justify-between items-center mb-3">
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Monthly Income (₹)</label>
-                    <input type="text" value={monthlyIncome} onChange={(e) => { const n = parseInt(e.target.value.replace(/[^0-9]/g, '')); if (!isNaN(n)) setMonthlyIncome(n); }} className="plc-input" />
-                  </div>
-                  <input type="range" min="15000" max="500000" step="5000" value={monthlyIncome} onChange={(e) => setMonthlyIncome(Number(e.target.value))} className="plc-slider w-full" />
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mt-2"><span>₹15K</span><span className="text-violet-700 text-xs font-black">{formatCurrency(monthlyIncome)}</span><span>₹5L</span></div>
-                </div>
-
-                {/* Loan Amount */}
-                <div>
-                  <div className="flex justify-between items-center mb-3">
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Loan Amount (₹)</label>
-                    <input type="text" value={loanAmount} onChange={(e) => { const n = parseInt(e.target.value.replace(/[^0-9]/g, '')); if (!isNaN(n) && n <= Math.min(5000000, monthlyIncome * 25)) setLoanAmount(n); }} className="plc-input" />
-                  </div>
-                  <input type="range" min="25000" max={Math.min(5000000, monthlyIncome * 25)} step="10000" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="plc-slider w-full" />
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mt-2"><span>₹25K</span><span className="text-violet-700 text-xs font-black">{formatCurrency(loanAmount)}</span><span>{formatCurrency(Math.min(5000000, monthlyIncome * 25))}</span></div>
-                </div>
-
-                {/* Interest Rate */}
-                <div>
-                  <div className="flex justify-between items-center mb-3">
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Interest Rate (% p.a.)</label>
-                    <input type="text" value={interestRate} onChange={(e) => { const n = parseFloat(e.target.value); if (!isNaN(n) && n >= 8 && n <= 28) setInterestRate(n); }} className="plc-input w-20" />
-                  </div>
-                  <input type="range" min="8" max="28" step="0.1" value={interestRate} onChange={(e) => setInterestRate(Number(e.target.value))} className="plc-slider w-full" />
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mt-2"><span>8%</span><span className="text-violet-700 text-xs font-black">{interestRate.toFixed(1)}%</span><span>28%</span></div>
-                </div>
-
-                {/* Tenure */}
-                <div>
-                  <div className="flex justify-between items-center mb-3">
-                    <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Tenure</label>
-                    <div className="flex items-center gap-2">
-                      <div className="flex bg-slate-100 rounded-lg p-0.5">
-                        <button onClick={() => { setTenureType('years'); if (loanTenure > 7) setLoanTenure(7); }}
-                          className={`px-3 py-1 rounded-md text-xs font-bold ${tenureType === 'years' ? 'bg-white text-violet-600 shadow-sm' : 'text-slate-500'}`}>Years</button>
-                        <button onClick={() => { setTenureType('months'); if (loanTenure > 84) setLoanTenure(84); }}
-                          className={`px-3 py-1 rounded-md text-xs font-bold ${tenureType === 'months' ? 'bg-white text-violet-600 shadow-sm' : 'text-slate-500'}`}>Months</button>
-                      </div>
-                      <input type="text" value={loanTenure} onChange={(e) => { const n = parseInt(e.target.value); const max = tenureType === 'years' ? 7 : 84; if (!isNaN(n) && n >= 1 && n <= max) setLoanTenure(n); }} className="plc-input w-16" />
-                    </div>
-                  </div>
-                  <input type="range" min="1" max={tenureType === 'years' ? 7 : 84} step="1" value={loanTenure} onChange={(e) => setLoanTenure(Number(e.target.value))} className="plc-slider w-full" />
-                </div>
-
-                {/* Affordability Status */}
-                <div className="p-4 bg-violet-50 rounded-xl border border-violet-100">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs font-bold text-violet-600 uppercase">EMI-to-Income Ratio</span>
-                    <span className={`text-lg font-black ${affordabilityColor}`}>{emiToIncomeRatio}% {affordabilityLabel}</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3 mt-3 text-xs">
-                    <div><span className="text-slate-500 font-bold">EMI per ₹1 Lakh</span><br/><span className="text-lg font-black text-violet-800">{formatCurrency(Math.round(emiPerLakh))}</span></div>
-                    <div><span className="text-slate-500 font-bold">Processing Fee (2%)</span><br/><span className="text-lg font-black text-violet-800">{formatCurrency(Math.round(processingFee))}</span></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT: RESULTS */}
-            <div className="space-y-6 plc-animate" style={{ animationDelay: '0.1s' }}>
-              <div className="plc-glass p-8 text-center">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Monthly EMI</p>
-                <p className="text-5xl md:text-6xl font-black text-slate-900 mb-1">
-                  <span className="text-violet-600">₹</span>{Math.round(emi).toLocaleString('en-IN')}
-                </p>
-                <p className="text-sm text-slate-500 font-medium mb-6">{formatCurrency(loanAmount)} at {interestRate}% for {loanTenure} {tenureType}</p>
-
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="plc-stat text-left"><p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Principal</p><p className="text-xl font-black text-slate-900">{formatCurrency(loanAmount)}</p></div>
-                  <div className="plc-stat text-left" style={{ borderColor: '#fecaca' }}><p className="text-[10px] font-bold text-rose-400 uppercase mb-1">Total Interest</p><p className="text-xl font-black text-rose-600">{formatCurrency(Math.round(totalInterest))}</p></div>
-                  <div className="plc-stat text-left" style={{ borderColor: '#bfdbfe' }}><p className="text-[10px] font-bold text-blue-400 uppercase mb-1">Total Payable</p><p className="text-xl font-black text-blue-600">{formatCurrency(Math.round(totalPayment))}</p></div>
-                  <div className="plc-stat text-left" style={{ borderColor: '#d9f99d' }}><p className="text-[10px] font-bold text-amber-500 uppercase mb-1">Effective Rate</p><p className="text-xl font-black text-amber-600">{effectiveRate}%</p></div>
-                </div>
-
-                <div className="h-56 mt-4">
-                  <ResultChart
-                    data={[
-                      { name: 'Principal', value: loanAmount, color: '#7c3aed' },
-                      { name: 'Interest', value: Math.round(totalInterest), color: '#f59e0b' }
-                    ]}
-                    centerText={`${effectiveRate}%\nInterest`}
-                  />
-                </div>
-                <div className="flex justify-center gap-6 mt-4 text-sm">
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-violet-600"></span><span className="text-slate-600 font-medium">Principal</span></div>
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full bg-amber-500"></span><span className="text-slate-600 font-medium">Interest</span></div>
-                </div>
-              </div>
-            </div>
+          <div className="mt-8 mb-12">
+            <OmniWidget config={personalLoanConfig} engine={engine} />
           </div>
 
           {/* Amortization */}

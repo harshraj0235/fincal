@@ -1,8 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { formatCurrency } from '../utils/calculatorUtils';
 import SEOHelmet from '../components/SEOHelmet';
 import CalculatorSchema from '../components/CalculatorSchema';
+import { sipConfig } from '../engine/configs/sipConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 /* ═══════════════════════════════════════════════════════════════
    SIP CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -45,91 +47,14 @@ export const SipCalculator: React.FC<SipSEOProps> = ({
   title, description, keywords, h1, subtitle, url, faqData,
   defaultAmount, defaultYears, defaultRate
 }) => {
-  const [mode, setMode] = useState<'sip' | 'lumpsum'>('sip');
-  const [monthlyInvestment, setMonthlyInvestment] = useState<number>(defaultAmount || 10000);
-  const [lumpsumAmount, setLumpsumAmount] = useState(100000);
-  const [expectedReturn, setExpectedReturn] = useState<number>(defaultRate || 12);
-  const [timePeriod, setTimePeriod] = useState<number>(defaultYears || 10);
-  const [stepUpRate, setStepUpRate] = useState<number>(0);
-  const [inflationRate, setInflationRate] = useState<number>(0);
+  const engine = useOmniEngine(sipConfig);
+  // Optional: Set default values from props if provided
+  React.useEffect(() => {
+     if (defaultAmount) engine.updateVariable('monthlyInvestment', defaultAmount.toString());
+     if (defaultYears) engine.updateVariable('timePeriod', defaultYears.toString());
+     if (defaultRate) engine.updateVariable('expectedReturn', defaultRate.toString());
+  }, []);
 
-  const calculations = useMemo(() => {
-    if (mode === 'sip') {
-      const months = timePeriod * 12;
-      const monthlyRate = expectedReturn / 12 / 100;
-      let totalInvested = 0;
-      let totalValue = 0;
-      let currentSipAmount = monthlyInvestment;
-      const yearlyBreakup = [];
-
-      for (let i = 1; i <= timePeriod; i++) {
-        let yearInvested = 0;
-        for (let m = 1; m <= 12; m++) {
-          totalInvested += currentSipAmount;
-          yearInvested += currentSipAmount;
-          totalValue = (totalValue + currentSipAmount) * (1 + monthlyRate);
-        }
-        
-        yearlyBreakup.push({
-          year: i,
-          investment: totalInvested,
-          value: totalValue,
-          sipAmount: currentSipAmount
-        });
-
-        // Apply annual step-up
-        if (stepUpRate > 0) {
-          currentSipAmount = currentSipAmount * (1 + stepUpRate / 100);
-        }
-      }
-
-      let inflationAdjustedValue = totalValue;
-      if (inflationRate > 0) {
-        inflationAdjustedValue = totalValue / Math.pow(1 + inflationRate / 100, timePeriod);
-      }
-
-      return {
-        investedAmount: totalInvested,
-        estimatedReturns: totalValue - totalInvested,
-        totalValue,
-        inflationAdjustedValue,
-        yearlyBreakup
-      };
-    } else {
-      const monthlyRate = expectedReturn / 12 / 100;
-      const months = timePeriod * 12;
-      const fv = lumpsumAmount * Math.pow(1 + monthlyRate, months);
-      
-      const yearlyBreakup = [];
-      for (let i = 1; i <= timePeriod; i++) {
-        yearlyBreakup.push({
-          year: i,
-          investment: lumpsumAmount,
-          value: lumpsumAmount * Math.pow(1 + monthlyRate, i * 12),
-          sipAmount: 0
-        });
-      }
-
-      let inflationAdjustedValue = fv;
-      if (inflationRate > 0) {
-        inflationAdjustedValue = fv / Math.pow(1 + inflationRate / 100, timePeriod);
-      }
-
-      return { 
-        investedAmount: lumpsumAmount, 
-        estimatedReturns: fv - lumpsumAmount, 
-        totalValue: fv,
-        inflationAdjustedValue,
-        yearlyBreakup 
-      };
-    }
-  }, [mode, monthlyInvestment, lumpsumAmount, expectedReturn, timePeriod, stepUpRate, inflationRate]);
-
-  const applyPreset = (preset: typeof FUND_PRESETS[0]) => {
-    setExpectedReturn(preset.return);
-  };
-
-  const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
   const fmtNum = (amount: number) => new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(amount);
 
   return (
@@ -167,179 +92,8 @@ export const SipCalculator: React.FC<SipSEOProps> = ({
           </div>
         </div>
 
-        {/* Toggle Mode */}
-        <div className="mb-6">
-          <div className="inline-flex bg-gray-100 rounded-lg p-1 border border-gray-200">
-            <button 
-              onClick={() => setMode('sip')} 
-              className={`px-6 py-2 rounded-md text-sm font-semibold transition-colors ${mode === 'sip' ? 'bg-white text-indigo-700 shadow-sm border border-gray-200' : 'text-gray-600 hover:text-gray-800'}`}
-            >
-              Monthly SIP
-            </button>
-            <button 
-              onClick={() => setMode('lumpsum')} 
-              className={`px-6 py-2 rounded-md text-sm font-semibold transition-colors ${mode === 'lumpsum' ? 'bg-white text-indigo-700 shadow-sm border border-gray-200' : 'text-gray-600 hover:text-gray-800'}`}
-            >
-              One-Time Lumpsum
-            </button>
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-[#f0fdf4] border border-[#bbf7d0] rounded-lg p-5 shadow-sm">
-              <h2 className="text-xl font-semibold mb-4 text-[#166534] border-b border-[#bbf7d0] pb-2">Investment Details</h2>
-
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-[#dcfce7]">
-                    <td className="py-3 pr-2 font-medium w-1/2">
-                      <label htmlFor="investmentAmount">{mode === 'sip' ? 'Monthly Investment (₹)' : 'Total Investment (₹)'}</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="investmentAmount" type="number" 
-                        value={mode === 'sip' ? monthlyInvestment : lumpsumAmount}
-                        onChange={(e) => {
-                          const val = Math.max(100, Number(e.target.value) || 0);
-                          mode === 'sip' ? setMonthlyInvestment(val) : setLumpsumAmount(val);
-                        }}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#10b981]"
-                        min={mode === 'sip' ? "100" : "500"} max="100000000" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#dcfce7]">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="expectedReturn">Expected Return (% p.a.)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="expectedReturn" type="number" step="0.1" value={expectedReturn}
-                        onChange={(e) => setExpectedReturn(Math.max(1, Math.min(50, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#10b981]"
-                        min="1" max="50" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#dcfce7]">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="timePeriod">Time Period (Years)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="timePeriod" type="number" value={timePeriod}
-                        onChange={(e) => setTimePeriod(Math.max(1, Math.min(50, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#10b981]"
-                        min="1" max="50" />
-                    </td>
-                  </tr>
-                  {mode === 'sip' && (
-                    <tr className="border-b border-[#dcfce7]">
-                      <td className="py-3 pr-2 font-medium">
-                        <label htmlFor="stepUpRate">Annual Step-Up (%)</label>
-                        <p className="text-xs text-gray-500 font-normal">Increase SIP yearly</p>
-                      </td>
-                      <td className="py-3">
-                        <input id="stepUpRate" type="number" value={stepUpRate}
-                          onChange={(e) => setStepUpRate(Math.max(0, Math.min(50, Number(e.target.value) || 0)))}
-                          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#10b981]"
-                          min="0" max="50" />
-                      </td>
-                    </tr>
-                  )}
-                  <tr>
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="inflationRate">Inflation Rate (%)</label>
-                      <p className="text-xs text-gray-500 font-normal">Adjust for real wealth</p>
-                    </td>
-                    <td className="py-3">
-                      <input id="inflationRate" type="number" value={inflationRate}
-                        onChange={(e) => setInflationRate(Math.max(0, Math.min(20, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#10b981]"
-                        min="0" max="20" />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div className="mt-4">
-                <p className="text-xs font-semibold text-gray-500 mb-2 uppercase">Quick Fund Return Presets</p>
-                <div className="flex flex-wrap gap-2">
-                  {FUND_PRESETS.map((preset, idx) => (
-                    <button key={idx} onClick={() => applyPreset(preset)} className="px-2.5 py-1 text-xs border border-green-300 rounded bg-white hover:bg-green-50 hover:border-green-400 text-green-800 transition-colors">
-                      {preset.name} ({preset.return}%)
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-md h-full flex flex-col">
-              <h2 className="text-xl font-semibold mb-4 text-[#166534] border-b border-gray-200 pb-2">Investment Result</h2>
-
-              <div className="bg-[#f0fdf4] p-4 rounded-lg mb-4 text-center border border-[#bbf7d0]">
-                <p className="text-gray-600 text-sm font-medium uppercase tracking-wide">Total Future Value</p>
-                <p className="text-4xl font-bold text-[#166534] my-1">₹{fmtNum(Math.round(calculations.totalValue))}</p>
-                <p className="text-xs text-gray-500">After {timePeriod} Years @ {expectedReturn}% p.a.</p>
-              </div>
-
-              <table className="w-full text-left text-sm border-collapse mb-4">
-                <tbody>
-                  <tr className="border-b border-gray-100">
-                    <td className="py-2 text-gray-600">Total Amount Invested:</td>
-                    <td className="py-2 font-semibold text-right">{fmt(Math.round(calculations.investedAmount))}</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 text-green-700">
-                    <td className="py-2">Estimated Wealth Gain:</td>
-                    <td className="py-2 font-semibold text-right">+{fmt(Math.round(calculations.estimatedReturns))}</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div className="mt-auto grid grid-cols-2 gap-3 text-center">
-                <div className="bg-gray-50 p-3 rounded-lg border">
-                  <p className="text-xs text-gray-500 font-medium">Wealth Multiplier</p>
-                  <p className="text-lg font-bold text-[#166534]">{(calculations.totalValue / calculations.investedAmount).toFixed(2)}x</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded-lg border">
-                  <p className="text-xs text-gray-500 font-medium">Real (Inflation Adjusted)</p>
-                  <p className="text-lg font-bold text-red-600">
-                    {inflationRate > 0 ? `₹${fmtNum(Math.round(calculations.inflationAdjustedValue))}` : 'Add % to see'}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ===== YEAR-WISE SCHEDULE ===== */}
-        <div className="mt-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Year-wise Wealth Creation Schedule</h2>
-          <p className="text-gray-600 mb-4 text-sm">See how your money grows over time. The power of compounding means that your wealth grows faster in the later years of your investment. {stepUpRate > 0 ? `Notice how your SIP amount increases by ${stepUpRate}% each year.` : ''}</p>
-          <div className="overflow-x-auto max-h-[500px] border border-gray-300 rounded-lg">
-            <table className="w-full border-collapse text-sm text-left relative">
-              <thead className="bg-gray-100 sticky top-0 shadow-sm">
-                <tr>
-                  <th className="border-b border-gray-300 p-3 text-center font-semibold">Year</th>
-                  {mode === 'sip' && stepUpRate > 0 && <th className="border-b border-gray-300 p-3 text-right font-semibold">Monthly SIP (₹)</th>}
-                  <th className="border-b border-gray-300 p-3 text-right font-semibold">Amount Invested (₹)</th>
-                  <th className="border-b border-gray-300 p-3 text-right font-semibold text-green-700">Wealth Gain (₹)</th>
-                  <th className="border-b border-gray-300 p-3 text-right font-semibold text-indigo-700">Future Value (₹)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {calculations.yearlyBreakup.map((yr) => (
-                  <tr key={yr.year} className="hover:bg-gray-50 border-b border-gray-100 last:border-0">
-                    <td className="p-3 text-center font-medium">{yr.year}</td>
-                    {mode === 'sip' && stepUpRate > 0 && <td className="p-3 text-right text-gray-600">{fmtNum(Math.round(yr.sipAmount))}</td>}
-                    <td className="p-3 text-right">{fmtNum(Math.round(yr.investment))}</td>
-                    <td className="p-3 text-right text-green-600">+{fmtNum(Math.round(yr.value - yr.investment))}</td>
-                    <td className="p-3 text-right font-bold text-indigo-600">{fmtNum(Math.round(yr.value))}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <div className="mt-8 mb-12">
+          <OmniWidget config={sipConfig} engine={engine} />
         </div>
 
         {/* ═══════════════════════════════════════════════════

@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import { getCalculatorById } from '../data/calculatorData';
 import CalculatorSchema from '../components/CalculatorSchema';
+import { mutualFundReturnsConfig } from '../engine/configs/mutualFundReturnsConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 /* ═══════════════════════════════════════════════════════════════
    MUTUAL FUND CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -27,59 +30,14 @@ const FAQ_DATA = [
 ];
 
 export const MutualFundReturnsCalculator: React.FC = () => {
-  // Core Variables
-  const [investmentType, setInvestmentType] = useState<'sip' | 'lumpsum'>('sip');
-  const [investmentAmount, setInvestmentAmount] = useState<number>(10000);
-  const [investmentPeriod, setInvestmentPeriod] = useState<number>(10);
-  const [expectedReturn, setExpectedReturn] = useState<number>(12);
-  const [existingInvestment, setExistingInvestment] = useState<number>(0);
-
-  // Results
-  const [totalValue, setTotalValue] = useState<number>(0);
-  const [totalInv, setTotalInv] = useState<number>(0);
-  const [returns, setReturns] = useState<number>(0);
-
-  useEffect(() => {
-    let baseInv = 0; 
-    let baseValue = 0;
-    
-    const r = (expectedReturn || 0) / 100;
-    const t = investmentPeriod || 0;
-    const p = investmentAmount || 0;
-
-    if (investmentType === 'sip') {
-      const monthlyRate = r / 12;
-      const months = t * 12;
-      if (monthlyRate > 0) {
-        // Future Value of SIP formula
-        baseValue = p * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
-      } else {
-        baseValue = p * months;
-      }
-      baseInv = p * months;
-    } else {
-      // Future Value of Lumpsum (Compound Interest)
-      baseInv = p;
-      baseValue = p * Math.pow(1 + r, t);
-    }
-    
-    const existingGrowth = existingInvestment > 0 ? existingInvestment * Math.pow(1 + r, t) : 0;
-    const finalTotalValue = baseValue + existingGrowth;
-    const finalTotalInv = baseInv + (existingInvestment || 0);
-    
-    const gain = finalTotalValue - finalTotalInv;
-
-    setTotalValue(finalTotalValue);
-    setTotalInv(finalTotalInv);
-    setReturns(gain);
-  }, [investmentType, investmentAmount, investmentPeriod, expectedReturn, existingInvestment]);
+  const engine = useOmniEngine(mutualFundReturnsConfig);
 
   const applyPreset = (preset: Preset) => {
-    setInvestmentType(preset.type);
-    setInvestmentAmount(preset.amount);
-    setInvestmentPeriod(preset.period);
-    setExpectedReturn(preset.return);
-    setExistingInvestment(0);
+    engine.updateVariable('investmentType', preset.type === 'sip' ? '1' : '0');
+    engine.updateVariable('investmentAmount', preset.amount.toString(), 'inr');
+    engine.updateVariable('investmentPeriod', preset.period.toString(), 'years');
+    engine.updateVariable('expectedReturn', preset.return.toString(), 'percent_yearly');
+    engine.updateVariable('existingInvestment', '0', 'inr');
   };
 
   const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
@@ -123,110 +81,8 @@ export const MutualFundReturnsCalculator: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-5 shadow-sm mb-6">
-              <h2 className="text-xl font-semibold mb-4 text-emerald-900 border-b border-emerald-200 pb-2">Investment Details</h2>
-              
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-emerald-100">
-                    <td className="py-3 pr-2 font-medium w-1/2">
-                      <label htmlFor="investmentType">Investment Strategy</label>
-                    </td>
-                    <td className="py-3">
-                      <select id="investmentType" value={investmentType} onChange={(e) => setInvestmentType(e.target.value as any)} className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 font-semibold text-emerald-700">
-                        <option value="sip">Monthly SIP</option>
-                        <option value="lumpsum">One-Time Lumpsum</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-emerald-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="investmentAmount">{investmentType === 'sip' ? 'Monthly Investment (₹)' : 'Total Lumpsum Amount (₹)'}</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="investmentAmount" type="number" value={investmentAmount}
-                        onChange={(e) => setInvestmentAmount(Math.max(100, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500 text-lg font-bold"
-                        min="100" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-emerald-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="expectedReturn">Expected Return Rate (% p.a.)</label>
-                      <p className="text-xs text-gray-500 font-normal">Equity average is ~12%</p>
-                    </td>
-                    <td className="py-3">
-                      <input id="expectedReturn" type="number" step="0.1" value={expectedReturn}
-                        onChange={(e) => setExpectedReturn(Math.max(1, Math.min(30, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500" min="1" max="30" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-emerald-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="investmentPeriod">Time Period (Years)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="investmentPeriod" type="number" value={investmentPeriod}
-                        onChange={(e) => setInvestmentPeriod(Math.max(1, Math.min(50, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500" min="1" max="50" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="existingInvestment">Existing Portfolio (₹)</label>
-                      <p className="text-xs text-gray-500 font-normal">Optional</p>
-                    </td>
-                    <td className="py-3">
-                      <input id="existingInvestment" type="number" value={existingInvestment}
-                        onChange={(e) => setExistingInvestment(Math.max(0, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-emerald-500" min="0" />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col h-full overflow-hidden">
-              <div className="bg-gradient-to-r from-emerald-600 to-teal-700 p-6 text-white text-center">
-                <h2 className="text-sm font-semibold uppercase tracking-wider mb-2 text-emerald-200">Total Estimated Wealth</h2>
-                <div className="text-4xl font-black mb-1">
-                  ₹{fmtNum(Math.round(totalValue))}
-                </div>
-                <p className="text-emerald-100 text-sm font-medium mt-2">After {investmentPeriod} Years @ {expectedReturn}% p.a.</p>
-              </div>
-
-              <div className="p-0 flex-grow">
-                <table className="w-full text-left border-collapse">
-                  <tbody>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Total Invested Amount</td>
-                      <td className="p-4 text-right text-base font-semibold">{fmt(totalInv)}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 bg-green-50">
-                      <td className="p-4 text-sm font-bold text-green-800">Wealth Gained (Returns)</td>
-                      <td className="p-4 text-right text-base font-bold text-green-700">+{fmt(Math.round(returns))}</td>
-                    </tr>
-                    {existingInvestment > 0 && (
-                      <tr className="border-b border-gray-100 bg-gray-50">
-                        <td className="p-4 text-xs font-medium text-gray-500">Includes growth on existing ₹{fmtNum(existingInvestment)}</td>
-                        <td className="p-4 text-right text-xs text-gray-500"></td>
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
-              </div>
-              
-              <div className="p-4 bg-gray-50 border-t border-gray-200 text-xs text-gray-500">
-                <strong>Disclaimer:</strong> Mutual fund investments are subject to market risks. The expected return rate is assumed for calculation purposes and is not guaranteed. 
-              </div>
-            </div>
-          </div>
+        <div className="mb-12">
+          <OmniWidget config={mutualFundReturnsConfig} engine={engine} />
         </div>
 
         {/* ═══════════════════════════════════════════════════
