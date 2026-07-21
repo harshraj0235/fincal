@@ -54,17 +54,17 @@ export const PersonalLoanCalculator: React.FC = () => {
   const [activePreset, setActivePreset] = useState(-1);
 
   // Derive values from engine state
-  const monthlyIncome = Number(engine.state.variables.monthlyIncome?.value) || 75000;
-  const loanAmount = Number(engine.state.variables.principal?.value) || 500000;
-  const interestRate = Number(engine.state.variables.rate?.value) || 12.0;
-  const loanTenure = Number(engine.state.variables.tenure?.value) || 36; // in months from engine (if base unit)
+  const monthlyIncome = Number(engine.state.monthlyIncome?.value) || 75000;
+  const loanAmount = Number(engine.state.principal?.value) || 500000;
+  const interestRate = Number(engine.state.rate?.value) || 12.0;
+  const loanTenure = Number(engine.state.tenure?.value) || 36; // in months from engine (if base unit)
   // Engine stores tenure in months because months has toBaseMultiplier: 1
-  const tenureInMonths = engine.state.variables.tenure?.unit === 'years' 
-    ? (Number(engine.state.variables.tenure?.value) * 12) || 36
-    : Number(engine.state.variables.tenure?.value) || 36;
-  const tenureType = engine.state.variables.tenure?.unit === 'years' ? 'years' : 'months';
+  const tenureInMonths = engine.state.tenure?.unit === 'years' 
+    ? (Number(engine.state.tenure?.value) * 12) || 36
+    : Number(engine.state.tenure?.value) || 36;
+  const tenureType = engine.state.tenure?.unit === 'years' ? 'years' : 'months';
 
-  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
+  const emi = Number(engine.state.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
   const totalPayment = emi * tenureInMonths;
   const totalInterest = totalPayment - loanAmount;
   const emiToIncomeRatio = ((emi / monthlyIncome) * 100).toFixed(1);

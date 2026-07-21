@@ -25,6 +25,8 @@ interface SEOHelmetProps {
     category: string;
     features: string[];
     authorName?: string;
+    ratingValue?: number;
+    reviewCount?: number;
   };
   // E-E-A-T & YMYL Compliance Props
   authorExpertise?: string[];

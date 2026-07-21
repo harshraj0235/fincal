@@ -14,7 +14,7 @@ import { OmniWidget } from '../engine/components/OmniWidget';
 export const AdvanceTaxCalculator: React.FC = () => {
   const engine = useOmniEngine(advanceTaxConfig);
 
-  const netTax = Number(engine.state.variables.netTax?.value) || 0;
+  const netTax = Number(engine.state.netTax?.value) || 0;
   
   // Installments: 15%, 45%, 75%, 100%
   const inst1 = netTax * 0.15;

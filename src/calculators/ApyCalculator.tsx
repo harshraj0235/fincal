@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
-
+import { apyConfig } from '../engine/configs/apyConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 /* ═══════════════════════════════════════════════════════════════
    APY CALCULATOR — PURE STATIC HTML
    Target keywords: apy calculator, atal pension yojana calculator,
@@ -15,73 +17,8 @@ const FAQ_DATA = [
   { question: "Can I upgrade or downgrade my pension amount later?", answer: "Yes, you can upgrade or downgrade your pension amount once a year. If you upgrade, you must pay the difference in the premium along with 8% penal interest." }
 ];
 
-// APY Premium Chart (Monthly) mapped by Entry Age and Pension Amount
-// Data Source: PFRDA official APY chart
-const APY_CHART: Record<number, { p1000: number, p2000: number, p3000: number, p4000: number, p5000: number }> = {
-  18: { p1000: 42, p2000: 84, p3000: 126, p4000: 168, p5000: 210 },
-  19: { p1000: 46, p2000: 92, p3000: 138, p4000: 183, p5000: 228 },
-  20: { p1000: 50, p2000: 100, p3000: 150, p4000: 198, p5000: 248 },
-  21: { p1000: 54, p2000: 108, p3000: 162, p4000: 215, p5000: 269 },
-  22: { p1000: 59, p2000: 117, p3000: 177, p4000: 234, p5000: 292 },
-  23: { p1000: 64, p2000: 127, p3000: 192, p4000: 254, p5000: 318 },
-  24: { p1000: 70, p2000: 139, p3000: 208, p4000: 277, p5000: 346 },
-  25: { p1000: 76, p2000: 151, p3000: 226, p4000: 301, p5000: 376 },
-  26: { p1000: 82, p2000: 164, p3000: 246, p4000: 327, p5000: 409 },
-  27: { p1000: 90, p2000: 178, p3000: 268, p4000: 356, p5000: 446 },
-  28: { p1000: 97, p2000: 194, p3000: 292, p4000: 388, p5000: 485 },
-  29: { p1000: 106, p2000: 212, p3000: 318, p4000: 424, p5000: 530 },
-  30: { p1000: 116, p2000: 231, p3000: 347, p4000: 462, p5000: 577 },
-  31: { p1000: 126, p2000: 252, p3000: 379, p4000: 504, p5000: 630 },
-  32: { p1000: 138, p2000: 276, p3000: 414, p4000: 551, p5000: 689 },
-  33: { p1000: 151, p2000: 302, p3000: 453, p4000: 602, p5000: 752 },
-  34: { p1000: 165, p2000: 330, p3000: 495, p4000: 659, p5000: 824 },
-  35: { p1000: 181, p2000: 362, p3000: 543, p4000: 722, p5000: 902 },
-  36: { p1000: 198, p2000: 396, p3000: 594, p4000: 792, p5000: 990 },
-  37: { p1000: 218, p2000: 436, p3000: 654, p4000: 870, p5000: 1087 },
-  38: { p1000: 240, p2000: 480, p3000: 720, p4000: 957, p5000: 1196 },
-  39: { p1000: 264, p2000: 528, p3000: 792, p4000: 1054, p5000: 1318 },
-  40: { p1000: 291, p2000: 582, p3000: 873, p4000: 1164, p5000: 1454 },
-};
-
-// Return corpus given to nominee upon death of both spouse and subscriber
-const CORPUS_MAPPING = {
-  1000: 170000,
-  2000: 340000,
-  3000: 510000,
-  4000: 680000,
-  5000: 850000
-};
-
 export const ApyCalculator: React.FC = () => {
-  const [entryAge, setEntryAge] = useState<number>(25);
-  const [pensionAmount, setPensionAmount] = useState<number>(5000);
-  const [paymentFrequency, setPaymentFrequency] = useState<'monthly' | 'quarterly' | 'halfYearly'>('monthly');
-
-  const calculations = useMemo(() => {
-    // Get base monthly premium
-    const basePremiumKey = `p${pensionAmount}` as keyof typeof APY_CHART[18];
-    const monthlyPremium = APY_CHART[entryAge][basePremiumKey];
-    
-    // Adjust premium based on frequency (approximate multipliers used by banks)
-    let finalPremium = monthlyPremium;
-    if (paymentFrequency === 'quarterly') finalPremium = monthlyPremium * 3;
-    if (paymentFrequency === 'halfYearly') finalPremium = monthlyPremium * 6;
-    
-    const yearsToPay = 60 - entryAge;
-    const monthsToPay = yearsToPay * 12;
-    const totalInvestment = monthlyPremium * monthsToPay;
-    
-    const nomineeCorpus = CORPUS_MAPPING[pensionAmount as keyof typeof CORPUS_MAPPING];
-
-    return {
-      premium: finalPremium,
-      yearsToPay,
-      totalInvestment,
-      nomineeCorpus
-    };
-  }, [entryAge, pensionAmount, paymentFrequency]);
-
-  const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
+  const engine = useOmniEngine(apyConfig);
 
   return (
     <>
@@ -108,81 +45,8 @@ export const ApyCalculator: React.FC = () => {
           <p className="text-gray-600">Find out exactly how much you need to contribute to secure a guaranteed lifetime pension from the Government of India. The earlier you start, the lower your premium.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-sky-50 border border-sky-200 rounded-lg p-5 shadow-sm mb-6">
-              <h2 className="text-xl font-semibold mb-4 text-sky-900 border-b border-sky-200 pb-2">Your APY Details</h2>
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-sky-100">
-                    <td className="py-3 pr-2 font-medium w-1/2"><label htmlFor="entryAge">Your Current Age</label><p className="text-xs text-gray-500 font-normal">Must be between 18 and 40</p></td>
-                    <td className="py-3">
-                      <input id="entryAge" type="number" value={entryAge} onChange={(e) => setEntryAge(Math.max(18, Math.min(40, Number(e.target.value) || 18)))} className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-sky-500 text-lg font-bold" min="18" max="40" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-sky-100">
-                    <td className="py-3 pr-2 font-medium"><label htmlFor="pensionAmount">Desired Monthly Pension</label></td>
-                    <td className="py-3">
-                      <select id="pensionAmount" value={pensionAmount} onChange={(e) => setPensionAmount(Number(e.target.value))} className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-sky-500 font-medium">
-                        <option value={1000}>₹ 1,000 / month</option>
-                        <option value={2000}>₹ 2,000 / month</option>
-                        <option value={3000}>₹ 3,000 / month</option>
-                        <option value={4000}>₹ 4,000 / month</option>
-                        <option value={5000}>₹ 5,000 / month</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-2 font-medium"><label htmlFor="paymentFrequency">Contribution Frequency</label></td>
-                    <td className="py-3">
-                      <select id="paymentFrequency" value={paymentFrequency} onChange={(e) => setPaymentFrequency(e.target.value as any)} className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-sky-500 font-medium">
-                        <option value="monthly">Monthly</option>
-                        <option value="quarterly">Quarterly</option>
-                        <option value="halfYearly">Half-Yearly</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div className="mt-4 p-3 bg-white rounded border border-sky-100 text-xs text-sky-800">
-                <strong>Rule:</strong> You will contribute for exactly <strong>{calculations.yearsToPay} years</strong> (until age 60). The pension starts at age 60.
-              </div>
-            </div>
-          </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col h-full overflow-hidden">
-              <div className="bg-gradient-to-r from-sky-600 to-blue-700 p-6 text-white text-center">
-                <h2 className="text-sm font-semibold uppercase tracking-wider mb-2 text-sky-200">Your Premium Contribution</h2>
-                <div className="text-4xl lg:text-5xl font-black mb-1 text-white">{fmt(calculations.premium)}</div>
-                <p className="text-sky-100 text-sm mt-2">Paid {paymentFrequency} till age 60</p>
-              </div>
-              <div className="p-0 flex-grow">
-                <table className="w-full text-left border-collapse">
-                  <tbody>
-                    <tr className="border-b border-gray-100 bg-gray-50">
-                      <td className="p-4 text-sm font-medium text-gray-700">Total Years to Pay</td>
-                      <td className="p-4 text-right text-base font-bold text-gray-900">{calculations.yearsToPay} Years</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Total Lifetime Investment</td>
-                      <td className="p-4 text-right text-base font-semibold">{fmt(calculations.totalInvestment)}</td>
-                    </tr>
-                    <tr className="border-b border-sky-100 bg-sky-50">
-                      <td className="p-4 text-sm font-bold text-sky-900">Guaranteed Pension (Age 60+)</td>
-                      <td className="p-4 text-right text-base font-bold text-sky-700">{fmt(pensionAmount)} / mo</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Corpus Returned to Nominee (After Death)</td>
-                      <td className="p-4 text-right text-base font-bold text-green-700">{fmt(calculations.nomineeCorpus)}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+        <div className="mb-12">
+          <OmniWidget config={apyConfig} engine={engine} />
         </div>
 
         {/* ═══════════════ SEO CONTENT ═══════════════ */}

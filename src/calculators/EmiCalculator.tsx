@@ -97,10 +97,10 @@ export const EmiCalculator: React.FC<ProgrammaticSEOProps> = ({
   const [showFullAmort, setShowFullAmort] = useState(false);
 
   // Derive values from engine state for Amortization schedule
-  const loanAmount = Number(engine.state.variables.principal?.value) || 1000000;
-  const interestRate = Number(engine.state.variables.rate?.value) || 8.5;
-  const tenureInMonths = Number(engine.state.variables.tenure?.value) || 240;
-  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
+  const loanAmount = Number(engine.state.principal?.value) || 1000000;
+  const interestRate = Number(engine.state.rate?.value) || 8.5;
+  const tenureInMonths = Number(engine.state.tenure?.value) || 240;
+  const emi = Number(engine.state.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
 
   // Yearly amortization schedule
   const yearlySchedule = useMemo(() => {

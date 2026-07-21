@@ -1,11 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
-import { ResultChart } from '../components/ResultChart';
-import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
-
+import { bikeLoanConfig } from '../engine/configs/bikeLoanConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 const BANK_RATES = [
   { bank: 'SBI Two Wheeler', rate: '10.25 – 13.50', maxAmount: '₹5L', maxTenure: '5 years', processing: '₹500' },
   { bank: 'HDFC Bank', rate: '11.25 – 16.00', maxAmount: '₹5L', maxTenure: '5 years', processing: 'Up to 2.5%' },
@@ -36,23 +35,16 @@ const FAQ_DATA = [
 ];
 
 export const BikeLoanCalculator: React.FC = () => {
-  const [bikePrice, setBikePrice] = useState(150000);
-  const [downPayment, setDownPayment] = useState(20);
-  const [interestRate, setInterestRate] = useState(12.0);
-  const [loanTenure, setLoanTenure] = useState(3);
-  const [showAmortization, setShowAmortization] = useState(false);
+  const engine = useOmniEngine(bikeLoanConfig);
   const [activePreset, setActivePreset] = useState(-1);
 
-  const loanAmount = Math.round(bikePrice * (1 - downPayment / 100));
-  const dpAmount = bikePrice - loanAmount;
-  const tenureInMonths = loanTenure * 12;
-
-  const emi = useMemo(() => calculateEMI(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);
-  const totalPayment = emi * tenureInMonths;
-  const totalInterest = totalPayment - loanAmount;
-  const breakup = useMemo(() => calculateLoanBreakup(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);
-
-  const applyPreset = (p: typeof PRESETS[0], i: number) => { setBikePrice(p.price); setDownPayment(p.dp); setInterestRate(p.rate); setLoanTenure(p.tenure); setActivePreset(i); };
+  const applyPreset = (p: typeof PRESETS[0], i: number) => { 
+    engine.updateVariable('bikePrice', p.price.toString());
+    engine.updateVariable('downPayment', p.dp.toString());
+    engine.updateVariable('interestRate', p.rate.toString());
+    engine.updateVariable('loanTenure', p.tenure.toString());
+    setActivePreset(i); 
+  };
 
   const contentData = { title: 'Bike Loan EMI Calculator', description: 'India\'s most comprehensive Two Wheeler Loan EMI Calculator for bikes, scooters, and electric two-wheelers. Calculate EMI with on-road price, down payment, and insurance. Updated with 2025 rates from SBI, HDFC, Hero FinCorp, TVS Credit.', benefits: ['Calculate bike/scooter loan EMI instantly', 'On-road price to EMI with down payment %', 'Electric vehicle subsidy awareness', 'Bank & NBFC rate comparison (SBI, HDFC, Bajaj)', 'Yearly amortization schedule', 'Presets for commuter, sports, electric bikes', 'Processing fee estimation', 'Free, no signup, instant results'], howToSteps: [{ step: 'Enter Bike On-Road Price', details: 'Input total on-road price including ex-showroom, RTO, insurance, accessories.' }, { step: 'Set Down Payment', details: 'Typically 10-25%. Lower for electric vehicles. Higher for used bikes.' }, { step: 'Choose Interest Rate', details: 'SBI: 10.25%, HDFC: 11.25%, NBFCs: 12-18%. CIBIL 750+ gets best rates.' }, { step: 'Select Tenure', details: 'Most common: 2-3 years. Max 5 years for premium bikes. Shorter = much less interest.' }], examples: [], tips: ['Pay 20%+ down payment to reduce EMI burden and get better rates', 'For electric bikes, check FAME II and state subsidies before calculating loan', 'Compare dealer financing with bank rates — dealers often mark up by 1-3%'], mistakes: ['Taking 5-year loan for ₹80K commuter bike — interest may exceed bike\'s resale value', 'Adding accessories to loan amount — pay cash for accessories to avoid paying interest on them'], faqs: FAQ_DATA, relatedCalculators: [{ name: 'Car Loan Calculator', url: '/calculators/car-loan-calculator', description: 'Car loan EMI' }, { name: 'EMI Calculator', url: '/calculators/emi-calculator', description: 'General loan EMI' }, { name: 'Personal Loan Calculator', url: '/calculators/personal-loan-calculator', description: 'Personal loan comparison' }], lastUpdated: '2025-03-23' };
 
@@ -92,63 +84,9 @@ export const BikeLoanCalculator: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="mb-8"><p className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Quick Presets</p><div className="flex flex-wrap gap-2">{PRESETS.map((p, i) => (<button key={i} onClick={() => applyPreset(p, i)} className={`px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all ${activePreset === i ? 'bg-emerald-50 border-emerald-500 text-emerald-700' : 'bg-white border-slate-200 text-slate-600 hover:border-emerald-400'}`}><span className="mr-1">{p.icon}</span> {p.name}</button>))}</div></div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            <div className="bkc-glass p-8 bkc-animate">
-              <h2 className="text-xl font-black text-slate-900 mb-8 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_8px_rgba(5,150,105,0.5)]"></span> Bike Loan Details</h2>
-              <div className="space-y-7">
-                <div><div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Bike On-Road Price (₹)</label><input type="text" value={bikePrice} onChange={(e) => { const n = parseInt(e.target.value.replace(/[^0-9]/g, '')); if (!isNaN(n)) setBikePrice(n); }} className="bkc-input" /></div><input type="range" min="30000" max="600000" step="5000" value={bikePrice} onChange={(e) => setBikePrice(Number(e.target.value))} className="bkc-slider w-full" /><div className="flex justify-between text-[10px] font-bold text-slate-400 mt-2"><span>₹30K</span><span className="text-emerald-700 text-xs font-black">{formatCurrency(bikePrice)}</span><span>₹6L</span></div></div>
-                <div><div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Down Payment (%)</label><div className="flex items-center gap-2"><input type="text" value={downPayment} onChange={(e) => { const n = parseInt(e.target.value); if (!isNaN(n) && n >= 0 && n <= 80) setDownPayment(n); }} className="bkc-input w-16" /><span className="text-xs text-slate-500 font-bold">{formatCurrency(dpAmount)}</span></div></div><input type="range" min="0" max="80" step="1" value={downPayment} onChange={(e) => setDownPayment(Number(e.target.value))} className="bkc-slider w-full" /></div>
-                <div><div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Interest Rate (% p.a.)</label><input type="text" value={interestRate} onChange={(e) => { const n = parseFloat(e.target.value); if (!isNaN(n) && n >= 5 && n <= 22) setInterestRate(n); }} className="bkc-input w-20" /></div><input type="range" min="5" max="22" step="0.25" value={interestRate} onChange={(e) => setInterestRate(Number(e.target.value))} className="bkc-slider w-full" /></div>
-                <div><div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Tenure (Years)</label><input type="text" value={loanTenure} onChange={(e) => { const n = parseInt(e.target.value); if (!isNaN(n) && n >= 1 && n <= 5) setLoanTenure(n); }} className="bkc-input w-16" /></div><input type="range" min="1" max="5" step="1" value={loanTenure} onChange={(e) => setLoanTenure(Number(e.target.value))} className="bkc-slider w-full" /></div>
-                <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-100"><div className="flex justify-between items-center"><span className="text-xs font-bold text-emerald-700 uppercase">Loan Amount</span><span className="text-lg font-black text-emerald-800">{formatCurrency(loanAmount)}</span></div></div>
-              </div>
-            </div>
-
-            <div className="space-y-6 bkc-animate" style={{ animationDelay: '0.1s' }}>
-              <div className="bkc-glass p-8 text-center">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Monthly Bike Loan EMI</p>
-                <p className="text-5xl md:text-6xl font-black text-slate-900 mb-1"><span className="text-emerald-600">₹</span>{Math.round(emi).toLocaleString('en-IN')}</p>
-                <p className="text-sm text-slate-500 font-medium mb-6">{formatCurrency(loanAmount)} at {interestRate}% for {loanTenure} years</p>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bkc-stat text-left"><p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Loan Amount</p><p className="text-xl font-black text-slate-900">{formatCurrency(loanAmount)}</p></div>
-                  <div className="bkc-stat text-left" style={{ borderColor: '#fecaca' }}><p className="text-[10px] font-bold text-rose-400 uppercase mb-1">Total Interest</p><p className="text-xl font-black text-rose-600">{formatCurrency(Math.round(totalInterest))}</p></div>
-                  <div className="bkc-stat text-left" style={{ borderColor: '#bfdbfe' }}><p className="text-[10px] font-bold text-blue-400 uppercase mb-1">Total Payable</p><p className="text-xl font-black text-blue-600">{formatCurrency(Math.round(totalPayment))}</p></div>
-                  <div className="bkc-stat text-left" style={{ borderColor: '#d9f99d' }}><p className="text-[10px] font-bold text-amber-500 uppercase mb-1">Down Payment</p><p className="text-xl font-black text-amber-600">{formatCurrency(dpAmount)}</p></div>
-                </div>
-                <div className="h-56 mt-4"><ResultChart data={[{ name: 'Principal', value: loanAmount, color: '#059669' }, { name: 'Interest', value: Math.round(totalInterest), color: '#f59e0b' }]} centerText={`${((totalInterest / (totalPayment || 1)) * 100).toFixed(1)}%\nInterest`} /></div>
-              </div>
-            </div>
+          <div className="mb-12">
+            <OmniWidget config={bikeLoanConfig} engine={engine} />
           </div>
-
-          <div className="mt-12"><div className="bkc-glass p-8">
-            <div className="flex items-center justify-between mb-8"><h2 className="text-xl font-black text-slate-900 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-emerald-600"></span> Amortization Schedule</h2><button onClick={() => setShowAmortization(!showAmortization)} className="px-4 py-2 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-bold">{showAmortization ? 'Collapse' : 'Expand'}</button></div>
-            <div className="overflow-x-auto"><table className="w-full bkc-table"><thead><tr className="border-b border-slate-100"><th className="text-left">Year</th><th className="text-right">Principal</th><th className="text-right">Interest</th><th className="text-right">Balance</th></tr></thead><tbody className="divide-y divide-slate-50">
-              {breakup.slice(0, showAmortization ? breakup.length : 5).map((y, i) => { const rem = Math.max(0, loanAmount - breakup.slice(0, i + 1).reduce((a, b) => a + b.principal, 0)); return <tr key={i}><td className="font-black text-slate-900">{i + 1}</td><td className="text-right text-emerald-600 font-bold">+{formatCurrency(Math.round(y.principal))}</td><td className="text-right text-rose-500 font-bold">-{formatCurrency(Math.round(y.interest))}</td><td className="text-right text-blue-600 font-black">{formatCurrency(Math.round(rem))}</td></tr>; })}
-            </tbody></table></div>
-            
-            {(() => {
-              const exportData = breakup.map((y, i) => ({ 
-                year: i + 1, 
-                principal: Math.round(y.principal), 
-                interest: Math.round(y.interest), 
-                balance: Math.round(Math.max(0, loanAmount - breakup.slice(0, i + 1).reduce((a, b) => a + b.principal, 0))) 
-              }));
-              return (
-                <ExportButtons 
-                  data={exportData}
-                  filename="Bike_Loan_Amortization_Schedule"
-                  title="Bike Loan Amortization Schedule"
-                  columns={[
-                    { header: 'Year', dataKey: 'year' },
-                    { header: 'Principal Paid (Rs)', dataKey: 'principal', isCurrency: true },
-                    { header: 'Interest Paid (Rs)', dataKey: 'interest', isCurrency: true },
-                    { header: 'Outstanding Balance (Rs)', dataKey: 'balance', isCurrency: true }
-                  ]}
-                />
-              );
-            })()}
-
-          </div></div>
 
           <div className="mt-12"><div className="bkc-glass p-8">
             <h2 className="text-xl font-black text-slate-900 mb-6 flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-emerald-500"></span> Two Wheeler Loan Rates 2025</h2>
