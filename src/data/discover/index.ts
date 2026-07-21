@@ -1,3 +1,13 @@
+import { libraHoroscopeWeeklyJuly } from './libra-horoscope-weekly-july';
+import { takedaDengueVaccineIndia } from './takeda-dengue-vaccine-india';
+import { nhaiRajmargyatraLocalPass } from './nhai-rajmargyatra-local-pass';
+import { imdRedAlertHeavyRain } from './imd-red-alert-heavy-rain';
+import { trendingOldMoneyTshirts } from './trending-old-money-tshirts';
+import { avengersDoomsdayMarvel } from './avengers-doomsday-marvel';
+import { sbiMutualFundStockAnalysis } from './sbi-mutual-fund-stock-analysis';
+import { akshayeKhannaBollywoodJourney } from './akshaye-khanna-bollywood-journey';
+import { iphone18ProLeak } from './iphone-18-pro-leak';
+import { ruturajGaikwadSriLanka } from './ruturaj-gaikwad-sri-lanka';
 import { postOfficeScssScheme } from './post-office-scss-scheme';
 import { incomeTaxNoticeRefund } from './income-tax-notice-refund';
 import { pmAwasYojanaSubsidy } from './pm-awas-yojana-subsidy';
@@ -1292,6 +1302,16 @@ const _discoverArticles: DiscoverArticle[
         pmAwasYojanaSubsidy,
         incomeTaxNoticeRefund,
         postOfficeScssScheme,
+        ruturajGaikwadSriLanka,
+        iphone18ProLeak,
+        akshayeKhannaBollywoodJourney,
+        sbiMutualFundStockAnalysis,
+        avengersDoomsdayMarvel,
+        trendingOldMoneyTshirts,
+        imdRedAlertHeavyRain,
+        nhaiRajmargyatraLocalPass,
+        takedaDengueVaccineIndia,
+        libraHoroscopeWeeklyJuly,
         // Add variables here
     ];
 

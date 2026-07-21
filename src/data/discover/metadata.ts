@@ -5637,5 +5637,65 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/hang-seng-index-impact.png",
         "author": "MoneyCal Team",
         "date": "2023-10-05T09:17:30.191Z"
+    },
+    {
+        "id": "ruturaj-gaikwad-sri-lanka-captaincy",
+        "slug": "ruturaj-gaikwad-sri-lanka-captaincy",
+        "title": "Ruturaj Gaikwad ने रचा इतिहास! श्रीलंका सीरीज से पहले कप्तान ने खेल दी ऐसी तूफानी पारी?",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "iphone-18-pro-leak-features-price",
+        "slug": "iphone-18-pro-leak-features-price",
+        "title": "iPhone 18 Pro का पहला लुक लीक! Apple इस बार ला रहा है ऐसा फीचर जो आपने सोचा भी न होगा?",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "akshaye-khanna-bollywood-journey-transformation",
+        "slug": "akshaye-khanna-bollywood-journey-transformation",
+        "title": "Akshaye Khanna अचानक क्यों हो गए थे फिल्मों से गायब? अब ऐसे बदल गया है 'दिल चाहता है' के सिद्धार्थ का लुक",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "sbi-mutual-fund-share-news",
+        "slug": "sbi-mutual-fund-share-news",
+        "title": "SBI Mutual Fund के आईपीओ और शेयर को लेकर आई बड़ी खबर! क्या आपके पास भी है यह धांसू स्टॉक?",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "avengers-doomsday-marvel-villain-robert-downey",
+        "slug": "avengers-doomsday-marvel-villain-robert-downey",
+        "title": "Avengers Doomsday में होने जा रही है इस खतरनाक विलेन की एंट्री! मार्वल फैंस के उड़े होश",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "trending-old-money-aesthetic-tshirts",
+        "slug": "trending-old-money-aesthetic-tshirts",
+        "title": "Old Money Aesthetic: इस सीजन लड़कों के बीच ट्रेंड कर रही हैं ये 5 तरह की टी-शर्ट्स, देखें बजट फ्रेंडली लिस्ट",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "imd-weather-red-alert-heavy-rain",
+        "slug": "imd-weather-red-alert-heavy-rain",
+        "title": "IMD Weather Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, मौसम विभाग ने जारी किया रेड अलर्ट!",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "nhai-rajmargyatra-app-local-pass",
+        "slug": "nhai-rajmargyatra-app-local-pass",
+        "title": "Rajmargyatra App: हाइवे पर सफर करने वालों के लिए बड़ी खुशखबरी! अब घर बैठे ऐसे मिलेगा लोकल टोल पास",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "takeda-dengue-vaccine-launch-india",
+        "slug": "takeda-dengue-vaccine-launch-india",
+        "title": "Dengue Vaccine: अब डेंगू का डर खत्म? भारत में जल्द आ सकती है टाकेडा की नई वैक्सीन, जानें कितनी होगी असरदार",
+        "author": "MoneyCal Editor"
+    },
+    {
+        "id": "libra-horoscope-weekly-july-2026",
+        "slug": "libra-horoscope-weekly-july-2026",
+        "title": "तुला राशिफल (Libra Horoscope): जुलाई के इस हफ्ते में चमकेगी तुला राशि वालों की किस्मत, बस रखना होगा इस बात का ध्यान",
+        "author": "MoneyCal Editor"
     }
 ];
