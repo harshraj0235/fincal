@@ -24,7 +24,6 @@ import { howToWatchOdysseyHindiDubbedOnline } from './how-to-watch-odyssey-hindi
 import { odysseyChristopherNolanHindiDubbedOtt } from './odyssey-christopher-nolan-hindi-dubbed-ott';
 import { odysseyMovie2026HindiDubbedVegamovies } from './odyssey-movie-2026-hindi-dubbed-vegamovies';
 import { jioFinancialServicesProfitGrowth } from './jio-financial-services-profit-growth';
-import { jioFinancialServicesProfitGrowth } from './jio-financial-services-profit-growth';
 import { jioFinancialServicesAnalysis } from './jio-financial-services-analysis';
 import { agricultureMachineryImpact } from './agriculture-machinery-impact';
 import { wiproShareQ1ResultsImpact } from './wipro-share-q1-results-impact';
@@ -646,8 +645,7 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 const _discoverArticles: DiscoverArticle[
 ] = [
     jioFinancialServicesProfitGrowth,
-
-    jioFinancialServicesProfitGrowth,
+    odysseyMovie2026HindiDubbedVegamovies,
 
     jioFinancialServicesAnalysis,
 

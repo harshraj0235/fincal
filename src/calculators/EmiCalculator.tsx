@@ -1,9 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
+import { calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { ExportButtons } from '../components/ExportButtons';
 import SEOHelmet from '../components/SEOHelmet';
 import CalculatorSchema from '../components/CalculatorSchema';
+import { emiConfig } from '../engine/configs/emiConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 /* ═══════════════════════════════════════════════════════════════
    EMI CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -80,17 +83,24 @@ export const EmiCalculator: React.FC<ProgrammaticSEOProps> = ({
   title, description, keywords, h1, subtitle, url, faqData,
   contentData: customContentData, defaultPresetIndex, defaultBankIndex
 }) => {
-  const [loanAmount, setLoanAmount] = useState(defaultPresetIndex !== undefined && LOAN_PRESETS[defaultPresetIndex] ? LOAN_PRESETS[defaultPresetIndex].amount : 1000000);
-  const [interestRate, setInterestRate] = useState(defaultPresetIndex !== undefined && LOAN_PRESETS[defaultPresetIndex] ? LOAN_PRESETS[defaultPresetIndex].rate : 8.5);
-  const [loanTenure, setLoanTenure] = useState(defaultPresetIndex !== undefined && LOAN_PRESETS[defaultPresetIndex] ? LOAN_PRESETS[defaultPresetIndex].tenure : 20);
-  const [tenureType, setTenureType] = useState<'years' | 'months'>('years');
+  const engine = useOmniEngine(emiConfig);
+
+  useEffect(() => {
+    if (defaultPresetIndex !== undefined && LOAN_PRESETS[defaultPresetIndex]) {
+      const preset = LOAN_PRESETS[defaultPresetIndex];
+      engine.updateVariable('principal', preset.amount.toString(), 'inr');
+      engine.updateVariable('rate', preset.rate.toString());
+      engine.updateVariable('tenure', preset.tenure.toString(), 'years');
+    }
+  }, [defaultPresetIndex]);
+
   const [showFullAmort, setShowFullAmort] = useState(false);
 
-  const tenureInMonths = tenureType === 'years' ? loanTenure * 12 : loanTenure;
-  const emi = useMemo(() => calculateEMI(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);
-  const totalPayment = emi * tenureInMonths;
-  const totalInterest = totalPayment - loanAmount;
-  const emiPerLakh = useMemo(() => calculateEMI(100000, interestRate, tenureInMonths), [interestRate, tenureInMonths]);
+  // Derive values from engine state for Amortization schedule
+  const loanAmount = Number(engine.state.variables.principal?.value) || 1000000;
+  const interestRate = Number(engine.state.variables.rate?.value) || 8.5;
+  const tenureInMonths = Number(engine.state.variables.tenure?.value) || 240;
+  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
 
   // Yearly amortization schedule
   const yearlySchedule = useMemo(() => {
@@ -125,10 +135,9 @@ export const EmiCalculator: React.FC<ProgrammaticSEOProps> = ({
   }, [loanAmount, interestRate, tenureInMonths, emi]);
 
   const applyPreset = (preset: typeof LOAN_PRESETS[0]) => {
-    setLoanAmount(preset.amount);
-    setInterestRate(preset.rate);
-    setLoanTenure(preset.tenure);
-    setTenureType('years');
+    engine.updateVariable('principal', preset.amount.toString(), 'inr');
+    engine.updateVariable('rate', preset.rate.toString());
+    engine.updateVariable('tenure', preset.tenure.toString(), 'years');
   };
 
   const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
@@ -189,99 +198,8 @@ export const EmiCalculator: React.FC<ProgrammaticSEOProps> = ({
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-[#f0f4ff] border border-[#c7d2fe] rounded-lg p-5 shadow-sm">
-              <h2 className="text-xl font-semibold mb-4 text-[#3730a3] border-b border-[#c7d2fe] pb-2">Loan Details</h2>
-
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-[#ddd6fe]">
-                    <td className="py-3 pr-2 font-medium w-1/2">
-                      <label htmlFor="loanAmount">Loan Amount (₹)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="loanAmount" type="number" value={loanAmount}
-                        onChange={(e) => setLoanAmount(Math.max(10000, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#6366f1]"
-                        min="10000" max="100000000" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#ddd6fe]">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="interestRate">Interest Rate (% p.a.)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="interestRate" type="number" step="0.05" value={interestRate}
-                        onChange={(e) => setInterestRate(Math.max(1, Math.min(30, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#6366f1]"
-                        min="1" max="30" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#ddd6fe]">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="loanTenure">Loan Tenure</label>
-                    </td>
-                    <td className="py-3">
-                      <div className="flex gap-2">
-                        <input id="loanTenure" type="number" value={loanTenure}
-                          onChange={(e) => setLoanTenure(Math.max(1, Number(e.target.value) || 0))}
-                          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-[#6366f1]"
-                          min="1" max={tenureType === 'years' ? 30 : 360} />
-                        <select value={tenureType} onChange={(e) => { setTenureType(e.target.value as 'years' | 'months'); if (e.target.value === 'years' && loanTenure > 30) setLoanTenure(30); }}
-                          className="p-2 border border-gray-300 rounded bg-white focus:outline-none focus:border-[#6366f1]">
-                          <option value="years">Years</option>
-                          <option value="months">Months</option>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-md">
-              <h2 className="text-xl font-semibold mb-4 text-[#3730a3] border-b border-gray-200 pb-2">EMI Calculation Result</h2>
-
-              <div className="bg-[#eef2ff] p-4 rounded-lg mb-4 text-center border border-[#c7d2fe]">
-                <p className="text-gray-600 text-sm font-medium uppercase tracking-wide">Monthly EMI</p>
-                <p className="text-4xl font-bold text-[#3730a3] my-1">₹{fmtNum(Math.round(emi))}</p>
-                <p className="text-xs text-gray-500">per month for {loanTenure} {tenureType}</p>
-              </div>
-
-              <table className="w-full text-left text-sm border-collapse">
-                <tbody>
-                  <tr className="border-b border-gray-100">
-                    <td className="py-2 text-gray-600">Loan Amount:</td>
-                    <td className="py-2 font-semibold text-right">{fmt(loanAmount)}</td>
-                  </tr>
-                  <tr className="border-b border-gray-100 text-red-600">
-                    <td className="py-2">Total Interest Payable:</td>
-                    <td className="py-2 font-semibold text-right">{fmt(Math.round(totalInterest))}</td>
-                  </tr>
-                  <tr className="font-bold bg-gray-50">
-                    <td className="py-2 px-1 rounded-l">Total Amount Payable:</td>
-                    <td className="py-2 px-1 text-right rounded-r">{fmt(Math.round(totalPayment))}</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-                <div className="bg-gray-50 p-3 rounded-lg border">
-                  <p className="text-xs text-gray-500 font-medium">EMI per ₹1 Lakh</p>
-                  <p className="text-lg font-bold text-[#3730a3]">₹{fmtNum(Math.round(emiPerLakh))}</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded-lg border">
-                  <p className="text-xs text-gray-500 font-medium">Interest / Principal</p>
-                  <p className="text-lg font-bold text-red-600">{totalPayment > 0 ? ((totalInterest / loanAmount) * 100).toFixed(0) : 0}%</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="mt-8 mb-12">
+          <OmniWidget config={emiConfig} engine={engine} />
         </div>
 
         {/* ===== AMORTIZATION SCHEDULE ===== */}

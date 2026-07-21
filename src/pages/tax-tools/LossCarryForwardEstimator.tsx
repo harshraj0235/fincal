@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { IndianRupee, Info, AlertCircle, TrendingDown, Calendar, DollarSign } from 'lucide-react';
+import { IndianRupee, Info, AlertCircle, TrendingDown, Calendar } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import CalculatorSchema from '../../components/CalculatorSchema';

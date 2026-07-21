@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import CalculatorSchema from '../components/CalculatorSchema';
+import { fdConfig } from '../engine/configs/fdConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
+
 /* ═══════════════════════════════════════════════════════════════
    FD CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -9,14 +13,16 @@ import CalculatorSchema from '../components/CalculatorSchema';
    fd interest calculator, fd maturity calculator, fd calculator sbi
    ═══════════════════════════════════════════════════════════════ */
 
-type Preset = { principal: number; rate: number; tenure: number; type: 'years' | 'months'; freq: 'quarterly' | 'monthly' | 'annually' | 'half-yearly' };
-type Props = { schemaUrl?: string; defaultPreset?: Preset; variantName?: string };
-
-const QUICK_PRESETS = [
-  { label: 'SBI (1 Yr)', principal: 100000, rate: 7.1, tenure: 1, type: 'years' as const, freq: 'quarterly' as const },
-  { label: 'HDFC (3 Yr)', principal: 500000, rate: 7.5, tenure: 3, type: 'years' as const, freq: 'quarterly' as const },
-  { label: 'ICICI (5 Yr)', principal: 1000000, rate: 8.2, tenure: 5, type: 'years' as const, freq: 'quarterly' as const },
-];
+type FdSEOProps = {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  h1?: string;
+  subtitle?: string;
+  url?: string;
+  faqData?: any;
+  defaultPreset?: any;
+};
 
 const FAQ_DATA = [
   { question: "What is a Fixed Deposit (FD)?", answer: "A Fixed Deposit (FD) is a secure financial instrument offered by banks and NBFCs in India which provides investors a higher rate of interest than a regular savings account, until the given maturity date. It requires a one-time lump sum deposit." },
@@ -26,85 +32,28 @@ const FAQ_DATA = [
   { question: "Can I withdraw my FD before maturity?", answer: "Yes, premature withdrawal of FD is allowed, but banks usually charge a penalty of 0.5% to 1% on the interest rate. The interest paid will be for the period the deposit was held, minus the penalty." }
 ];
 
-export const FdCalculator: React.FC<Props> = ({ schemaUrl, defaultPreset }) => {
-  // Core Variables
-  const [principal, setPrincipal] = useState<number>(100000);
-  const [interestRate, setInterestRate] = useState<number>(7.5);
-  const [tenure, setTenure] = useState<number>(5);
-  const [tenureType, setTenureType] = useState<'years' | 'months' | 'days'>('years');
-  const [frequency, setFrequency] = useState<'monthly' | 'quarterly' | 'half-yearly' | 'annually'>('quarterly');
-  const [seniorMode, setSeniorMode] = useState<boolean>(false);
-
-  // Results
-  const [maturityAmount, setMaturityAmount] = useState<number>(0);
-  const [interestEarned, setInterestEarned] = useState<number>(0);
-  const [effectiveRate, setEffectiveRate] = useState<number>(0);
-
-  useEffect(() => {
+export const FdCalculator: React.FC<FdSEOProps> = ({
+  title, description, keywords, h1, subtitle, url, faqData,
+  defaultPreset
+}) => {
+  const engine = useOmniEngine(fdConfig);
+  
+  React.useEffect(() => {
     if (defaultPreset) {
-      setPrincipal(defaultPreset.principal);
-      setInterestRate(defaultPreset.rate);
-      setTenure(defaultPreset.tenure);
-      setTenureType(defaultPreset.type);
-      setFrequency(defaultPreset.freq);
+      engine.updateVariable('principal', defaultPreset.principal.toString());
+      engine.updateVariable('interestRate', defaultPreset.rate.toString());
+      engine.updateVariable('tenure', defaultPreset.tenure.toString());
     }
   }, [defaultPreset]);
-
-  useEffect(() => {
-    const p = principal || 0;
-    const r = (interestRate + (seniorMode ? 0.5 : 0)) / 100;
-    
-    let t = 0;
-    if (tenureType === 'years') t = tenure;
-    else if (tenureType === 'months') t = tenure / 12;
-    else if (tenureType === 'days') t = tenure / 365;
-
-    let n = 4; // default quarterly
-    if (frequency === 'monthly') n = 12;
-    else if (frequency === 'half-yearly') n = 2;
-    else if (frequency === 'annually') n = 1;
-
-    // A = P(1 + r/n)^(nt) for standard compounding
-    let amount = 0;
-    
-    if (tenureType === 'days' && tenure < 181) {
-       // For very short term deposits, simple interest is often used by Indian banks
-       amount = p + (p * r * (tenure / 365));
-    } else {
-       // Compound Interest Formula
-       amount = p * Math.pow(1 + r / n, n * t);
-    }
-
-    if(t === 0) amount = p;
-
-    const interest = amount - p;
-    const ear = (Math.pow(1 + r / n, n) - 1) * 100;
-
-    setMaturityAmount(amount);
-    setInterestEarned(interest);
-    setEffectiveRate(ear);
-  }, [principal, interestRate, tenure, tenureType, frequency, seniorMode]);
-
-  const applyPreset = (preset: typeof QUICK_PRESETS[0]) => {
-    setPrincipal(preset.principal);
-    setInterestRate(preset.rate);
-    setTenure(preset.tenure);
-    setTenureType(preset.type);
-    setFrequency(preset.freq);
-    setSeniorMode(false);
-  };
-
-  const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
-  const fmtNum = (amount: number) => new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(amount);
 
   return (
     <>
       <SEOHelmet 
-        title="FD Calculator India 2026 | Fixed Deposit Maturity & Interest" 
-        description="Calculate FD Maturity, Interest, & Effective Rates securely. Discover the true power of compounding with our premium Fixed Deposit Calculator for SBI, HDFC, ICICI." 
-        keywords="fd calculator, fixed deposit calculator, fd interest calculator, fd maturity calculator, fd calculator sbi, fd calculator hdfc" 
-        url={schemaUrl ?? "/calculators/fd-calculator"} 
-        faqData={FAQ_DATA} 
+        title={title || "FD Calculator India 2026 | Fixed Deposit Maturity & Interest"} 
+        description={description || "Calculate FD Maturity, Interest, & Effective Rates securely. Discover the true power of compounding with our premium Fixed Deposit Calculator for SBI, HDFC, ICICI."} 
+        keywords={keywords || "fd calculator, fixed deposit calculator, fd interest calculator, fd maturity calculator, fd calculator sbi, fd calculator hdfc"} 
+        url={url ?? "/calculators/fd-calculator"} 
+        faqData={faqData ?? FAQ_DATA} 
         calculatorData={{ name: 'FD Calculator 2026', description: 'Advanced FD analysis and Yield builder.', category: 'Bank Calculators', features: ['Senior Citizen Boost', 'Effective Rate Mapping', 'Quarterly Compounding'], ratingValue: 4.8, reviewCount: 17290, authorName: 'MoneyCal' }} 
       />
 
@@ -119,117 +68,6 @@ export const FdCalculator: React.FC<Props> = ({ schemaUrl, defaultPreset }) => {
         </nav>
 
         <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Fixed Deposit (FD) Calculator India</h1>
-          <p className="text-gray-600">Calculate the maturity amount and interest earned on your Fixed Deposits. Supports quarterly compounding (standard for Indian banks) and Senior Citizen (+0.5%) interest rate boosts.</p>
-        </div>
-
-        {/* Quick Presets */}
-        <div className="mb-6 flex flex-wrap gap-2">
-          {QUICK_PRESETS.map((preset, idx) => (
-            <button key={idx} onClick={() => applyPreset(preset)} className="px-3 py-1.5 text-sm border border-gray-300 rounded bg-white hover:bg-blue-50 hover:border-blue-400 text-gray-700 transition-colors">
-              {preset.label}
-            </button>
-          ))}
-          <button onClick={() => setSeniorMode(!seniorMode)} className={`px-3 py-1.5 text-sm border rounded transition-colors ${seniorMode ? 'bg-orange-100 border-orange-400 text-orange-800' : 'bg-white border-gray-300 text-gray-700 hover:bg-orange-50'}`}>
-            👨‍🦳 Senior Citizen (60+)
-          </button>
-        </div>
-
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 shadow-sm mb-6">
-              <h2 className="text-xl font-semibold mb-4 text-blue-900 border-b border-blue-200 pb-2">FD Details</h2>
-              
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-blue-100">
-                    <td className="py-3 pr-2 font-medium w-1/2">
-                      <label htmlFor="principal">Total Deposit Amount (₹)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="principal" type="number" value={principal}
-                        onChange={(e) => setPrincipal(Math.max(100, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-lg font-bold text-blue-700"
-                        min="100" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-blue-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="interestRate">Interest Rate (% p.a.)</label>
-                      {seniorMode && <p className="text-xs text-orange-600 font-bold">+ 0.50% added automatically</p>}
-                    </td>
-                    <td className="py-3">
-                      <input id="interestRate" type="number" step="0.1" value={interestRate}
-                        onChange={(e) => setInterestRate(Math.max(1, Math.min(20, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" min="1" max="20" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-blue-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="tenure">Time Period</label>
-                    </td>
-                    <td className="py-3">
-                      <div className="flex gap-2">
-                        <input id="tenure" type="number" value={tenure}
-                          onChange={(e) => setTenure(Math.max(1, Number(e.target.value) || 0))}
-                          className="w-16 p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" min="1" />
-                        <select value={tenureType} onChange={(e) => setTenureType(e.target.value as any)} className="p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
-                          <option value="years">Years</option>
-                          <option value="months">Months</option>
-                          <option value="days">Days</option>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="frequency">Compounding Frequency</label>
-                      <p className="text-xs text-gray-500 font-normal">Indian Banks use Quarterly</p>
-                    </td>
-                    <td className="py-3">
-                      <select id="frequency" value={frequency} onChange={(e) => setFrequency(e.target.value as any)} className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500">
-                        <option value="quarterly">Quarterly (Most Common)</option>
-                        <option value="monthly">Monthly</option>
-                        <option value="half-yearly">Half-Yearly</option>
-                        <option value="annually">Annually</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col h-full overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-700 to-indigo-800 p-6 text-white text-center">
-                <h2 className="text-sm font-semibold uppercase tracking-wider mb-2 text-blue-200">Total Maturity Value</h2>
-                <div className="text-4xl font-black mb-1">
-                  ₹{fmtNum(Math.round(maturityAmount))}
-                </div>
-                <p className="text-blue-100 text-sm font-medium mt-2">After {tenure} {tenureType} @ {interestRate + (seniorMode ? 0.5 : 0)}% p.a.</p>
-              </div>
-
-              <div className="p-0 flex-grow">
-                <table className="w-full text-left border-collapse">
-                  <tbody>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Total Deposit Amount</td>
-                      <td className="p-4 text-right text-base font-semibold">{fmt(principal)}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 bg-green-50">
-                      <td className="p-4 text-sm font-bold text-green-800">Total Interest Earned</td>
-                      <td className="p-4 text-right text-base font-bold text-green-700">+{fmt(Math.round(interestEarned))}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Effective Annual Yield (EAR)</td>
-                      <td className="p-4 text-right text-base font-semibold text-blue-700">{effectiveRate.toFixed(2)}%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
               
               <div className="p-4 bg-gray-50 border-t border-gray-200 text-xs text-gray-500">
                 <strong>Note:</strong> FD Interest is taxable based on your income tax slab. Banks deduct 10% TDS if interest exceeds ₹40k (₹50k for Seniors) in a year.

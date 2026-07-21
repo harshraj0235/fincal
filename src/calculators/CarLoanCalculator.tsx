@@ -1,10 +1,13 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { ResultChart } from '../components/ResultChart';
 import { ExportButtons } from '../components/ExportButtons';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import SEOHelmet from '../components/SEOHelmet';
+import { carLoanConfig } from '../engine/configs/carLoanConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 
 /* ═══════════════════════════════════════════════════════
    CAR LOAN CALCULATOR — PREMIUM EDITION 2025
@@ -42,20 +45,27 @@ const FAQ_DATA = [
 ];
 
 export const CarLoanCalculator: React.FC = () => {
-  const [carValue, setCarValue] = useState(1500000);
-  const [downPayment, setDownPayment] = useState(20);
-  const [interestRate, setInterestRate] = useState(9.50);
-  const [loanTenure, setLoanTenure] = useState(5);
+  const engine = useOmniEngine(carLoanConfig);
+
   const [showAmortization, setShowAmortization] = useState(false);
   const [amortView, setAmortView] = useState<'yearly' | 'monthly'>('yearly');
   const [activePreset, setActivePreset] = useState(-1);
 
+  // Derive values from engine state
+  const carValue = Number(engine.state.variables.carValue?.value) || 1500000;
+  const downPayment = Number(engine.state.variables.downPayment?.value) || 20;
+  const interestRate = Number(engine.state.variables.rate?.value) || 9.50;
+  const loanTenure = Number(engine.state.variables.tenure?.value) || 60; // default in months from engine config base unit if months
+  const tenureInMonths = engine.state.variables.tenure?.unit === 'years'
+    ? (Number(engine.state.variables.tenure?.value) * 12) || 60
+    : Number(engine.state.variables.tenure?.value) || 60;
+  const tenureType = engine.state.variables.tenure?.unit === 'years' ? 'years' : 'months';
+
   const loanAmount = Math.round(carValue * (1 - downPayment / 100));
   const dpAmount = carValue - loanAmount;
-  const tenureInMonths = loanTenure * 12;
   const ltv = ((loanAmount / carValue) * 100).toFixed(1);
 
-  const emi = useMemo(() => calculateEMI(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);
+  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
   const totalPayment = emi * tenureInMonths;
   const totalInterest = totalPayment - loanAmount;
   const breakup = useMemo(() => calculateLoanBreakup(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);
@@ -67,7 +77,13 @@ export const CarLoanCalculator: React.FC = () => {
     return s;
   }, [loanAmount, interestRate, tenureInMonths, emi]);
 
-  const applyPreset = (p: typeof PRESETS[0], i: number) => { setCarValue(p.car); setDownPayment(p.dp); setInterestRate(p.rate); setLoanTenure(p.tenure); setActivePreset(i); };
+  const applyPreset = (p: typeof PRESETS[0], i: number) => { 
+    engine.updateVariable('carValue', p.car.toString(), 'inr');
+    engine.updateVariable('downPayment', p.dp.toString(), 'percent');
+    engine.updateVariable('rate', p.rate.toString(), 'percent_yearly');
+    engine.updateVariable('tenure', p.tenure.toString(), 'years');
+    setActivePreset(i); 
+  };
 
   const contentData = {
     title: 'Car Loan EMI Calculator',
@@ -168,53 +184,8 @@ export const CarLoanCalculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            <div className="clc-glass p-8 clc-animate">
-              <h2 className="text-xl font-black text-slate-900 mb-8 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(29,78,216,0.5)]"></span> Car & Loan Details
-              </h2>
-              <div className="space-y-7">
-                <div>
-                  <div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Car On-Road Price (₹)</label><input type="text" value={carValue} onChange={(e) => { const n = parseInt(e.target.value.replace(/[^0-9]/g, '')); if (!isNaN(n)) setCarValue(n); }} className="clc-input" /></div>
-                  <input type="range" min="200000" max="10000000" step="50000" value={carValue} onChange={(e) => setCarValue(Number(e.target.value))} className="clc-slider w-full" />
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mt-2"><span>₹2L</span><span className="text-blue-700 text-xs font-black">{formatCurrency(carValue)}</span><span>₹1Cr</span></div>
-                </div>
-                <div>
-                  <div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Down Payment (%)</label><div className="flex items-center gap-2"><input type="text" value={downPayment} onChange={(e) => { const n = parseInt(e.target.value); if (!isNaN(n) && n >= 5 && n <= 80) setDownPayment(n); }} className="clc-input w-16" /><span className="text-xs text-slate-500 font-bold">{formatCurrency(dpAmount)}</span></div></div>
-                  <input type="range" min="5" max="80" step="1" value={downPayment} onChange={(e) => setDownPayment(Number(e.target.value))} className="clc-slider w-full" />
-                </div>
-                <div>
-                  <div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Interest Rate (% p.a.)</label><input type="text" value={interestRate} onChange={(e) => { const n = parseFloat(e.target.value); if (!isNaN(n) && n >= 5 && n <= 18) setInterestRate(n); }} className="clc-input w-20" /></div>
-                  <input type="range" min="5" max="18" step="0.1" value={interestRate} onChange={(e) => setInterestRate(Number(e.target.value))} className="clc-slider w-full" />
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mt-2"><span>5%</span><span className="text-blue-700 text-xs font-black">{interestRate.toFixed(1)}%</span><span>18%</span></div>
-                </div>
-                <div>
-                  <div className="flex justify-between items-center mb-3"><label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Tenure (Years)</label><input type="text" value={loanTenure} onChange={(e) => { const n = parseInt(e.target.value); if (!isNaN(n) && n >= 1 && n <= 7) setLoanTenure(n); }} className="clc-input w-16" /></div>
-                  <input type="range" min="1" max="7" step="1" value={loanTenure} onChange={(e) => setLoanTenure(Number(e.target.value))} className="clc-slider w-full" />
-                </div>
-                <div className="p-4 bg-blue-50 rounded-xl border border-blue-100">
-                  <div className="flex justify-between items-center"><span className="text-xs font-bold text-blue-700 uppercase">Loan Amount</span><span className="text-lg font-black text-blue-800">{formatCurrency(loanAmount)}</span></div>
-                  <div className="flex justify-between items-center mt-2"><span className="text-xs text-blue-600 font-bold">LTV Ratio</span><span className={`text-sm font-black ${parseFloat(ltv) > 90 ? 'text-red-600' : 'text-blue-700'}`}>{ltv}% {parseFloat(ltv) > 90 ? '⚠️ Above limit' : '✓ OK'}</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6 clc-animate" style={{ animationDelay: '0.1s' }}>
-              <div className="clc-glass p-8 text-center">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Monthly Car Loan EMI</p>
-                <p className="text-5xl md:text-6xl font-black text-slate-900 mb-1"><span className="text-blue-600">₹</span>{Math.round(emi).toLocaleString('en-IN')}</p>
-                <p className="text-sm text-slate-500 font-medium mb-6">{formatCurrency(loanAmount)} at {interestRate}% for {loanTenure} years</p>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="clc-stat text-left"><p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Loan Amount</p><p className="text-xl font-black text-slate-900">{formatCurrency(loanAmount)}</p></div>
-                  <div className="clc-stat text-left" style={{ borderColor: '#fecaca' }}><p className="text-[10px] font-bold text-rose-400 uppercase mb-1">Total Interest</p><p className="text-xl font-black text-rose-600">{formatCurrency(Math.round(totalInterest))}</p></div>
-                  <div className="clc-stat text-left" style={{ borderColor: '#bfdbfe' }}><p className="text-[10px] font-bold text-blue-400 uppercase mb-1">Total Payable</p><p className="text-xl font-black text-blue-600">{formatCurrency(Math.round(totalPayment))}</p></div>
-                  <div className="clc-stat text-left" style={{ borderColor: '#d9f99d' }}><p className="text-[10px] font-bold text-amber-500 uppercase mb-1">Down Payment</p><p className="text-xl font-black text-amber-600">{formatCurrency(dpAmount)}</p></div>
-                </div>
-                <div className="h-56 mt-4">
-                  <ResultChart data={[{ name: 'Principal', value: loanAmount, color: '#1d4ed8' }, { name: 'Interest', value: Math.round(totalInterest), color: '#f59e0b' }]} centerText={`${((totalInterest / totalPayment) * 100).toFixed(1)}%\nInterest`} />
-                </div>
-              </div>
-            </div>
+          <div className="mt-8 mb-12">
+            <OmniWidget config={carLoanConfig} engine={engine} />
           </div>
 
           {/* Amortization */}

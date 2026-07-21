@@ -1,7 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import CalculatorSchema from '../components/CalculatorSchema';
+import { npsConfig } from '../engine/configs/npsConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 /* ═══════════════════════════════════════════════════════════════
    NPS CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -24,50 +27,14 @@ const QUICK_PRESETS = [
 ];
 
 export const NpsCalculator: React.FC = () => {
-  // Core Variables
-  const [currentAge, setCurrentAge] = useState<number>(30);
-  const [retirementAge, setRetirementAge] = useState<number>(60);
-  const [monthlyContribution, setMonthlyContribution] = useState<number>(5000);
-  const [employerContribution, setEmployerContribution] = useState<number>(0);
-  
-  const [equityAllocation, setEquityAllocation] = useState<number>(50);
-  const [expectedReturn, setExpectedReturn] = useState<number>(10);
-
-  const calculations = useMemo(() => {
-    const investmentYears = retirementAge - currentAge;
-    if (investmentYears <= 0) return { maturityAmount: 0, totalContribution: 0, returnAmount: 0, taxFreeLumpSum: 0, annuityAmount: 0 };
-    
-    let balance = 0;
-    const yearlySelf = monthlyContribution * 12;
-    const yearlyEmployer = employerContribution * 12;
-    const yearlyContribution = yearlySelf + yearlyEmployer;
-    let totalContrib = 0;
-    
-    for (let year = 1; year <= investmentYears; year++) {
-      totalContrib += yearlyContribution;
-      balance += yearlyContribution;
-      
-      const equityReturns = balance * (equityAllocation / 100) * (expectedReturn / 100);
-      const debtReturns = balance * ((100 - equityAllocation) / 100) * ((expectedReturn - 2) / 100); // Assume debt is 2% lower
-      
-      balance += (equityReturns + debtReturns);
-    }
-    
-    return {
-      maturityAmount: balance,
-      totalContribution: totalContrib,
-      returnAmount: balance - totalContrib,
-      taxFreeLumpSum: balance * 0.6,
-      annuityAmount: balance * 0.4
-    };
-  }, [currentAge, retirementAge, monthlyContribution, employerContribution, equityAllocation, expectedReturn]);
+  const engine = useOmniEngine(npsConfig);
 
   const applyPreset = (preset: typeof QUICK_PRESETS[0]) => {
-    setMonthlyContribution(preset.monthly);
-    setEmployerContribution(preset.employer);
-    setCurrentAge(preset.age);
-    setEquityAllocation(preset.equity);
-    setExpectedReturn(preset.return);
+    engine.updateVariable('monthlyContribution', preset.monthly.toString(), 'inr');
+    engine.updateVariable('employerContribution', preset.employer.toString(), 'inr');
+    engine.updateVariable('currentAge', preset.age.toString(), 'years');
+    engine.updateVariable('equityAllocation', preset.equity.toString(), 'percent');
+    engine.updateVariable('expectedReturn', preset.return.toString(), 'percent_yearly');
   };
 
   const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
@@ -111,125 +78,8 @@ export const NpsCalculator: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-cyan-50 border border-cyan-200 rounded-lg p-5 shadow-sm mb-6">
-              <h2 className="text-xl font-semibold mb-4 text-cyan-900 border-b border-cyan-200 pb-2">Investment Details</h2>
-              
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-cyan-100">
-                    <td className="py-3 pr-2 font-medium w-1/2">
-                      <label htmlFor="currentAge">Current Age</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="currentAge" type="number" value={currentAge}
-                        onChange={(e) => setCurrentAge(Math.max(18, Math.min(65, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-cyan-500" min="18" max="65" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-cyan-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="retirementAge">Retirement Age</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="retirementAge" type="number" value={retirementAge}
-                        onChange={(e) => setRetirementAge(Math.max(currentAge + 1, Math.min(75, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-cyan-500" min="50" max="75" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-cyan-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="monthlyContribution">Your Monthly Contribution (₹)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="monthlyContribution" type="number" value={monthlyContribution}
-                        onChange={(e) => setMonthlyContribution(Math.max(500, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-cyan-500 text-lg font-bold text-cyan-700" min="500" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-cyan-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="employerContribution">Employer's Monthly Contribution</label>
-                      <p className="text-xs text-gray-500 font-normal">Optional</p>
-                    </td>
-                    <td className="py-3">
-                      <input id="employerContribution" type="number" value={employerContribution}
-                        onChange={(e) => setEmployerContribution(Math.max(0, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-cyan-500" min="0" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-cyan-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="equityAllocation">Equity Allocation (%)</label>
-                      <p className="text-xs text-gray-500 font-normal">Max 75% in Active Choice</p>
-                    </td>
-                    <td className="py-3">
-                      <input id="equityAllocation" type="number" value={equityAllocation}
-                        onChange={(e) => setEquityAllocation(Math.max(0, Math.min(75, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-cyan-500" min="0" max="75" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="expectedReturn">Expected Return (% p.a.)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="expectedReturn" type="number" step="0.1" value={expectedReturn}
-                        onChange={(e) => setExpectedReturn(Math.max(1, Math.min(15, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-cyan-500" min="1" max="15" />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col h-full overflow-hidden">
-              <div className="bg-gradient-to-r from-cyan-700 to-sky-800 p-6 text-white text-center">
-                <h2 className="text-sm font-semibold uppercase tracking-wider mb-2 text-cyan-200">Total NPS Corpus at Age {retirementAge}</h2>
-                <div className="text-4xl font-black mb-1">
-                  ₹{fmtNum(Math.round(calculations.maturityAmount))}
-                </div>
-                <p className="text-cyan-100 text-sm font-medium mt-2">Invested: {fmt(calculations.totalContribution)}</p>
-              </div>
-
-              <div className="p-0 flex-grow">
-                <table className="w-full text-left border-collapse">
-                  <tbody>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Wealth Gained (Returns)</td>
-                      <td className="p-4 text-right text-base font-semibold text-green-600">+{fmt(Math.round(calculations.returnAmount))}</td>
-                    </tr>
-                    <tr className="border-t-2 border-gray-200 bg-gray-50">
-                      <td colSpan={2} className="p-4 text-xs font-bold text-gray-500 uppercase tracking-widest text-center">Maturity Rules (60/40 Split)</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4">
-                        <div className="text-sm font-bold text-gray-800">Tax-Free Lumpsum (60%)</div>
-                        <div className="text-xs text-gray-500">Credited to bank account</div>
-                      </td>
-                      <td className="p-4 text-right text-lg font-bold text-green-700">{fmt(Math.round(calculations.taxFreeLumpSum))}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4">
-                        <div className="text-sm font-bold text-gray-800">Annuity Pension (40%)</div>
-                        <div className="text-xs text-gray-500">Used to buy lifelong pension</div>
-                      </td>
-                      <td className="p-4 text-right text-lg font-bold text-blue-700">{fmt(Math.round(calculations.annuityAmount))}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              <div className="p-4 bg-gray-50 border-t border-gray-200 text-xs text-gray-500">
-                <strong>Tax Tip:</strong> You can claim an exclusive deduction of up to ₹50,000 under Section 80CCD(1B) by investing in NPS Tier-1. This is over and above the ₹1.5L limit of 80C.
-              </div>
-            </div>
-          </div>
+        <div className="mb-12">
+          <OmniWidget config={npsConfig} engine={engine} />
         </div>
 
         {/* ═══════════════════════════════════════════════════
