@@ -1,6 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
+import { compoundInterestConfig } from '../engine/configs/compoundInterestConfig';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
 
 /* ═══════════════════════════════════════════════════════════════
    COMPOUND INTEREST CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
@@ -24,58 +27,16 @@ const QUICK_PRESETS = [
 ];
 
 export const CompoundInterestCalculator: React.FC = () => {
-  // Input states
-  const [principal, setPrincipal] = useState<number>(100000);
-  const [rate, setRate] = useState<number>(10);
-  const [time, setTime] = useState<number>(10);
-  const [compoundingFreq, setCompoundingFreq] = useState<number>(1); // 1 = Annual, 12 = Monthly, 365 = Daily
-  
-  const calculations = useMemo(() => {
-    const r = rate / 100;
-    const n = compoundingFreq;
-    const t = time;
-    
-    // A = P(1 + r/n)^(nt)
-    const maturityAmount = principal * Math.pow(1 + r / n, n * t);
-    const totalInterest = maturityAmount - principal;
-    const effectiveRate = (Math.pow(1 + r / n, n) - 1) * 100;
+  const engine = useOmniEngine(compoundInterestConfig);
+  const [activePreset, setActivePreset] = useState<number>(-1);
 
-    // Generate basic year-wise breakdown
-    const schedule = [];
-    let currentBalance = principal;
-    const annualRateEquivalent = effectiveRate / 100;
-
-    for (let year = 1; year <= t; year++) {
-      const yearStartBalance = currentBalance;
-      const exactYearEndBalance = principal * Math.pow(1 + r / n, n * year);
-      const interestEarnedThisYear = exactYearEndBalance - yearStartBalance;
-      
-      schedule.push({
-        year,
-        startBalance: yearStartBalance,
-        interestEarned: interestEarnedThisYear,
-        endBalance: exactYearEndBalance
-      });
-      currentBalance = exactYearEndBalance;
-    }
-    
-    return {
-      maturityAmount: Math.round(maturityAmount),
-      totalInterest: Math.round(totalInterest),
-      effectiveRate: effectiveRate.toFixed(2),
-      schedule
-    };
-  }, [principal, rate, time, compoundingFreq]);
-
-  const applyPreset = (preset: typeof QUICK_PRESETS[0]) => {
-    setPrincipal(preset.p);
-    setRate(preset.r);
-    setTime(preset.t);
-    setCompoundingFreq(preset.f);
+  const applyPreset = (preset: typeof QUICK_PRESETS[0], index: number) => {
+    engine.updateVariable('principal', preset.p.toString());
+    engine.updateVariable('rate', preset.r.toString());
+    engine.updateVariable('time', preset.t.toString());
+    engine.updateVariable('compoundingFreq', preset.f.toString());
+    setActivePreset(index);
   };
-
-  const fmt = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
-  const fmtNum = (amount: number) => new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(amount);
 
   return (
     <>
@@ -108,140 +69,18 @@ export const CompoundInterestCalculator: React.FC = () => {
           <p className="text-xs font-bold text-gray-500 uppercase mb-2">Common Scenarios</p>
           <div className="flex flex-wrap gap-2">
             {QUICK_PRESETS.map((preset, idx) => (
-              <button key={idx} onClick={() => applyPreset(preset)} className="px-3 py-1.5 text-sm border border-gray-300 rounded bg-white hover:bg-rose-50 hover:border-rose-400 text-gray-700 transition-colors font-semibold">
+              <button key={idx} onClick={() => applyPreset(preset, idx)} className={`px-3 py-1.5 text-sm border rounded transition-colors font-semibold ${activePreset === idx ? 'bg-rose-50 border-rose-400 text-rose-700' : 'bg-white border-gray-300 hover:bg-rose-50 hover:border-rose-400 text-gray-700'}`}>
                 {preset.label}
               </button>
             ))}
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* ===== INPUT FORM ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-rose-50 border border-rose-200 rounded-lg p-5 shadow-sm mb-6">
-              <h2 className="text-xl font-semibold mb-4 text-rose-900 border-b border-rose-200 pb-2">Growth Parameters</h2>
-              
-              <table className="w-full text-left border-collapse">
-                <tbody>
-                  <tr className="border-b border-rose-100">
-                    <td className="py-3 pr-2 font-medium w-1/2">
-                      <label htmlFor="principal">Principal Amount (₹)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="principal" type="number" value={principal}
-                        onChange={(e) => setPrincipal(Math.max(100, Number(e.target.value) || 0))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-rose-500 text-lg font-bold"
-                        min="100" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-rose-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="rate">Annual Interest Rate (%)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="rate" type="number" step="0.1" value={rate}
-                        onChange={(e) => setRate(Math.max(0.1, Math.min(100, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-rose-500" min="0.1" max="100" />
-                    </td>
-                  </tr>
-                  <tr className="border-b border-rose-100">
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="time">Time Period (Years)</label>
-                    </td>
-                    <td className="py-3">
-                      <input id="time" type="number" value={time}
-                        onChange={(e) => setTime(Math.max(1, Math.min(100, Number(e.target.value) || 0)))}
-                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-rose-500" min="1" max="100" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 pr-2 font-medium">
-                      <label htmlFor="compoundingFreq">Compounding Frequency</label>
-                      <p className="text-xs text-gray-500 font-normal">How often interest is added</p>
-                    </td>
-                    <td className="py-3">
-                      <select id="compoundingFreq" value={compoundingFreq} onChange={(e) => setCompoundingFreq(Number(e.target.value))} className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-rose-500">
-                        <option value="365">Daily (365 times/year)</option>
-                        <option value="12">Monthly (12 times/year)</option>
-                        <option value="4">Quarterly (4 times/year)</option>
-                        <option value="2">Half-Yearly (2 times/year)</option>
-                        <option value="1">Annually (1 time/year)</option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* ===== RESULTS ===== */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white border border-gray-200 rounded-lg shadow-md flex flex-col h-full overflow-hidden">
-              <div className="bg-gradient-to-r from-rose-600 to-pink-800 p-6 text-white text-center">
-                <h2 className="text-sm font-semibold uppercase tracking-wider mb-2 text-rose-200">Total Future Value</h2>
-                <div className="text-4xl font-black mb-1">
-                  ₹{fmtNum(calculations.maturityAmount)}
-                </div>
-                <p className="text-rose-100 text-sm font-medium mt-2">After {time} years of compounding</p>
-              </div>
-
-              <div className="p-0 flex-grow">
-                <table className="w-full text-left border-collapse">
-                  <tbody>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Principal (Initial Investment)</td>
-                      <td className="p-4 text-right text-base font-semibold">{fmt(principal)}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 bg-green-50">
-                      <td className="p-4 text-sm font-bold text-green-800">Total Interest Earned</td>
-                      <td className="p-4 text-right text-base font-bold text-green-700">+{fmt(calculations.totalInterest)}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="p-4 text-sm font-medium text-gray-600">Stated Annual Rate</td>
-                      <td className="p-4 text-right text-sm font-semibold">{rate}% p.a.</td>
-                    </tr>
-                    <tr className="border-b border-gray-200 bg-gray-50">
-                      <td className="p-4">
-                        <div className="text-sm font-bold text-gray-900">Effective Annual Rate (EAR)</div>
-                        <div className="text-xs text-gray-500">True yield due to frequency</div>
-                      </td>
-                      <td className="p-4 text-right text-lg font-black text-rose-600">{calculations.effectiveRate}%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+        <div className="mb-8">
+          <OmniWidget config={compoundInterestConfig} engine={engine} />
         </div>
 
-        {/* ===== YEAR-WISE SCHEDULE ===== */}
-        {calculations.schedule.length > 0 && (
-          <div className="mt-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Year-Wise Compounding Schedule</h2>
-            <div className="overflow-x-auto max-h-[500px] border border-gray-300 rounded-lg">
-              <table className="w-full border-collapse text-sm text-left relative">
-                <thead className="bg-gray-100 sticky top-0 shadow-sm z-10">
-                  <tr>
-                    <th className="border-b border-gray-300 p-3 text-center font-semibold">Year</th>
-                    <th className="border-b border-gray-300 p-3 text-right font-semibold">Opening Balance (₹)</th>
-                    <th className="border-b border-gray-300 p-3 text-right font-semibold text-green-700">Interest Earned (₹)</th>
-                    <th className="border-b border-gray-300 p-3 text-right font-semibold text-gray-900">Closing Balance (₹)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {calculations.schedule.map((row) => (
-                    <tr key={row.year} className="hover:bg-gray-50 border-b border-gray-100 last:border-0">
-                      <td className="p-3 text-center font-medium">{row.year}</td>
-                      <td className="p-3 text-right text-gray-600">{fmtNum(Math.round(row.startBalance))}</td>
-                      <td className="p-3 text-right text-green-600 font-semibold">+{fmtNum(Math.round(row.interestEarned))}</td>
-                      <td className="p-3 text-right font-bold text-gray-800">{fmtNum(Math.round(row.endBalance))}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
+
 
         {/* ═══════════════════════════════════════════════════
             5000+ WORD SEO CONTENT — UNIQUE, HUMAN-FRIENDLY
