@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency } from '../utils/calculatorUtils';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    SIP CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -546,6 +546,14 @@ export const SipCalculator: React.FC<SipSEOProps> = ({
         </div>
 
       </div>
+      <CalculatorSchema 
+        name={title || "SIP Calculator"}
+        description={description || "Calculate mutual fund SIP returns with inflation adjustment and step-up options."}
+        url={url || "/calculators/sip-calculator"}
+        features={["Lumpsum comparison", "Inflation adjusted returns", "Step-up SIP", "Yearly growth schedule"]}
+        category="FinanceApplication"
+        faqData={faqData || FAQ_DATA}
+      />
     </>
   );
 };

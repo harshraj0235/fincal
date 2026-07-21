@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import { getCalculatorById } from '../data/calculatorData';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    MUTUAL FUND CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -398,6 +398,14 @@ export const MutualFundReturnsCalculator: React.FC = () => {
         </div>
 
       </div>
+      <CalculatorSchema 
+        name="Mutual Fund Returns Calculator"
+        description="Calculate mutual fund returns for SIP and Lumpsum investments. Check wealth growth with power of compounding."
+        url="/calculators/mutual-fund-returns-calculator"
+        features={["SIP calculation", "Lumpsum calculation", "Growth chart", "Tax impact information"]}
+        category="FinanceApplication"
+        faqData={FAQ_DATA}
+      />
     </>
   );
 };

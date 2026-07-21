@@ -1,120 +1,120 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getCalculatorById } from '../data/calculatorData';
+const useNavigate = React.lazy(() => import('react-router-dom').then(m => ({ default: m.useNavigate })));
+const getCalculatorById = React.lazy(() => import('../data/calculatorData').then(m => ({ default: m.getCalculatorById })));
 import SEOHelmet from '../components/SEOHelmet';
-import { BannerAd } from '../components/BannerAd';
-import { PAASection } from '../components/PAASection';
-import { CalculatorAIAssistant } from '../components/CalculatorAIAssistant';
+const BannerAd = React.lazy(() => import('../components/BannerAd').then(m => ({ default: m.BannerAd })));
+const PAASection = React.lazy(() => import('../components/PAASection').then(m => ({ default: m.PAASection })));
+const CalculatorAIAssistant = React.lazy(() => import('../components/CalculatorAIAssistant').then(m => ({ default: m.CalculatorAIAssistant })));
 
 // Import all calculators
-import { EmiCalculator } from '../calculators/EmiCalculator';
-import { SipCalculator } from '../calculators/SipCalculator';
-import { PpfCalculator } from '../calculators/PpfCalculator';
-import { GstCalculator } from '../calculators/GstCalculator';
-import { IncomeTaxCalculator } from '../calculators/IncomeTaxCalculator';
-import { HomeLoanCalculator } from '../calculators/HomeLoanCalculator';
-import { PersonalLoanCalculator } from '../calculators/PersonalLoanCalculator';
-import { CarLoanCalculator } from '../calculators/CarLoanCalculator';
-import { BikeLoanCalculator } from '../calculators/BikeLoanCalculator';
-import { BusinessLoanCalculator } from '../calculators/BusinessLoanCalculator';
-import { LoanComparisonCalculator } from '../calculators/LoanComparisonCalculator';
-import { LoanPrepaymentCalculator } from '../calculators/LoanPrepaymentCalculator';
-import { LoanRefinanceCalculator } from '../calculators/LoanRefinanceCalculator';
-import { LoanAffordabilityCalculator } from '../calculators/LoanAffordabilityCalculator';
-import { LoanTenureConverter } from '../calculators/LoanTenureConverter';
-import { CreditCardEmiCalculator } from '../calculators/CreditCardEmiCalculator';
-import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator';
-import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
-import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculator';
-import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
-import { NpsCalculator } from '../calculators/NpsCalculator';
-import { NpsTier2Calculator } from '../calculators/NpsTier2Calculator';
-import NpsReturnCalculator from '../calculators/NpsReturnCalculator';
-import { NscCalculator } from '../calculators/NscCalculator';
-import { ScssCalculator } from '../calculators/ScssCalculator';
-import { PostOfficeMisCalculator } from '../calculators/PostOfficeMisCalculator';
-import { ApyCalculator } from '../calculators/ApyCalculator';
-import { PostOfficeCalculator } from '../calculators/PostOfficeCalculator';
-import { GoldInvestmentCalculator } from '../calculators/GoldInvestmentCalculator';
-import { CompoundInterestCalculator } from '../calculators/CompoundInterestCalculator';
-import { SimpleInterestCalculator } from '../calculators/SimpleInterestCalculator';
-import { FutureValueCalculator } from '../calculators/FutureValueCalculator';
-import LiquidFundCalculator from './tools/LiquidFundCalculator';
-import { FdCalculator } from '../calculators/FdCalculator';
-import { CapitalGainsTaxCalculator } from '../calculators/CapitalGainsTaxCalculator';
-import { TdsCalculator } from '../calculators/TdsCalculator';
-import { Section80CCalculator } from '../calculators/Section80CCalculator';
-import { Section80DCalculator } from '../calculators/Section80DCalculator';
-import { HraExemptionCalculator } from '../calculators/HraExemptionCalculator';
-import { RetirementCalculator } from '../calculators/RetirementCalculator';
-import { PensionCalculator } from '../calculators/PensionCalculator';
-import { HumanLifeValueCalculator } from '../calculators/HumanLifeValueCalculator';
-import { EpfCalculator } from '../calculators/EpfCalculator';
-import { BreakEvenCalculator } from '../calculators/BreakEvenCalculator';
-import { ProfitMarginCalculator } from '../calculators/ProfitMarginCalculator';
-import { InventoryTurnoverCalculator } from '../calculators/InventoryTurnoverCalculator';
-import { DebtEquityCalculator } from '../calculators/DebtEquityCalculator';
-import { RentVsBuyCalculator } from '../calculators/RentVsBuyCalculator';
-import { PropertyInvestmentCalculator } from '../calculators/PropertyInvestmentCalculator';
-import { StampDutyCalculator } from '../calculators/StampDutyCalculator';
-import { PropertyRegistrationCalculator } from '../calculators/PropertyRegistrationCalculator';
-import { TermInsuranceCalculator } from '../calculators/TermInsuranceCalculator';
-import { HealthInsuranceCalculator } from '../calculators/HealthInsuranceCalculator';
-import { LifeInsuranceCalculator } from '../calculators/LifeInsuranceCalculator';
-import { BudgetCalculator } from '../calculators/BudgetCalculator';
-import { EmergencyFundCalculator } from '../calculators/EmergencyFundCalculator';
-import { FinancialGoalCalculator } from '../calculators/FinancialGoalCalculator';
-import { NetWorthCalculator } from '../calculators/NetWorthCalculator';
-import { InflationCalculator } from '../calculators/InflationCalculator';
-import { InterestRateConverter } from '../calculators/InterestRateConverter';
-import { GratuityCalculator } from '../calculators/GratuityCalculator';
-import { TaxSavingInvestmentCalculator } from '../calculators/TaxSavingInvestmentCalculator';
-import { BrokerageCalculator } from '../calculators/BrokerageCalculator';
-import { MarginTradingCalculator } from '../calculators/MarginTradingCalculator';
-import { CommodityMarginCalculator } from '../calculators/CommodityMarginCalculator';
-import { ForexMarginCalculator } from '../calculators/ForexMarginCalculator';
-import { ForexPipCalculator } from '../calculators/ForexPipCalculator';
-import { SavingsAccountCalculator } from '../calculators/SavingsAccountCalculator';
-import { CurrencyConverter } from '../calculators/CurrencyConverter';
+const EmiCalculator = React.lazy(() => import('../calculators/EmiCalculator').then(m => ({ default: m.EmiCalculator })));
+const SipCalculator = React.lazy(() => import('../calculators/SipCalculator').then(m => ({ default: m.SipCalculator })));
+const PpfCalculator = React.lazy(() => import('../calculators/PpfCalculator').then(m => ({ default: m.PpfCalculator })));
+const GstCalculator = React.lazy(() => import('../calculators/GstCalculator').then(m => ({ default: m.GstCalculator })));
+const IncomeTaxCalculator = React.lazy(() => import('../calculators/IncomeTaxCalculator').then(m => ({ default: m.IncomeTaxCalculator })));
+const HomeLoanCalculator = React.lazy(() => import('../calculators/HomeLoanCalculator').then(m => ({ default: m.HomeLoanCalculator })));
+const PersonalLoanCalculator = React.lazy(() => import('../calculators/PersonalLoanCalculator').then(m => ({ default: m.PersonalLoanCalculator })));
+const CarLoanCalculator = React.lazy(() => import('../calculators/CarLoanCalculator').then(m => ({ default: m.CarLoanCalculator })));
+const BikeLoanCalculator = React.lazy(() => import('../calculators/BikeLoanCalculator').then(m => ({ default: m.BikeLoanCalculator })));
+const BusinessLoanCalculator = React.lazy(() => import('../calculators/BusinessLoanCalculator').then(m => ({ default: m.BusinessLoanCalculator })));
+const LoanComparisonCalculator = React.lazy(() => import('../calculators/LoanComparisonCalculator').then(m => ({ default: m.LoanComparisonCalculator })));
+const LoanPrepaymentCalculator = React.lazy(() => import('../calculators/LoanPrepaymentCalculator').then(m => ({ default: m.LoanPrepaymentCalculator })));
+const LoanRefinanceCalculator = React.lazy(() => import('../calculators/LoanRefinanceCalculator').then(m => ({ default: m.LoanRefinanceCalculator })));
+const LoanAffordabilityCalculator = React.lazy(() => import('../calculators/LoanAffordabilityCalculator').then(m => ({ default: m.LoanAffordabilityCalculator })));
+const LoanTenureConverter = React.lazy(() => import('../calculators/LoanTenureConverter').then(m => ({ default: m.LoanTenureConverter })));
+const CreditCardEmiCalculator = React.lazy(() => import('../calculators/CreditCardEmiCalculator').then(m => ({ default: m.CreditCardEmiCalculator })));
+const GoldLoanEmiCalculator = React.lazy(() => import('../calculators/GoldLoanEmiCalculator').then(m => ({ default: m.GoldLoanEmiCalculator })));
+const MutualFundReturnsCalculator = React.lazy(() => import('../calculators/MutualFundReturnsCalculator').then(m => ({ default: m.MutualFundReturnsCalculator })));
+const MutualFundCostCalculator = React.lazy(() => import('../calculators/MutualFundCostCalculator').then(m => ({ default: m.MutualFundCostCalculator })));
+const SukanyaSamriddhiCalculator = React.lazy(() => import('../calculators/SukanyaSamriddhiCalculator').then(m => ({ default: m.SukanyaSamriddhiCalculator })));
+const NpsCalculator = React.lazy(() => import('../calculators/NpsCalculator').then(m => ({ default: m.NpsCalculator })));
+const NpsTier2Calculator = React.lazy(() => import('../calculators/NpsTier2Calculator').then(m => ({ default: m.NpsTier2Calculator })));
+const NpsReturnCalculator = React.lazy(() => import('../calculators/NpsReturnCalculator'));
+const NscCalculator = React.lazy(() => import('../calculators/NscCalculator').then(m => ({ default: m.NscCalculator })));
+const ScssCalculator = React.lazy(() => import('../calculators/ScssCalculator').then(m => ({ default: m.ScssCalculator })));
+const PostOfficeMisCalculator = React.lazy(() => import('../calculators/PostOfficeMisCalculator').then(m => ({ default: m.PostOfficeMisCalculator })));
+const ApyCalculator = React.lazy(() => import('../calculators/ApyCalculator').then(m => ({ default: m.ApyCalculator })));
+const PostOfficeCalculator = React.lazy(() => import('../calculators/PostOfficeCalculator').then(m => ({ default: m.PostOfficeCalculator })));
+const GoldInvestmentCalculator = React.lazy(() => import('../calculators/GoldInvestmentCalculator').then(m => ({ default: m.GoldInvestmentCalculator })));
+const CompoundInterestCalculator = React.lazy(() => import('../calculators/CompoundInterestCalculator').then(m => ({ default: m.CompoundInterestCalculator })));
+const SimpleInterestCalculator = React.lazy(() => import('../calculators/SimpleInterestCalculator').then(m => ({ default: m.SimpleInterestCalculator })));
+const FutureValueCalculator = React.lazy(() => import('../calculators/FutureValueCalculator').then(m => ({ default: m.FutureValueCalculator })));
+const LiquidFundCalculator = React.lazy(() => import('./tools/LiquidFundCalculator'));
+const FdCalculator = React.lazy(() => import('../calculators/FdCalculator').then(m => ({ default: m.FdCalculator })));
+const CapitalGainsTaxCalculator = React.lazy(() => import('../calculators/CapitalGainsTaxCalculator').then(m => ({ default: m.CapitalGainsTaxCalculator })));
+const TdsCalculator = React.lazy(() => import('../calculators/TdsCalculator').then(m => ({ default: m.TdsCalculator })));
+const Section80CCalculator = React.lazy(() => import('../calculators/Section80CCalculator').then(m => ({ default: m.Section80CCalculator })));
+const Section80DCalculator = React.lazy(() => import('../calculators/Section80DCalculator').then(m => ({ default: m.Section80DCalculator })));
+const HraExemptionCalculator = React.lazy(() => import('../calculators/HraExemptionCalculator').then(m => ({ default: m.HraExemptionCalculator })));
+const RetirementCalculator = React.lazy(() => import('../calculators/RetirementCalculator').then(m => ({ default: m.RetirementCalculator })));
+const PensionCalculator = React.lazy(() => import('../calculators/PensionCalculator').then(m => ({ default: m.PensionCalculator })));
+const HumanLifeValueCalculator = React.lazy(() => import('../calculators/HumanLifeValueCalculator').then(m => ({ default: m.HumanLifeValueCalculator })));
+const EpfCalculator = React.lazy(() => import('../calculators/EpfCalculator').then(m => ({ default: m.EpfCalculator })));
+const BreakEvenCalculator = React.lazy(() => import('../calculators/BreakEvenCalculator').then(m => ({ default: m.BreakEvenCalculator })));
+const ProfitMarginCalculator = React.lazy(() => import('../calculators/ProfitMarginCalculator').then(m => ({ default: m.ProfitMarginCalculator })));
+const InventoryTurnoverCalculator = React.lazy(() => import('../calculators/InventoryTurnoverCalculator').then(m => ({ default: m.InventoryTurnoverCalculator })));
+const DebtEquityCalculator = React.lazy(() => import('../calculators/DebtEquityCalculator').then(m => ({ default: m.DebtEquityCalculator })));
+const RentVsBuyCalculator = React.lazy(() => import('../calculators/RentVsBuyCalculator').then(m => ({ default: m.RentVsBuyCalculator })));
+const PropertyInvestmentCalculator = React.lazy(() => import('../calculators/PropertyInvestmentCalculator').then(m => ({ default: m.PropertyInvestmentCalculator })));
+const StampDutyCalculator = React.lazy(() => import('../calculators/StampDutyCalculator').then(m => ({ default: m.StampDutyCalculator })));
+const PropertyRegistrationCalculator = React.lazy(() => import('../calculators/PropertyRegistrationCalculator').then(m => ({ default: m.PropertyRegistrationCalculator })));
+const TermInsuranceCalculator = React.lazy(() => import('../calculators/TermInsuranceCalculator').then(m => ({ default: m.TermInsuranceCalculator })));
+const HealthInsuranceCalculator = React.lazy(() => import('../calculators/HealthInsuranceCalculator').then(m => ({ default: m.HealthInsuranceCalculator })));
+const LifeInsuranceCalculator = React.lazy(() => import('../calculators/LifeInsuranceCalculator').then(m => ({ default: m.LifeInsuranceCalculator })));
+const BudgetCalculator = React.lazy(() => import('../calculators/BudgetCalculator').then(m => ({ default: m.BudgetCalculator })));
+const EmergencyFundCalculator = React.lazy(() => import('../calculators/EmergencyFundCalculator').then(m => ({ default: m.EmergencyFundCalculator })));
+const FinancialGoalCalculator = React.lazy(() => import('../calculators/FinancialGoalCalculator').then(m => ({ default: m.FinancialGoalCalculator })));
+const NetWorthCalculator = React.lazy(() => import('../calculators/NetWorthCalculator').then(m => ({ default: m.NetWorthCalculator })));
+const InflationCalculator = React.lazy(() => import('../calculators/InflationCalculator').then(m => ({ default: m.InflationCalculator })));
+const InterestRateConverter = React.lazy(() => import('../calculators/InterestRateConverter').then(m => ({ default: m.InterestRateConverter })));
+const GratuityCalculator = React.lazy(() => import('../calculators/GratuityCalculator').then(m => ({ default: m.GratuityCalculator })));
+const TaxSavingInvestmentCalculator = React.lazy(() => import('../calculators/TaxSavingInvestmentCalculator').then(m => ({ default: m.TaxSavingInvestmentCalculator })));
+const BrokerageCalculator = React.lazy(() => import('../calculators/BrokerageCalculator').then(m => ({ default: m.BrokerageCalculator })));
+const MarginTradingCalculator = React.lazy(() => import('../calculators/MarginTradingCalculator').then(m => ({ default: m.MarginTradingCalculator })));
+const CommodityMarginCalculator = React.lazy(() => import('../calculators/CommodityMarginCalculator').then(m => ({ default: m.CommodityMarginCalculator })));
+const ForexMarginCalculator = React.lazy(() => import('../calculators/ForexMarginCalculator').then(m => ({ default: m.ForexMarginCalculator })));
+const ForexPipCalculator = React.lazy(() => import('../calculators/ForexPipCalculator').then(m => ({ default: m.ForexPipCalculator })));
+const SavingsAccountCalculator = React.lazy(() => import('../calculators/SavingsAccountCalculator').then(m => ({ default: m.SavingsAccountCalculator })));
+const CurrencyConverter = React.lazy(() => import('../calculators/CurrencyConverter').then(m => ({ default: m.CurrencyConverter })));
 
 // Import Math & Education Calculators
-import LcmHcfCalculator from '../calculators/LcmHcfCalculator';
-import GramToTolaConverter from '../calculators/GramToTolaConverter';
+const LcmHcfCalculator = React.lazy(() => import('../calculators/LcmHcfCalculator'));
+const GramToTolaConverter = React.lazy(() => import('../calculators/GramToTolaConverter'));
 
 // Import FinTech & Payments calculators
-import { StepUpSipCalculator } from '../calculators/StepUpSipCalculator';
-import { StepDownSipCalculator } from '../calculators/StepDownSipCalculator';
-import { InflationAdjustedSipCalculator } from '../calculators/InflationAdjustedSipCalculator';
-import { RentVsBuyAdvancedCalculator } from '../calculators/RentVsBuyAdvancedCalculator';
-import { GoldEtfVsPhysicalCalculator } from '../calculators/GoldEtfVsPhysicalCalculator';
-import { IncomeTaxRegimeComparisonCalculator } from '../calculators/IncomeTaxRegimeComparisonCalculator';
-import { CapitalGainsTaxAdvancedCalculator } from '../calculators/CapitalGainsTaxAdvancedCalculator';
-import { GstSellerCalculator } from '../calculators/GstSellerCalculator';
-import { VirtualCardIssuer } from '../calculators/VirtualCardIssuer';
-import { BnplCalculator } from '../calculators/BnplCalculator';
-import { P2PLendingCalculator } from '../calculators/P2PLendingCalculator';
+const StepUpSipCalculator = React.lazy(() => import('../calculators/StepUpSipCalculator').then(m => ({ default: m.StepUpSipCalculator })));
+const StepDownSipCalculator = React.lazy(() => import('../calculators/StepDownSipCalculator').then(m => ({ default: m.StepDownSipCalculator })));
+const InflationAdjustedSipCalculator = React.lazy(() => import('../calculators/InflationAdjustedSipCalculator').then(m => ({ default: m.InflationAdjustedSipCalculator })));
+const RentVsBuyAdvancedCalculator = React.lazy(() => import('../calculators/RentVsBuyAdvancedCalculator').then(m => ({ default: m.RentVsBuyAdvancedCalculator })));
+const GoldEtfVsPhysicalCalculator = React.lazy(() => import('../calculators/GoldEtfVsPhysicalCalculator').then(m => ({ default: m.GoldEtfVsPhysicalCalculator })));
+const IncomeTaxRegimeComparisonCalculator = React.lazy(() => import('../calculators/IncomeTaxRegimeComparisonCalculator').then(m => ({ default: m.IncomeTaxRegimeComparisonCalculator })));
+const CapitalGainsTaxAdvancedCalculator = React.lazy(() => import('../calculators/CapitalGainsTaxAdvancedCalculator').then(m => ({ default: m.CapitalGainsTaxAdvancedCalculator })));
+const GstSellerCalculator = React.lazy(() => import('../calculators/GstSellerCalculator').then(m => ({ default: m.GstSellerCalculator })));
+const VirtualCardIssuer = React.lazy(() => import('../calculators/VirtualCardIssuer').then(m => ({ default: m.VirtualCardIssuer })));
+const BnplCalculator = React.lazy(() => import('../calculators/BnplCalculator').then(m => ({ default: m.BnplCalculator })));
+const P2PLendingCalculator = React.lazy(() => import('../calculators/P2PLendingCalculator').then(m => ({ default: m.P2PLendingCalculator })));
 
 // Import Investments & Wealth Management calculators
-import { MutualFundOverlapChecker } from '../calculators/MutualFundOverlapChecker';
-import { XirrTracker } from '../calculators/XirrTracker';
-import { DividendYieldCalculator } from '../calculators/DividendYieldCalculator';
-import { AssetAllocationPlanner } from '../calculators/AssetAllocationPlanner';
-import { RiskAppetiteAssessment } from '../calculators/RiskAppetiteAssessment';
-import { CrowdfundingInvestmentPortal } from '../calculators/CrowdfundingInvestmentPortal';
-import { DigitalWealthRoboAdvisor } from '../calculators/DigitalWealthRoboAdvisor';
-import { StableReturnFixedIncomeAggregator } from '../calculators/StableReturnFixedIncomeAggregator';
-import { CryptoTaxEstimator } from '../calculators/CryptoTaxEstimator';
-import { NriStockInvestmentDashboard } from '../calculators/NriStockInvestmentDashboard';
+const MutualFundOverlapChecker = React.lazy(() => import('../calculators/MutualFundOverlapChecker').then(m => ({ default: m.MutualFundOverlapChecker })));
+const XirrTracker = React.lazy(() => import('../calculators/XirrTracker').then(m => ({ default: m.XirrTracker })));
+const DividendYieldCalculator = React.lazy(() => import('../calculators/DividendYieldCalculator').then(m => ({ default: m.DividendYieldCalculator })));
+const AssetAllocationPlanner = React.lazy(() => import('../calculators/AssetAllocationPlanner').then(m => ({ default: m.AssetAllocationPlanner })));
+const RiskAppetiteAssessment = React.lazy(() => import('../calculators/RiskAppetiteAssessment').then(m => ({ default: m.RiskAppetiteAssessment })));
+const CrowdfundingInvestmentPortal = React.lazy(() => import('../calculators/CrowdfundingInvestmentPortal').then(m => ({ default: m.CrowdfundingInvestmentPortal })));
+const DigitalWealthRoboAdvisor = React.lazy(() => import('../calculators/DigitalWealthRoboAdvisor').then(m => ({ default: m.DigitalWealthRoboAdvisor })));
+const StableReturnFixedIncomeAggregator = React.lazy(() => import('../calculators/StableReturnFixedIncomeAggregator').then(m => ({ default: m.StableReturnFixedIncomeAggregator })));
+const CryptoTaxEstimator = React.lazy(() => import('../calculators/CryptoTaxEstimator').then(m => ({ default: m.CryptoTaxEstimator })));
+const NriStockInvestmentDashboard = React.lazy(() => import('../calculators/NriStockInvestmentDashboard').then(m => ({ default: m.NriStockInvestmentDashboard })));
 
 // Import Banking & Finance Tools
-import { BankIfscFinder } from '../calculators/BankIfscFinder';
-import { AtmLocator } from '../calculators/AtmLocator';
-import { BankHolidayCalendar } from '../calculators/BankHolidayCalendar';
-import { InterestRatesComparison } from '../calculators/InterestRatesComparison';
-import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshooter';
-import { AdvanceTaxCalculator } from '../calculators/AdvanceTaxCalculator';
-import { CreditCardFinder } from '../calculators/CreditCardFinder';
-import { BankChargesAnalyzer } from '../calculators/BankChargesAnalyzer';
+const BankIfscFinder = React.lazy(() => import('../calculators/BankIfscFinder').then(m => ({ default: m.BankIfscFinder })));
+const AtmLocator = React.lazy(() => import('../calculators/AtmLocator').then(m => ({ default: m.AtmLocator })));
+const BankHolidayCalendar = React.lazy(() => import('../calculators/BankHolidayCalendar').then(m => ({ default: m.BankHolidayCalendar })));
+const InterestRatesComparison = React.lazy(() => import('../calculators/InterestRatesComparison').then(m => ({ default: m.InterestRatesComparison })));
+const UpiFailureTroubleshooter = React.lazy(() => import('../calculators/UpiFailureTroubleshooter').then(m => ({ default: m.UpiFailureTroubleshooter })));
+const AdvanceTaxCalculator = React.lazy(() => import('../calculators/AdvanceTaxCalculator').then(m => ({ default: m.AdvanceTaxCalculator })));
+const CreditCardFinder = React.lazy(() => import('../calculators/CreditCardFinder').then(m => ({ default: m.CreditCardFinder })));
+const BankChargesAnalyzer = React.lazy(() => import('../calculators/BankChargesAnalyzer').then(m => ({ default: m.BankChargesAnalyzer })));
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -412,7 +412,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <StepUpSipCalculator />;
       case 'step-down-sip-calculator':
         // New tapered investing tool: decreasing SIP annually
-        // Import at top: import StepDownSipCalculator from '../calculators/StepDownSipCalculator';
+        // Import at top: const StepDownSipCalculator = React.lazy(() => import('../calculators/StepDownSipCalculator'));
         return <StepDownSipCalculator />;
       case 'inflation-adjusted-sip-calculator':
         return <InflationAdjustedSipCalculator />;
@@ -555,7 +555,9 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         }}
       />
 
-      {renderCalculator()}
+      <React.Suspense fallback={<div className="flex justify-center p-12"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[--primary-600]"></div></div>}>
+        {renderCalculator()}
+      </React.Suspense>
       
       {/* AI Assistant */}
       <div className="max-w-4xl mx-auto px-4 lg:px-8 mb-16">

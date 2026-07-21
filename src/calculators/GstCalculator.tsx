@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculateGST } from '../utils/calculatorUtils';
+import CalculatorSchema from '../components/CalculatorSchema';
 
 /* ═══════════════════════════════════════════════════════════════
    GST CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
@@ -317,6 +318,14 @@ export const GstCalculator: React.FC = () => {
         </div>
 
       </div>
+      <CalculatorSchema 
+        name="GST Calculator"
+        description="Calculate GST amount online. Add GST to base price or extract GST from total price (exclusive/inclusive)."
+        url="/calculators/gst-calculator"
+        features={["Inclusive/Exclusive GST", "CGST SGST IGST split", "Intra-state and Inter-state calculation", "Reverse calculation"]}
+        category="FinanceApplication"
+        faqData={FAQ_DATA}
+      />
     </>
   );
 };

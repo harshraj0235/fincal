@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    PPF CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -380,6 +380,14 @@ export const PpfCalculator: React.FC = () => {
         </div>
 
       </div>
+      <CalculatorSchema 
+        name="PPF Calculator"
+        description="Calculate Public Provident Fund (PPF) maturity amount, interest earned, and tax savings with year-wise schedule."
+        url="/calculators/ppf-calculator"
+        features={["Monthly & yearly investments", "Extension rules", "Tax savings estimate", "15-year schedule"]}
+        category="FinanceApplication"
+        faqData={FAQ_DATA}
+      />
     </>
   );
 };

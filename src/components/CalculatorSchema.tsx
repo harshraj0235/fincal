@@ -77,12 +77,6 @@ export const CalculatorSchema: React.FC<CalculatorSchemaProps> = ({
           "url": "https://moneycal.in/android-chrome-512x512.png"
         }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "52000",
-        "bestRating": "5"
-      },
       "datePublished": "2024-01-01",
       "dateModified": lastUpdated,
       "softwareVersion": "2.0"

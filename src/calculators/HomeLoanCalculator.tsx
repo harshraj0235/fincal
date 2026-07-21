@@ -8,7 +8,7 @@ import {
 } from '../utils/calculatorUtils';
 import { ExportButtons } from '../components/ExportButtons';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    HOME LOAN CALCULATOR — PURE STATIC HTML EDITION (2025)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -587,6 +587,14 @@ export const HomeLoanCalculator: React.FC = () => {
         </div>
 
       </div>
+      <CalculatorSchema 
+        name="Home Loan EMI Calculator"
+        description="Calculate Home Loan EMI, check amortization schedule, and find out your tax savings under section 24(b) and 80C."
+        url="/calculators/home-loan-calculator"
+        features={["Down payment calculation", "LTV ratio check", "Tax savings estimate", "Amortization schedule", "Prepayment impact"]}
+        category="FinanceApplication"
+        faqData={FAQ_DATA}
+      />
     </>
   );
 };

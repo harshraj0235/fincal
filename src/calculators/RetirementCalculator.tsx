@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    RETIREMENT CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Target keywords: retirement calculator india, FIRE planner, 
@@ -281,6 +281,14 @@ export const RetirementCalculator: React.FC = () => {
           </div>
         </div>
       </div>
+      <CalculatorSchema 
+        name="Retirement Calculator"
+        description="Plan your FIRE journey and retirement corpus with inflation adjustment and SIP shortfall calculator."
+        url="/calculators/retirement-calculator"
+        features={["FIRE planning", "Inflation adjustment", "Safe withdrawal rate", "SIP shortfall calculation"]}
+        category="FinanceApplication"
+        faqData={FAQ_DATA}
+      />
     </>
   );
 };

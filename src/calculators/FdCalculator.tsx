@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    FD CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -383,6 +383,14 @@ export const FdCalculator: React.FC<Props> = ({ schemaUrl, defaultPreset }) => {
         </div>
 
       </div>
+      <CalculatorSchema 
+        name="Fixed Deposit (FD) Calculator"
+        description="Calculate Fixed Deposit (FD) interest and maturity amount with quarterly, monthly, half-yearly and annual compounding options."
+        url={schemaUrl || "/calculators/fd-calculator"}
+        features={["Quarterly compounding", "Senior citizen rates", "Monthly payout calculation", "Maturity schedule"]}
+        category="FinanceApplication"
+        faqData={FAQ_DATA}
+      />
     </>
   );
 };

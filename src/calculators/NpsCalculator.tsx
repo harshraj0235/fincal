@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    NPS CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -356,6 +356,14 @@ export const NpsCalculator: React.FC = () => {
         </div>
 
       </div>
+      <CalculatorSchema 
+        name="NPS Calculator"
+        description="Calculate National Pension System (NPS) maturity amount, monthly pension, and tax benefits under section 80CCD(1B)."
+        url="/calculators/nps-calculator"
+        features={["Retirement planning", "Pension calculation", "Tax benefits", "Annuity options"]}
+        category="FinanceApplication"
+        faqData={FAQ_DATA}
+      />
     </>
   );
 };

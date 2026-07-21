@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { formatCurrency, calculateIncomeTax } from '../utils/calculatorUtils';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    INCOME TAX CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -438,6 +438,14 @@ export const IncomeTaxCalculator: React.FC<IncomeTaxSEOProps> = ({
           </div>
         </div>
       </div>
+      <CalculatorSchema 
+        name={title || "Income Tax Calculator"}
+        description={description || "Compare old vs new tax regime and calculate income tax liability for FY 2026-27."}
+        url={url || "/calculators/income-tax-calculator"}
+        features={["New Tax Regime 2026 slabs", "Old Regime deductions", "Surcharge calculation", "Section 87A rebate"]}
+        category="FinanceApplication"
+        faqData={faqData || FAQ_DATA}
+      />
     </>
   );
 };

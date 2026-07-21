@@ -287,10 +287,9 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
 
     // ── Hreflang & Language links ─────────────────────────────────────────
     const pathname = window.location.pathname;
-    const isHindi = pathname.startsWith('/hi/') || pathname === '/hi';
     
     // Update HTML lang attribute for accessibility and basic SEO
-    document.documentElement.lang = isHindi ? 'hi-IN' : 'en-IN';
+    document.documentElement.lang = 'en-IN';
 
     const setHreflang = (lang: string, href: string) => {
       let link = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
@@ -303,28 +302,14 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
       link.setAttribute('href', href);
     };
 
-    // Calculate base English URL and Hindi URL
-    let urlObj;
-    try {
-      urlObj = new URL(canonicalHref);
-    } catch {
-      urlObj = new URL('https://moneycal.in');
-    }
-    
-    const rawPath = urlObj.pathname;
-    const cleanPath = rawPath.replace(/^\/hi(\/|$)/, '/').replace(/\/$/, '');
-    
-    urlObj.pathname = cleanPath;
-    const enHref = urlObj.toString();
-    
-    urlObj.pathname = `/hi${cleanPath}`;
-    const hiHref = urlObj.toString();
+    // Remove any stale Hindi hreflang tags from previous renders
+    document.querySelector('link[rel="alternate"][hreflang="hi-IN"]')?.remove();
+    document.querySelector('link[rel="alternate"][hreflang="hi"]')?.remove();
 
-    setHreflang('x-default', enHref);
-    setHreflang('en-IN', enHref);
-    setHreflang('en', enHref);
-    setHreflang('hi-IN', hiHref);
-    setHreflang('hi', hiHref);
+    // Only set English hreflang tags (Hindi pages have been removed)
+    setHreflang('x-default', canonicalHref);
+    setHreflang('en-IN', canonicalHref);
+    setHreflang('en', canonicalHref);
 
     if (alternateLanguages) {
       Object.entries(alternateLanguages).forEach(([lang, href]) => {

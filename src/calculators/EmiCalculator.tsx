@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { ExportButtons } from '../components/ExportButtons';
 import SEOHelmet from '../components/SEOHelmet';
-
+import CalculatorSchema from '../components/CalculatorSchema';
 /* ═══════════════════════════════════════════════════════════════
    EMI CALCULATOR — PURE STATIC HTML EDITION (2026-2027)
    Rebuilt for Google ranking: calculator.net-style pure HTML
@@ -712,6 +712,14 @@ export const EmiCalculator: React.FC<ProgrammaticSEOProps> = ({
         </div>
 
       </div>
+      <CalculatorSchema 
+        name={title || "EMI Calculator"}
+        description={description || "Calculate Equated Monthly Installments (EMI) for Home, Car and Personal Loans in India."}
+        url={url || "/calculators/emi-calculator"}
+        features={["Instant results", "Reducing balance formula", "Amortization schedule", "Bank rate comparison"]}
+        category="FinanceApplication"
+        faqData={faqData || FAQ_DATA}
+      />
     </>
   );
 };
