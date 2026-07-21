@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface TaxResult {
   type: 'STCG' | 'LTCG';
@@ -104,7 +104,6 @@ const STCGLTCGClassifier: React.FC = () => {
         keywords="STCG LTCG Calculator, capital gains tax, short term capital gains, long term capital gains, tax Calculator, investment tax, stock market tax"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

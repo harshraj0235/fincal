@@ -4,7 +4,7 @@ import { BookOpen, Clock, Users, Target, CheckCircle, Play, ArrowRight, Star, Tr
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const AdvancedTradingStrategies: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
@@ -72,7 +72,6 @@ const AdvancedTradingStrategies: React.FC = () => {
         keywords="advanced trading, swing trading, day trading, options trading, risk management, trading psychology"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
         <div className="container mx-auto px-4 py-8">

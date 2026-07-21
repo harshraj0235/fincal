@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { TrendingUp, TrendingDown, Plus, Trash2, RefreshCw, Info, AlertCircle, DollarSign, BarChart3, Target, Globe, Zap, Shield, Smartphone } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 interface Stock {
   symbol: string;
@@ -157,7 +157,6 @@ const RealTimeStockPortfolioTracker: React.FC = () => {
         keywords="real-time stock portfolio tracker India, BSE stock tracker, NSE stock portfolio, free stock monitoring tool, Indian stock market tracker, portfolio value calculator, stock gains losses tracker"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         <section className="py-16 bg-gradient-to-br from-green-600 via-blue-600 to-purple-700">

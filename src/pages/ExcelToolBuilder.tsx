@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Download, Plus, FileSpreadsheet, ArrowRight, ArrowLeft, Settings, Star } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 // SheetJS for Excel export
 import * as XLSX from 'xlsx';
 
@@ -152,7 +152,6 @@ const ExcelToolBuilder: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Excel Tool Builder - Create Custom Excel Sheets Online | MoneyCal"
         description="Build your own Excel sheet online with a simple, step-by-step wizard. Add fields, formulas, and download your custom Excel file instantly."

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, AlertCircle, TrendingUp, DollarSign, CheckCircle, PieChart, Target } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface Section80CItem {
   name: string;
@@ -125,7 +125,6 @@ const Section80CTallyAnalyzer: React.FC = () => {
         keywords="Section 80C Calculator, tax saving investments, ELSS, PPF, EPF, NPS, tax deduction calculator"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

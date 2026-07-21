@@ -13,7 +13,7 @@ import {
   Smartphone, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface CAGRAnalysis {
   initialPrice: number;
@@ -157,7 +157,6 @@ const StockCAGRCalculator: React.FC = () => {
         keywords="stock CAGR Calculator, compound annual growth rate, stock performance analysis, investment returns Calculator, CAGR formula"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}

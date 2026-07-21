@@ -19,7 +19,8 @@ import {
   Percent, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface TaxRegime {
   name: string;
@@ -207,10 +208,26 @@ const OldVsNewTaxRegimeHelper: React.FC = () => {
       <SEOHelmet
         title="Old vs New Tax Regime Helper - Tax Regime Comparison Calculator | MoneyCal"
         description="Compare old vs new tax regimes and choose the best option for your income. Calculate tax savings, effective rates, and get personalized recommendations for optimal tax planning."
-        keywords="old vs new tax regime, tax regime comparison, tax Calculator, tax planning, income tax Calculator, tax regime choice, tax optimization"
+        keywords="Old vs New Tax Regime, Income Tax Calculator, Tax Regime Comparison, Tax Savings India"
+      />
+      <CalculatorSchema 
+        name="Old vs New Tax Regime Helper"
+        description="Compare the Old and New Income Tax Regimes to find which one saves you the most money. Calculate taxes for FY 2024-25 and make an informed decision."
+        url="/tax-tools/old-vs-new-tax-regime"
+        features={['Tax Regime Comparison', 'FY 2024-25 Tax Rates', 'Deduction Impact Analysis', 'Effective Tax Rate Calculation']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'Which tax regime is better, old or new?',
+            answer: 'The new tax regime is generally better for individuals with fewer deductions, while the old regime is better if you claim significant deductions like HRA, 80C, home loan interest, etc.'
+          },
+          {
+            question: 'Are deductions allowed in the new tax regime?',
+            answer: 'Most deductions (like 80C, 80D, HRA) are not allowed in the new tax regime, but standard deduction of ₹50,000 is now available under both regimes.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600">
@@ -470,7 +487,6 @@ const OldVsNewTaxRegimeHelper: React.FC = () => {
             </motion.div>
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
           </div>
         </section>
       </div>

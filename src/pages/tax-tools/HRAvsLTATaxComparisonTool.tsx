@@ -18,7 +18,8 @@ import {
   Building, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface TaxBenefit {
   name: string;
@@ -224,10 +225,22 @@ const HRAvsLTATaxComparisonTool: React.FC = () => {
       <SEOHelmet
         title="HRA vs LTA Tax Comparison Tool - Allowance Tax Calculator | MoneyCal"
         description="Compare and optimize House Rent Allowance vs Leave Travel Allowance tax benefits. Calculate exemptions, tax savings, and choose the best allowance strategy for maximum tax benefits."
-        keywords="HRA LTA comparison, house rent allowance Calculator, leave travel allowance tax, allowance optimization, tax exemption Calculator, salary allowance benefits"
+        keywords="HRA vs LTA Tax comparison, Tax Savings India, Salary Restructuring, Income Tax Calculator"
+      />
+      <CalculatorSchema 
+        name="HRA vs LTA Tax Comparison Tool"
+        description="Compare tax benefits of House Rent Allowance (HRA) and Leave Travel Allowance (LTA) to optimize your salary structure."
+        url="/tax-tools/hra-vs-lta-tax-comparison"
+        features={['HRA Tax Exemption', 'LTA Tax Exemption', 'Salary Restructuring', 'Tax Saving Estimator']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'What is the difference between HRA and LTA?',
+            answer: 'HRA is provided to meet renting expenses, while LTA is for travel expenses incurred during leave. Both offer tax exemptions but under different sections and conditions.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-teal-600 via-blue-600 to-indigo-700">
@@ -547,7 +560,6 @@ const HRAvsLTATaxComparisonTool: React.FC = () => {
             </motion.div>
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
           </div>
         </section>
       </div>

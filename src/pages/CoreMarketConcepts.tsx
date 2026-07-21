@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const CoreMarketConcepts: React.FC = () => {
   const navigate = useNavigate();
@@ -63,7 +63,6 @@ const CoreMarketConcepts: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Core Market Concepts - Stock Market Course | MoneyCal.in"
         description="Learn core market concepts including bull and bear markets, market capitalization, dividends, sectors and economic cycles."

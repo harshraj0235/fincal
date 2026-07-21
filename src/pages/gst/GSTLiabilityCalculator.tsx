@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { ArrowLeft, Scale, Download, Link as LinkIcon, Info } from 'lucide-react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import jsPDF from 'jspdf';
@@ -128,7 +128,6 @@ const GSTLiabilityCalculator: React.FC = () => {
         tags={['gst', 'liability', 'itc', 'gstr-3b', 'tax payable']}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-yellow-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

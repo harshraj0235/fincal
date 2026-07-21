@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { ArrowLeft, Calendar, Download, Link as LinkIcon } from 'lucide-react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import jsPDF from 'jspdf';
@@ -87,7 +87,6 @@ const GSTDueDateTracker: React.FC = () => {
         tags={["gst", "due date", "gstr-3b", "gstr-1", "qrmp"]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-yellow-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="mb-6">

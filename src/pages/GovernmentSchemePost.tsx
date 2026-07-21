@@ -7,7 +7,7 @@ import { teamProfiles } from '../data/teamProfiles';
 import { getCurrentDateISO, formatLatestUpdate } from '../utils/randomCalculators';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import AlsoRead from '../components/AlsoRead';
 import MasterArticleLayout from '../components/articles/MasterArticleLayout';
 import PremiumHero from '../components/articles/PremiumHero';
@@ -186,7 +186,6 @@ const GovernmentSchemePost: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title={scheme.seoTitle}
         description={scheme.seoDescription}

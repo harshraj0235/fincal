@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Download, Info, TrendingUp, AlertTriangle, FileText, Shield, Clock, DollarSign } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface PFWithdrawalEntry {
   id: string;
@@ -414,7 +414,6 @@ const PFWithdrawalTaxPreview: React.FC = () => {
             </motion.div>
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
           </motion.div>
         </div>
       </div>

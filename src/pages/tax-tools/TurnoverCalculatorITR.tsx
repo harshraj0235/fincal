@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, AlertCircle, FileText, TrendingUp, CheckCircle } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface TurnoverResult {
   totalTurnover: number;
@@ -114,10 +115,26 @@ const TurnoverCalculatorITR: React.FC = () => {
       <SEOHelmet
         title="Turnover Calculator for ITR Form Filling - Determine Correct ITR Form | MoneyCal"
         description="Calculate your total turnover and determine the correct ITR form for filing. Get recommendations based on income sources and amounts."
-        keywords="ITR form Calculator, turnover Calculator, tax filing, ITR-1, ITR-2, ITR-3, ITR-4, income tax return"
+        keywords="Turnover Calculator ITR, Trading Turnover Calculator, FnO Turnover calculation, Tax Audit eligibility"
+      />
+      <CalculatorSchema 
+        name="Turnover Calculator for ITR"
+        description="Calculate trading turnover for Intraday and F&O trading to check if you are eligible for tax audit."
+        url="/tax-tools/turnover-calculator-itr"
+        features={['Trading Turnover Calculation', 'Tax Audit Eligibility', 'F&O Turnover Calculation']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'How is F&O turnover calculated for ITR?',
+            answer: 'For Futures and Options, turnover is calculated as the absolute sum of positive and negative differences (profits and losses) across all trades.'
+          },
+          {
+            question: 'When is a tax audit required for trading?',
+            answer: 'A tax audit is generally required if your trading turnover exceeds ₹10 crores, provided 95% of transactions are digital.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

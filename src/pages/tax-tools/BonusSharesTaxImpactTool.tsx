@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Gift, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, PieChart } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface BonusSharesTax {
   originalShares: number;
@@ -120,7 +120,6 @@ const BonusSharesTaxImpactTool: React.FC = () => {
         keywords="bonus shares tax, capital gains tax, bonus shares Calculator, stock bonus tax, equity bonus tax, dividend tax calculator"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

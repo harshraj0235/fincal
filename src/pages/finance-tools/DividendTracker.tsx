@@ -22,7 +22,7 @@ import {
   Receipt, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface DividendStock {
   id: string;
@@ -225,7 +225,6 @@ const DividendTracker: React.FC = () => {
         keywords="dividend tracker, dividend income, dividend yield Calculator, dividend stock analysis, passive income tracker"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}

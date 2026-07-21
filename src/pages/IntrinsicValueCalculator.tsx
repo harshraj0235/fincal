@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Target, Info, DollarSign } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const IntrinsicValueCalculator: React.FC = () => {
   const [currentEPS, setCurrentEPS] = useState('');
@@ -36,7 +36,6 @@ const IntrinsicValueCalculator: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Intrinsic Value Calculator - Stock Intrinsic Value Calculator | MoneyCal.in"
         description="Calculate intrinsic value of stocks using Gordon Growth Model. Free online intrinsic value Calculator for stock valuation and investment analysis."

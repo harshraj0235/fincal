@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Building2, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Shield } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface PFNPSComparison {
   monthlyContribution: number;
@@ -89,10 +90,26 @@ const PFvsNPSTaxGrowthComparison: React.FC = () => {
       <SEOHelmet
         title="PF vs NPS Tax & Growth Comparison - Compare EPF vs NPS Returns | MoneyCal"
         description="Compare EPF vs NPS tax benefits and growth potential. Calculate which retirement scheme offers better returns with our PF vs NPS comparison calculator."
-        keywords="PF vs NPS, EPF Calculator, NPS Calculator, retirement planning, tax benefits comparison, pension scheme comparison"
+        keywords="PF vs NPS Tax Comparison, Provident Fund, National Pension System, Retirement Planning India"
+      />
+      <CalculatorSchema 
+        name="PF vs NPS Tax Growth Comparison"
+        description="Compare the tax benefits and long-term growth of Provident Fund (EPF/PPF) versus National Pension System (NPS)."
+        url="/tax-tools/pf-vs-nps-tax-growth-comparison"
+        features={['EPF/PPF Growth Tracking', 'NPS Market Return Projection', 'Tax Exemption at Maturity', 'Section 80C & 80CCD']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'Which is better for tax saving, PF or NPS?',
+            answer: 'Both offer Section 80C benefits up to ₹1.5 Lakh. However, NPS offers an exclusive additional ₹50,000 deduction under Section 80CCD(1B).'
+          },
+          {
+            question: 'Is maturity amount tax-free in both PF and NPS?',
+            answer: 'EPF/PPF maturity is entirely tax-free. For NPS, up to 60% of the corpus can be withdrawn tax-free, and the remaining 40% must be used to buy an annuity.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

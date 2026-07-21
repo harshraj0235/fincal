@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { RefreshCw, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, ArrowRight } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface SwitchMFCalculation {
   currentValue: number;
@@ -108,7 +108,6 @@ const SwitchMFTaxCalculator: React.FC = () => {
         keywords="switch MF tax Calculator, mutual fund switching tax, exit load Calculator, STT Calculator, capital gains tax, mutual fund tax"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

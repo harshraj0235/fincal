@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { ArrowLeft, QrCode, Info, AlertTriangle, CheckCircle2, Download, Link as LinkIcon } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -101,7 +101,6 @@ const GSTEInvoiceQRValidator: React.FC = () => {
         tags={["gst", "einvoice", "qr", "irn", "validator"]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-yellow-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

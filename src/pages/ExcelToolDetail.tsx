@@ -4,7 +4,7 @@ import { Download, Star, Users, FileSpreadsheet, ArrowLeft, ExternalLink } from 
 import SEOHelmet from '../components/SEOHelmet';
 import { getExcelToolBySlug } from '../data/excelToolsData';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import SimpleDailyExpenseTracker from './SimpleDailyExpenseTracker';
 import MonthlyBudgetPlanner from './MonthlyBudgetPlanner';
 import InvoiceGeneratorBusiness from './InvoiceGeneratorBusiness';
@@ -27,7 +27,6 @@ const ExcelToolDetail: React.FC = () => {
           noIndex={true}
         />
         <WhatsAppBanner />
-        <AstroFinanceButton />
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
           <div className="text-center">
             <FileSpreadsheet className="w-16 h-16 text-gray-400 mx-auto mb-4" />
@@ -104,7 +103,6 @@ const ExcelToolDetail: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title={tool.seoTitle}
         description={tool.seoDescription}

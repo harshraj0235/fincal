@@ -31,7 +31,7 @@ import {
   Scale, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 interface TaxTool {
   id: string;
@@ -478,7 +478,6 @@ const TaxToolsHub: React.FC = () => {
         keywords="tax tools, profit simplifiers, capital gains tax calculator, STCG LTCG calculator, tax planning tools, mutual fund tax calculator, dividend tax calculator"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gray-50/50">
         {/* Hero Section */}

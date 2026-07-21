@@ -3,7 +3,7 @@ import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import { ArrowLeft, Zap, TrendingUp, DollarSign, BarChart3, Download, IndianRupee, Link } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -138,7 +138,6 @@ const ScenarioAnalysisSimulator: React.FC = () => {
       />
 
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-amber-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

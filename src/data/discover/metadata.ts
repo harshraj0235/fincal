@@ -208,6 +208,51 @@ export const discoverMetadata = [
         "date": "2026-07-15T17:42:34.843Z"
     },
     {
+        "id": "silver-price-surge-rumor",
+        "slug": "silver-price-surge-rumor",
+        "title": "चाँदी की कीमतों में 1000% का जोरदार उछाल! क्या रिकॉर्ड तोड़ने को तैयार है Silver?",
+        "snippet": "क्या सच में चाँदी (Silver) की कीमतों में 1000% का उछाल आया है? जानिए आज के ताजा भाव, MCX के आंकड़े और बाजार में फैली इस सनसनीखेज खबर का पूरा सच।",
+        "coverImage": "/images/discover/silver-price-surge-rumor.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T14:30:00+05:30"
+    },
+    {
+        "id": "adani-power-groww-news",
+        "slug": "adani-power-groww-news",
+        "title": "Adani Power और Groww को लेकर आई बड़ी खबर, आज ही देख लें ये अपडेट",
+        "snippet": "अडानी पावर के शेयरों में तेजी और Groww ऐप के नए फीचर्स ने बाजार में हलचल मचा दी है। जानिए निवेशकों के लिए क्या हैं इसके मायने और Q1 नतीजों से जुड़ी अहम जानकारी।",
+        "coverImage": "/images/discover/adani-power-groww-news.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T14:00:00+05:30"
+    },
+    {
+        "id": "nse-bse-crash-tcs-itc-bel",
+        "slug": "nse-bse-crash-tcs-itc-bel",
+        "title": "NSE और BSE पर हाहाकार! TCS, ITC और BEL के शेयरों में अचानक क्या हुआ?",
+        "snippet": "भारतीय शेयर बाजार में भारी गिरावट! Sensex और Nifty के क्रैश होने के पीछे क्या हैं कारण? जानिए TCS, ITC और BEL जैसे बड़े शेयरों पर इसका क्या असर हुआ है।",
+        "coverImage": "/images/discover/nse-bse-crash-tcs-itc-bel.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T13:30:00+05:30"
+    },
+    {
+        "id": "alpine-sbi-ipo-gmp",
+        "slug": "alpine-sbi-ipo-gmp",
+        "title": "Alpine Texworld और SBI Funds Management IPO का बड़ा धमाका: GMP देखकर उड़ जाएंगे होश!",
+        "snippet": "जुलाई 2026 में शेयर बाजार में IPO की बहार! Alpine Texworld और SBI Funds Management IPO के Grey Market Premium (GMP) ने निवेशकों में हलचल मचा दी है। जानिए पूरी डिटेल्स।",
+        "coverImage": "/images/discover/alpine-sbi-ipo-gmp.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T13:00:00+05:30"
+    },
+    {
+        "id": "kusumgar-share-price-surge",
+        "slug": "kusumgar-share-price-surge",
+        "title": "Kusumgar Share Price 700% उछला! इस गुमनाम स्टॉक ने सबको चौंकाया",
+        "snippet": "क्या सच में Kusumgar के शेयर में 700% का उछाल आया है? जानिए इस गुमनाम स्टॉक के बंपर IPO, लिस्टिंग प्रीमियम और निवेशकों की छप्पर फाड़ कमाई का पूरा सच।",
+        "coverImage": "/images/discover/kusumgar-share-price-surge.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T12:30:00+05:30"
+    },
+    {
         "id": "ibm-angel-one-share-price-surge",
         "slug": "ibm-angel-one-share-price-surge",
         "title": "IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच",
@@ -388,42 +433,6 @@ export const discoverMetadata = [
         "date": "2026-07-13T12:00:00+05:30"
     },
     {
-        "id": "india-secret-strategy-england-t20",
-        "slug": "india-secret-strategy-england-t20",
-        "title": "IND vs ENG T20: वह गुप्त रणनीति जिसने इंग्लैंड के मजबूत टॉप ऑर्डर को घुटने टेकने पर मजबूर कर दिया",
-        "snippet": "भारत बनाम इंग्लैंड टी20 सीरीज के पहले ही मुकाबले में भारतीय टीम प्रबंधन ने एक ऐसी रणनीति का उपयोग किया जिसने इंग्लैंड के खतरनाक बल्लेबाजों को बैकफुट पर ला दिया। जानिए पूरा विश्लेषण।",
-        "coverImage": "/images/discover/india-secret-strategy-england-t20.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "west-indies-australia-power-hitting",
-        "slug": "west-indies-australia-power-hitting",
-        "title": "Did the West Indies Just Expose Australia’s Bowling Attack With This Ridiculous Power Hitting?",
-        "snippet": "A deep dive into the sheer physics, bat-speed metrics, and tactical breakdown behind the explosive power hitting that dismantled the Australian bowling attack.",
-        "coverImage": "/images/discover/west-indies-australia-power-hitting.png",
-        "author": "Cricket Science Analytics",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "moises-henriques-portugal-twist",
-        "slug": "moises-henriques-portugal-twist",
-        "title": "Why Australian Cricketer Moises Henriques Just Officially Debuted for Portugal",
-        "snippet": "The emotional and technical story behind the former Australian all-rounder’s international switch, and what his debut means for the future of European cricket.",
-        "coverImage": "/images/discover/moises-henriques-portugal.png",
-        "author": "Global Cricket Correspondent",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "alia-bhatt-spy-universe-transformation",
-        "slug": "alia-bhatt-spy-universe-transformation",
-        "title": "Alia Bhatt’s Brutal Spy Universe Transformation Will Leave You Speechless",
-        "snippet": "Inside the gruelling physical and emotional preparation behind Alia Bhatt’s turn as the lethal assassin \"Sita\" in the upcoming YRF blockbuster \"Alpha\".",
-        "coverImage": "/images/discover/alia-bhatt-spy-universe.png",
-        "author": "Entertainment Desk",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
         "id": "nayanthara-toxic-look-revealed",
         "slug": "nayanthara-toxic-look-revealed",
         "title": "Nayanthara’s \"Toxic\" Look Revealed: Why Fans Are Losing Their Minds Over Ganga",
@@ -543,6 +552,96 @@ export const discoverMetadata = [
         "snippet": "गुजरात शिक्षक योग्यता परीक्षा (TAT-S) का प्रीलिम्स रिजल्ट आ चुका है। जिन उम्मीदवारों के 70 से अधिक अंक हैं, वे 3 अगस्त को होने वाली मुख्य परीक्षा (Mains) की तैयारी कैसे करें, जानिए बेस्ट राइटिंग स्ट्रेटेजी।",
         "coverImage": "/images/discover/gujarat_tat_s_mains_preparation_1783246061055.png",
         "author": "MoneyCal Team"
+    },
+    {
+        "id": "post-office-scss-scheme",
+        "slug": "post-office-scss-scheme",
+        "title": "रिटायरमेंट के बाद पैसों की टेंशन खत्म! पोस्ट ऑफिस की इस स्कीम (SCSS) में मिल रहा है 8.2% का शानदार ब्याज",
+        "snippet": "Senior Citizen Savings Scheme (SCSS) 2026: वरिष्ठ नागरिकों के लिए सबसे बेहतरीन निवेश योजना। जानिए पोस्ट ऑफिस की इस स्कीम में 30 लाख लगाकर कितनी बनेगी पेंशन।",
+        "coverImage": "/images/discover/post-office-scss-scheme.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T16:05:00+05:30"
+    },
+    {
+        "id": "income-tax-notice-refund",
+        "slug": "income-tax-notice-refund",
+        "title": "ITR रिफंड का कर रहे हैं इंतजार? Section 143(1) का नोटिस देखकर घबराएं नहीं, जानिए इसका सही मतलब",
+        "snippet": "Income Tax Intimation U/S 143(1): क्या आपको भी इनकम टैक्स डिपार्टमेंट से नोटिस मिला है? जानिए इस ईमेल का क्या मतलब है और आपका ITR Refund कब तक आएगा।",
+        "coverImage": "/images/discover/income-tax-notice-refund.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T16:00:00+05:30"
+    },
+    {
+        "id": "pm-awas-yojana-subsidy",
+        "slug": "pm-awas-yojana-subsidy",
+        "title": "खुद का पक्का घर बनाने का सपना होगा पूरा! PM Awas Yojana (PMAY 2.0) में मिल रही है ₹2.5 लाख तक की सब्सिडी",
+        "snippet": "PM Awas Yojana Gramin & Urban 2026: क्या आप भी किराए के मकान में रहते हैं? जानिए प्रधानमंत्री आवास योजना (PMAY 2.0) के तहत कैसे पाएं घर बनाने के लिए भारी सब्सिडी।",
+        "coverImage": "/images/discover/pm-awas-yojana-subsidy.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:55:00+05:30"
+    },
+    {
+        "id": "gold-rate-import-duty",
+        "slug": "gold-rate-import-duty",
+        "title": "सोना खरीदने वालों की लगी लॉटरी! सोने के दाम और इंपोर्ट ड्यूटी (Import Duty) पर आया बड़ा अपडेट",
+        "snippet": "Gold Rate Today & Import Duty Cut 2026: क्या सोना सस्ता होने वाला है? जानिए 24 और 22 कैरेट सोने का ताजा भाव और इंपोर्ट ड्यूटी से जुड़ी पूरी खबर।",
+        "coverImage": "/images/discover/gold-rate-import-duty.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:50:00+05:30"
+    },
+    {
+        "id": "petrol-diesel-prices-drop",
+        "slug": "petrol-diesel-prices-drop",
+        "title": "पेट्रोल-डीजल की कीमतों पर बड़ा अपडेट! क्या जल्द सस्ती होगी तेल की कीमतें? जानिए ताजा रेट",
+        "snippet": "Petrol-Diesel Prices India 2026: क्या जल्द ही आम आदमी को पेट्रोल और डीजल की कीमतों से राहत मिलने वाली है? जानिए ताजा अपडेट्स और आपके शहर का आज का भाव।",
+        "coverImage": "/images/discover/petrol-diesel-prices-drop.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:45:00+05:30"
+    },
+    {
+        "id": "nps-vatsalya-scheme",
+        "slug": "nps-vatsalya-scheme",
+        "title": "बच्चों के लिए शानदार स्कीम! हर महीने ₹250 बचाकर बनाएं करोड़पति, जानिए NPS Vatsalya के फायदे",
+        "snippet": "NPS Vatsalya Scheme 2026: क्या आप भी अपने बच्चों का भविष्य सुरक्षित करना चाहते हैं? जानिए सरकार की नई एनपीएस वात्सल्य योजना के बारे में, जहां सिर्फ 250 रुपये से शुरू कर सकते हैं निवेश।",
+        "coverImage": "/images/discover/nps-vatsalya-scheme.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:40:00+05:30"
+    },
+    {
+        "id": "smam-tractor-subsidy-yojana",
+        "slug": "smam-tractor-subsidy-yojana",
+        "title": "किसानों की हुई मौज! ट्रैक्टर और कृषि यंत्रों पर मिल रही है 80% तक की भारी सब्सिडी",
+        "snippet": "SMAM Yojana 2026: ट्रैक्टर और खेती की मशीनों पर सरकार दे रही है 80% तक की भारी छूट। जानिए कैसे करें ऑनलाइन आवेदन और कौन से कागजात हैं जरूरी।",
+        "coverImage": "/images/discover/smam-tractor-subsidy-yojana.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:30:00+05:30"
+    },
+    {
+        "id": "eighth-cpc-salary-updates",
+        "slug": "eighth-cpc-salary-updates",
+        "title": "केंद्रीय कर्मचारियों के लिए खुशखबरी! सैलरी और पेंशन पर आया सरकार का बड़ा अपडेट",
+        "snippet": "8th Pay Commission (आठवें वेतन आयोग) और DA Hike को लेकर बड़ा अपडेट! जानिए केंद्रीय कर्मचारियों और पेंशनर्स की बेसिक सैलरी में कितना होने जा रहा है इजाफा।",
+        "coverImage": "/images/discover/eighth-cpc-salary-updates.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T14:30:00+05:30"
+    },
+    {
+        "id": "caliber-xtranet-ipo-gmp",
+        "slug": "caliber-xtranet-ipo-gmp",
+        "title": "Grey Market में गदर मचा रहे हैं ये 2 IPO! दांव लगाने वाले निवेशकों की चमकेगी किस्मत?",
+        "snippet": "Caliber Mining और Xtranet IPO का ग्रे मार्केट (GMP) में तहलका! प्राइस बैंड, अलॉटमेंट डेट, और जानिए इन आईपीओ में दांव लगाने से आपको कितना मुनाफा हो सकता है।",
+        "coverImage": "/images/discover/caliber-xtranet-ipo-gmp.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T12:30:00+05:30"
+    },
+    {
+        "id": "sbi-funds-management-ipo-listing",
+        "slug": "sbi-funds-management-ipo-listing",
+        "title": "SBI Funds Management IPO: ₹613 पर लिस्टिंग, क्या निवेशकों को मिला बंपर मुनाफा? पूरी सच्चाई",
+        "snippet": "SBI Funds Management IPO की शानदार लिस्टिंग! शेयर प्राइस, ग्रे मार्केट प्रीमियम (GMP) और क्या अब आपको खरीदना चाहिए? जानिए पूरी सच्चाई और एक्सपर्ट्स की राय।",
+        "coverImage": "/images/discover/sbi-funds-management-ipo-listing.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T12:00:00+05:30"
     },
     {
         "id": "odyssey-movie-hindi-dubbed-download-telegram",
@@ -714,51 +813,6 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/epfo-vishwas-2026-scheme.png",
         "author": "MoneyCal Team",
         "date": "2026-07-15T15:00:00+05:30"
-    },
-    {
-        "id": "silver-price-surge-rumor",
-        "slug": "silver-price-surge-rumor",
-        "title": "चाँदी की कीमतों में 1000% का जोरदार उछाल! क्या रिकॉर्ड तोड़ने को तैयार है Silver?",
-        "snippet": "क्या सच में चाँदी (Silver) की कीमतों में 1000% का उछाल आया है? जानिए आज के ताजा भाव, MCX के आंकड़े और बाजार में फैली इस सनसनीखेज खबर का पूरा सच।",
-        "coverImage": "/images/discover/silver-price-surge-rumor.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T14:30:00+05:30"
-    },
-    {
-        "id": "adani-power-groww-news",
-        "slug": "adani-power-groww-news",
-        "title": "Adani Power और Groww को लेकर आई बड़ी खबर, आज ही देख लें ये अपडेट",
-        "snippet": "अडानी पावर के शेयरों में तेजी और Groww ऐप के नए फीचर्स ने बाजार में हलचल मचा दी है। जानिए निवेशकों के लिए क्या हैं इसके मायने और Q1 नतीजों से जुड़ी अहम जानकारी।",
-        "coverImage": "/images/discover/adani-power-groww-news.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T14:00:00+05:30"
-    },
-    {
-        "id": "nse-bse-crash-tcs-itc-bel",
-        "slug": "nse-bse-crash-tcs-itc-bel",
-        "title": "NSE और BSE पर हाहाकार! TCS, ITC और BEL के शेयरों में अचानक क्या हुआ?",
-        "snippet": "भारतीय शेयर बाजार में भारी गिरावट! Sensex और Nifty के क्रैश होने के पीछे क्या हैं कारण? जानिए TCS, ITC और BEL जैसे बड़े शेयरों पर इसका क्या असर हुआ है।",
-        "coverImage": "/images/discover/nse-bse-crash-tcs-itc-bel.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T13:30:00+05:30"
-    },
-    {
-        "id": "alpine-sbi-ipo-gmp",
-        "slug": "alpine-sbi-ipo-gmp",
-        "title": "Alpine Texworld और SBI Funds Management IPO का बड़ा धमाका: GMP देखकर उड़ जाएंगे होश!",
-        "snippet": "जुलाई 2026 में शेयर बाजार में IPO की बहार! Alpine Texworld और SBI Funds Management IPO के Grey Market Premium (GMP) ने निवेशकों में हलचल मचा दी है। जानिए पूरी डिटेल्स।",
-        "coverImage": "/images/discover/alpine-sbi-ipo-gmp.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T13:00:00+05:30"
-    },
-    {
-        "id": "kusumgar-share-price-surge",
-        "slug": "kusumgar-share-price-surge",
-        "title": "Kusumgar Share Price 700% उछला! इस गुमनाम स्टॉक ने सबको चौंकाया",
-        "snippet": "क्या सच में Kusumgar के शेयर में 700% का उछाल आया है? जानिए इस गुमनाम स्टॉक के बंपर IPO, लिस्टिंग प्रीमियम और निवेशकों की छप्पर फाड़ कमाई का पूरा सच।",
-        "coverImage": "/images/discover/kusumgar-share-price-surge.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T12:30:00+05:30"
     },
     {
         "id": "iphone-18-release-date-leaks-features-2026",
@@ -4250,6 +4304,42 @@ export const discoverMetadata = [
         "snippet": "Introducing Gilberto Mora to global fans: a deep dive into the scout reports, his record-breaking rise, and the sudden astronomical spike in his price tag.",
         "coverImage": "/images/discover/gilberto-mora-phenomenon.png",
         "author": "Football Scout Analytics",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "india-secret-strategy-england-t20",
+        "slug": "india-secret-strategy-england-t20",
+        "title": "IND vs ENG T20: वह गुप्त रणनीति जिसने इंग्लैंड के मजबूत टॉप ऑर्डर को घुटने टेकने पर मजबूर कर दिया",
+        "snippet": "भारत बनाम इंग्लैंड टी20 सीरीज के पहले ही मुकाबले में भारतीय टीम प्रबंधन ने एक ऐसी रणनीति का उपयोग किया जिसने इंग्लैंड के खतरनाक बल्लेबाजों को बैकफुट पर ला दिया। जानिए पूरा विश्लेषण।",
+        "coverImage": "/images/discover/india-secret-strategy-england-t20.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "west-indies-australia-power-hitting",
+        "slug": "west-indies-australia-power-hitting",
+        "title": "Did the West Indies Just Expose Australia’s Bowling Attack With This Ridiculous Power Hitting?",
+        "snippet": "A deep dive into the sheer physics, bat-speed metrics, and tactical breakdown behind the explosive power hitting that dismantled the Australian bowling attack.",
+        "coverImage": "/images/discover/west-indies-australia-power-hitting.png",
+        "author": "Cricket Science Analytics",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "moises-henriques-portugal-twist",
+        "slug": "moises-henriques-portugal-twist",
+        "title": "Why Australian Cricketer Moises Henriques Just Officially Debuted for Portugal",
+        "snippet": "The emotional and technical story behind the former Australian all-rounder’s international switch, and what his debut means for the future of European cricket.",
+        "coverImage": "/images/discover/moises-henriques-portugal.png",
+        "author": "Global Cricket Correspondent",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "alia-bhatt-spy-universe-transformation",
+        "slug": "alia-bhatt-spy-universe-transformation",
+        "title": "Alia Bhatt’s Brutal Spy Universe Transformation Will Leave You Speechless",
+        "snippet": "Inside the gruelling physical and emotional preparation behind Alia Bhatt’s turn as the lethal assassin \"Sita\" in the upcoming YRF blockbuster \"Alpha\".",
+        "coverImage": "/images/discover/alia-bhatt-spy-universe.png",
+        "author": "Entertainment Desk",
         "date": "2026-07-04T06:22:48.508Z"
     },
     {

@@ -31,7 +31,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const POToInvoiceConverter: React.FC = () => {
   return (
@@ -87,7 +87,6 @@ const POToInvoiceConverter: React.FC = () => {
       </div>
 
       <WhatsAppBanner />
-      <AstroFinanceButton />
     </div>
   );
 };

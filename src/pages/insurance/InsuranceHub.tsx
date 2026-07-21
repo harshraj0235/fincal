@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const InsuranceHub: React.FC = () => {
   const categories = [
@@ -37,7 +37,6 @@ const InsuranceHub: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Insurance Hub - Compare, Calculate & Choose | MoneyCal"
         description="Navigate the complex world of insurance with MoneyCal. Compare plans, use our expert calculators, and read detailed comparison guides."

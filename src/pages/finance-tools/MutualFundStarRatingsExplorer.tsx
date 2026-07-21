@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface MutualFund {
   name: string;
@@ -269,7 +269,6 @@ const MutualFundStarRatingsExplorer: React.FC = () => {
         keywords="mutual fund star ratings, top mutual funds, fund comparison, mutual fund performance, fund ratings, best mutual funds India, fund analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-orange-50">
         {/* Hero Section */}

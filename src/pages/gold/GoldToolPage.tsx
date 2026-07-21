@@ -2,7 +2,7 @@ import React, { useMemo, useState, useRef } from 'react';
 import { useParams, Link as RouterLink } from 'react-router-dom';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { findGoldTool } from '../../data/goldTools';
 import { ArrowLeft, Download, Link as LinkIcon } from 'lucide-react';
 import jsPDF from 'jspdf';

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Download, Info, TrendingUp, AlertTriangle, FileText, DollarSign, BarChart3, Calendar, ArrowLeftRight, Percent, TrendingDown } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface TaxYearData {
   year: string;
@@ -510,7 +510,6 @@ const TaxYearComparisonSliderTool: React.FC = () => {
             </motion.div>
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
           </motion.div>
         </div>
       </div>

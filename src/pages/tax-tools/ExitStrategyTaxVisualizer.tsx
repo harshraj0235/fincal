@@ -18,7 +18,7 @@ import {
   AlertTriangle, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface ExitStrategy {
   name: string;
@@ -181,7 +181,6 @@ const ExitStrategyTaxVisualizer: React.FC = () => {
         keywords="exit strategy tax Calculator, investment exit planning, capital gains tax optimization, LTCG STCG Calculator, tax-efficient exits, investment withdrawal strategy"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700">
@@ -415,7 +414,6 @@ const ExitStrategyTaxVisualizer: React.FC = () => {
             </motion.div>
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
           </div>
         </section>
       </div>

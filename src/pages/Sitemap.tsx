@@ -23,7 +23,7 @@ import { loanBasicsLessons, homeLoansLessons, personalLoansLessons } from '../da
 import { contentRegistry } from '../cms-content/contentRegistry';
 import { allIpoData } from '../services/ipoApi';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import SEOHelmet from '../components/SEOHelmet';
 
 export const Sitemap: React.FC = () => {
@@ -321,7 +321,6 @@ export const Sitemap: React.FC = () => {
         }}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
           <button

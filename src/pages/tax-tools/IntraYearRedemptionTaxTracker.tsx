@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Clock, ArrowRight } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface RedemptionEntry {
   id: string;
@@ -138,7 +138,6 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
         keywords="intra-year redemption tracker, multiple redemptions tax, STCG LTCG tracker, redemption tax Calculator, tax burden tracker"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

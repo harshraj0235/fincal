@@ -12,7 +12,7 @@ import {
   ArrowLeft, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 interface FinanceTool {
   id: string;
@@ -606,7 +606,6 @@ const FinanceTools: React.FC = () => {
         keywords="finance tools, investment tools, SIP Calculator, mutual fund tools, portfolio tracker, investment planning, financial calculators"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gray-50/50">
         {/* Hero Section */}

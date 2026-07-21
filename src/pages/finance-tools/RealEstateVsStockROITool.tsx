@@ -21,7 +21,7 @@ import {
   Building, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface InvestmentAnalysis {
   type: 'Real Estate' | 'Stock Market';
@@ -154,7 +154,6 @@ const RealEstateVsStockROITool: React.FC = () => {
         keywords="real estate vs stock market, ROI Calculator, investment comparison, rental income Calculator, stock market returns, real estate investment, property investment vs stocks"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
         {/* Hero Section */}

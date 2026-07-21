@@ -3,7 +3,7 @@ import { useParams, Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import { findFestival } from '../data/festivalTools';
 import { Gift, Sparkles } from 'lucide-react';
 import ToolArticle from '../components/ToolArticle';
@@ -40,7 +40,6 @@ const FestivalLanding: React.FC = () => {
         ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-fuchsia-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-10">

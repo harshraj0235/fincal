@@ -4,7 +4,7 @@ import { BookOpen, Clock, Users, Target, CheckCircle, Play, ArrowRight, Star, Wr
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const ToolsPracticalApplication: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
@@ -72,7 +72,6 @@ const ToolsPracticalApplication: React.FC = () => {
         keywords="trading tools, stock screener, trading platforms, investment calculators, paper trading, portfolio tracking"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
         <div className="container mx-auto px-4 py-8">

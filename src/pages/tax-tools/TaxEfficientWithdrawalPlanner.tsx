@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Target, ArrowRight } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface WithdrawalPlan {
   totalCorpus: number;
@@ -89,10 +90,22 @@ const TaxEfficientWithdrawalPlanner: React.FC = () => {
       <SEOHelmet
         title="Tax-Efficient Withdrawal Planner - Plan Your Investment Withdrawals | MoneyCal"
         description="Plan tax-efficient withdrawals from your investments. Optimize your withdrawal strategy to minimize tax liability and maximize net returns."
-        keywords="tax efficient withdrawal planner, investment withdrawal Calculator, LTCG exemption planner, retirement withdrawal tax, capital gains tax planning"
+        keywords="Tax Efficient Withdrawal, Retirement Planner, SWP Calculator, Tax free withdrawal, Portfolio withdrawal"
+      />
+      <CalculatorSchema 
+        name="Tax Efficient Withdrawal Planner"
+        description="Plan your investment withdrawals across different asset classes to minimize tax liability and maximize post-tax returns."
+        url="/tax-tools/tax-efficient-withdrawal-planner"
+        features={['Retirement Withdrawal Planning', 'Tax Minimization', 'Asset Allocation', 'Post-tax Returns']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'What is a tax-efficient withdrawal strategy?',
+            answer: 'A tax-efficient withdrawal strategy involves liquidating investments in an order that minimizes capital gains tax, typically starting with tax-free or lower-tax assets before tapping into higher-taxed investments.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

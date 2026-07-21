@@ -15,7 +15,7 @@ import {
   Share2, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface LossOffsetResult {
   totalSTGains: number;
@@ -157,7 +157,6 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
         keywords="short term loss offset, capital loss Calculator, loss carry forward, tax loss harvesting, capital gains tax, investment loss offset, tax optimization"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
@@ -464,7 +463,6 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
             </motion.div>
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
         </div>
         </section>
       </div>

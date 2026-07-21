@@ -24,7 +24,7 @@ import {
   LineChart, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const StockMarket: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -213,7 +213,6 @@ const StockMarket: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Stock Market Course - Learn Trading & Investment | MoneyCal.in"
         description="India's most comprehensive stock market course. Learn from beginner to expert level with free tools, calculators and practical guides."

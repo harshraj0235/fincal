@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, AlertCircle, TrendingDown, DollarSign, Calendar, ArrowRight, CheckCircle } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface LossBenefit {
   currentYearLoss: number;
@@ -98,7 +98,6 @@ const ShortTermCapitalLossBenefitEstimator: React.FC = () => {
         keywords="STCG loss Calculator, capital loss benefit, loss carry forward, tax optimization, short term capital gains loss"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

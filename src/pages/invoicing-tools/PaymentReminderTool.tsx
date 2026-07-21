@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const PaymentReminderTool: React.FC = () => {
   return (
@@ -81,7 +81,6 @@ const PaymentReminderTool: React.FC = () => {
       </div>
 
       <WhatsAppBanner />
-      <AstroFinanceButton />
     </div>
   );
 };

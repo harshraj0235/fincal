@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SEOHelmet from '../components/SEOHelmet';
 import { Star, Calendar, TrendingUp, Moon, Sun, Zap, Shield, Target } from 'lucide-react';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const zodiacSigns = [
   { name: 'Aries', element: 'Fire', ruler: 'Mars', traits: 'Bold, Energetic, Risk-taker' },
@@ -182,7 +182,6 @@ Remember: This is for entertainment and educational purposes. Always consult wit
       />
       
       <WhatsAppBanner />
-      <AstroFinanceButton />
       
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

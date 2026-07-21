@@ -22,7 +22,7 @@ import {
   TrendingUpIcon, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface IndexData {
   name: string;
@@ -201,7 +201,6 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
         keywords="Nifty vs Sensex, index comparison, Nifty 50 performance, Sensex performance, stock market indices, market analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}

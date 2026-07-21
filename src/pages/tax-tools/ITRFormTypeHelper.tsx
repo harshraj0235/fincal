@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, FileText, CheckCircle, AlertTriangle, HelpCircle } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface ITRFormInfo {
   formType: string;
@@ -196,10 +197,26 @@ const ITRFormTypeHelper: React.FC = () => {
       <SEOHelmet
         title="ITR Form Type Helper - Choose the Right ITR Form | MoneyCal"
         description="Determine the correct ITR form for your income sources. Get guidance on ITR-1, ITR-2, ITR-3, and ITR-4 forms with detailed eligibility criteria."
-        keywords="ITR form type, ITR-1, ITR-2, ITR-3, ITR-4, income tax return form, tax filing form, ITR eligibility"
+        keywords="ITR form selector, Which ITR to file, Income Tax Return India, ITR 1 vs ITR 2"
+      />
+      <CalculatorSchema 
+        name="ITR Form Type Helper"
+        description="Find out exactly which ITR form you need to file based on your income sources, residential status, and tax conditions."
+        url="/tax-tools/itr-form-type-helper"
+        features={['ITR Selector', 'Income Source Analysis', 'Residential Status Check']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'Which ITR form is for salaried employees?',
+            answer: 'ITR-1 (Sahaj) is for individuals being a resident with total income up to ₹50 lakh from Salary, One House Property, and Other Sources.'
+          },
+          {
+            question: 'Which ITR to file for capital gains?',
+            answer: 'If you have capital gains from stocks, mutual funds, or property, you generally need to file ITR-2.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">

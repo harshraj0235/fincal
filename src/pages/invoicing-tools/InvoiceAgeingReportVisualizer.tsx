@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface Invoice {
   id: string;
@@ -153,7 +153,6 @@ const InvoiceAgeingReportVisualizer: React.FC = () => {
         keywords="invoice ageing report, payment analysis, receivables aging, outstanding invoices, collection analysis, payment patterns"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
         {/* Hero Section */}

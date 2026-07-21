@@ -4,7 +4,7 @@ import { BookOpen, Clock, Users, Target, CheckCircle, Play, ArrowRight, Star } f
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const FundamentalAnalysis: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
@@ -86,7 +86,6 @@ const FundamentalAnalysis: React.FC = () => {
         keywords="fundamental analysis, financial statements, P/E ratio, ROE, stock valuation, investment analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="container mx-auto px-4 py-8">

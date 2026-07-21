@@ -2,7 +2,7 @@ import React from 'react';
 import SEOHelmet from '../components/SEOHelmet';
 import { Link } from 'react-router-dom';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const tools = [
   { name: 'Bank Locker Finder', path: '/calculators/bank-locker-finder', desc: 'Find and compare locker charges & availability across Indian banks.' },
@@ -24,7 +24,6 @@ const BankTools: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Bank Tools - All Banking Calculators & Directories | Compare, Find, and Save"
         description="Explore all bank tools: locker finder, charges analyzer, missed call directory, cheque bounce Calculator, and more. Free, easy, and SEO-optimized for banking tools, calculators, and directories."

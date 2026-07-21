@@ -21,7 +21,7 @@ import {
   Percent, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface ReturnAnalysis {
   nominalReturn: number;
@@ -137,7 +137,6 @@ const RealVsNominalReturnCalculator: React.FC = () => {
         keywords="real vs nominal return, inflation adjusted returns, purchasing power Calculator, investment return analysis, inflation impact calculator"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
         {/* Hero Section */}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, TrendingUp, PieChart } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface PartialSelloffResult {
   totalShares: number;
@@ -106,7 +106,6 @@ const TaxOnPartialSelloffCalculator: React.FC = () => {
         keywords="partial selloff tax Calculator, share sale tax, STCG LTCG Calculator, capital gains tax"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">

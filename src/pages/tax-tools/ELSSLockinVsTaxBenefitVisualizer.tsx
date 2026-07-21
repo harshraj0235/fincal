@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Lock, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface ELSSComparison {
   investmentAmount: number;
@@ -84,7 +84,6 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
         keywords="ELSS Calculator, tax benefit Calculator, 80C investment, mutual fund lock-in, tax saving mutual fund, ELSS vs other investments"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

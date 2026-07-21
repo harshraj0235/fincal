@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { useParams, Link as RouterLink } from 'react-router-dom';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { findFestivalTool, FestivalToolConfig } from '../../data/festivalTools';
 import { ArrowLeft, Link as LinkIcon, Download } from 'lucide-react';
 import jsPDF from 'jspdf';
@@ -931,7 +931,6 @@ const FestivalToolPage: React.FC = () => {
         }}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 via-white to-rose-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="mb-6">

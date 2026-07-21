@@ -33,7 +33,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const ClientWiseInvoiceHistoryVisualizer: React.FC = () => {
   return (
@@ -89,7 +89,6 @@ const ClientWiseInvoiceHistoryVisualizer: React.FC = () => {
       </div>
 
       <WhatsAppBanner />
-      <AstroFinanceButton />
     </div>
   );
 };

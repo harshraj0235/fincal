@@ -21,7 +21,7 @@ import {
   MapPin, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface TimelineMilestone {
   year: number;
@@ -165,7 +165,6 @@ const InvestmentTimelineVisualizer: React.FC = () => {
         keywords="investment timeline, financial planning, investment milestones, wealth visualization, financial goals, investment journey, retirement planning"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
         {/* Hero Section */}

@@ -22,7 +22,7 @@ import {
   Receipt, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface ExpenseBreakdown {
   managementFee: number;
@@ -222,7 +222,6 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
         keywords="mutual fund expense ratio, fund costs Calculator, expense ratio impact, mutual fund fees, investment cost analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

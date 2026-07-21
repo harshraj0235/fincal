@@ -11,7 +11,7 @@ import {
 import SEOHelmet from '../../components/SEOHelmet';
 import InsuranceComparisonTable, { ComparisonData } from '../../components/InsuranceComparisonTable';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const ComparisonGuide: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -83,7 +83,6 @@ const ComparisonGuide: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title={`${title} - Side by Side Comparison | MoneyCal`}
         description={`Compare the best ${slug} in India. Check premiums, benefits, exclusions and pros/cons for top insurance providers.`}

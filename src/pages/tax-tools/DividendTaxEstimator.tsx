@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, AlertCircle, DollarSign, TrendingUp, Percent } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface DividendResult {
   dividendAmount: number;
@@ -76,7 +76,6 @@ const DividendTaxEstimator: React.FC = () => {
         keywords="dividend tax Calculator, TDS on dividends, equity dividend tax, mutual fund dividend tax, post-2020 dividend rules"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

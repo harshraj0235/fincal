@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface Invoice {
   id: string;
@@ -184,7 +184,6 @@ const InvoiceDueDateTracker: React.FC = () => {
         keywords="invoice tracker, due date tracker, payment tracking, overdue invoices, receivables management, payment reminders"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}

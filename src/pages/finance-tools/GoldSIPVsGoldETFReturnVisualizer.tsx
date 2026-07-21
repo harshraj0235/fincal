@@ -19,7 +19,7 @@ import {
   Smartphone, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface GoldInvestment {
   type: 'SIP' | 'ETF';
@@ -131,7 +131,6 @@ const GoldSIPVsGoldETFReturnVisualizer: React.FC = () => {
         keywords="gold SIP vs ETF, gold investment Calculator, gold ETF returns, gold SIP Calculator, gold investment strategy, gold mutual fund vs ETF, gold investment comparison"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-orange-50">
         {/* Hero Section */}

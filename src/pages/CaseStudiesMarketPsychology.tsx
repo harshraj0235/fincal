@@ -4,7 +4,7 @@ import { BookOpen, Clock, Users, Target, CheckCircle, Play, ArrowRight, Star } f
 import { Link } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const CaseStudiesMarketPsychology: React.FC = () => {
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
@@ -72,7 +72,6 @@ const CaseStudiesMarketPsychology: React.FC = () => {
         keywords="case studies, market psychology, behavioral finance, trading psychology, emotional discipline, stock market success"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
         <div className="container mx-auto px-4 py-8">

@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { Gift, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Users } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface GiftedSharesTax {
   donorCostPrice: number;
@@ -117,10 +118,22 @@ const GiftedSharesTaxEstimator: React.FC = () => {
       <SEOHelmet
         title="Gifted Shares Tax Estimator - Calculate Tax on Gifted Shares | MoneyCal"
         description="Calculate tax implications on gifted shares. Determine capital gains tax on shares received as gifts with our comprehensive gifted shares tax calculator."
-        keywords="gifted shares tax, capital gains tax, gift tax Calculator, shares inheritance tax, relative gift tax, non-relative gift tax"
+        keywords="Gifted Shares Tax, Income Tax India, Gift Tax Calculator, Capital Gains on Gift"
+      />
+      <CalculatorSchema 
+        name="Gifted Shares Tax Estimator"
+        description="Calculate income tax and capital gains on gifted shares. Check tax implications of shares gifted to relatives or non-relatives in India."
+        url="/tax-tools/gifted-shares-tax-estimator"
+        features={['Gift Tax Exemption', 'Capital Gains Calculation', 'Relative Definition Analysis']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'Are gifted shares taxable in India?',
+            answer: 'Shares gifted to specified relatives are exempt from tax. If gifted to non-relatives and value exceeds ₹50,000, it is taxed under Income from Other Sources.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

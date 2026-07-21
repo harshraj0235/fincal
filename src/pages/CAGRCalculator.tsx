@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, TrendingUp, Info, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import WhyChooseUs from '../components/WhyChooseUs';
 
 const CAGRCalculator: React.FC = () => {
@@ -28,7 +28,6 @@ const CAGRCalculator: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="CAGR Calculator - Compound Annual Growth Rate Calculator | MoneyCal.in"
         description="Calculate Compound Annual Growth Rate (CAGR) for investments, stocks, and mutual funds. Free online CAGR Calculator with detailed analysis."

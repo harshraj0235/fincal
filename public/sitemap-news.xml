@@ -2,13 +2,101 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 <!-- Google News Sitemap -->
   <url>
+    <loc>https://moneycal.in/discover/post-office-scss-scheme/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:35:00.000Z</news:publication_date>
+      <news:title>रिटायरमेंट के बाद पैसों की टेंशन खत्म! पोस्ट ऑफिस की इस स्कीम (SCSS) में मिल रहा है 8.2% का शानदार ब्याज</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/post-office-scss-scheme/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:35:00.000Z</news:publication_date>
+      <news:title>रिटायरमेंट के बाद पैसों की टेंशन खत्म! पोस्ट ऑफिस की इस स्कीम (SCSS) में मिल रहा है 8.2% का शानदार ब्याज</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/income-tax-notice-refund/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:30:00.000Z</news:publication_date>
+      <news:title>ITR रिफंड का कर रहे हैं इंतजार? Section 143(1) का नोटिस देखकर घबराएं नहीं, जानिए इसका सही मतलब</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/income-tax-notice-refund/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:30:00.000Z</news:publication_date>
+      <news:title>ITR रिफंड का कर रहे हैं इंतजार? Section 143(1) का नोटिस देखकर घबराएं नहीं, जानिए इसका सही मतलब</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/pm-awas-yojana-subsidy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:25:00.000Z</news:publication_date>
+      <news:title>खुद का पक्का घर बनाने का सपना होगा पूरा! PM Awas Yojana (PMAY 2.0) में मिल रही है ₹2.5 लाख तक की सब्सिडी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/pm-awas-yojana-subsidy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:25:00.000Z</news:publication_date>
+      <news:title>खुद का पक्का घर बनाने का सपना होगा पूरा! PM Awas Yojana (PMAY 2.0) में मिल रही है ₹2.5 लाख तक की सब्सिडी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/gold-rate-import-duty/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:20:00.000Z</news:publication_date>
+      <news:title>सोना खरीदने वालों की लगी लॉटरी! सोने के दाम और इंपोर्ट ड्यूटी (Import Duty) पर आया बड़ा अपडेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/gold-rate-import-duty/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:20:00.000Z</news:publication_date>
+      <news:title>सोना खरीदने वालों की लगी लॉटरी! सोने के दाम और इंपोर्ट ड्यूटी (Import Duty) पर आया बड़ा अपडेट</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://moneycal.in/discover/understanding-grey-market-premium-gmp/</loc>
     <news:news>
       <news:publication>
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.428Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.789Z</news:publication_date>
       <news:title>Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!</news:title>
     </news:news>
   </url>
@@ -19,7 +107,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.428Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.789Z</news:publication_date>
       <news:title>Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!</news:title>
     </news:news>
   </url>
@@ -30,7 +118,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.337Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.724Z</news:publication_date>
       <news:title>RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!</news:title>
     </news:news>
   </url>
@@ -41,7 +129,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.337Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.724Z</news:publication_date>
       <news:title>RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!</news:title>
     </news:news>
   </url>
@@ -52,7 +140,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.250Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.645Z</news:publication_date>
       <news:title>मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!</news:title>
     </news:news>
   </url>
@@ -63,7 +151,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.250Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.645Z</news:publication_date>
       <news:title>मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!</news:title>
     </news:news>
   </url>
@@ -74,7 +162,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.209Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.603Z</news:publication_date>
       <news:title>IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!</news:title>
     </news:news>
   </url>
@@ -85,7 +173,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.209Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.603Z</news:publication_date>
       <news:title>IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!</news:title>
     </news:news>
   </url>
@@ -96,7 +184,7 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.164Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.561Z</news:publication_date>
       <news:title>Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!</news:title>
     </news:news>
   </url>
@@ -107,8 +195,140 @@
         <news:name>MoneyCal</news:name>
         <news:language>hi</news:language>
       </news:publication>
-      <news:publication_date>2026-07-21T06:05:35.164Z</news:publication_date>
+      <news:publication_date>2026-07-21T10:19:00.561Z</news:publication_date>
       <news:title>Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/petrol-diesel-prices-drop/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:15:00.000Z</news:publication_date>
+      <news:title>पेट्रोल-डीजल की कीमतों पर बड़ा अपडेट! क्या जल्द सस्ती होगी तेल की कीमतें? जानिए ताजा रेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/petrol-diesel-prices-drop/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:15:00.000Z</news:publication_date>
+      <news:title>पेट्रोल-डीजल की कीमतों पर बड़ा अपडेट! क्या जल्द सस्ती होगी तेल की कीमतें? जानिए ताजा रेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/nps-vatsalya-scheme/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:10:00.000Z</news:publication_date>
+      <news:title>बच्चों के लिए शानदार स्कीम! हर महीने ₹250 बचाकर बनाएं करोड़पति, जानिए NPS Vatsalya के फायदे</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/nps-vatsalya-scheme/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:10:00.000Z</news:publication_date>
+      <news:title>बच्चों के लिए शानदार स्कीम! हर महीने ₹250 बचाकर बनाएं करोड़पति, जानिए NPS Vatsalya के फायदे</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/smam-tractor-subsidy-yojana/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:00:00.000Z</news:publication_date>
+      <news:title>किसानों की हुई मौज! ट्रैक्टर और कृषि यंत्रों पर मिल रही है 80% तक की भारी सब्सिडी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/smam-tractor-subsidy-yojana/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T10:00:00.000Z</news:publication_date>
+      <news:title>किसानों की हुई मौज! ट्रैक्टर और कृषि यंत्रों पर मिल रही है 80% तक की भारी सब्सिडी</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/eighth-cpc-salary-updates/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T09:00:00.000Z</news:publication_date>
+      <news:title>केंद्रीय कर्मचारियों के लिए खुशखबरी! सैलरी और पेंशन पर आया सरकार का बड़ा अपडेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/eighth-cpc-salary-updates/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T09:00:00.000Z</news:publication_date>
+      <news:title>केंद्रीय कर्मचारियों के लिए खुशखबरी! सैलरी और पेंशन पर आया सरकार का बड़ा अपडेट</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/caliber-xtranet-ipo-gmp/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T07:00:00.000Z</news:publication_date>
+      <news:title>Grey Market में गदर मचा रहे हैं ये 2 IPO! दांव लगाने वाले निवेशकों की चमकेगी किस्मत?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/caliber-xtranet-ipo-gmp/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T07:00:00.000Z</news:publication_date>
+      <news:title>Grey Market में गदर मचा रहे हैं ये 2 IPO! दांव लगाने वाले निवेशकों की चमकेगी किस्मत?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/discover/sbi-funds-management-ipo-listing/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T06:30:00.000Z</news:publication_date>
+      <news:title>SBI Funds Management IPO: ₹613 पर लिस्टिंग, क्या निवेशकों को मिला बंपर मुनाफा? पूरी सच्चाई</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://moneycal.in/hi/discover/sbi-funds-management-ipo-listing/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-21T06:30:00.000Z</news:publication_date>
+      <news:title>SBI Funds Management IPO: ₹613 पर लिस्टिंग, क्या निवेशकों को मिला बंपर मुनाफा? पूरी सच्चाई</news:title>
     </news:news>
   </url>
   <url>
@@ -1253,94 +1473,6 @@
       </news:publication>
       <news:publication_date>2026-07-14T10:30:00.000Z</news:publication_date>
       <news:title>NTA Exam Alert: नेशनल टेस्टिंग एजेंसी ने जारी किया नया नोटिफिकेशन, इन छात्रों के लिए जरूरी अपडेट जारी</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/discover/cyclospora-parasite-outbreak-symptoms-prevention/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T09:30:00.000Z</news:publication_date>
-      <news:title>Cyclospora Parasite: अचानक फैला इस खतरनाक परजीवी का संक्रमण! भूलकर भी न करें ये गलतियां, जानें लक्षण और बचाव</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/hi/discover/cyclospora-parasite-outbreak-symptoms-prevention/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T09:30:00.000Z</news:publication_date>
-      <news:title>Cyclospora Parasite: अचानक फैला इस खतरनाक परजीवी का संक्रमण! भूलकर भी न करें ये गलतियां, जानें लक्षण और बचाव</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/discover/sharad-pawar-maharashtra-politics-ncp-meeting/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T08:30:00.000Z</news:publication_date>
-      <news:title>शरद पवार का बड़ा सियासी दांव: महाराष्ट्र की राजनीति में अचानक मची हलचल, क्या बदलने वाला है पूरा गेम?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/hi/discover/sharad-pawar-maharashtra-politics-ncp-meeting/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T08:30:00.000Z</news:publication_date>
-      <news:title>शरद पवार का बड़ा सियासी दांव: महाराष्ट्र की राजनीति में अचानक मची हलचल, क्या बदलने वाला है पूरा गेम?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/discover/iphone-18-release-date-leaks-features-2026/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T07:30:00.000Z</news:publication_date>
-      <news:title>iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/hi/discover/iphone-18-release-date-leaks-features-2026/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T07:30:00.000Z</news:publication_date>
-      <news:title>iPhone 18 Release Date: लॉन्च से पहले ही लीक हुए आईफोन 18 के धांसू फीचर्स, इस महीने देगा दस्तक!</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/discover/8th-pay-commission-hra-calculator-x-y-z-cities/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T06:30:00.000Z</news:publication_date>
-      <news:title>8th Pay Commission Calculator: केंद्रीय कर्मचारियों की लगेगी लॉटरी! नए HRA कैलकुलेटर से जानें कितनी बढ़ेगी आपकी इन-हैंड सैलरी</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://moneycal.in/hi/discover/8th-pay-commission-hra-calculator-x-y-z-cities/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>MoneyCal</news:name>
-        <news:language>hi</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-14T06:30:00.000Z</news:publication_date>
-      <news:title>8th Pay Commission Calculator: केंद्रीय कर्मचारियों की लगेगी लॉटरी! नए HRA कैलकुलेटर से जानें कितनी बढ़ेगी आपकी इन-हैंड सैलरी</news:title>
     </news:news>
   </url>
 </urlset>

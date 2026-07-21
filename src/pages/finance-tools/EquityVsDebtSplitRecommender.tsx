@@ -22,7 +22,7 @@ import {
   TrendingUpIcon, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface AssetAllocation {
   age: number;
@@ -253,7 +253,6 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
         keywords="equity debt allocation, asset allocation, portfolio optimization, investment strategy, risk management"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
         {/* Hero Section */}

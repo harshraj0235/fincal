@@ -22,7 +22,7 @@ import {
   Calendar, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface CashFlow {
   id: string;
@@ -242,7 +242,6 @@ const XIRRCalculator: React.FC = () => {
         keywords="XIRR Calculator, extended internal rate of return, investment performance, cash flow analysis, IRR calculator"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
         {/* Hero Section */}

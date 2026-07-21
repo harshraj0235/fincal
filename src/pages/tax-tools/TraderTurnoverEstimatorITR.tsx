@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, FileText, ArrowRight } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface TurnoverCalculation {
   totalBuyValue: number;
@@ -91,7 +91,6 @@ const TraderTurnoverEstimatorITR: React.FC = () => {
         keywords="trader turnover Calculator, ITR filing, trading turnover, professional trader, tax filing, stock trading tax"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

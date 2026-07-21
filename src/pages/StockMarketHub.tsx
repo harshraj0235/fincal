@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const StockMarketHub: React.FC = () => {
   const featuredModules = [
@@ -60,7 +60,6 @@ const StockMarketHub: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Stock Market Hub - IPOs, Analysis & Learning | MoneyCal"
         description="Your gateway to Indian stock markets. Access IPO trackers, stock market basics, technical analysis guides, and premium calculators."

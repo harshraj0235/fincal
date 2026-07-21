@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { ResponsiveAd } from '../../components/BannerAd';
 import { INDIAN_CITIES } from '../../data/market/marketData';
 import { fetchLiveRates, CityRates } from '../../services/marketApi';
@@ -38,7 +38,6 @@ const MarketRatesHub: React.FC = () => {
             />
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
 
             {/* Premium Hero Section */}
             <div className="bg-gradient-to-br from-amber-500 via-yellow-500 to-amber-600 pt-16 pb-32 relative overflow-hidden">

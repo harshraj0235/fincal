@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, AlertCircle, DollarSign, Clock, TrendingDown } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface ExitLoadResult {
   fundName: string;
@@ -73,7 +73,6 @@ const MutualFundExitLoadChecker: React.FC = () => {
         keywords="mutual fund exit load Calculator, exit charges, fund redemption Calculator, mutual fund fees"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

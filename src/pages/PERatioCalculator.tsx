@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, BarChart3, Info, TrendingUp } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const PERatioCalculator: React.FC = () => {
   const [stockPrice, setStockPrice] = useState('');
@@ -31,7 +31,6 @@ const PERatioCalculator: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="P/E Ratio Calculator - Price to Earnings Ratio Calculator | MoneyCal.in"
         description="Calculate Price-to-Earnings (P/E) ratio for stocks. Free online P/E ratio Calculator with analysis and comparison tools for stock valuation."

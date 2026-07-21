@@ -40,7 +40,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const InvoiceEmailTracker: React.FC = () => {
   return (
@@ -96,7 +96,6 @@ const InvoiceEmailTracker: React.FC = () => {
       </div>
 
       <WhatsAppBanner />
-      <AstroFinanceButton />
     </div>
   );
 };

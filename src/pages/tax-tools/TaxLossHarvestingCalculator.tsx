@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, TrendingDown, TrendingUp, DollarSign, Shield } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface LossHarvestingResult {
   totalLoss: number;
@@ -69,10 +70,26 @@ const TaxLossHarvestingCalculator: React.FC = () => {
       <SEOHelmet
         title="Tax Loss Harvesting Calculator - Optimize Your Tax Strategy | MoneyCal"
         description="Calculate tax benefits from loss harvesting. Learn how to offset capital gains with investment losses and optimize your tax strategy."
-        keywords="tax loss harvesting, capital loss, investment loss, tax optimization, wash sale rules, tax strategy"
+        keywords="tax loss harvesting, capital gains tax, tax savings calculator, offset capital gains, stock market tax india"
+      />
+      <CalculatorSchema 
+        name="Tax Loss Harvesting Calculator"
+        description="Calculate how much tax you can save by offsetting capital gains with capital losses through Tax Loss Harvesting."
+        url="/tax-tools/tax-loss-harvesting"
+        features={['Tax Loss Harvesting Strategy', 'Capital Gains Offset', 'Tax Savings Calculation', 'Portfolio Optimization']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'What is Tax Loss Harvesting?',
+            answer: 'Tax loss harvesting is the strategy of selling off underperforming investments at a loss to offset capital gains realized from selling profitable assets, thereby reducing your overall tax liability.'
+          },
+          {
+            question: 'Can I buy back the same stock after tax loss harvesting?',
+            answer: 'Yes, in India there is no wash-sale rule currently, so you can buy back the same stock the next day and still claim the tax loss.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">

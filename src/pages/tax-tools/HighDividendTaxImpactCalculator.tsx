@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Download, Info, TrendingUp, AlertTriangle, FileText, DollarSign, PieChart, BarChart3, TrendingDown, Percent, Calendar } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface DividendEntry {
   id: string;
@@ -465,7 +465,6 @@ const HighDividendTaxImpactCalculator: React.FC = () => {
             </motion.div>
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
           </motion.div>
         </div>
       </div>

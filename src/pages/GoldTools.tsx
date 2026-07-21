@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import { goldTools, GoldToolType } from '../data/goldTools';
 import ToolArticle from '../components/ToolArticle';
 
@@ -57,7 +57,6 @@ const GoldTools: React.FC = () => {
         ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-amber-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-yellow-100 via-amber-100 to-yellow-200 border border-amber-200 p-8 mb-8">

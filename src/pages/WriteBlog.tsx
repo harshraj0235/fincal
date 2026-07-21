@@ -3,7 +3,7 @@ import SEOHelmet from '../components/SEOHelmet';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 export const WriteBlog: React.FC = () => {
   const navigate = useNavigate();
@@ -18,7 +18,6 @@ export const WriteBlog: React.FC = () => {
         noFollow={true}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen flex flex-col bg-neutral-50">
       <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md shadow mb-2 px-2 py-2">
         <button 

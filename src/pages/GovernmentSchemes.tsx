@@ -30,7 +30,7 @@ import {
 import { loadGovSchemesData } from '../data/lazyGovSchemesData';
 import { teamProfiles } from '../data/teamProfiles';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import SEOHelmet from '../components/SEOHelmet';
 import { ResponsiveAd } from '../components/BannerAd';
 
@@ -297,7 +297,6 @@ export const GovernmentSchemes: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="200+ Government Schemes India 2026 - सरकारी योजनाएं | MoneyCal"
         description="Browse 200+ Government schemes of India 2026. PM Kisan, PM Awas, MUDRA, Stand Up India and more. Eligibility, benefits, application process in Hindi and English."

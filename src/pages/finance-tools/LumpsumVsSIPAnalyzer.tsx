@@ -21,7 +21,7 @@ import {
   ArrowUpDown, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface InvestmentComparison {
   lumpsum: {
@@ -155,7 +155,6 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
         keywords="lumpsum vs SIP, investment comparison, lumpsum investment, SIP Calculator, investment strategy, mutual fund investment, investment analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
         {/* Hero Section */}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, AlertCircle, TrendingUp, TrendingDown, DollarSign, Clock, BarChart3 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface TaxComparison {
   intradayTax: number;
@@ -125,7 +125,6 @@ const IntradayVsDeliveryTaxCalculator: React.FC = () => {
         keywords="intraday vs delivery tax Calculator, trading tax comparison, STCG tax Calculator, stock trading tax, capital gains tax"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

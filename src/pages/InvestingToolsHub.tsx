@@ -19,7 +19,7 @@ import {
   Filter, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const InvestingToolsHub: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Tools');
@@ -165,7 +165,6 @@ const InvestingToolsHub: React.FC = () => {
         keywords="investing tools, portfolio management, SIP Calculator, mutual fund analysis, stock valuation, investment strategy, financial planning tools, Indian investment tools"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gray-50/50">
         {/* Hero Section */}

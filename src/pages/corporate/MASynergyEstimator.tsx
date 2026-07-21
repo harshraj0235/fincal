@@ -3,7 +3,7 @@ import { ArrowLeft, TrendingUp, DollarSign, Download, Link, Building, BarChart3,
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -257,7 +257,6 @@ export const MASynergyEstimator: React.FC = () => {
       />
       
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="mb-8">

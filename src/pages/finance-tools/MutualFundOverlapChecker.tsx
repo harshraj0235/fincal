@@ -11,7 +11,7 @@ import {
   PieChart, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const MutualFundOverlapChecker: React.FC = () => {
   const [input1, setInput1] = useState(10000);
@@ -37,7 +37,6 @@ const MutualFundOverlapChecker: React.FC = () => {
         keywords="financial Calculator, investment analysis, money management"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-blue-600 to-purple-600">

@@ -13,7 +13,7 @@ import {
 } from 'recharts';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import CalculatorSchema from '../../components/CalculatorSchema';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -310,7 +310,6 @@ export const LoanAmortizationGenerator: React.FC = () => {
       />
 
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-emerald-700 to-teal-600 pt-12 pb-24 px-4 sm:px-6 lg:px-8 text-white relative overflow-hidden">

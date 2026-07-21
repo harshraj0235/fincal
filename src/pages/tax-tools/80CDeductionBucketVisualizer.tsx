@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { PieChart, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Target } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface DeductionCategory {
   name: string;
@@ -165,7 +165,6 @@ const DeductionBucketVisualizer: React.FC = () => {
         keywords="80C deduction Calculator, tax saving investments, ELSS Calculator, PPF Calculator, NPS Calculator, 80C bucket visualizer, tax optimization"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

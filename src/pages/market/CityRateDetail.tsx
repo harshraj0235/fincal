@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link as RouterLink, useNavigate } from 'react-router-dom';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { getCityBySlug, getSilverCityBySlug } from '../../data/market/marketData';
 import { fetchLiveRates, fetchHistoricalRates, CityRates, HistoricalRate } from '../../services/marketApi';
 import { PriceChart } from '../../components/market/PriceChart';
@@ -80,7 +80,6 @@ const CityRateDetail: React.FC = () => {
             />
 
             <WhatsAppBanner />
-            <AstroFinanceButton />
 
             {/* Header Section */}
             <div className={`pt-8 pb-16 ${isSilver ? 'bg-blue-600' : 'bg-amber-500'} text-white`}>

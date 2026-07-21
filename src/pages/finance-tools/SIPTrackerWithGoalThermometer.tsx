@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface SIPGoal {
   id: string;
@@ -241,7 +241,6 @@ const SIPTrackerWithGoalThermometer: React.FC = () => {
         keywords="SIP tracker, goal thermometer, investment progress, financial goals, SIP monitoring, investment tracking, goal visualization"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}

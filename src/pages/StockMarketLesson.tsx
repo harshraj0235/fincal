@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const StockMarketLesson: React.FC = () => {
   const { lessonId } = useParams<{ lessonId: string }>();
@@ -211,7 +211,6 @@ const StockMarketLesson: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title={`${lessonData.title} - Stock Market Basics | MoneyCal.in`}
         description={lessonData.description}

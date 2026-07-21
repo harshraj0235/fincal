@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Upload, FileText, Download, IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface Transaction {
   date: string;
@@ -159,7 +159,6 @@ const CSVToTaxSummaryTool: React.FC = () => {
         keywords="CSV to tax summary, trading data converter, capital gains Calculator, tax report generator, STCG LTCG Calculator, investment tax tool"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

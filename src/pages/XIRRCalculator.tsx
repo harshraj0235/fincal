@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Calendar, Info, TrendingUp } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const XIRRCalculator: React.FC = () => {
   const [investments, setInvestments] = useState([{ amount: '', date: '' }]);
@@ -46,7 +46,6 @@ const XIRRCalculator: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="XIRR Calculator - Extended Internal Rate of Return Calculator | MoneyCal.in"
         description="Calculate XIRR (Extended Internal Rate of Return) for irregular investments. Free online XIRR Calculator for SIP, mutual funds, and irregular investment analysis."

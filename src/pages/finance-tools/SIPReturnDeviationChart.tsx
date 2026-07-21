@@ -21,7 +21,7 @@ import {
   Minus, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface SIPData {
   month: string;
@@ -176,7 +176,6 @@ const SIPReturnDeviationChart: React.FC = () => {
         keywords="SIP return deviation, SIP performance analysis, systematic investment plan, SIP volatility, investment tracking, SIP Calculator, mutual fund SIP analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

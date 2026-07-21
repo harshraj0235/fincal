@@ -1,3 +1,13 @@
+import { postOfficeScssScheme } from './post-office-scss-scheme';
+import { incomeTaxNoticeRefund } from './income-tax-notice-refund';
+import { pmAwasYojanaSubsidy } from './pm-awas-yojana-subsidy';
+import { goldRateImportDuty } from './gold-rate-import-duty';
+import { petrolDieselPricesDrop } from './petrol-diesel-prices-drop';
+import { npsVatsalyaScheme } from './nps-vatsalya-scheme';
+import { smamTractorSubsidyYojana } from './smam-tractor-subsidy-yojana';
+import { eighthCpcSalaryUpdates } from './eighth-cpc-salary-updates';
+import { caliberXtranetIpoGmp } from './caliber-xtranet-ipo-gmp';
+import { sbiFundsManagementIpoListing } from './sbi-funds-management-ipo-listing';
 import { odysseyMovieHindiDubbedDownloadTelegram } from './odyssey-movie-hindi-dubbed-download-telegram';
 import { odysseyMovieDownloadFilmyzilla1080pHindi } from './odyssey-movie-download-filmyzilla-1080p-hindi';
 import { howToWatchOdysseyHindiDubbedOnline } from './how-to-watch-odyssey-hindi-dubbed-online';
@@ -1272,6 +1282,16 @@ const _discoverArticles: DiscoverArticle[
         howToWatchOdysseyHindiDubbedOnline,
         odysseyChristopherNolanHindiDubbedOtt,
         odysseyMovie2026HindiDubbedVegamovies,
+        sbiFundsManagementIpoListing,
+        caliberXtranetIpoGmp,
+        eighthCpcSalaryUpdates,
+        smamTractorSubsidyYojana,
+        npsVatsalyaScheme,
+        petrolDieselPricesDrop,
+        goldRateImportDuty,
+        pmAwasYojanaSubsidy,
+        incomeTaxNoticeRefund,
+        postOfficeScssScheme,
         // Add variables here
     ];
 

@@ -16,7 +16,7 @@ import {
 import { loadGovSchemesData } from '../data/lazyGovSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const getCategoryIcon = (category: string) => {
   const normCat = category.toLowerCase();
@@ -81,7 +81,6 @@ const GovernmentSchemeCategoryPage: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title={seoTitle}
         description={seoDescription}

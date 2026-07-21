@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 import { ArrowLeft, AlertTriangle, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
@@ -55,7 +55,6 @@ const GSTPenaltyInterestCalculator: React.FC = () => {
         tags={["gst", "interest", "late fee", "penalty"]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-yellow-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="mb-6">

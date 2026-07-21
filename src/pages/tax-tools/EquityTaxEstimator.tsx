@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Calendar, TrendingUp, DollarSign, Info, AlertCircle, FileText, BarChart3 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface TaxBreakdown {
   stcg: number;
@@ -89,7 +89,6 @@ const EquityTaxEstimator: React.FC = () => {
         keywords="equity tax estimator, assessment year tax Calculator, capital gains tax, STCG LTCG Calculator, tax planning tool"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

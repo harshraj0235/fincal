@@ -14,7 +14,7 @@ import {
   X
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import { ResponsiveAd } from '../components/BannerAd';
 
 const getCategoryIcon = (categoryId: string) => {
@@ -89,7 +89,6 @@ const CategoryCalculators: React.FC = () => {
 
   return (
     <>
-      <AstroFinanceButton />
       <SEOHelmet
         title={`${category.name} - Financial Calculators | MoneyCal.in`}
         description={`Explore all ${category.name.toLowerCase()} calculators. Compare tools, estimate outcomes, and choose the right plan for your needs.`}

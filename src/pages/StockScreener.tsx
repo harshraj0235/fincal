@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Search, Filter, TrendingUp, Info, BarChart3, RefreshCw, Star, TrendingDown, Target, Zap, PieChart, Newspaper, Eye } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import PortfolioTracker from '../components/PortfolioTracker';
 import StockNews from '../components/StockNews';
 import MarketWatchlist from '../components/MarketWatchlist';
@@ -333,7 +333,6 @@ const StockScreener: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Advanced Stock Screener - Real-time Stock Filtering Tool | MoneyCal.in"
         description="Advanced stock screener with real-time data, comprehensive filtering, and detailed analysis. Filter stocks by price, market cap, P/E ratio, dividend yield, and more."

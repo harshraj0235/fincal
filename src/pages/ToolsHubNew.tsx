@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { IndianRupee, TrendingUp, DollarSign, Building, Shield, FileText, Users, Award, Clock, Target } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const ToolsHubNew: React.FC = () => {
   const toolCategories = [
@@ -64,7 +64,6 @@ const ToolsHubNew: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Financial Tools Hub - Comprehensive Financial Planning Tools"
         description="Access our complete suite of financial tools including calculators, insurance planners, investment trackers, and personal finance management tools."

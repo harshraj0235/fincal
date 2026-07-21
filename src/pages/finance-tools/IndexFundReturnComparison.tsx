@@ -22,7 +22,7 @@ import {
   TrendingUpIcon, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface IndexFund {
   id: string;
@@ -326,7 +326,6 @@ const IndexFundReturnComparison: React.FC = () => {
         keywords="index fund comparison, index fund returns, mutual fund comparison, expense ratio comparison, tracking error analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
         {/* Hero Section */}

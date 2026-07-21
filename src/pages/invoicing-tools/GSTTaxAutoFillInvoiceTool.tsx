@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const GSTTaxAutoFillInvoiceTool: React.FC = () => {
   return (
@@ -81,7 +81,6 @@ const GSTTaxAutoFillInvoiceTool: React.FC = () => {
       </div>
 
       <WhatsAppBanner />
-      <AstroFinanceButton />
     </div>
   );
 };

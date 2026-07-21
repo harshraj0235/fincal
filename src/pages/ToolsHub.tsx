@@ -26,7 +26,7 @@ import {
   Rocket, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import { BannerAd, ResponsiveAd } from '../components/BannerAd';
 
 interface Tool {
@@ -419,7 +419,6 @@ const ToolsHub: React.FC = () => {
         tags={["tools hub", "financial tools", "calculators", "india finance tools"]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gray-50/50">
         {/* Hero Section */}

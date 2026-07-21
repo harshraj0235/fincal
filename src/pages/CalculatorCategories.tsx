@@ -12,7 +12,7 @@ import {
   X
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 import { ResponsiveAd } from '../components/BannerAd';
 
 const getCategoryIcon = (categoryId: string) => {
@@ -70,7 +70,6 @@ const CalculatorCategories: React.FC = () => {
 
   return (
     <>
-      <AstroFinanceButton />
       <SEOHelmet
         title="Finance Calculators Hub - Free Financial Tools | MoneyCal.in"
         description="Explore 100+ free financial calculators for loans, investments, taxes, retirement, GST, and banking in India. Compare tools and plan smarter decisions."

@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { IndianRupee, Info, AlertCircle, TrendingDown, Calendar, DollarSign } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface LossResult {
   currentYearLoss: number;
@@ -65,8 +66,28 @@ const LossCarryForwardEstimator: React.FC = () => {
         description="Calculate and track capital loss carry forward. Understand how to carry forward STCG and LTCG losses for tax optimization."
         keywords="loss carry forward Calculator, capital loss carry forward, STCG loss, LTCG loss, tax loss optimization"
       />
+      <CalculatorSchema 
+        name="Loss Carry Forward Estimator"
+        description="Calculate and track capital loss carry forward. Understand how to carry forward STCG and LTCG losses for tax optimization."
+        url="/tax-tools/loss-carry-forward"
+        features={['STCG Loss Tracking', 'LTCG Loss Tracking', 'Carry Forward Analysis', 'Tax Saving Estimator']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'How long can capital losses be carried forward?',
+            answer: 'Both Short Term and Long Term Capital Losses can be carried forward for 8 assessment years.'
+          },
+          {
+            question: 'Can STCG loss be set off against LTCG?',
+            answer: 'Yes, Short Term Capital Loss can be set off against both STCG and LTCG.'
+          },
+          {
+            question: 'Can LTCG loss be set off against STCG?',
+            answer: 'No, Long Term Capital Loss can only be set off against Long Term Capital Gains.'
+          }
+        ]}
+      />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

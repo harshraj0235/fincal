@@ -5,7 +5,7 @@ import { fetchIpoData } from '../../services/ipoApi';
 import { IpoDetails, IpoResponse } from '../../types/ipo';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const IpoTargetPage: React.FC = () => {
   const { type } = useParams<{ type: string }>();
@@ -47,7 +47,6 @@ const IpoTargetPage: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title={seoTitle}
         description={seoDescription}

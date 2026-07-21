@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { BarChart2, TrendingUp, DollarSign, Briefcase, Globe2 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const tools = [
   {
@@ -67,7 +67,6 @@ const ExcelToolHub: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="Excel Tool Hub - Personal Finance & Budgeting | Moneycal.in"
         description="Explore interactive, export-capable Excel tools for budgeting, debt payoff, investments, net worth, and vacation planning. SEO-optimized, device-friendly, and collaborative."

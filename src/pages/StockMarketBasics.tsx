@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 const StockMarketBasics: React.FC = () => {
   const navigate = useNavigate();
@@ -63,7 +63,6 @@ const StockMarketBasics: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title="स्टॉक मार्केट बेसिक्स - शेयर मार्केट की बुनियादी जानकारी | MoneyCal.in"
         description="स्टॉक मार्केट की बुनियादी जानकारी सीखें। शेयर मार्केट क्या है, आईपीओ, डीमैट अकाउंट और बुनियादी शब्दावली। पूरी तरह से हिंदी में।"

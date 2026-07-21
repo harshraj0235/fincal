@@ -22,7 +22,7 @@ import {
   TrendingUpIcon, IndianRupee } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 interface InflationAnalysis {
   monthlySIP: number;
@@ -183,7 +183,6 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
         keywords="SIP inflation Calculator, real returns, inflation adjusted returns, purchasing power, SIP investment analysis"
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
         {/* Hero Section */}

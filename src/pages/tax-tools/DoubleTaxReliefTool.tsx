@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { IndianRupee, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Globe, ArrowRight } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+import CalculatorSchema from '../../components/CalculatorSchema';
+
 
 interface DoubleTaxCalculation {
   foreignIncome: number;
@@ -83,10 +84,26 @@ const DoubleTaxReliefTool: React.FC = () => {
       <SEOHelmet
         title="Double Tax Relief Tool - Calculate International Tax Relief | MoneyCal"
         description="Calculate relief from double taxation for international income. Determine your tax liability and available relief with our comprehensive double tax relief calculator."
-        keywords="double tax relief Calculator, international tax relief, foreign income tax, DTAA Calculator, tax treaty relief, international taxation"
+        keywords="DTAA Calculator India, Double Tax Relief Section 90, NRI Tax Calculator, Foreign Income Tax India"
+      />
+      <CalculatorSchema 
+        name="Double Tax Relief Tool (DTAA)"
+        description="Calculate the tax relief available under Section 90/90A or Section 91 for foreign income taxed in another country."
+        url="/tax-tools/double-tax-relief"
+        features={['DTAA Relief Calculation', 'Foreign Tax Credit', 'Section 90/90A/91 Analysis']}
+        category="FinanceApplication"
+        faqData={[
+          {
+            question: 'What is Double Taxation Avoidance Agreement (DTAA)?',
+            answer: 'DTAA is a tax treaty between India and another country that ensures taxpayers do not pay tax twice on the same income earned abroad.'
+          },
+          {
+            question: 'How is relief calculated under Section 90?',
+            answer: 'Relief is generally calculated at the Indian tax rate or foreign tax rate, whichever is lower, on the doubly taxed income.'
+          }
+        ]}
       />
       <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

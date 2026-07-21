@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 export const InsuranceTools: React.FC = () => {
   const navigate = useNavigate();
@@ -149,7 +149,6 @@ export const InsuranceTools: React.FC = () => {
       />
       
       <WhatsAppBanner />
-      <AstroFinanceButton />
       <div className="min-h-screen bg-gray-50/50">
         {/* Hero Section */}
         <section className="bg-white border-b border-gray-100 pt-12 pb-16 relative overflow-hidden">
