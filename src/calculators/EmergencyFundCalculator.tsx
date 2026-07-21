@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Shield, AlertTriangle } from 'lucide-react';
+import React from 'react';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import { CalculatorSchema } from '../components/CalculatorSchema';
 import SEOHelmet from '../components/SEOHelmet';
+import { useOmniEngine } from '../engine/useOmniEngine';
+import { OmniWidget } from '../engine/components/OmniWidget';
+import { emergencyFundConfig } from '../engine/configs/emergencyFundConfig';
 
 export const EmergencyFundCalculator: React.FC = () => {
-  const [monthlyExpenses, setMonthlyExpenses] = useState<number>(50000);
-  const [monthsOfCoverage, setMonthsOfCoverage] = useState<number>(6);
-  const [emergencyFund, setEmergencyFund] = useState<number>(0);
-  
-  useEffect(() => {
-    setEmergencyFund(monthlyExpenses * monthsOfCoverage);
-  }, [monthlyExpenses, monthsOfCoverage]);
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(amount);
-  };
+  const engine = useOmniEngine(emergencyFundConfig);
 
   const contentData = {
     title: "Emergency Fund Calculator",
@@ -54,98 +46,9 @@ export const EmergencyFundCalculator: React.FC = () => {
     <div className="max-w-5xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center text-gray-900 mb-4">Emergency Fund Calculator</h1>
       <p className="text-lg text-center text-gray-700 mb-8">Calculate emergency corpus for financial security</p>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    <div className="p-6">
-      <div className="grid gap-6">
-        <div className="space-y-4">
-          <label className="block">
-            <span className="text-neutral-700 font-medium">Monthly Expenses</span>
-            <div className="mt-1 relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500">₹</span>
-              <input
-                type="number"
-                value={monthlyExpenses}
-                onChange={(e) => setMonthlyExpenses(Number(e.target.value))}
-                className="block w-full pl-8 pr-3 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary"
-                placeholder="Enter your monthly expenses"
-              />
-            </div>
-          </label>
-
-          <label className="block">
-            <span className="text-neutral-700 font-medium">Months of Coverage</span>
-            <div className="mt-1">
-              <input
-                type="range"
-                min="3"
-                max="12"
-                step="1"
-                value={monthsOfCoverage}
-                onChange={(e) => setMonthsOfCoverage(Number(e.target.value))}
-                className="w-full"
-              />
-              <div className="flex justify-between text-sm text-neutral-600">
-                <span>3 months</span>
-                <span>{monthsOfCoverage} months</span>
-                <span>12 months</span>
-              </div>
-            </div>
-          </label>
-        </div>
-      </div>
       
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-gray-900 flex items-center">
-          <Shield className="w-5 h-5 mr-2 text-green-600" />
-          Your Emergency Fund
-        </h2>
-        
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border-2 border-green-200">
-          <div className="space-y-4">
-            <div className="bg-white rounded-lg p-5 shadow-sm">
-              <p className="text-sm text-gray-600 mb-1">Emergency Fund Required</p>
-              <p className="text-4xl font-bold text-green-600">{formatCurrency(emergencyFund)}</p>
-              <p className="text-xs text-gray-500 mt-1">{monthsOfCoverage} months of expenses covered</p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-5 shadow-sm">
-              <p className="text-sm text-gray-600 mb-1">Monthly Expenses</p>
-              <p className="text-3xl font-bold text-gray-700">{formatCurrency(monthlyExpenses)}</p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-5 shadow-sm">
-              <p className="text-sm text-gray-600 mb-1">Coverage Period</p>
-              <p className="text-2xl font-bold text-blue-600">{monthsOfCoverage} months</p>
-            </div>
-        </div>
-
-          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded-lg flex items-start">
-            <AlertTriangle className="w-5 h-5 text-yellow-700 mt-0.5 mr-2 flex-shrink-0" />
-            <div className="text-sm text-yellow-800">
-              <p className="font-semibold mb-1">Where to Keep Emergency Fund:</p>
-              <p>• {formatCurrency(emergencyFund * 0.2)} in Savings Account (instant access)</p>
-              <p>• {formatCurrency(emergencyFund * 0.6)} in Liquid Mutual Funds (1-day access, 5-6% return)</p>
-              <p>• {formatCurrency(emergencyFund * 0.2)} in Ultra-Short Debt Funds (3-day access, 6-7% return)</p>
-          </div>
-          </div>
-        </div>
-
-        <div className="bg-blue-50 p-4 rounded-lg">
-          <h4 className="font-medium text-blue-900 mb-2 flex items-center">
-            <Shield className="w-4 h-4 mr-2" />
-            Why Emergency Fund is Critical
-          </h4>
-          <ul className="list-disc list-inside space-y-2 text-sm text-blue-800">
-            <li>Prevents taking expensive loans (15-24%) during crisis</li>
-            <li>Avoids selling long-term investments at loss</li>
-            <li>Covers job loss for 6-12 months while finding new role</li>
-            <li>Handles medical emergencies without financial stress</li>
-            <li>Protects credit score (no payment defaults)</li>
-            <li>Provides peace of mind and financial independence</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      <div className="mb-8">
+        <OmniWidget config={emergencyFundConfig} engine={engine} />
       </div>
       
       {/* Comprehensive E-E-A-T Content */}
