@@ -1,6 +1,6 @@
 import React from 'react';
-const useNavigate = React.lazy(() => import('react-router-dom').then(m => ({ default: m.useNavigate })));
-const getCalculatorById = React.lazy(() => import('../data/calculatorData').then(m => ({ default: m.getCalculatorById })));
+import { useNavigate } from 'react-router-dom';
+import { getCalculatorById } from '../data/calculatorData';
 import SEOHelmet from '../components/SEOHelmet';
 const BannerAd = React.lazy(() => import('../components/BannerAd').then(m => ({ default: m.BannerAd })));
 const PAASection = React.lazy(() => import('../components/PAASection').then(m => ({ default: m.PAASection })));
@@ -34,7 +34,6 @@ const NscCalculator = React.lazy(() => import('../calculators/NscCalculator').th
 const ScssCalculator = React.lazy(() => import('../calculators/ScssCalculator').then(m => ({ default: m.ScssCalculator })));
 const PostOfficeMisCalculator = React.lazy(() => import('../calculators/PostOfficeMisCalculator').then(m => ({ default: m.PostOfficeMisCalculator })));
 const ApyCalculator = React.lazy(() => import('../calculators/ApyCalculator').then(m => ({ default: m.ApyCalculator })));
-const PostOfficeCalculator = React.lazy(() => import('../calculators/PostOfficeCalculator').then(m => ({ default: m.PostOfficeCalculator })));
 const GoldInvestmentCalculator = React.lazy(() => import('../calculators/GoldInvestmentCalculator').then(m => ({ default: m.GoldInvestmentCalculator })));
 const CompoundInterestCalculator = React.lazy(() => import('../calculators/CompoundInterestCalculator').then(m => ({ default: m.CompoundInterestCalculator })));
 const SimpleInterestCalculator = React.lazy(() => import('../calculators/SimpleInterestCalculator').then(m => ({ default: m.SimpleInterestCalculator })));
