@@ -52,20 +52,20 @@ export const CarLoanCalculator: React.FC = () => {
   const [activePreset, setActivePreset] = useState(-1);
 
   // Derive values from engine state
-  const carValue = Number(engine.state.variables.carValue?.value) || 1500000;
-  const downPayment = Number(engine.state.variables.downPayment?.value) || 20;
-  const interestRate = Number(engine.state.variables.rate?.value) || 9.50;
-  const loanTenure = Number(engine.state.variables.tenure?.value) || 60; // default in months from engine config base unit if months
-  const tenureInMonths = engine.state.variables.tenure?.unit === 'years'
-    ? (Number(engine.state.variables.tenure?.value) * 12) || 60
-    : Number(engine.state.variables.tenure?.value) || 60;
-  const tenureType = engine.state.variables.tenure?.unit === 'years' ? 'years' : 'months';
+  const carValue = Number(engine.state.carValue?.value) || 1500000;
+  const downPayment = Number(engine.state.downPayment?.value) || 20;
+  const interestRate = Number(engine.state.rate?.value) || 9.50;
+  const loanTenure = Number(engine.state.tenure?.value) || 60; // default in months from engine config base unit if months
+  const tenureInMonths = engine.state.tenure?.unit === 'years'
+    ? (Number(engine.state.tenure?.value) * 12) || 60
+    : Number(engine.state.tenure?.value) || 60;
+  const tenureType = engine.state.tenure?.unit === 'years' ? 'years' : 'months';
 
   const loanAmount = Math.round(carValue * (1 - downPayment / 100));
   const dpAmount = carValue - loanAmount;
   const ltv = ((loanAmount / carValue) * 100).toFixed(1);
 
-  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
+  const emi = Number(engine.state.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
   const totalPayment = emi * tenureInMonths;
   const totalInterest = totalPayment - loanAmount;
   const breakup = useMemo(() => calculateLoanBreakup(loanAmount, interestRate, tenureInMonths), [loanAmount, interestRate, tenureInMonths]);

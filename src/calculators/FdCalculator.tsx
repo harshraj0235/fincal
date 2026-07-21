@@ -22,6 +22,8 @@ type FdSEOProps = {
   url?: string;
   faqData?: any;
   defaultPreset?: any;
+  schemaUrl?: string;
+  variantName?: string;
 };
 
 const FAQ_DATA = [

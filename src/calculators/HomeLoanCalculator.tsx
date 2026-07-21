@@ -54,23 +54,23 @@ export const HomeLoanCalculator: React.FC = () => {
   const [showFullAmort, setShowFullAmort] = useState(false);
 
   // Derived values from engine
-  const propertyValue = Number(engine.state.variables.propertyValue?.value) || 6000000;
-  const downPayment = Number(engine.state.variables.downPayment?.value) || 20;
-  const interestRate = Number(engine.state.variables.rate?.value) || 8.75;
-  const loanTenure = Number(engine.state.variables.tenure?.value) || 240;
-  const tenureInMonths = engine.state.variables.tenure?.unit === 'years'
-    ? (Number(engine.state.variables.tenure?.value) * 12) || 240
-    : Number(engine.state.variables.tenure?.value) || 240;
-  const tenureType = engine.state.variables.tenure?.unit === 'years' ? 'years' : 'months';
+  const propertyValue = Number(engine.state.propertyValue?.value) || 6000000;
+  const downPayment = Number(engine.state.downPayment?.value) || 20;
+  const interestRate = Number(engine.state.rate?.value) || 8.75;
+  const loanTenure = Number(engine.state.tenure?.value) || 240;
+  const tenureInMonths = engine.state.tenure?.unit === 'years'
+    ? (Number(engine.state.tenure?.value) * 12) || 240
+    : Number(engine.state.tenure?.value) || 240;
+  const tenureType = engine.state.tenure?.unit === 'years' ? 'years' : 'months';
   
-  const monthlyPrepayment = Number(engine.state.variables.monthlyPrepayment?.value) || 0;
-  const taxSlab = Number(engine.state.variables.taxSlab?.value) || 0.30;
+  const monthlyPrepayment = Number(engine.state.monthlyPrepayment?.value) || 0;
+  const taxSlab = Number(engine.state.taxSlab?.value) || 0.30;
 
   const loanAmount = Math.round(propertyValue * (1 - downPayment / 100));
   const ltv = ((loanAmount / propertyValue) * 100).toFixed(1);
 
   // Calculations
-  const emi = Number(engine.state.variables.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
+  const emi = Number(engine.state.emi?.value) || calculateEMI(loanAmount, interestRate, tenureInMonths);
   const totalPayment = emi * tenureInMonths;
   const totalInterest = totalPayment - loanAmount;
 
