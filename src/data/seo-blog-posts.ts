@@ -607,7 +607,7 @@ export const seoBlogPosts: BlogPost[] = [
     categories: ['Cryptocurrency', 'Bitcoin', 'Ethereum', 'DeFi', 'Blockchain'],
     keywords: ['cryptocurrency india', 'bitcoin investment', 'ethereum trading', 'altcoin strategy', 'defi investment', 'nft investment', 'crypto trading', 'blockchain technology'],
     date: '2025-01-11',
-    lastModified: '2026-07-13',
+    lastModified: '2026-07-21',
     coverImage: '/images/blogs/cryptocurrency-guide-2025.jpg',
     content: [
       { type: 'heading', content: 'Cryptocurrency Investment Guide India 2025: Complete Strategy' },
