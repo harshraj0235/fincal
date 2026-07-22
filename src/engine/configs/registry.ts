@@ -12,6 +12,10 @@ import { npsConfig } from './npsConfig';
 import { apyConfig } from './apyConfig';
 import { bikeLoanConfig } from './bikeLoanConfig';
 import { compoundInterestConfig } from './compoundInterestConfig';
+<<<<<<< HEAD
+=======
+import { emergencyFundConfig } from './emergencyFundConfig';
+>>>>>>> 9cef9aafeaf3b533cd7ab632501dd5dec1b00f66
 
 // A central registry mapping calculator IDs to their configurations.
 export const omniRegistry: Record<string, CalculatorConfig> = {
@@ -28,6 +32,10 @@ export const omniRegistry: Record<string, CalculatorConfig> = {
   'apy-calculator': apyConfig,
   'bike-loan-calculator': bikeLoanConfig,
   'compound-interest-calculator': compoundInterestConfig,
+<<<<<<< HEAD
+=======
+  'emergency-fund-calculator': emergencyFundConfig,
+>>>>>>> 9cef9aafeaf3b533cd7ab632501dd5dec1b00f66
   // Add more migrated configs here...
 };
 

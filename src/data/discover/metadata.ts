@@ -1,13 +1,13 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
-        "id": "jio-financial-services-profit-growth",
-        "slug": "jio-financial-services-profit-growth",
-        "title": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, जानें क्या करें",
-        "snippet": "जियो फाइनेंशियल सर्विसेज का मुनाफा 156% बढ़ा, अब निवेशकों की नजरें IPO पर हैं।",
-        "coverImage": "/images/discover/jio-financial-services.png",
+        "id": "odyssey-movie-2026-hindi-dubbed-vegamovies",
+        "slug": "odyssey-movie-2026-hindi-dubbed-vegamovies",
+        "title": "Vegamovies 2026: how to download the odyssey movie in hindi dubbed? बड़ी खबर",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-movie-2026-hindi-dubbed-vegamovies.png",
         "author": "MoneyCal Team",
-        "date": "2026-07-16T18:39:52.263Z"
+        "date": "2026-07-18T12:00:00+05:30"
     },
     {
         "id": "jio-financial-services-profit-growth",
