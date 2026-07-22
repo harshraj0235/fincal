@@ -1,39 +1,64 @@
-import { DiscoverArticle } from '../../types/discover';
+import { DiscoverArticle } from './types';
 
 export const avengersDoomsdayMarvel: DiscoverArticle = {
-  id: "avengers-doomsday-marvel-villain-robert-downey",
-  title: "Avengers Doomsday में होने जा रही है इस खतरनाक विलेन की एंट्री! मार्वल फैंस के उड़े होश",
-  slug: "avengers-doomsday-marvel-villain-robert-downey",
-  excerpt: "MCU की सबसे बड़ी फिल्म Avengers: Doomsday में आयरन मैन फेम Robert Downey Jr. एक नए और खूंखार अवतार (Doctor Doom) में वापसी कर रहे हैं। जानिए पूरी डिटेल।",
-  content: `
-    <p>मार्वल सिनेमैटिक यूनिवर्स (MCU) के फैंस के लिए यह साल किसी रोलरकोस्टर से कम नहीं रहा है। हाल ही में सैन डिएगो कॉमिक-कॉन (San Diego Comic-Con) में मार्वल स्टूडियोज ने एक ऐसा ऐलान किया जिसने इंटरनेट को हिला कर रख दिया। अगली बड़ी एवेंजर्स फिल्म का नाम अब 'कैंग डायनेस्टी' से बदलकर <strong>Avengers: Doomsday</strong> कर दिया गया है। लेकिन सबसे बड़ा ट्विस्ट फिल्म का नाम नहीं, बल्कि इसका मुख्य विलेन है!</p>
-    
-    <h2>आयरन मैन की विलेन के रूप में वापसी!</h2>
-    <p>जी हां, आपने बिल्कुल सही सुना। जिसने पूरी दुनिया को थानोस (Thanos) से बचाया था, वही अब दुनिया के लिए सबसे बड़ा खतरा बनने जा रहा है। <strong>Robert Downey Jr. (रॉबर्ट डाउनी जूनियर)</strong>, जिन्हें पूरी दुनिया 'टोनी स्टार्क' (Iron Man) के रूप में पूजती है, अब एमसीयू में <strong>डॉक्टर डूम (Doctor Doom)</strong> यानी विक्टर वॉन डूम का किरदार निभाएंगे।</p>
-    <p>स्टेज पर जब RDJ ने ग्रीन सूट और सिल्वर मास्क उतार कर अपना चेहरा दिखाया, तो हॉल में मौजूद हजारों फैंस खुशी से चीख पड़े। मार्वल की इस मास्टरस्ट्रोक ने 'एवेंजर्स: डूम्सडे' को इस दशक की सबसे बहुप्रतीक्षित फिल्म बना दिया है।</p>
-
-    <h2>कौन है डॉक्टर डूम? (Who is Doctor Doom?)</h2>
-    <p>जो लोग कॉमिक्स नहीं पढ़ते, उनके लिए यह जानना जरूरी है कि डॉक्टर डूम मार्वल कॉमिक्स के सबसे खतरनाक और बुद्धिमान विलेन्स में से एक है।</p>
-    <ul>
-      <li><strong>फैनटास्टिक फोर का दुश्मन:</strong> वह मुख्य रूप से Fantastic Four का सबसे बड़ा दुश्मन है, लेकिन उसकी ताकत के आगे एवेंजर्स भी पानी भरते हैं।</li>
+    id: 'avengers-doomsday-marvel-villain-robert-downey',
+    slug: 'avengers-doomsday-marvel-villain-robert-downey',
+    title: 'Avengers Doomsday में होने जा रही है इस खतरनाक विलेन की एंट्री! मार्वल फैंस के उड़े होश',
+    snippet: 'MCU की सबसे बड़ी फिल्म Avengers: Doomsday में आयरन मैन फेम Robert Downey Jr. एक नए और खूंखार अवतार (Doctor Doom) में वापसी कर रहे हैं। जानिए पूरी डिटेल।',
+    coverImage: '/images/discover/avengers-doomsday-poster-easter-eggs.png',
+    author: 'MoneyCal Editor',
+    date: '2026-07-22T06:10:19.198Z',
+    category: 'Entertainment',
+    sections: [
+        {
+            type: 'p',
+            content: `मार्वल सिनेमैटिक यूनिवर्स (MCU) के फैंस के लिए यह साल किसी रोलरकोस्टर से कम नहीं रहा है। हाल ही में सैन डिएगो कॉमिक-कॉन (San Diego Comic-Con) में मार्वल स्टूडियोज ने एक ऐसा ऐलान किया जिसने इंटरनेट को हिला कर रख दिया। अगली बड़ी एवेंजर्स फिल्म का नाम अब 'कैंग डायनेस्टी' से बदलकर <strong>Avengers: Doomsday</strong> कर दिया गया है। लेकिन सबसे बड़ा ट्विस्ट फिल्म का नाम नहीं, बल्कि इसका मुख्य विलेन है!`
+        },
+        {
+            type: 'h2',
+            content: `आयरन मैन की विलेन के रूप में वापसी!`
+        },
+        {
+            type: 'p',
+            content: `जी हां, आपने बिल्कुल सही सुना। जिसने पूरी दुनिया को थानोस (Thanos) से बचाया था, वही अब दुनिया के लिए सबसे बड़ा खतरा बनने जा रहा है। <strong>Robert Downey Jr. (रॉबर्ट डाउनी जूनियर)</strong>, जिन्हें पूरी दुनिया 'टोनी स्टार्क' (Iron Man) के रूप में पूजती है, अब एमसीयू में <strong>डॉक्टर डूम (Doctor Doom)</strong> यानी विक्टर वॉन डूम का किरदार निभाएंगे।`
+        },
+        {
+            type: 'p',
+            content: `स्टेज पर जब RDJ ने ग्रीन सूट और सिल्वर मास्क उतार कर अपना चेहरा दिखाया, तो हॉल में मौजूद हजारों फैंस खुशी से चीख पड़े। मार्वल की इस मास्टरस्ट्रोक ने 'एवेंजर्स: डूम्सडे' को इस दशक की सबसे बहुप्रतीक्षित फिल्म बना दिया है।`
+        },
+        {
+            type: 'h2',
+            content: `कौन है डॉक्टर डूम? (Who is Doctor Doom?)`
+        },
+        {
+            type: 'p',
+            content: `जो लोग कॉमिक्स नहीं पढ़ते, उनके लिए यह जानना जरूरी है कि डॉक्टर डूम मार्वल कॉमिक्स के सबसे खतरनाक और बुद्धिमान विलेन्स में से एक है।`
+        },
+        {
+            type: 'ul',
+            content: `<li><strong>फैनटास्टिक फोर का दुश्मन:</strong> वह मुख्य रूप से Fantastic Four का सबसे बड़ा दुश्मन है, लेकिन उसकी ताकत के आगे एवेंजर्स भी पानी भरते हैं।</li>
       <li><strong>जादू और विज्ञान का कॉम्बो:</strong> डॉक्टर डूम के पास न केवल गजब की साइंटिफिक टेक्नोलॉजी है, बल्कि वह रहस्यमयी जादू (Mystic Arts) का भी मास्टर है।</li>
-      <li><strong>मल्टीवर्स का खतरा:</strong> चूंकि हम अभी मल्टीवर्स सागा (Multiverse Saga) में हैं, यह माना जा रहा है कि यह डॉक्टर डूम किसी दूसरे ब्रह्मांड से आएगा।</li>
-    </ul>
-
-    <h2>रिलीज डेट और क्या है आगे का प्लान?</h2>
-    <p><strong>Avengers: Doomsday</strong> के मई 2026 में सिनेमाघरों में दस्तक देने की उम्मीद है। इस फिल्म का निर्देशन रूसो ब्रदर्स (Russo Brothers) करेंगे, जिन्होंने 'इन्फिनिटी वॉर' और 'एंडगेम' जैसी ब्लॉकबस्टर फिल्में बनाई थीं। इसके ठीक एक साल बाद 'Avengers: Secret Wars' रिलीज होगी।</p>
-    <p>सिनेमा के इस जबरदस्त रोमांच के साथ-साथ अपनी जिंदगी को भी सुरक्षित बनाना न भूलें। भविष्य की किसी भी अनहोनी (Doomsday) से बचने के लिए सही इंश्योरेंस और प्लानिंग जरूरी है। आप हमारे <a href="/term-insurance-calculator">Term Insurance Calculator</a> और <a href="/calculators">Financial Tools</a> का इस्तेमाल करके अपने परिवार का भविष्य आज ही सुरक्षित कर सकते हैं।</p>
-
-    <h2>निष्कर्ष</h2>
-    <p>मार्वल ने रॉबर्ट डाउनी जूनियर को वापस लाकर एक बड़ा जुआ खेला है। क्या आयरन मैन के रूप में फैंस के दिलों में बसने वाले RDJ एक विलेन के रूप में वही खौफ पैदा कर पाएंगे? यह देखना दिलचस्प होगा। फिलहाल, Avengers Doomsday ने मार्वल के रूठे हुए फैंस को एक बार फिर से स्क्रीन की ओर खींच लिया है।</p>
-  `,
-  author: "MoneyCal Editor",
-  publishedAt: new Date().toISOString(),
-  readTime: "4 min read",
-  category: "Entertainment",
-  tags: ["Avengers Doomsday", "Marvel", "Robert Downey Jr", "Doctor Doom", "Hollywood"],
-  imageUrl: "/images/discover/avengers-doomsday-poster-easter-eggs.png",
-  seoTitle: "Avengers Doomsday: Robert Downey Jr Returns as Doctor Doom",
-  seoDescription: "Marvel shocks fans at Comic-Con! Robert Downey Jr returns to the MCU not as Iron Man, but as the deadly villain Doctor Doom in Avengers: Doomsday.",
-  schemaType: "NewsArticle"
+      <li><strong>मल्टीवर्स का खतरा:</strong> चूंकि हम अभी मल्टीवर्स सागा (Multiverse Saga) में हैं, यह माना जा रहा है कि यह डॉक्टर डूम किसी दूसरे ब्रह्मांड से आएगा।</li>`
+        },
+        {
+            type: 'h2',
+            content: `रिलीज डेट और क्या है आगे का प्लान?`
+        },
+        {
+            type: 'p',
+            content: `<strong>Avengers: Doomsday</strong> के मई 2026 में सिनेमाघरों में दस्तक देने की उम्मीद है। इस फिल्म का निर्देशन रूसो ब्रदर्स (Russo Brothers) करेंगे, जिन्होंने 'इन्फिनिटी वॉर' और 'एंडगेम' जैसी ब्लॉकबस्टर फिल्में बनाई थीं। इसके ठीक एक साल बाद 'Avengers: Secret Wars' रिलीज होगी।`
+        },
+        {
+            type: 'p',
+            content: `सिनेमा के इस जबरदस्त रोमांच के साथ-साथ अपनी जिंदगी को भी सुरक्षित बनाना न भूलें। भविष्य की किसी भी अनहोनी (Doomsday) से बचने के लिए सही इंश्योरेंस और प्लानिंग जरूरी है। आप हमारे <a href="/term-insurance-calculator">Term Insurance Calculator</a> और <a href="/calculators">Financial Tools</a> का इस्तेमाल करके अपने परिवार का भविष्य आज ही सुरक्षित कर सकते हैं।`
+        },
+        {
+            type: 'h2',
+            content: `निष्कर्ष`
+        },
+        {
+            type: 'p',
+            content: `मार्वल ने रॉबर्ट डाउनी जूनियर को वापस लाकर एक बड़ा जुआ खेला है। क्या आयरन मैन के रूप में फैंस के दिलों में बसने वाले RDJ एक विलेन के रूप में वही खौफ पैदा कर पाएंगे? यह देखना दिलचस्प होगा। फिलहाल, Avengers Doomsday ने मार्वल के रूठे हुए फैंस को एक बार फिर से स्क्रीन की ओर खींच लिया है।`
+        }
+    ]
 };
