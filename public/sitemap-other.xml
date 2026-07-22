@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<<<<<<< HEAD
-<!-- MoneyCal OTHER - 1916 URLs - 2026-07-21 -->
-=======
 <!-- MoneyCal OTHER - 1916 URLs - 2026-07-22 -->
->>>>>>> 9cef9aafeaf3b533cd7ab632501dd5dec1b00f66
   <url>
     <loc>https://moneycal.in</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in" />
@@ -15086,24 +15082,6 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/omni-test/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/omni-test/" />
     <lastmod>2026-07-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://moneycal.in/omni-test/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/omni-test/" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/omni-test/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/omni-test/" />
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://moneycal.in/hi/omni-test/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://moneycal.in/omni-test/" />
-    <xhtml:link rel="alternate" hreflang="hi" href="https://moneycal.in/hi/omni-test/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moneycal.in/omni-test/" />
-    <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
