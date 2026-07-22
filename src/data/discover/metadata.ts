@@ -554,6 +554,96 @@ export const discoverMetadata = [
         "author": "MoneyCal Team"
     },
     {
+        "id": "ruturaj-gaikwad-sri-lanka-captaincy",
+        "slug": "ruturaj-gaikwad-sri-lanka-captaincy",
+        "title": "Ruturaj Gaikwad ने रचा इतिहास! श्रीलंका सीरीज से पहले कप्तान ने खेल दी ऐसी तूफानी पारी?",
+        "snippet": "Team India के युवा स्टार Ruturaj Gaikwad का बल्ला श्रीलंका दौरे से ठीक पहले आग उगल रहा है। उनकी तूफानी बल्लेबाजी और कप्तानी के दावों पर देखिए पूरी रिपोर्ट।",
+        "coverImage": "/images/discover/ruturaj-gaikwad-sri-lanka.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.208Z"
+    },
+    {
+        "id": "iphone-18-pro-leak-features-price",
+        "slug": "iphone-18-pro-leak-features-price",
+        "title": "iPhone 18 Pro का पहला लुक लीक! Apple इस बार ला रहा है ऐसा फीचर जो आपने सोचा भी न होगा?",
+        "snippet": "Apple के अपकमिंग iPhone 18 Pro के फीचर्स और डिजाइन इंटरनेट पर लीक हो गए हैं। नया कैमरा और AI फीचर्स भारतीय टेक लवर्स के होश उड़ाने वाले हैं।",
+        "coverImage": "/images/discover/iphone-18-pro-leak-cover.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.206Z"
+    },
+    {
+        "id": "akshaye-khanna-bollywood-journey-transformation",
+        "slug": "akshaye-khanna-bollywood-journey-transformation",
+        "title": "Akshaye Khanna अचानक क्यों हो गए थे फिल्मों से गायब? अब ऐसे बदल गया है ",
+        "snippet": "बॉलीवुड के दिग्गज अभिनेता Akshaye Khanna के फिल्मों से दूर होने की असली वजह और उनके शानदार ट्रांसफॉर्मेशन की अनसुनी कहानी।",
+        "coverImage": "/images/discover/akshaye-khanna-cover.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.204Z"
+    },
+    {
+        "id": "sbi-mutual-fund-share-news",
+        "slug": "sbi-mutual-fund-share-news",
+        "title": "SBI Mutual Fund के आईपीओ और शेयर को लेकर आई बड़ी खबर! क्या आपके पास भी है यह धांसू स्टॉक?",
+        "snippet": "क्या आप भी SBI Mutual Fund के शेयर या IPO का इंतजार कर रहे हैं? जानिए मार्केट एक्सपर्ट्स की राय और इस धांसू स्टॉक से जुड़ी सबसे बड़ी खबर।",
+        "coverImage": "/images/discover/sbi-mutual-fund-stock.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.202Z"
+    },
+    {
+        "id": "avengers-doomsday-marvel-villain-robert-downey",
+        "slug": "avengers-doomsday-marvel-villain-robert-downey",
+        "title": "Avengers Doomsday में होने जा रही है इस खतरनाक विलेन की एंट्री! मार्वल फैंस के उड़े होश",
+        "snippet": "MCU की सबसे बड़ी फिल्म Avengers: Doomsday में आयरन मैन फेम Robert Downey Jr. एक नए और खूंखार अवतार (Doctor Doom) में वापसी कर रहे हैं। जानिए पूरी डिटेल।",
+        "coverImage": "/images/discover/avengers-doomsday-poster-easter-eggs.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.198Z"
+    },
+    {
+        "id": "trending-old-money-aesthetic-tshirts",
+        "slug": "trending-old-money-aesthetic-tshirts",
+        "title": "Old Money Aesthetic: इस सीजन लड़कों के बीच ट्रेंड कर रही हैं ये 5 तरह की टी-शर्ट्स, देखें बजट फ्रेंडली लिस्ट",
+        "snippet": "चाहते हैं कम बजट में अमीर और क्लासी दिखना? लड़कों के बीच धूम मचा रहे ",
+        "coverImage": "/images/discover/trending-tshirts-old-money.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.194Z"
+    },
+    {
+        "id": "imd-weather-red-alert-heavy-rain",
+        "slug": "imd-weather-red-alert-heavy-rain",
+        "title": "IMD Weather Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, मौसम विभाग ने जारी किया रेड अलर्ट!",
+        "snippet": "भारत मौसम विज्ञान विभाग (IMD) ने कई राज्यों में भयंकर बारिश और बाढ़ का रेड अलर्ट जारी किया है। घर से निकलने से पहले जान लें अपने शहर का मौसम।",
+        "coverImage": "/images/discover/monsoon-2026-heavy-rain-alert-states.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.190Z"
+    },
+    {
+        "id": "nhai-rajmargyatra-app-local-pass",
+        "slug": "nhai-rajmargyatra-app-local-pass",
+        "title": "Rajmargyatra App: हाइवे पर सफर करने वालों के लिए बड़ी खुशखबरी! अब घर बैठे ऐसे मिलेगा लोकल टोल पास",
+        "snippet": "NHAI के ",
+        "coverImage": "/images/discover/gadkari-satellite-toll-highway-plan.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.189Z"
+    },
+    {
+        "id": "takeda-dengue-vaccine-launch-india",
+        "slug": "takeda-dengue-vaccine-launch-india",
+        "title": "Dengue Vaccine: अब डेंगू का डर खत्म? भारत में जल्द आ सकती है टाकेडा की नई वैक्सीन, जानें कितनी होगी असरदार",
+        "snippet": "बरसात के मौसम में डेंगू का कहर हर साल डराता है, लेकिन अब जापानी कंपनी Takeda की नई डेंगू वैक्सीन (Qdenga) भारत में लॉन्च होने की तैयारी में है।",
+        "coverImage": "/images/discover/takeda-dengue-vaccine.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.187Z"
+    },
+    {
+        "id": "libra-horoscope-weekly-july-2026",
+        "slug": "libra-horoscope-weekly-july-2026",
+        "title": "तुला राशिफल (Libra Horoscope): जुलाई के इस हफ्ते में चमकेगी तुला राशि वालों की किस्मत, बस रखना होगा इस बात का ध्यान",
+        "snippet": "Tula Rashifal: तुला राशि वालों के लिए जुलाई का यह सप्ताह धन और करियर के मामले में बेहद लकी साबित होने वाला है। जानिए क्या कहते हैं आपके सितारे।",
+        "coverImage": "/images/discover/libra-horoscope-july.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.155Z"
+    },
+    {
         "id": "post-office-scss-scheme",
         "slug": "post-office-scss-scheme",
         "title": "रिटायरमेंट के बाद पैसों की टेंशन खत्म! पोस्ट ऑफिस की इस स्कीम (SCSS) में मिल रहा है 8.2% का शानदार ब्याज",
@@ -5637,65 +5727,5 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/hang-seng-index-impact.png",
         "author": "MoneyCal Team",
         "date": "2023-10-05T09:17:30.191Z"
-    },
-    {
-        "id": "ruturaj-gaikwad-sri-lanka-captaincy",
-        "slug": "ruturaj-gaikwad-sri-lanka-captaincy",
-        "title": "Ruturaj Gaikwad ने रचा इतिहास! श्रीलंका सीरीज से पहले कप्तान ने खेल दी ऐसी तूफानी पारी?",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "iphone-18-pro-leak-features-price",
-        "slug": "iphone-18-pro-leak-features-price",
-        "title": "iPhone 18 Pro का पहला लुक लीक! Apple इस बार ला रहा है ऐसा फीचर जो आपने सोचा भी न होगा?",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "akshaye-khanna-bollywood-journey-transformation",
-        "slug": "akshaye-khanna-bollywood-journey-transformation",
-        "title": "Akshaye Khanna अचानक क्यों हो गए थे फिल्मों से गायब? अब ऐसे बदल गया है 'दिल चाहता है' के सिद्धार्थ का लुक",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "sbi-mutual-fund-share-news",
-        "slug": "sbi-mutual-fund-share-news",
-        "title": "SBI Mutual Fund के आईपीओ और शेयर को लेकर आई बड़ी खबर! क्या आपके पास भी है यह धांसू स्टॉक?",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "avengers-doomsday-marvel-villain-robert-downey",
-        "slug": "avengers-doomsday-marvel-villain-robert-downey",
-        "title": "Avengers Doomsday में होने जा रही है इस खतरनाक विलेन की एंट्री! मार्वल फैंस के उड़े होश",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "trending-old-money-aesthetic-tshirts",
-        "slug": "trending-old-money-aesthetic-tshirts",
-        "title": "Old Money Aesthetic: इस सीजन लड़कों के बीच ट्रेंड कर रही हैं ये 5 तरह की टी-शर्ट्स, देखें बजट फ्रेंडली लिस्ट",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "imd-weather-red-alert-heavy-rain",
-        "slug": "imd-weather-red-alert-heavy-rain",
-        "title": "IMD Weather Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, मौसम विभाग ने जारी किया रेड अलर्ट!",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "nhai-rajmargyatra-app-local-pass",
-        "slug": "nhai-rajmargyatra-app-local-pass",
-        "title": "Rajmargyatra App: हाइवे पर सफर करने वालों के लिए बड़ी खुशखबरी! अब घर बैठे ऐसे मिलेगा लोकल टोल पास",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "takeda-dengue-vaccine-launch-india",
-        "slug": "takeda-dengue-vaccine-launch-india",
-        "title": "Dengue Vaccine: अब डेंगू का डर खत्म? भारत में जल्द आ सकती है टाकेडा की नई वैक्सीन, जानें कितनी होगी असरदार",
-        "author": "MoneyCal Editor"
-    },
-    {
-        "id": "libra-horoscope-weekly-july-2026",
-        "slug": "libra-horoscope-weekly-july-2026",
-        "title": "तुला राशिफल (Libra Horoscope): जुलाई के इस हफ्ते में चमकेगी तुला राशि वालों की किस्मत, बस रखना होगा इस बात का ध्यान",
-        "author": "MoneyCal Editor"
     }
 ];
