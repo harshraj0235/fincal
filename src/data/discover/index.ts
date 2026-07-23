@@ -1,3 +1,12 @@
+import { ntpcGreenCubeHighways } from './ntpc-green-cube-highways';
+import { desiAiChatbotIndia } from './desi-ai-chatbot-india';
+import { hdfcIndusindBankSharePrice } from './hdfc-indusind-bank-share-price';
+import { bajajAutoSuzukiShareTrends } from './bajaj-auto-suzuki-share-trends';
+import { vijayKediaStockPicks } from './vijay-kedia-stock-picks';
+import { indoMimAviationStock } from './indo-mim-aviation-stock';
+import { rekhaJhunjhunwalaPortfolioUpdate } from './rekha-jhunjhunwala-portfolio-update';
+import { swiggyHpclLpgDelivery } from './swiggy-hpcl-lpg-delivery';
+import { sbiPoAdmitCard2026 } from './sbi-po-admit-card-2026';
 import { libraHoroscopeWeeklyJuly } from './libra-horoscope-weekly-july';
 import { takedaDengueVaccineIndia } from './takeda-dengue-vaccine-india';
 import { nhaiRajmargyatraLocalPass } from './nhai-rajmargyatra-local-pass';
@@ -644,6 +653,15 @@ import { wiVsNz2ndOdiJaydenLennox } from './wi-vs-nz-2nd-odi-jayden-lennox-5-wic
 
 const _discoverArticles: DiscoverArticle[
 ] = [
+    ntpcGreenCubeHighways,
+    desiAiChatbotIndia,
+    hdfcIndusindBankSharePrice,
+    bajajAutoSuzukiShareTrends,
+    vijayKediaStockPicks,
+    indoMimAviationStock,
+    rekhaJhunjhunwalaPortfolioUpdate,
+    swiggyHpclLpgDelivery,
+    sbiPoAdmitCard2026,
     jioFinancialServicesProfitGrowth,
     odysseyMovie2026HindiDubbedVegamovies,
 
