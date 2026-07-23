@@ -1,6 +1,87 @@
 // Auto-generated metadata for Discover Articles to avoid loading heavy sections in lists
 export const discoverMetadata = [
     {
+        "id": "desi-ai-chatbot-india",
+        "slug": "desi-ai-chatbot-india",
+        "title": "This New Desi AI Chatbot Is Replacing Indian Customer Care Executives At A Scary Pace!",
+        "snippet": "A massive shift is happening across Indian tech and banking sectors as homegrown AI chatbots achieve human-like conversation capabilities. Discover how this viral AI trend is cutting corporate costs by 80% and what it means for white-collar jobs in India.",
+        "coverImage": "/images/discover/desi-ai-chatbot.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T17:30:00+05:30"
+    },
+    {
+        "id": "ntpc-green-cube-highways",
+        "slug": "ntpc-green-cube-highways",
+        "title": "NTPC Green vs Cube Highways: The Government’s Secret Infrastructure Boom Decoded!",
+        "snippet": "Green energy and infrastructure assets are receiving massive institutional backing today. If you have been looking for stable, long-term wealth generation, these two trending assets offer completely different risk profiles. Here is where you should park your money.",
+        "coverImage": "/images/discover/ntpc-cube-infra.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T17:00:00+05:30"
+    },
+    {
+        "id": "bajaj-auto-suzuki-share-trends",
+        "slug": "bajaj-auto-suzuki-share-trends",
+        "title": "Bajaj Auto vs Suzuki: The Shocking New EV Launch That Will Destroy The Competition!",
+        "snippet": "The Indian two-wheeler war just took a massive turn. A surprise regulatory update and fresh production plans have sent both stock volumes soaring today. Find out which auto giant is actually winning the Indian middle-class market this quarter.",
+        "coverImage": "/images/discover/ev-auto-war.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T16:30:00+05:30"
+    },
+    {
+        "id": "hdfc-indusind-bank-share-price",
+        "slug": "hdfc-indusind-bank-share-price",
+        "title": "HDFC and IndusInd Bank Shares Are Tumbling! Should You Panic Sell Or Buy The Dip?",
+        "snippet": "Private banking giants are facing a sudden structural shift today, leaving retail investors completely anxious. Before you touch your portfolio or press the sell button, read this crucial level analysis that reveals where the bottom actually lies.",
+        "coverImage": "/images/discover/bank-shares-tumbling.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T16:00:00+05:30"
+    },
+    {
+        "id": "indo-mim-aviation-stock",
+        "slug": "indo-mim-aviation-stock",
+        "title": "Missed Indo MIM? This Hidden Defense Tech Stock Just Flashed A Massive Buy Signal!",
+        "snippet": "As Indo MIM creates massive buzz in the manufacturing sector, smart money is quietly moving into alternative tech and aviation supply shares. Find out why retail investors are suddenly hoarding this stock and what analysts say about its long-term future.",
+        "coverImage": "/images/discover/defense-aviation-stock.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T15:30:00+05:30"
+    },
+    {
+        "id": "vijay-kedia-stock-picks",
+        "slug": "vijay-kedia-stock-picks",
+        "title": "Vijay Kedia Predicts Multi-Bagger Returns For This Forgotten Share—Time To Buy?",
+        "snippet": "Market veteran Vijay Kedia's latest commentary has triggered a massive 700% search surge among retail investors. One specific stock in his radar is flashing a strong buy signal. Check out the target price and why experts think it is ready to explode.",
+        "coverImage": "/images/discover/vijay-kedia-multibagger.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T15:00:00+05:30"
+    },
+    {
+        "id": "swiggy-hpcl-lpg-delivery",
+        "slug": "swiggy-hpcl-lpg-delivery",
+        "title": "Your Next Gas Cylinder is Coming Via Swiggy? This New HPCL Tie-Up Changes Cooking Forever!",
+        "snippet": "Ordering food isn't the only thing Swiggy is good for anymore. In a massive partnership with HPCL, you can now track and get your LPG cylinder delivered with shocking speed. Here is how to book your first delivery and unlock exclusive launch discounts.",
+        "coverImage": "/images/discover/swiggy-hpcl-lpg.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T14:30:00+05:30"
+    },
+    {
+        "id": "rekha-jhunjhunwala-portfolio-update",
+        "slug": "rekha-jhunjhunwala-portfolio-update",
+        "title": "Rekha Jhunjhunwala Just Quietly Moved Crores Into This 1 Under-The-Radar Stock!",
+        "snippet": "India’s biggest retail portfolio has made a massive mid-week move. Ace investor Rekha Jhunjhunwala’s latest stake change has sent shockwaves through Dalal Street, sparking a 200% spike in search volume. Find out which sector she is betting on next.",
+        "coverImage": "/images/discover/rekha-jhunjhunwala-portfolio.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T14:00:00+05:30"
+    },
+    {
+        "id": "sbi-po-admit-card-2026",
+        "slug": "sbi-po-admit-card-2026",
+        "title": "SBI PO Admit Card 2026 Out! Check This Urgent Link Before the Server Crashes!",
+        "snippet": "The State Bank of India has finally released the PO prelims admit cards, but heavy traffic is already slowing down the official website. Discover alternate direct login links and crucial exam day instructions.",
+        "coverImage": "/images/discover/sbi-po-admit-card-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T11:00:00+05:30"
+    },
+    {
         "id": "odyssey-movie-2026-hindi-dubbed-vegamovies",
         "slug": "odyssey-movie-2026-hindi-dubbed-vegamovies",
         "title": "Vegamovies 2026: how to download the odyssey movie in hindi dubbed? बड़ी खबर",
@@ -206,703 +287,6 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/akshay-kumar-brand-endorsements.png",
         "author": "MoneyCal Team",
         "date": "2026-07-15T17:42:34.843Z"
-    },
-    {
-        "id": "silver-price-surge-rumor",
-        "slug": "silver-price-surge-rumor",
-        "title": "चाँदी की कीमतों में 1000% का जोरदार उछाल! क्या रिकॉर्ड तोड़ने को तैयार है Silver?",
-        "snippet": "क्या सच में चाँदी (Silver) की कीमतों में 1000% का उछाल आया है? जानिए आज के ताजा भाव, MCX के आंकड़े और बाजार में फैली इस सनसनीखेज खबर का पूरा सच।",
-        "coverImage": "/images/discover/silver-price-surge-rumor.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T14:30:00+05:30"
-    },
-    {
-        "id": "adani-power-groww-news",
-        "slug": "adani-power-groww-news",
-        "title": "Adani Power और Groww को लेकर आई बड़ी खबर, आज ही देख लें ये अपडेट",
-        "snippet": "अडानी पावर के शेयरों में तेजी और Groww ऐप के नए फीचर्स ने बाजार में हलचल मचा दी है। जानिए निवेशकों के लिए क्या हैं इसके मायने और Q1 नतीजों से जुड़ी अहम जानकारी।",
-        "coverImage": "/images/discover/adani-power-groww-news.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T14:00:00+05:30"
-    },
-    {
-        "id": "nse-bse-crash-tcs-itc-bel",
-        "slug": "nse-bse-crash-tcs-itc-bel",
-        "title": "NSE और BSE पर हाहाकार! TCS, ITC और BEL के शेयरों में अचानक क्या हुआ?",
-        "snippet": "भारतीय शेयर बाजार में भारी गिरावट! Sensex और Nifty के क्रैश होने के पीछे क्या हैं कारण? जानिए TCS, ITC और BEL जैसे बड़े शेयरों पर इसका क्या असर हुआ है।",
-        "coverImage": "/images/discover/nse-bse-crash-tcs-itc-bel.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T13:30:00+05:30"
-    },
-    {
-        "id": "alpine-sbi-ipo-gmp",
-        "slug": "alpine-sbi-ipo-gmp",
-        "title": "Alpine Texworld और SBI Funds Management IPO का बड़ा धमाका: GMP देखकर उड़ जाएंगे होश!",
-        "snippet": "जुलाई 2026 में शेयर बाजार में IPO की बहार! Alpine Texworld और SBI Funds Management IPO के Grey Market Premium (GMP) ने निवेशकों में हलचल मचा दी है। जानिए पूरी डिटेल्स।",
-        "coverImage": "/images/discover/alpine-sbi-ipo-gmp.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T13:00:00+05:30"
-    },
-    {
-        "id": "kusumgar-share-price-surge",
-        "slug": "kusumgar-share-price-surge",
-        "title": "Kusumgar Share Price 700% उछला! इस गुमनाम स्टॉक ने सबको चौंकाया",
-        "snippet": "क्या सच में Kusumgar के शेयर में 700% का उछाल आया है? जानिए इस गुमनाम स्टॉक के बंपर IPO, लिस्टिंग प्रीमियम और निवेशकों की छप्पर फाड़ कमाई का पूरा सच।",
-        "coverImage": "/images/discover/kusumgar-share-price-surge.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T12:30:00+05:30"
-    },
-    {
-        "id": "ibm-angel-one-share-price-surge",
-        "slug": "ibm-angel-one-share-price-surge",
-        "title": "IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच",
-        "snippet": "Angel One और IBM के शेयरों में आई बड़ी हलचल के पीछे का कारण क्या है? जानिए Q1 FY27 रिजल्ट्स, डिविडेंड और AI के कारण बाजार में आए इस बड़े बदलाव की पूरी कहानी।",
-        "coverImage": "/images/discover/ibm-angel-one-share-price-surge.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T12:00:00+05:30"
-    },
-    {
-        "id": "toxic-movie-cast-nayanthara-kiara-huma",
-        "slug": "toxic-movie-cast-nayanthara-kiara-huma",
-        "title": "Toxic Cast: Nayanthara और Kiara Advani चलाएंगी गोवा का अंडरवर्ल्ड?",
-        "snippet": "Toxic movie में महिलाओं का दबदबा! नयनतारा और कियारा आडवाणी के खूंखार रोल्स के बारे में वो बातें जो इंटरनेट पर लीक हो गई हैं।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:45:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-review-post-credit-scene",
-        "slug": "odyssey-movie-review-post-credit-scene",
-        "title": "The Odyssey Movie Review: Don't Watch It Until You See This Post-Credit Scene!",
-        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में पहली बार होगा एक सीक्रेट पोस्ट-क्रेडिट सीन! जानिए यह सीन क्यों इतना खास है।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSboj1QTsBlQ8SYN7gjXM6_ICAAohBUoTVEEEHAHnRN4A&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:45:00+05:30"
-    },
-    {
-        "id": "toxic-movie-1970-goa-underworld-aesthetic",
-        "slug": "toxic-movie-1970-goa-underworld-aesthetic",
-        "title": "Toxic Movie 1970s Goa: ड्रग्स, माफिया और विंटेज लग्जरी का खूंखार खेल!",
-        "snippet": "Yash की नई फिल्म Toxic 1950 से 1970 के दशक के गोवा पर आधारित है। जानिए इस रेट्रो अंडरवर्ल्ड की सच्चाई क्या है।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNj4b7lPB0ZPt_sy1hycuVE8QC7rRMwQ2q5T6etH2UrQ&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:40:00+05:30"
-    },
-    {
-        "id": "odyssey-where-to-watch-online-netflix-prime",
-        "slug": "odyssey-where-to-watch-online-netflix-prime",
-        "title": "Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?",
-        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey के डिजिटल राइट्स किस ओटीटी (OTT) प्लेटफॉर्म के पास जाएंगे? जानिए स्ट्रीमिंग डिटेल्स।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnOCU-JCKez_dp8jJmITP0bunaWTNJZL4-M5YTNfYuQ&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:40:00+05:30"
-    },
-    {
-        "id": "toxic-movie-release-date-4-festivals-strategy",
-        "slug": "toxic-movie-release-date-4-festivals-strategy",
-        "title": "Toxic Release Date: मेकर्स का मास्टरस्ट्रोक! एक साथ 4 बड़े त्योहारों पर कब्जा",
-        "snippet": "Yash की फिल्म Toxic 26 अगस्त 2026 को रिलीज होगी। जानिए कैसे यह रिलीज डेट बॉक्स ऑफिस पर सारे रिकॉर्ड तोड़ने के लिए चुनी गई है।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4M9FaugHpSF-E5-6AZi9yf4e-XwMOMQe7gtMVGfjyoQ&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:35:00+05:30"
-    },
-    {
-        "id": "odyssey-full-movie-story-leak-mythology",
-        "slug": "odyssey-full-movie-story-leak-mythology",
-        "title": "The Odyssey Full Movie Story Leak: Is This Hollywood's Greatest Mythological Epic?",
-        "snippet": "इथाका के राजा ओडीसियस की खूनी वापसी! 100 राजकुमारों का बेरहमी से कत्ल और पत्नी से दोबारा मिलने की रोंगटे खड़े कर देने वाली कहानी।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8GQxtAZVtPO--s1a9Iy8a0hd24RVyjrbWhOnXHWsUA&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:35:00+05:30"
-    },
-    {
-        "id": "toxic-movie-hollywood-action-director-jj-perry",
-        "slug": "toxic-movie-hollywood-action-director-jj-perry",
-        "title": "Toxic Movie Action: John Wick के स्टंटमैन ने Yash को दिया खतरनाक लुक!",
-        "snippet": "John Wick के एक्शन कोरियोग्राफर J.J. Perry ने Toxic में एक्शन का लेवल हॉलीवुड जैसा कर दिया है। जानिए फिल्म में क्या खास होगा।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPk9DaIDLmkR7dq5-uUKnPE9_cnSyMWAOXuZsi6szrA&s",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:30:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-monsters-magic-box-office",
-        "slug": "odyssey-movie-monsters-magic-box-office",
-        "title": "Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!",
-        "snippet": "बिना CGI के शूट हुए साइक्लोप्स और समुद्र के देवताओं के भयंकर युद्ध सीन! जानिए 250 मिलियन डॉलर की फिल्म द ओडिसी के बॉक्स ऑफिस प्रेडिक्शंस।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4X5--b30MX5U_UMNGplwfg0E42o4WNxI00Cr6k2ZAtA&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:30:00+05:30"
-    },
-    {
-        "id": "toxic-movie-raya-to-ravan-ramayan-nitesh-tiwari",
-        "slug": "toxic-movie-raya-to-ravan-ramayan-nitesh-tiwari",
-        "title": "Raya से लेकर Ravan तक: Yash कैसे कर रहे हैं इंडियन सिनेमा पर कब्जा!",
-        "snippet": "Toxic में अंडरवर्ल्ड डॉन Raya और Nitesh Tiwari की Ramayan में Ravan। जानिए यश का यह मेगा-सिनेमैटिक प्लान उन्हें कैसे सबसे बड़ा ग्लोबल स्टार बनाएगा।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1xj84tPHRriwl2eN5_JzHVjN_Htl3O5qZzPX0xVsmdQ&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:25:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-ending-explained-twists",
-        "slug": "odyssey-movie-ending-explained-twists",
-        "title": "The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!",
-        "snippet": "क्रिस्टोफर नोलन की फिल्मों में ट्विस्ट न हो ऐसा हो ही नहीं सकता! 250 मिलियन डॉलर की फिल्म The Odyssey के टाइम और स्पेस ट्विस्ट की लीक हुई डिटेल्स।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3c6sezlRQMBhKV9w1ETT-63ykOH6Ct2KmXe0TetV4g&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:25:00+05:30"
-    },
-    {
-        "id": "toxic-movie-gun-scene-controversy-a-rating",
-        "slug": "toxic-movie-gun-scene-controversy-a-rating",
-        "title": "Toxic Movie Controversy: गन सीन पर मचा बवाल, फिल्म को मिलेगी 'A' रेटिंग?",
-        "snippet": "Yash की अपकमिंग फिल्म Toxic के एक सीन पर सेंसर बोर्ड की नजर। जानिए क्यों मेकर्स फिल्म से इस डार्क और हिंसक सीन को हटाने से मना कर रहे हैं।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKs3DMhnpClgH0z7nHYbIPH8SAntjkam4jzZeX9TyGsw&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:20:00+05:30"
-    },
-    {
-        "id": "odyssey-cast-revealed-tom-holland-zendaya",
-        "slug": "odyssey-cast-revealed-tom-holland-zendaya",
-        "title": "The Odyssey Cast Revealed: You Won't Believe Who Is Playing Odysseus!",
-        "snippet": "Matt Damon, Tom Holland और Zendaya जैसी बड़ी स्टारकास्ट वाली 250 मिलियन डॉलर की फिल्म The Odyssey हॉलीवुड का सबसे बड़ा प्रोजेक्ट है।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFS4QJHrI2_e9UZqSZi37RMskJu9-U8g53PpejWMucg&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:20:00+05:30"
-    },
-    {
-        "id": "toxic-movie-yash-double-role-theory-villain",
-        "slug": "toxic-movie-yash-double-role-theory-villain",
-        "title": "Toxic Movie Leaked Story: क्या Yash खुद ही होंगे फिल्म के सबसे बड़े विलेन?",
-        "snippet": "इंटरनेट पर तहलका मचा रही है Toxic movie की डबल रोल (Dual Role) थ्योरी! जानिए कैसे यश फिल्म में हीरो और विलेन दोनों का किरदार निभा सकते हैं।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZlLUfPtAaQfpiHbyDMiiQrz_6HnvEfuSGO-rfnyOIpw&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:15:00+05:30"
-    },
-    {
-        "id": "odyssey-bollywood-superstar-cast-cameo-leak",
-        "slug": "odyssey-bollywood-superstar-cast-cameo-leak",
-        "title": "Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!",
-        "snippet": "क्या क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में किसी बॉलीवुड या साउथ सुपरस्टार का कैमियो होने वाला है? जानिए असली सच्चाई।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOL3T2B2-3oi485sch2XGBzbHiTiet8M5Mg5SjzFmMw&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:15:00+05:30"
-    },
-    {
-        "id": "toxic-movie-box-office-collection-1200-crore-budget",
-        "slug": "toxic-movie-box-office-collection-1200-crore-budget",
-        "title": "Toxic Box Office Prediction: क्या Yash की नई फिल्म ₹1200 करोड़ कमा पाएगी?",
-        "snippet": "Toxic movie budget ₹500 से ₹1000 करोड़ के बीच है। जानिए क्यों इस फिल्म पर बॉक्स ऑफिस का सबसे ज्यादा दबाव है और क्या यह KGF 2 का रिकॉर्ड तोड़ पाएगी।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:10:00+05:30"
-    },
-    {
-        "id": "odyssey-official-trailer-breakdown-most-expensive",
-        "slug": "odyssey-official-trailer-breakdown-most-expensive",
-        "title": "The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?",
-        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म द ओडिसी! क्या यह फिल्म हॉलीवुड के इतिहास की सबसे बड़ी ब्लॉकबस्टर और महंगी फिल्म बनेगी?",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAnr3VrWXkrWUGrcgzZ9ZKwW22LGDiWQVjxWnX2rfxPw&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:10:00+05:30"
-    },
-    {
-        "id": "toxic-movie-tabaahi-song-yash-kiara-chemistry",
-        "slug": "toxic-movie-tabaahi-song-yash-kiara-chemistry",
-        "title": "Toxic Movie Song Tabaahi: Yash और Kiara Advani की केमिस्ट्री ने तोड़े सारे रिकॉर्ड!",
-        "snippet": "Yash की Toxic movie का नया गाना Tabaahi इंटरनेट पर वायरल। जानिए क्यों यह गाना Raataan Lambiyan को भी पीछे छोड़ रहा है और फिल्म के हिट होने की गारंटी दे रहा है।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPk9DaIDLmkR7dq5-uUKnPE9_cnSyMWAOXuZsi6szrA&s",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:05:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-vs-ramayana-trending-india",
-        "slug": "odyssey-movie-vs-ramayana-trending-india",
-        "title": "Before Ramayana, Watch This? Why The Odyssey Movie Is Trending in India Today!",
-        "snippet": "इंडिया में रामायण (Ramayana) का बज है, लेकिन नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey ने ग्लोबल माइथोलॉजी का नया ट्रेंड सेट कर दिया है। जानिए दोनों में क्या समानताएं हैं।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYbkA4E-OOY1QDfesvo-UE-4PYOBYvUEL2ojx9O4R20g&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:05:00+05:30"
-    },
-    {
-        "id": "nolan-odyssey-movie-release-date-india-fans",
-        "slug": "nolan-odyssey-movie-release-date-india-fans",
-        "title": "The Odyssey Movie Release Date: India Fans Go Crazy Over This Epic Action Trailer!",
-        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म The Odyssey की रिलीज डेट, कास्ट, और चौंकाने वाले फैक्ट्स। क्या यह Oppenheimer का रिकॉर्ड तोड़ेगी?",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhgUTYO2xabedpb2UK3Sm-IQBUlNfm3LnlTjamtT4SA&s=10",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:00:00+05:30"
-    },
-    {
-        "id": "nayanthara-toxic-look-revealed",
-        "slug": "nayanthara-toxic-look-revealed",
-        "title": "Nayanthara’s \"Toxic\" Look Revealed: Why Fans Are Losing Their Minds Over Ganga",
-        "snippet": "The first official look of Nayanthara as the formidable \"Ganga\" in Yash’s upcoming blockbuster \"Toxic\" has dropped, and it is breaking the internet.",
-        "coverImage": "/images/discover/nayanthara-toxic-look.png",
-        "author": "Cinema Updates",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "re-neet-2026-debate-explodes",
-        "slug": "re-neet-2026-debate-explodes",
-        "title": "The Re-NEET 2026 Debate Just Exploded After This Controversial Supreme Court Decision",
-        "snippet": "A comprehensive breakdown of the Re-NEET 2026 paper leak saga, the recent Supreme Court verdict, and what it means for millions of medical aspirants.",
-        "coverImage": "/images/discover/re-neet-2026-debate.png",
-        "author": "Education Correspondent",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "8th-cpc-arrears-calculation",
-        "slug": "8th-cpc-arrears-calculation",
-        "title": "The Truth About the 8th CPC Arrears Calculation That No One Is Telling You",
-        "snippet": "Debunking the viral WhatsApp rumors about the 8th Central Pay Commission arrears and breaking down the real math behind the expected payouts for 2026.",
-        "coverImage": "/images/discover/8th-cpc-arrears.png",
-        "author": "Financial Desk",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "supreme-court-holiday-overhaul",
-        "slug": "supreme-court-holiday-overhaul",
-        "title": "Why the Supreme Court Just Quietly Overhauled Its Summer Vacation Policy",
-        "snippet": "Exploring the controversy behind the Supreme Court's new \"partial court working days\" and what the end of the traditional summer vacation means for everyday litigants.",
-        "coverImage": "/images/discover/supreme-court-holiday.png",
-        "author": "Legal Affairs Correspondent",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "tata-sierra-ev-launch-leak",
-        "slug": "tata-sierra-ev-launch-leak",
-        "title": "Leaked: The Unbelievable Starting Price and Features of the Upcoming Tata Sierra EV",
-        "snippet": "The iconic Tata Sierra returns as a futuristic EV. Here is everything you need to know about the official pricing, massive range, and retro-modern design.",
-        "coverImage": "/images/discover/tata-sierra-ev-launch.png",
-        "author": "Auto Tech Review",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "strawberry-moon-spiritual-meaning",
-        "slug": "strawberry-moon-spiritual-meaning",
-        "title": "Strawberry Full Moon Astrology: जानिए इस सप्ताह का स्ट्रॉबेरी मून आपकी राशि पर क्या प्रभाव डालेगा?",
-        "snippet": "जून 2026 का स्ट्रॉबेरी मून (Strawberry Full Moon) ज्योतिषीय दृष्टि से बेहद महत्वपूर्ण है। जानिए सभी 12 राशियों पर इसका प्रभाव और अपनी वित्तीय व व्यक्तिगत स्थिति को सुधारने के उपाय।",
-        "coverImage": "/images/discover/strawberry-moon-spiritual.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-04T06:22:48.508Z"
-    },
-    {
-        "id": "yrf-spy-universe-economics-alpha",
-        "slug": "yrf-spy-universe-economics-alpha",
-        "title": "The Economics of the YRF Spy Universe & Alpha's ₹100 Crore Gamble",
-        "snippet": "A deep dive into the staggering financial mechanics, massive budgets, and unprecedented box office stakes behind the latest female-led YRF blockbuster, Alpha.",
-        "coverImage": "/images/discover/alpha-economics.png",
-        "author": "Financial Analytics Desk",
-        "date": "2026-07-01T23:59:59.000Z"
-    },
-    {
-        "id": "financial-dangers-of-movie-piracy-scams",
-        "slug": "financial-dangers-of-movie-piracy-scams",
-        "title": "The Hidden Financial Dangers of Movie Piracy Scams in 2026",
-        "snippet": "Why searching for free movie downloads is the fastest way to drain your bank account. An investigative look into the highly sophisticated financial malware ecosystem of 2026.",
-        "coverImage": "/images/discover/alpha-piracy.png",
-        "author": "Cybersecurity & Finance Desk",
-        "date": "2026-07-01T23:59:59.000Z"
-    },
-    {
-        "id": "ott-vs-theatrical-strategy-alpha",
-        "slug": "ott-vs-theatrical-strategy-alpha",
-        "title": "OTT Rights vs Theatrical Release: The Business Strategy Behind Alpha",
-        "snippet": "Why did YRF reject a rumored ₹215 crore Netflix deal? A financial analysis of the theatrical-first release strategy behind the upcoming blockbuster Alpha.",
-        "coverImage": "/images/discover/alpha-ott.png",
-        "author": "Entertainment Business Desk",
-        "date": "2026-07-01T23:59:59.000Z"
-    },
-    {
-        "id": "monsoon-home-appliance-protection-tips",
-        "slug": "monsoon-home-appliance-protection-tips",
-        "title": "मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!",
-        "snippet": "बारिश के मौसम में भारी उमस (Humidity) और वोल्टेज के उतार-चढ़ाव से Inverter AC, Smart TV और फ्रिज जैसे महंगे अप्लायंसेज खराब हो सकते हैं। जानिए इन्हें कैसे सुरक्षित रखें।",
-        "coverImage": "/images/discover/home_appliance_monsoon_protection_1783245538901.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "rrb-group-d-general-science-preparation-strategy",
-        "slug": "rrb-group-d-general-science-preparation-strategy",
-        "title": "RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!",
-        "snippet": "रेलवे ग्रुप डी (RRB Group D) में जनरल साइंस के 25 प्रश्न सिलेक्शन तय करते हैं। जानिए NCERT आधारित फिजिक्स, केमिस्ट्री और बायोलॉजी की फर्स्ट-अटेम्प्ट सक्सेस स्ट्रेटेजी।",
-        "coverImage": "/images/discover/rrb_group_d_science_preparation_1783245643869.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "it-layoff-financial-legal-checklist",
-        "slug": "it-layoff-financial-legal-checklist",
-        "title": "IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!",
-        "snippet": "नौकरी जाना एक कठिन अनुभव है, लेकिन सही वित्तीय और कानूनी कदम उठाने से आप इस मुश्किल समय से आसानी से उबर सकते हैं। जानिए सेवरेंस पैकेज, हेल्थ इंश्योरेंस पोर्टिंग और लिंक्डइन स्ट्रेटेजी।",
-        "coverImage": "/images/discover/it_layoff_survival_guide_1783245724945.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "understanding-grey-market-premium-gmp",
-        "slug": "understanding-grey-market-premium-gmp",
-        "title": "Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!",
-        "snippet": "आईपीओ (IPO) में निवेश करने से पहले ग्रे मार्केट प्रीमियम (GMP) पर सबकी नजर होती है। लेकिन क्या आप जानते हैं कि इस पर आंख मूंदकर भरोसा करना कितना खतरनाक हो सकता है? जानिए इसके पीछे का सच।",
-        "coverImage": "/images/discover/ipo_grey_market_premium_1783246013796.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "gujarat-tat-s-mains-preparation-strategy",
-        "slug": "gujarat-tat-s-mains-preparation-strategy",
-        "title": "Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!",
-        "snippet": "गुजरात शिक्षक योग्यता परीक्षा (TAT-S) का प्रीलिम्स रिजल्ट आ चुका है। जिन उम्मीदवारों के 70 से अधिक अंक हैं, वे 3 अगस्त को होने वाली मुख्य परीक्षा (Mains) की तैयारी कैसे करें, जानिए बेस्ट राइटिंग स्ट्रेटेजी।",
-        "coverImage": "/images/discover/gujarat_tat_s_mains_preparation_1783246061055.png",
-        "author": "MoneyCal Team"
-    },
-    {
-        "id": "ruturaj-gaikwad-sri-lanka-captaincy",
-        "slug": "ruturaj-gaikwad-sri-lanka-captaincy",
-        "title": "Ruturaj Gaikwad ने रचा इतिहास! श्रीलंका सीरीज से पहले कप्तान ने खेल दी ऐसी तूफानी पारी?",
-        "snippet": "Team India के युवा स्टार Ruturaj Gaikwad का बल्ला श्रीलंका दौरे से ठीक पहले आग उगल रहा है। उनकी तूफानी बल्लेबाजी और कप्तानी के दावों पर देखिए पूरी रिपोर्ट।",
-        "coverImage": "/images/discover/ruturaj-gaikwad-sri-lanka.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.208Z"
-    },
-    {
-        "id": "iphone-18-pro-leak-features-price",
-        "slug": "iphone-18-pro-leak-features-price",
-        "title": "iPhone 18 Pro का पहला लुक लीक! Apple इस बार ला रहा है ऐसा फीचर जो आपने सोचा भी न होगा?",
-        "snippet": "Apple के अपकमिंग iPhone 18 Pro के फीचर्स और डिजाइन इंटरनेट पर लीक हो गए हैं। नया कैमरा और AI फीचर्स भारतीय टेक लवर्स के होश उड़ाने वाले हैं।",
-        "coverImage": "/images/discover/iphone-18-pro-leak-cover.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.206Z"
-    },
-    {
-        "id": "akshaye-khanna-bollywood-journey-transformation",
-        "slug": "akshaye-khanna-bollywood-journey-transformation",
-        "title": "Akshaye Khanna अचानक क्यों हो गए थे फिल्मों से गायब? अब ऐसे बदल गया है ",
-        "snippet": "बॉलीवुड के दिग्गज अभिनेता Akshaye Khanna के फिल्मों से दूर होने की असली वजह और उनके शानदार ट्रांसफॉर्मेशन की अनसुनी कहानी।",
-        "coverImage": "/images/discover/akshaye-khanna-cover.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.204Z"
-    },
-    {
-        "id": "sbi-mutual-fund-share-news",
-        "slug": "sbi-mutual-fund-share-news",
-        "title": "SBI Mutual Fund के आईपीओ और शेयर को लेकर आई बड़ी खबर! क्या आपके पास भी है यह धांसू स्टॉक?",
-        "snippet": "क्या आप भी SBI Mutual Fund के शेयर या IPO का इंतजार कर रहे हैं? जानिए मार्केट एक्सपर्ट्स की राय और इस धांसू स्टॉक से जुड़ी सबसे बड़ी खबर।",
-        "coverImage": "/images/discover/sbi-mutual-fund-stock.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.202Z"
-    },
-    {
-        "id": "avengers-doomsday-marvel-villain-robert-downey",
-        "slug": "avengers-doomsday-marvel-villain-robert-downey",
-        "title": "Avengers Doomsday में होने जा रही है इस खतरनाक विलेन की एंट्री! मार्वल फैंस के उड़े होश",
-        "snippet": "MCU की सबसे बड़ी फिल्म Avengers: Doomsday में आयरन मैन फेम Robert Downey Jr. एक नए और खूंखार अवतार (Doctor Doom) में वापसी कर रहे हैं। जानिए पूरी डिटेल।",
-        "coverImage": "/images/discover/avengers-doomsday-poster-easter-eggs.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.198Z"
-    },
-    {
-        "id": "trending-old-money-aesthetic-tshirts",
-        "slug": "trending-old-money-aesthetic-tshirts",
-        "title": "Old Money Aesthetic: इस सीजन लड़कों के बीच ट्रेंड कर रही हैं ये 5 तरह की टी-शर्ट्स, देखें बजट फ्रेंडली लिस्ट",
-        "snippet": "चाहते हैं कम बजट में अमीर और क्लासी दिखना? लड़कों के बीच धूम मचा रहे ",
-        "coverImage": "/images/discover/trending-tshirts-old-money.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.194Z"
-    },
-    {
-        "id": "imd-weather-red-alert-heavy-rain",
-        "slug": "imd-weather-red-alert-heavy-rain",
-        "title": "IMD Weather Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, मौसम विभाग ने जारी किया रेड अलर्ट!",
-        "snippet": "भारत मौसम विज्ञान विभाग (IMD) ने कई राज्यों में भयंकर बारिश और बाढ़ का रेड अलर्ट जारी किया है। घर से निकलने से पहले जान लें अपने शहर का मौसम।",
-        "coverImage": "/images/discover/monsoon-2026-heavy-rain-alert-states.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.190Z"
-    },
-    {
-        "id": "nhai-rajmargyatra-app-local-pass",
-        "slug": "nhai-rajmargyatra-app-local-pass",
-        "title": "Rajmargyatra App: हाइवे पर सफर करने वालों के लिए बड़ी खुशखबरी! अब घर बैठे ऐसे मिलेगा लोकल टोल पास",
-        "snippet": "NHAI के ",
-        "coverImage": "/images/discover/gadkari-satellite-toll-highway-plan.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.189Z"
-    },
-    {
-        "id": "takeda-dengue-vaccine-launch-india",
-        "slug": "takeda-dengue-vaccine-launch-india",
-        "title": "Dengue Vaccine: अब डेंगू का डर खत्म? भारत में जल्द आ सकती है टाकेडा की नई वैक्सीन, जानें कितनी होगी असरदार",
-        "snippet": "बरसात के मौसम में डेंगू का कहर हर साल डराता है, लेकिन अब जापानी कंपनी Takeda की नई डेंगू वैक्सीन (Qdenga) भारत में लॉन्च होने की तैयारी में है।",
-        "coverImage": "/images/discover/takeda-dengue-vaccine.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.187Z"
-    },
-    {
-        "id": "libra-horoscope-weekly-july-2026",
-        "slug": "libra-horoscope-weekly-july-2026",
-        "title": "तुला राशिफल (Libra Horoscope): जुलाई के इस हफ्ते में चमकेगी तुला राशि वालों की किस्मत, बस रखना होगा इस बात का ध्यान",
-        "snippet": "Tula Rashifal: तुला राशि वालों के लिए जुलाई का यह सप्ताह धन और करियर के मामले में बेहद लकी साबित होने वाला है। जानिए क्या कहते हैं आपके सितारे।",
-        "coverImage": "/images/discover/libra-horoscope-july.png",
-        "author": "MoneyCal Editor",
-        "date": "2026-07-22T06:10:19.155Z"
-    },
-    {
-        "id": "post-office-scss-scheme",
-        "slug": "post-office-scss-scheme",
-        "title": "रिटायरमेंट के बाद पैसों की टेंशन खत्म! पोस्ट ऑफिस की इस स्कीम (SCSS) में मिल रहा है 8.2% का शानदार ब्याज",
-        "snippet": "Senior Citizen Savings Scheme (SCSS) 2026: वरिष्ठ नागरिकों के लिए सबसे बेहतरीन निवेश योजना। जानिए पोस्ट ऑफिस की इस स्कीम में 30 लाख लगाकर कितनी बनेगी पेंशन।",
-        "coverImage": "/images/discover/post-office-scss-scheme.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T16:05:00+05:30"
-    },
-    {
-        "id": "income-tax-notice-refund",
-        "slug": "income-tax-notice-refund",
-        "title": "ITR रिफंड का कर रहे हैं इंतजार? Section 143(1) का नोटिस देखकर घबराएं नहीं, जानिए इसका सही मतलब",
-        "snippet": "Income Tax Intimation U/S 143(1): क्या आपको भी इनकम टैक्स डिपार्टमेंट से नोटिस मिला है? जानिए इस ईमेल का क्या मतलब है और आपका ITR Refund कब तक आएगा।",
-        "coverImage": "/images/discover/income-tax-notice-refund.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T16:00:00+05:30"
-    },
-    {
-        "id": "pm-awas-yojana-subsidy",
-        "slug": "pm-awas-yojana-subsidy",
-        "title": "खुद का पक्का घर बनाने का सपना होगा पूरा! PM Awas Yojana (PMAY 2.0) में मिल रही है ₹2.5 लाख तक की सब्सिडी",
-        "snippet": "PM Awas Yojana Gramin & Urban 2026: क्या आप भी किराए के मकान में रहते हैं? जानिए प्रधानमंत्री आवास योजना (PMAY 2.0) के तहत कैसे पाएं घर बनाने के लिए भारी सब्सिडी।",
-        "coverImage": "/images/discover/pm-awas-yojana-subsidy.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T15:55:00+05:30"
-    },
-    {
-        "id": "gold-rate-import-duty",
-        "slug": "gold-rate-import-duty",
-        "title": "सोना खरीदने वालों की लगी लॉटरी! सोने के दाम और इंपोर्ट ड्यूटी (Import Duty) पर आया बड़ा अपडेट",
-        "snippet": "Gold Rate Today & Import Duty Cut 2026: क्या सोना सस्ता होने वाला है? जानिए 24 और 22 कैरेट सोने का ताजा भाव और इंपोर्ट ड्यूटी से जुड़ी पूरी खबर।",
-        "coverImage": "/images/discover/gold-rate-import-duty.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T15:50:00+05:30"
-    },
-    {
-        "id": "petrol-diesel-prices-drop",
-        "slug": "petrol-diesel-prices-drop",
-        "title": "पेट्रोल-डीजल की कीमतों पर बड़ा अपडेट! क्या जल्द सस्ती होगी तेल की कीमतें? जानिए ताजा रेट",
-        "snippet": "Petrol-Diesel Prices India 2026: क्या जल्द ही आम आदमी को पेट्रोल और डीजल की कीमतों से राहत मिलने वाली है? जानिए ताजा अपडेट्स और आपके शहर का आज का भाव।",
-        "coverImage": "/images/discover/petrol-diesel-prices-drop.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T15:45:00+05:30"
-    },
-    {
-        "id": "nps-vatsalya-scheme",
-        "slug": "nps-vatsalya-scheme",
-        "title": "बच्चों के लिए शानदार स्कीम! हर महीने ₹250 बचाकर बनाएं करोड़पति, जानिए NPS Vatsalya के फायदे",
-        "snippet": "NPS Vatsalya Scheme 2026: क्या आप भी अपने बच्चों का भविष्य सुरक्षित करना चाहते हैं? जानिए सरकार की नई एनपीएस वात्सल्य योजना के बारे में, जहां सिर्फ 250 रुपये से शुरू कर सकते हैं निवेश।",
-        "coverImage": "/images/discover/nps-vatsalya-scheme.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T15:40:00+05:30"
-    },
-    {
-        "id": "smam-tractor-subsidy-yojana",
-        "slug": "smam-tractor-subsidy-yojana",
-        "title": "किसानों की हुई मौज! ट्रैक्टर और कृषि यंत्रों पर मिल रही है 80% तक की भारी सब्सिडी",
-        "snippet": "SMAM Yojana 2026: ट्रैक्टर और खेती की मशीनों पर सरकार दे रही है 80% तक की भारी छूट। जानिए कैसे करें ऑनलाइन आवेदन और कौन से कागजात हैं जरूरी।",
-        "coverImage": "/images/discover/smam-tractor-subsidy-yojana.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T15:30:00+05:30"
-    },
-    {
-        "id": "eighth-cpc-salary-updates",
-        "slug": "eighth-cpc-salary-updates",
-        "title": "केंद्रीय कर्मचारियों के लिए खुशखबरी! सैलरी और पेंशन पर आया सरकार का बड़ा अपडेट",
-        "snippet": "8th Pay Commission (आठवें वेतन आयोग) और DA Hike को लेकर बड़ा अपडेट! जानिए केंद्रीय कर्मचारियों और पेंशनर्स की बेसिक सैलरी में कितना होने जा रहा है इजाफा।",
-        "coverImage": "/images/discover/eighth-cpc-salary-updates.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T14:30:00+05:30"
-    },
-    {
-        "id": "caliber-xtranet-ipo-gmp",
-        "slug": "caliber-xtranet-ipo-gmp",
-        "title": "Grey Market में गदर मचा रहे हैं ये 2 IPO! दांव लगाने वाले निवेशकों की चमकेगी किस्मत?",
-        "snippet": "Caliber Mining और Xtranet IPO का ग्रे मार्केट (GMP) में तहलका! प्राइस बैंड, अलॉटमेंट डेट, और जानिए इन आईपीओ में दांव लगाने से आपको कितना मुनाफा हो सकता है।",
-        "coverImage": "/images/discover/caliber-xtranet-ipo-gmp.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T12:30:00+05:30"
-    },
-    {
-        "id": "sbi-funds-management-ipo-listing",
-        "slug": "sbi-funds-management-ipo-listing",
-        "title": "SBI Funds Management IPO: ₹613 पर लिस्टिंग, क्या निवेशकों को मिला बंपर मुनाफा? पूरी सच्चाई",
-        "snippet": "SBI Funds Management IPO की शानदार लिस्टिंग! शेयर प्राइस, ग्रे मार्केट प्रीमियम (GMP) और क्या अब आपको खरीदना चाहिए? जानिए पूरी सच्चाई और एक्सपर्ट्स की राय।",
-        "coverImage": "/images/discover/sbi-funds-management-ipo-listing.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-21T12:00:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-hindi-dubbed-download-telegram",
-        "slug": "odyssey-movie-hindi-dubbed-download-telegram",
-        "title": "The Odyssey Movie: How to download the odyssey movie in hindi dubbed? सच्चाई",
-        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
-        "coverImage": "/images/discover/odyssey-movie-hindi-dubbed-download-telegram.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-18T12:00:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-download-filmyzilla-1080p-hindi",
-        "slug": "odyssey-movie-download-filmyzilla-1080p-hindi",
-        "title": "Filmyzilla Leaks: how to download the odyssey movie in hindi dubbed? जानिए",
-        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
-        "coverImage": "/images/discover/odyssey-movie-download-filmyzilla-1080p-hindi.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-18T12:00:00+05:30"
-    },
-    {
-        "id": "how-to-watch-odyssey-hindi-dubbed-online",
-        "slug": "how-to-watch-odyssey-hindi-dubbed-online",
-        "title": "how to download the odyssey movie in hindi dubbed? Legal OTT Release चौंकाने वाला",
-        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
-        "coverImage": "/images/discover/how-to-watch-odyssey-hindi-dubbed-online.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-18T12:00:00+05:30"
-    },
-    {
-        "id": "odyssey-christopher-nolan-hindi-dubbed-ott",
-        "slug": "odyssey-christopher-nolan-hindi-dubbed-ott",
-        "title": "Nolan's Magic: how to download the odyssey movie in hindi dubbed? पूरी जानकारी",
-        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
-        "coverImage": "/images/discover/odyssey-christopher-nolan-hindi-dubbed-ott.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-18T12:00:00+05:30"
-    },
-    {
-        "id": "odyssey-movie-2026-hindi-dubbed-vegamovies",
-        "slug": "odyssey-movie-2026-hindi-dubbed-vegamovies",
-        "title": "Vegamovies 2026: how to download the odyssey movie in hindi dubbed? बड़ी खबर",
-        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
-        "coverImage": "/images/discover/odyssey-movie-2026-hindi-dubbed-vegamovies.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-18T12:00:00+05:30"
-    },
-    {
-        "id": "aaj-ka-rashifal-dhan-labh-2026",
-        "slug": "aaj-ka-rashifal-dhan-labh-2026",
-        "title": "Rashifal: आज चमकेगी इन भाग्यशाली राशियों की किस्मत, होगा बड़ा धन लाभ!",
-        "snippet": "15 जुलाई 2026 को बन रहे हैं कई दुर्लभ शुभ योग। जानिए मेष से लेकर मीन राशि तक, किन राशियों के लिए आज का दिन लाएगा अपार धन और सफलता।",
-        "coverImage": "/images/discover/aaj-ka-rashifal-dhan-labh-2026.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T21:30:00+05:30"
-    },
-    {
-        "id": "monsoon-2026-heavy-rain-alert-states",
-        "slug": "monsoon-2026-heavy-rain-alert-states",
-        "title": "Monsoon 2026 Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, IMD ने जारी किया रेड अलर्ट!",
-        "snippet": "मौसम विभाग (IMD) ने देश के 22 राज्यों में अगले 48 घंटों के लिए भारी बारिश (Heavy Rain) का अलर्ट जारी किया है। जानिए किन राज्यों में है बाढ़ का सबसे ज्यादा खतरा।",
-        "coverImage": "/images/discover/monsoon-2026-heavy-rain-alert-states.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T21:00:00+05:30"
-    },
-    {
-        "id": "ibm-share-price-buy-or-sell",
-        "slug": "ibm-share-price-buy-or-sell",
-        "title": "IBM Share Price में आया 115 सालों का सबसे बड़ा क्रैश! क्या यह शेयर खरीदने का सही समय है?",
-        "snippet": "जुलाई 2026 में IBM के शेयरों में 25% की भारी गिरावट दर्ज की गई। जानिए AI हार्डवेयर की बढ़ती डिमांड ने कैसे इस टेक दिग्गज को नुकसान पहुंचाया और अब निवेशकों को क्या करना चाहिए।",
-        "coverImage": "/images/discover/ibm-share-price-buy-or-sell.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T20:30:00+05:30"
-    },
-    {
-        "id": "irctc-new-website-launch-fast-booking",
-        "slug": "irctc-new-website-launch-fast-booking",
-        "title": "IRCTC की नई वेबसाइट लॉन्च! अब तत्काल टिकट बुकिंग होगी सुपरफास्ट, देखें बड़े बदलाव",
-        "snippet": "IRCTC ने अपनी वेबसाइट का नया और फास्ट वर्जन लॉन्च कर दिया है। अब 1.5 लाख टिकट प्रति मिनट बुक हो सकेंगे। जानिए नए फीचर्स और बदलावों के बारे में पूरी जानकारी।",
-        "coverImage": "/images/discover/irctc-new-website-launch-fast-booking.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T20:00:00+05:30"
-    },
-    {
-        "id": "ration-card-new-update-2026",
-        "slug": "ration-card-new-update-2026",
-        "title": "Ration Card धारकों के लिए बड़ी खुशखबरी, सरकार ने किया यह नया बदलाव!",
-        "snippet": "राशन कार्ड (Ration Card) धारकों के लिए e-KYC हुई अनिवार्य। प्रधानमंत्री गरीब कल्याण अन्न योजना (PMGKAY) के तहत फ्री राशन दिसंबर 2028 तक बढ़ाया गया। जानें पूरी डिटेल।",
-        "coverImage": "/images/discover/ration-card-new-update-2026.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T19:30:00+05:30"
-    },
-    {
-        "id": "shah-rukh-khan-bungalow-petition",
-        "slug": "shah-rukh-khan-bungalow-petition",
-        "title": "Shah Rukh Khan के बंगले 'Mannat' को लेकर सुप्रीम कोर्ट का बड़ा फैसला, जानें पूरा मामला",
-        "snippet": "शाहरुख खान के बंगले 'मन्नत' (Mannat) के रेनोवेशन को लेकर सुप्रीम कोर्ट में दायर हुई थी याचिका। चीफ जस्टिस ने याचिकाकर्ता को लगाई फटकार। जानिए क्या है पूरी सच्चाई।",
-        "coverImage": "/images/discover/shah-rukh-khan-bungalow-petition.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T19:00:00+05:30"
-    },
-    {
-        "id": "diljit-dosanjh-new-movie-satluj",
-        "slug": "diljit-dosanjh-new-movie-satluj",
-        "title": "Diljit Dosanjh की New Movie Satluj का धमाकेदार ऐलान, फैंस में बड़ा क्रेज और विवाद",
-        "snippet": "दिलजीत दोसांझ की नई फिल्म Satluj OTT प्लेटफॉर्म से रिलीज के 48 घंटे के भीतर ही क्यों हटा दी गई? जानिए इस विवादित फिल्म की पूरी सच्चाई और फैंस का रिएक्शन।",
-        "coverImage": "/images/discover/diljit-dosanjh-new-movie-satluj.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T18:30:00+05:30"
-    },
-    {
-        "id": "maruti-suzuki-brezza-facelift-2026",
-        "slug": "maruti-suzuki-brezza-facelift-2026",
-        "title": "New Maruti Suzuki Brezza Facelift 2026 Launch! देखें बेमिसाल फीचर्स और कीमत",
-        "snippet": "मारुति सुजुकी 23 जुलाई 2026 को अपनी नई Brezza Facelift लॉन्च करने जा रही है। जानिए इसके ADAS लेवल 2, नए टर्बो इंजन और एडवांस फीचर्स से जुड़ी हर जानकारी।",
-        "coverImage": "/images/discover/maruti-suzuki-brezza-facelift-2026.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T18:00:00+05:30"
-    },
-    {
-        "id": "france-vs-spain-football-upset",
-        "slug": "france-vs-spain-football-upset",
-        "title": "France vs Spain: फुटबॉल वर्ल्ड कप में बड़ा उलटफेर, फैंस हुए हैरान!",
-        "snippet": "FIFA World Cup 2026 के सेमीफाइनल में स्पेन ने फ्रांस को 2-0 से हराकर किया बड़ा उलटफेर। जानिए कैसे एम्बाप्पे (Mbappé) की टीम को मिली करारी हार।",
-        "coverImage": "/images/discover/france-vs-spain-football-upset.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T17:30:00+05:30"
-    },
-    {
-        "id": "ind-vs-eng-axar-patel-record",
-        "slug": "ind-vs-eng-axar-patel-record",
-        "title": "IND vs ENG: Axar Patel का धमाका, तोड़ दिया सालों पुराना बड़ा रिकॉर्ड!",
-        "snippet": "भारत बनाम इंग्लैंड मैच में अक्षर पटेल (Axar Patel) ने गेंद और बल्ले दोनों से ऐसा गदर मचाया कि एक बहुत बड़ा रिकॉर्ड टूट गया। जानिए इस ऐतिहासिक जीत की पूरी कहानी।",
-        "coverImage": "/images/discover/ind-vs-eng-axar-patel-record.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T17:00:00+05:30"
-    },
-    {
-        "id": "hang-seng-dax-index-global-market",
-        "slug": "hang-seng-dax-index-global-market",
-        "title": "Hang Seng और DAX Index में हलचल, वैश्विक बाजारों के एक्शन से क्या Indian Market डूबेगा?",
-        "snippet": "वैश्विक शेयर बाजारों, खास तौर पर Hang Seng और DAX Index में गिरावट से भारतीय शेयर बाजार पर दबाव बढ़ा है। जानिए निवेशकों को इस माहौल में क्या रणनीति अपनानी चाहिए।",
-        "coverImage": "/images/discover/hang-seng-dax-index-global-market.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T16:30:00+05:30"
-    },
-    {
-        "id": "vedanta-group-anil-agarwal-masterstroke",
-        "slug": "vedanta-group-anil-agarwal-masterstroke",
-        "title": "अनिल अग्रवाल का नया मास्टरस्ट्रोक! वेदांता ग्रुप के निवेशकों की खुली किस्मत",
-        "snippet": "वेदांता ग्रुप (Vedanta Group) के डीमर्जर और चेयरमैन अनिल अग्रवाल के नए विजन 2026 ने बाजार में तहलका मचा दिया है। जानिए 5 नई कंपनियों और $100 बिलियन के टारगेट का पूरा सच।",
-        "coverImage": "/images/discover/vedanta-group-anil-agarwal-masterstroke.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T16:00:00+05:30"
-    },
-    {
-        "id": "chatgpt-claude-ai-india-pricing",
-        "slug": "chatgpt-claude-ai-india-pricing",
-        "title": "ChatGPT और Claude AI को लेकर भारत में बड़ा बदलाव, क्या आपकी जेब पर पड़ेगा असर?",
-        "snippet": "Claude AI ने भारत में अपने सब्सक्रिप्शन प्लान्स को भारतीय रुपये (INR) में लॉन्च कर दिया है। जानिए नई कीमतें, GST के नियम और इससे ChatGPT यूजर्स पर क्या असर पड़ेगा।",
-        "coverImage": "/images/discover/chatgpt-claude-ai-india-pricing.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T15:30:00+05:30"
-    },
-    {
-        "id": "epfo-vishwas-2026-scheme",
-        "slug": "epfo-vishwas-2026-scheme",
-        "title": "EPFO ने लॉन्च की Vishwas 2026 EPF Scheme! नौकरीपेशा लोग तुरंत उठाएं फायदा",
-        "snippet": "EPFO ने एम्प्लॉयर्स और कर्मचारियों के लिए Vishwas 2026 स्कीम लॉन्च की है। जानिए क्या है यह नई EPF योजना और इससे करोड़ों नौकरीपेशा लोगों को कैसे मिलेगा फायदा।",
-        "coverImage": "/images/discover/epfo-vishwas-2026-scheme.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-15T15:00:00+05:30"
     },
     {
         "id": "iphone-18-release-date-leaks-features-2026",
@@ -1216,15 +600,6 @@ export const discoverMetadata = [
         "title": "Make in India Masterstroke: Why Dixon Tech Share is the Ultimate Wealth Creator of 2026",
         "snippet": "Dixon Technologies ने Vivo के साथ किया करोड़ों का JV एग्रीमेंट! \"Make in India\" का यह मास्टरस्ट्रोक कैसे भारत को ग्लोबल मैन्युफैक्चरिंग हब बना रहा है? जानिए इस मल्टीबैगर स्टॉक की पूरी कहानी।",
         "coverImage": "/images/discover/dixon-technologies-share-make-in-india.png",
-        "author": "MoneyCal Team",
-        "date": "2026-07-13T12:00:00+05:30"
-    },
-    {
-        "id": "yash-toxic-movie-raya-release-date-box-office",
-        "slug": "yash-toxic-movie-raya-release-date-box-office",
-        "title": "Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 10 बड़े खुलासे",
-        "snippet": "Yash upcoming movie Toxic: A Fairy Tale for Grown-Ups के रिलीज डेट, कास्ट, बजट और डायरेक्टर Geetu Mohandas के डार्क विजन की पूरी सच्चाई। जानिए 1500 शब्दों में पूरी डिटेल।",
-        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJxhYd61dcfTnwxbQMMZxIj-9xAgv6DZyl69r1qKs3g&s=10",
         "author": "MoneyCal Team",
         "date": "2026-07-13T12:00:00+05:30"
     },
@@ -4431,6 +3806,712 @@ export const discoverMetadata = [
         "coverImage": "/images/discover/alia-bhatt-spy-universe.png",
         "author": "Entertainment Desk",
         "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "nayanthara-toxic-look-revealed",
+        "slug": "nayanthara-toxic-look-revealed",
+        "title": "Nayanthara’s \"Toxic\" Look Revealed: Why Fans Are Losing Their Minds Over Ganga",
+        "snippet": "The first official look of Nayanthara as the formidable \"Ganga\" in Yash’s upcoming blockbuster \"Toxic\" has dropped, and it is breaking the internet.",
+        "coverImage": "/images/discover/nayanthara-toxic-look.png",
+        "author": "Cinema Updates",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "re-neet-2026-debate-explodes",
+        "slug": "re-neet-2026-debate-explodes",
+        "title": "The Re-NEET 2026 Debate Just Exploded After This Controversial Supreme Court Decision",
+        "snippet": "A comprehensive breakdown of the Re-NEET 2026 paper leak saga, the recent Supreme Court verdict, and what it means for millions of medical aspirants.",
+        "coverImage": "/images/discover/re-neet-2026-debate.png",
+        "author": "Education Correspondent",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "8th-cpc-arrears-calculation",
+        "slug": "8th-cpc-arrears-calculation",
+        "title": "The Truth About the 8th CPC Arrears Calculation That No One Is Telling You",
+        "snippet": "Debunking the viral WhatsApp rumors about the 8th Central Pay Commission arrears and breaking down the real math behind the expected payouts for 2026.",
+        "coverImage": "/images/discover/8th-cpc-arrears.png",
+        "author": "Financial Desk",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "supreme-court-holiday-overhaul",
+        "slug": "supreme-court-holiday-overhaul",
+        "title": "Why the Supreme Court Just Quietly Overhauled Its Summer Vacation Policy",
+        "snippet": "Exploring the controversy behind the Supreme Court's new \"partial court working days\" and what the end of the traditional summer vacation means for everyday litigants.",
+        "coverImage": "/images/discover/supreme-court-holiday.png",
+        "author": "Legal Affairs Correspondent",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "tata-sierra-ev-launch-leak",
+        "slug": "tata-sierra-ev-launch-leak",
+        "title": "Leaked: The Unbelievable Starting Price and Features of the Upcoming Tata Sierra EV",
+        "snippet": "The iconic Tata Sierra returns as a futuristic EV. Here is everything you need to know about the official pricing, massive range, and retro-modern design.",
+        "coverImage": "/images/discover/tata-sierra-ev-launch.png",
+        "author": "Auto Tech Review",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "strawberry-moon-spiritual-meaning",
+        "slug": "strawberry-moon-spiritual-meaning",
+        "title": "Strawberry Full Moon Astrology: जानिए इस सप्ताह का स्ट्रॉबेरी मून आपकी राशि पर क्या प्रभाव डालेगा?",
+        "snippet": "जून 2026 का स्ट्रॉबेरी मून (Strawberry Full Moon) ज्योतिषीय दृष्टि से बेहद महत्वपूर्ण है। जानिए सभी 12 राशियों पर इसका प्रभाव और अपनी वित्तीय व व्यक्तिगत स्थिति को सुधारने के उपाय।",
+        "coverImage": "/images/discover/strawberry-moon-spiritual.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-04T06:22:48.508Z"
+    },
+    {
+        "id": "yrf-spy-universe-economics-alpha",
+        "slug": "yrf-spy-universe-economics-alpha",
+        "title": "The Economics of the YRF Spy Universe & Alpha's ₹100 Crore Gamble",
+        "snippet": "A deep dive into the staggering financial mechanics, massive budgets, and unprecedented box office stakes behind the latest female-led YRF blockbuster, Alpha.",
+        "coverImage": "/images/discover/alpha-economics.png",
+        "author": "Financial Analytics Desk",
+        "date": "2026-07-01T23:59:59.000Z"
+    },
+    {
+        "id": "financial-dangers-of-movie-piracy-scams",
+        "slug": "financial-dangers-of-movie-piracy-scams",
+        "title": "The Hidden Financial Dangers of Movie Piracy Scams in 2026",
+        "snippet": "Why searching for free movie downloads is the fastest way to drain your bank account. An investigative look into the highly sophisticated financial malware ecosystem of 2026.",
+        "coverImage": "/images/discover/alpha-piracy.png",
+        "author": "Cybersecurity & Finance Desk",
+        "date": "2026-07-01T23:59:59.000Z"
+    },
+    {
+        "id": "ott-vs-theatrical-strategy-alpha",
+        "slug": "ott-vs-theatrical-strategy-alpha",
+        "title": "OTT Rights vs Theatrical Release: The Business Strategy Behind Alpha",
+        "snippet": "Why did YRF reject a rumored ₹215 crore Netflix deal? A financial analysis of the theatrical-first release strategy behind the upcoming blockbuster Alpha.",
+        "coverImage": "/images/discover/alpha-ott.png",
+        "author": "Entertainment Business Desk",
+        "date": "2026-07-01T23:59:59.000Z"
+    },
+    {
+        "id": "monsoon-home-appliance-protection-tips",
+        "slug": "monsoon-home-appliance-protection-tips",
+        "title": "मानसून और बिजली का खेल: बारिश के मौसम में इलेक्ट्रॉनिक सामानों को फुंकने से बचाने के 5 घरेलू उपाय!",
+        "snippet": "बारिश के मौसम में भारी उमस (Humidity) और वोल्टेज के उतार-चढ़ाव से Inverter AC, Smart TV और फ्रिज जैसे महंगे अप्लायंसेज खराब हो सकते हैं। जानिए इन्हें कैसे सुरक्षित रखें।",
+        "coverImage": "/images/discover/home_appliance_monsoon_protection_1783245538901.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "rrb-group-d-general-science-preparation-strategy",
+        "slug": "rrb-group-d-general-science-preparation-strategy",
+        "title": "RRB Group D Exam: सामान्य विज्ञान (General Science) में पूरे नंबर लाने का गुप्त फॉर्मूला, बदल देगा आपका स्कोर!",
+        "snippet": "रेलवे ग्रुप डी (RRB Group D) में जनरल साइंस के 25 प्रश्न सिलेक्शन तय करते हैं। जानिए NCERT आधारित फिजिक्स, केमिस्ट्री और बायोलॉजी की फर्स्ट-अटेम्प्ट सक्सेस स्ट्रेटेजी।",
+        "coverImage": "/images/discover/rrb_group_d_science_preparation_1783245643869.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "it-layoff-financial-legal-checklist",
+        "slug": "it-layoff-financial-legal-checklist",
+        "title": "IT Layoff से घबराएं नहीं: नौकरी जाने के तुरंत बाद सबसे पहले निपटाएं ये 3 वित्तीय और कानूनी काम!",
+        "snippet": "नौकरी जाना एक कठिन अनुभव है, लेकिन सही वित्तीय और कानूनी कदम उठाने से आप इस मुश्किल समय से आसानी से उबर सकते हैं। जानिए सेवरेंस पैकेज, हेल्थ इंश्योरेंस पोर्टिंग और लिंक्डइन स्ट्रेटेजी।",
+        "coverImage": "/images/discover/it_layoff_survival_guide_1783245724945.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "understanding-grey-market-premium-gmp",
+        "slug": "understanding-grey-market-premium-gmp",
+        "title": "Share Market Listing: क्या होता है Grey Market Premium (GMP)? आईपीओ अलॉटमेंट से पहले ऐसे समझें मुनाफे का गणित!",
+        "snippet": "आईपीओ (IPO) में निवेश करने से पहले ग्रे मार्केट प्रीमियम (GMP) पर सबकी नजर होती है। लेकिन क्या आप जानते हैं कि इस पर आंख मूंदकर भरोसा करना कितना खतरनाक हो सकता है? जानिए इसके पीछे का सच।",
+        "coverImage": "/images/discover/ipo_grey_market_premium_1783246013796.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "gujarat-tat-s-mains-preparation-strategy",
+        "slug": "gujarat-tat-s-mains-preparation-strategy",
+        "title": "Gujarat TAT-S Prelims पास करने के बाद Mains की तैयारी कैसे करें? 3 अगस्त की परीक्षा के लिए जरूरी स्ट्रेटेजी!",
+        "snippet": "गुजरात शिक्षक योग्यता परीक्षा (TAT-S) का प्रीलिम्स रिजल्ट आ चुका है। जिन उम्मीदवारों के 70 से अधिक अंक हैं, वे 3 अगस्त को होने वाली मुख्य परीक्षा (Mains) की तैयारी कैसे करें, जानिए बेस्ट राइटिंग स्ट्रेटेजी।",
+        "coverImage": "/images/discover/gujarat_tat_s_mains_preparation_1783246061055.png",
+        "author": "MoneyCal Team"
+    },
+    {
+        "id": "caliber-xtranet-ipo-gmp",
+        "slug": "caliber-xtranet-ipo-gmp",
+        "title": "Got Caliber Mining or Xtranet IPO Allotment? This Shocking GMP Drop Changes Everything!",
+        "snippet": "Investors of Caliber Mining and Xtranet Technologies are in for a wild ride. While allotment status is finally being finalized, the latest Grey Market Premium (GMP) signals a massive surprise for listing day. Read this before you plan your exit strategy.",
+        "coverImage": "/images/discover/ipo-caliber-xtranet-shock.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-23T12:00:00+05:30"
+    },
+    {
+        "id": "ruturaj-gaikwad-sri-lanka-captaincy",
+        "slug": "ruturaj-gaikwad-sri-lanka-captaincy",
+        "title": "Ruturaj Gaikwad ने रचा इतिहास! श्रीलंका सीरीज से पहले कप्तान ने खेल दी ऐसी तूफानी पारी?",
+        "snippet": "Team India के युवा स्टार Ruturaj Gaikwad का बल्ला श्रीलंका दौरे से ठीक पहले आग उगल रहा है। उनकी तूफानी बल्लेबाजी और कप्तानी के दावों पर देखिए पूरी रिपोर्ट।",
+        "coverImage": "/images/discover/ruturaj-gaikwad-sri-lanka.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.208Z"
+    },
+    {
+        "id": "iphone-18-pro-leak-features-price",
+        "slug": "iphone-18-pro-leak-features-price",
+        "title": "iPhone 18 Pro का पहला लुक लीक! Apple इस बार ला रहा है ऐसा फीचर जो आपने सोचा भी न होगा?",
+        "snippet": "Apple के अपकमिंग iPhone 18 Pro के फीचर्स और डिजाइन इंटरनेट पर लीक हो गए हैं। नया कैमरा और AI फीचर्स भारतीय टेक लवर्स के होश उड़ाने वाले हैं।",
+        "coverImage": "/images/discover/iphone-18-pro-leak-cover.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.206Z"
+    },
+    {
+        "id": "akshaye-khanna-bollywood-journey-transformation",
+        "slug": "akshaye-khanna-bollywood-journey-transformation",
+        "title": "Akshaye Khanna अचानक क्यों हो गए थे फिल्मों से गायब? अब ऐसे बदल गया है ",
+        "snippet": "बॉलीवुड के दिग्गज अभिनेता Akshaye Khanna के फिल्मों से दूर होने की असली वजह और उनके शानदार ट्रांसफॉर्मेशन की अनसुनी कहानी।",
+        "coverImage": "/images/discover/akshaye-khanna-cover.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.204Z"
+    },
+    {
+        "id": "sbi-mutual-fund-share-news",
+        "slug": "sbi-mutual-fund-share-news",
+        "title": "SBI Mutual Fund के आईपीओ और शेयर को लेकर आई बड़ी खबर! क्या आपके पास भी है यह धांसू स्टॉक?",
+        "snippet": "क्या आप भी SBI Mutual Fund के शेयर या IPO का इंतजार कर रहे हैं? जानिए मार्केट एक्सपर्ट्स की राय और इस धांसू स्टॉक से जुड़ी सबसे बड़ी खबर।",
+        "coverImage": "/images/discover/sbi-mutual-fund-stock.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.202Z"
+    },
+    {
+        "id": "avengers-doomsday-marvel-villain-robert-downey",
+        "slug": "avengers-doomsday-marvel-villain-robert-downey",
+        "title": "Avengers Doomsday में होने जा रही है इस खतरनाक विलेन की एंट्री! मार्वल फैंस के उड़े होश",
+        "snippet": "MCU की सबसे बड़ी फिल्म Avengers: Doomsday में आयरन मैन फेम Robert Downey Jr. एक नए और खूंखार अवतार (Doctor Doom) में वापसी कर रहे हैं। जानिए पूरी डिटेल।",
+        "coverImage": "/images/discover/avengers-doomsday-poster-easter-eggs.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.198Z"
+    },
+    {
+        "id": "trending-old-money-aesthetic-tshirts",
+        "slug": "trending-old-money-aesthetic-tshirts",
+        "title": "Old Money Aesthetic: इस सीजन लड़कों के बीच ट्रेंड कर रही हैं ये 5 तरह की टी-शर्ट्स, देखें बजट फ्रेंडली लिस्ट",
+        "snippet": "चाहते हैं कम बजट में अमीर और क्लासी दिखना? लड़कों के बीच धूम मचा रहे ",
+        "coverImage": "/images/discover/trending-tshirts-old-money.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.194Z"
+    },
+    {
+        "id": "imd-weather-red-alert-heavy-rain",
+        "slug": "imd-weather-red-alert-heavy-rain",
+        "title": "IMD Weather Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, मौसम विभाग ने जारी किया रेड अलर्ट!",
+        "snippet": "भारत मौसम विज्ञान विभाग (IMD) ने कई राज्यों में भयंकर बारिश और बाढ़ का रेड अलर्ट जारी किया है। घर से निकलने से पहले जान लें अपने शहर का मौसम।",
+        "coverImage": "/images/discover/monsoon-2026-heavy-rain-alert-states.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.190Z"
+    },
+    {
+        "id": "nhai-rajmargyatra-app-local-pass",
+        "slug": "nhai-rajmargyatra-app-local-pass",
+        "title": "Rajmargyatra App: हाइवे पर सफर करने वालों के लिए बड़ी खुशखबरी! अब घर बैठे ऐसे मिलेगा लोकल टोल पास",
+        "snippet": "NHAI के ",
+        "coverImage": "/images/discover/gadkari-satellite-toll-highway-plan.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.189Z"
+    },
+    {
+        "id": "takeda-dengue-vaccine-launch-india",
+        "slug": "takeda-dengue-vaccine-launch-india",
+        "title": "Dengue Vaccine: अब डेंगू का डर खत्म? भारत में जल्द आ सकती है टाकेडा की नई वैक्सीन, जानें कितनी होगी असरदार",
+        "snippet": "बरसात के मौसम में डेंगू का कहर हर साल डराता है, लेकिन अब जापानी कंपनी Takeda की नई डेंगू वैक्सीन (Qdenga) भारत में लॉन्च होने की तैयारी में है।",
+        "coverImage": "/images/discover/takeda-dengue-vaccine.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.187Z"
+    },
+    {
+        "id": "libra-horoscope-weekly-july-2026",
+        "slug": "libra-horoscope-weekly-july-2026",
+        "title": "तुला राशिफल (Libra Horoscope): जुलाई के इस हफ्ते में चमकेगी तुला राशि वालों की किस्मत, बस रखना होगा इस बात का ध्यान",
+        "snippet": "Tula Rashifal: तुला राशि वालों के लिए जुलाई का यह सप्ताह धन और करियर के मामले में बेहद लकी साबित होने वाला है। जानिए क्या कहते हैं आपके सितारे।",
+        "coverImage": "/images/discover/libra-horoscope-july.png",
+        "author": "MoneyCal Editor",
+        "date": "2026-07-22T06:10:19.155Z"
+    },
+    {
+        "id": "post-office-scss-scheme",
+        "slug": "post-office-scss-scheme",
+        "title": "रिटायरमेंट के बाद पैसों की टेंशन खत्म! पोस्ट ऑफिस की इस स्कीम (SCSS) में मिल रहा है 8.2% का शानदार ब्याज",
+        "snippet": "Senior Citizen Savings Scheme (SCSS) 2026: वरिष्ठ नागरिकों के लिए सबसे बेहतरीन निवेश योजना। जानिए पोस्ट ऑफिस की इस स्कीम में 30 लाख लगाकर कितनी बनेगी पेंशन।",
+        "coverImage": "/images/discover/post-office-scss-scheme.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T16:05:00+05:30"
+    },
+    {
+        "id": "income-tax-notice-refund",
+        "slug": "income-tax-notice-refund",
+        "title": "ITR रिफंड का कर रहे हैं इंतजार? Section 143(1) का नोटिस देखकर घबराएं नहीं, जानिए इसका सही मतलब",
+        "snippet": "Income Tax Intimation U/S 143(1): क्या आपको भी इनकम टैक्स डिपार्टमेंट से नोटिस मिला है? जानिए इस ईमेल का क्या मतलब है और आपका ITR Refund कब तक आएगा।",
+        "coverImage": "/images/discover/income-tax-notice-refund.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T16:00:00+05:30"
+    },
+    {
+        "id": "pm-awas-yojana-subsidy",
+        "slug": "pm-awas-yojana-subsidy",
+        "title": "खुद का पक्का घर बनाने का सपना होगा पूरा! PM Awas Yojana (PMAY 2.0) में मिल रही है ₹2.5 लाख तक की सब्सिडी",
+        "snippet": "PM Awas Yojana Gramin & Urban 2026: क्या आप भी किराए के मकान में रहते हैं? जानिए प्रधानमंत्री आवास योजना (PMAY 2.0) के तहत कैसे पाएं घर बनाने के लिए भारी सब्सिडी।",
+        "coverImage": "/images/discover/pm-awas-yojana-subsidy.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:55:00+05:30"
+    },
+    {
+        "id": "gold-rate-import-duty",
+        "slug": "gold-rate-import-duty",
+        "title": "सोना खरीदने वालों की लगी लॉटरी! सोने के दाम और इंपोर्ट ड्यूटी (Import Duty) पर आया बड़ा अपडेट",
+        "snippet": "Gold Rate Today & Import Duty Cut 2026: क्या सोना सस्ता होने वाला है? जानिए 24 और 22 कैरेट सोने का ताजा भाव और इंपोर्ट ड्यूटी से जुड़ी पूरी खबर।",
+        "coverImage": "/images/discover/gold-rate-import-duty.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:50:00+05:30"
+    },
+    {
+        "id": "petrol-diesel-prices-drop",
+        "slug": "petrol-diesel-prices-drop",
+        "title": "पेट्रोल-डीजल की कीमतों पर बड़ा अपडेट! क्या जल्द सस्ती होगी तेल की कीमतें? जानिए ताजा रेट",
+        "snippet": "Petrol-Diesel Prices India 2026: क्या जल्द ही आम आदमी को पेट्रोल और डीजल की कीमतों से राहत मिलने वाली है? जानिए ताजा अपडेट्स और आपके शहर का आज का भाव।",
+        "coverImage": "/images/discover/petrol-diesel-prices-drop.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:45:00+05:30"
+    },
+    {
+        "id": "nps-vatsalya-scheme",
+        "slug": "nps-vatsalya-scheme",
+        "title": "बच्चों के लिए शानदार स्कीम! हर महीने ₹250 बचाकर बनाएं करोड़पति, जानिए NPS Vatsalya के फायदे",
+        "snippet": "NPS Vatsalya Scheme 2026: क्या आप भी अपने बच्चों का भविष्य सुरक्षित करना चाहते हैं? जानिए सरकार की नई एनपीएस वात्सल्य योजना के बारे में, जहां सिर्फ 250 रुपये से शुरू कर सकते हैं निवेश।",
+        "coverImage": "/images/discover/nps-vatsalya-scheme.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:40:00+05:30"
+    },
+    {
+        "id": "smam-tractor-subsidy-yojana",
+        "slug": "smam-tractor-subsidy-yojana",
+        "title": "किसानों की हुई मौज! ट्रैक्टर और कृषि यंत्रों पर मिल रही है 80% तक की भारी सब्सिडी",
+        "snippet": "SMAM Yojana 2026: ट्रैक्टर और खेती की मशीनों पर सरकार दे रही है 80% तक की भारी छूट। जानिए कैसे करें ऑनलाइन आवेदन और कौन से कागजात हैं जरूरी।",
+        "coverImage": "/images/discover/smam-tractor-subsidy-yojana.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T15:30:00+05:30"
+    },
+    {
+        "id": "eighth-cpc-salary-updates",
+        "slug": "eighth-cpc-salary-updates",
+        "title": "केंद्रीय कर्मचारियों के लिए खुशखबरी! सैलरी और पेंशन पर आया सरकार का बड़ा अपडेट",
+        "snippet": "8th Pay Commission (आठवें वेतन आयोग) और DA Hike को लेकर बड़ा अपडेट! जानिए केंद्रीय कर्मचारियों और पेंशनर्स की बेसिक सैलरी में कितना होने जा रहा है इजाफा।",
+        "coverImage": "/images/discover/eighth-cpc-salary-updates.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T14:30:00+05:30"
+    },
+    {
+        "id": "sbi-funds-management-ipo-listing",
+        "slug": "sbi-funds-management-ipo-listing",
+        "title": "SBI Funds Management IPO: ₹613 पर लिस्टिंग, क्या निवेशकों को मिला बंपर मुनाफा? पूरी सच्चाई",
+        "snippet": "SBI Funds Management IPO की शानदार लिस्टिंग! शेयर प्राइस, ग्रे मार्केट प्रीमियम (GMP) और क्या अब आपको खरीदना चाहिए? जानिए पूरी सच्चाई और एक्सपर्ट्स की राय।",
+        "coverImage": "/images/discover/sbi-funds-management-ipo-listing.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-21T12:00:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-hindi-dubbed-download-telegram",
+        "slug": "odyssey-movie-hindi-dubbed-download-telegram",
+        "title": "The Odyssey Movie: How to download the odyssey movie in hindi dubbed? सच्चाई",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-movie-hindi-dubbed-download-telegram.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-download-filmyzilla-1080p-hindi",
+        "slug": "odyssey-movie-download-filmyzilla-1080p-hindi",
+        "title": "Filmyzilla Leaks: how to download the odyssey movie in hindi dubbed? जानिए",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-movie-download-filmyzilla-1080p-hindi.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "how-to-watch-odyssey-hindi-dubbed-online",
+        "slug": "how-to-watch-odyssey-hindi-dubbed-online",
+        "title": "how to download the odyssey movie in hindi dubbed? Legal OTT Release चौंकाने वाला",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/how-to-watch-odyssey-hindi-dubbed-online.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "odyssey-christopher-nolan-hindi-dubbed-ott",
+        "slug": "odyssey-christopher-nolan-hindi-dubbed-ott",
+        "title": "Nolan's Magic: how to download the odyssey movie in hindi dubbed? पूरी जानकारी",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-christopher-nolan-hindi-dubbed-ott.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-2026-hindi-dubbed-vegamovies",
+        "slug": "odyssey-movie-2026-hindi-dubbed-vegamovies",
+        "title": "Vegamovies 2026: how to download the odyssey movie in hindi dubbed? बड़ी खबर",
+        "snippet": "Want to know how to download the odyssey movie in hindi dubbed? Read this full article to understand the truth, legal facts, and cyber security warnings before clicking any links.",
+        "coverImage": "/images/discover/odyssey-movie-2026-hindi-dubbed-vegamovies.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-18T12:00:00+05:30"
+    },
+    {
+        "id": "aaj-ka-rashifal-dhan-labh-2026",
+        "slug": "aaj-ka-rashifal-dhan-labh-2026",
+        "title": "Rashifal: आज चमकेगी इन भाग्यशाली राशियों की किस्मत, होगा बड़ा धन लाभ!",
+        "snippet": "15 जुलाई 2026 को बन रहे हैं कई दुर्लभ शुभ योग। जानिए मेष से लेकर मीन राशि तक, किन राशियों के लिए आज का दिन लाएगा अपार धन और सफलता।",
+        "coverImage": "/images/discover/aaj-ka-rashifal-dhan-labh-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T21:30:00+05:30"
+    },
+    {
+        "id": "monsoon-2026-heavy-rain-alert-states",
+        "slug": "monsoon-2026-heavy-rain-alert-states",
+        "title": "Monsoon 2026 Alert: अगले 48 घंटों में इन राज्यों में होगी भारी बारिश, IMD ने जारी किया रेड अलर्ट!",
+        "snippet": "मौसम विभाग (IMD) ने देश के 22 राज्यों में अगले 48 घंटों के लिए भारी बारिश (Heavy Rain) का अलर्ट जारी किया है। जानिए किन राज्यों में है बाढ़ का सबसे ज्यादा खतरा।",
+        "coverImage": "/images/discover/monsoon-2026-heavy-rain-alert-states.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T21:00:00+05:30"
+    },
+    {
+        "id": "ibm-share-price-buy-or-sell",
+        "slug": "ibm-share-price-buy-or-sell",
+        "title": "IBM Share Price में आया 115 सालों का सबसे बड़ा क्रैश! क्या यह शेयर खरीदने का सही समय है?",
+        "snippet": "जुलाई 2026 में IBM के शेयरों में 25% की भारी गिरावट दर्ज की गई। जानिए AI हार्डवेयर की बढ़ती डिमांड ने कैसे इस टेक दिग्गज को नुकसान पहुंचाया और अब निवेशकों को क्या करना चाहिए।",
+        "coverImage": "/images/discover/ibm-share-price-buy-or-sell.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T20:30:00+05:30"
+    },
+    {
+        "id": "irctc-new-website-launch-fast-booking",
+        "slug": "irctc-new-website-launch-fast-booking",
+        "title": "IRCTC की नई वेबसाइट लॉन्च! अब तत्काल टिकट बुकिंग होगी सुपरफास्ट, देखें बड़े बदलाव",
+        "snippet": "IRCTC ने अपनी वेबसाइट का नया और फास्ट वर्जन लॉन्च कर दिया है। अब 1.5 लाख टिकट प्रति मिनट बुक हो सकेंगे। जानिए नए फीचर्स और बदलावों के बारे में पूरी जानकारी।",
+        "coverImage": "/images/discover/irctc-new-website-launch-fast-booking.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T20:00:00+05:30"
+    },
+    {
+        "id": "ration-card-new-update-2026",
+        "slug": "ration-card-new-update-2026",
+        "title": "Ration Card धारकों के लिए बड़ी खुशखबरी, सरकार ने किया यह नया बदलाव!",
+        "snippet": "राशन कार्ड (Ration Card) धारकों के लिए e-KYC हुई अनिवार्य। प्रधानमंत्री गरीब कल्याण अन्न योजना (PMGKAY) के तहत फ्री राशन दिसंबर 2028 तक बढ़ाया गया। जानें पूरी डिटेल।",
+        "coverImage": "/images/discover/ration-card-new-update-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T19:30:00+05:30"
+    },
+    {
+        "id": "shah-rukh-khan-bungalow-petition",
+        "slug": "shah-rukh-khan-bungalow-petition",
+        "title": "Shah Rukh Khan के बंगले 'Mannat' को लेकर सुप्रीम कोर्ट का बड़ा फैसला, जानें पूरा मामला",
+        "snippet": "शाहरुख खान के बंगले 'मन्नत' (Mannat) के रेनोवेशन को लेकर सुप्रीम कोर्ट में दायर हुई थी याचिका। चीफ जस्टिस ने याचिकाकर्ता को लगाई फटकार। जानिए क्या है पूरी सच्चाई।",
+        "coverImage": "/images/discover/shah-rukh-khan-bungalow-petition.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T19:00:00+05:30"
+    },
+    {
+        "id": "diljit-dosanjh-new-movie-satluj",
+        "slug": "diljit-dosanjh-new-movie-satluj",
+        "title": "Diljit Dosanjh की New Movie Satluj का धमाकेदार ऐलान, फैंस में बड़ा क्रेज और विवाद",
+        "snippet": "दिलजीत दोसांझ की नई फिल्म Satluj OTT प्लेटफॉर्म से रिलीज के 48 घंटे के भीतर ही क्यों हटा दी गई? जानिए इस विवादित फिल्म की पूरी सच्चाई और फैंस का रिएक्शन।",
+        "coverImage": "/images/discover/diljit-dosanjh-new-movie-satluj.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T18:30:00+05:30"
+    },
+    {
+        "id": "maruti-suzuki-brezza-facelift-2026",
+        "slug": "maruti-suzuki-brezza-facelift-2026",
+        "title": "New Maruti Suzuki Brezza Facelift 2026 Launch! देखें बेमिसाल फीचर्स और कीमत",
+        "snippet": "मारुति सुजुकी 23 जुलाई 2026 को अपनी नई Brezza Facelift लॉन्च करने जा रही है। जानिए इसके ADAS लेवल 2, नए टर्बो इंजन और एडवांस फीचर्स से जुड़ी हर जानकारी।",
+        "coverImage": "/images/discover/maruti-suzuki-brezza-facelift-2026.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T18:00:00+05:30"
+    },
+    {
+        "id": "france-vs-spain-football-upset",
+        "slug": "france-vs-spain-football-upset",
+        "title": "France vs Spain: फुटबॉल वर्ल्ड कप में बड़ा उलटफेर, फैंस हुए हैरान!",
+        "snippet": "FIFA World Cup 2026 के सेमीफाइनल में स्पेन ने फ्रांस को 2-0 से हराकर किया बड़ा उलटफेर। जानिए कैसे एम्बाप्पे (Mbappé) की टीम को मिली करारी हार।",
+        "coverImage": "/images/discover/france-vs-spain-football-upset.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T17:30:00+05:30"
+    },
+    {
+        "id": "ind-vs-eng-axar-patel-record",
+        "slug": "ind-vs-eng-axar-patel-record",
+        "title": "IND vs ENG: Axar Patel का धमाका, तोड़ दिया सालों पुराना बड़ा रिकॉर्ड!",
+        "snippet": "भारत बनाम इंग्लैंड मैच में अक्षर पटेल (Axar Patel) ने गेंद और बल्ले दोनों से ऐसा गदर मचाया कि एक बहुत बड़ा रिकॉर्ड टूट गया। जानिए इस ऐतिहासिक जीत की पूरी कहानी।",
+        "coverImage": "/images/discover/ind-vs-eng-axar-patel-record.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T17:00:00+05:30"
+    },
+    {
+        "id": "hang-seng-dax-index-global-market",
+        "slug": "hang-seng-dax-index-global-market",
+        "title": "Hang Seng और DAX Index में हलचल, वैश्विक बाजारों के एक्शन से क्या Indian Market डूबेगा?",
+        "snippet": "वैश्विक शेयर बाजारों, खास तौर पर Hang Seng और DAX Index में गिरावट से भारतीय शेयर बाजार पर दबाव बढ़ा है। जानिए निवेशकों को इस माहौल में क्या रणनीति अपनानी चाहिए।",
+        "coverImage": "/images/discover/hang-seng-dax-index-global-market.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T16:30:00+05:30"
+    },
+    {
+        "id": "vedanta-group-anil-agarwal-masterstroke",
+        "slug": "vedanta-group-anil-agarwal-masterstroke",
+        "title": "अनिल अग्रवाल का नया मास्टरस्ट्रोक! वेदांता ग्रुप के निवेशकों की खुली किस्मत",
+        "snippet": "वेदांता ग्रुप (Vedanta Group) के डीमर्जर और चेयरमैन अनिल अग्रवाल के नए विजन 2026 ने बाजार में तहलका मचा दिया है। जानिए 5 नई कंपनियों और $100 बिलियन के टारगेट का पूरा सच।",
+        "coverImage": "/images/discover/vedanta-group-anil-agarwal-masterstroke.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T16:00:00+05:30"
+    },
+    {
+        "id": "chatgpt-claude-ai-india-pricing",
+        "slug": "chatgpt-claude-ai-india-pricing",
+        "title": "ChatGPT और Claude AI को लेकर भारत में बड़ा बदलाव, क्या आपकी जेब पर पड़ेगा असर?",
+        "snippet": "Claude AI ने भारत में अपने सब्सक्रिप्शन प्लान्स को भारतीय रुपये (INR) में लॉन्च कर दिया है। जानिए नई कीमतें, GST के नियम और इससे ChatGPT यूजर्स पर क्या असर पड़ेगा।",
+        "coverImage": "/images/discover/chatgpt-claude-ai-india-pricing.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T15:30:00+05:30"
+    },
+    {
+        "id": "epfo-vishwas-2026-scheme",
+        "slug": "epfo-vishwas-2026-scheme",
+        "title": "EPFO ने लॉन्च की Vishwas 2026 EPF Scheme! नौकरीपेशा लोग तुरंत उठाएं फायदा",
+        "snippet": "EPFO ने एम्प्लॉयर्स और कर्मचारियों के लिए Vishwas 2026 स्कीम लॉन्च की है। जानिए क्या है यह नई EPF योजना और इससे करोड़ों नौकरीपेशा लोगों को कैसे मिलेगा फायदा।",
+        "coverImage": "/images/discover/epfo-vishwas-2026-scheme.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T15:00:00+05:30"
+    },
+    {
+        "id": "silver-price-surge-rumor",
+        "slug": "silver-price-surge-rumor",
+        "title": "चाँदी की कीमतों में 1000% का जोरदार उछाल! क्या रिकॉर्ड तोड़ने को तैयार है Silver?",
+        "snippet": "क्या सच में चाँदी (Silver) की कीमतों में 1000% का उछाल आया है? जानिए आज के ताजा भाव, MCX के आंकड़े और बाजार में फैली इस सनसनीखेज खबर का पूरा सच।",
+        "coverImage": "/images/discover/silver-price-surge-rumor.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T14:30:00+05:30"
+    },
+    {
+        "id": "adani-power-groww-news",
+        "slug": "adani-power-groww-news",
+        "title": "Adani Power और Groww को लेकर आई बड़ी खबर, आज ही देख लें ये अपडेट",
+        "snippet": "अडानी पावर के शेयरों में तेजी और Groww ऐप के नए फीचर्स ने बाजार में हलचल मचा दी है। जानिए निवेशकों के लिए क्या हैं इसके मायने और Q1 नतीजों से जुड़ी अहम जानकारी।",
+        "coverImage": "/images/discover/adani-power-groww-news.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T14:00:00+05:30"
+    },
+    {
+        "id": "nse-bse-crash-tcs-itc-bel",
+        "slug": "nse-bse-crash-tcs-itc-bel",
+        "title": "NSE और BSE पर हाहाकार! TCS, ITC और BEL के शेयरों में अचानक क्या हुआ?",
+        "snippet": "भारतीय शेयर बाजार में भारी गिरावट! Sensex और Nifty के क्रैश होने के पीछे क्या हैं कारण? जानिए TCS, ITC और BEL जैसे बड़े शेयरों पर इसका क्या असर हुआ है।",
+        "coverImage": "/images/discover/nse-bse-crash-tcs-itc-bel.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T13:30:00+05:30"
+    },
+    {
+        "id": "alpine-sbi-ipo-gmp",
+        "slug": "alpine-sbi-ipo-gmp",
+        "title": "Alpine Texworld और SBI Funds Management IPO का बड़ा धमाका: GMP देखकर उड़ जाएंगे होश!",
+        "snippet": "जुलाई 2026 में शेयर बाजार में IPO की बहार! Alpine Texworld और SBI Funds Management IPO के Grey Market Premium (GMP) ने निवेशकों में हलचल मचा दी है। जानिए पूरी डिटेल्स।",
+        "coverImage": "/images/discover/alpine-sbi-ipo-gmp.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T13:00:00+05:30"
+    },
+    {
+        "id": "kusumgar-share-price-surge",
+        "slug": "kusumgar-share-price-surge",
+        "title": "Kusumgar Share Price 700% उछला! इस गुमनाम स्टॉक ने सबको चौंकाया",
+        "snippet": "क्या सच में Kusumgar के शेयर में 700% का उछाल आया है? जानिए इस गुमनाम स्टॉक के बंपर IPO, लिस्टिंग प्रीमियम और निवेशकों की छप्पर फाड़ कमाई का पूरा सच।",
+        "coverImage": "/images/discover/kusumgar-share-price-surge.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T12:30:00+05:30"
+    },
+    {
+        "id": "ibm-angel-one-share-price-surge",
+        "slug": "ibm-angel-one-share-price-surge",
+        "title": "IBM और Angel One में आई भारी हलचल! जानिए इन शेयरों का पूरा सच",
+        "snippet": "Angel One और IBM के शेयरों में आई बड़ी हलचल के पीछे का कारण क्या है? जानिए Q1 FY27 रिजल्ट्स, डिविडेंड और AI के कारण बाजार में आए इस बड़े बदलाव की पूरी कहानी।",
+        "coverImage": "/images/discover/ibm-angel-one-share-price-surge.png",
+        "author": "MoneyCal Team",
+        "date": "2026-07-15T12:00:00+05:30"
+    },
+    {
+        "id": "toxic-movie-cast-nayanthara-kiara-huma",
+        "slug": "toxic-movie-cast-nayanthara-kiara-huma",
+        "title": "Toxic Cast: Nayanthara और Kiara Advani चलाएंगी गोवा का अंडरवर्ल्ड?",
+        "snippet": "Toxic movie में महिलाओं का दबदबा! नयनतारा और कियारा आडवाणी के खूंखार रोल्स के बारे में वो बातें जो इंटरनेट पर लीक हो गई हैं।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:45:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-review-post-credit-scene",
+        "slug": "odyssey-movie-review-post-credit-scene",
+        "title": "The Odyssey Movie Review: Don't Watch It Until You See This Post-Credit Scene!",
+        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में पहली बार होगा एक सीक्रेट पोस्ट-क्रेडिट सीन! जानिए यह सीन क्यों इतना खास है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSboj1QTsBlQ8SYN7gjXM6_ICAAohBUoTVEEEHAHnRN4A&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:45:00+05:30"
+    },
+    {
+        "id": "toxic-movie-1970-goa-underworld-aesthetic",
+        "slug": "toxic-movie-1970-goa-underworld-aesthetic",
+        "title": "Toxic Movie 1970s Goa: ड्रग्स, माफिया और विंटेज लग्जरी का खूंखार खेल!",
+        "snippet": "Yash की नई फिल्म Toxic 1950 से 1970 के दशक के गोवा पर आधारित है। जानिए इस रेट्रो अंडरवर्ल्ड की सच्चाई क्या है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNj4b7lPB0ZPt_sy1hycuVE8QC7rRMwQ2q5T6etH2UrQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:40:00+05:30"
+    },
+    {
+        "id": "odyssey-where-to-watch-online-netflix-prime",
+        "slug": "odyssey-where-to-watch-online-netflix-prime",
+        "title": "Where to Watch The Odyssey Online in India: Netflix, Prime, or Hotstar?",
+        "snippet": "क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey के डिजिटल राइट्स किस ओटीटी (OTT) प्लेटफॉर्म के पास जाएंगे? जानिए स्ट्रीमिंग डिटेल्स।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZnOCU-JCKez_dp8jJmITP0bunaWTNJZL4-M5YTNfYuQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:40:00+05:30"
+    },
+    {
+        "id": "toxic-movie-release-date-4-festivals-strategy",
+        "slug": "toxic-movie-release-date-4-festivals-strategy",
+        "title": "Toxic Release Date: मेकर्स का मास्टरस्ट्रोक! एक साथ 4 बड़े त्योहारों पर कब्जा",
+        "snippet": "Yash की फिल्म Toxic 26 अगस्त 2026 को रिलीज होगी। जानिए कैसे यह रिलीज डेट बॉक्स ऑफिस पर सारे रिकॉर्ड तोड़ने के लिए चुनी गई है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4M9FaugHpSF-E5-6AZi9yf4e-XwMOMQe7gtMVGfjyoQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:35:00+05:30"
+    },
+    {
+        "id": "odyssey-full-movie-story-leak-mythology",
+        "slug": "odyssey-full-movie-story-leak-mythology",
+        "title": "The Odyssey Full Movie Story Leak: Is This Hollywood's Greatest Mythological Epic?",
+        "snippet": "इथाका के राजा ओडीसियस की खूनी वापसी! 100 राजकुमारों का बेरहमी से कत्ल और पत्नी से दोबारा मिलने की रोंगटे खड़े कर देने वाली कहानी।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8GQxtAZVtPO--s1a9Iy8a0hd24RVyjrbWhOnXHWsUA&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:35:00+05:30"
+    },
+    {
+        "id": "toxic-movie-hollywood-action-director-jj-perry",
+        "slug": "toxic-movie-hollywood-action-director-jj-perry",
+        "title": "Toxic Movie Action: John Wick के स्टंटमैन ने Yash को दिया खतरनाक लुक!",
+        "snippet": "John Wick के एक्शन कोरियोग्राफर J.J. Perry ने Toxic में एक्शन का लेवल हॉलीवुड जैसा कर दिया है। जानिए फिल्म में क्या खास होगा।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPk9DaIDLmkR7dq5-uUKnPE9_cnSyMWAOXuZsi6szrA&s",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:30:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-monsters-magic-box-office",
+        "slug": "odyssey-movie-monsters-magic-box-office",
+        "title": "Monsters, Magic, and Revenge: Why The Odyssey Movie Will Break All Box Office Records!",
+        "snippet": "बिना CGI के शूट हुए साइक्लोप्स और समुद्र के देवताओं के भयंकर युद्ध सीन! जानिए 250 मिलियन डॉलर की फिल्म द ओडिसी के बॉक्स ऑफिस प्रेडिक्शंस।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4X5--b30MX5U_UMNGplwfg0E42o4WNxI00Cr6k2ZAtA&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:30:00+05:30"
+    },
+    {
+        "id": "toxic-movie-raya-to-ravan-ramayan-nitesh-tiwari",
+        "slug": "toxic-movie-raya-to-ravan-ramayan-nitesh-tiwari",
+        "title": "Raya से लेकर Ravan तक: Yash कैसे कर रहे हैं इंडियन सिनेमा पर कब्जा!",
+        "snippet": "Toxic में अंडरवर्ल्ड डॉन Raya और Nitesh Tiwari की Ramayan में Ravan। जानिए यश का यह मेगा-सिनेमैटिक प्लान उन्हें कैसे सबसे बड़ा ग्लोबल स्टार बनाएगा।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1xj84tPHRriwl2eN5_JzHVjN_Htl3O5qZzPX0xVsmdQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:25:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-ending-explained-twists",
+        "slug": "odyssey-movie-ending-explained-twists",
+        "title": "The Odyssey Movie Ending Explained: 5 Mind-Blowing Twists You Completely Missed!",
+        "snippet": "क्रिस्टोफर नोलन की फिल्मों में ट्विस्ट न हो ऐसा हो ही नहीं सकता! 250 मिलियन डॉलर की फिल्म The Odyssey के टाइम और स्पेस ट्विस्ट की लीक हुई डिटेल्स।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3c6sezlRQMBhKV9w1ETT-63ykOH6Ct2KmXe0TetV4g&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:25:00+05:30"
+    },
+    {
+        "id": "toxic-movie-gun-scene-controversy-a-rating",
+        "slug": "toxic-movie-gun-scene-controversy-a-rating",
+        "title": "Toxic Movie Controversy: गन सीन पर मचा बवाल, फिल्म को मिलेगी 'A' रेटिंग?",
+        "snippet": "Yash की अपकमिंग फिल्म Toxic के एक सीन पर सेंसर बोर्ड की नजर। जानिए क्यों मेकर्स फिल्म से इस डार्क और हिंसक सीन को हटाने से मना कर रहे हैं।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKs3DMhnpClgH0z7nHYbIPH8SAntjkam4jzZeX9TyGsw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:20:00+05:30"
+    },
+    {
+        "id": "odyssey-cast-revealed-tom-holland-zendaya",
+        "slug": "odyssey-cast-revealed-tom-holland-zendaya",
+        "title": "The Odyssey Cast Revealed: You Won't Believe Who Is Playing Odysseus!",
+        "snippet": "Matt Damon, Tom Holland और Zendaya जैसी बड़ी स्टारकास्ट वाली 250 मिलियन डॉलर की फिल्म The Odyssey हॉलीवुड का सबसे बड़ा प्रोजेक्ट है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyFS4QJHrI2_e9UZqSZi37RMskJu9-U8g53PpejWMucg&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:20:00+05:30"
+    },
+    {
+        "id": "toxic-movie-yash-double-role-theory-villain",
+        "slug": "toxic-movie-yash-double-role-theory-villain",
+        "title": "Toxic Movie Leaked Story: क्या Yash खुद ही होंगे फिल्म के सबसे बड़े विलेन?",
+        "snippet": "इंटरनेट पर तहलका मचा रही है Toxic movie की डबल रोल (Dual Role) थ्योरी! जानिए कैसे यश फिल्म में हीरो और विलेन दोनों का किरदार निभा सकते हैं।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZlLUfPtAaQfpiHbyDMiiQrz_6HnvEfuSGO-rfnyOIpw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:15:00+05:30"
+    },
+    {
+        "id": "odyssey-bollywood-superstar-cast-cameo-leak",
+        "slug": "odyssey-bollywood-superstar-cast-cameo-leak",
+        "title": "Bollywood Superstar Cast in The Odyssey Movie? Leaked First Look Inside!",
+        "snippet": "क्या क्रिस्टोफर नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey में किसी बॉलीवुड या साउथ सुपरस्टार का कैमियो होने वाला है? जानिए असली सच्चाई।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaOL3T2B2-3oi485sch2XGBzbHiTiet8M5Mg5SjzFmMw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:15:00+05:30"
+    },
+    {
+        "id": "toxic-movie-box-office-collection-1200-crore-budget",
+        "slug": "toxic-movie-box-office-collection-1200-crore-budget",
+        "title": "Toxic Box Office Prediction: क्या Yash की नई फिल्म ₹1200 करोड़ कमा पाएगी?",
+        "snippet": "Toxic movie budget ₹500 से ₹1000 करोड़ के बीच है। जानिए क्यों इस फिल्म पर बॉक्स ऑफिस का सबसे ज्यादा दबाव है और क्या यह KGF 2 का रिकॉर्ड तोड़ पाएगी।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc06cqSN3f44XSUT4QTSEjMEZJnexZ-eHJY41Z08HCNQ&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:10:00+05:30"
+    },
+    {
+        "id": "odyssey-official-trailer-breakdown-most-expensive",
+        "slug": "odyssey-official-trailer-breakdown-most-expensive",
+        "title": "The Odyssey Official Trailer Breakdown: Is This the Most Expensive Movie Ever Made?",
+        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म द ओडिसी! क्या यह फिल्म हॉलीवुड के इतिहास की सबसे बड़ी ब्लॉकबस्टर और महंगी फिल्म बनेगी?",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAnr3VrWXkrWUGrcgzZ9ZKwW22LGDiWQVjxWnX2rfxPw&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:10:00+05:30"
+    },
+    {
+        "id": "toxic-movie-tabaahi-song-yash-kiara-chemistry",
+        "slug": "toxic-movie-tabaahi-song-yash-kiara-chemistry",
+        "title": "Toxic Movie Song Tabaahi: Yash और Kiara Advani की केमिस्ट्री ने तोड़े सारे रिकॉर्ड!",
+        "snippet": "Yash की Toxic movie का नया गाना Tabaahi इंटरनेट पर वायरल। जानिए क्यों यह गाना Raataan Lambiyan को भी पीछे छोड़ रहा है और फिल्म के हिट होने की गारंटी दे रहा है।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPk9DaIDLmkR7dq5-uUKnPE9_cnSyMWAOXuZsi6szrA&s",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:05:00+05:30"
+    },
+    {
+        "id": "odyssey-movie-vs-ramayana-trending-india",
+        "slug": "odyssey-movie-vs-ramayana-trending-india",
+        "title": "Before Ramayana, Watch This? Why The Odyssey Movie Is Trending in India Today!",
+        "snippet": "इंडिया में रामायण (Ramayana) का बज है, लेकिन नोलन की 250 मिलियन डॉलर की फिल्म The Odyssey ने ग्लोबल माइथोलॉजी का नया ट्रेंड सेट कर दिया है। जानिए दोनों में क्या समानताएं हैं।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYbkA4E-OOY1QDfesvo-UE-4PYOBYvUEL2ojx9O4R20g&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:05:00+05:30"
+    },
+    {
+        "id": "yash-toxic-movie-raya-release-date-box-office",
+        "slug": "yash-toxic-movie-raya-release-date-box-office",
+        "title": "Yash Toxic Movie: KGF के Rocky Bhai से 100 गुना खतरनाक है Raya! 10 बड़े खुलासे",
+        "snippet": "Yash upcoming movie Toxic: A Fairy Tale for Grown-Ups के रिलीज डेट, कास्ट, बजट और डायरेक्टर Geetu Mohandas के डार्क विजन की पूरी सच्चाई। जानिए 1500 शब्दों में पूरी डिटेल।",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNJxhYd61dcfTnwxbQMMZxIj-9xAgv6DZyl69r1qKs3g&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
+    },
+    {
+        "id": "nolan-odyssey-movie-release-date-india-fans",
+        "slug": "nolan-odyssey-movie-release-date-india-fans",
+        "title": "The Odyssey Movie Release Date: India Fans Go Crazy Over This Epic Action Trailer!",
+        "snippet": "Christopher Nolan की 250 मिलियन डॉलर (₹2000 करोड़) की फिल्म The Odyssey की रिलीज डेट, कास्ट, और चौंकाने वाले फैक्ट्स। क्या यह Oppenheimer का रिकॉर्ड तोड़ेगी?",
+        "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMhgUTYO2xabedpb2UK3Sm-IQBUlNfm3LnlTjamtT4SA&s=10",
+        "author": "MoneyCal Team",
+        "date": "2026-07-13T12:00:00+05:30"
     },
     {
         "id": "tactical-shift-coach-popovic-rebuild-australia-midfield-egypt",
