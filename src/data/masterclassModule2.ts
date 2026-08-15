@@ -1,0 +1,57 @@
+export const module2Content: Record<string, any> = {
+  'emergency-fund-rule': {
+    readTime: 7, difficulty: 'Beginner', keywords: 'emergency fund india, 6 month emergency fund, liquid fund, savings account interest, rainy day fund',
+    keyTakeaways: ['Keep 6 months of expenses in liquid savings', 'Use liquid mutual funds instead of savings accounts', 'Emergency fund is NOT an investment — it is insurance', 'Build it BEFORE investing in stocks or mutual funds'],
+    sections: [
+      { heading: 'Why 6 Months?', paragraphs: ['The 6-month rule exists because that is the average time it takes to find a new job in India during a recession. If you lose your job, get sick, or face any financial emergency, this fund keeps you afloat without breaking your investments.', 'Calculate your monthly essential expenses: rent + groceries + utilities + EMIs + insurance premiums. Multiply by 6. That is your target emergency fund.', 'Example: Monthly expenses = ₹40,000. Emergency fund target = ₹2,40,000. This should be in a separate account, untouched for any other purpose.'], tip: 'Keep your emergency fund in a Liquid Mutual Fund (like Parag Parikh Liquid or HDFC Liquid). You get 6-7% returns vs 3-4% in savings accounts, with instant redemption up to ₹50,000.' },
+      { heading: 'Where to Park Your Emergency Fund', paragraphs: ['Savings Account: Easy but low returns (3-4%). Liquid Mutual Fund: Better returns (6-7%), instant access. Short-term FD: Decent returns but penalty for early withdrawal. Do NOT keep it in stocks, ELSS, or any locked instrument.'],
+        table: { headers: ['Option', 'Returns', 'Liquidity', 'Best For'], rows: [['Savings Account', '3-4%', 'Instant', 'First ₹50K'], ['Liquid MF', '6-7%', 'T+1 day', 'Bulk of fund'], ['Short FD', '5-6%', '2-3 days', 'Extra buffer'], ['Sweep-in FD', '5-6%', 'Instant', 'Auto-sweep']] } }
+    ],
+    quiz: { question: 'How many months of expenses should your emergency fund cover?', options: ['3 months', '6 months', '12 months', '1 month'], correct: 1, explanation: '6 months of essential expenses is the standard recommendation. In volatile industries, consider 9-12 months.' },
+    actionItems: ['Calculate your monthly essential expenses right now', 'Open a liquid mutual fund account on Groww or Kuvera', 'Set up auto-SIP of ₹10K/month until you reach your 6-month target', 'Keep this fund in a SEPARATE account from your regular savings'],
+    internalLinks: [{ label: 'FD Calculator', to: '/calculators/fd-calculator' }, { label: 'SIP Calculator', to: '/calculators/sip-calculator' }],
+    externalLinks: [{ label: 'SEBI — Liquid Fund Regulations', url: 'https://www.sebi.gov.in/' }, { label: 'Value Research — Top Liquid Funds', url: 'https://www.valueresearchonline.com/' }]
+  },
+  'corporate-vs-personal-insurance': {
+    readTime: 8, difficulty: 'Intermediate', keywords: 'corporate health insurance, super top up, health insurance india, mediclaim, group insurance limitations',
+    keyTakeaways: ['Corporate insurance ends when you leave the job', 'Family floater of ₹10-15L is essential as personal cover', 'Super top-up plans are cheapest way to increase coverage', 'Buy personal insurance while young — premiums increase with age'],
+    sections: [
+      { heading: 'The Corporate Insurance Trap', paragraphs: ['Your company gives you ₹3-5 Lakh health insurance. Feels safe, right? Wrong. This cover vanishes the day you leave, get fired, or the company changes its policy.', 'A single hospital stay for a heart surgery or cancer treatment can cost ₹15-30 Lakhs in a metro city. Your ₹5L corporate cover will not even scratch the surface.', 'Worst case: You develop a health condition while employed. When you leave, no personal insurer will cover that pre-existing condition. You are now uninsurable for that condition.'] },
+      { heading: 'The Smart Insurance Stack', paragraphs: ['Layer 1: Corporate insurance (₹3-5L) — Use this as primary for small claims.', 'Layer 2: Personal family floater (₹10-15L) — This is your real protection. Buy it at age 25-30 when premiums are lowest.', 'Layer 3: Super top-up (₹50L-1Cr) — Kicks in after a threshold. A ₹50L super top-up with ₹5L deductible costs only ₹5,000-8,000/year!'],
+        table: { headers: ['Layer', 'Cover', 'Annual Cost', 'Purpose'], rows: [['Corporate', '₹3-5L', '₹0 (employer)', 'Small claims'], ['Family Floater', '₹10-15L', '₹15-25K', 'Core protection'], ['Super Top-up', '₹50L-1Cr', '₹5-8K', 'Catastrophic cover']] },
+        tip: 'Buying a ₹10L family floater at age 28 costs ~₹15,000/year. Waiting till age 40 costs ~₹30,000/year for the same cover. Start NOW.' }
+    ],
+    quiz: { question: 'What happens to your corporate health insurance when you switch jobs?', options: ['It continues for life', 'It transfers to new employer', 'It ends immediately', 'It converts to personal policy'], correct: 2, explanation: 'Corporate health insurance is tied to your employment. It ends the day you leave. Any pre-existing conditions developed during employment may not be covered by a new personal policy.' },
+    actionItems: ['Check your corporate insurance sum insured and what it covers', 'Get quotes for a ₹10L family floater from Star Health, HDFC Ergo, or Care Health', 'Add a ₹50L super top-up with a deductible matching your corporate cover', 'Claim Section 80D deduction (₹25K for self, ₹50K for senior parents)'],
+    internalLinks: [{ label: 'Section 80D Calculator', to: '/calculators/section-80d-calculator' }, { label: 'Income Tax Calculator', to: '/calculators/income-tax-calculator' }],
+    externalLinks: [{ label: 'IRDAI — Insurance Regulations', url: 'https://www.irdai.gov.in/' }, { label: 'PolicyBazaar — Compare Plans', url: 'https://www.policybazaar.com/' }]
+  },
+  'term-insurance-guide': {
+    readTime: 7, difficulty: 'Beginner', keywords: 'term insurance india, term plan, life insurance, hdfc term plan, lic term plan, term insurance calculator',
+    keyTakeaways: ['Term insurance is pure life cover — no investment component', 'Buy 10-15x your annual income as cover', 'Best bought between ages 25-30 for lowest premiums', 'Always add critical illness and accidental death riders'],
+    sections: [
+      { heading: 'Why Term Insurance is Non-Negotiable', paragraphs: ['If you are a corporate employee with dependents, term insurance is the MOST important financial product you need. Period.', 'Term insurance pays a lump sum to your family if you die. A ₹1 Crore term plan at age 28 costs just ₹8,000-12,000/year. That is ₹700/month to guarantee your family gets ₹1 Crore.', 'Your company life insurance (1-2x CTC) is NOT enough. If your CTC is ₹15 LPA, your family gets ₹15-30 Lakhs. They need at least ₹1-2 Crores to maintain their lifestyle and fund goals.'] },
+      { heading: 'How Much Cover Do You Need?', paragraphs: ['The formula is simple: (Annual Expenses × 25) + Outstanding Loans + Future Goals (kids education, etc.) - Existing Assets.', 'For most corporate employees aged 28-35: ₹1-2 Crores is the sweet spot.'],
+        table: { headers: ['Age', 'Cover', 'Annual Premium', 'Monthly Cost'], rows: [['25', '₹1 Cr', '₹8,000', '₹667'], ['30', '₹1 Cr', '₹10,500', '₹875'], ['35', '₹1 Cr', '₹15,000', '₹1,250'], ['40', '₹1 Cr', '₹24,000', '₹2,000']] },
+        tip: 'Every year you delay buying term insurance, your premium increases by 8-10%. A 25-year-old pays almost HALF of what a 35-year-old pays for the same cover.' }
+    ],
+    quiz: { question: 'How much term insurance cover should a corporate employee ideally have?', options: ['1-2x annual salary', '5x annual salary', '10-15x annual income', 'Same as home loan amount'], correct: 2, explanation: '10-15x annual income ensures your family can maintain their lifestyle and meet all financial goals even in your absence.' },
+    actionItems: ['Calculate your ideal cover: annual expenses × 25 + loans', 'Compare term plans on PolicyBazaar or InsuranceDekho', 'Buy a plan with critical illness rider from a top insurer', 'Nominate your spouse and update nomination on marriage/childbirth'],
+    internalLinks: [{ label: 'Life Insurance Calculator', to: '/calculators/life-insurance-calculator' }, { label: 'EMI Calculator', to: '/calculators/emi-calculator' }],
+    externalLinks: [{ label: 'IRDAI — Check Insurer Claim Ratio', url: 'https://www.irdai.gov.in/' }, { label: 'Term Insurance Comparison', url: 'https://www.policybazaar.com/life-insurance/term-insurance/' }]
+  },
+  'managing-high-interest-debt': {
+    readTime: 6, difficulty: 'Beginner', keywords: 'credit card debt india, personal loan interest, debt management, avalanche method, debt snowball, credit card minimum payment trap',
+    keyTakeaways: ['Credit card interest is 36-42% APR — the most expensive debt', 'Minimum payment trap keeps you in debt for 10+ years', 'Use avalanche method: pay highest interest debt first', 'Never invest while carrying high-interest debt'],
+    sections: [
+      { heading: 'The Minimum Payment Trap', paragraphs: ['If you have a ₹1 Lakh credit card balance and only pay the minimum (5%), you will take 10+ years to clear the debt and pay ₹1.5 Lakhs in interest alone!', 'Credit card interest in India is 3-3.5% PER MONTH (36-42% per year). No investment in the world gives 36% guaranteed returns. So paying off credit card debt IS your best investment.', 'Rule: If you cannot pay the full credit card bill, you should NOT be using a credit card. Switch to a debit card immediately.'] },
+      { heading: 'The Debt Elimination Strategy', paragraphs: ['Step 1: List ALL debts — credit cards, personal loans, car loans, education loans.', 'Step 2: Use the Avalanche Method — pay minimum on everything, throw all extra money at the highest interest rate debt first.', 'Step 3: Once the highest interest debt is cleared, move to the next one. The freed-up payment snowballs.', 'Step 4: After all high-interest debt is gone, NEVER carry a credit card balance again.'],
+        table: { headers: ['Debt Type', 'Typical Rate', 'Priority', 'Strategy'], rows: [['Credit Card', '36-42%', '🔴 Highest', 'Pay off ASAP'], ['Personal Loan', '12-18%', '🟠 High', 'Consider balance transfer'], ['Car Loan', '8-12%', '🟡 Medium', 'Pay normally'], ['Education Loan', '7-9%', '🟢 Low', 'Get 80E deduction'], ['Home Loan', '8-9%', '🟢 Low', 'Tax benefits under 24(b)']] },
+        tip: 'If you have multiple credit card debts, consider a balance transfer to a card offering 0% for 3-6 months, then aggressively pay it off during that window.' }
+    ],
+    quiz: { question: 'What is the typical annual interest rate on credit cards in India?', options: ['12-15%', '18-24%', '36-42%', '8-10%'], correct: 2, explanation: 'Credit cards in India charge 3-3.5% per month, which is 36-42% per year. This makes credit card debt the most expensive form of borrowing.' },
+    actionItems: ['List all your debts with balances and interest rates', 'Commit to paying full credit card bills every month', 'Use the avalanche method to clear high-interest debt first', 'Cut up any credit card you cannot control spending on'],
+    internalLinks: [{ label: 'EMI Calculator', to: '/calculators/emi-calculator' }, { label: 'Credit Card Finder', to: '/credit-card-finder' }, { label: 'Personal Loan Calculator', to: '/calculators/personal-loan-calculator' }],
+    externalLinks: [{ label: 'RBI — Credit Card Guidelines', url: 'https://www.rbi.org.in/' }, { label: 'CIBIL — Check Credit Score Free', url: 'https://www.cibil.com/' }]
+  }
+};

@@ -1,0 +1,416 @@
+/* Google News Optimized Article Styling - The Hindu Inspired */
+:root {
+  --font-serif: 'Playfair Display', serif;
+  --font-body-serif: 'Merriweather', serif;
+}
+
+.article-intro {
+  margin-bottom: 2rem;
+}
+
+.section-heading {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+.sub-heading {
+  font-family: var(--font-body-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 1.5rem 0 1rem;
+  line-height: 1.4;
+}
+
+.news-h1 {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.news-h2-summary {
+  font-family: var(--font-body-serif);
+  color: #4a5568;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.news-serif {
+  font-family: var(--font-serif) !important;
+}
+
+.news-body-serif {
+  font-family: var(--font-body-serif) !important;
+}
+
+.lead-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.article-content p {
+  font-family: var(--font-body-serif);
+  font-size: 1.25rem;
+  line-height: 1.85; /* Increased for premium feel */
+  color: #2d3748;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.article-content p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 5.5rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-left: 3px;
+  font-weight: 900;
+  color: #0f172a;
+  text-transform: uppercase;
+}
+
+.article-content strong {
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.article-content li {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 0.875rem;
+  padding-left: 0.5rem;
+}
+
+.article-content ul li::marker {
+  color: #3b82f6;
+  font-size: 1.25rem;
+}
+
+.info-box {
+  background: linear-gradient(to right, #eff6ff, #dbeafe);
+  border-left: 4px solid #3b82f6;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.warning-box {
+  background: linear-gradient(to right, #fef3c7, #fde68a);
+  border-left: 4px solid #f59e0b;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.1);
+}
+
+.data-box {
+  background: linear-gradient(to right, #f0fdf4, #dcfce7);
+  border-left: 4px solid #10b981;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.section-divider {
+  border: 0;
+  border-top: 2px solid #e2e8f0;
+  margin: 3rem 0;
+}
+
+.article-content a {
+  color: #3b82f6;
+  text-decoration: underline;
+  font-weight: 600;
+  text-underline-offset: 3px;
+  transition: all 0.2s;
+}
+
+.article-content a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.highlight-stat {
+  background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+}
+
+.expert-quote {
+  font-family: var(--font-body-serif);
+  font-style: italic;
+  color: #4b5563;
+  border-left: 3px solid #d1d5db;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.125rem;
+}
+
+/* Also Read Block */
+.also-read-block {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.also-read-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  display: block;
+  letter-spacing: 0.1em;
+}
+
+.also-read-link {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  text-decoration: none !important;
+}
+
+.also-read-link:hover {
+  color: #2563eb;
+}
+
+/* Quick Highlights / At a Glance */
+.highlights-box {
+  background: #fdfdfd;
+  border: 1px solid #f1f5f9;
+  border-left: 5px solid #0f172a;
+  border-radius: 4px 16px 16px 4px;
+  padding: 1.75rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.highlights-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.1em;
+}
+
+.highlights-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.highlights-item {
+  position: relative;
+  padding-left: 1.75rem !important;
+  margin-bottom: 1rem !important;
+  font-family: var(--font-body-serif);
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  color: #334155 !important;
+}
+
+.highlights-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #3b82f6;
+  border-radius: 50%;
+}
+
+/* Audio Player Mock */
+.audio-player-mock {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 100px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.audio-player-mock:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.audio-play-btn {
+  width: 32px;
+  height: 32px;
+  background: #0f172a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-text {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.audio-wave {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 12px;
+}
+
+.wave-bar {
+  width: 2px;
+  height: 100%;
+  background: #cbd5e1;
+  border-radius: 2px;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% { height: 4px; }
+  50% { height: 12px; }
+}
+
+/* Trending Sidebar Numbers */
+.trending-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.trending-rank {
+  position: absolute;
+  left: -2.5rem;
+  top: -0.5rem;
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f1f5f9;
+  line-height: 1;
+  z-index: 0;
+  user-select: none;
+}
+
+/* Mobile Responsive - Enhanced for Better Readability */
+@media (max-width: 640px) {
+  .section-heading {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .sub-heading {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 0.875rem;
+  }
+
+  .lead-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-content p,
+  .article-content li {
+    font-size: 1.125rem;
+    /* 18px - better for mobile readability */
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-content strong {
+    font-size: 1.0625rem;
+  }
+
+  .info-box,
+  .warning-box,
+  .data-box {
+    padding: 1.25rem;
+    margin: 1.25rem -0.75rem;
+    /* extend to screen edges for better visual */
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-left: 1.5rem;
+    margin: 1.25rem 0;
+  }
+
+  .article-content li {
+    padding-left: 0.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .article-content a {
+    word-break: break-word;
+    /* prevent long URLs from causing horizontal scroll */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    /* more space for easier tap */
+  }
+
+  /* Better touch targets on mobile */
+  .article-content a {
+    display: inline-block;
+    padding: 2px 0;
+    margin: -2px 0;
+    min-height: 44px;
+    /* Apple HIG recommendation */
+    line-height: 44px;
+    vertical-align: middle;
+  }
+
+  /* Prevent horizontal scroll */
+  .article-content {
+    overflow-x: hidden;
+    word-wrap: break-word;
+  }
+
+  /* Images full-width on mobile */
+  .article-content img {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+    max-width: calc(100% + 2rem);
+  }
+
+  .section-divider {
+    margin: 2rem 0;
+  }
+}

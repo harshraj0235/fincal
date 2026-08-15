@@ -1,0 +1,78 @@
+const fs = require('fs');
+const path = require('path');
+
+const viteSrcDir = path.join(__dirname, '../../src');
+const nextAppDir = path.join(__dirname, '../src/app');
+
+const hubs = [
+  { vite: 'BankTools.tsx', next: 'bank-tools/BankToolsClient.tsx' },
+  { vite: 'CorporateFinance.tsx', next: 'corporate-finance/CorporateFinanceClient.tsx' },
+  { vite: 'GoldTools.tsx', next: 'gold-tools/GoldToolsClient.tsx' },
+  { vite: 'FestivalTools.tsx', next: 'festival-tools/FestivalToolsClient.tsx' },
+  { vite: 'InvoicingReceivablesHub.tsx', next: 'invoice-generator-business/InvoiceGeneratorBusinessClient.tsx' }
+];
+
+let updatedCount = 0;
+
+for (const hub of hubs) {
+  const vitePath = path.join(viteSrcDir, 'pages', hub.vite);
+  const nextPath = path.join(nextAppDir, hub.next);
+
+  if (!fs.existsSync(vitePath) || !fs.existsSync(nextPath)) continue;
+
+  const viteContent = fs.readFileSync(vitePath, 'utf8');
+  let nextContent = fs.readFileSync(nextPath, 'utf8');
+  let originalNextContent = nextContent;
+
+  // We will find each { name: 'Something', path: '/wrong-path' } in nextContent
+  // and look up 'Something' in viteContent to find its true path!
+  
+  const toolNameRegex = /name:\s*['"](.*?)['"]/g;
+  let match;
+  
+  while ((match = toolNameRegex.exec(nextContent)) !== null) {
+    const toolName = match[1];
+    
+    // Look for this tool name in Vite content
+    // Specifically looking for `{ name: 'ToolName', path: '/correct/path' }` or similar
+    // Since properties can be in any order, we just find the object block containing the name.
+    
+    // This regex looks for the toolName, and then tries to capture its path or link or slug
+    const safeToolName = toolName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // escape regex
+    const objBlockRegex = new RegExp(`{[^{}]*name:\\s*['"]${safeToolName}['"][^{}]*}`, 'g');
+    
+    const objMatch = objBlockRegex.exec(viteContent);
+    if (objMatch) {
+      const objBlock = objMatch[0];
+      
+      let correctPath = null;
+      const pathPropMatch = /(?:path|link):\s*['"](.*?)['"]/.exec(objBlock);
+      if (pathPropMatch) {
+        correctPath = pathPropMatch[1];
+      } else {
+        const slugPropMatch = /slug:\s*['"](.*?)['"]/.exec(objBlock);
+        if (slugPropMatch) {
+          if (hub.vite === 'InvoicingReceivablesHub.tsx') {
+            correctPath = `/invoicing-tools/${slugPropMatch[1]}`;
+          } else if (hub.vite === 'GoldTools.tsx') {
+            correctPath = `/gold-tools/${slugPropMatch[1]}`; // Gold used gold-tools usually, but let's check
+          }
+        }
+      }
+      
+      if (correctPath) {
+        // Now replace the path in the Next.js content for this specific tool
+        const replaceRegex = new RegExp(`(name:\\s*['"]${safeToolName}['"],\\s*path:\\s*['"]).*?(['"])`, 'g');
+        nextContent = nextContent.replace(replaceRegex, `$1${correctPath}$2`);
+      }
+    }
+  }
+
+  if (nextContent !== originalNextContent) {
+    fs.writeFileSync(nextPath, nextContent, 'utf8');
+    updatedCount++;
+    console.log(`Updated paths in ${hub.next}`);
+  }
+}
+
+console.log(`✅ Reverted data arrays in ${updatedCount} Next.js Hub clients.`);

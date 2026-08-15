@@ -1,0 +1,19 @@
+{
+  "missingAlt": [],
+  "multipleH1": [],
+  "brokenLinks": [
+    {
+      "file": "src\\components\\FinancialChatAssistant.tsx",
+      "href": "$2"
+    },
+    {
+      "file": "src\\components\\FinancialChatAssistant.tsx",
+      "href": "$2"
+    },
+    {
+      "file": "src\\utils\\sitemapGenerator.ts",
+      "href": "${this.baseUrl}/rss.xml"
+    }
+  ],
+  "missingMetadata": []
+}
