@@ -11,8 +11,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Trailing slashes for cleaner URLs
-  trailingSlash: false,
+  // Trailing slashes for cleaner URLs and Cloudflare Pages compatibility
+  trailingSlash: true,
 
   // Powered-by header removal for security
   poweredByHeader: false,
